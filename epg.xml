@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv source-info-name="Generated fixture list (UEFA Nations League 2026/27)" generator-info-name="generate_nations_league_epg.py">
+  <channel id="match.2026-09-26.slovenia-v-scotland">
+    <display-name lang="en">Slovenia v Scotland</display-name>
+  </channel>
+  <channel id="match.2026-09-26.san-marino-v-finland">
+    <display-name lang="en">San Marino v Finland</display-name>
+  </channel>
+  <channel id="match.2026-09-26.faroe-islands-v-kazakhstan">
+    <display-name lang="en">Faroe Islands v Kazakhstan</display-name>
+  </channel>
+  <channel id="match.2026-09-26.bulgaria-v-luxembourg">
+    <display-name lang="en">Bulgaria v Luxembourg</display-name>
+  </channel>
+  <channel id="match.2026-09-26.iceland-v-estonia">
+    <display-name lang="en">Iceland v Estonia</display-name>
+  </channel>
+  <channel id="match.2026-09-26.czechia-v-croatia">
+    <display-name lang="en">Czechia v Croatia</display-name>
+  </channel>
+  <channel id="match.2026-09-26.england-v-spain">
+    <display-name lang="en">England v Spain</display-name>
+  </channel>
+  <channel id="match.2026-09-26.north-macedonia-v-switzerland">
+    <display-name lang="en">North Macedonia v Switzerland</display-name>
+  </channel>
+  <channel id="match.2026-09-26.albania-v-belarus">
+    <display-name lang="en">Albania v Belarus</display-name>
+  </channel>
+  <channel id="match.2026-09-26.slovakia-v-moldova">
+    <display-name lang="en">Slovakia v Moldova</display-name>
+  </channel>
+  <channel id="match.2026-09-27.lithuania-v-azerbaijan">
+    <display-name lang="en">Lithuania v Azerbaijan</display-name>
+  </channel>
+  <channel id="match.2026-09-27.serbia-v-netherlands">
+    <display-name lang="en">Serbia v Netherlands</display-name>
+  </channel>
+  <channel id="match.2026-09-27.denmark-v-wales">
+    <display-name lang="en">Denmark v Wales</display-name>
+  </channel>
+  <channel id="match.2026-09-27.austria-v-kosovo">
+    <display-name lang="en">Austria v Kosovo</display-name>
+  </channel>
+  <channel id="match.2026-09-27.gibraltar-v-andorra">
+    <display-name lang="en">Gibraltar v Andorra</display-name>
+  </channel>
+  <channel id="match.2026-09-27.germany-v-greece">
+    <display-name lang="en">Germany v Greece</display-name>
+  </channel>
+  <channel id="match.2026-09-27.norway-v-portugal">
+    <display-name lang="en">Norway v Portugal</display-name>
+  </channel>
+  <channel id="match.2026-09-27.israel-v-republic-of-ireland">
+    <display-name lang="en">Israel v Republic of Ireland</display-name>
+  </channel>
+  <channel id="match.2026-09-28.georgia-v-ukraine">
+    <display-name lang="en">Georgia v Ukraine</display-name>
+  </channel>
+  <channel id="match.2026-09-28.armenia-v-montenegro">
+    <display-name lang="en">Armenia v Montenegro</display-name>
+  </channel>
+  <channel id="match.2026-09-28.latvia-v-cyprus">
+    <display-name lang="en">Latvia v Cyprus</display-name>
+  </channel>
+  <channel id="match.2026-09-28.belgium-v-france">
+    <display-name lang="en">Belgium v France</display-name>
+  </channel>
+  <channel id="match.2026-09-28.t-rkiye-v-italy">
+    <display-name lang="en">Türkiye v Italy</display-name>
+  </channel>
+  <channel id="match.2026-09-28.northern-ireland-v-hungary">
+    <display-name lang="en">Northern Ireland v Hungary</display-name>
+  </channel>
+  <channel id="match.2026-09-28.romania-v-bosnia-and-herzegovina">
+    <display-name lang="en">Romania v Bosnia and Herzegovina</display-name>
+  </channel>
+  <channel id="match.2026-09-28.sweden-v-poland">
+    <display-name lang="en">Sweden v Poland</display-name>
+  </channel>
+  <channel id="match.2026-09-29.finland-v-belarus">
+    <display-name lang="en">Finland v Belarus</display-name>
+  </channel>
+  <channel id="match.2026-09-29.moldova-v-faroe-islands">
+    <display-name lang="en">Moldova v Faroe Islands</display-name>
+  </channel>
+  <channel id="match.2026-09-29.czechia-v-england">
+    <display-name lang="en">Czechia v England</display-name>
+  </channel>
+  <channel id="match.2026-09-29.spain-v-croatia">
+    <display-name lang="en">Spain v Croatia</display-name>
+  </channel>
+  <channel id="match.2026-09-29.scotland-v-switzerland">
+    <display-name lang="en">Scotland v Switzerland</display-name>
+  </channel>
+  <channel id="match.2026-09-29.slovenia-v-north-macedonia">
+    <display-name lang="en">Slovenia v North Macedonia</display-name>
+  </channel>
+  <channel id="match.2026-09-29.san-marino-v-albania">
+    <display-name lang="en">San Marino v Albania</display-name>
+  </channel>
+  <channel id="match.2026-09-29.slovakia-v-kazakhstan">
+    <display-name lang="en">Slovakia v Kazakhstan</display-name>
+  </channel>
+  <channel id="match.2026-09-29.bulgaria-v-estonia">
+    <display-name lang="en">Bulgaria v Estonia</display-name>
+  </channel>
+  <channel id="match.2026-09-29.luxembourg-v-iceland">
+    <display-name lang="en">Luxembourg v Iceland</display-name>
+  </channel>
+  <channel id="match.2026-10-01.azerbaijan-v-liechtenstein">
+    <display-name lang="en">Azerbaijan v Liechtenstein</display-name>
+  </channel>
+  <channel id="match.2026-10-01.germany-v-serbia">
+    <display-name lang="en">Germany v Serbia</display-name>
+  </channel>
+  <channel id="match.2026-10-01.greece-v-netherlands">
+    <display-name lang="en">Greece v Netherlands</display-name>
+  </channel>
+  <channel id="match.2026-10-01.denmark-v-portugal">
+    <display-name lang="en">Denmark v Portugal</display-name>
+  </channel>
+  <channel id="match.2026-10-01.wales-v-norway">
+    <display-name lang="en">Wales v Norway</display-name>
+  </channel>
+  <channel id="match.2026-10-01.israel-v-kosovo">
+    <display-name lang="en">Israel v Kosovo</display-name>
+  </channel>
+  <channel id="match.2026-10-01.republic-of-ireland-v-austria">
+    <display-name lang="en">Republic of Ireland v Austria</display-name>
+  </channel>
+  <channel id="match.2026-10-01.malta-v-gibraltar">
+    <display-name lang="en">Malta v Gibraltar</display-name>
+  </channel>
+  <channel id="match.2026-10-02.kazakhstan-v-moldova">
+    <display-name lang="en">Kazakhstan v Moldova</display-name>
+  </channel>
+  <channel id="match.2026-10-02.cyprus-v-armenia">
+    <display-name lang="en">Cyprus v Armenia</display-name>
+  </channel>
+  <channel id="match.2026-10-02.latvia-v-montenegro">
+    <display-name lang="en">Latvia v Montenegro</display-name>
+  </channel>
+  <channel id="match.2026-10-02.belgium-v-t-rkiye">
+    <display-name lang="en">Belgium v Türkiye</display-name>
+  </channel>
+  <channel id="match.2026-10-02.france-v-italy">
+    <display-name lang="en">France v Italy</display-name>
+  </channel>
+  <channel id="match.2026-10-02.hungary-v-georgia">
+    <display-name lang="en">Hungary v Georgia</display-name>
+  </channel>
+  <channel id="match.2026-10-02.ukraine-v-northern-ireland">
+    <display-name lang="en">Ukraine v Northern Ireland</display-name>
+  </channel>
+  <channel id="match.2026-10-02.bosnia-and-herzegovina-v-sweden">
+    <display-name lang="en">Bosnia and Herzegovina v Sweden</display-name>
+  </channel>
+  <channel id="match.2026-10-02.poland-v-romania">
+    <display-name lang="en">Poland v Romania</display-name>
+  </channel>
+  <channel id="match.2026-10-02.faroe-islands-v-slovakia">
+    <display-name lang="en">Faroe Islands v Slovakia</display-name>
+  </channel>
+  <channel id="match.2026-10-03.finland-v-albania">
+    <display-name lang="en">Finland v Albania</display-name>
+  </channel>
+  <channel id="match.2026-10-03.croatia-v-england">
+    <display-name lang="en">Croatia v England</display-name>
+  </channel>
+  <channel id="match.2026-10-03.belarus-v-san-marino">
+    <display-name lang="en">Belarus v San Marino</display-name>
+  </channel>
+  <channel id="match.2026-10-03.estonia-v-luxembourg">
+    <display-name lang="en">Estonia v Luxembourg</display-name>
+  </channel>
+  <channel id="match.2026-10-03.iceland-v-bulgaria">
+    <display-name lang="en">Iceland v Bulgaria</display-name>
+  </channel>
+  <channel id="match.2026-10-03.spain-v-czechia">
+    <display-name lang="en">Spain v Czechia</display-name>
+  </channel>
+  <channel id="match.2026-10-03.north-macedonia-v-scotland">
+    <display-name lang="en">North Macedonia v Scotland</display-name>
+  </channel>
+  <channel id="match.2026-10-03.switzerland-v-slovenia">
+    <display-name lang="en">Switzerland v Slovenia</display-name>
+  </channel>
+  <channel id="match.2026-10-04.azerbaijan-v-lithuania">
+    <display-name lang="en">Azerbaijan v Lithuania</display-name>
+  </channel>
+  <channel id="match.2026-10-04.kosovo-v-austria">
+    <display-name lang="en">Kosovo v Austria</display-name>
+  </channel>
+  <channel id="match.2026-10-04.malta-v-andorra">
+    <display-name lang="en">Malta v Andorra</display-name>
+  </channel>
+  <channel id="match.2026-10-04.greece-v-germany">
+    <display-name lang="en">Greece v Germany</display-name>
+  </channel>
+  <channel id="match.2026-10-04.netherlands-v-serbia">
+    <display-name lang="en">Netherlands v Serbia</display-name>
+  </channel>
+  <channel id="match.2026-10-04.portugal-v-norway">
+    <display-name lang="en">Portugal v Norway</display-name>
+  </channel>
+  <channel id="match.2026-10-04.wales-v-denmark">
+    <display-name lang="en">Wales v Denmark</display-name>
+  </channel>
+  <channel id="match.2026-10-04.republic-of-ireland-v-israel">
+    <display-name lang="en">Republic of Ireland v Israel</display-name>
+  </channel>
+  <channel id="match.2026-10-05.cyprus-v-latvia">
+    <display-name lang="en">Cyprus v Latvia</display-name>
+  </channel>
+  <channel id="match.2026-10-05.france-v-belgium">
+    <display-name lang="en">France v Belgium</display-name>
+  </channel>
+  <channel id="match.2026-10-05.italy-v-t-rkiye">
+    <display-name lang="en">Italy v Türkiye</display-name>
+  </channel>
+  <channel id="match.2026-10-05.northern-ireland-v-georgia">
+    <display-name lang="en">Northern Ireland v Georgia</display-name>
+  </channel>
+  <channel id="match.2026-10-05.ukraine-v-hungary">
+    <display-name lang="en">Ukraine v Hungary</display-name>
+  </channel>
+  <channel id="match.2026-10-05.bosnia-and-herzegovina-v-poland">
+    <display-name lang="en">Bosnia and Herzegovina v Poland</display-name>
+  </channel>
+  <channel id="match.2026-10-05.romania-v-sweden">
+    <display-name lang="en">Romania v Sweden</display-name>
+  </channel>
+  <channel id="match.2026-10-05.montenegro-v-armenia">
+    <display-name lang="en">Montenegro v Armenia</display-name>
+  </channel>
+  <channel id="match.2026-10-06.kazakhstan-v-faroe-islands">
+    <display-name lang="en">Kazakhstan v Faroe Islands</display-name>
+  </channel>
+  <channel id="match.2026-10-06.croatia-v-spain">
+    <display-name lang="en">Croatia v Spain</display-name>
+  </channel>
+  <channel id="match.2026-10-06.england-v-czechia">
+    <display-name lang="en">England v Czechia</display-name>
+  </channel>
+  <channel id="match.2026-10-06.scotland-v-slovenia">
+    <display-name lang="en">Scotland v Slovenia</display-name>
+  </channel>
+  <channel id="match.2026-10-06.switzerland-v-north-macedonia">
+    <display-name lang="en">Switzerland v North Macedonia</display-name>
+  </channel>
+  <channel id="match.2026-10-06.albania-v-san-marino">
+    <display-name lang="en">Albania v San Marino</display-name>
+  </channel>
+  <channel id="match.2026-10-06.belarus-v-finland">
+    <display-name lang="en">Belarus v Finland</display-name>
+  </channel>
+  <channel id="match.2026-10-06.moldova-v-slovakia">
+    <display-name lang="en">Moldova v Slovakia</display-name>
+  </channel>
+  <channel id="match.2026-10-06.estonia-v-iceland">
+    <display-name lang="en">Estonia v Iceland</display-name>
+  </channel>
+  <channel id="match.2026-10-06.luxembourg-v-bulgaria">
+    <display-name lang="en">Luxembourg v Bulgaria</display-name>
+  </channel>
+  <programme start="20260926140000 +0100" stop="20260926160000 +0100" channel="match.2026-09-26.slovenia-v-scotland">
+    <title lang="en">Slovenia v Scotland</title>
+    <sub-title lang="en">Nations League - Group B1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B1: Slovenia v Scotland. Kick-off 14:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260926170000 +0100" stop="20260926190000 +0100" channel="match.2026-09-26.san-marino-v-finland">
+    <title lang="en">San Marino v Finland</title>
+    <sub-title lang="en">Nations League - Group C1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C1: San Marino v Finland. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260926170000 +0100" stop="20260926190000 +0100" channel="match.2026-09-26.faroe-islands-v-kazakhstan">
+    <title lang="en">Faroe Islands v Kazakhstan</title>
+    <sub-title lang="en">Nations League - Group C3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C3: Faroe Islands v Kazakhstan. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260926170000 +0100" stop="20260926190000 +0100" channel="match.2026-09-26.bulgaria-v-luxembourg">
+    <title lang="en">Bulgaria v Luxembourg</title>
+    <sub-title lang="en">Nations League - Group C4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C4: Bulgaria v Luxembourg. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260926170000 +0100" stop="20260926190000 +0100" channel="match.2026-09-26.iceland-v-estonia">
+    <title lang="en">Iceland v Estonia</title>
+    <sub-title lang="en">Nations League - Group C4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C4: Iceland v Estonia. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260926194500 +0100" stop="20260926214500 +0100" channel="match.2026-09-26.czechia-v-croatia">
+    <title lang="en">Czechia v Croatia</title>
+    <sub-title lang="en">Nations League - Group A3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A3: Czechia v Croatia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260926194500 +0100" stop="20260926214500 +0100" channel="match.2026-09-26.england-v-spain">
+    <title lang="en">England v Spain</title>
+    <sub-title lang="en">Nations League - Group A3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A3: England v Spain. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260926194500 +0100" stop="20260926214500 +0100" channel="match.2026-09-26.north-macedonia-v-switzerland">
+    <title lang="en">North Macedonia v Switzerland</title>
+    <sub-title lang="en">Nations League - Group B1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B1: North Macedonia v Switzerland. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260926194500 +0100" stop="20260926214500 +0100" channel="match.2026-09-26.albania-v-belarus">
+    <title lang="en">Albania v Belarus</title>
+    <sub-title lang="en">Nations League - Group C1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C1: Albania v Belarus. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260926194500 +0100" stop="20260926214500 +0100" channel="match.2026-09-26.slovakia-v-moldova">
+    <title lang="en">Slovakia v Moldova</title>
+    <sub-title lang="en">Nations League - Group C3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C3: Slovakia v Moldova. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260927140000 +0100" stop="20260927160000 +0100" channel="match.2026-09-27.lithuania-v-azerbaijan">
+    <title lang="en">Lithuania v Azerbaijan</title>
+    <sub-title lang="en">Nations League - Group D2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group D2: Lithuania v Azerbaijan. Kick-off 14:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260927170000 +0100" stop="20260927190000 +0100" channel="match.2026-09-27.serbia-v-netherlands">
+    <title lang="en">Serbia v Netherlands</title>
+    <sub-title lang="en">Nations League - Group A2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A2: Serbia v Netherlands. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260927170000 +0100" stop="20260927190000 +0100" channel="match.2026-09-27.denmark-v-wales">
+    <title lang="en">Denmark v Wales</title>
+    <sub-title lang="en">Nations League - Group A4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A4: Denmark v Wales. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260927170000 +0100" stop="20260927190000 +0100" channel="match.2026-09-27.austria-v-kosovo">
+    <title lang="en">Austria v Kosovo</title>
+    <sub-title lang="en">Nations League - Group B3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B3: Austria v Kosovo. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260927170000 +0100" stop="20260927190000 +0100" channel="match.2026-09-27.gibraltar-v-andorra">
+    <title lang="en">Gibraltar v Andorra</title>
+    <sub-title lang="en">Nations League - Group D1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group D1: Gibraltar v Andorra. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260927194500 +0100" stop="20260927214500 +0100" channel="match.2026-09-27.germany-v-greece">
+    <title lang="en">Germany v Greece</title>
+    <sub-title lang="en">Nations League - Group A2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A2: Germany v Greece. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260927194500 +0100" stop="20260927214500 +0100" channel="match.2026-09-27.norway-v-portugal">
+    <title lang="en">Norway v Portugal</title>
+    <sub-title lang="en">Nations League - Group A4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A4: Norway v Portugal. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260927194500 +0100" stop="20260927214500 +0100" channel="match.2026-09-27.israel-v-republic-of-ireland">
+    <title lang="en">Israel v Republic of Ireland</title>
+    <sub-title lang="en">Nations League - Group B3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B3: Israel v Republic of Ireland. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260928170000 +0100" stop="20260928190000 +0100" channel="match.2026-09-28.georgia-v-ukraine">
+    <title lang="en">Georgia v Ukraine</title>
+    <sub-title lang="en">Nations League - Group B2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B2: Georgia v Ukraine. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260928170000 +0100" stop="20260928190000 +0100" channel="match.2026-09-28.armenia-v-montenegro">
+    <title lang="en">Armenia v Montenegro</title>
+    <sub-title lang="en">Nations League - Group C2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C2: Armenia v Montenegro. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260928170000 +0100" stop="20260928190000 +0100" channel="match.2026-09-28.latvia-v-cyprus">
+    <title lang="en">Latvia v Cyprus</title>
+    <sub-title lang="en">Nations League - Group C2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C2: Latvia v Cyprus. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260928194500 +0100" stop="20260928214500 +0100" channel="match.2026-09-28.belgium-v-france">
+    <title lang="en">Belgium v France</title>
+    <sub-title lang="en">Nations League - Group A1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A1: Belgium v France. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260928194500 +0100" stop="20260928214500 +0100" channel="match.2026-09-28.t-rkiye-v-italy">
+    <title lang="en">Türkiye v Italy</title>
+    <sub-title lang="en">Nations League - Group A1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A1: Türkiye v Italy. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260928194500 +0100" stop="20260928214500 +0100" channel="match.2026-09-28.northern-ireland-v-hungary">
+    <title lang="en">Northern Ireland v Hungary</title>
+    <sub-title lang="en">Nations League - Group B2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B2: Northern Ireland v Hungary. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260928194500 +0100" stop="20260928214500 +0100" channel="match.2026-09-28.romania-v-bosnia-and-herzegovina">
+    <title lang="en">Romania v Bosnia and Herzegovina</title>
+    <sub-title lang="en">Nations League - Group B4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B4: Romania v Bosnia and Herzegovina. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260928194500 +0100" stop="20260928214500 +0100" channel="match.2026-09-28.sweden-v-poland">
+    <title lang="en">Sweden v Poland</title>
+    <sub-title lang="en">Nations League - Group B4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B4: Sweden v Poland. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260929170000 +0100" stop="20260929190000 +0100" channel="match.2026-09-29.finland-v-belarus">
+    <title lang="en">Finland v Belarus</title>
+    <sub-title lang="en">Nations League - Group C1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C1: Finland v Belarus. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260929170000 +0100" stop="20260929190000 +0100" channel="match.2026-09-29.moldova-v-faroe-islands">
+    <title lang="en">Moldova v Faroe Islands</title>
+    <sub-title lang="en">Nations League - Group C3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C3: Moldova v Faroe Islands. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260929194500 +0100" stop="20260929214500 +0100" channel="match.2026-09-29.czechia-v-england">
+    <title lang="en">Czechia v England</title>
+    <sub-title lang="en">Nations League - Group A3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A3: Czechia v England. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260929194500 +0100" stop="20260929214500 +0100" channel="match.2026-09-29.spain-v-croatia">
+    <title lang="en">Spain v Croatia</title>
+    <sub-title lang="en">Nations League - Group A3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A3: Spain v Croatia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260929194500 +0100" stop="20260929214500 +0100" channel="match.2026-09-29.scotland-v-switzerland">
+    <title lang="en">Scotland v Switzerland</title>
+    <sub-title lang="en">Nations League - Group B1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B1: Scotland v Switzerland. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260929194500 +0100" stop="20260929214500 +0100" channel="match.2026-09-29.slovenia-v-north-macedonia">
+    <title lang="en">Slovenia v North Macedonia</title>
+    <sub-title lang="en">Nations League - Group B1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B1: Slovenia v North Macedonia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260929194500 +0100" stop="20260929214500 +0100" channel="match.2026-09-29.san-marino-v-albania">
+    <title lang="en">San Marino v Albania</title>
+    <sub-title lang="en">Nations League - Group C1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C1: San Marino v Albania. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260929194500 +0100" stop="20260929214500 +0100" channel="match.2026-09-29.slovakia-v-kazakhstan">
+    <title lang="en">Slovakia v Kazakhstan</title>
+    <sub-title lang="en">Nations League - Group C3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C3: Slovakia v Kazakhstan. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260929194500 +0100" stop="20260929214500 +0100" channel="match.2026-09-29.bulgaria-v-estonia">
+    <title lang="en">Bulgaria v Estonia</title>
+    <sub-title lang="en">Nations League - Group C4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C4: Bulgaria v Estonia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20260929194500 +0100" stop="20260929214500 +0100" channel="match.2026-09-29.luxembourg-v-iceland">
+    <title lang="en">Luxembourg v Iceland</title>
+    <sub-title lang="en">Nations League - Group C4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C4: Luxembourg v Iceland. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261001170000 +0100" stop="20261001190000 +0100" channel="match.2026-10-01.azerbaijan-v-liechtenstein">
+    <title lang="en">Azerbaijan v Liechtenstein</title>
+    <sub-title lang="en">Nations League - Group D2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group D2: Azerbaijan v Liechtenstein. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261001194500 +0100" stop="20261001214500 +0100" channel="match.2026-10-01.germany-v-serbia">
+    <title lang="en">Germany v Serbia</title>
+    <sub-title lang="en">Nations League - Group A2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A2: Germany v Serbia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261001194500 +0100" stop="20261001214500 +0100" channel="match.2026-10-01.greece-v-netherlands">
+    <title lang="en">Greece v Netherlands</title>
+    <sub-title lang="en">Nations League - Group A2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A2: Greece v Netherlands. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261001194500 +0100" stop="20261001214500 +0100" channel="match.2026-10-01.denmark-v-portugal">
+    <title lang="en">Denmark v Portugal</title>
+    <sub-title lang="en">Nations League - Group A4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A4: Denmark v Portugal. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261001194500 +0100" stop="20261001214500 +0100" channel="match.2026-10-01.wales-v-norway">
+    <title lang="en">Wales v Norway</title>
+    <sub-title lang="en">Nations League - Group A4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A4: Wales v Norway. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261001194500 +0100" stop="20261001214500 +0100" channel="match.2026-10-01.israel-v-kosovo">
+    <title lang="en">Israel v Kosovo</title>
+    <sub-title lang="en">Nations League - Group B3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B3: Israel v Kosovo. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261001194500 +0100" stop="20261001214500 +0100" channel="match.2026-10-01.republic-of-ireland-v-austria">
+    <title lang="en">Republic of Ireland v Austria</title>
+    <sub-title lang="en">Nations League - Group B3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B3: Republic of Ireland v Austria. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261001194500 +0100" stop="20261001214500 +0100" channel="match.2026-10-01.malta-v-gibraltar">
+    <title lang="en">Malta v Gibraltar</title>
+    <sub-title lang="en">Nations League - Group D1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group D1: Malta v Gibraltar. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261002150000 +0100" stop="20261002170000 +0100" channel="match.2026-10-02.kazakhstan-v-moldova">
+    <title lang="en">Kazakhstan v Moldova</title>
+    <sub-title lang="en">Nations League - Group C3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C3: Kazakhstan v Moldova. Kick-off 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261002170000 +0100" stop="20261002190000 +0100" channel="match.2026-10-02.cyprus-v-armenia">
+    <title lang="en">Cyprus v Armenia</title>
+    <sub-title lang="en">Nations League - Group C2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C2: Cyprus v Armenia. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261002170000 +0100" stop="20261002190000 +0100" channel="match.2026-10-02.latvia-v-montenegro">
+    <title lang="en">Latvia v Montenegro</title>
+    <sub-title lang="en">Nations League - Group C2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C2: Latvia v Montenegro. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261002194500 +0100" stop="20261002214500 +0100" channel="match.2026-10-02.belgium-v-t-rkiye">
+    <title lang="en">Belgium v Türkiye</title>
+    <sub-title lang="en">Nations League - Group A1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A1: Belgium v Türkiye. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261002194500 +0100" stop="20261002214500 +0100" channel="match.2026-10-02.france-v-italy">
+    <title lang="en">France v Italy</title>
+    <sub-title lang="en">Nations League - Group A1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A1: France v Italy. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261002194500 +0100" stop="20261002214500 +0100" channel="match.2026-10-02.hungary-v-georgia">
+    <title lang="en">Hungary v Georgia</title>
+    <sub-title lang="en">Nations League - Group B2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B2: Hungary v Georgia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261002194500 +0100" stop="20261002214500 +0100" channel="match.2026-10-02.ukraine-v-northern-ireland">
+    <title lang="en">Ukraine v Northern Ireland</title>
+    <sub-title lang="en">Nations League - Group B2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B2: Ukraine v Northern Ireland. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261002194500 +0100" stop="20261002214500 +0100" channel="match.2026-10-02.bosnia-and-herzegovina-v-sweden">
+    <title lang="en">Bosnia and Herzegovina v Sweden</title>
+    <sub-title lang="en">Nations League - Group B4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B4: Bosnia and Herzegovina v Sweden. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261002194500 +0100" stop="20261002214500 +0100" channel="match.2026-10-02.poland-v-romania">
+    <title lang="en">Poland v Romania</title>
+    <sub-title lang="en">Nations League - Group B4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B4: Poland v Romania. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261002194500 +0100" stop="20261002214500 +0100" channel="match.2026-10-02.faroe-islands-v-slovakia">
+    <title lang="en">Faroe Islands v Slovakia</title>
+    <sub-title lang="en">Nations League - Group C3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C3: Faroe Islands v Slovakia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261003140000 +0100" stop="20261003160000 +0100" channel="match.2026-10-03.finland-v-albania">
+    <title lang="en">Finland v Albania</title>
+    <sub-title lang="en">Nations League - Group C1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C1: Finland v Albania. Kick-off 14:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261003170000 +0100" stop="20261003190000 +0100" channel="match.2026-10-03.croatia-v-england">
+    <title lang="en">Croatia v England</title>
+    <sub-title lang="en">Nations League - Group A3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A3: Croatia v England. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261003170000 +0100" stop="20261003190000 +0100" channel="match.2026-10-03.belarus-v-san-marino">
+    <title lang="en">Belarus v San Marino</title>
+    <sub-title lang="en">Nations League - Group C1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C1: Belarus v San Marino. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261003170000 +0100" stop="20261003190000 +0100" channel="match.2026-10-03.estonia-v-luxembourg">
+    <title lang="en">Estonia v Luxembourg</title>
+    <sub-title lang="en">Nations League - Group C4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C4: Estonia v Luxembourg. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261003170000 +0100" stop="20261003190000 +0100" channel="match.2026-10-03.iceland-v-bulgaria">
+    <title lang="en">Iceland v Bulgaria</title>
+    <sub-title lang="en">Nations League - Group C4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C4: Iceland v Bulgaria. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261003194500 +0100" stop="20261003214500 +0100" channel="match.2026-10-03.spain-v-czechia">
+    <title lang="en">Spain v Czechia</title>
+    <sub-title lang="en">Nations League - Group A3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A3: Spain v Czechia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261003194500 +0100" stop="20261003214500 +0100" channel="match.2026-10-03.north-macedonia-v-scotland">
+    <title lang="en">North Macedonia v Scotland</title>
+    <sub-title lang="en">Nations League - Group B1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B1: North Macedonia v Scotland. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261003194500 +0100" stop="20261003214500 +0100" channel="match.2026-10-03.switzerland-v-slovenia">
+    <title lang="en">Switzerland v Slovenia</title>
+    <sub-title lang="en">Nations League - Group B1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B1: Switzerland v Slovenia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261004140000 +0100" stop="20261004160000 +0100" channel="match.2026-10-04.azerbaijan-v-lithuania">
+    <title lang="en">Azerbaijan v Lithuania</title>
+    <sub-title lang="en">Nations League - Group D2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group D2: Azerbaijan v Lithuania. Kick-off 14:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261004170000 +0100" stop="20261004190000 +0100" channel="match.2026-10-04.kosovo-v-austria">
+    <title lang="en">Kosovo v Austria</title>
+    <sub-title lang="en">Nations League - Group B3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B3: Kosovo v Austria. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261004170000 +0100" stop="20261004190000 +0100" channel="match.2026-10-04.malta-v-andorra">
+    <title lang="en">Malta v Andorra</title>
+    <sub-title lang="en">Nations League - Group D1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group D1: Malta v Andorra. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261004194500 +0100" stop="20261004214500 +0100" channel="match.2026-10-04.greece-v-germany">
+    <title lang="en">Greece v Germany</title>
+    <sub-title lang="en">Nations League - Group A2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A2: Greece v Germany. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261004194500 +0100" stop="20261004214500 +0100" channel="match.2026-10-04.netherlands-v-serbia">
+    <title lang="en">Netherlands v Serbia</title>
+    <sub-title lang="en">Nations League - Group A2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A2: Netherlands v Serbia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261004194500 +0100" stop="20261004214500 +0100" channel="match.2026-10-04.portugal-v-norway">
+    <title lang="en">Portugal v Norway</title>
+    <sub-title lang="en">Nations League - Group A4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A4: Portugal v Norway. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261004194500 +0100" stop="20261004214500 +0100" channel="match.2026-10-04.wales-v-denmark">
+    <title lang="en">Wales v Denmark</title>
+    <sub-title lang="en">Nations League - Group A4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A4: Wales v Denmark. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261004194500 +0100" stop="20261004214500 +0100" channel="match.2026-10-04.republic-of-ireland-v-israel">
+    <title lang="en">Republic of Ireland v Israel</title>
+    <sub-title lang="en">Nations League - Group B3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B3: Republic of Ireland v Israel. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261005170000 +0100" stop="20261005190000 +0100" channel="match.2026-10-05.cyprus-v-latvia">
+    <title lang="en">Cyprus v Latvia</title>
+    <sub-title lang="en">Nations League - Group C2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C2: Cyprus v Latvia. Kick-off 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261005194500 +0100" stop="20261005214500 +0100" channel="match.2026-10-05.france-v-belgium">
+    <title lang="en">France v Belgium</title>
+    <sub-title lang="en">Nations League - Group A1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A1: France v Belgium. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261005194500 +0100" stop="20261005214500 +0100" channel="match.2026-10-05.italy-v-t-rkiye">
+    <title lang="en">Italy v Türkiye</title>
+    <sub-title lang="en">Nations League - Group A1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A1: Italy v Türkiye. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261005194500 +0100" stop="20261005214500 +0100" channel="match.2026-10-05.northern-ireland-v-georgia">
+    <title lang="en">Northern Ireland v Georgia</title>
+    <sub-title lang="en">Nations League - Group B2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B2: Northern Ireland v Georgia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261005194500 +0100" stop="20261005214500 +0100" channel="match.2026-10-05.ukraine-v-hungary">
+    <title lang="en">Ukraine v Hungary</title>
+    <sub-title lang="en">Nations League - Group B2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B2: Ukraine v Hungary. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261005194500 +0100" stop="20261005214500 +0100" channel="match.2026-10-05.bosnia-and-herzegovina-v-poland">
+    <title lang="en">Bosnia and Herzegovina v Poland</title>
+    <sub-title lang="en">Nations League - Group B4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B4: Bosnia and Herzegovina v Poland. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261005194500 +0100" stop="20261005214500 +0100" channel="match.2026-10-05.romania-v-sweden">
+    <title lang="en">Romania v Sweden</title>
+    <sub-title lang="en">Nations League - Group B4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B4: Romania v Sweden. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261005194500 +0100" stop="20261005214500 +0100" channel="match.2026-10-05.montenegro-v-armenia">
+    <title lang="en">Montenegro v Armenia</title>
+    <sub-title lang="en">Nations League - Group C2</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C2: Montenegro v Armenia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261006150000 +0100" stop="20261006170000 +0100" channel="match.2026-10-06.kazakhstan-v-faroe-islands">
+    <title lang="en">Kazakhstan v Faroe Islands</title>
+    <sub-title lang="en">Nations League - Group C3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C3: Kazakhstan v Faroe Islands. Kick-off 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261006194500 +0100" stop="20261006214500 +0100" channel="match.2026-10-06.croatia-v-spain">
+    <title lang="en">Croatia v Spain</title>
+    <sub-title lang="en">Nations League - Group A3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A3: Croatia v Spain. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261006194500 +0100" stop="20261006214500 +0100" channel="match.2026-10-06.england-v-czechia">
+    <title lang="en">England v Czechia</title>
+    <sub-title lang="en">Nations League - Group A3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group A3: England v Czechia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261006194500 +0100" stop="20261006214500 +0100" channel="match.2026-10-06.scotland-v-slovenia">
+    <title lang="en">Scotland v Slovenia</title>
+    <sub-title lang="en">Nations League - Group B1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B1: Scotland v Slovenia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261006194500 +0100" stop="20261006214500 +0100" channel="match.2026-10-06.switzerland-v-north-macedonia">
+    <title lang="en">Switzerland v North Macedonia</title>
+    <sub-title lang="en">Nations League - Group B1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group B1: Switzerland v North Macedonia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261006194500 +0100" stop="20261006214500 +0100" channel="match.2026-10-06.albania-v-san-marino">
+    <title lang="en">Albania v San Marino</title>
+    <sub-title lang="en">Nations League - Group C1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C1: Albania v San Marino. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261006194500 +0100" stop="20261006214500 +0100" channel="match.2026-10-06.belarus-v-finland">
+    <title lang="en">Belarus v Finland</title>
+    <sub-title lang="en">Nations League - Group C1</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C1: Belarus v Finland. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261006194500 +0100" stop="20261006214500 +0100" channel="match.2026-10-06.moldova-v-slovakia">
+    <title lang="en">Moldova v Slovakia</title>
+    <sub-title lang="en">Nations League - Group C3</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C3: Moldova v Slovakia. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261006194500 +0100" stop="20261006214500 +0100" channel="match.2026-10-06.estonia-v-iceland">
+    <title lang="en">Estonia v Iceland</title>
+    <sub-title lang="en">Nations League - Group C4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C4: Estonia v Iceland. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+  <programme start="20261006194500 +0100" stop="20261006214500 +0100" channel="match.2026-10-06.luxembourg-v-bulgaria">
+    <title lang="en">Luxembourg v Bulgaria</title>
+    <sub-title lang="en">Nations League - Group C4</sub-title>
+    <desc lang="en">UEFA Nations League 2026/27, Group C4: Luxembourg v Bulgaria. Kick-off 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+  </programme>
+</tv>
