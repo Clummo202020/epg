@@ -36,7 +36,9 @@ COMPETITIONS = {
 }
 
 LOCAL_TZ = ZoneInfo("Europe/London")
-CHANNEL_ID = "arsenal.fixtures.uk"
+# One or more XMLTV channel ids (comma-separated on the command line). Each must match a
+# tvg-id in your playlist; every id gets an identical copy of the guide.
+CHANNEL_IDS = ["arsenal.fixtures.uk", "arsenal.fc"]
 CHANNEL_NAME = "Arsenal FC Fixtures"
 HEADERS = {"User-Agent": "Mozilla/5.0 (arsenal-epg script)"}
 
@@ -120,8 +122,9 @@ def xmltv_time(dt):
 def build_xmltv(fixtures, duration_min, fill=False):
     # Plain <tv> root with no attributes: some strict/naive importers look for a literal "<tv>"
     tv = ET.Element("tv")
-    ch = ET.SubElement(tv, "channel", {"id": CHANNEL_ID})
-    ET.SubElement(ch, "display-name", {"lang": "en"}).text = CHANNEL_NAME
+    for cid in CHANNEL_IDS:
+        ch = ET.SubElement(tv, "channel", {"id": cid})
+        ET.SubElement(ch, "display-name", {"lang": "en"}).text = CHANNEL_NAME
 
     items = []  # (start, stop, title, sub_title, desc)
     cursor = datetime.now(LOCAL_TZ).replace(hour=0, minute=0, second=0, microsecond=0)
@@ -148,35 +151,38 @@ def build_xmltv(fixtures, duration_min, fill=False):
         items.append((start, stop, title, f["competition"], desc))
         cursor = max(cursor, stop)
 
-    for start, stop, title, sub, desc in items:
-        prog = ET.SubElement(tv, "programme", {
-            "start": xmltv_time(start),
-            "stop": xmltv_time(stop),
-            "channel": CHANNEL_ID,
-        })
-        ET.SubElement(prog, "title", {"lang": "en"}).text = title
-        ET.SubElement(prog, "sub-title", {"lang": "en"}).text = sub
-        ET.SubElement(prog, "desc", {"lang": "en"}).text = desc
-        ET.SubElement(prog, "category", {"lang": "en"}).text = "Sports"
-        ET.SubElement(prog, "category", {"lang": "en"}).text = "Football"
+    for cid in CHANNEL_IDS:
+        for start, stop, title, sub, desc in items:
+            prog = ET.SubElement(tv, "programme", {
+                "start": xmltv_time(start),
+                "stop": xmltv_time(stop),
+                "channel": cid,
+            })
+            ET.SubElement(prog, "title", {"lang": "en"}).text = title
+            ET.SubElement(prog, "sub-title", {"lang": "en"}).text = sub
+            ET.SubElement(prog, "desc", {"lang": "en"}).text = desc
+            ET.SubElement(prog, "category", {"lang": "en"}).text = "Sports"
+            ET.SubElement(prog, "category", {"lang": "en"}).text = "Football"
     return tv
 
 
 def main():
-    global CHANNEL_ID, CHANNEL_NAME
+    global CHANNEL_IDS, CHANNEL_NAME
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("-o", "--output", default="arsenal_fixtures.xml")
     ap.add_argument("--duration", type=int, default=120, help="Programme length in minutes (default 120)")
     ap.add_argument("--debug", action="store_true")
-    ap.add_argument("--channel-id", default=CHANNEL_ID,
-                    help="XMLTV channel id; must match the tvg-id of the channel in your playlist")
+    ap.add_argument("--channel-id", default=",".join(CHANNEL_IDS),
+                    help="XMLTV channel id(s), comma-separated; each must match a tvg-id in your "
+                         "playlist (default: %(default)s)")
     ap.add_argument("--channel-name", default=CHANNEL_NAME)
     ap.add_argument("--fill", action="store_true",
                     help="Fill gaps between fixtures with daily 'Next match' programmes so the "
                          "channel always has something airing (helps importers that report an empty EPG)")
     args = ap.parse_args()
 
-    CHANNEL_ID, CHANNEL_NAME = args.channel_id, args.channel_name
+    CHANNEL_IDS = [c.strip() for c in args.channel_id.split(",") if c.strip()]
+    CHANNEL_NAME = args.channel_name
 
     now = datetime.now(timezone.utc)
     seen, fixtures = set(), []
