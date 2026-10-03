@@ -34,9 +34,15 @@
     <category lang="en">Football</category>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261004100000 +0300" stop="20261004120000 +0300" channel="azamsports4.tz">
+    <title lang="en">La Liga / International Feature Match</title>
+    <desc lang="en">Live international marquee coverage.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261005090000 +0300" stop="20261005110000 +0300" channel="azamsports4.tz">
-    <title lang="en">Tanzania Premier League: Simba SC vs Young Africans (The Kariakoo Derby)</title>
-    <desc lang="en">High-stakes marquee weekend derby match live.</desc>
+    <title lang="en">Tanzania Premier League: Simba SC vs Young Africans</title>
+    <desc lang="en">The Kariakoo Derby! High-stakes weekend match live.</desc>
     <category lang="en">Football</category>
     <category lang="en">Sports</category>
   </programme>
