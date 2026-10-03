@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<tv generator-info-name="Azam Sports EPG Generator" generator-info-url="https://www.azamtv.com">
+  <channel id="azamsports1.tz">
+    <display-name lang="en">Azam Sports 1 HD</display-name>
+    <icon src="https://www.azamtv.com/images/channels/azam-sports-1.png" />
+  </channel>
+  <channel id="azamsports2.tz">
+    <display-name lang="en">Azam Sports 2 HD</display-name>
+    <icon src="https://www.azamtv.com/images/channels/azam-sports-2.png" />
+  </channel>
+  <channel id="azamsports3.tz">
+    <display-name lang="en">Azam Sports 3 HD</display-name>
+    <icon src="https://www.azamtv.com/images/channels/azam-sports-3.png" />
+  </channel>
+  <channel id="azamsports4.tz">
+    <display-name lang="en">Azam Sports 4 HD</display-name>
+    <icon src="https://www.azamtv.com/images/channels/azam-sports-4.png" />
+  </channel>
+  <programme start="20261008040000 +0300" stop="20261008060000 +0300" channel="azamsports1.tz">
+    <title lang="en">Tanzania Premier League: Mashujaa vs Polisi Tanzania</title>
+    <desc lang="en">Live coverage of the Tanzania Premier League match.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261008061500 +0300" stop="20261008081500 +0300" channel="azamsports1.tz">
+    <title lang="en">Tanzania Premier League: Pamba vs Geita Gold</title>
+    <desc lang="en">Live action from the Tanzania Premier League clash.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261008083000 +0300" stop="20261008103000 +0300" channel="azamsports1.tz">
+    <title lang="en">Tanzania Premier League: Namungo vs Tabora United</title>
+    <desc lang="en">Catch all the excitement live as Namungo squares off against Tabora United.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261008110000 +0300" stop="20261008130000 +0300" channel="azamsports1.tz">
+    <title lang="en">Tanzania Premier League: Coastal Union vs Azam FC</title>
+    <desc lang="en">Coastal Union faces off against Azam FC in a crucial league fixture.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261009040000 +0300" stop="20261009060000 +0300" channel="azamsports2.tz">
+    <title lang="en">Tanzania Premier League: Singida Big Stars vs JKT Tanzania</title>
+    <desc lang="en">Singida Big Stars takes on JKT Tanzania live.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261009061500 +0300" stop="20261009081500 +0300" channel="azamsports2.tz">
+    <title lang="en">Tanzania Premier League: Mbeya City vs Kagera Sugar</title>
+    <desc lang="en">Live coverage of Mbeya City battling Kagera Sugar.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261010090000 +0300" stop="20261010110000 +0300" channel="azamsports4.tz">
+    <title lang="en">Tanzania Premier League: Simba SC vs Young Africans</title>
+    <desc lang="en">The Kariakoo Derby! Simba SC squares off against Young Africans in the marquee fixture.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+</tv>
