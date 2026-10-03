@@ -10,6 +10,7 @@ def create_azam_epg(output_filename="azam_sports_epg.xml"):
         "generator-info-url": "https://www.azamtv.com"
     })
 
+    # All Azam Sports Channels Included (1 through 4)
     channels = [
         {"id": "azamsports1.tz", "name": "Azam Sports 1 HD", "icon": "https://www.azamtv.com/images/channels/azam-sports-1.png"},
         {"id": "azamsports2.tz", "name": "Azam Sports 2 HD", "icon": "https://www.azamtv.com/images/channels/azam-sports-2.png"},
@@ -24,37 +25,46 @@ def create_azam_epg(output_filename="azam_sports_epg.xml"):
         if "icon" in ch:
             ET.SubElement(channel_elem, "icon", src=ch["icon"])
 
-    # Base schedule relative to "today" dynamically
+    # Base schedule relative to "today" dynamically in local time
     today = datetime.now(eat_tz).replace(hour=0, minute=0, second=0, microsecond=0)
     
     # Helper to format datetime into XMLTV format: YYYYMMDDHHMMSS +ZZZZ
     def format_xmltv(dt):
         return dt.strftime("%Y%m%d%H%M%S +0300")
 
-    # Example dynamic schedule relative to rolling days
+    # Dynamic schedule incorporating channels 1, 2, 3, and 4
     schedule_data = [
-        # Today's Matches
+        # Azam Sports 1 HD - Local League Match
         (
             "azamsports1.tz", 
             format_xmltv(today + timedelta(hours=4)), 
             format_xmltv(today + timedelta(hours=6)), 
-            "Tanzania Premier League: Match Live (Today)", 
+            "Tanzania Premier League: Mashujaa vs Polisi Tanzania", 
             "Live coverage of today's premier league fixture.", "Football"
         ),
+        # Azam Sports 2 HD - Women's Super League / Regional Mix
         (
-            "azamsports1.tz", 
-            format_xmltv(today + timedelta(hours=14)), 
-            format_xmltv(today + timedelta(hours=16)), 
-            "Tanzania Premier League: Evening Showdown", 
-            "Evening live match coverage.", "Football"
+            "azamsports2.tz", 
+            format_xmltv(today + timedelta(hours=6)), 
+            format_xmltv(today + timedelta(hours=8)), 
+            "Women's Super League: Featured Match", 
+            "Live action coverage from the Women's Super League.", "Football"
         ),
-        # Tomorrow's Matches
+        # Azam Sports 3 HD - Kenyan Premier League / Regional Action
+        (
+            "azamsports3.tz", 
+            format_xmltv(today + timedelta(hours=8)), 
+            format_xmltv(today + timedelta(hours=10)), 
+            "Kenyan Premier League: Regional Clash", 
+            "Live broadcast of regional matchups.", "Football"
+        ),
+        # Azam Sports 4 HD - Marquee / International / Derby Match
         (
             "azamsports4.tz", 
             format_xmltv(today + timedelta(days=1, hours=9)), 
             format_xmltv(today + timedelta(days=1, hours=11)), 
-            "Tanzania Premier League: Marquee Derby (Tomorrow)", 
-            "High-stakes weekend derby match live.", "Football"
+            "Tanzania Premier League: Simba SC vs Young Africans (The Kariakoo Derby)", 
+            "High-stakes marquee weekend derby match live.", "Football"
         ),
     ]
 
@@ -73,7 +83,7 @@ def create_azam_epg(output_filename="azam_sports_epg.xml"):
         pass
 
     tree.write(output_filename, encoding="utf-8", xml_declaration=True)
-    print(f"Successfully generated local XMLTV EPG file: {output_filename}")
+    print(f"Successfully generated local XMLTV EPG file with all 4 channels: {output_filename}")
 
 if __name__ == "__main__":
     create_azam_epg()
