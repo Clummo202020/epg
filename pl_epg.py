@@ -172,10 +172,13 @@ def xmltv_time(dt):
     return dt.strftime("%Y%m%d%H%M%S %z")
 
 
-def make_items(fixtures, team_name, duration_min, fill):
+def make_items(fixtures, team_name, duration_min, fill, fill_days=3):
     """Return [(start, stop, title, sub_title, desc), ...] for one team."""
     items = []
     cursor = datetime.now(LOCAL_TZ).replace(hour=0, minute=0, second=0, microsecond=0)
+    # Filler only covers today + the next (fill_days - 1) days; the daily refresh keeps it moving
+    cutoff = datetime.combine(cursor.date() + timedelta(days=fill_days), datetime.min.time(),
+                              tzinfo=LOCAL_TZ)
     for f in fixtures:
         start = f["start"].astimezone(LOCAL_TZ)
         stop = start + timedelta(minutes=duration_min)
@@ -189,7 +192,7 @@ def make_items(fixtures, team_name, duration_min, fill):
             next_txt = start.strftime("%a %d %b %H:%M")
             filler_desc = (f"Next fixture: {f['competition']}: {title}, {next_txt}. "
                            f"Venue: {f['venue']}.")
-            while cursor < start:
+            while cursor < start and cursor < cutoff:
                 midnight = datetime.combine(cursor.date() + timedelta(days=1), datetime.min.time(),
                                             tzinfo=LOCAL_TZ)
                 end = min(midnight, start)
@@ -200,7 +203,7 @@ def make_items(fixtures, team_name, duration_min, fill):
     return items
 
 
-def build_xmltv(team_data, id_map, template, duration_min, fill):
+def build_xmltv(team_data, id_map, template, duration_min, fill, fill_days=3):
     """team_data: [(team_name, fixtures), ...]"""
     tv = ET.Element("tv")
     per_team = []
@@ -213,7 +216,7 @@ def build_xmltv(team_data, id_map, template, duration_min, fill):
             used.add(cid)
             ch = ET.SubElement(tv, "channel", {"id": cid})
             ET.SubElement(ch, "display-name", {"lang": "en"}).text = f"{name} Fixtures"
-        per_team.append((name, ids, make_items(fixtures, name, duration_min, fill)))
+        per_team.append((name, ids, make_items(fixtures, name, duration_min, fill, fill_days)))
 
     for name, ids, items in per_team:
         for cid in ids:
@@ -246,6 +249,9 @@ def main():
     ap.add_argument("--fill", action="store_true",
                     help="Fill gaps between fixtures with daily 'Next match' programmes so every "
                          "channel always has something airing")
+    ap.add_argument("--fill-days", type=int, default=3,
+                    help="With --fill, only add 'Next match' filler for this many days from today "
+                         "(default %(default)s). Keeps the file small; real fixtures are never limited")
     ap.add_argument("--id-template", default="{slug}.fc",
                     help="Channel id pattern for teams not in the id map (default: %(default)s)")
     ap.add_argument("--id-map", help="JSON file mapping team name -> channel id (or list of ids)")
@@ -278,11 +284,12 @@ def main():
         # Don't overwrite a good file with an empty guide
         sys.exit("No upcoming fixtures found (try --debug); output file not written.")
 
-    tv = build_xmltv(team_data, id_map, args.id_template, args.duration, args.fill)
+    tv = build_xmltv(team_data, id_map, args.id_template, args.duration, args.fill, args.fill_days)
     ET.indent(tv)
+    body = re.sub(rb"\n[ \t]+", b"\n", ET.tostring(tv, encoding="utf-8"))  # drop indentation
     with open(args.output, "wb") as fh:
         fh.write(b'<?xml version="1.0" encoding="UTF-8"?>\n')
-        fh.write(ET.tostring(tv, encoding="utf-8"))
+        fh.write(body)
     print(f"Wrote {len(teams)} channels / {total} team fixtures to {args.output}")
 
 
