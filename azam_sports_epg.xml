@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<tv generator-info-name="Azam Sports EPG Generator" generator-info-url="https://www.azamtv.com">
+  <channel id="azamsports1.tz">
+    <display-name lang="en">Azam Sports 1 HD</display-name>
+    <icon src="https://www.azamtv.com/images/channels/azam-sports-1.png" />
+  </channel>
+  <channel id="azamsports2.tz">
+    <display-name lang="en">Azam Sports 2 HD</display-name>
+    <icon src="https://www.azamtv.com/images/channels/azam-sports-2.png" />
+  </channel>
+  <channel id="azamsports3.tz">
+    <display-name lang="en">Azam Sports 3 HD</display-name>
+    <icon src="https://www.azamtv.com/images/channels/azam-sports-3.png" />
+  </channel>
+  <channel id="azamsports4.tz">
+    <display-name lang="en">Azam Sports 4 HD</display-name>
+    <icon src="https://www.azamtv.com/images/channels/azam-sports-4.png" />
+  </channel>
+  <programme start="20261004040000 +0300" stop="20261004060000 +0300" channel="azamsports1.tz">
+    <title lang="en">Tanzania Premier League: Mashujaa vs Polisi Tanzania</title>
+    <desc lang="en">Live coverage of today's premier league fixture.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004060000 +0300" stop="20261004080000 +0300" channel="azamsports2.tz">
+    <title lang="en">Women's Super League: Featured Match</title>
+    <desc lang="en">Live action coverage from the Women's Super League.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004080000 +0300" stop="20261004100000 +0300" channel="azamsports3.tz">
+    <title lang="en">Kenyan Premier League: Regional Clash</title>
+    <desc lang="en">Live broadcast of regional matchups.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004100000 +0300" stop="20261004120000 +0300" channel="azamsports4.tz">
+    <title lang="en">La Liga / International Feature Match</title>
+    <desc lang="en">Live international marquee coverage.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005090000 +0300" stop="20261005110000 +0300" channel="azamsports4.tz">
+    <title lang="en">Tanzania Premier League: Simba SC vs Young Africans</title>
+    <desc lang="en">The Kariakoo Derby! High-stakes weekend match live.</desc>
+    <category lang="en">Football</category>
+    <category lang="en">Sports</category>
+  </programme>
+</tv>
