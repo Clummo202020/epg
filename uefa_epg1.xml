@@ -1,0 +1,1208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="uefa_epg.py" source-info-name="ESPN">
+  <channel id="AC.Milan.uel">
+    <display-name lang="en">AC Milan UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/103.png" />
+  </channel>
+  <channel id="AEK.Athens.ucl">
+    <display-name lang="en">AEK Athens UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/887.png" />
+  </channel>
+  <channel id="AGF.uecl">
+    <display-name lang="en">AGF UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/7853.png" />
+  </channel>
+  <channel id="AS.Monaco.uecl">
+    <display-name lang="en">AS Monaco UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/174.png" />
+  </channel>
+  <channel id="AS.Roma.ucl">
+    <display-name lang="en">AS Roma UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/104.png" />
+  </channel>
+  <channel id="AZ.Alkmaar.uel">
+    <display-name lang="en">AZ Alkmaar UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/140.png" />
+  </channel>
+  <channel id="Ajax.Amsterdam.uecl">
+    <display-name lang="en">Ajax Amsterdam UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/139.png" />
+  </channel>
+  <channel id="Anderlecht.uel">
+    <display-name lang="en">Anderlecht UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/441.png" />
+  </channel>
+  <channel id="Ararat.Armenia.uel">
+    <display-name lang="en">Ararat-Armenia UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/20024.png" />
+  </channel>
+  <channel id="Atalanta.uecl">
+    <display-name lang="en">Atalanta UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/105.png" />
+  </channel>
+  <channel id="Atletico.Madrid.ucl">
+    <display-name lang="en">Atlético Madrid UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/1068.png" />
+  </channel>
+  <channel id="Barcelona.ucl">
+    <display-name lang="en">Barcelona UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/83.png" />
+  </channel>
+  <channel id="Bayer.Leverkusen.uel">
+    <display-name lang="en">Bayer Leverkusen UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/131.png" />
+  </channel>
+  <channel id="Bayern.Munich.ucl">
+    <display-name lang="en">Bayern Munich UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/132.png" />
+  </channel>
+  <channel id="Benfica.uel">
+    <display-name lang="en">Benfica UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/1929.png" />
+  </channel>
+  <channel id="Besiktas.uel">
+    <display-name lang="en">Besiktas UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/1895.png" />
+  </channel>
+  <channel id="Bodo.Glimt.ucl">
+    <display-name lang="en">Bodo/Glimt UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2980.png" />
+  </channel>
+  <channel id="Borac.Banja.Luka.uecl">
+    <display-name lang="en">Borac Banja Luka UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/20710.png" />
+  </channel>
+  <channel id="Borussia.Dortmund.ucl">
+    <display-name lang="en">Borussia Dortmund UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/124.png" />
+  </channel>
+  <channel id="Braga.uecl">
+    <display-name lang="en">Braga UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2994.png" />
+  </channel>
+  <channel id="CSKA.Sofia.uecl">
+    <display-name lang="en">CSKA Sofia UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/10834.png" />
+  </channel>
+  <channel id="CSU.Craiova.uecl">
+    <display-name lang="en">CSU Craiova UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/8089.png" />
+  </channel>
+  <channel id="Celta.Vigo.uel">
+    <display-name lang="en">Celta Vigo UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/85.png" />
+  </channel>
+  <channel id="Celtic.uel">
+    <display-name lang="en">Celtic UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/256.png" />
+  </channel>
+  <channel id="Club.Brugge.ucl">
+    <display-name lang="en">Club Brugge UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/570.png" />
+  </channel>
+  <channel id="Como.ucl">
+    <display-name lang="en">Como UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2572.png" />
+  </channel>
+  <channel id="Dinamo.Zagreb.uel">
+    <display-name lang="en">Dinamo Zagreb UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/597.png" />
+  </channel>
+  <channel id="Egnatia.uecl">
+    <display-name lang="en">Egnatia UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/21943.png" />
+  </channel>
+  <channel id="F.C.Kbenhavn.uecl">
+    <display-name lang="en">F.C. København UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/909.png" />
+  </channel>
+  <channel id="FC.Lugano.uecl">
+    <display-name lang="en">FC Lugano UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/7672.png" />
+  </channel>
+  <channel id="FC.Midtjylland.uecl">
+    <display-name lang="en">FC Midtjylland UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/572.png" />
+  </channel>
+  <channel id="FC.Nordsjlland.uecl">
+    <display-name lang="en">FC Nordsjælland UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/3101.png" />
+  </channel>
+  <channel id="FC.Porto.ucl">
+    <display-name lang="en">FC Porto UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/437.png" />
+  </channel>
+  <channel id="FC.Thun.uecl">
+    <display-name lang="en">FC Thun UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/3024.png" />
+  </channel>
+  <channel id="FC.Twente.uecl">
+    <display-name lang="en">FC Twente UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/152.png" />
+  </channel>
+  <channel id="Fenerbahce.ucl">
+    <display-name lang="en">Fenerbahce UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/436.png" />
+  </channel>
+  <channel id="Ferencvaros.uel">
+    <display-name lang="en">Ferencvaros UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/622.png" />
+  </channel>
+  <channel id="Feyenoord.Rotterdam.ucl">
+    <display-name lang="en">Feyenoord Rotterdam UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/142.png" />
+  </channel>
+  <channel id="Galatasaray.ucl">
+    <display-name lang="en">Galatasaray UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/432.png" />
+  </channel>
+  <channel id="Getafe.uecl">
+    <display-name lang="en">Getafe UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2922.png" />
+  </channel>
+  <channel id="Hajduk.Split.uecl">
+    <display-name lang="en">Hajduk Split UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/489.png" />
+  </channel>
+  <channel id="Hapoel.Be.er.uel">
+    <display-name lang="en">Hapoel Be'er UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/13083.png" />
+  </channel>
+  <channel id="Heart.of.Midlothian.uecl">
+    <display-name lang="en">Heart of Midlothian UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/262.png" />
+  </channel>
+  <channel id="Iberia.1999.uecl">
+    <display-name lang="en">Iberia 1999 UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/20025.png" />
+  </channel>
+  <channel id="Inter.D.Escaldes.uecl">
+    <display-name lang="en">Inter D'Escaldes UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/20703.png" />
+  </channel>
+  <channel id="Internazionale.ucl">
+    <display-name lang="en">Internazionale UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/110.png" />
+  </channel>
+  <channel id="Jablonec.uecl">
+    <display-name lang="en">Jablonec UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/7922.png" />
+  </channel>
+  <channel id="Jagiellonia.Bialystok.uel">
+    <display-name lang="en">Jagiellonia Bialystok UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/11505.png" />
+  </channel>
+  <channel id="Juventus.uel">
+    <display-name lang="en">Juventus UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/111.png" />
+  </channel>
+  <channel id="KAA.Gent.uecl">
+    <display-name lang="en">KAA Gent UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/3611.png" />
+  </channel>
+  <channel id="Kairat.Almaty.uecl">
+    <display-name lang="en">Kairat Almaty UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2528.png" />
+  </channel>
+  <channel id="KuPS.Kuopio.uecl">
+    <display-name lang="en">KuPS Kuopio UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/8169.png" />
+  </channel>
+  <channel id="Lech.Poznan.uel">
+    <display-name lang="en">Lech Poznan UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2990.png" />
+  </channel>
+  <channel id="Lens.ucl">
+    <display-name lang="en">Lens UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/175.png" />
+  </channel>
+  <channel id="Levski.Sofia.uel">
+    <display-name lang="en">Levski Sofia UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/490.png" />
+  </channel>
+  <channel id="Lillestrom.uel">
+    <display-name lang="en">Lillestrom UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/987.png" />
+  </channel>
+  <channel id="Lincoln.Red.Imps.uecl">
+    <display-name lang="en">Lincoln Red Imps UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/17856.png" />
+  </channel>
+  <channel id="Marseille.uel">
+    <display-name lang="en">Marseille UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/176.png" />
+  </channel>
+  <channel id="Mjallby.AIF.uecl">
+    <display-name lang="en">Mjällby AIF UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/20301.png" />
+  </channel>
+  <channel id="NEC.Nijmegen.uel">
+    <display-name lang="en">NEC Nijmegen UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/147.png" />
+  </channel>
+  <channel id="NK.Celje.uel">
+    <display-name lang="en">NK Celje UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/3362.png" />
+  </channel>
+  <channel id="Napoli.ucl">
+    <display-name lang="en">Napoli UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/114.png" />
+  </channel>
+  <channel id="OFI.Crete.uel">
+    <display-name lang="en">OFI Crete UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/1010.png" />
+  </channel>
+  <channel id="Olympiacos.uel">
+    <display-name lang="en">Olympiacos UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/435.png" />
+  </channel>
+  <channel id="Omonia.Nicosia.uel">
+    <display-name lang="en">Omonia Nicosia UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/617.png" />
+  </channel>
+  <channel id="PSV.Eindhoven.ucl">
+    <display-name lang="en">PSV Eindhoven UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/148.png" />
+  </channel>
+  <channel id="Pafos.uecl">
+    <display-name lang="en">Pafos UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/22281.png" />
+  </channel>
+  <channel id="Panathinaikos.uecl">
+    <display-name lang="en">Panathinaikos UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/443.png" />
+  </channel>
+  <channel id="Paris.Saint.Germain.ucl">
+    <display-name lang="en">Paris Saint-Germain UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/160.png" />
+  </channel>
+  <channel id="RB.Leipzig.ucl">
+    <display-name lang="en">RB Leipzig UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/11420.png" />
+  </channel>
+  <channel id="RB.Salzburg.uel">
+    <display-name lang="en">RB Salzburg UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2790.png" />
+  </channel>
+  <channel id="Real.Betis.ucl">
+    <display-name lang="en">Real Betis UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/244.png" />
+  </channel>
+  <channel id="Real.Madrid.ucl">
+    <display-name lang="en">Real Madrid UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/86.png" />
+  </channel>
+  <channel id="Real.Sociedad.uel">
+    <display-name lang="en">Real Sociedad UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/89.png" />
+  </channel>
+  <channel id="Red.Star.Belgrade.uecl">
+    <display-name lang="en">Red Star Belgrade UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2290.png" />
+  </channel>
+  <channel id="Riga.FC.uecl">
+    <display-name lang="en">Riga FC UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/19246.png" />
+  </channel>
+  <channel id="SC.Freiburg.uecl">
+    <display-name lang="en">SC Freiburg UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/126.png" />
+  </channel>
+  <channel id="SK.Brann.uecl">
+    <display-name lang="en">SK Brann UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/620.png" />
+  </channel>
+  <channel id="Sabah.FK.ucl">
+    <display-name lang="en">Sabah FK UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/21922.png" />
+  </channel>
+  <channel id="Shakhtar.Donetsk.ucl">
+    <display-name lang="en">Shakhtar Donetsk UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/493.png" />
+  </channel>
+  <channel id="Sint.Truidense.uecl">
+    <display-name lang="en">Sint-Truidense UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/936.png" />
+  </channel>
+  <channel id="Slavia.Prague.ucl">
+    <display-name lang="en">Slavia Prague UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/494.png" />
+  </channel>
+  <channel id="Slovan.Bratislava.ucl">
+    <display-name lang="en">Slovan Bratislava UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/521.png" />
+  </channel>
+  <channel id="Sparta.Prague.uel">
+    <display-name lang="en">Sparta Prague UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/433.png" />
+  </channel>
+  <channel id="Sporting.CP.ucl">
+    <display-name lang="en">Sporting CP UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2250.png" />
+  </channel>
+  <channel id="Stade.Rennais.uel">
+    <display-name lang="en">Stade Rennais UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/169.png" />
+  </channel>
+  <channel id="TSG.Hoffenheim.uel">
+    <display-name lang="en">TSG Hoffenheim UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/7911.png" />
+  </channel>
+  <channel id="Trabzonspor.uecl">
+    <display-name lang="en">Trabzonspor UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/997.png" />
+  </channel>
+  <channel id="Union.St.Gilloise.uel">
+    <display-name lang="en">Union St.-Gilloise UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/5807.png" />
+  </channel>
+  <channel id="VfB.Stuttgart.ucl">
+    <display-name lang="en">VfB Stuttgart UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/134.png" />
+  </channel>
+  <channel id="Viking.FK.ucl">
+    <display-name lang="en">Viking FK UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/510.png" />
+  </channel>
+  <channel id="Viktoria.Plzen.uel">
+    <display-name lang="en">Viktoria Plzen UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/11706.png" />
+  </channel>
+  <channel id="Villarreal.ucl">
+    <display-name lang="en">Villarreal UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/102.png" />
+  </channel>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="AC.Milan.uel">
+    <title lang="en">RB Salzburg v AC Milan</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: RB Salzburg v AC Milan. Red Bull Arena Salzburg, Salzburg. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="AEK.Athens.ucl">
+    <title lang="en">Shakhtar Donetsk v AEK Athens</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Shakhtar Donetsk v AEK Athens. Stamford Bridge, London. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="AGF.uecl">
+    <title lang="en">KAA Gent v AGF</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: KAA Gent v AGF. Ghelamco Arena, Ghent. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="AS.Monaco.uecl">
+    <title lang="en">CSKA Sofia v AS Monaco</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: CSKA Sofia v AS Monaco. Vasil Levski National Stadium, Sofia. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="AS.Roma.ucl">
+    <title lang="en">AS Roma v Real Madrid</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: AS Roma v Real Madrid. Olimpico, Roma. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020200000 +0100" stop="20261020220000 +0100" channel="AS.Roma.ucl">
+    <title lang="en">AS Roma v Slovan Bratislava</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: AS Roma v Slovan Bratislava. Olimpico, Roma. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="AZ.Alkmaar.uel">
+    <title lang="en">AZ Alkmaar v Hapoel Be'er</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: AZ Alkmaar v Hapoel Be'er. AFAS Stadion, Alkmaar. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Ajax.Amsterdam.uecl">
+    <title lang="en">Hajduk Split v Ajax Amsterdam</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Hajduk Split v Ajax Amsterdam. Stadion Poljud, Split. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Anderlecht.uel">
+    <title lang="en">Dinamo Zagreb v Anderlecht</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Dinamo Zagreb v Anderlecht. Maksimir Stadium, Zagreb. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Ararat.Armenia.uel">
+    <title lang="en">Jagiellonia Bialystok v Ararat-Armenia</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Jagiellonia Bialystok v Ararat-Armenia. Stadion Miejski Bialystok, Bialystok. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Atalanta.uecl">
+    <title lang="en">Atalanta v Pafos</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Atalanta v Pafos. New Balance Arena, Bergamo. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261020200000 +0100" stop="20261020220000 +0100" channel="Atletico.Madrid.ucl">
+    <title lang="en">VfB Stuttgart v Atlético Madrid</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: VfB Stuttgart v Atlético Madrid. MHPArena, Stuttgart. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Barcelona.ucl">
+    <title lang="en">Galatasaray v Barcelona</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Galatasaray v Barcelona. RAMS Park, Istanbul. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020200000 +0100" stop="20261020220000 +0100" channel="Barcelona.ucl">
+    <title lang="en">Paris Saint-Germain v Barcelona</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: Paris Saint-Germain v Barcelona. Parc des Princes, Paris. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Bayer.Leverkusen.uel">
+    <title lang="en">Lech Poznan v Bayer Leverkusen</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Lech Poznan v Bayer Leverkusen. Municipal Stadium-Poznan, Poznan. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Bayern.Munich.ucl">
+    <title lang="en">Viking FK v Bayern Munich</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Viking FK v Bayern Munich. Viking Stadion, Stavanger. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Benfica.uel">
+    <title lang="en">Benfica v Celtic</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Benfica v Celtic. Estádio da Luz, Lisbon. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Besiktas.uel">
+    <title lang="en">TSG Hoffenheim v Besiktas</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: TSG Hoffenheim v Besiktas. PreZero Arena, Sinsheim. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="Bodo.Glimt.ucl">
+    <title lang="en">Bodo/Glimt v Borussia Dortmund</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Bodo/Glimt v Borussia Dortmund. Aspmyra Stadion, Bodø/Glimt. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020200000 +0100" stop="20261020220000 +0100" channel="Bodo.Glimt.ucl">
+    <title lang="en">Napoli v Bodo/Glimt</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: Napoli v Bodo/Glimt. Stadio Diego Armando Maradona, Napoli. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Borac.Banja.Luka.uecl">
+    <title lang="en">Panathinaikos v Borac Banja Luka</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Panathinaikos v Borac Banja Luka. Athens Olympic Stadium, Athens. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="Borussia.Dortmund.ucl">
+    <title lang="en">Bodo/Glimt v Borussia Dortmund</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Bodo/Glimt v Borussia Dortmund. Aspmyra Stadion, Bodø/Glimt. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020174500 +0100" stop="20261020194500 +0100" channel="Borussia.Dortmund.ucl">
+    <title lang="en">Sabah FK v Borussia Dortmund</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: Sabah FK v Borussia Dortmund. Baku Olympic Stadium, Baku. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Braga.uecl">
+    <title lang="en">F.C. København v Braga</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: F.C. København v Braga. Parken Stadium, Copenhagen. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="CSKA.Sofia.uecl">
+    <title lang="en">CSKA Sofia v AS Monaco</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: CSKA Sofia v AS Monaco. Vasil Levski National Stadium, Sofia. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="CSU.Craiova.uecl">
+    <title lang="en">CSU Craiova v Getafe</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: CSU Craiova v Getafe. Stadionul Ion Oblemenco, Craiova. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Celta.Vigo.uel">
+    <title lang="en">Celta Vigo v Juventus</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Celta Vigo v Juventus. Balaidos, Vigo. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Celtic.uel">
+    <title lang="en">Benfica v Celtic</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Benfica v Celtic. Estádio da Luz, Lisbon. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Club.Brugge.ucl">
+    <title lang="en">Internazionale v Club Brugge</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Internazionale v Club Brugge. San Siro, Milano. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261014174500 +0100" stop="20261014194500 +0100" channel="Como.ucl">
+    <title lang="en">Feyenoord Rotterdam v Como</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Feyenoord Rotterdam v Como. De Kuip, Rotterdam. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Dinamo.Zagreb.uel">
+    <title lang="en">Dinamo Zagreb v Anderlecht</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Dinamo Zagreb v Anderlecht. Maksimir Stadium, Zagreb. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Egnatia.uecl">
+    <title lang="en">Egnatia v FC Midtjylland</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Egnatia v FC Midtjylland. Air Albania Stadium, Tirana. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="F.C.Kbenhavn.uecl">
+    <title lang="en">F.C. København v Braga</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: F.C. København v Braga. Parken Stadium, Copenhagen. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="FC.Lugano.uecl">
+    <title lang="en">FC Lugano v Red Star Belgrade</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: FC Lugano v Red Star Belgrade. AIL Arena, Lugano. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="FC.Midtjylland.uecl">
+    <title lang="en">Egnatia v FC Midtjylland</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Egnatia v FC Midtjylland. Air Albania Stadium, Tirana. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="FC.Nordsjlland.uecl">
+    <title lang="en">Heart of Midlothian v FC Nordsjælland</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Heart of Midlothian v FC Nordsjælland. Tynecastle Park, Edinburgh. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="FC.Porto.ucl">
+    <title lang="en">Real Betis v FC Porto</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Real Betis v FC Porto. Estadio La Cartuja, Sevilla. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020200000 +0100" stop="20261020220000 +0100" channel="FC.Porto.ucl">
+    <title lang="en">FC Porto v PSV Eindhoven</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: FC Porto v PSV Eindhoven. Estádio do Dragão, Porto. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="FC.Thun.uecl">
+    <title lang="en">FC Twente v FC Thun</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: FC Twente v FC Thun. De Grolsch Veste, Enschede. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="FC.Twente.uecl">
+    <title lang="en">FC Twente v FC Thun</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: FC Twente v FC Thun. De Grolsch Veste, Enschede. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261020174500 +0100" stop="20261020194500 +0100" channel="Fenerbahce.ucl">
+    <title lang="en">Fenerbahce v Slavia Prague</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: Fenerbahce v Slavia Prague. Şükrü Saracoğlu Stadium, Istanbul. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Ferencvaros.uel">
+    <title lang="en">Ferencvaros v Viktoria Plzen</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Ferencvaros v Viktoria Plzen. Groupama Arena, Budapest. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261014174500 +0100" stop="20261014194500 +0100" channel="Feyenoord.Rotterdam.ucl">
+    <title lang="en">Feyenoord Rotterdam v Como</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Feyenoord Rotterdam v Como. De Kuip, Rotterdam. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Galatasaray.ucl">
+    <title lang="en">Galatasaray v Barcelona</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Galatasaray v Barcelona. RAMS Park, Istanbul. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Getafe.uecl">
+    <title lang="en">CSU Craiova v Getafe</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: CSU Craiova v Getafe. Stadionul Ion Oblemenco, Craiova. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Hajduk.Split.uecl">
+    <title lang="en">Hajduk Split v Ajax Amsterdam</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Hajduk Split v Ajax Amsterdam. Stadion Poljud, Split. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Hapoel.Be.er.uel">
+    <title lang="en">AZ Alkmaar v Hapoel Be'er</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: AZ Alkmaar v Hapoel Be'er. AFAS Stadion, Alkmaar. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Heart.of.Midlothian.uecl">
+    <title lang="en">Heart of Midlothian v FC Nordsjælland</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Heart of Midlothian v FC Nordsjælland. Tynecastle Park, Edinburgh. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Iberia.1999.uecl">
+    <title lang="en">Sint-Truidense v Iberia 1999</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Sint-Truidense v Iberia 1999. Daio Wasabi Stayen Stadium, Sint-Truiden. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Inter.D.Escaldes.uecl">
+    <title lang="en">Mjällby AIF v Inter D'Escaldes</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Mjällby AIF v Inter D'Escaldes. Olympia, Helsingborg. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Internazionale.ucl">
+    <title lang="en">Internazionale v Club Brugge</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Internazionale v Club Brugge. San Siro, Milano. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Jablonec.uecl">
+    <title lang="en">SC Freiburg v Jablonec</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: SC Freiburg v Jablonec. Europa-Park Stadion, Freiburg im Breisgau. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Jagiellonia.Bialystok.uel">
+    <title lang="en">Jagiellonia Bialystok v Ararat-Armenia</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Jagiellonia Bialystok v Ararat-Armenia. Stadion Miejski Bialystok, Bialystok. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Juventus.uel">
+    <title lang="en">Celta Vigo v Juventus</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Celta Vigo v Juventus. Balaidos, Vigo. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="KAA.Gent.uecl">
+    <title lang="en">KAA Gent v AGF</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: KAA Gent v AGF. Ghelamco Arena, Ghent. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Kairat.Almaty.uecl">
+    <title lang="en">Riga FC v Kairat Almaty</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Riga FC v Kairat Almaty. Skonto Stadions, Riga. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="KuPS.Kuopio.uecl">
+    <title lang="en">KuPS Kuopio v Trabzonspor</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: KuPS Kuopio v Trabzonspor. Tammelan Stadion, Tampere. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Lech.Poznan.uel">
+    <title lang="en">Lech Poznan v Bayer Leverkusen</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Lech Poznan v Bayer Leverkusen. Municipal Stadium-Poznan, Poznan. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261013174500 +0100" stop="20261013194500 +0100" channel="Lens.ucl">
+    <title lang="en">Lens v Sporting CP</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Lens v Sporting CP. Stade Bollaert-Delelis, Lens. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Levski.Sofia.uel">
+    <title lang="en">NEC Nijmegen v Levski Sofia</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: NEC Nijmegen v Levski Sofia. Goffertstadion, Nijmegen. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Lillestrom.uel">
+    <title lang="en">Sparta Prague v Lillestrom</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Sparta Prague v Lillestrom. Generali Arena, Prague. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Lincoln.Red.Imps.uecl">
+    <title lang="en">SK Brann v Lincoln Red Imps</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: SK Brann v Lincoln Red Imps. Brann Stadium, Bergen. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Marseille.uel">
+    <title lang="en">Marseille v Olympiacos</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Marseille v Olympiacos. Stade Vélodrome, Marseille. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Mjallby.AIF.uecl">
+    <title lang="en">Mjällby AIF v Inter D'Escaldes</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Mjällby AIF v Inter D'Escaldes. Olympia, Helsingborg. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="NEC.Nijmegen.uel">
+    <title lang="en">NEC Nijmegen v Levski Sofia</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: NEC Nijmegen v Levski Sofia. Goffertstadion, Nijmegen. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="NK.Celje.uel">
+    <title lang="en">NK Celje v Omonia Nicosia</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: NK Celje v Omonia Nicosia. Stadion Z'dezele, Celje. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Napoli.ucl">
+    <title lang="en">Villarreal v Napoli</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Villarreal v Napoli. Estadio de la Cerámica, Villarreal. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020200000 +0100" stop="20261020220000 +0100" channel="Napoli.ucl">
+    <title lang="en">Napoli v Bodo/Glimt</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: Napoli v Bodo/Glimt. Stadio Diego Armando Maradona, Napoli. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="OFI.Crete.uel">
+    <title lang="en">Stade Rennais v OFI Crete</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Stade Rennais v OFI Crete. Roazhon Park, Rennes. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Olympiacos.uel">
+    <title lang="en">Marseille v Olympiacos</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Marseille v Olympiacos. Stade Vélodrome, Marseille. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Omonia.Nicosia.uel">
+    <title lang="en">NK Celje v Omonia Nicosia</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: NK Celje v Omonia Nicosia. Stadion Z'dezele, Celje. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="PSV.Eindhoven.ucl">
+    <title lang="en">RB Leipzig v PSV Eindhoven</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: RB Leipzig v PSV Eindhoven. Red Bull Arena, Leipzig. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020200000 +0100" stop="20261020220000 +0100" channel="PSV.Eindhoven.ucl">
+    <title lang="en">FC Porto v PSV Eindhoven</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: FC Porto v PSV Eindhoven. Estádio do Dragão, Porto. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Pafos.uecl">
+    <title lang="en">Atalanta v Pafos</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Atalanta v Pafos. New Balance Arena, Bergamo. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Panathinaikos.uecl">
+    <title lang="en">Panathinaikos v Borac Banja Luka</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Panathinaikos v Borac Banja Luka. Athens Olympic Stadium, Athens. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261020200000 +0100" stop="20261020220000 +0100" channel="Paris.Saint.Germain.ucl">
+    <title lang="en">Paris Saint-Germain v Barcelona</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: Paris Saint-Germain v Barcelona. Parc des Princes, Paris. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="RB.Leipzig.ucl">
+    <title lang="en">RB Leipzig v PSV Eindhoven</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: RB Leipzig v PSV Eindhoven. Red Bull Arena, Leipzig. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="RB.Salzburg.uel">
+    <title lang="en">RB Salzburg v AC Milan</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: RB Salzburg v AC Milan. Red Bull Arena Salzburg, Salzburg. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="Real.Betis.ucl">
+    <title lang="en">Real Betis v FC Porto</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Real Betis v FC Porto. Estadio La Cartuja, Sevilla. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="Real.Madrid.ucl">
+    <title lang="en">AS Roma v Real Madrid</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: AS Roma v Real Madrid. Olimpico, Roma. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Real.Sociedad.uel">
+    <title lang="en">Union St.-Gilloise v Real Sociedad</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Union St.-Gilloise v Real Sociedad. King Power at Den Dreef Stadion, Leuven. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Red.Star.Belgrade.uecl">
+    <title lang="en">FC Lugano v Red Star Belgrade</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: FC Lugano v Red Star Belgrade. AIL Arena, Lugano. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Riga.FC.uecl">
+    <title lang="en">Riga FC v Kairat Almaty</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Riga FC v Kairat Almaty. Skonto Stadions, Riga. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="SC.Freiburg.uecl">
+    <title lang="en">SC Freiburg v Jablonec</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: SC Freiburg v Jablonec. Europa-Park Stadion, Freiburg im Breisgau. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="SK.Brann.uecl">
+    <title lang="en">SK Brann v Lincoln Red Imps</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: SK Brann v Lincoln Red Imps. Brann Stadium, Bergen. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261013174500 +0100" stop="20261013194500 +0100" channel="Sabah.FK.ucl">
+    <title lang="en">Sabah FK v Slavia Prague</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Sabah FK v Slavia Prague. Baku Olympic Stadium, Baku. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020174500 +0100" stop="20261020194500 +0100" channel="Sabah.FK.ucl">
+    <title lang="en">Sabah FK v Borussia Dortmund</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: Sabah FK v Borussia Dortmund. Baku Olympic Stadium, Baku. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="Shakhtar.Donetsk.ucl">
+    <title lang="en">Shakhtar Donetsk v AEK Athens</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Shakhtar Donetsk v AEK Athens. Stamford Bridge, London. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Sint.Truidense.uecl">
+    <title lang="en">Sint-Truidense v Iberia 1999</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Sint-Truidense v Iberia 1999. Daio Wasabi Stayen Stadium, Sint-Truiden. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261013174500 +0100" stop="20261013194500 +0100" channel="Slavia.Prague.ucl">
+    <title lang="en">Sabah FK v Slavia Prague</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Sabah FK v Slavia Prague. Baku Olympic Stadium, Baku. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020174500 +0100" stop="20261020194500 +0100" channel="Slavia.Prague.ucl">
+    <title lang="en">Fenerbahce v Slavia Prague</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: Fenerbahce v Slavia Prague. Şükrü Saracoğlu Stadium, Istanbul. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="Slovan.Bratislava.ucl">
+    <title lang="en">Slovan Bratislava v VfB Stuttgart</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Slovan Bratislava v VfB Stuttgart. Národny Futbalovy Stadión, Bratislava. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020200000 +0100" stop="20261020220000 +0100" channel="Slovan.Bratislava.ucl">
+    <title lang="en">AS Roma v Slovan Bratislava</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: AS Roma v Slovan Bratislava. Olimpico, Roma. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Sparta.Prague.uel">
+    <title lang="en">Sparta Prague v Lillestrom</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Sparta Prague v Lillestrom. Generali Arena, Prague. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261013174500 +0100" stop="20261013194500 +0100" channel="Sporting.CP.ucl">
+    <title lang="en">Lens v Sporting CP</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Lens v Sporting CP. Stade Bollaert-Delelis, Lens. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Stade.Rennais.uel">
+    <title lang="en">Stade Rennais v OFI Crete</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Stade Rennais v OFI Crete. Roazhon Park, Rennes. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="TSG.Hoffenheim.uel">
+    <title lang="en">TSG Hoffenheim v Besiktas</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: TSG Hoffenheim v Besiktas. PreZero Arena, Sinsheim. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Trabzonspor.uecl">
+    <title lang="en">KuPS Kuopio v Trabzonspor</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: KuPS Kuopio v Trabzonspor. Tammelan Stadion, Tampere. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Union.St.Gilloise.uel">
+    <title lang="en">Union St.-Gilloise v Real Sociedad</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Union St.-Gilloise v Real Sociedad. King Power at Den Dreef Stadion, Leuven. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="VfB.Stuttgart.ucl">
+    <title lang="en">Slovan Bratislava v VfB Stuttgart</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Slovan Bratislava v VfB Stuttgart. Národny Futbalovy Stadión, Bratislava. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261020200000 +0100" stop="20261020220000 +0100" channel="VfB.Stuttgart.ucl">
+    <title lang="en">VfB Stuttgart v Atlético Madrid</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 20 Oct. UEFA Champions League: VfB Stuttgart v Atlético Madrid. MHPArena, Stuttgart. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Viking.FK.ucl">
+    <title lang="en">Viking FK v Bayern Munich</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Viking FK v Bayern Munich. Viking Stadion, Stavanger. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Viktoria.Plzen.uel">
+    <title lang="en">Ferencvaros v Viktoria Plzen</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Ferencvaros v Viktoria Plzen. Groupama Arena, Budapest. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Villarreal.ucl">
+    <title lang="en">Villarreal v Napoli</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Villarreal v Napoli. Estadio de la Cerámica, Villarreal. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+</tv>

@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="scottish_epg.py" source-info-name="ESPN">
+  <channel id="Aberdeen.prem">
+    <display-name lang="en">Aberdeen Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/263.png" />
+  </channel>
+  <channel id="Alloa.Athletic.scc">
+    <display-name lang="en">Alloa Athletic Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/403.png" />
+  </channel>
+  <channel id="Annan.Athletic.scc">
+    <display-name lang="en">Annan Athletic Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/7166.png" />
+  </channel>
+  <channel id="Arbroath.champ">
+    <display-name lang="en">Arbroath Scottish Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/252.png" />
+  </channel>
+  <channel id="Ayr.Utd.champ">
+    <display-name lang="en">Ayr Utd Scottish Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/248.png" />
+  </channel>
+  <channel id="Celtic.prem">
+    <display-name lang="en">Celtic Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/256.png" />
+  </channel>
+  <channel id="Celtic.uel">
+    <display-name lang="en">Celtic UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/256.png" />
+  </channel>
+  <channel id="Clyde.scc">
+    <display-name lang="en">Clyde Scottish Challenge Cup</display-name>
+  </channel>
+  <channel id="Cove.Rangers.scc">
+    <display-name lang="en">Cove Rangers Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2613.png" />
+  </channel>
+  <channel id="Dumbarton.scc">
+    <display-name lang="en">Dumbarton Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/415.png" />
+  </channel>
+  <channel id="Dundee.prem">
+    <display-name lang="en">Dundee Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/261.png" />
+  </channel>
+  <channel id="Dundee.Utd.prem">
+    <display-name lang="en">Dundee Utd Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/264.png" />
+  </channel>
+  <channel id="Dunfermline.Athletic.champ">
+    <display-name lang="en">Dunfermline Athletic Scottish Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/265.png" />
+  </channel>
+  <channel id="East.Fife.scc">
+    <display-name lang="en">East Fife Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/421.png" />
+  </channel>
+  <channel id="East.Kilbride.scc">
+    <display-name lang="en">East Kilbride Scottish Challenge Cup</display-name>
+  </channel>
+  <channel id="Edinburgh.City.scc">
+    <display-name lang="en">Edinburgh City Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2832.png" />
+  </channel>
+  <channel id="Elgin.City.scc">
+    <display-name lang="en">Elgin City Scottish Challenge Cup</display-name>
+  </channel>
+  <channel id="Falkirk.prem">
+    <display-name lang="en">Falkirk Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/254.png" />
+  </channel>
+  <channel id="Forfar.Athletic.scc">
+    <display-name lang="en">Forfar Athletic Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/408.png" />
+  </channel>
+  <channel id="Greenock.Morton.champ">
+    <display-name lang="en">Greenock Morton Scottish Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/411.png" />
+  </channel>
+  <channel id="Hamilton.Academical.scc">
+    <display-name lang="en">Hamilton Academical Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/409.png" />
+  </channel>
+  <channel id="Hearts.prem">
+    <display-name lang="en">Hearts Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/262.png" />
+  </channel>
+  <channel id="Hearts.uecl">
+    <display-name lang="en">Hearts UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/262.png" />
+  </channel>
+  <channel id="Hibernian.prem">
+    <display-name lang="en">Hibernian Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/258.png" />
+  </channel>
+  <channel id="Inverness.CT.champ">
+    <display-name lang="en">Inverness CT Scottish Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/253.png" />
+  </channel>
+  <channel id="Kelty.Hearts.scc">
+    <display-name lang="en">Kelty Hearts Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/18018.png" />
+  </channel>
+  <channel id="Kilmarnock.prem">
+    <display-name lang="en">Kilmarnock Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/260.png" />
+  </channel>
+  <channel id="Livingston.champ">
+    <display-name lang="en">Livingston Scottish Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/259.png" />
+  </channel>
+  <channel id="Montrose.scc">
+    <display-name lang="en">Montrose Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/414.png" />
+  </channel>
+  <channel id="Motherwell.prem">
+    <display-name lang="en">Motherwell Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/266.png" />
+  </channel>
+  <channel id="Partick.Thistle.champ">
+    <display-name lang="en">Partick Thistle Scottish Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/247.png" />
+  </channel>
+  <channel id="Peterhead.scc">
+    <display-name lang="en">Peterhead Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/416.png" />
+  </channel>
+  <channel id="Queen.of.the.South.scc">
+    <display-name lang="en">Queen of the South Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/406.png" />
+  </channel>
+  <channel id="Queen.s.Park.champ">
+    <display-name lang="en">Queen's Park Scottish Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/422.png" />
+  </channel>
+  <channel id="Raith.Rovers.champ">
+    <display-name lang="en">Raith Rovers Scottish Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/249.png" />
+  </channel>
+  <channel id="Rangers.prem">
+    <display-name lang="en">Rangers Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/257.png" />
+  </channel>
+  <channel id="Spartans.FC.scc">
+    <display-name lang="en">Spartans FC Scottish Challenge Cup</display-name>
+  </channel>
+  <channel id="St.Johnstone.prem">
+    <display-name lang="en">St Johnstone Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/267.png" />
+  </channel>
+  <channel id="St.Mirren.prem">
+    <display-name lang="en">St Mirren Scottish Premiership</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/250.png" />
+  </channel>
+  <channel id="Stenhousemuir.champ">
+    <display-name lang="en">Stenhousemuir Scottish Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/405.png" />
+  </channel>
+  <channel id="Stirling.Albion.scc">
+    <display-name lang="en">Stirling Albion Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/417.png" />
+  </channel>
+  <channel id="Stranraer.scc">
+    <display-name lang="en">Stranraer Scottish Challenge Cup</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/407.png" />
+  </channel>
+  <programme start="20261011140000 +0100" stop="20261011160000 +0100" channel="Aberdeen.prem">
+    <title lang="en">Aberdeen v St Johnstone</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sun 11 Oct. Scottish Premiership: Aberdeen v St Johnstone. Pittodrie Stadium, Aberdeen. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Aberdeen.prem">
+    <title lang="en">Aberdeen v St Mirren</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Premiership: Aberdeen v St Mirren. Pittodrie Stadium, Aberdeen. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Alloa.Athletic.scc">
+    <title lang="en">Annan Athletic v Alloa Athletic</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Annan Athletic v Alloa Athletic. Galabank, Annan. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Annan.Athletic.scc">
+    <title lang="en">Annan Athletic v Alloa Athletic</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Annan Athletic v Alloa Athletic. Galabank, Annan. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Arbroath.champ">
+    <title lang="en">Inverness CT v Arbroath</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Championship: Inverness CT v Arbroath. Caledonian Stadium, Inverness. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261016193000 +0100" stop="20261016213000 +0100" channel="Ayr.Utd.champ">
+    <title lang="en">Ayr Utd v Partick Thistle</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Fri 16 Oct. Scottish Championship: Ayr Utd v Partick Thistle. Somerset Park, Ayr. Kick-off: 19:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261011120000 +0100" stop="20261011140000 +0100" channel="Celtic.prem">
+    <title lang="en">Motherwell v Celtic</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sun 11 Oct. Scottish Premiership: Motherwell v Celtic. Fir Park, Motherwell. Kick-off: 12:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261018150000 +0100" stop="20261018170000 +0100" channel="Celtic.prem">
+    <title lang="en">Celtic v Hearts</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sun 18 Oct. Scottish Premiership: Celtic v Hearts. Celtic Park, Glasgow. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Celtic.uel">
+    <title lang="en">Benfica v Celtic</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Benfica v Celtic. Estádio da Luz, Lisbon. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Clyde.scc">
+    <title lang="en">Clyde v Clachnacuddin</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Clyde v Clachnacuddin. New Douglas Park, Hamilton. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Cove.Rangers.scc">
+    <title lang="en">Cove Rangers v Formartine Utd</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Cove Rangers v Formartine Utd. Balmoral Stadium, Aberdeen. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Dumbarton.scc">
+    <title lang="en">Clydebank v Dumbarton</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Clydebank v Dumbarton. Holm Park, Clydebank. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261017200000 +0100" stop="20261017220000 +0100" channel="Dundee.prem">
+    <title lang="en">Dundee v Rangers</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Premiership: Dundee v Rangers. The Scot Foam Stadium at Dens Park, Dundee. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Dundee.Utd.prem">
+    <title lang="en">St Johnstone v Dundee Utd</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Premiership: St Johnstone v Dundee Utd. McDiarmid Park, Perth. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Dunfermline.Athletic.champ">
+    <title lang="en">Dunfermline Athletic v Livingston</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Championship: Dunfermline Athletic v Livingston. KDM Group East End Park, Dunfermline. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261020194500 +0100" stop="20261020214500 +0100" channel="Dunfermline.Athletic.champ">
+    <title lang="en">Dunfermline Athletic v Partick Thistle</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Tue 20 Oct. Scottish Championship: Dunfermline Athletic v Partick Thistle. KDM Group East End Park, Dunfermline. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="East.Fife.scc">
+    <title lang="en">Cumbernauld Colts v East Fife</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Cumbernauld Colts v East Fife. Broadwood Stadium, Cumbernauld. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="East.Kilbride.scc">
+    <title lang="en">East Kilbride v Kelty Hearts</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: East Kilbride v Kelty Hearts. K-Park Training Academy, East Kilbride. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Edinburgh.City.scc">
+    <title lang="en">Edinburgh City v St Mirren B</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Edinburgh City v St Mirren B. Meadowbank Stadium, Edinburgh. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Elgin.City.scc">
+    <title lang="en">Elgin City v Aberdeen B</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Elgin City v Aberdeen B. Borough Briggs, Elgin. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Falkirk.prem">
+    <title lang="en">Hibernian v Falkirk</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Premiership: Hibernian v Falkirk. Easter Road, Edinburgh. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Forfar.Athletic.scc">
+    <title lang="en">Ross County v Forfar Athletic</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Ross County v Forfar Athletic. Global Energy Stadium, Dingwell. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Greenock.Morton.champ">
+    <title lang="en">Greenock Morton v Queen's Park</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Championship: Greenock Morton v Queen's Park. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Hamilton.Academical.scc">
+    <title lang="en">Gala Fairydean v Hamilton Academical</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Gala Fairydean v Hamilton Academical. Netherdale, Galashiels. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261018150000 +0100" stop="20261018170000 +0100" channel="Hearts.prem">
+    <title lang="en">Celtic v Hearts</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sun 18 Oct. Scottish Premiership: Celtic v Hearts. Celtic Park, Glasgow. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Hearts.uecl">
+    <title lang="en">Hearts v FC Nordsjælland</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Hearts v FC Nordsjælland. Tynecastle Park, Edinburgh. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Hibernian.prem">
+    <title lang="en">Hibernian v Falkirk</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Premiership: Hibernian v Falkirk. Easter Road, Edinburgh. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Inverness.CT.champ">
+    <title lang="en">Queen's Park v Inverness CT</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Championship: Queen's Park v Inverness CT. The City Stadium, Glasgow. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Inverness.CT.champ">
+    <title lang="en">Inverness CT v Arbroath</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Championship: Inverness CT v Arbroath. Caledonian Stadium, Inverness. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Kelty.Hearts.scc">
+    <title lang="en">East Kilbride v Kelty Hearts</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: East Kilbride v Kelty Hearts. K-Park Training Academy, East Kilbride. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Kilmarnock.prem">
+    <title lang="en">Kilmarnock v Motherwell</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Premiership: Kilmarnock v Motherwell. The BBSP Stadium, Kilmarnock. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Livingston.champ">
+    <title lang="en">Dunfermline Athletic v Livingston</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Championship: Dunfermline Athletic v Livingston. KDM Group East End Park, Dunfermline. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Montrose.scc">
+    <title lang="en">Montrose v Dundee Utd B</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Montrose v Dundee Utd B. Links Park, Montrose. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261011120000 +0100" stop="20261011140000 +0100" channel="Motherwell.prem">
+    <title lang="en">Motherwell v Celtic</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sun 11 Oct. Scottish Premiership: Motherwell v Celtic. Fir Park, Motherwell. Kick-off: 12:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Motherwell.prem">
+    <title lang="en">Kilmarnock v Motherwell</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Premiership: Kilmarnock v Motherwell. The BBSP Stadium, Kilmarnock. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261016193000 +0100" stop="20261016213000 +0100" channel="Partick.Thistle.champ">
+    <title lang="en">Ayr Utd v Partick Thistle</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Fri 16 Oct. Scottish Championship: Ayr Utd v Partick Thistle. Somerset Park, Ayr. Kick-off: 19:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261020194500 +0100" stop="20261020214500 +0100" channel="Partick.Thistle.champ">
+    <title lang="en">Dunfermline Athletic v Partick Thistle</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Tue 20 Oct. Scottish Championship: Dunfermline Athletic v Partick Thistle. KDM Group East End Park, Dunfermline. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Peterhead.scc">
+    <title lang="en">Peterhead v Rangers B</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Peterhead v Rangers B. Balmoor Stadium, Peterhead. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Queen.of.the.South.scc">
+    <title lang="en">Berwick Rangers v Queen of the South</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Berwick Rangers v Queen of the South. Shielfield Park, Berwick. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Queen.s.Park.champ">
+    <title lang="en">Queen's Park v Inverness CT</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Championship: Queen's Park v Inverness CT. The City Stadium, Glasgow. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Queen.s.Park.champ">
+    <title lang="en">Greenock Morton v Queen's Park</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Championship: Greenock Morton v Queen's Park. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Raith.Rovers.champ">
+    <title lang="en">Stenhousemuir v Raith Rovers</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Championship: Stenhousemuir v Raith Rovers. Ochilview Park, Stenhousemuir. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261017200000 +0100" stop="20261017220000 +0100" channel="Rangers.prem">
+    <title lang="en">Dundee v Rangers</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Premiership: Dundee v Rangers. The Scot Foam Stadium at Dens Park, Dundee. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Spartans.FC.scc">
+    <title lang="en">Spartans FC v Bonnyrigg Rose</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Spartans FC v Bonnyrigg Rose. Ainslie Park, Edinburgh. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261011140000 +0100" stop="20261011160000 +0100" channel="St.Johnstone.prem">
+    <title lang="en">Aberdeen v St Johnstone</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sun 11 Oct. Scottish Premiership: Aberdeen v St Johnstone. Pittodrie Stadium, Aberdeen. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="St.Johnstone.prem">
+    <title lang="en">St Johnstone v Dundee Utd</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Premiership: St Johnstone v Dundee Utd. McDiarmid Park, Perth. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="St.Mirren.prem">
+    <title lang="en">Aberdeen v St Mirren</title>
+    <sub-title lang="en">Scottish Premiership</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Premiership: Aberdeen v St Mirren. Pittodrie Stadium, Aberdeen. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Premiership</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Stenhousemuir.champ">
+    <title lang="en">Stenhousemuir v Raith Rovers</title>
+    <sub-title lang="en">Scottish Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Scottish Championship: Stenhousemuir v Raith Rovers. Ochilview Park, Stenhousemuir. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Stirling.Albion.scc">
+    <title lang="en">Stirling Albion v Hibernian B</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Stirling Albion v Hibernian B. Forthbank Stadium, Stirling. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Stranraer.scc">
+    <title lang="en">Stranraer v Kilmarnock B</title>
+    <sub-title lang="en">Scottish Challenge Cup</sub-title>
+    <desc lang="en">Tue 13 Oct. Scottish Challenge Cup: Stranraer v Kilmarnock B. Stair Park, Stranraer. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+</tv>
