@@ -1,0 +1,1540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="football_epg.py" source-info-name="ESPN">
+  <channel id="AFC.Wimbledon.l1">
+    <display-name lang="en">AFC Wimbledon League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/3802.png" />
+  </channel>
+  <channel id="Accrington.Stanley.l2">
+    <display-name lang="en">Accrington Stanley League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2731.png" />
+  </channel>
+  <channel id="Arsenal.pl">
+    <display-name lang="en">Arsenal Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/359.png" />
+  </channel>
+  <channel id="Arsenal.ucl">
+    <display-name lang="en">Arsenal UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/359.png" />
+  </channel>
+  <channel id="Aston.Villa.pl">
+    <display-name lang="en">Aston Villa Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/362.png" />
+  </channel>
+  <channel id="Aston.Villa.ucl">
+    <display-name lang="en">Aston Villa UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/362.png" />
+  </channel>
+  <channel id="Barnet.l2">
+    <display-name lang="en">Barnet League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/280.png" />
+  </channel>
+  <channel id="Barnsley.l1">
+    <display-name lang="en">Barnsley League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/397.png" />
+  </channel>
+  <channel id="Birmingham.City.champ">
+    <display-name lang="en">Birmingham City Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/392.png" />
+  </channel>
+  <channel id="Blackburn.Rovers.champ">
+    <display-name lang="en">Blackburn Rovers Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/365.png" />
+  </channel>
+  <channel id="Blackpool.l1">
+    <display-name lang="en">Blackpool League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/346.png" />
+  </channel>
+  <channel id="Bolton.Wanderers.champ">
+    <display-name lang="en">Bolton Wanderers Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/358.png" />
+  </channel>
+  <channel id="Bournemouth.pl">
+    <display-name lang="en">Bournemouth Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/349.png" />
+  </channel>
+  <channel id="Bournemouth.uel">
+    <display-name lang="en">Bournemouth UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/349.png" />
+  </channel>
+  <channel id="Bradford.City.l1">
+    <display-name lang="en">Bradford City League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/387.png" />
+  </channel>
+  <channel id="Brentford.pl">
+    <display-name lang="en">Brentford Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/337.png" />
+  </channel>
+  <channel id="Brighton.Hove.Albion.pl">
+    <display-name lang="en">Brighton &amp; Hove Albion Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/331.png" />
+  </channel>
+  <channel id="Brighton.Hove.Albion.uecl">
+    <display-name lang="en">Brighton &amp; Hove Albion UEFA Conference League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/331.png" />
+  </channel>
+  <channel id="Bristol.City.champ">
+    <display-name lang="en">Bristol City Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/333.png" />
+  </channel>
+  <channel id="Bristol.Rovers.l2">
+    <display-name lang="en">Bristol Rovers League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/308.png" />
+  </channel>
+  <channel id="Bromley.l1">
+    <display-name lang="en">Bromley League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/3129.png" />
+  </channel>
+  <channel id="Burnley.champ">
+    <display-name lang="en">Burnley Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/379.png" />
+  </channel>
+  <channel id="Burton.Albion.l1">
+    <display-name lang="en">Burton Albion League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2567.png" />
+  </channel>
+  <channel id="Cambridge.Utd.l1">
+    <display-name lang="en">Cambridge Utd League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/351.png" />
+  </channel>
+  <channel id="Cardiff.City.champ">
+    <display-name lang="en">Cardiff City Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/347.png" />
+  </channel>
+  <channel id="Charlton.Athletic.champ">
+    <display-name lang="en">Charlton Athletic Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/372.png" />
+  </channel>
+  <channel id="Chelsea.pl">
+    <display-name lang="en">Chelsea Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/363.png" />
+  </channel>
+  <channel id="Cheltenham.Town.eflt">
+    <display-name lang="en">Cheltenham Town EFL Trophy</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/320.png" />
+  </channel>
+  <channel id="Cheltenham.Town.l2">
+    <display-name lang="en">Cheltenham Town League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/320.png" />
+  </channel>
+  <channel id="Chesterfield.l2">
+    <display-name lang="en">Chesterfield League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/343.png" />
+  </channel>
+  <channel id="Colchester.Utd.l2">
+    <display-name lang="en">Colchester Utd League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/339.png" />
+  </channel>
+  <channel id="Coventry.City.pl">
+    <display-name lang="en">Coventry City Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/388.png" />
+  </channel>
+  <channel id="Crawley.Town.l2">
+    <display-name lang="en">Crawley Town League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/2594.png" />
+  </channel>
+  <channel id="Crewe.Alexandra.l2">
+    <display-name lang="en">Crewe Alexandra League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/396.png" />
+  </channel>
+  <channel id="Crystal.Palace.pl">
+    <display-name lang="en">Crystal Palace Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/384.png" />
+  </channel>
+  <channel id="Crystal.Palace.uel">
+    <display-name lang="en">Crystal Palace UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/384.png" />
+  </channel>
+  <channel id="Derby.County.champ">
+    <display-name lang="en">Derby County Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/374.png" />
+  </channel>
+  <channel id="Doncaster.Rovers.l1">
+    <display-name lang="en">Doncaster Rovers League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/279.png" />
+  </channel>
+  <channel id="Everton.pl">
+    <display-name lang="en">Everton Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/368.png" />
+  </channel>
+  <channel id="Exeter.City.l2">
+    <display-name lang="en">Exeter City League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/324.png" />
+  </channel>
+  <channel id="Fleetwood.Town.l2">
+    <display-name lang="en">Fleetwood Town League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/3891.png" />
+  </channel>
+  <channel id="Fulham.pl">
+    <display-name lang="en">Fulham Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/370.png" />
+  </channel>
+  <channel id="Gillingham.eflt">
+    <display-name lang="en">Gillingham EFL Trophy</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/389.png" />
+  </channel>
+  <channel id="Gillingham.l2">
+    <display-name lang="en">Gillingham League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/389.png" />
+  </channel>
+  <channel id="Grimsby.Town.l2">
+    <display-name lang="en">Grimsby Town League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/386.png" />
+  </channel>
+  <channel id="Huddersfield.Town.l1">
+    <display-name lang="en">Huddersfield Town League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/335.png" />
+  </channel>
+  <channel id="Hull.City.pl">
+    <display-name lang="en">Hull City Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/306.png" />
+  </channel>
+  <channel id="Ipswich.Town.pl">
+    <display-name lang="en">Ipswich Town Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/373.png" />
+  </channel>
+  <channel id="Leeds.Utd.pl">
+    <display-name lang="en">Leeds Utd Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/357.png" />
+  </channel>
+  <channel id="Leicester.City.l1">
+    <display-name lang="en">Leicester City League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/375.png" />
+  </channel>
+  <channel id="Leyton.Orient.l1">
+    <display-name lang="en">Leyton Orient League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/309.png" />
+  </channel>
+  <channel id="Lincoln.City.champ">
+    <display-name lang="en">Lincoln City Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/314.png" />
+  </channel>
+  <channel id="Liverpool.pl">
+    <display-name lang="en">Liverpool Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/364.png" />
+  </channel>
+  <channel id="Liverpool.ucl">
+    <display-name lang="en">Liverpool UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/364.png" />
+  </channel>
+  <channel id="Luton.Town.l1">
+    <display-name lang="en">Luton Town League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/301.png" />
+  </channel>
+  <channel id="MK.Dons.l1">
+    <display-name lang="en">MK Dons League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/390.png" />
+  </channel>
+  <channel id="Manchester.City.pl">
+    <display-name lang="en">Manchester City Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/382.png" />
+  </channel>
+  <channel id="Manchester.City.ucl">
+    <display-name lang="en">Manchester City UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/382.png" />
+  </channel>
+  <channel id="Manchester.Utd.pl">
+    <display-name lang="en">Manchester Utd Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/360.png" />
+  </channel>
+  <channel id="Manchester.Utd.ucl">
+    <display-name lang="en">Manchester Utd UEFA Champions League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/360.png" />
+  </channel>
+  <channel id="Mansfield.Town.l1">
+    <display-name lang="en">Mansfield Town League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/304.png" />
+  </channel>
+  <channel id="Middlesbrough.champ">
+    <display-name lang="en">Middlesbrough Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/369.png" />
+  </channel>
+  <channel id="Millwall.champ">
+    <display-name lang="en">Millwall Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/391.png" />
+  </channel>
+  <channel id="Newcastle.Utd.pl">
+    <display-name lang="en">Newcastle Utd Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/361.png" />
+  </channel>
+  <channel id="Newport.County.l2">
+    <display-name lang="en">Newport County League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/635.png" />
+  </channel>
+  <channel id="Northampton.Town.l2">
+    <display-name lang="en">Northampton Town League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/353.png" />
+  </channel>
+  <channel id="Norwich.City.champ">
+    <display-name lang="en">Norwich City Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/381.png" />
+  </channel>
+  <channel id="Nottingham.Forest.pl">
+    <display-name lang="en">Nottingham Forest Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/393.png" />
+  </channel>
+  <channel id="Notts.County.eflt">
+    <display-name lang="en">Notts County EFL Trophy</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/340.png" />
+  </channel>
+  <channel id="Notts.County.l1">
+    <display-name lang="en">Notts County League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/340.png" />
+  </channel>
+  <channel id="Oldham.Athletic.eflt">
+    <display-name lang="en">Oldham Athletic EFL Trophy</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/332.png" />
+  </channel>
+  <channel id="Oldham.Athletic.l2">
+    <display-name lang="en">Oldham Athletic League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/332.png" />
+  </channel>
+  <channel id="Oxford.Utd.l1">
+    <display-name lang="en">Oxford Utd League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/311.png" />
+  </channel>
+  <channel id="Peterborough.Utd.l1">
+    <display-name lang="en">Peterborough Utd League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/342.png" />
+  </channel>
+  <channel id="Plymouth.Argyle.l1">
+    <display-name lang="en">Plymouth Argyle League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/307.png" />
+  </channel>
+  <channel id="Port.Vale.l2">
+    <display-name lang="en">Port Vale League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/348.png" />
+  </channel>
+  <channel id="Portsmouth.champ">
+    <display-name lang="en">Portsmouth Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/385.png" />
+  </channel>
+  <channel id="Preston.North.End.champ">
+    <display-name lang="en">Preston North End Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/394.png" />
+  </channel>
+  <channel id="Queens.Park.Rangers.champ">
+    <display-name lang="en">Queens Park Rangers Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/334.png" />
+  </channel>
+  <channel id="Reading.eflt">
+    <display-name lang="en">Reading EFL Trophy</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/338.png" />
+  </channel>
+  <channel id="Reading.l1">
+    <display-name lang="en">Reading League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/338.png" />
+  </channel>
+  <channel id="Rochdale.l2">
+    <display-name lang="en">Rochdale League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/303.png" />
+  </channel>
+  <channel id="Rotherham.Utd.l2">
+    <display-name lang="en">Rotherham Utd League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/402.png" />
+  </channel>
+  <channel id="Salford.City.l2">
+    <display-name lang="en">Salford City League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/4703.png" />
+  </channel>
+  <channel id="Sheffield.Utd.champ">
+    <display-name lang="en">Sheffield Utd Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/398.png" />
+  </channel>
+  <channel id="Sheffield.Wednesday.l1">
+    <display-name lang="en">Sheffield Wednesday League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/399.png" />
+  </channel>
+  <channel id="Shrewsbury.Town.l2">
+    <display-name lang="en">Shrewsbury Town League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/302.png" />
+  </channel>
+  <channel id="Southampton.champ">
+    <display-name lang="en">Southampton Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/376.png" />
+  </channel>
+  <channel id="Stevenage.l1">
+    <display-name lang="en">Stevenage League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/285.png" />
+  </channel>
+  <channel id="Stockport.County.l1">
+    <display-name lang="en">Stockport County League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/400.png" />
+  </channel>
+  <channel id="Stoke.City.champ">
+    <display-name lang="en">Stoke City Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/336.png" />
+  </channel>
+  <channel id="Sunderland.pl">
+    <display-name lang="en">Sunderland Premier League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/366.png" />
+  </channel>
+  <channel id="Sunderland.uel">
+    <display-name lang="en">Sunderland UEFA Europa League</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/366.png" />
+  </channel>
+  <channel id="Swansea.City.champ">
+    <display-name lang="en">Swansea City Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/318.png" />
+  </channel>
+  <channel id="Swindon.Town.l2">
+    <display-name lang="en">Swindon Town League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/341.png" />
+  </channel>
+  <channel id="Tranmere.Rovers.l2">
+    <display-name lang="en">Tranmere Rovers League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/345.png" />
+  </channel>
+  <channel id="Walsall.eflt">
+    <display-name lang="en">Walsall EFL Trophy</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/401.png" />
+  </channel>
+  <channel id="Walsall.l2">
+    <display-name lang="en">Walsall League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/401.png" />
+  </channel>
+  <channel id="Watford.champ">
+    <display-name lang="en">Watford Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/395.png" />
+  </channel>
+  <channel id="West.Bromwich.Albion.champ">
+    <display-name lang="en">West Bromwich Albion Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/383.png" />
+  </channel>
+  <channel id="West.Ham.Utd.champ">
+    <display-name lang="en">West Ham Utd Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/371.png" />
+  </channel>
+  <channel id="Wigan.Athletic.l1">
+    <display-name lang="en">Wigan Athletic League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/350.png" />
+  </channel>
+  <channel id="Wolves.champ">
+    <display-name lang="en">Wolves Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/380.png" />
+  </channel>
+  <channel id="Wrexham.champ">
+    <display-name lang="en">Wrexham Championship</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/352.png" />
+  </channel>
+  <channel id="Wycombe.Wanderers.l1">
+    <display-name lang="en">Wycombe Wanderers League One</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/344.png" />
+  </channel>
+  <channel id="York.City.l2">
+    <display-name lang="en">York City League Two</display-name>
+    <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/315.png" />
+  </channel>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="AFC.Wimbledon.l1">
+    <title lang="en">Sheffield Wednesday v AFC Wimbledon</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Sheffield Wednesday v AFC Wimbledon. Hillsborough, Sheffield. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Accrington.Stanley.l2">
+    <title lang="en">Accrington Stanley v Gillingham</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Accrington Stanley v Gillingham. Wham Stadium, Accrington. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261018163000 +0100" stop="20261018183000 +0100" channel="Arsenal.pl">
+    <title lang="en">Nottingham Forest v Arsenal</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 18 Oct. Premier League: Nottingham Forest v Arsenal. The City Ground, Nottingham. Kick-off: 16:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Arsenal.ucl">
+    <title lang="en">Arsenal v Lille</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Arsenal v Lille. Emirates Stadium, London. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261017173000 +0100" stop="20261017193000 +0100" channel="Aston.Villa.pl">
+    <title lang="en">Newcastle Utd v Aston Villa</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sat 17 Oct. Premier League: Newcastle Utd v Aston Villa. St. James' Park, Newcastle-upon-Tyne. Kick-off: 17:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="Aston.Villa.ucl">
+    <title lang="en">Aston Villa v Fenerbahce</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Aston Villa v Fenerbahce. Villa Park, Birmingham. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Barnet.l2">
+    <title lang="en">Tranmere Rovers v Barnet</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Tranmere Rovers v Barnet. Prenton Park, Birkenhead. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Barnsley.l1">
+    <title lang="en">Barnsley v Cambridge Utd</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Barnsley v Cambridge Utd. Oakwell, Barnsley. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Birmingham.City.champ">
+    <title lang="en">Birmingham City v Preston North End</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Birmingham City v Preston North End. St. Andrew's Stadium, Birmingham. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Birmingham.City.champ">
+    <title lang="en">Birmingham City v Queens Park Rangers</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Birmingham City v Queens Park Rangers. St. Andrew's Stadium, Birmingham. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Blackburn.Rovers.champ">
+    <title lang="en">Bristol City v Blackburn Rovers</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Bristol City v Blackburn Rovers. Ashton Gate, Bristol. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Blackburn.Rovers.champ">
+    <title lang="en">West Bromwich Albion v Blackburn Rovers</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: West Bromwich Albion v Blackburn Rovers. The Hawthorns, West Bromwich. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Blackpool.l1">
+    <title lang="en">Leyton Orient v Blackpool</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Leyton Orient v Blackpool. Gaughan Group Stadium, London. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Bolton.Wanderers.champ">
+    <title lang="en">Wolves v Bolton Wanderers</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Wolves v Bolton Wanderers. Molineux Stadium, Wolverhampton. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Bolton.Wanderers.champ">
+    <title lang="en">Southampton v Bolton Wanderers</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Southampton v Bolton Wanderers. St. Mary's Stadium, Southampton. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261018140000 +0100" stop="20261018160000 +0100" channel="Bournemouth.pl">
+    <title lang="en">Bournemouth v Sunderland</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 18 Oct. Premier League: Bournemouth v Sunderland. Vitality Stadium, Bournemouth. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Bournemouth.uel">
+    <title lang="en">Bournemouth v SK Sturm Graz</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Bournemouth v SK Sturm Graz. Vitality Stadium, Bournemouth. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Bradford.City.l1">
+    <title lang="en">Bradford City v Stevenage</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Bradford City v Stevenage. Valley Parade, Bradford. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Brentford.pl">
+    <title lang="en">Brentford v Liverpool</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sat 17 Oct. Premier League: Brentford v Liverpool. Gtech Community Stadium, Brentford. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261018140000 +0100" stop="20261018160000 +0100" channel="Brighton.Hove.Albion.pl">
+    <title lang="en">Brighton &amp; Hove Albion v Crystal Palace</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 18 Oct. Premier League: Brighton &amp; Hove Albion v Crystal Palace. American Express Stadium, Falmer. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Brighton.Hove.Albion.uecl">
+    <title lang="en">Brighton &amp; Hove Albion v Kauno Zalgiris</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Conference League: Brighton &amp; Hove Albion v Kauno Zalgiris. American Express Stadium, Falmer. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Conference League</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Bristol.City.champ">
+    <title lang="en">Bristol City v Blackburn Rovers</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Bristol City v Blackburn Rovers. Ashton Gate, Bristol. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Bristol.City.champ">
+    <title lang="en">Bristol City v Sheffield Utd</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Bristol City v Sheffield Utd. Ashton Gate, Bristol. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Bristol.Rovers.l2">
+    <title lang="en">Shrewsbury Town v Bristol Rovers</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Shrewsbury Town v Bristol Rovers. The Croud Meadow, Shrewsbury. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Bromley.l1">
+    <title lang="en">Stockport County v Bromley</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Stockport County v Bromley. Edgeley Park, Stockport. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Burnley.champ">
+    <title lang="en">Burnley v Charlton Athletic</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Burnley v Charlton Athletic. Turf Moor, Burnley. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261016200000 +0100" stop="20261016220000 +0100" channel="Burnley.champ">
+    <title lang="en">Burnley v Wolves</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Fri 16 Oct. Championship: Burnley v Wolves. Turf Moor, Burnley. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Burton.Albion.l1">
+    <title lang="en">Peterborough Utd v Burton Albion</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Peterborough Utd v Burton Albion. London Road Stadium, Peterborough. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Cambridge.Utd.l1">
+    <title lang="en">Barnsley v Cambridge Utd</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Barnsley v Cambridge Utd. Oakwell, Barnsley. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Cardiff.City.champ">
+    <title lang="en">Cardiff City v Watford</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Cardiff City v Watford. Cardiff City Stadium, Cardiff. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Cardiff.City.champ">
+    <title lang="en">Middlesbrough v Cardiff City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Middlesbrough v Cardiff City. Riverside Stadium, Middlesbrough. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Charlton.Athletic.champ">
+    <title lang="en">Burnley v Charlton Athletic</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Burnley v Charlton Athletic. Turf Moor, Burnley. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Charlton.Athletic.champ">
+    <title lang="en">Watford v Charlton Athletic</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Watford v Charlton Athletic. Vicarage Road, Watford. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Chelsea.pl">
+    <title lang="en">Everton v Chelsea</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sat 17 Oct. Premier League: Everton v Chelsea. Hill Dickinson Stadium, Liverpool. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261013190000 +0100" stop="20261013210000 +0100" channel="Cheltenham.Town.eflt">
+    <title lang="en">Cheltenham Town v Tottenham Hotspur U21</title>
+    <sub-title lang="en">EFL Trophy</sub-title>
+    <desc lang="en">Tue 13 Oct. EFL Trophy: Cheltenham Town v Tottenham Hotspur U21. The Completely-Suzuki Stadium, Cheltenham. Kick-off: 19:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL Trophy</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Cheltenham.Town.l2">
+    <title lang="en">Oldham Athletic v Cheltenham Town</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Oldham Athletic v Cheltenham Town. Boundary Park, Oldham. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Chesterfield.l2">
+    <title lang="en">Port Vale v Chesterfield</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Port Vale v Chesterfield. Vale Park, Stoke-on-Trent. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Colchester.Utd.l2">
+    <title lang="en">Colchester Utd v Exeter City</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Colchester Utd v Exeter City. JobServe Community Stadium, Colchester. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261012200000 +0100" stop="20261012220000 +0100" channel="Coventry.City.pl">
+    <title lang="en">Coventry City v Newcastle Utd</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Mon 12 Oct. Premier League: Coventry City v Newcastle Utd. Coventry Building Society Arena, Coventry. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Crawley.Town.l2">
+    <title lang="en">Salford City v Crawley Town</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Salford City v Crawley Town. Peninsula Stadium, Salford. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Crewe.Alexandra.l2">
+    <title lang="en">Crewe Alexandra v Rochdale</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Crewe Alexandra v Rochdale. Mornflake Stadium, Crewe. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261011140000 +0100" stop="20261011160000 +0100" channel="Crystal.Palace.pl">
+    <title lang="en">Crystal Palace v Nottingham Forest</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 11 Oct. Premier League: Crystal Palace v Nottingham Forest. Selhurst Park, London. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261018140000 +0100" stop="20261018160000 +0100" channel="Crystal.Palace.pl">
+    <title lang="en">Brighton &amp; Hove Albion v Crystal Palace</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 18 Oct. Premier League: Brighton &amp; Hove Albion v Crystal Palace. American Express Stadium, Falmer. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Crystal.Palace.uel">
+    <title lang="en">Lyon v Crystal Palace</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Lyon v Crystal Palace. Groupama Stadium, Lyon. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261014194500 +0100" stop="20261014214500 +0100" channel="Derby.County.champ">
+    <title lang="en">Queens Park Rangers v Derby County</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Wed 14 Oct. Championship: Queens Park Rangers v Derby County. MATRADE Loftus Road, London. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Derby.County.champ">
+    <title lang="en">Derby County v Stoke City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Derby County v Stoke City. Pride Park, Derby. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Doncaster.Rovers.l1">
+    <title lang="en">Leicester City v Doncaster Rovers</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Leicester City v Doncaster Rovers. King Power Stadium, Leicester. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261011140000 +0100" stop="20261011160000 +0100" channel="Everton.pl">
+    <title lang="en">Hull City v Everton</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 11 Oct. Premier League: Hull City v Everton. The MKM Stadium, Hull. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Everton.pl">
+    <title lang="en">Everton v Chelsea</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sat 17 Oct. Premier League: Everton v Chelsea. Hill Dickinson Stadium, Liverpool. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Exeter.City.l2">
+    <title lang="en">Colchester Utd v Exeter City</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Colchester Utd v Exeter City. JobServe Community Stadium, Colchester. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Fleetwood.Town.l2">
+    <title lang="en">Fleetwood Town v Rotherham Utd</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Fleetwood Town v Rotherham Utd. Highbury Stadium, Fleetwood. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Fulham.pl">
+    <title lang="en">Fulham v Hull City</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sat 17 Oct. Premier League: Fulham v Hull City. Craven Cottage, London. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261013190000 +0100" stop="20261013210000 +0100" channel="Gillingham.eflt">
+    <title lang="en">Gillingham v Brighton &amp; Hove Albion U21</title>
+    <sub-title lang="en">EFL Trophy</sub-title>
+    <desc lang="en">Tue 13 Oct. EFL Trophy: Gillingham v Brighton &amp; Hove Albion U21. Priestfield Stadium, Gillingham. Kick-off: 19:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL Trophy</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Gillingham.l2">
+    <title lang="en">Accrington Stanley v Gillingham</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Accrington Stanley v Gillingham. Wham Stadium, Accrington. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Grimsby.Town.l2">
+    <title lang="en">Grimsby Town v Northampton Town</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Grimsby Town v Northampton Town. Blundell Park, Grimsby. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Huddersfield.Town.l1">
+    <title lang="en">Plymouth Argyle v Huddersfield Town</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Plymouth Argyle v Huddersfield Town. Home Park, Plymouth. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261011140000 +0100" stop="20261011160000 +0100" channel="Hull.City.pl">
+    <title lang="en">Hull City v Everton</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 11 Oct. Premier League: Hull City v Everton. The MKM Stadium, Hull. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Hull.City.pl">
+    <title lang="en">Fulham v Hull City</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sat 17 Oct. Premier League: Fulham v Hull City. Craven Cottage, London. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Ipswich.Town.pl">
+    <title lang="en">Manchester City v Ipswich Town</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sat 17 Oct. Premier League: Manchester City v Ipswich Town. Etihad Stadium, Manchester. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261018140000 +0100" stop="20261018160000 +0100" channel="Leeds.Utd.pl">
+    <title lang="en">Leeds Utd v Manchester Utd</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 18 Oct. Premier League: Leeds Utd v Manchester Utd. Elland Road, Leeds. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Leicester.City.l1">
+    <title lang="en">Leicester City v Doncaster Rovers</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Leicester City v Doncaster Rovers. King Power Stadium, Leicester. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Leyton.Orient.l1">
+    <title lang="en">Leyton Orient v Blackpool</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Leyton Orient v Blackpool. Gaughan Group Stadium, London. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="Lincoln.City.champ">
+    <title lang="en">Lincoln City v West Ham Utd</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Wed 14 Oct. Championship: Lincoln City v West Ham Utd. LNER Stadium, Lincoln. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Lincoln.City.champ">
+    <title lang="en">Millwall v Lincoln City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Millwall v Lincoln City. The Den, London. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261011163000 +0100" stop="20261011183000 +0100" channel="Liverpool.pl">
+    <title lang="en">Liverpool v Manchester City</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 11 Oct. Premier League: Liverpool v Manchester City. Anfield, Liverpool. Kick-off: 16:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Liverpool.pl">
+    <title lang="en">Brentford v Liverpool</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sat 17 Oct. Premier League: Brentford v Liverpool. Gtech Community Stadium, Brentford. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261014174500 +0100" stop="20261014194500 +0100" channel="Liverpool.ucl">
+    <title lang="en">LASK Linz v Liverpool</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: LASK Linz v Liverpool. Raiffeisen Arena (Linz), Linz. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Luton.Town.l1">
+    <title lang="en">MK Dons v Luton Town</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: MK Dons v Luton Town. Stadium MK, Milton Keynes. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="MK.Dons.l1">
+    <title lang="en">MK Dons v Luton Town</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: MK Dons v Luton Town. Stadium MK, Milton Keynes. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261011163000 +0100" stop="20261011183000 +0100" channel="Manchester.City.pl">
+    <title lang="en">Liverpool v Manchester City</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 11 Oct. Premier League: Liverpool v Manchester City. Anfield, Liverpool. Kick-off: 16:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Manchester.City.pl">
+    <title lang="en">Manchester City v Ipswich Town</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sat 17 Oct. Premier League: Manchester City v Ipswich Town. Etihad Stadium, Manchester. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="Manchester.City.ucl">
+    <title lang="en">Manchester City v Paris Saint-Germain</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Wed 14 Oct. UEFA Champions League: Manchester City v Paris Saint-Germain. Etihad Stadium, Manchester. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261018140000 +0100" stop="20261018160000 +0100" channel="Manchester.Utd.pl">
+    <title lang="en">Leeds Utd v Manchester Utd</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 18 Oct. Premier League: Leeds Utd v Manchester Utd. Elland Road, Leeds. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Manchester.Utd.ucl">
+    <title lang="en">Atlético Madrid v Manchester Utd</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Tue 13 Oct. UEFA Champions League: Atlético Madrid v Manchester Utd. Riyadh Air Metropolitano, Madrid. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Champions League</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Mansfield.Town.l1">
+    <title lang="en">Mansfield Town v Oxford Utd</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Thu 15 Oct. League One: Mansfield Town v Oxford Utd. One Call Stadium, Mansfield. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Middlesbrough.champ">
+    <title lang="en">Stoke City v Middlesbrough</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Stoke City v Middlesbrough. bet365 Stadium, Stoke-on-Trent. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Middlesbrough.champ">
+    <title lang="en">Middlesbrough v Cardiff City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Middlesbrough v Cardiff City. Riverside Stadium, Middlesbrough. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Millwall.champ">
+    <title lang="en">Millwall v Swansea City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Millwall v Swansea City. The Den, London. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Millwall.champ">
+    <title lang="en">Millwall v Lincoln City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Millwall v Lincoln City. The Den, London. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261012200000 +0100" stop="20261012220000 +0100" channel="Newcastle.Utd.pl">
+    <title lang="en">Coventry City v Newcastle Utd</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Mon 12 Oct. Premier League: Coventry City v Newcastle Utd. Coventry Building Society Arena, Coventry. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261017173000 +0100" stop="20261017193000 +0100" channel="Newcastle.Utd.pl">
+    <title lang="en">Newcastle Utd v Aston Villa</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sat 17 Oct. Premier League: Newcastle Utd v Aston Villa. St. James' Park, Newcastle-upon-Tyne. Kick-off: 17:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Newport.County.l2">
+    <title lang="en">Newport County v York City</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Newport County v York City. Rodney Parade, Newport. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Northampton.Town.l2">
+    <title lang="en">Grimsby Town v Northampton Town</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Grimsby Town v Northampton Town. Blundell Park, Grimsby. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261014194500 +0100" stop="20261014214500 +0100" channel="Norwich.City.champ">
+    <title lang="en">Norwich City v Southampton</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Wed 14 Oct. Championship: Norwich City v Southampton. Carrow Road, Norwich. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Norwich.City.champ">
+    <title lang="en">Norwich City v Portsmouth</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Norwich City v Portsmouth. Carrow Road, Norwich. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261011140000 +0100" stop="20261011160000 +0100" channel="Nottingham.Forest.pl">
+    <title lang="en">Crystal Palace v Nottingham Forest</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 11 Oct. Premier League: Crystal Palace v Nottingham Forest. Selhurst Park, London. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261018163000 +0100" stop="20261018183000 +0100" channel="Nottingham.Forest.pl">
+    <title lang="en">Nottingham Forest v Arsenal</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 18 Oct. Premier League: Nottingham Forest v Arsenal. The City Ground, Nottingham. Kick-off: 16:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261013190000 +0100" stop="20261013210000 +0100" channel="Notts.County.eflt">
+    <title lang="en">Notts County v Nottingham Forest U21</title>
+    <sub-title lang="en">EFL Trophy</sub-title>
+    <desc lang="en">Tue 13 Oct. EFL Trophy: Notts County v Nottingham Forest U21. Meadow Lane, Nottingham. Kick-off: 19:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL Trophy</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Notts.County.l1">
+    <title lang="en">Wycombe Wanderers v Notts County</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Wycombe Wanderers v Notts County. Adams Park, Wycombe. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261013190000 +0100" stop="20261013210000 +0100" channel="Oldham.Athletic.eflt">
+    <title lang="en">Oldham Athletic v Leeds Utd U21</title>
+    <sub-title lang="en">EFL Trophy</sub-title>
+    <desc lang="en">Tue 13 Oct. EFL Trophy: Oldham Athletic v Leeds Utd U21. Boundary Park, Oldham. Kick-off: 19:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL Trophy</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Oldham.Athletic.l2">
+    <title lang="en">Oldham Athletic v Cheltenham Town</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Oldham Athletic v Cheltenham Town. Boundary Park, Oldham. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261015200000 +0100" stop="20261015220000 +0100" channel="Oxford.Utd.l1">
+    <title lang="en">Mansfield Town v Oxford Utd</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Thu 15 Oct. League One: Mansfield Town v Oxford Utd. One Call Stadium, Mansfield. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Peterborough.Utd.l1">
+    <title lang="en">Peterborough Utd v Burton Albion</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Peterborough Utd v Burton Albion. London Road Stadium, Peterborough. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Plymouth.Argyle.l1">
+    <title lang="en">Plymouth Argyle v Huddersfield Town</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Plymouth Argyle v Huddersfield Town. Home Park, Plymouth. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Port.Vale.l2">
+    <title lang="en">Port Vale v Chesterfield</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Port Vale v Chesterfield. Vale Park, Stoke-on-Trent. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261011120000 +0100" stop="20261011140000 +0100" channel="Portsmouth.champ">
+    <title lang="en">Southampton v Portsmouth</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sun 11 Oct. Championship: Southampton v Portsmouth. St. Mary's Stadium, Southampton. Kick-off: 12:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261014194500 +0100" stop="20261014214500 +0100" channel="Portsmouth.champ">
+    <title lang="en">Portsmouth v Sheffield Utd</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Wed 14 Oct. Championship: Portsmouth v Sheffield Utd. Fratton Park, Portsmouth. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Portsmouth.champ">
+    <title lang="en">Norwich City v Portsmouth</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Norwich City v Portsmouth. Carrow Road, Norwich. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Preston.North.End.champ">
+    <title lang="en">Birmingham City v Preston North End</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Birmingham City v Preston North End. St. Andrew's Stadium, Birmingham. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Preston.North.End.champ">
+    <title lang="en">Wrexham v Preston North End</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Wrexham v Preston North End. STōK Cae Ras, Wrexham. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261014194500 +0100" stop="20261014214500 +0100" channel="Queens.Park.Rangers.champ">
+    <title lang="en">Queens Park Rangers v Derby County</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Wed 14 Oct. Championship: Queens Park Rangers v Derby County. MATRADE Loftus Road, London. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Queens.Park.Rangers.champ">
+    <title lang="en">Birmingham City v Queens Park Rangers</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Birmingham City v Queens Park Rangers. St. Andrew's Stadium, Birmingham. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261013190000 +0100" stop="20261013210000 +0100" channel="Reading.eflt">
+    <title lang="en">Reading v Chelsea U21</title>
+    <sub-title lang="en">EFL Trophy</sub-title>
+    <desc lang="en">Tue 13 Oct. EFL Trophy: Reading v Chelsea U21. Madejski Stadium, Reading. Kick-off: 19:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL Trophy</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Reading.l1">
+    <title lang="en">Wigan Athletic v Reading</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Wigan Athletic v Reading. DW Stadium, Wigan. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Rochdale.l2">
+    <title lang="en">Crewe Alexandra v Rochdale</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Crewe Alexandra v Rochdale. Mornflake Stadium, Crewe. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Rotherham.Utd.l2">
+    <title lang="en">Fleetwood Town v Rotherham Utd</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Fleetwood Town v Rotherham Utd. Highbury Stadium, Fleetwood. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Salford.City.l2">
+    <title lang="en">Salford City v Crawley Town</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Salford City v Crawley Town. Peninsula Stadium, Salford. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261014194500 +0100" stop="20261014214500 +0100" channel="Sheffield.Utd.champ">
+    <title lang="en">Portsmouth v Sheffield Utd</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Wed 14 Oct. Championship: Portsmouth v Sheffield Utd. Fratton Park, Portsmouth. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Sheffield.Utd.champ">
+    <title lang="en">Bristol City v Sheffield Utd</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Bristol City v Sheffield Utd. Ashton Gate, Bristol. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Sheffield.Wednesday.l1">
+    <title lang="en">Sheffield Wednesday v AFC Wimbledon</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Sheffield Wednesday v AFC Wimbledon. Hillsborough, Sheffield. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Shrewsbury.Town.l2">
+    <title lang="en">Shrewsbury Town v Bristol Rovers</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Shrewsbury Town v Bristol Rovers. The Croud Meadow, Shrewsbury. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261011120000 +0100" stop="20261011140000 +0100" channel="Southampton.champ">
+    <title lang="en">Southampton v Portsmouth</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sun 11 Oct. Championship: Southampton v Portsmouth. St. Mary's Stadium, Southampton. Kick-off: 12:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261014194500 +0100" stop="20261014214500 +0100" channel="Southampton.champ">
+    <title lang="en">Norwich City v Southampton</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Wed 14 Oct. Championship: Norwich City v Southampton. Carrow Road, Norwich. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Southampton.champ">
+    <title lang="en">Southampton v Bolton Wanderers</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Southampton v Bolton Wanderers. St. Mary's Stadium, Southampton. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Stevenage.l1">
+    <title lang="en">Bradford City v Stevenage</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Bradford City v Stevenage. Valley Parade, Bradford. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Stockport.County.l1">
+    <title lang="en">Stockport County v Bromley</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Stockport County v Bromley. Edgeley Park, Stockport. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261013200000 +0100" stop="20261013220000 +0100" channel="Stoke.City.champ">
+    <title lang="en">Stoke City v Middlesbrough</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Stoke City v Middlesbrough. bet365 Stadium, Stoke-on-Trent. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Stoke.City.champ">
+    <title lang="en">Derby County v Stoke City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Derby County v Stoke City. Pride Park, Derby. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261018140000 +0100" stop="20261018160000 +0100" channel="Sunderland.pl">
+    <title lang="en">Bournemouth v Sunderland</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Sun 18 Oct. Premier League: Bournemouth v Sunderland. Vitality Stadium, Bournemouth. Kick-off: 14:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Premier League</category>
+  </programme>
+  <programme start="20261015174500 +0100" stop="20261015194500 +0100" channel="Sunderland.uel">
+    <title lang="en">Torreense v Sunderland</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Thu 15 Oct. UEFA Europa League: Torreense v Sunderland. Estádio Dr. Magalhaes Pessoa, Leiria. Kick-off: 17:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">UEFA Europa League</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Swansea.City.champ">
+    <title lang="en">Millwall v Swansea City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Millwall v Swansea City. The Den, London. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Swansea.City.champ">
+    <title lang="en">Swansea City v West Ham Utd</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Swansea City v West Ham Utd. Swansea.com Stadium, Swansea. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Swindon.Town.l2">
+    <title lang="en">Swindon Town v Walsall</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Swindon Town v Walsall. The County Ground, Swindon. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Tranmere.Rovers.l2">
+    <title lang="en">Tranmere Rovers v Barnet</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Tranmere Rovers v Barnet. Prenton Park, Birkenhead. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261013190000 +0100" stop="20261013210000 +0100" channel="Walsall.eflt">
+    <title lang="en">Walsall v Fulham U21</title>
+    <sub-title lang="en">EFL Trophy</sub-title>
+    <desc lang="en">Tue 13 Oct. EFL Trophy: Walsall v Fulham U21. Bescot Stadium, Walsall. Kick-off: 19:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL Trophy</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Walsall.l2">
+    <title lang="en">Swindon Town v Walsall</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Swindon Town v Walsall. The County Ground, Swindon. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Watford.champ">
+    <title lang="en">Cardiff City v Watford</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Cardiff City v Watford. Cardiff City Stadium, Cardiff. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017123000 +0100" stop="20261017143000 +0100" channel="Watford.champ">
+    <title lang="en">Watford v Charlton Athletic</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Watford v Charlton Athletic. Vicarage Road, Watford. Kick-off: 12:30.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="West.Bromwich.Albion.champ">
+    <title lang="en">Wrexham v West Bromwich Albion</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Wrexham v West Bromwich Albion. STōK Cae Ras, Wrexham. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="West.Bromwich.Albion.champ">
+    <title lang="en">West Bromwich Albion v Blackburn Rovers</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: West Bromwich Albion v Blackburn Rovers. The Hawthorns, West Bromwich. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261014200000 +0100" stop="20261014220000 +0100" channel="West.Ham.Utd.champ">
+    <title lang="en">Lincoln City v West Ham Utd</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Wed 14 Oct. Championship: Lincoln City v West Ham Utd. LNER Stadium, Lincoln. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="West.Ham.Utd.champ">
+    <title lang="en">Swansea City v West Ham Utd</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Swansea City v West Ham Utd. Swansea.com Stadium, Swansea. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Wigan.Athletic.l1">
+    <title lang="en">Wigan Athletic v Reading</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Wigan Athletic v Reading. DW Stadium, Wigan. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Wolves.champ">
+    <title lang="en">Wolves v Bolton Wanderers</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Wolves v Bolton Wanderers. Molineux Stadium, Wolverhampton. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261016200000 +0100" stop="20261016220000 +0100" channel="Wolves.champ">
+    <title lang="en">Burnley v Wolves</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Fri 16 Oct. Championship: Burnley v Wolves. Turf Moor, Burnley. Kick-off: 20:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261013194500 +0100" stop="20261013214500 +0100" channel="Wrexham.champ">
+    <title lang="en">Wrexham v West Bromwich Albion</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Tue 13 Oct. Championship: Wrexham v West Bromwich Albion. STōK Cae Ras, Wrexham. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Wrexham.champ">
+    <title lang="en">Wrexham v Preston North End</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Sat 17 Oct. Championship: Wrexham v Preston North End. STōK Cae Ras, Wrexham. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="Wycombe.Wanderers.l1">
+    <title lang="en">Wycombe Wanderers v Notts County</title>
+    <sub-title lang="en">League One</sub-title>
+    <desc lang="en">Sat 17 Oct. League One: Wycombe Wanderers v Notts County. Adams Park, Wycombe. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League One</category>
+  </programme>
+  <programme start="20261017150000 +0100" stop="20261017170000 +0100" channel="York.City.l2">
+    <title lang="en">Newport County v York City</title>
+    <sub-title lang="en">League Two</sub-title>
+    <desc lang="en">Sat 17 Oct. League Two: Newport County v York City. Rodney Parade, Newport. Kick-off: 15:00.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">League Two</category>
+  </programme>
+</tv>
