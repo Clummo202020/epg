@@ -1,0 +1,42 @@
+# Runs football_epg.py on GitHub's servers and commits the updated XML,
+# overwriting football_epg.xml so the raw link never changes.
+#
+# Put this file in the repository at:  .github/workflows/football_epg.yml
+# football_epg.py must be in the top level of the repository.
+
+name: Update football EPG
+
+on:
+  schedule:
+    - cron: "0 5 * * *"     # every day at 05:00 UTC (06:00 UK summer time)
+  workflow_dispatch:         # adds a "Run workflow" button on the Actions tab
+
+permissions:
+  contents: write            # lets the workflow commit the new XML
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build the EPG
+        run: python football_epg.py --days 14
+
+      - name: Commit the XML if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add football_epg.xml
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update football EPG"
+            git push
+          fi
