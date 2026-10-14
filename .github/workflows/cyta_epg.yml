@@ -1,0 +1,50 @@
+# Runs cyta_epg.py on GitHub's servers and commits the updated guide,
+# overwriting cyta_epg.xml so the raw link never changes.
+# The translation cache (cyta_translations.json) is committed too, so Greek
+# titles already translated are not translated again on every run.
+#
+# Put this file in the repository at:  .github/workflows/cyta_epg.yml
+# cyta_epg.py (and cyta_translations.json, if you have one) must be in the
+# top level of the repository.
+
+name: Update Cyta EPG
+
+on:
+  schedule:
+    - cron: "30 5 * * *"    # every day at 05:30 UTC (06:30 UK summer time)
+  workflow_dispatch:         # adds a "Run workflow" button on the Actions tab
+
+permissions:
+  contents: write            # lets the workflow commit the new files
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Build the EPG
+        run: python cyta_epg.py --days 3
+
+      - name: Commit the guide if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add cyta_epg.xml
+          if [ -f cyta_translations.json ]; then git add cyta_translations.json; fi
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update Cyta EPG"
+            git pull --rebase
+            git push
+          fi
