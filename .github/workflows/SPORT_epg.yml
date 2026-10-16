@@ -30,7 +30,7 @@ jobs:
           python-version: "3.12"
 
       - name: Build the EPG
-        run: python SPORT_epg.py --days 7
+        run: python -u SPORT_epg.py --days 7     # -u: show the output live in the log
 
       - name: Commit the guide if it changed
         run: |
