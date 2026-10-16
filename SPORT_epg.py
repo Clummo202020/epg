@@ -2659,7 +2659,8 @@ DESC_KEEP_DAYS = 14
 DESC_PENDING = set()      # descriptions not translated yet: left out of the guide this run
 ENGLISH_PLACES = {"Australia", "Malaysia", "Singapore", "Hong Kong", "Thailand", "Indonesia",
                   "South Africa", "Africa", "India"}   # their guides are already in English
-GOOGLE_LIMITED = [False]  # Google said 'too many requests': stop translating descriptions this run
+GOOGLE_LIMITED = [False]  # Google said 'too many requests': stop translating for the rest of this run
+GOOGLE_WHY = [""]         # the reason the last translation failed, for the summary line
 
 
 def load_cache():
@@ -2690,6 +2691,8 @@ def save_cache():
 
 
 def google_translate(text):
+    if GOOGLE_LIMITED[0]:
+        return None
     params = {"client": "gtx", "sl": "auto", "tl": "en", "dt": "t", "q": text}
     url = "https://translate.googleapis.com/translate_a/single?" + urllib.parse.urlencode(params)
     for attempt in range(2):
@@ -2702,10 +2705,12 @@ def google_translate(text):
             if out:
                 return out
         except urllib.error.HTTPError as e:
+            GOOGLE_WHY[0] = f"HTTP {e.code} {e.reason}"
             if e.code == 429:
-                return None          # rate limited: keep Hebrew this run
-        except (urllib.error.URLError, TimeoutError, ValueError, IndexError, TypeError):
-            pass
+                GOOGLE_LIMITED[0] = True     # rate limited: keep the original text this run
+                return None
+        except (urllib.error.URLError, TimeoutError, ValueError, IndexError, TypeError) as e:
+            GOOGLE_WHY[0] = f"{type(e).__name__}: {e}"[:120]
         time.sleep(3 * (attempt + 1))
     return None
 
@@ -2718,12 +2723,16 @@ def translate_all(texts, force=()):
         print(f"Translating {len(todo)} new text(s) (about {int(len(todo) * 1.5)}s)...")
     done = 0
     for t in todo:
+        if GOOGLE_LIMITED[0]:
+            break
         out = google_translate(t)
         if out:
             TRANSLATIONS[t] = out
             done += 1
     if todo:
-        print(f"  translated {done}/{len(todo)}")
+        why = f" - Google: {GOOGLE_WHY[0]}" if done < len(todo) and GOOGLE_WHY[0] else ""
+        stop = "; stopped, the rest will be tried next run" if GOOGLE_LIMITED[0] else ""
+        print(f"  translated {done}/{len(todo)}{why}{stop}")
         save_cache()
 
 
@@ -2744,10 +2753,11 @@ def google_translate_batch(texts):
         lines = [ln.strip() for ln in lines]
         return lines if len(lines) == len(texts) and all(lines) else None
     except urllib.error.HTTPError as e:
+        GOOGLE_WHY[0] = f"HTTP {e.code} {e.reason}"
         if e.code == 429:
             GOOGLE_LIMITED[0] = True
-    except (urllib.error.URLError, TimeoutError, ValueError, IndexError, TypeError):
-        pass
+    except (urllib.error.URLError, TimeoutError, ValueError, IndexError, TypeError) as e:
+        GOOGLE_WHY[0] = type(e).__name__
     return None
 
 
@@ -2778,16 +2788,17 @@ def translate_descriptions(records, limit):
         if not batch:                                  # one very long text: on its own
             batch, i = [todo[i]], i + 1
         out = google_translate_batch(batch) if len(batch) > 1 else None
-        if out is None and not GOOGLE_LIMITED[0]:
-            out = [google_translate(t) for t in batch]  # the batch didn't split cleanly: one by one
+        if out is None:                                # the batch didn't split cleanly: one by one
+            out = [google_translate(t) for t in batch]  # (returns None at once if Google refused)
         for t, tr_ in zip(batch, out):
             if tr_:
                 TRANSLATIONS[t] = tr_
                 DESC_USED[t] = today
                 done += 1
     if todo:
-        print(f"  translated {done}/{len(todo)}" + (" (Google asked to slow down - the rest next run)"
-                                                    if GOOGLE_LIMITED[0] else ""))
+        why = f" - Google: {GOOGLE_WHY[0]}" if done < len(todo) and GOOGLE_WHY[0] else ""
+        stop = "; stopped, the rest will be tried next run" if GOOGLE_LIMITED[0] else ""
+        print(f"  translated {done}/{len(todo)}{why}{stop}")
     DESC_PENDING.update(d for d in need if d not in TRANSLATIONS)
     if DESC_PENDING:
         print(f"  {len(DESC_PENDING)} description(s) left out until translated on a later run")
@@ -3413,7 +3424,14 @@ def main():
         for rec in records:
             rec["events"] = [dict(e, desc="") for e in rec["events"]]
     elif not args.no_translate:
-        translate_descriptions(records, args.desc_translations)
+        try:
+            translate_descriptions(records, args.desc_translations)
+        except Exception as e:                         # never lose the guide over a description
+            print(f"WARNING: description translation stopped ({type(e).__name__}: {e}) - "
+                  f"untranslated descriptions left out this run", file=sys.stderr)
+            DESC_PENDING.update(ev.get("desc") for rec in records for ev in rec["events"]
+                                if ev.get("desc") and ev["desc"] not in TRANSLATIONS
+                                and rec["place"] not in ENGLISH_PLACES)
     tv, count, listed = build_xmltv(records, suffix, args.minutes)
     out_path = unique_path(args.out) if args.unique else args.out
     write_xml(tv, out_path)
