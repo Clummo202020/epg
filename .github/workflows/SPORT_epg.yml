@@ -2,10 +2,12 @@
 # overwriting SPORT_epg.xml.gz (gzip-compressed) so the raw link never changes.
 # The translation cache (SPORT_translations.json) is committed too, so titles
 # already translated are not translated again on every run.
+# SPORT_search_extra.py then makes SPORT_search_extra.xml.gz: extra channels for
+# the search page (SPORT_search.html) only - they are not in the guide.
 #
 # Put this file in the repository at:  .github/workflows/SPORT_epg.yml
-# SPORT_epg.py (and SPORT_translations.json, if you have one) must be in the
-# top level of the repository.
+# SPORT_epg.py, SPORT_search_extra.py (and SPORT_translations.json, if you have
+# one) must be in the top level of the repository.
 
 name: Update SPORT EPG
 
@@ -33,13 +35,20 @@ jobs:
       - name: Build the EPG
         run: python -u SPORT_epg.py --days 7     # -u: show the output live in the log
 
+      - name: Build the search page's extra channels
+        if: always()                             # even if the guide step had a problem
+        continue-on-error: true                  # a problem here never stops the guide being committed
+        run: python -u SPORT_search_extra.py
+
       - name: Commit the guide if it changed
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add SPORT_epg.xml.gz
+          if [ -f SPORT_epg.xml.gz ]; then git add SPORT_epg.xml.gz; fi
           git rm --cached --ignore-unmatch --quiet SPORT_epg.xml   # the old uncompressed guide, if still there
           if [ -f SPORT_translations.json ]; then git add SPORT_translations.json; fi
+          if [ -f SPORT_search_extra.xml.gz ]; then git add SPORT_search_extra.xml.gz; fi
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
