@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Where’s the match on?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --chalk: #f4f6f1;
+    --ink: #14233d;
+    --muted: #5b6576;
+    --line: #d6dce3;
+    --field: #ffffff;
+    --floodlight: #e8a317;
+    --floodlight-ink: #3a2a00;
+    --now: #1f7a4c;
+    --body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+    --board: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --chalk: #0f1a2c;
+      --ink: #eef2f7;
+      --muted: #9aa6b8;
+      --line: #27344c;
+      --field: #16233a;
+      --floodlight: #f2b632;
+      --floodlight-ink: #2a1e00;
+      --now: #4fbf85;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --chalk: #0f1a2c; --ink: #eef2f7; --muted: #9aa6b8; --line: #27344c; --field: #16233a;
+    --floodlight: #f2b632; --floodlight-ink: #2a1e00; --now: #4fbf85;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--chalk);
+    color: var(--ink);
+    font: 400 1.0625rem/1.5 var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+
+  h1 {
+    font: 700 clamp(2.4rem, 7vw, 3.6rem)/0.95 var(--board);
+    letter-spacing: -0.01em;
+    margin: 0 0 1.25rem;
+  }
+  .search { position: relative; }
+  .search label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .search input {
+    width: 100%;
+    font: 600 1.5rem/1.2 var(--board);
+    color: var(--ink);
+    background: var(--field);
+    border: 2px solid var(--ink);
+    border-radius: 0.6rem;
+    padding: 0.75rem 1rem;
+  }
+  .search input::placeholder { color: var(--muted); font-weight: 500; }
+  input:focus-visible, button:focus-visible, .options input:focus-visible + span {
+    outline: 3px solid var(--floodlight); outline-offset: 2px;
+  }
+  .options { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0.9rem 0 0; font-size: 0.95rem; color: var(--muted); }
+  .options label { display: inline-flex; align-items: center; gap: 0.45rem; cursor: pointer; }
+  .options input { width: 1.05rem; height: 1.05rem; accent-color: var(--ink); margin: 0; }
+  .status { margin: 1.25rem 0 0; color: var(--muted); font-size: 0.95rem; min-height: 1.5em; }
+  .status.error { color: var(--ink); border-left: 4px solid var(--floodlight); padding-left: 0.75rem; }
+
+  .day {
+    font: 600 1.05rem/1.2 var(--body);
+    color: var(--muted);
+    margin: 2.5rem 0 0.25rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .match {
+    display: grid;
+    grid-template-columns: 4.75rem 1fr;
+    gap: 0 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .kickoff { font: 700 1.9rem/1 var(--board); font-variant-numeric: tabular-nums; padding-top: 0.1rem; }
+  .title { font: 600 1.45rem/1.15 var(--board); margin: 0; overflow-wrap: anywhere; }
+  .sub { color: var(--muted); font-size: 0.95rem; margin: 0.2rem 0 0; }
+  .channels { list-style: none; margin: 0.7rem 0 0; padding: 0; display: grid; gap: 0.3rem; }
+  .channels li { display: grid; grid-template-columns: 1.4rem 1fr; gap: 0 0.5rem; align-items: baseline; }
+  .flag { text-align: center; }
+  .info { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.1rem 0.5rem; }
+  .chname { font-weight: 500; }
+  .country { color: var(--muted); font-size: 0.9rem; }
+  .when { color: var(--muted); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+  .live {
+    font: 700 0.8rem/1 var(--board);
+    letter-spacing: 0.04em;
+    background: var(--floodlight);
+    color: var(--floodlight-ink);
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.4rem 0.15rem;
+  }
+  .onnow { color: var(--now); font-weight: 600; font-size: 0.9rem; }
+  .more {
+    margin-top: 0.4rem; padding: 0; border: 0; background: none; color: var(--ink);
+    font: 500 0.95rem var(--body); text-decoration: underline; cursor: pointer;
+  }
+  .empty { margin-top: 2rem; }
+  .empty p { margin: 0 0 0.4rem; }
+  .hint { color: var(--muted); }
+  footer { margin-top: 3rem; color: var(--muted); font-size: 0.85rem; }
+
+  @media (max-width: 30rem) {
+    main { padding-top: 1.75rem; }
+    .match { grid-template-columns: 3.9rem 1fr; gap: 0 0.75rem; }
+    .kickoff { font-size: 1.6rem; }
+    .title { font-size: 1.3rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Where’s the match on?</h1>
+  <form class="search" role="search" onsubmit="return false">
+    <label for="q">Team, league or event</label>
+    <input id="q" type="search" autocomplete="off" spellcheck="false" enterkeyhint="search"
+           placeholder="Team, league or event – e.g. Arsenal" disabled>
+  </form>
+  <div class="options">
+    <label><input id="liveOnly" type="checkbox"><span>Live broadcasts only</span></label>
+    <label><input id="inDesc" type="checkbox"><span>Search descriptions too</span></label>
+  </div>
+  <p class="status" id="status" aria-live="polite">Reading the guide…</p>
+  <div id="results"></div>
+  <footer id="footer"></footer>
+</main>
+
+<script>
+(() => {
+  "use strict";
+  // Where the guide lives: next to this page first, then the GitHub copy.
+  const SOURCES = [
+    "SPORT_epg.xml.gz",
+    "https://raw.githubusercontent.com/Clummo202020/epg/main/SPORT_epg.xml.gz",
+  ];
+  // Extra channels for searching only (not in the guide), made by SPORT_search_extra.py.
+  const EXTRA_SOURCES = [
+    "SPORT_search_extra.xml.gz",
+    "https://raw.githubusercontent.com/Clummo202020/epg/main/SPORT_search_extra.xml.gz",
+  ];
+  const CLUSTER_MINUTES = 45;      // programmes starting within this of each other are one match
+  const SHOW_CHANNELS = 8;         // channels shown before "Show all"
+
+  const COUNTRIES = {
+    AL: ["🇦🇱", "Albania"], AU: ["🇦🇺", "Australia"], BE: ["🇧🇪", "Belgium"], BG: ["🇧🇬", "Bulgaria"],
+    BR: ["🇧🇷", "Brazil"], CH: ["🇨🇭", "Switzerland"], CZ: ["🇨🇿", "Czechia"], DE: ["🇩🇪", "Germany"],
+    DK: ["🇩🇰", "Denmark"], ES: ["🇪🇸", "Spain"], FI: ["🇫🇮", "Finland"], FR: ["🇫🇷", "France"],
+    GR: ["🇬🇷", "Greece"], HK: ["🇭🇰", "Hong Kong"], ID: ["🇮🇩", "Indonesia"], IL: ["🇮🇱", "Israel"],
+    IN: ["🇮🇳", "India"], IT: ["🇮🇹", "Italy"], LV: ["🇱🇻", "Latvia"], MENA: ["🇶🇦", "Middle East"],
+    MY: ["🇲🇾", "Malaysia"], NL: ["🇳🇱", "Netherlands"], NO: ["🇳🇴", "Norway"], PL: ["🇵🇱", "Poland"],
+    PT: ["🇵🇹", "Portugal"], RO: ["🇷🇴", "Romania"], RS: ["🇷🇸", "Balkans"], SE: ["🇸🇪", "Sweden"],
+    SG: ["🇸🇬", "Singapore"], SI: ["🇸🇮", "Slovenia"], SK: ["🇸🇰", "Slovakia"], TH: ["🇹🇭", "Thailand"],
+    TR: ["🇹🇷", "Turkey"], ZA: ["🇿🇦", "South Africa"], AF: ["🌍", "Africa"],
+    UK: ["🇬🇧", "UK"], IE: ["🇮🇪", "Ireland"], NZ: ["🇳🇿", "New Zealand"], US: ["🇺🇸", "USA"],
+    CA: ["🇨🇦", "Canada"], CY: ["🇨🇾", "Cyprus"],
+  };
+
+  const $ = (id) => document.getElementById(id);
+  const q = $("q"), statusEl = $("status"), results = $("results");
+  let programmes = [];             // {start, stop, title, sub, desc, live, ch, hay, hayDesc}
+  let channels = {};               // id -> name
+  let guideDate = null;
+
+  const ukTime = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", hour: "2-digit", minute: "2-digit" });
+  const ukDay = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "long" });
+  const ukDayKey = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" });
+
+  function fold(text) {            // "Fenerbahçe" -> "fenerbahce"
+    return text.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/ı/g, "i").toLowerCase();
+  }
+  function unescapeXml(t) {
+    return t.replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"')
+            .replace(/&apos;/g, "'").replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n))
+            .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
+            .replace(/&amp;/g, "&");
+  }
+  function xmltvDate(s) {          // "20261018143000 +0100" -> Date
+    const m = /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)\s*([+-])(\d\d)(\d\d)/.exec(s || "");
+    if (!m) return null;
+    const utc = Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4], +m[5], +m[6]);
+    const off = (m[7] === "-" ? -1 : 1) * ((+m[8]) * 60 + (+m[9])) * 60000;
+    return new Date(utc - off);
+  }
+  function country(id) {
+    const prefix = String(id).split(".")[0];
+    return COUNTRIES[prefix] || ["📺", prefix];
+  }
+  function esc(t) {
+    return String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  async function gunzip(buf) {
+    const bytes = new Uint8Array(buf);
+    if (bytes[0] !== 0x1f || bytes[1] !== 0x8b) return new TextDecoder().decode(bytes);   // already plain
+    const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+    return await new Response(stream).text();
+  }
+
+  async function loadGuide() {
+    const failures = [];
+    for (const url of SOURCES) {
+      try {
+        const res = await fetch(url, { cache: "no-cache" });
+        if (!res.ok) { failures.push(`${url}: HTTP ${res.status}`); continue; }
+        const text = await gunzip(await res.arrayBuffer());
+        if (!text.includes("<tv")) { failures.push(`${url}: not a TV guide`); continue; }
+        guideDate = res.headers.get("Last-Modified");
+        return text;
+      } catch (e) {
+        failures.push(`${url}: ${e.message || e}`);
+      }
+    }
+    throw new Error(failures.join(" | "));
+  }
+
+  function parseGuide(text) {
+    let m;
+    const chRx = /<channel id="([^"]+)">\s*<display-name[^>]*>([^<]*)<\/display-name>/g;
+    while ((m = chRx.exec(text))) channels[unescapeXml(m[1])] = unescapeXml(m[2]);
+    const prRx = /<programme ([^>]*)>([\s\S]*?)<\/programme>/g;
+    const attr = (a, name) => (new RegExp(name + '="([^"]*)"').exec(a) || [])[1] || "";
+    const tag = (body, name) => { const r = new RegExp("<" + name + "[^>]*>([\\s\\S]*?)</" + name + ">").exec(body); return r ? unescapeXml(r[1]).trim() : ""; };
+    const now = Date.now();
+    while ((m = prRx.exec(text))) {
+      const ch = unescapeXml(attr(m[1], "channel"));
+      const sub = tag(m[2], "sub-title");
+      if (sub === "Coming up") continue;                    // the guide's "coming up" fillers
+      const stop = xmltvDate(attr(m[1], "stop"));
+      if (!stop || stop.getTime() < now) continue;          // already finished
+      const title = tag(m[2], "title");
+      const desc = tag(m[2], "desc");
+      const start = xmltvDate(attr(m[1], "start"));
+      if (!start) continue;
+      programmes.push({
+        start, stop, title, sub, desc, ch,
+        live: /<category[^>]*>Live<\/category>/.test(m[2]),
+        hay: fold(title + " " + sub), hayDesc: fold(desc),
+      });
+    }
+    programmes.sort((a, b) => a.start - b.start);
+  }
+
+  let extrasNote = "";
+  async function loadExtras() {
+    for (const url of EXTRA_SOURCES) {
+      try {
+        const res = await fetch(url, { cache: "no-cache" });
+        if (!res.ok) continue;
+        const before = Object.keys(channels).length;
+        parseGuide(await gunzip(await res.arrayBuffer()));
+        const added = Object.keys(channels).length - before;
+        const places = [...new Set(Object.keys(channels).slice(before).map((id) => country(id)[1]))];
+        extrasNote = added ? ` Also searching ${added} extra channels (${places.join(", ")}).` : "";
+        return;
+      } catch (e) { /* try the next copy */ }
+    }
+    extrasNote = " The extra channels (SPORT_search_extra.xml.gz) aren’t available yet.";
+  }
+
+  function search(query, liveOnly, inDesc) {
+    const words = fold(query).split(/[\s,]+/).filter((w) => w.length > 1);
+    if (!words.length) return [];
+    const hits = programmes.filter((p) =>
+      (!liveOnly || p.live) && words.every((w) => p.hay.includes(w) || (inDesc && p.hayDesc.includes(w))));
+    // Group programmes that start close together: the same match on many channels
+    // (titles differ by language, so time is the safer guide).
+    const groups = [];
+    for (const p of hits) {
+      const g = groups[groups.length - 1];
+      if (g && p.start - g.first <= CLUSTER_MINUTES * 60000) g.items.push(p);
+      else groups.push({ first: p.start, items: [p] });
+    }
+    return groups;
+  }
+
+  function kickoff(items) {         // the start time most channels share (build-up shows start earlier)
+    const count = {};
+    for (const p of items) count[p.start.getTime()] = (count[p.start.getTime()] || 0) + (p.live ? 3 : 1);
+    return new Date(+Object.entries(count).sort((a, b) => b[1] - a[1] || a[0] - b[0])[0][0]);
+  }
+
+  function bestTitle(items) {
+    const count = {};
+    for (const p of items) {
+      const w = p.live ? 3 : 1;                             // a live listing's name is the best name
+      count[p.title] = (count[p.title] || 0) + w;
+    }
+    return Object.entries(count).sort((a, b) => b[1] - a[1])[0][0];
+  }
+
+  function render() {
+    const query = q.value.trim();
+    const url = new URL(location.href);
+    if (query) url.searchParams.set("q", query); else url.searchParams.delete("q");
+    history.replaceState(null, "", url);
+    if (!query) {
+      results.innerHTML = "";
+      statusEl.textContent = `${programmes.length.toLocaleString("en-GB")} upcoming programmes on ${Object.keys(channels).length} channels. Type a team to see where it’s on.${extrasNote}`;
+      return;
+    }
+    const groups = search(query, $("liveOnly").checked, $("inDesc").checked);
+    if (!groups.length) {
+      statusEl.textContent = "";
+      results.innerHTML = `<div class="empty"><p>Nothing in the next week mentions “${esc(query)}”.</p>
+        <p class="hint">Try a shorter name, such as “Forest” instead of “Nottingham Forest”${$("liveOnly").checked ? ", or untick “Live broadcasts only”" : ""}.</p></div>`;
+      return;
+    }
+    const total = groups.reduce((n, g) => n + new Set(g.items.map((p) => p.ch)).size, 0);
+    statusEl.textContent = `${groups.length} ${groups.length === 1 ? "match" : "matches"} on ${total} ${total === 1 ? "channel" : "channels"}. Times are UK time.${extrasNote}`;
+    const now = Date.now();
+    let html = "", lastDay = "";
+    for (const g of groups) {
+      const ko = kickoff(g.items);
+      const dayKey = ukDayKey.format(ko);
+      if (dayKey !== lastDay) { html += `<h2 class="day">${esc(ukDay.format(ko))}</h2>`; lastDay = dayKey; }
+      const seen = new Set(), rows = [];
+      const items = [...g.items].sort((a, b) => (b.live - a.live) || country(a.ch)[1].localeCompare(country(b.ch)[1]) || a.start - b.start);
+      for (const p of items) {
+        if (seen.has(p.ch)) continue;
+        seen.add(p.ch);
+        const [flag, place] = country(p.ch);
+        const differs = Math.abs(p.start - ko) >= 60000;
+        const onNow = p.start <= now && now < p.stop;
+        rows.push(`<li><span class="flag" aria-hidden="true">${flag}</span><span class="info">
+          <span class="chname">${esc(channels[p.ch] || p.ch)}</span>
+          <span class="country">${esc(place)}</span>
+          ${p.live ? '<span class="live">LIVE</span>' : ""}
+          ${onNow ? '<span class="onnow">On now</span>' : ""}
+          ${differs ? `<span class="when">from ${ukTime.format(p.start)}</span>` : ""}</span></li>`);
+      }
+      const title = bestTitle(g.items);
+      const sub = (g.items.find((p) => p.title === title && p.sub && p.sub !== "Live") || {}).sub || "";
+      const id = "m" + g.first.getTime();
+      html += `<article class="match">
+        <div class="kickoff">${ukTime.format(ko)}</div>
+        <div><h3 class="title">${esc(title)}</h3>${sub ? `<p class="sub">${esc(sub)}</p>` : ""}
+          <ul class="channels" id="${id}">${rows.slice(0, SHOW_CHANNELS).join("")}</ul>
+          ${rows.length > SHOW_CHANNELS ? `<button class="more" type="button" data-target="${id}" data-rows="${encodeURIComponent(rows.slice(SHOW_CHANNELS).join(""))}">Show all ${rows.length} channels</button>` : ""}
+        </div></article>`;
+    }
+    results.innerHTML = html;
+  }
+
+  results.addEventListener("click", (e) => {
+    const b = e.target.closest(".more");
+    if (!b) return;
+    $(b.dataset.target).insertAdjacentHTML("beforeend", decodeURIComponent(b.dataset.rows));
+    b.remove();
+  });
+
+  let timer;
+  q.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(render, 150); });
+  $("liveOnly").addEventListener("change", render);
+  $("inDesc").addEventListener("change", render);
+
+  loadGuide().then((text) => {
+    parseGuide(text);
+    q.disabled = false;
+    q.value = new URL(location.href).searchParams.get("q") || "";
+    if (guideDate) $("footer").textContent = `Guide last updated ${new Date(guideDate).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} UK time.`;
+    extrasNote = " Loading the extra countries…";
+    render();
+    q.focus();
+    loadExtras().then(() => { programmes.sort((a, b) => a.start - b.start); render(); });
+  }).catch((e) => {
+    statusEl.className = "status error";
+    statusEl.textContent = `The guide couldn’t be read, so there’s nothing to search yet. Check that SPORT_epg.xml.gz is in the same GitHub repository as this page. Details: ${e.message}`;
+  });
+})();
+</script>
+</body>
+</html>
