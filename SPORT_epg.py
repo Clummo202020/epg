@@ -183,7 +183,7 @@ beIN SPORTS ASIA-PACIFIC - beIN's own public API (JSON), as iptv-org uses:
   their own codes). A country whose list comes back identical to one already used is
   skipped, so one country's schedule is never shown under another's name. Same-named
   feeds within a country are merged (fullest kept). Start and end times are given; the
-  competition is the sub-title. Choose countries with --bein (default au,my,sg,hk,th,id).
+  competition is the sub-title. Choose countries with --bein (default au,my,sg; hk,th,id have no programmes on beIN's site).
   Channels: AU.beINSPORTS1, MY.beINSPORTS1, SG.beINSPORTS1, HK..., TH..., ID...
 
 SUPERSPORT AFRICA - DStv's public TV guide (JSON), every channel in one request per day:
@@ -359,6 +359,7 @@ BEIN_COUNTRIES = {       # code -> (place, time zone, region codes to try, fallb
     "th": ("Thailand", "Asia/Bangkok", ["en-th", "th-th"], {}),
     "id": ("Indonesia", "Asia/Jakarta", ["en-id", "id-id"], {}),
 }
+BEIN_DEFAULT = "au,my,sg"  # hk, th, id: beIN lists the channels but publishes no programmes (checked Oct 2026)
 STOCKHOLM, OSLO, COPENHAGEN = ZoneInfo("Europe/Stockholm"), ZoneInfo("Europe/Oslo"), ZoneInfo("Europe/Copenhagen")
 HELSINKI = ZoneInfo("Europe/Helsinki")
 ALLENTE_GUIDE = "https://www.allente.{tld}/api/epg/refetch-epg-data?Start={day:%Y-%m-%d}"
@@ -1046,7 +1047,8 @@ def fetch_netherlands(days, pattern, debug=False):
                         events[code][start] = {
                             "start": start, "stop": stop, "title": title,
                             "sub": series if series and series != title else "",
-                            "live": bool(ev.get("isLive"))}
+                            "live": bool(ev.get("isLive")),
+                            "desc": pick_desc(ev, "longDescription", "shortDescription", "description")}
             if debug:
                 print(f"  Netherlands {stamp}: {len(data.get('entries') or [])} channels in block")
     out = {}
@@ -1501,7 +1503,8 @@ def spain_json(code, days, debug=False):
                 sub = ""                               # 'Ep. 1 ...' is a series episode, not a match
             live = bool(it.get("Directo")) or bool(re.search(r"\bdirecto\b", title, re.I))
             title = re.sub(r"\s*[(\-:]\s*\(?en directo\)?\s*$|\s*\(directo\)\s*$", "", title, flags=re.I).strip() or title
-            evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub, "live": live}
+            evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub, "live": live,
+                          "desc": pick_desc(it, "Resena", "Descripcion", "Sinopsis")}
     return evs
 
 
@@ -1578,7 +1581,8 @@ def fetch_portugal(days, codes, debug=False):
                                flags=re.I).strip() or title
                 key = start.astimezone(timezone.utc)
                 evs[key] = {"start": key, "stop": stop.astimezone(timezone.utc),
-                            "title": title, "sub": "", "live": live}
+                            "title": title, "sub": "", "live": live,
+                            "desc": pick_desc(it, "Synopsis", "Description")}
         if evs:
             out[name] = [evs[k] for k in sorted(evs)]
     return out
@@ -1643,7 +1647,8 @@ def fetch_italy(days, pattern, debug=False):
                 live = bool(re.match(r"\s*" + rx, title, re.I) or re.search(r"[(-]\s*" + rx + r"\s*\)?\s*$", title, re.I))
                 title = re.sub(r"^\s*" + rx + r"\s*[:\-]?\s*|\s*[(-]\s*" + rx + r"\s*\)?\s*$", "", title,
                                flags=re.I).strip() or title
-                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live}
+                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                              "desc": pick_desc(it, "eventSynopsis", "epgEventSynopsis")}
     out = {}
     for cid, evs in events.items():
         if not evs:
@@ -1709,7 +1714,7 @@ def fetch_germany(days, ids, debug=False):
         for day in days:
             nxt = day + timedelta(days=1)
             body = {"count": -1, "isFillProgram": 1, "offset": 0,
-                    "properties": [{"include": "endtime,genres,id,name,starttime,channelid,subName",
+                    "properties": [{"include": "endtime,genres,id,name,starttime,channelid,subName,introduce",
                                     "name": "playbill"}],
                     "type": 2, "begintime": f"{day:%Y%m%d}000000", "channelid": cid,
                     "endtime": f"{nxt:%Y%m%d}000000"}
@@ -1734,7 +1739,8 @@ def fetch_germany(days, ids, debug=False):
                             or re.search(r"^\s*" + rx, sub, re.I))
                 title = re.sub(r"^\s*" + rx + r"\s*[:\-]?\s*|\s*[(\-:]\s*" + rx + r"\s*\)?\s*$", "", title,
                                flags=re.I).strip() or title
-                evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub, "live": live}
+                evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub, "live": live,
+                              "desc": pick_desc(it, "introduce")}
         if evs:
             out[cid] = [evs[k] for k in sorted(evs)]
     return out
@@ -1776,7 +1782,8 @@ def fetch_allente(tld, days, ids, debug=False):
                             or any(re.search(NORDIC_LIVE, str(t), re.I) for t in pr.get("tags") or []))
                 title = re.sub(r"^\s*" + NORDIC_LIVE + r"\s*[:\-]?\s*|\s*[(\-:]\s*" + NORDIC_LIVE + r"\s*\)?\s*$",
                                "", title, flags=re.I).strip() or title
-                per[cid][start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live}
+                per[cid][start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                                   "desc": pick_desc(pr, "shortDescription", "description", "details.description")}
     return {cid: [evs[k] for k in sorted(evs)] for cid, evs in per.items() if evs}
 
 
@@ -1821,7 +1828,8 @@ def fetch_dstv(country, extra, zone, days, lo, hi, debug=False):
                     continue
                 live = bool(re.match(r"(live|l)\s*[:/]\s*", title, re.I) or re.search(r"\(live\)\s*$", title, re.I))
                 title = re.sub(r"^(live|l)\s*[:/]\s*|\s*\(live\)\s*$", "", title, flags=re.I).strip() or title
-                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live}
+                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                              "desc": pick_desc(pr, "Synopsis", "ShortSynopsis", "Description")}
         if debug:
             print(f"  DStv {country} {day}: {len(chans)} channels, {picked} in {lo}-{hi}")
     out = {}
@@ -1852,20 +1860,34 @@ def bein_region_channels(codes, debug=False):
 def bein_events(ids, days, debug=False):
     """{channel id: {start: event}} - all ids in one request per day, else one by one."""
     per = {i: {} for i in ids}
+    by_upper = {i.upper(): i for i in ids}            # beIN may change the letters' case
+    why = {}                                          # --debug: reasons programmes were dropped
+    seen_ids = set()
+    saved = [False]
 
-    def take(rows):
+    def take(rows, asked=None):
+        """asked: the one channel this request was for - its programmes count even if
+        beIN labels them differently (as iptv-org does)."""
         n = 0
         for it in rows:
-            cid = str(it.get("channelId") or "")
+            if not isinstance(it, dict):
+                why["not a programme"] = why.get("not a programme", 0) + 1
+                continue
+            raw = str(it.get("channelId") or "")
+            seen_ids.add(raw or "(none)")
+            cid = by_upper.get(raw.upper()) or asked
             if cid not in per:
+                why["unknown channel"] = why.get("unknown channel", 0) + 1
                 continue
             try:
                 start = datetime.fromisoformat(it["startDate"].replace("Z", "+00:00")).astimezone(timezone.utc)
                 stop = datetime.fromisoformat(it["endDate"].replace("Z", "+00:00")).astimezone(timezone.utc)
             except (KeyError, TypeError, ValueError, AttributeError):
+                why["unreadable times"] = why.get("unreadable times", 0) + 1
                 continue
             title = re.sub(r"\s+", " ", it.get("title") or "").strip()
             if not title or stop <= start:
+                why["no title or bad times"] = why.get("no title or bad times", 0) + 1
                 continue
             comp = re.sub(r"\s+", " ", ((it.get("data") or {}).get("title") or "")).strip()
             rx = r"\b(live)\b"
@@ -1873,22 +1895,46 @@ def bein_events(ids, days, debug=False):
             title = re.sub(r"^\s*\(?" + rx + r"\)?\s*[:\-]?\s*|\s*[(\-:]\s*" + rx + r"\s*\)?\s*$", "", title,
                            flags=re.I).strip() or title
             per[cid][start] = {"start": start, "stop": stop, "title": title,
-                               "sub": comp if comp and comp.lower() != title.lower() else "", "live": live}
+                               "sub": comp if comp and comp.lower() != title.lower() else "", "live": live,
+                               "desc": pick_desc(it, "description", "synopsis")}
             n += 1
         return n
+
+    def rows_of(data, label):
+        rows = (data.get("rows") if isinstance(data, dict) else data if isinstance(data, list) else None) or []
+        if debug and rows and not saved[0]:          # keep one real answer for a closer look
+            saved[0] = True
+            name = f"bein_debug_{label}.json"
+            try:
+                with open(name, "w", encoding="utf-8") as f:
+                    json.dump(data, f, ensure_ascii=False, indent=1)
+                print(f"    saved one beIN answer to {name}")
+            except OSError:
+                pass
+        return rows
 
     for day in days:
         nxt = day + timedelta(days=1)
         window = f"startBefore={nxt:%Y-%m-%d}T00:00:00.000Z&endAfter={day:%Y-%m-%d}T00:00:00.000Z"
         data = get_json_url(f"{BEIN_API}tv-event?&{window}&channelIds={','.join(ids)}", BEIN_HEADERS,
                             quiet=len(ids) > 1)            # one-by-one requests follow if it fails
-        n = take((data.get("rows") if isinstance(data, dict) else None) or [])
+        rows = rows_of(data, "all")
+        n = take(rows, ids[0] if len(ids) == 1 else None)
+        if debug:
+            print(f"    combined request: {'no answer' if data is None else f'{len(rows)} row(s)'}")
         if not n and len(ids) > 1:                      # the combined request didn't work: one by one
             for cid in ids:
                 data = get_json_url(f"{BEIN_API}tv-event?&{window}&channelIds={cid}", BEIN_HEADERS)
-                n += take((data.get("rows") if isinstance(data, dict) else None) or [])
+                rows = rows_of(data, cid[:8])
+                got = take(rows, cid)
+                n += got
+                if debug:
+                    print(f"    channel {cid[:8]}…: {'no answer' if data is None else f'{len(rows)} row(s)'}, {got} kept")
         if debug:
             print(f"  beIN {day}: {n} programme(s) on {len(ids)} channel(s)")
+            if why:
+                print(f"    dropped: {why}; channel labels seen: {sorted(seen_ids)[:6]}")
+                why.clear()
     return per
 
 
@@ -1926,6 +1972,27 @@ def fetch_bein(days, countries, debug=False):
 # --------------------------------------------------------------------------
 # France: SFR TV guide
 # --------------------------------------------------------------------------
+def short_desc(text, limit=300):
+    """A description cut to about limit characters, at the end of a sentence where possible."""
+    text = re.sub(r"\s+", " ", str(text or "")).strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit]
+    end = max(cut.rfind(". "), cut.rfind("! "), cut.rfind("? "))
+    return cut[:end + 1] if end > limit // 3 else cut.rsplit(" ", 1)[0] + " …"
+
+
+def pick_desc(item, *keys):
+    """The first non-empty description among keys ('a.b' looks inside a nested dict), shortened."""
+    for key in keys:
+        v = item
+        for part in key.split("."):
+            v = v.get(part) if isinstance(v, dict) else None
+        if isinstance(v, str) and v.strip():
+            return short_desc(v)
+    return ""
+
+
 def fetch_france(days, ids, debug=False):
     """{channel number: [{start, stop, title, sub, live}]}"""
     wanted = [c.strip() for c in ids.split(",") if c.strip()]
@@ -1939,6 +2006,13 @@ def fetch_france(days, ids, debug=False):
         if debug:
             print(f"  SFR {day}: {len(epg)} channels in file, "
                   f"{sum(len(epg.get(c) or []) for c in wanted)} programmes on the chosen ones")
+            sample = next((it for c in wanted for it in epg.get(c) or []
+                           if isinstance(it, dict) and re.search(r"football|ligue", str(it.get("title")), re.I)), None)
+            if sample and day == days[0]:
+                print(f"    SFR programme fields: {sorted(sample)}")
+                for k in ("title", "subTitle", "genre", "longSynopsis", "shortSynopsis", "synopsis", "description"):
+                    if sample.get(k):
+                        print(f"    {k}: {str(sample[k])[:160]!r}")
         for cid in wanted:
             for it in epg.get(cid) or []:
                 try:
@@ -1948,13 +2022,15 @@ def fetch_france(days, ids, debug=False):
                     continue
                 title = re.sub(r"\s+", " ", it.get("title") or "").strip()
                 sub = re.sub(r"\s+", " ", it.get("subTitle") or "").strip()
+                desc = pick_desc(it, "longSynopsis", "shortSynopsis", "synopsis", "description")
                 if not title or stop <= start:
                     continue
                 rx = r"\b(en direct|direct|live)\b"
                 live = bool(it.get("isLive")) or bool(re.search(r"[(\-:]\s*" + rx + r"\s*\)?\s*$", title, re.I))
                 title = re.sub(r"\s*[(\-:]\s*" + rx + r"\s*\)?\s*$", "", title, flags=re.I).strip() or title
                 per[cid][start] = {"start": start, "stop": stop, "title": title,
-                                   "sub": sub if sub != title else "", "live": live}
+                                   "sub": sub if sub != title else "", "live": live,
+                                   "desc": desc if desc not in (title, sub) else ""}
     return {cid: [evs[k] for k in sorted(evs)] for cid, evs in per.items() if evs}
 
 
@@ -2000,7 +2076,8 @@ def fetch_switzerland(days, ids, debug=False):
                             or re.search(r"[(\-:]\s*" + CH_LIVE + r"\s*\)?\s*$", title, re.I))
                 title = re.sub(r"^\s*" + CH_LIVE + r"\s*[:\-]?\s*|\s*[(\-:]\s*" + CH_LIVE + r"\s*\)?\s*$", "",
                                title, flags=re.I).strip() or title
-                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live}
+                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                              "desc": pick_desc(desc, "Summary", "ShortSummary")}
         if evs:
             out[cid] = [evs[k] for k in sorted(evs)]
     return out
@@ -2067,7 +2144,8 @@ def fetch_setanta_go3(days, debug=False):
             live = bool(it.get("liveProgramme")) or bool(re.search(rx, title, re.I))
             title = re.sub(r"^\s*" + rx + r"\s*[:\-]?\s*|\s*[(\-:]\s*" + rx + r"\s*\)?\s*$", "", title,
                            flags=re.I).strip() or title
-            per.setdefault(cid, {})[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live}
+            per.setdefault(cid, {})[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                                              "desc": pick_desc(it, "description", "lead")}
     out = {}
     for cid, evs in per.items():
         name = re.sub(r"\s+", " ", ids[cid])
@@ -2110,7 +2188,8 @@ def fetch_latvia(days, slugs, debug=False, extra_pattern=LV_EXTRA):
                 title = re.sub(r"^\s*" + rx + r"\s*[.:\-]?\s*|\s*[.(\-:]\s*" + rx + r"\s*\)?\.?\s*$", "", title,
                                flags=re.I).strip() or title
                 evs[start] = {"start": start, "stop": stop, "title": title,
-                              "sub": sub if sub != title else "", "live": live}
+                              "sub": sub if sub != title else "", "live": live,
+                              "desc": pick_desc(pr, "description_long", "description")}
         if evs:
             out[slug] = [evs[k] for k in sorted(evs)]
     if extra_pattern and re.search(r"setanta", extra_pattern, re.I) \
@@ -2159,7 +2238,8 @@ def fetch_india(days, ids, debug=False):
                 live = bool(re.match(r"\s*" + rx, title, re.I) or re.search(r"[(\-:]\s*" + rx + r"\s*\)?\s*$", title, re.I))
                 title = re.sub(r"^\s*" + rx + r"\s*[:\-]?\s*|\s*[(\-:]\s*" + rx + r"\s*\)?\s*$", "", title,
                                flags=re.I).strip() or title
-                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live}
+                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                              "desc": pick_desc(pr, "desc", "description", "synopsis")}
         if evs:
             out[cid] = [evs[k] for k in sorted(evs)]
     return out
@@ -2327,7 +2407,7 @@ def fetch_turkey(days, digi_ids, turksat_ids, debug=False):
 # Poland: Onet TV guide
 # --------------------------------------------------------------------------
 def parse_onet(page):
-    """[(hh, mm, title, type, live)] in page order."""
+    """[(hh, mm, title, type, live, description)] in page order."""
     import html as _html
     clean = lambda x: re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", " ", x))).strip()
     i = page.find('class="emissions"')
@@ -2346,7 +2426,8 @@ def parse_onet(page):
         live = bool(re.search(rx, title, re.I) or re.search(rx, typ, re.I)
                     or (desc and re.search(rx, clean(desc.group(1))[:80], re.I)))
         title = re.sub(r"\s*[-(:]?\s*" + rx + r"\s*\)?\s*$", "", title, flags=re.I).strip() or title
-        rows.append((int(t.group(1)), int(t.group(2)), title, typ, live))
+        rows.append((int(t.group(1)), int(t.group(2)), title, typ, live,
+                     short_desc(clean(desc.group(1))) if desc else ""))
     return rows
 
 
@@ -2373,13 +2454,14 @@ def fetch_poland(days, slugs, debug=False):
                     break                              # channel not on the site
                 continue
             last = None
-            for hh, mm, title, typ, live in rows:
+            for hh, mm, title, typ, live, desc in rows:
                 start = datetime(day.year, day.month, day.day, hh, mm, tzinfo=WARSAW)
                 if last and start < last:
                     start += timedelta(days=1)         # past midnight
                 last = start
                 key = start.astimezone(timezone.utc)
-                evs[key] = {"start": key, "title": title, "sub": typ, "live": live}
+                evs[key] = {"start": key, "title": title, "sub": typ, "live": live,
+                            "desc": desc if desc not in (title, typ) else ""}
         if evs:
             out[slug] = [evs[k] for k in sorted(evs)]
     return out
@@ -2424,7 +2506,8 @@ def fetch_czechia(days, cids, debug=False, tz=PRAGUE):
                 rx = r"\b(živě|naživo|přímý přenos|priamy prenos|live)\b"
                 live = bool(re.search(rx, title, re.I) or re.search(rx, get("shortDescription"), re.I))
                 title = re.sub(r"\s*[-(]?\s*" + rx + r"\s*\)?\s*$", "", title, flags=re.I).strip() or title
-                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live}
+                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                              "desc": short_desc(get("longDescription") or get("shortDescription"))}
         if evs:
             out[cid] = [evs[k] for k in sorted(evs)]
     return out
@@ -2472,7 +2555,8 @@ def fetch_albania(days, slugs, debug=False):
                 rx = r"\b(live|drejtp[eë]rdrejt)\b"
                 live = bool(sh.get("is_live")) or bool(re.search(rx, title, re.I))
                 title = re.sub(r"\s*[-(]?\s*" + rx + r"\s*\)?\s*$", "", title, flags=re.I).strip() or title
-                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live}
+                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                              "desc": pick_desc(sh, "description", "desc", "synopsis", "show_desc")}
         if evs:
             out[al_name(slug)] = [evs[k] for k in sorted(evs)]
     return out
@@ -2570,6 +2654,12 @@ FOREIGN = re.compile(r"[\u0590-\u05FF\u0370-\u03FF\u1F00-\u1FFF\u0400-\u04FF\u09
                      r"\u3040-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]")
 # Hebrew, Greek, Cyrillic, Indian scripts (Devanagari, Tamil ...), Thai, Japanese, Chinese, Korean
 TRANSLATIONS = {}
+DESC_USED = {}            # translated description -> last day it was in the guide (old ones are dropped)
+DESC_KEEP_DAYS = 14
+DESC_PENDING = set()      # descriptions not translated yet: left out of the guide this run
+ENGLISH_PLACES = {"Australia", "Malaysia", "Singapore", "Hong Kong", "Thailand", "Indonesia",
+                  "South Africa", "Africa", "India"}   # their guides are already in English
+GOOGLE_LIMITED = [False]  # Google said 'too many requests': stop translating descriptions this run
 
 
 def load_cache():
@@ -2578,14 +2668,23 @@ def load_cache():
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
         TRANSLATIONS.update({k: v for k, v in data.items() if isinstance(v, str)})
-    except (OSError, ValueError):
+        used = data.get("__desc_used__")
+        DESC_USED.update({k: v for k, v in (used if isinstance(used, dict) else {}).items()
+                          if isinstance(v, str)})
+    except (OSError, ValueError, AttributeError):
         pass
 
 
 def save_cache():
+    oldest = (date.today() - timedelta(days=DESC_KEEP_DAYS)).isoformat()
+    for text, day in list(DESC_USED.items()):
+        if day < oldest:                               # a description not seen for a while
+            DESC_USED.pop(text, None)
+            TRANSLATIONS.pop(text, None)
     try:
         with open(CACHE_FILE, "w", encoding="utf-8") as f:
-            json.dump(TRANSLATIONS, f, ensure_ascii=False, indent=1, sort_keys=True)
+            json.dump({**TRANSLATIONS, "__desc_used__": DESC_USED}, f, ensure_ascii=False, indent=1,
+                      sort_keys=True)
     except OSError as e:
         print(f"WARNING: could not save translations: {e}", file=sys.stderr)
 
@@ -2630,6 +2729,69 @@ def translate_all(texts, force=()):
 
 def en(text):
     return TRANSLATIONS.get(text, text)
+
+
+def google_translate_batch(texts):
+    """Several one-line texts in one request (joined by new lines); None if that didn't work."""
+    params = {"client": "gtx", "sl": "auto", "tl": "en", "dt": "t", "q": "\n".join(texts)}
+    url = "https://translate.googleapis.com/translate_a/single?" + urllib.parse.urlencode(params)
+    try:
+        time.sleep(1.0)
+        req = urllib.request.Request(url, headers={"User-Agent": HEADERS["User-Agent"]})
+        with urllib.request.urlopen(req, timeout=30, context=CTX) as resp:
+            data = json.load(resp)
+        lines = "".join(seg[0] for seg in data[0] if seg and seg[0]).split("\n")
+        lines = [ln.strip() for ln in lines]
+        return lines if len(lines) == len(texts) and all(lines) else None
+    except urllib.error.HTTPError as e:
+        if e.code == 429:
+            GOOGLE_LIMITED[0] = True
+    except (urllib.error.URLError, TimeoutError, ValueError, IndexError, TypeError):
+        pass
+    return None
+
+
+def translate_descriptions(records, limit):
+    """Translate the guide's descriptions (nearest programmes first, at most limit new ones),
+    about ten per request. Ones not translated yet go into DESC_PENDING and are left out."""
+    today = date.today().isoformat()
+    need = {}                                          # text -> earliest start
+    for rec in records:
+        english = rec["place"] in ENGLISH_PLACES
+        for ev in rec["events"]:
+            d = ev.get("desc")
+            if d and not (english and not FOREIGN.search(d)):
+                need[d] = min(need.get(d, ev["start"]), ev["start"])
+    for d in need:
+        if d in TRANSLATIONS:
+            DESC_USED[d] = today
+    todo = sorted((d for d in need if d not in TRANSLATIONS), key=lambda d: need[d])[:max(limit, 0)]
+    if todo:
+        print(f"Translating {len(todo)} new description(s), about ten at a time ...")
+    done, i = 0, 0
+    while i < len(todo) and not GOOGLE_LIMITED[0]:
+        batch = []
+        while i < len(todo) and len(batch) < 10 and \
+                len(urllib.parse.quote("\n".join(batch + [todo[i]]))) <= 6000:
+            batch.append(todo[i])
+            i += 1
+        if not batch:                                  # one very long text: on its own
+            batch, i = [todo[i]], i + 1
+        out = google_translate_batch(batch) if len(batch) > 1 else None
+        if out is None and not GOOGLE_LIMITED[0]:
+            out = [google_translate(t) for t in batch]  # the batch didn't split cleanly: one by one
+        for t, tr_ in zip(batch, out):
+            if tr_:
+                TRANSLATIONS[t] = tr_
+                DESC_USED[t] = today
+                done += 1
+    if todo:
+        print(f"  translated {done}/{len(todo)}" + (" (Google asked to slow down - the rest next run)"
+                                                    if GOOGLE_LIMITED[0] else ""))
+    DESC_PENDING.update(d for d in need if d not in TRANSLATIONS)
+    if DESC_PENDING:
+        print(f"  {len(DESC_PENDING)} description(s) left out until translated on a later run")
+    save_cache()
 
 
 # --------------------------------------------------------------------------
@@ -2743,7 +2905,9 @@ def build_xmltv(records, suffix, minutes):
             uk = ev["start"].astimezone(LONDON)
             when = f"{uk:%a %d %b, %H:%M}"
             orig = f" Original title: {ev['title']}." if title != ev["title"] else ""
-            desc = (f"{'LIVE. ' if ev['live'] else ''}{sub + '. ' if sub else ''}{name}, "
+            about = "" if ev.get("desc") in DESC_PENDING else en(ev.get("desc") or "")
+            about = about + ("" if about[-1:] in ".!?…" else ".") + " " if about else ""
+            desc = (f"{'LIVE. ' if ev['live'] else ''}{sub + '. ' if sub else ''}{about}{name}, "
                     f"{when} UK ({loc:%H:%M} {rec['place']}).{orig}")
             if rec["filler"]:
                 for a, b in filler_blocks(last_stop or now, start):
@@ -2836,8 +3000,8 @@ def main():
     ap.add_argument("--ss-regions", default="ZA,AF", help="ZA (South Africa), AF (rest of Africa), or both")
     ap.add_argument("--ss-numbers", default="200-249", help="DStv channel numbers to take (default 200-249)")
     ap.add_argument("--no-bein", action="store_true", help="leave out the beIN SPORTS Asia-Pacific channels")
-    ap.add_argument("--bein", default=",".join(BEIN_COUNTRIES),
-                    help=f"beIN countries, comma separated (default {','.join(BEIN_COUNTRIES)})")
+    ap.add_argument("--bein", default=BEIN_DEFAULT,
+                    help=f"beIN countries, comma separated (default {BEIN_DEFAULT}; also {','.join(c for c in BEIN_COUNTRIES if c not in BEIN_DEFAULT)})")
     ap.add_argument("--no-france", action="store_true", help="leave out the French channels")
     ap.add_argument("--fr-channels", default=",".join(FR_CHANNELS),
                     help="SFR channel numbers, comma separated (e.g. 35,1290,2665)")
@@ -2892,6 +3056,9 @@ def main():
                     help="which Ziggo channels to include, by name (default: 'ESPN|Ziggo Sport')")
     ap.add_argument("--no-filler", action="store_true", help="no programmes between Israeli events")
     ap.add_argument("--no-translate", action="store_true", help="keep Hebrew / Greek titles")
+    ap.add_argument("--no-desc", action="store_true", help="leave out the sources' own programme descriptions")
+    ap.add_argument("--desc-translations", type=int, default=3000,
+                    help="most new descriptions to translate in one run (default 3000; the rest follow next run)")
     ap.add_argument("--run-ids", action="store_true", help="fresh ids with a run number")
     ap.add_argument("--suffix", type=int, default=None, help="run ids with this run number")
     ap.add_argument("--debug", action="store_true", help="print rows read for each day")
@@ -3242,6 +3409,11 @@ def main():
         run_no = args.suffix if args.suffix is not None else load_last_run() + 1
         suffix = f"-Run{run_no}"
 
+    if args.no_desc:
+        for rec in records:
+            rec["events"] = [dict(e, desc="") for e in rec["events"]]
+    elif not args.no_translate:
+        translate_descriptions(records, args.desc_translations)
     tv, count, listed = build_xmltv(records, suffix, args.minutes)
     out_path = unique_path(args.out) if args.unique else args.out
     write_xml(tv, out_path)
