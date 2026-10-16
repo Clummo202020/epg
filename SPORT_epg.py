@@ -121,11 +121,11 @@ GERMANY - MagentaTV's web guide (Deutsche Telekom, JSON). It first asks for an a
 TURKEY - two open sources, each one request per day for every channel:
     Digiturk (beIN SPORTS 1-5, MAX 1-2, HABER), HTML:
       https://www.digiturk.com.tr/Ajax/GetTvGuideFromDigiturk?Day=MM%2FDD%2FYYYY+00%3A00%3A00
-    Türksat Kablo (TRT Spor, TRT Spor Yıldız, S Sport 1-2, A Spor), JSON:
+    Türksat Kablo (TRT Spor, TRT Spor Yıldız, S Sport 1-2, A Spor, beIN SPORTS HABER), JSON:
       https://www.turksatkablo.com.tr/userUpload/EPG/DD.json
   Türksat's files are named only by day of the month, so only today and tomorrow are
   taken from it (a later day could be last month's file). Channels chosen with
-  --tr-digiturk and --tr-turksat (each site's channel numbers). Turkish titles are
+  --tr-digiturk (Digiturk channel numbers) and --tr-turksat (Türksat channel names). Turkish titles are
   translated; "Canlı" marks live. Channels: TR.beINSPORTS1 ... TR.TRTSpor, TR.SSport ...
 
 INDIA - Tata Play's public guide API (JSON), one request per channel and day:
@@ -445,10 +445,10 @@ TR_DIGITURK = {          # Digiturk channel number -> channel name
     "506": "beIN SPORTS 5", "507": "beIN SPORTS MAX 1", "508": "beIN SPORTS MAX 2",
     "541": "beIN SPORTS HABER",
 }
-TR_TURKSAT = {           # Türksat Kablo channel number -> channel name (two numbers may share a name)
-    "3101": "TRT Spor", "2505": "TRT Spor", "2711": "TRT Spor Yıldız",
-    "1810": "S Sport", "3901": "S Sport 2", "3103": "A Spor", "2209": "A Spor",
-}
+TR_TURKSAT = [           # Türksat Kablo channels, found by name (the file no longer has channel numbers)
+    "TRT Spor", "TRT Spor Yıldız", "S Sport", "S Sport 2", "A Spor",
+    "beIN SPORTS HABER",  # same name as Digiturk's, so the same ID; the fuller of the two is kept
+]
 MAGENTA_API = "https://api.prod.sngtv.magentatv.de/EPG/JSON/"
 MAGENTA_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
               "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
@@ -2198,6 +2198,63 @@ def parse_digiturk(page):
     return out
 
 
+def turksat_key(name):
+    """'TRT SPOR HD' / 'TRT Spor' -> 'trtspor'; 'TRT Spor Yıldız' -> 'trtsporyildiz'."""
+    import unicodedata
+    n = unicodedata.normalize("NFKD", str(name).replace("ı", "i").replace("İ", "I"))
+    n = re.sub(r"[^a-z0-9]", "", "".join(ch for ch in n if not unicodedata.combining(ch)).lower())
+    return re.sub(r"(hd|sd|fhd|uhd|4k)$", "", n) or n
+
+
+def turksat_channels(data):
+    """The list of channel entries in a Türksat day file, whatever wrapping it arrives in
+    (normally {"k": [{"i": position, "n": name, "p": [programmes]}, ...]})."""
+    for _ in range(2):                                # JSON sent as a string inside JSON
+        if isinstance(data, str):
+            try:
+                data = json.loads(data.lstrip("\ufeff"))
+            except ValueError:
+                return []
+    is_chan = lambda c: isinstance(c, dict) and "n" in c and "p" in c
+    if isinstance(data, list):
+        return [c for c in data if is_chan(c)]
+    if isinstance(data, dict):
+        if isinstance(data.get("k"), list):
+            return [c for c in data["k"] if is_chan(c)]
+        for v in data.values():                       # the list moved to another key
+            if isinstance(v, list) and any(is_chan(c) for c in v):
+                return [c for c in v if is_chan(c)]
+    return []
+
+
+def turksat_debug(day, data, chans, wanted):
+    """--debug: say what Türksat actually sent, and save it for a closer look."""
+    if data is None:
+        print("    Türksat sent nothing usable (see any WARNING above)")
+        return
+    shape = (f"keys {list(data)[:8]}" if isinstance(data, dict) else
+             f"a list of {len(data)} items" if isinstance(data, list) else
+             f"{type(data).__name__} starting {str(data)[:60]!r}")
+    print(f"    Türksat file: {shape}; {len(chans)} channel(s) found, "
+          f"{sum(1 for c in chans.values() if c.get('p'))} with programmes")
+    if chans:
+        first = next(iter(chans.values()))
+        progs = first.get("p") or []
+        print(f"    first channel's fields: {sorted(first)}; first programme: {progs[0] if progs else '(none)'}")
+        found = [c for c in wanted if turksat_key(c) in chans]
+        print(f"    our channels present: {found or 'none'}; "
+              f"missing: {[c for c in wanted if turksat_key(c) not in chans] or 'none'}")
+        sport = [str(c.get("n")) for c in chans.values() if re.search(r"spor", str(c.get("n")), re.I)]
+        print(f"    sports channels in the file: {sport or 'none'}")
+    name = f"turksat_debug_{day:%d}.json"
+    try:
+        with open(name, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=1)
+        print(f"    saved what Türksat sent to {name}")
+    except OSError as e:
+        print(f"    could not save {name}: {e}")
+
+
 def fetch_turkey(days, digi_ids, turksat_ids, debug=False):
     """{channel name: [{start, stop, title, sub, live}]}"""
     hdrs = {"User-Agent": IPTV_ORG_CHROME, "X-Requested-With": "XMLHttpRequest",
@@ -2234,12 +2291,17 @@ def fetch_turkey(days, digi_ids, turksat_ids, debug=False):
         data = get_json_url(TURKSAT_EPG.format(day=day, ms=ms),
                             {"User-Agent": IPTV_ORG_CHROME, "Accept": "application/json, */*",
                              "Referer": "https://www.turksatkablo.com.tr/"}) or {}
-        chans = {str(c.get("x")): c for c in (data.get("k") or [])} if isinstance(data, dict) else {}
+        chans = {}                                    # name key -> fullest entry (SD and HD may both appear)
+        for c in turksat_channels(data):
+            k = turksat_key(c.get("n"))
+            if len(c.get("p") or []) > len((chans.get(k) or {}).get("p") or []):
+                chans[k] = c
         if debug:
-            print(f"  Türksat {day}: {sum(len((chans.get(c) or {}).get('p') or []) for c in turk)} programmes")
+            print(f"  Türksat {day}: {sum(len((chans.get(turksat_key(c)) or {}).get('p') or []) for c in turk)} programmes")
+            turksat_debug(day, data, chans, turk)
         for cid in turk:
             last = None
-            for pr in (chans.get(cid) or {}).get("p") or []:
+            for pr in (chans.get(turksat_key(cid)) or {}).get("p") or []:
                 try:
                     h1, m1 = map(int, pr["c"].split(":")); h2, m2 = map(int, pr["d"].split(":"))
                 except (KeyError, ValueError, AttributeError):
@@ -2255,7 +2317,7 @@ def fetch_turkey(days, digi_ids, turksat_ids, debug=False):
 
     out = {}
     for (src, cid), evs in per_id.items():
-        name = (TR_DIGITURK if src == "D" else TR_TURKSAT).get(cid, f"Turkish channel {cid}")
+        name = TR_DIGITURK.get(cid, f"Turkish channel {cid}") if src == "D" else cid
         if evs and (name not in out or len(evs) > len(out[name])):
             out[name] = [evs[k] for k in sorted(evs)]  # same channel twice: keep the fuller one
     return out
@@ -2795,7 +2857,7 @@ def main():
     ap.add_argument("--tr-digiturk", default=",".join(TR_DIGITURK),
                     help="Digiturk channel numbers, comma separated (e.g. 193,310)")
     ap.add_argument("--tr-turksat", default=",".join(TR_TURKSAT),
-                    help="Türksat Kablo channel numbers, comma separated (e.g. 3101,1810)")
+                    help="Türksat Kablo channel names, comma separated (e.g. \"TRT Spor,S Sport\")")
     ap.add_argument("--no-germany", action="store_true", help="leave out the German channels")
     ap.add_argument("--de-channels", default=",".join(DE_CHANNELS),
                     help="MagentaTV channel numbers, comma separated (e.g. 190,206,401)")
