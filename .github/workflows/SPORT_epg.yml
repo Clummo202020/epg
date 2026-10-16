@@ -11,7 +11,7 @@ name: Update SPORT EPG
 
 on:
   schedule:
-    - cron: "0 6 * * *"     # every day at 06:00 UTC (07:00 UK summer time)
+    - cron: "0 12 * * *"     # every day at 06:00 UTC (07:00 UK summer time)
   workflow_dispatch:         # adds a "Run workflow" button on the Actions tab
 
 permissions:
