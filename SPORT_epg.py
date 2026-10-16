@@ -6,8 +6,7 @@ Bulgaria (MAX Sport, Diema Sport, Nova Sport, Ring ...), the Balkans (Arena Spor
 Sport Klub), Belgium (Play Sports, DAZN), Spain (Movistar Plus+), Portugal (MEO), Brazil (Claro), Albania/Kosovo (SuperSport), Czechia (ČT sport, Nova Sport ...), Slovakia
 (STVR Šport, JOJ Šport, Arena Sport), Poland (TVP Sport, Polsat Sport, Canal+ Sport,
 Eleven Sports), Italy (Sky Sport, DAZN, Rai Sport), Germany (Sky Sport, SPORT1, Eurosport),
-Turkey (beIN SPORTS, TRT Spor, S Sport, A Spor), India (Star Sports, Sony Sports Ten, DD Sports)
-Latvia (GO3 Sport, Sportacentrs, Best4Sport, Setanta Sports), Switzerland (blue Sport,
+India (Star Sports, Sony Sports Ten, DD Sports), Switzerland (blue Sport,
 MySports, SRF zwei, RTS 2, RSI LA 2), France (Canal+ Sport, beIN SPORTS, RMC Sport, L'Équipe)
 the Nordics: Sweden (V Sport, TV4 Sport), Norway (TV 2 Sport, V Sport), Denmark
 (TV 2 Sport, TV3 Sport) and Finland (MTV Urheilu, V Sport, Viaplay Urheilu), beIN SPORTS in Australia, Malaysia, Singapore, Hong Kong,
@@ -118,16 +117,6 @@ GERMANY - MagentaTV's web guide (Deutsche Telekom, JSON). It first asks for an a
   SPORT1, Eurosport 1-2, Sportdigital Fussball, MagentaSport). German text is translated.
   Channels: DE.SkySportNews, DE.SkySportBundesliga1, DE.SPORT1, DE.Eurosport1 ...
 
-TURKEY - two open sources, each one request per day for every channel:
-    Digiturk (beIN SPORTS 1-5, MAX 1-2, HABER), HTML:
-      https://www.digiturk.com.tr/Ajax/GetTvGuideFromDigiturk?Day=MM%2FDD%2FYYYY+00%3A00%3A00
-    Türksat Kablo (TRT Spor, TRT Spor Yıldız, S Sport 1-2, A Spor, beIN SPORTS HABER), JSON:
-      https://www.turksatkablo.com.tr/userUpload/EPG/DD.json
-  Türksat's files are named only by day of the month, so only today and tomorrow are
-  taken from it (a later day could be last month's file). Channels chosen with
-  --tr-digiturk (Digiturk channel numbers) and --tr-turksat (Türksat channel names). Turkish titles are
-  translated; "Canlı" marks live. Channels: TR.beINSPORTS1 ... TR.TRTSpor, TR.SSport ...
-
 INDIA - Tata Play's public guide API (JSON), one request per channel and day:
     POST https://tm.tapi.videoready.tv/content-detail/pub/api/v2/channels/schedule?date=DD-MM-YYYY
          {"id": "600"}
@@ -136,18 +125,14 @@ INDIA - Tata Play's public guide API (JSON), one request per channel and day:
   Start and end times are given. Titles are mostly English; Hindi or regional-script
   titles are translated. Channels: IN.StarSports1, IN.SonySportsTen1, IN.DDSports ...
 
-LATVIA - tv.lv's public guide (JSON), one request per channel and day:
-    https://www.tv.lv/programme/listing/none/DD-MM-YYYY?filter=channel&subslug=go3-sport
-  Channels chosen with --lv-channels (tv.lv channel names; default: GO3 Sport 1-4,
-  Sportacentrs). Each run also looks in tv.lv's live channel list for channels matching
-  --lv-extra (default: Best4Sport and Setanta) and adds them.
-  Setanta Sports is one Baltic-wide service; if tv.lv doesn't list it, it is read from
-  Go3's open guide instead (all Setanta channels in one request per day):
-    https://go3.ee/api/products/lives/programmes?liveId[]=...&since=...&till=...&tenant=OM_EE
-  Start and end times are given. Latvian/Estonian titles are translated; "tiešraide",
-  Go3's live flag or "otse" marks live.
-  Channels: LV.GO3Sport1 ... LV.GO3Sport4, LV.Sportacentrs, LV.Best4Sport, LV.SetantaSports,
-  LV.SetantaSports2
+EPGSHARE01 - ready-made XMLTV files from https://epgshare01.online/epgshare01/ (free, no login),
+  one file per country, read once per run (gzip):
+    https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz   (also LV1, HK1, ID1, BEIN1)
+  Groups chosen with --epgshare (default turkey,latvia,hk,id,mena); --no-epgshare for none.
+  Each channel has a fixed ID and a list of the file's own IDs for it, best first; the one
+  with most programmes is used. Turkish, Latvian and Indonesian titles are translated.
+  Channels: TR.beINSPORTS1 ... TR.TRTSpor, LV.GO3Sport1 ... LV.SetantaSports, HK.beINSPORTS1,
+  HK.NowSports1 ..., ID.beINSPORTS1, ID.SPOTV ..., MENA.beINSPORTS1 ..., MENA.Alkass1 ...
 
 SWITZERLAND - Swisscom's public blue TV guide (JSON), one request per channel and day:
     https://services.sg101.prd.sctv.ch/catalog/tv/channels/list/(ids=483;start=YYYYMMDD0000;end=...;level=normal)
@@ -233,7 +218,7 @@ Both:
 
 Usage:
     python3 SPORT_epg.py                  # all countries, next 7 days -> SPORT_epg.xml.gz
-    python3 SPORT_epg.py --no-israel      # leave out Sport 5 (also --no-charlton, --no-greece, --no-netherlands, --no-romania, --no-bulgaria, --no-arena, --no-sportklub, --no-belgium, --no-spain, --no-portugal, --no-brazil, --no-albania, --no-czechia, --no-slovakia, --no-poland, --no-italy, --no-germany, --no-turkey, --no-india, --no-latvia, --no-switzerland, --no-france, --no-sweden,
+    python3 SPORT_epg.py --no-israel      # leave out Sport 5 (also --no-charlton, --no-greece, --no-netherlands, --no-romania, --no-bulgaria, --no-arena, --no-sportklub, --no-belgium, --no-spain, --no-portugal, --no-brazil, --no-albania, --no-czechia, --no-slovakia, --no-poland, --no-italy, --no-germany, --no-india, --no-switzerland, --no-france, --no-sweden,
                                           --no-norway, --no-denmark, --no-finland, --no-bein, --no-supersport)
     python3 SPORT_epg.py --days 10
     python3 SPORT_epg.py --debug          # print what was read for each day
@@ -326,13 +311,11 @@ WARSAW = ZoneInfo("Europe/Warsaw")
 BRATISLAVA = ZoneInfo("Europe/Bratislava")
 ROME = ZoneInfo("Europe/Rome")
 BERLIN = ZoneInfo("Europe/Berlin")
-ISTANBUL = ZoneInfo("Europe/Istanbul")
 # iptv-org's current, working browser identities (an older Chrome version gets 'HTTP 403')
 IPTV_ORG_CHROME = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
                    "(KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36")
 IPTV_ORG_EDGE = IPTV_ORG_CHROME + " Edg/143.0.0.0"
 KOLKATA = ZoneInfo("Asia/Kolkata")
-RIGA = ZoneInfo("Europe/Riga")
 ZURICH = ZoneInfo("Europe/Zurich")
 PARIS = ZoneInfo("Europe/Paris")
 DSTV_GUIDE = "https://www.dstv.com/umbraco/api/TvGuide/GetProgrammes?d={day:%Y-%m-%d}{extra}&country={country}"
@@ -415,16 +398,6 @@ CH_CHANNELS = {          # blue TV channel number -> (id part, channel name)
     "1722": ("MySportsEDGE", "MySports EDGE"), "1601": ("SwissSportTV", "Swiss Sport TV"),
     "401": ("SRFzwei", "SRF zwei"), "367": ("RTS2", "RTS 2"), "357": ("RSILA2", "RSI LA 2"),
 }
-TVLV_LISTING = "https://www.tv.lv/programme/listing/none/{day:%d-%m-%Y}?filter=channel&subslug={slug}"
-TVLV_CHANNELS = "https://www.tv.lv/data/channels/lvall"
-LV_EXTRA = r"best ?4 ?sport|setanta"
-GO3_API = "https://go3.ee/api/products/lives"
-GO3_FALLBACK = {"4487515": "Setanta Sports", "8269425": "Setanta Sports 2"}   # if Go3's list can't be read
-LV_CHANNELS = {          # tv.lv channel name -> (id part, channel name)
-    "go3-sport": ("GO3Sport1", "GO3 Sport 1"), "go3-sport-2": ("GO3Sport2", "GO3 Sport 2"),
-    "go3-sport-3": ("GO3Sport3", "GO3 Sport 3"), "go3-sport-4": ("GO3Sport4", "GO3 Sport 4"),
-    "sportacentrs": ("Sportacentrs", "Sportacentrs"),
-}
 TATAPLAY_GUIDE = "https://tm.tapi.videoready.tv/content-detail/pub/api/v2/channels/schedule?date={day:%d-%m-%Y}"
 TATAPLAY_HEADERS = {"User-Agent": IPTV_ORG_EDGE,                      # exactly as iptv-org asks
                     "Accept": "*/*", "Content-Type": "application/json", "locale": "ENG",
@@ -439,17 +412,6 @@ IN_CHANNELS = {          # Tata Play channel number -> (id part, channel name)
     "171": ("SonySportsTen3Hindi", "Sony Sports Ten 3 Hindi"), "610": ("SonySportsTen5", "Sony Sports Ten 5"),
     "223": ("DDSports", "DD Sports"), "693": ("Eurosport", "Eurosport India"),
 }
-DIGITURK_GUIDE = "https://www.digiturk.com.tr/Ajax/GetTvGuideFromDigiturk?Day={day:%m}%2F{day:%d}%2F{day:%Y}+00%3A00%3A00"
-TURKSAT_EPG = "https://www.turksatkablo.com.tr/userUpload/EPG/{day:%d}.json?_={ms}"
-TR_DIGITURK = {          # Digiturk channel number -> channel name
-    "193": "beIN SPORTS 1", "310": "beIN SPORTS 2", "312": "beIN SPORTS 3", "495": "beIN SPORTS 4",
-    "506": "beIN SPORTS 5", "507": "beIN SPORTS MAX 1", "508": "beIN SPORTS MAX 2",
-    "541": "beIN SPORTS HABER",
-}
-TR_TURKSAT = [           # Türksat Kablo channels, found by name (the file no longer has channel numbers)
-    "TRT Spor", "TRT Spor Yıldız", "S Sport", "S Sport 2", "A Spor",
-    "beIN SPORTS HABER",  # same name as Digiturk's, so the same ID; the fuller of the two is kept
-]
 MAGENTA_API = "https://api.prod.sngtv.magentatv.de/EPG/JSON/"
 MAGENTA_UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
               "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
@@ -692,8 +654,10 @@ def fetch(url, data=None, headers=None, method=None, parse="text", retries=3, qu
             with urllib.request.urlopen(req, timeout=FETCH_TIMEOUT, context=HOST_CTX.get(host, CTX)) as resp:
                 raw = resp.read()
                 ctype = resp.headers.get("Content-Type", "")
-            text = raw.decode("utf-8", "replace")
-            if parse == "json":
+            text = raw.decode("utf-8", "replace") if parse != "bytes" else ""
+            if parse == "bytes":
+                out = raw
+            elif parse == "json":
                 try:
                     out = json.loads(text)
                 except ValueError:
@@ -2084,124 +2048,6 @@ def fetch_switzerland(days, ids, debug=False):
 
 
 # --------------------------------------------------------------------------
-# Latvia: tv.lv guide
-# --------------------------------------------------------------------------
-TVLV_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-                              "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
-                "Accept": "application/json, text/javascript, */*", "X-Requested-With": "XMLHttpRequest",
-                "Accept-Language": "lv-LV,lv;q=0.9", "Referer": "https://www.tv.lv/"}
-
-
-def tvlv_extra(pattern, debug=False):
-    """{slug: name} of tv.lv channels whose name matches pattern (from tv.lv's live list)."""
-    if not pattern:
-        return {}
-    groups = get_json_url(TVLV_CHANNELS, TVLV_HEADERS)
-    rx, out = re.compile(pattern, re.I), {}
-    for g in groups if isinstance(groups, list) else []:
-        for ch in (g.get("channels") or []) if isinstance(g, dict) else []:
-            name, slug = (ch.get("name") or "").strip(), (ch.get("slug") or "").strip()
-            if name and slug and rx.search(name):
-                out[slug] = name
-    if debug:
-        print(f"  tv.lv extra channels: {out or 'none found'}")
-    return out
-
-
-def fetch_setanta_go3(days, debug=False):
-    """{channel name: [{start, stop, title, sub, live}]} for Setanta Sports from Go3 (Estonia)."""
-    lives = get_json_url(f"{GO3_API}?platform=BROWSER&lang=ET&tenant=OM_EE", TVLV_HEADERS)
-    ids = {str(x.get("id")): (x.get("title") or "").strip() for x in lives if isinstance(x, dict)} \
-        if isinstance(lives, list) else {}
-    ids = {k: v for k, v in ids.items() if re.match(r"setanta sports\b", v, re.I)} or dict(GO3_FALLBACK)
-    if debug:
-        print(f"  Go3: {len(ids)} Setanta channel entries")
-    q = "&".join("liveId%5B%5D=" + urllib.parse.quote(i) for i in sorted(ids))
-    per = {}
-    for day in days:
-        url = (f"{GO3_API}/programmes?{q}&since={day:%Y-%m-%d}T00%3A00%2B0000&till={day:%Y-%m-%d}T23%3A59%2B0000"
-               f"&platform=BROWSER&lang=ET&tenant=OM_EE")
-        items = get_json_url(url, TVLV_HEADERS)
-        items = items if isinstance(items, list) else []
-        if debug:
-            print(f"  Go3 Setanta {day}: {len(items)} programmes")
-        for it in items:
-            if not isinstance(it, dict):
-                continue
-            live_ch = it.get("live") or {}
-            cid = str(live_ch.get("id") or "")
-            if cid not in ids:
-                continue
-            try:
-                start = datetime.fromisoformat(it["since"].replace("Z", "+00:00")).astimezone(timezone.utc)
-                stop = datetime.fromisoformat(it["till"].replace("Z", "+00:00")).astimezone(timezone.utc)
-            except (KeyError, TypeError, ValueError, AttributeError):
-                continue
-            title = re.sub(r"\s+", " ", it.get("originalTitle") or it.get("title") or "").strip()
-            if not title or stop <= start:
-                continue
-            rx = r"\b(otse|otseülekanne|live)\b"
-            live = bool(it.get("liveProgramme")) or bool(re.search(rx, title, re.I))
-            title = re.sub(r"^\s*" + rx + r"\s*[:\-]?\s*|\s*[(\-:]\s*" + rx + r"\s*\)?\s*$", "", title,
-                           flags=re.I).strip() or title
-            per.setdefault(cid, {})[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
-                                              "desc": pick_desc(it, "description", "lead")}
-    out = {}
-    for cid, evs in per.items():
-        name = re.sub(r"\s+", " ", ids[cid])
-        if evs and (name not in out or len(evs) > len(out[name])):
-            out[name] = [evs[k] for k in sorted(evs)]     # many same-named entries: keep the fullest
-    return out
-
-
-def fetch_latvia(days, slugs, debug=False, extra_pattern=LV_EXTRA):
-    """({slug: [{start, stop, title, sub, live}]}, {slug: name for channels found at run time})"""
-    hdrs = TVLV_HEADERS
-    found = tvlv_extra(extra_pattern, debug)
-    wanted = [x.strip() for x in slugs.split(",") if x.strip()]
-    wanted += [x for x in found if x not in wanted]
-    out = {}
-    for slug in wanted:
-        evs = {}
-        for day in days:
-            data = get_json_url(TVLV_LISTING.format(day=day, slug=urllib.parse.quote(slug, safe="-")), hdrs) or {}
-            sched = data.get("schedule") if isinstance(data, dict) else None
-            progs = (sched or {}).get("programme") if isinstance(sched, dict) else None
-            progs = progs if isinstance(progs, list) else []
-            if debug:
-                print(f"  tv.lv {slug} {day}: {len(progs)} programmes")
-            if not progs and day == days[0]:
-                break
-            for pr in progs:
-                try:
-                    start = datetime.fromtimestamp(int(pr["start_unix"]), timezone.utc)
-                    stop = datetime.fromtimestamp(int(pr["stop_unix"]), timezone.utc)
-                except (KeyError, TypeError, ValueError):
-                    continue
-                title = re.sub(r"\s+", " ", pr.get("title") or "").strip()
-                sub = re.sub(r"\s+", " ", pr.get("ep_title") or "").strip()
-                if not title or stop <= start:
-                    continue
-                rx = r"\b(tiešraide|tiesraide|live)\b"
-                live = bool(re.search(rx, title, re.I) or re.search(rx, sub, re.I)
-                            or re.search(rx, str(pr.get("status") or ""), re.I))
-                title = re.sub(r"^\s*" + rx + r"\s*[.:\-]?\s*|\s*[.(\-:]\s*" + rx + r"\s*\)?\.?\s*$", "", title,
-                               flags=re.I).strip() or title
-                evs[start] = {"start": start, "stop": stop, "title": title,
-                              "sub": sub if sub != title else "", "live": live,
-                              "desc": pick_desc(pr, "description_long", "description")}
-        if evs:
-            out[slug] = [evs[k] for k in sorted(evs)]
-    if extra_pattern and re.search(r"setanta", extra_pattern, re.I) \
-            and not any(re.search(r"setanta", n, re.I) for n in found.values()):
-        for name, evs in fetch_setanta_go3(days, debug).items():
-            slug = "go3:" + name
-            found[slug] = name
-            out[slug] = evs
-    return out, found
-
-
-# --------------------------------------------------------------------------
 # India: Tata Play guide
 # --------------------------------------------------------------------------
 def tataplay_time(value):
@@ -2242,164 +2088,6 @@ def fetch_india(days, ids, debug=False):
                               "desc": pick_desc(pr, "desc", "description", "synopsis")}
         if evs:
             out[cid] = [evs[k] for k in sorted(evs)]
-    return out
-
-
-# --------------------------------------------------------------------------
-# Turkey: Digiturk (beIN SPORTS) and Türksat Kablo (TRT Spor, S Sport, A Spor)
-# --------------------------------------------------------------------------
-TR_LIVE = r"\b(canlı|canli|live)\b"
-
-
-def tr_title(title):
-    """('Galatasaray - Fenerbahçe', True) from 'Galatasaray - Fenerbahçe (Canlı)'"""
-    live = bool(re.search(TR_LIVE, title, re.I) or re.search(r"\(c\)\s*$", title, re.I))
-    clean = re.sub(r"\s*[-(]?\s*" + TR_LIVE + r"\s*\)?\s*$|\s*\(c\)\s*$|^\s*" + TR_LIVE + r"\s*[:\-]\s*",
-                   "", title, flags=re.I).strip()
-    return clean or title, live
-
-
-def parse_digiturk(page):
-    """{channel number: [(hh, mm, minutes, title, description)]} in page order."""
-    import html as _html
-    out = {}
-    for block in page.split("channelDetail")[1:]:
-        t = re.search(r'time-hour"[^>]*>\s*(\d{1,2}):(\d{2})', block)
-        dur = re.search(r'time-totalMinute"[^>]*>[^<\d]*(\d+)', block)
-        ttl = re.search(r'wholeDates-title"[^>]*onclick="[^"]*?,\s*(\d+)\)"[^>]*>(.*?)</span>', block, re.S)
-        if not (t and ttl):
-            continue
-        title = re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", "", ttl.group(2)))).strip()
-        desc = re.search(r'wholeDates-description"[^>]*>(.*?)</span>', block, re.S)
-        desc = re.sub(r"\s+", " ", _html.unescape(re.sub(r"<[^>]+>", "", desc.group(1)))).strip() if desc else ""
-        if title:
-            out.setdefault(ttl.group(1), []).append(
-                (int(t.group(1)), int(t.group(2)), int(dur.group(1)) if dur else 0, title, desc))
-    return out
-
-
-def turksat_key(name):
-    """'TRT SPOR HD' / 'TRT Spor' -> 'trtspor'; 'TRT Spor Yıldız' -> 'trtsporyildiz'."""
-    import unicodedata
-    n = unicodedata.normalize("NFKD", str(name).replace("ı", "i").replace("İ", "I"))
-    n = re.sub(r"[^a-z0-9]", "", "".join(ch for ch in n if not unicodedata.combining(ch)).lower())
-    return re.sub(r"(hd|sd|fhd|uhd|4k)$", "", n) or n
-
-
-def turksat_channels(data):
-    """The list of channel entries in a Türksat day file, whatever wrapping it arrives in
-    (normally {"k": [{"i": position, "n": name, "p": [programmes]}, ...]})."""
-    for _ in range(2):                                # JSON sent as a string inside JSON
-        if isinstance(data, str):
-            try:
-                data = json.loads(data.lstrip("\ufeff"))
-            except ValueError:
-                return []
-    is_chan = lambda c: isinstance(c, dict) and "n" in c and "p" in c
-    if isinstance(data, list):
-        return [c for c in data if is_chan(c)]
-    if isinstance(data, dict):
-        if isinstance(data.get("k"), list):
-            return [c for c in data["k"] if is_chan(c)]
-        for v in data.values():                       # the list moved to another key
-            if isinstance(v, list) and any(is_chan(c) for c in v):
-                return [c for c in v if is_chan(c)]
-    return []
-
-
-def turksat_debug(day, data, chans, wanted):
-    """--debug: say what Türksat actually sent, and save it for a closer look."""
-    if data is None:
-        print("    Türksat sent nothing usable (see any WARNING above)")
-        return
-    shape = (f"keys {list(data)[:8]}" if isinstance(data, dict) else
-             f"a list of {len(data)} items" if isinstance(data, list) else
-             f"{type(data).__name__} starting {str(data)[:60]!r}")
-    print(f"    Türksat file: {shape}; {len(chans)} channel(s) found, "
-          f"{sum(1 for c in chans.values() if c.get('p'))} with programmes")
-    if chans:
-        first = next(iter(chans.values()))
-        progs = first.get("p") or []
-        print(f"    first channel's fields: {sorted(first)}; first programme: {progs[0] if progs else '(none)'}")
-        found = [c for c in wanted if turksat_key(c) in chans]
-        print(f"    our channels present: {found or 'none'}; "
-              f"missing: {[c for c in wanted if turksat_key(c) not in chans] or 'none'}")
-        sport = [str(c.get("n")) for c in chans.values() if re.search(r"spor", str(c.get("n")), re.I)]
-        print(f"    sports channels in the file: {sport or 'none'}")
-    name = f"turksat_debug_{day:%d}.json"
-    try:
-        with open(name, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=1)
-        print(f"    saved what Türksat sent to {name}")
-    except OSError as e:
-        print(f"    could not save {name}: {e}")
-
-
-def fetch_turkey(days, digi_ids, turksat_ids, debug=False):
-    """{channel name: [{start, stop, title, sub, live}]}"""
-    hdrs = {"User-Agent": IPTV_ORG_CHROME, "X-Requested-With": "XMLHttpRequest",
-            "Accept": "application/json, text/plain, */*"}           # exactly as iptv-org asks
-    digi = [c.strip() for c in digi_ids.split(",") if c.strip()]
-    turk = [c.strip() for c in turksat_ids.split(",") if c.strip()]
-    per_id = {}                                       # ("D"/"T", number) -> {start: event}
-
-    def add(key, start, stop, title, sub):
-        title, live = tr_title(title)
-        if title in ("-", "") or stop <= start:
-            return
-        s, e = start.astimezone(timezone.utc), stop.astimezone(timezone.utc)
-        per_id.setdefault(key, {})[s] = {"start": s, "stop": e, "title": title,
-                                         "sub": sub if sub and sub != title else "", "live": live}
-
-    for day in days if digi else []:
-        page = get_text(DIGITURK_GUIDE.format(day=day), {}, headers=hdrs, retries=2, quiet=True)
-        parsed = parse_digiturk(page) if page else {}
-        if debug:
-            print(f"  Digiturk {day}: {sum(len(parsed.get(c, [])) for c in digi)} programmes "
-                  f"on {sum(1 for c in digi if parsed.get(c))} channel(s)")
-        for cid in digi:
-            last = None
-            for hh, mm, mins, title, desc in parsed.get(cid, []):
-                start = datetime(day.year, day.month, day.day, hh, mm, tzinfo=ISTANBUL)
-                if last and start < last:
-                    start += timedelta(days=1)        # past midnight
-                last = start
-                add(("D", cid), start, start + timedelta(minutes=mins or 60), title, desc)
-
-    for day in days[:2] if turk else []:              # today and tomorrow only (see above)
-        ms = int(datetime(day.year, day.month, day.day, tzinfo=ISTANBUL).timestamp() * 1000)
-        data = get_json_url(TURKSAT_EPG.format(day=day, ms=ms),
-                            {"User-Agent": IPTV_ORG_CHROME, "Accept": "application/json, */*",
-                             "Referer": "https://www.turksatkablo.com.tr/"}) or {}
-        chans = {}                                    # name key -> fullest entry (SD and HD may both appear)
-        for c in turksat_channels(data):
-            k = turksat_key(c.get("n"))
-            if len(c.get("p") or []) > len((chans.get(k) or {}).get("p") or []):
-                chans[k] = c
-        if debug:
-            print(f"  Türksat {day}: {sum(len((chans.get(turksat_key(c)) or {}).get('p') or []) for c in turk)} programmes")
-            turksat_debug(day, data, chans, turk)
-        for cid in turk:
-            last = None
-            for pr in (chans.get(turksat_key(cid)) or {}).get("p") or []:
-                try:
-                    h1, m1 = map(int, pr["c"].split(":")); h2, m2 = map(int, pr["d"].split(":"))
-                except (KeyError, ValueError, AttributeError):
-                    continue
-                start = datetime(day.year, day.month, day.day, h1, m1, tzinfo=ISTANBUL)
-                if last and start < last:
-                    start += timedelta(days=1)
-                last = start
-                stop = start.replace(hour=h2, minute=m2)
-                if stop <= start:
-                    stop += timedelta(days=1)
-                add(("T", cid), start, stop, re.sub(r"\s+", " ", pr.get("b") or "").strip(), "")
-
-    out = {}
-    for (src, cid), evs in per_id.items():
-        name = TR_DIGITURK.get(cid, f"Turkish channel {cid}") if src == "D" else cid
-        if evs and (name not in out or len(evs) > len(out[name])):
-            out[name] = [evs[k] for k in sorted(evs)]  # same channel twice: keep the fuller one
     return out
 
 
@@ -2648,17 +2336,182 @@ def fetch_brazil(days, pattern, debug=False):
 
 
 # --------------------------------------------------------------------------
+# epgshare01.online: ready-made XMLTV files, one per country (free, no login)
+# --------------------------------------------------------------------------
+EPGSHARE_URL = "{scheme}://epgshare01.online/epgshare01/epg_ripper_{file}.xml.gz"
+EPGSHARE = {   # group -> file, id prefix, place, time zone, English?, {id part: (name, [epgshare ids, best first])}
+    "turkey": {"file": "TR1", "prefix": "TR", "place": "Turkey", "tz": "Europe/Istanbul", "english": False,
+               "channels": {
+                   "beINSPORTS1": ("beIN SPORTS 1", ["beIN.SPORTS.1.tr", "Beinsports.tr"]),
+                   "beINSPORTS2": ("beIN SPORTS 2", ["beIN.SPORTS.2.tr", "Beinsports.2.tr"]),
+                   "beINSPORTS3": ("beIN SPORTS 3", ["beIN.SPORTS.3.tr", "Beinsports.3.tr"]),
+                   "beINSPORTS4": ("beIN SPORTS 4", ["beIN.SPORTS.4.tr", "Beinsports.4.tr"]),
+                   "beINSPORTSMAX1": ("beIN SPORTS MAX 1", ["beIN.SPORTS.MAX.1.tr"]),
+                   "beINSPORTSMAX2": ("beIN SPORTS MAX 2", ["beIN.SPORTS.MAX.2.tr"]),
+                   "beINSPORTSHABER": ("beIN SPORTS HABER", ["beIN.SPORTS.HABER.HD.tr", "Bein.Sports.Haber.tr"]),
+                   "SSport": ("S Sport", ["SSport.tr"]),
+                   "SSport2": ("S Sport 2", ["SSport.2.tr"]),
+                   "TRTSpor": ("TRT Spor", ["TRT.SPOR.HD.tr", "TRT.SPOR.tr"]),
+                   "ASpor": ("A Spor", ["A.SPOR.HD.tr", "A.SPOR.tr"]),
+               }},
+    "latvia": {"file": "LV1", "prefix": "LV", "place": "Latvia", "tz": "Europe/Riga", "english": False,
+               "channels": {
+                   "GO3Sport1": ("GO3 Sport 1", ["Go3.Sport.1.HD.lv"]),
+                   "GO3Sport2": ("GO3 Sport 2", ["Go3.Sport.2.HD.lv"]),
+                   "GO3Sport3": ("GO3 Sport 3", ["Go3.Sport.3.HD.lv"]),
+                   "GO3SportOpen": ("GO3 Sport Open", ["Go3.Sport.Open.HD.lv"]),
+                   "Best4Sport": ("Best4Sport", ["Best4Sport.TV.HD.lv"]),
+                   "Best4Sport2": ("Best4Sport 2", ["Best4Sport.TV-2.HD.lv"]),
+                   "SetantaSports": ("Setanta Sports", ["Setanta.Sports.1.HD.lv"]),
+                   "SetantaSports2": ("Setanta Sports 2", ["Setanta.Sports.2.HD.lv"]),
+               }},
+    "hk": {"file": "HK1", "prefix": "HK", "place": "Hong Kong", "tz": "Asia/Hong_Kong", "english": True,
+           "channels": {
+               **{f"beINSPORTS{n}": (f"beIN SPORTS {n} HK", [f"beIN.SPORTS.{n}.hk"]) for n in range(1, 7)},
+               **{f"NowSports{n}": (f"Now Sports {n}", [f"Now.Sports.{n}.hk"]) for n in range(1, 8)},
+               "NowSportsPrime": ("Now Sports Prime", ["Now.Sports.Prime.hk"]),
+               "NowSportsPlus": ("Now Sports Plus", ["Now.Sports.Plus.hk"]),
+               **{f"NowSportsPL{n}": (f"Now Sports Premier League {n}", [f"Now.Sports.Premier.League.{n}.hk"])
+                  for n in range(1, 8)},
+               "NowSportsPLTV": ("Now Sports Premier League TV", ["Now.Sports.Premier.League.TV.hk"]),
+           }},
+    "id": {"file": "ID1", "prefix": "ID", "place": "Indonesia", "tz": "Asia/Jakarta", "english": False,
+           "channels": {
+               "beINSPORTS1": ("beIN SPORTS 1 ID", ["beIN.Sports.1.HD.id", "beIN.Sports.1.id", "Bein.1.id"]),
+               "beINSPORTS2": ("beIN SPORTS 2 ID", ["beIN.Sports.2.HD.id", "beIN.Sports.2.id", "Bein.2.id"]),
+               "beINSPORTS3": ("beIN SPORTS 3 ID", ["beIN.Sports.3.HD.id", "beIN.Sports.3.id", "Bein.3.id"]),
+               "beINSPORTS4": ("beIN SPORTS 4 ID", ["beIN.SPORTS.4.id"]),
+               "beINSPORTS5": ("beIN SPORTS 5 ID", ["beIN.SPORTS.5.id"]),
+               "SPOTV": ("SPOTV ID", ["SPOTV.HD.id", "SPOTV.id"]),
+               "SPOTV2": ("SPOTV 2 ID", ["SPOTV.2.HD.id", "SPOTV.2.id"]),
+               **{f"ChampionsTV{n}": (f"Champions TV {n}", [f"Champions.TV.{n}.id"]) for n in (1, 2, 3, 5, 6)},
+               "Sportstars": ("Sportstars", ["Sportstars.HD.id", "Sportstars.id"]),
+               "Sportstars2": ("Sportstars 2", ["Sportstars.2.HD.id", "Sportstars.2.id"]),
+               "Sportstars3": ("Sportstars 3", ["sportstars.3.HD.id", "Sportstars.3.id"]),
+               "Sportstars4": ("Sportstars 4", ["Sportstars.4.HD.id", "Sportstars.4.id"]),
+               "SoccerChannel": ("Soccer Channel", ["Soccer.Channel.HD.id", "Soccer.Channel.id"]),
+           }},
+    "mena": {"file": "BEIN1", "prefix": "MENA", "place": "Qatar", "tz": "Asia/Qatar", "english": True,
+             "channels": {
+                 **{f"beINSPORTS{n}": (f"beIN SPORTS {n} MENA", [f"beIN_SPORTS{n}_DIGITAL_Mono_EN.bein",
+                                                                f"beIN_SPORTS{n}_DIGITAL_Mono_AR.bein"])
+                    for n in range(1, 8) if n != 6},
+                 "beINSPORTS6": ("beIN SPORTS 6 MENA", ["beIN_SPORTS66_DIGITAL_Mono-01_EN.bein",
+                                                         "beIN_SPORTS6_DIGITAL_Mono-d-1_AR.bein"]),
+                 "beINSPORTS8": ("beIN SPORTS 8 MENA", ["logos-_beINSPORTS8_EN.bein", "logos-_beINSPORTS8_AR.bein"]),
+                 "beINSPORTS9": ("beIN SPORTS 9 MENA", ["logos-_beINSPORTS9_EN.bein", "logos-_beINSPORTS9_AR.bein"]),
+                 "beINSPORTSEnglish1": ("beIN SPORTS English 1 MENA", ["beIN_SPORTS1_ENGLISH_Digital_Mono_EN.bein"]),
+                 "beINSPORTSEnglish2": ("beIN SPORTS English 2 MENA", ["beIN_SPORTS2_ENGLISH_Digital_Mono_EN.bein"]),
+                 "beINSPORTSFrench1": ("beIN SPORTS French 1 MENA", ["beIN_SPORTS1_FRENCH_Digital_Mono_EN.bein"]),
+                 "beINSPORTSFrench2": ("beIN SPORTS French 2 MENA", ["beIN_SPORTS2_FRENCH_Digital_Mono_EN.bein"]),
+                 **{f"beINSPORTSMAX{n}": (f"beIN SPORTS MAX {n} MENA", [f"beIN_SPORTS_MAX{n}_DIGITAL_Mono_EN.bein",
+                                                                       f"beIN_SPORTS_MAX{n}_DIGITAL_Mono_AR.bein"])
+                    for n in range(1, 7)},
+                 "beINSPORTSXTRA1": ("beIN SPORTS XTRA 1 MENA", ["beIN_SPORTS_XTRA1_Digital_Mono_EN.bein"]),
+                 "beINSPORTSXTRA2": ("beIN SPORTS XTRA 2 MENA", ["beIN_SPORTS_XTRA2_Digital_Mono_EN.bein"]),
+                 "beINSPORTSXTRA3": ("beIN SPORTS XTRA 3 MENA", ["logos-_beINSPORTSXTRA3_EN.bein"]),
+                 **{f"beINSPORTSXTRA{n}": (f"beIN SPORTS XTRA {n} MENA",
+                                           [f"beIN_SPORTS_XTRA_0{n}_bein.com_EN.bein", f"beIN_SPORTS_XTRA_0{n}_Bein.com_EN.bein"])
+                    for n in range(4, 9)},
+                 "beINSPORTSXTRA9": ("beIN SPORTS XTRA 9 MENA", ["beIN_SPORTS_XTRA_Digital_09_Bein.com_EN.bein"]),
+                 "beINSPORTSNews": ("beIN SPORTS News MENA", ["NEWS_DIGITAL_Mono_EN.bein", "NEWS_DIGITAL_Mono_AR.bein"]),
+                 "beINSPORTSFTA": ("beIN SPORTS FTA MENA", ["bein_SPORTS_FTA_DIGITAL_Mono_EN.bein"]),
+                 **{f"Alkass{n}": (f"Alkass {n}", [f"Alkass_{n}_EN.bein", f"Alkass_{n}_AR.bein"]) for n in range(1, 9)},
+             }},
+}
+EPGSHARE_LIVE = (r"\b(live|canlı|canli|tiešraide|tiesraide|langsung|siaran langsung|"
+                 r"直播|現場直播|مباشر)\b|\(c\)\s*$|\bL\s*$")
+
+
+def xmltv_stamp(text):
+    """'20261016180000 +0300' -> aware UTC datetime"""
+    text = (text or "").strip()
+    try:
+        return datetime.strptime(text[:20], "%Y%m%d%H%M%S %z").astimezone(timezone.utc)
+    except ValueError:
+        return datetime.strptime(text[:14], "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
+
+
+def fetch_epgshare(group, days, debug=False):
+    """{id part: [{start, stop, title, sub, live, desc}]} for one EPGSHARE group."""
+    import gzip as _gzip
+    cfg = EPGSHARE[group]
+    raw = None
+    for scheme in ("https", "http"):                   # the site's own advice: try http if https fails
+        raw = fetch(EPGSHARE_URL.format(scheme=scheme, file=cfg["file"]), headers={"User-Agent": HEADERS["User-Agent"]},
+                    parse="bytes", retries=2, quiet=(scheme == "https"))
+        if raw:
+            break
+    if not raw:
+        return {}
+    try:
+        data = _gzip.decompress(raw)
+    except OSError:
+        data = raw                                     # already plain XML
+    wanted = {eid for _, alts in cfg["channels"].values() for eid in alts}
+    tz = ZoneInfo(cfg["tz"])
+    first = datetime(days[0].year, days[0].month, days[0].day, tzinfo=tz).astimezone(timezone.utc)
+    last_day = days[-1] + timedelta(days=1)
+    end = datetime(last_day.year, last_day.month, last_day.day, tzinfo=tz).astimezone(timezone.utc)
+    per = {}                                           # epgshare id -> {start: event}
+    seen_ids = set()
+
+    def pick(el, tag):
+        """Text of the English child if there is one, else the first."""
+        kids = el.findall(tag)
+        best = next((k for k in kids if (k.get("lang") or "").lower().startswith("en")), kids[0] if kids else None)
+        return re.sub(r"\s+", " ", (best.text or "") if best is not None else "").strip()
+
+    try:
+        for _, el in ET.iterparse(io.BytesIO(data), events=("end",)):
+            if el.tag == "channel":
+                seen_ids.add(el.get("id"))
+                el.clear()
+                continue
+            if el.tag != "programme":
+                continue
+            eid = el.get("channel")
+            if eid in wanted:
+                try:
+                    start, stop = xmltv_stamp(el.get("start")), xmltv_stamp(el.get("stop"))
+                except ValueError:
+                    start = stop = None
+                title = pick(el, "title")
+                if start and stop and stop > start and title and start < end and stop > first:
+                    sub, desc = pick(el, "sub-title"), pick(el, "desc")
+                    live = bool(re.search(EPGSHARE_LIVE, title, re.I) or el.find("live") is not None)
+                    title = re.sub(r"^\s*(live|canlı|canli)\s*[:\-]\s*|\s*[-(:]?\s*\(?\b(live|canlı|canli|"
+                                   r"tiešraide|langsung)\b\)?\s*$|\s*\(c\)\s*$", "", title, flags=re.I).strip() or title
+                    per.setdefault(eid, {})[start] = {
+                        "start": start, "stop": stop, "title": title, "sub": sub if sub != title else "",
+                        "live": live, "desc": short_desc(desc) if desc not in (title, sub) else ""}
+            el.clear()
+    except ET.ParseError as e:
+        print(f"  WARNING: epgshare01 {cfg['file']} could not be read completely ({e})", file=sys.stderr)
+    out = {}
+    for part, (name, alts) in cfg["channels"].items():
+        best = max(alts, key=lambda a: len(per.get(a) or {}))
+        evs = per.get(best) or {}
+        if debug:
+            print(f"    {name}: {len(evs)} programmes from {best}"
+                  + ("" if any(a in seen_ids for a in alts) else " (channel not in the file)"))
+        if evs:
+            out[part] = [evs[k] for k in sorted(evs)]
+    return out
+
+
+# --------------------------------------------------------------------------
 # Translation (Hebrew / Greek -> English), cached
 # --------------------------------------------------------------------------
-FOREIGN = re.compile(r"[\u0590-\u05FF\u0370-\u03FF\u1F00-\u1FFF\u0400-\u04FF\u0900-\u0DFF\u0E00-\u0E7F"
+FOREIGN = re.compile(r"[\u0590-\u05FF\u0600-\u06FF\u0370-\u03FF\u1F00-\u1FFF\u0400-\u04FF\u0900-\u0DFF\u0E00-\u0E7F"
                      r"\u3040-\u30FF\u4E00-\u9FFF\uAC00-\uD7AF]")
 # Hebrew, Greek, Cyrillic, Indian scripts (Devanagari, Tamil ...), Thai, Japanese, Chinese, Korean
 TRANSLATIONS = {}
 DESC_USED = {}            # translated description -> last day it was in the guide (old ones are dropped)
 DESC_KEEP_DAYS = 14
 DESC_PENDING = set()      # descriptions not translated yet: left out of the guide this run
-ENGLISH_PLACES = {"Australia", "Malaysia", "Singapore", "Hong Kong", "Thailand", "Indonesia",
-                  "South Africa", "Africa", "India"}   # their guides are already in English
+ENGLISH_PLACES = {"Australia", "Malaysia", "Singapore", "Hong Kong", "Thailand",
+                  "South Africa", "Africa", "India", "Qatar"}   # their guides are already in English
 GOOGLE_LIMITED = [False]  # Google said 'too many requests': stop translating for the rest of this run
 GOOGLE_WHY = [""]         # the reason the last translation failed, for the summary line
 
@@ -2884,7 +2737,7 @@ def filler_blocks(start, stop):
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
-                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Digiturk + Türksat (TR), Tata Play (IN), tv.lv + Go3 (LV), blue TV (CH), SFR (FR), Allente (SE/NO/DK), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
+                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), epgshare01.online (TR/LV/HK/ID/MENA), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     count, listed = 0, []
     for rec in records:
@@ -3019,20 +2872,9 @@ def main():
     ap.add_argument("--no-switzerland", action="store_true", help="leave out the Swiss channels")
     ap.add_argument("--ch-channels", default=",".join(CH_CHANNELS),
                     help="blue TV channel numbers, comma separated (e.g. 483,1543,401)")
-    ap.add_argument("--lv-extra", default=LV_EXTRA,
-                    help=f"also add tv.lv channels whose name matches this (default: '{LV_EXTRA}'; "
-                         f"'' for none). Setanta comes from Go3 if tv.lv lacks it")
-    ap.add_argument("--no-latvia", action="store_true", help="leave out the Latvian channels")
-    ap.add_argument("--lv-channels", default=",".join(LV_CHANNELS),
-                    help="tv.lv channel names, comma separated (e.g. go3-sport,sportacentrs)")
     ap.add_argument("--no-india", action="store_true", help="leave out the Indian channels")
     ap.add_argument("--in-channels", default=",".join(IN_CHANNELS),
                     help="Tata Play channel numbers, comma separated (e.g. 600,150)")
-    ap.add_argument("--no-turkey", action="store_true", help="leave out the Turkish channels")
-    ap.add_argument("--tr-digiturk", default=",".join(TR_DIGITURK),
-                    help="Digiturk channel numbers, comma separated (e.g. 193,310)")
-    ap.add_argument("--tr-turksat", default=",".join(TR_TURKSAT),
-                    help="Türksat Kablo channel names, comma separated (e.g. \"TRT Spor,S Sport\")")
     ap.add_argument("--no-germany", action="store_true", help="leave out the German channels")
     ap.add_argument("--de-channels", default=",".join(DE_CHANNELS),
                     help="MagentaTV channel numbers, comma separated (e.g. 190,206,401)")
@@ -3067,6 +2909,9 @@ def main():
                     help="which Ziggo channels to include, by name (default: 'ESPN|Ziggo Sport')")
     ap.add_argument("--no-filler", action="store_true", help="no programmes between Israeli events")
     ap.add_argument("--no-translate", action="store_true", help="keep Hebrew / Greek titles")
+    ap.add_argument("--no-epgshare", action="store_true", help="leave out everything from epgshare01.online")
+    ap.add_argument("--epgshare", default=",".join(EPGSHARE),
+                    help=f"epgshare01 groups, comma separated (default {','.join(EPGSHARE)})")
     ap.add_argument("--no-desc", action="store_true", help="leave out the sources' own programme descriptions")
     ap.add_argument("--desc-translations", type=int, default=3000,
                     help="most new descriptions to translate in one run (default 3000; the rest follow next run)")
@@ -3184,24 +3029,12 @@ def main():
         print(f"Germany: reading MagentaTV guide {de_days[0]} to {de_days[-1]} ...")
         de = fetch_germany(de_days, args.de_channels, args.debug)
         print(f"  {sum(len(v) for v in de.values())} programmes on {len(de)} channel(s)")
-    tr = {}
-    if not args.no_turkey:
-        tr_days = [datetime.now(ISTANBUL).date() + timedelta(days=i) for i in range(max(args.days, 1))]
-        print(f"Turkey: reading Digiturk and Türksat guides {tr_days[0]} to {tr_days[-1]} ...")
-        tr = fetch_turkey(tr_days, args.tr_digiturk, args.tr_turksat, args.debug)
-        print(f"  {sum(len(v) for v in tr.values())} programmes on {len(tr)} channel(s)")
     ind = {}
     if not args.no_india:
         in_days = [datetime.now(KOLKATA).date() + timedelta(days=i) for i in range(max(args.days, 1))]
         print(f"India: reading Tata Play guide {in_days[0]} to {in_days[-1]} ...")
         ind = fetch_india(in_days, args.in_channels, args.debug)
         print(f"  {sum(len(v) for v in ind.values())} programmes on {len(ind)} channel(s)")
-    lv, lv_found = {}, {}
-    if not args.no_latvia:
-        lv_days = [datetime.now(RIGA).date() + timedelta(days=i) for i in range(max(args.days, 1))]
-        print(f"Latvia: reading tv.lv guide {lv_days[0]} to {lv_days[-1]} ...")
-        lv, lv_found = fetch_latvia(lv_days, args.lv_channels, args.debug, args.lv_extra)
-        print(f"  {sum(len(v) for v in lv.values())} programmes on {len(lv)} channel(s)")
     swi = {}
     if not args.no_switzerland:
         ch_days = [datetime.now(ZURICH).date() + timedelta(days=i) for i in range(max(args.days, 1))]
@@ -3243,6 +3076,20 @@ def main():
             print(f"  {sum(len(v) for v in got.values())} programmes on {len(got)} channel(s)")
             if got:
                 ss[prefix] = got
+    eps = {}
+    if not args.no_epgshare:
+        for group in [g.strip().lower() for g in args.epgshare.split(",") if g.strip()]:
+            if group not in EPGSHARE:
+                print(f"  WARNING: unknown epgshare group {group!r} (known: {', '.join(EPGSHARE)})", file=sys.stderr)
+                continue
+            cfg = EPGSHARE[group]
+            tz = ZoneInfo(cfg["tz"])
+            g_days = [datetime.now(tz).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+            print(f"{cfg['place']} (epgshare01 {cfg['file']}): reading {g_days[0]} to {g_days[-1]} ...")
+            got = fetch_epgshare(group, g_days, args.debug)
+            print(f"  {sum(len(v) for v in got.values())} programmes on {len(got)} channel(s)")
+            if got:
+                eps[group] = got
     bein = {}
     if not args.no_bein:
         bn_days = [datetime.now(ZoneInfo("Asia/Singapore")).date() + timedelta(days=i - 1)
@@ -3252,7 +3099,7 @@ def main():
         print(f"  {sum(len(v) for g in bein.values() for v in g.values())} programmes on "
               f"{sum(len(g) for g in bein.values())} channel(s)")
     if not il and not ch1 and not gr and not nl and not ro and not bg and not arena and not sk and not be \
-            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not tr and not ind and not lv and not swi and not fra and not nordic and not bein and not ss:
+            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps:
         sys.exit("Nothing found - the sites may be unreachable from here, or changed.")
 
     if not args.no_translate:
@@ -3275,13 +3122,17 @@ def main():
         force += [e["title"] for evs in svk.values() for e in evs]
         force += [e["title"] for evs in it.values() for e in evs]
         force += [t for evs in de.values() for e in evs for t in (e["title"], e["sub"])]
-        force += [t for evs in tr.values() for e in evs for t in (e["title"], e["sub"])]
-        force += [t for evs in lv.values() for e in evs for t in (e["title"], e["sub"])]
         force += [e["title"] for evs in swi.values() for e in evs]
         force += [t for evs in fra.values() for e in evs for t in (e["title"], e["sub"])]
         force += [e["title"] for _, got in nordic.values() for evs in got.values() for e in evs]
         texts += [t for g in bein.values() for evs in g.values() for e in evs for t in (e["title"], e["sub"])]
         force += [t for evs in pl.values() for e in evs for t in (e["title"], e["sub"])]
+        for group, got in eps.items():
+            words = [t for evs in got.values() for e in evs for t in (e["title"], e["sub"])]
+            if EPGSHARE[group]["english"]:
+                texts += words                          # only Arabic / Chinese ... text
+            else:
+                force += words
         translate_all(texts, force=force)
 
     records = []
@@ -3309,6 +3160,12 @@ def main():
             shown = name if re.search(rf"\b{suffix}\b", name) else f"{name} {suffix}"   # no 'Africa Africa'
             records.append({"id": f"{prefix}.{part}", "name": shown, "tz": ZoneInfo(zone),
                             "place": place, "filler": False, "back_to_back": True, "events": evs})
+    for group, got in eps.items():
+        cfg = EPGSHARE[group]
+        for part, evs in got.items():
+            records.append({"id": f"{cfg['prefix']}.{part}", "name": cfg["channels"][part][0],
+                            "tz": ZoneInfo(cfg["tz"]), "place": cfg["place"],
+                            "filler": False, "back_to_back": True, "events": evs})
     for cc, got in bein.items():
         place, zone = BEIN_COUNTRIES[cc][0], ZoneInfo(BEIN_COUNTRIES[cc][1])
         for name, evs in got.items():
@@ -3332,25 +3189,10 @@ def main():
                                              f"Swiss channel {cid}"))
         records.append({"id": f"CH.{part}", "name": chname, "tz": ZURICH, "place": "Switzerland",
                         "filler": False, "back_to_back": True, "events": evs})
-    for slug, evs in lv.items():
-        if slug in LV_CHANNELS:
-            part, chname = LV_CHANNELS[slug]
-        else:
-            chname = re.sub(r"\s+", " ", lv_found.get(slug) or slug.replace("-", " ").title()).strip()
-            chname = re.sub(r"(?i)^best ?4 ?sport", "Best4Sport", chname)
-            chname = re.sub(r"(?i)^setanta sports(?: 1)?(?: HD)?$", "Setanta Sports", chname)
-            chname = re.sub(r"(?i)^setanta sports 2(?: HD)?$", "Setanta Sports 2", chname)
-            part = re.sub(r"[^A-Za-z0-9]+", "", chname) or "Channel"
-        records.append({"id": f"LV.{part}", "name": chname, "tz": RIGA, "place": "Latvia",
-                        "filler": False, "back_to_back": True, "events": evs})
     for cid, evs in ind.items():
         part, chname = IN_CHANNELS.get(cid, (f"Channel{re.sub(r'[^A-Za-z0-9]+', '', cid)}",
                                              f"Indian channel {cid}"))
         records.append({"id": f"IN.{part}", "name": chname, "tz": KOLKATA, "place": "India",
-                        "filler": False, "back_to_back": True, "events": evs})
-    for chname, evs in tr.items():
-        part = re.sub(r"[^A-Za-z0-9]+", "", chname.replace("ı", "i")) or "Channel"
-        records.append({"id": f"TR.{part}", "name": chname, "tz": ISTANBUL, "place": "Turkey",
                         "filler": False, "back_to_back": True, "events": evs})
     for cid, evs in de.items():
         chname = DE_CHANNELS.get(cid, f"German channel {cid}")
