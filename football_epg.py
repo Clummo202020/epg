@@ -152,6 +152,8 @@ class NoData(Exception):
 
 
 def get_json(url, params=None, retries=3):
+    """Parsed JSON, or None (with a warning) if ESPN can't be reached after a few tries,
+    so one failed request leaves a gap instead of stopping the whole run."""
     if params:
         url = f"{url}?{urllib.parse.urlencode(params)}"
     last_err = None
@@ -167,7 +169,8 @@ def get_json(url, params=None, retries=3):
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as e:
             last_err = str(getattr(e, "reason", e))
         time.sleep(1.5 * (attempt + 1))
-    sys.exit(f"Failed to fetch {url}: {last_err}")
+    print(f"  WARNING: could not fetch {url}: {last_err} - skipped", file=sys.stderr)
+    return None
 
 
 # --------------------------------------------------------------------------
@@ -181,11 +184,11 @@ def fetch_english_clubs():
         print(f"Fetching clubs: {comp} ...")
         try:
             data = get_json(f"{ESPN_BASE}/{slug}/teams", {"limit": 100})
-            teams = data["sports"][0]["leagues"][0]["teams"]
+            teams = data["sports"][0]["leagues"][0]["teams"] if data else []
         except NoData:
             print(f"  WARNING: no team list for {slug}")
             continue
-        except (KeyError, IndexError):
+        except (KeyError, IndexError, TypeError):
             teams = []
         for t in teams:
             team = t.get("team") or {}
@@ -210,10 +213,10 @@ def fetch_events(start, end):
 
         def grab(day):
             try:
-                return get_json(f"{ESPN_BASE}/{slug}/scoreboard",
-                                {"dates": f"{day:%Y%m%d}"}).get("events", [])
+                data = get_json(f"{ESPN_BASE}/{slug}/scoreboard", {"dates": f"{day:%Y%m%d}"})
             except NoData:
                 return []
+            return (data or {}).get("events") or []
 
         events, seen = [], set()
         with ThreadPoolExecutor(max_workers=8) as pool:
@@ -284,18 +287,18 @@ def collect_matches(events_by_comp, match_minutes):
             notes = [n.get("headline") for n in comp.get("notes", []) if n.get("headline")]
             sub = utd(comp_name + (f" - {notes[0]}" if notes else ""))
 
-            desc = [f"{ko:%a %d %b}.", f"{sub}: {title}."]
+            tbc = comp.get("timeValid") is False             # ESPN's time is only a placeholder
+            desc = [f"{sub}: {title}."]
             venue = comp.get("venue") or {}
             if venue.get("fullName"):
                 city = (venue.get("address") or {}).get("city")
                 desc.append(f"{venue['fullName']}{', ' + city if city else ''}.")
-            desc.append("Kick-off time to be confirmed." if comp.get("timeValid") is False
-                        else f"Kick-off: {ko:%H:%M}.")
+            desc.append("Kick-off time to be confirmed." if tbc else f"Kick-off: {ko:%H:%M}.")
 
             matches.append({
                 "comp": comp_name, "title": title, "sub": sub, "desc": utd(" ".join(desc)),
                 "start": start, "stop": start + timedelta(minutes=match_minutes),
-                "when": f"{ko:%a %d %b}, {ko:%H:%M}",
+                "when": f"{ko:%a %d %b}, {'TBC' if tbc else f'{ko:%H:%M}'}",
                 "teams": [h, a],
             })
     return matches
