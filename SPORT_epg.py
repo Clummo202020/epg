@@ -133,6 +133,15 @@ UK / IRELAND - Sky's public TV guide (behind sky.com's TV guide; JSON, no login 
   files are the backup (and give Sky Sports NFL). Channels: UK.SkySportsMainEvent, UK.TNTSports1,
   IE.PremierSports1 ...
 
+CYPRUS - Cyta's own TV guide (epg.cyta.com.cy, JSON), as in cyta_epg.py:
+    channels:     https://epg.cyta.com.cy/api/mediacatalog/fetchChannels?language=0
+    programmes:   .../fetchEpg?startTimeEpoch=..&endTimeEpoch=..&language=0&channelIds=..  (8 channels per request, per day)
+    descriptions: .../fetchEpgDetails?language=0&id=..   (one per programme; skipped with --no-desc)
+  Channels whose name has every word of one --cy-keywords entry (default 'cyta sport': Cytavision
+  Sports 1-8, Premier League ...). Start and end times are given. Greek text is translated and ALL CAPS
+  titles are put in normal case. --no-cyprus to leave out.
+  Channels: CY.CytavisionSports1 ... CY.CytavisionSportsPremierLeague
+
 HONG KONG - Now TV's public guide (JSON), one request per day for all channels (cookie LANG=en):
     https://nowplayer.now.com/tvguide/epglist?channelIdList[]=631&channelIdList[]=638&day=1
   Channels chosen with --now-channels (Now TV channel numbers; default: its 40 sports
@@ -151,7 +160,7 @@ EPGSHARE01 - ready-made XMLTV files from https://epgshare01.online/epgshare01/ (
   (SG.beINSPORTS1 ...), and sg adds beIN SPORTS 4-5 and RUGBY SG. brazil backs up Claro
   (SporTV, ESPN, Premiere) under the same IDs when Claro sends nothing. sg also gives Hub Premier
   1-6 and my Astro's sports channels; uk/ireland back up Sky's guide (and give Sky Sports NFL);
-  nz (Sky Sport NZ), usa (USA Network, NBC), canada (Sportsnet), cyprus (Cytavision Sports).
+  nz (Sky Sport NZ), usa (USA Network, NBC), canada (Sportsnet).
   Each channel has a fixed ID and a list of the file's own IDs for it, best first; the one
   with most programmes is used. Turkish, Latvian and Indonesian titles are translated.
   Channels: TR.beINSPORTS1 ... TR.TRTSpor, LV.GO3Sport1 ... LV.SetantaSports, HK.beINSPORTS1,
@@ -241,7 +250,7 @@ Both:
 
 Usage:
     python3 SPORT_epg.py                  # all countries, next 7 days -> SPORT_epg.xml.gz
-    python3 SPORT_epg.py --no-israel      # leave out Sport 5 (also --no-charlton, --no-greece, --no-netherlands, --no-romania, --no-bulgaria, --no-arena, --no-sportklub, --no-belgium, --no-spain, --no-portugal, --no-brazil, --no-albania, --no-czechia, --no-slovakia, --no-poland, --no-italy, --no-germany, --no-india, --no-switzerland, --no-france, --no-sweden,
+    python3 SPORT_epg.py --no-israel      # leave out Sport 5 (also --no-cyprus, --no-charlton, --no-greece, --no-netherlands, --no-romania, --no-bulgaria, --no-arena, --no-sportklub, --no-belgium, --no-spain, --no-portugal, --no-brazil, --no-albania, --no-czechia, --no-slovakia, --no-poland, --no-italy, --no-germany, --no-india, --no-switzerland, --no-france, --no-sweden,
                                           --no-norway, --no-denmark, --no-finland, --no-bein, --no-supersport)
     python3 SPORT_epg.py --days 10
     python3 SPORT_epg.py --debug          # print what was read for each day
@@ -2359,6 +2368,171 @@ def fetch_brazil(days, pattern, debug=False):
 
 
 # --------------------------------------------------------------------------
+# Cyprus: Cyta's own TV guide (from cyta_epg.py)
+# --------------------------------------------------------------------------
+NICOSIA = ZoneInfo("Asia/Nicosia")
+CYTA_API = "https://epg.cyta.com.cy/api/mediacatalog/"
+CYTA_HEADERS = {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json",
+                "Referer": "https://epg.cyta.com.cy/tv-guide/en", "Connection": "close"}
+CYTA_LIVE = r"\b(live|ζωντανά|ζωντανα|ζωντανή|ζωντανη)\b|\(\s*[ΖZ]\s*\)"
+
+
+def cyta_json(path, params):
+    """Cyta's JSON; when Python's TLS is refused, the system curl is tried (as cyta_epg.py did)."""
+    url = CYTA_API + path + "?" + urllib.parse.urlencode(params)
+    time.sleep(0.3)
+    data = fetch(url, headers=CYTA_HEADERS, parse="json", retries=3, quiet=True)
+    if data is None and urllib.parse.urlsplit(url).hostname not in HOST_GIVEN_UP:
+        import shutil
+        import subprocess
+        if shutil.which("curl"):
+            cmd = ["curl", "-sS", "--fail", "--max-time", "30", url]
+            for k, v in CYTA_HEADERS.items():
+                cmd += ["-H", f"{k}: {v}"]
+            try:
+                out = subprocess.run(cmd, capture_output=True, text=True, timeout=45)
+                data = json.loads(out.stdout) if out.returncode == 0 else None
+            except (subprocess.SubprocessError, ValueError, OSError):
+                data = None
+    return data
+
+
+def cyta_part(name):
+    """'Cytavision Sports 1 HD' / 'Cyta Vision Sports 1' -> 'CytavisionSports1' (steady ids)."""
+    n = re.sub(r"\s*\b(hd|uhd|4k)\b", "", name, flags=re.I)
+    n = re.sub(r"(?i)^cyta\s*vision", "Cytavision", n.strip())
+    n = re.sub(r"(?i)\bsport\b", "Sports", n)
+    words = [w if not w.isupper() or len(w) <= 3 else w.capitalize() for w in n.split()]
+    return re.sub(r"[^A-Za-z0-9]+", "", "".join(w[:1].upper() + w[1:] for w in words)) or "Channel"
+
+
+def cyta_details(pid):
+    """(description, genre) for one programme from fetchEpgDetails, or ('', '')."""
+    data = cyta_json("fetchEpgDetails", {"language": 0, "id": pid})
+    d = data.get("playbillDetail") if isinstance(data, dict) else None
+    d = d if isinstance(d, dict) else (data if isinstance(data, dict) else {})
+    desc = pick_desc(d, "introduce", "description", "longDescription", "shortDescription", "synopsis")
+    genres = [g.get("genreName") for g in d.get("genres") or [] if isinstance(g, dict) and g.get("genreName")]
+    return desc, (genres[0] if genres else "")
+
+
+def fetch_cyprus(days, keywords, details=True, debug=False):
+    """{channel name: [{start, stop, title, sub, live, desc}]} from Cyta's guide."""
+    data = cyta_json("fetchChannels", {"language": 0})
+    chans = (data.get("channels") if isinstance(data, dict) else None) or []
+    kws = [k.strip().lower().split() for k in keywords.split(",") if k.strip()]
+    names = {}
+    for c in chans:
+        if not isinstance(c, dict):
+            continue
+        cid = c.get("id") or c.get("channelId")
+        name = re.sub(r"\s+", " ", str(c.get("name") or c.get("title") or "")).strip()
+        name = re.sub(r"\s*\b(HD|UHD)\b", "", name).strip() or name      # 'Cytavision Sports 1 HD' -> '... 1'
+        if cid is not None and name and any(all(w in name.lower() for w in k) for k in kws):
+            names[str(cid)] = name
+    if debug:
+        print(f"  Cyta: {len(chans)} channels, {len(names)} matching: {sorted(names.values())}")
+    if not names:
+        if not chans:
+            print("  WARNING: Cyta's channel list could not be read", file=sys.stderr)
+        return {}
+    per = {cid: {} for cid in names}
+    ids = sorted(names)
+    for day in days:
+        frm = datetime(day.year, day.month, day.day, tzinfo=NICOSIA)
+        to = frm + timedelta(days=1)
+        for i in range(0, len(ids), 8):                  # 8 channels per request, as cyta_epg.py
+            batch = ids[i:i + 8]
+            got = cyta_json("fetchEpg", {"startTimeEpoch": int(frm.timestamp() * 1000),
+                                         "endTimeEpoch": int(to.timestamp() * 1000),
+                                         "language": 0, "channelIds": ",".join(batch)}) or {}
+            n = 0
+            for ch in (got.get("channelEpgs") if isinstance(got, dict) else None) or []:
+                ch_id = str(ch.get("channelId") or ch.get("id") or "")
+                for pr in ch.get("epgPlayables") or []:
+                    cid = str(pr.get("channelId") or ch_id or batch[0])
+                    if cid not in per:
+                        continue
+                    try:
+                        start, stop = tataplay_time(pr.get("startTime") or pr.get("start")), \
+                            tataplay_time(pr.get("endTime") or pr.get("end"))
+                    except (TypeError, ValueError):
+                        continue
+                    title = re.sub(r"\s+", " ", str(pr.get("name") or pr.get("title") or "")).strip()
+                    if not title or stop <= start:
+                        continue
+                    live = bool(re.search(CYTA_LIVE, title, re.I))
+                    title = re.sub(r"^\s*(live|ζωντανά|ζωντανα)\s*[:\-]?\s*|\s*[(\-:]?\s*\(?\b(live|ζωντανά|ζωντανα|ζωντανή|ζωντανη)\b\)?\s*$"
+                                   r"|\s*\(\s*[ΖZ]\s*\)", "", title, flags=re.I).strip() or title
+                    genre = str(pr.get("programEvent") or pr.get("category") or pr.get("genre") or "").strip()
+                    per[cid][start] = {"start": start, "stop": stop, "title": title,
+                                       "sub": genre if genre.lower() != title.lower() else "", "live": live,
+                                       "desc": pick_desc(pr, "description", "shortDescription", "synopsis"),
+                                       "_id": pr.get("id")}
+                    n += 1
+            if debug:
+                print(f"  Cyta {day} channels {i + 1}-{i + len(batch)}: {n} programmes")
+    if details:
+        todo = sorted({str(ev["_id"]) for evs in per.values() for ev in evs.values()
+                       if ev.get("_id") and not ev["desc"]})
+        if todo:
+            from concurrent.futures import ThreadPoolExecutor
+            print(f"  Cyta: fetching descriptions for {len(todo)} programme(s) ...")
+            with ThreadPoolExecutor(max_workers=2) as pool:
+                found = dict(zip(todo, pool.map(cyta_details, todo)))
+            for evs in per.values():
+                for ev in evs.values():
+                    desc, genre = found.get(str(ev.get("_id")), ("", ""))
+                    ev["desc"] = ev["desc"] or desc
+                    if genre and not ev["sub"] and genre.lower() != ev["title"].lower():
+                        ev["sub"] = genre
+            print(f"  Cyta: {sum(1 for d, _ in found.values() if d)} of {len(todo)} have a description")
+    out = {}
+    for cid, evs in per.items():
+        name = names[cid]
+        for ev in evs.values():
+            ev.pop("_id", None)
+        if evs and (name not in out or len(evs) > len(out[name])):
+            out[name] = [evs[k] for k in sorted(evs)]   # same name twice (e.g. HD copy): keep the fuller
+    return out
+
+
+# ALL CAPS -> normal case (Cyta writes most titles in capitals), from cyta_epg.py
+KEEP_CAPS = set("""
+UFC NBA NFL NHL MLB MLS WNBA NCAA UEFA FIFA FA EFL EPL WWE AEW ATP WTA PGA LPGA LIV DP
+IPL ICC ODI GP MMA PFL BKFC DAZN ESPN BBC CNN BT TNT TV HD UHD PPV VAR USA UK UAE EU
+FC SC AC AS CF CD FK SK BK AEK AEL APOEL PAOK OFI ENP AEP PAEEK GR
+""".split())
+SMALL_WORDS = {"a", "an", "and", "at", "by", "for", "in", "of", "on", "or", "the", "to", "v", "vs"}
+CAPS_WORD = re.compile(r"[^\W\d_]+(?:['\u2019][^\W\d_]+)*")
+ROMAN = re.compile(r"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$")
+
+
+def fix_caps(text):
+    """Words written entirely in capitals -> normal case; acronyms, roman numerals,
+    single letters and words touching digits are left alone."""
+    if not text:
+        return text
+
+    def repl(m):
+        w = m.group(0)
+        if w == "V" and m.start() > 0 and text[m.start() - 1] == " ":
+            return "v"                                  # 'ARSENAL V CHELSEA' -> 'Arsenal v Chelsea'
+        if len(w) < 2 or not w.isupper() or w in KEEP_CAPS or (len(w) <= 4 and ROMAN.match(w)):
+            return w
+        before = text[m.start() - 1] if m.start() > 0 else ""
+        after = text[m.end()] if m.end() < len(text) else ""
+        if before.isdigit() or after.isdigit():
+            return w
+        lead = text[:m.start()].rstrip()
+        low = w.lower()
+        if low in SMALL_WORDS and lead and lead[-1] not in "-\u2013\u2014:|/(\"'.!?":
+            return low
+        return low.capitalize()
+    return CAPS_WORD.sub(repl, text)
+
+
+# --------------------------------------------------------------------------
 # Hong Kong: Now TV's public guide (nowplayer.now.com), sports channels
 # --------------------------------------------------------------------------
 NOW_GUIDE = "https://nowplayer.now.com/tvguide/epglist?{ids}&day={day}"
@@ -2716,13 +2890,6 @@ EPGSHARE.update({
                    "SportsnetWorld": ("Sportsnet World", ["Sportsnet.World.HD.ca2"]),
                    "Sportsnet4K": ("Sportsnet 4K", ["Sportsnet.4K.ca2"]),
                }},
-    "cyprus": {"file": "CY1", "prefix": "CY", "place": "Cyprus", "tz": "Asia/Nicosia", "english": False,
-               "channels": {
-                   **{f"CytavisionSports{n}": (f"Cytavision Sports {n}", [f"Cytavision.Sports.{n}HD.cy"])
-                      for n in range(1, 9)},
-                   "CytavisionSportsPremierLeague": ("Cytavision Sports Premier League",
-                                                     ["Cytavision.Sports.Premier.League.cy"]),
-               }},
     "italy": {"file": "IT1", "prefix": "IT", "place": "Italy", "tz": "Europe/Rome", "english": False,
               "backup": True, "channels": {
                   **{f"SkySport{n}": (f"Sky Sport {n}", [f"Sky.Sport..{n}.it"]) for n in range(253, 260)},
@@ -2822,7 +2989,7 @@ DESC_USED = {}            # translated description -> last day it was in the gui
 DESC_KEEP_DAYS = 14
 DESC_PENDING = set()      # descriptions not translated yet: left out of the guide this run
 ENGLISH_PLACES = {"Australia", "Malaysia", "Singapore", "Hong Kong", "Thailand",
-                  "South Africa", "Africa", "India", "Qatar", "UK", "Ireland", "New Zealand", "USA", "Canada"}   # their guides are already in English
+                  "South Africa", "Africa", "India", "Qatar", "UK", "Ireland", "New Zealand", "USA", "Canada", "Cyprus"}   # their guides are already in English
 
 
 def load_cache():
@@ -3102,7 +3269,7 @@ def filler_blocks(start, stop):
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
-                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), Sky TV guide (UK/IE), epgshare01.online (TR/LV/HK/ID/MENA/FR/IT/SG/MY/AU/BR/UK/IE/NZ/US/CA/CY), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
+                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), Sky TV guide (UK/IE), Cyta (CY), epgshare01.online (TR/LV/HK/ID/MENA/FR/IT/SG/MY/AU/BR/UK/IE/NZ/US/CA), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     count, listed = 0, []
     for rec in records:
@@ -3130,14 +3297,18 @@ def build_xmltv(records, suffix, minutes):
                 continue
             title = en(ev["title"])
             sub = en(ev.get("sub") or "") or None
+            if rec.get("fix_caps"):
+                title, sub = fix_caps(title), fix_caps(sub) or None
             loc = ev["start"].astimezone(rec["tz"])
             uk = ev["start"].astimezone(LONDON)
             when = f"{uk:%a %d %b, %H:%M}"
-            orig = f" Original title: {ev['title']}." if title != ev["title"] else ""
+            orig = f"Original title: {ev['title']}." if en(ev["title"]) != ev["title"] else ""
             about = "" if ev.get("desc") in DESC_PENDING else en(ev.get("desc") or "")
+            if rec.get("fix_caps"):
+                about = fix_caps(about)
             about = about + ("" if about[-1:] in ".!?…" else ".") + " " if about else ""
             lead = (sub if sub[-1:] in ".!?…" else sub + ".") + " " if sub else ""
-            desc = f"{'LIVE. ' if ev['live'] else ''}{lead}{about}{orig}".strip()
+            desc = re.sub(r"\s+", " ", f"{'LIVE. ' if ev['live'] else ''}{lead}{about}{orig}").strip()
             if rec["filler"]:
                 for a, b in filler_blocks(last_stop or now, start):
                     add_programme(tv, cid, a, b, f"{title} ({when})", "Coming up",
@@ -3274,6 +3445,10 @@ def main():
                     help="which Ziggo channels to include, by name (default: 'ESPN|Ziggo Sport')")
     ap.add_argument("--no-filler", action="store_true", help="no programmes between Israeli events")
     ap.add_argument("--no-translate", action="store_true", help="keep Hebrew / Greek titles")
+    ap.add_argument("--no-cyprus", action="store_true", help="leave out Cyta's Cytavision Sports channels")
+    ap.add_argument("--cy-keywords", default="cyta sport",
+                    help="Cyta channels to take: comma-separated entries, each matching when all its "
+                         "words are in the channel name (default 'cyta sport')")
     ap.add_argument("--no-nowtv", action="store_true", help="leave out Now TV (Hong Kong)")
     ap.add_argument("--no-sky", action="store_true", help="leave out Sky's guide (UK/Ireland; epgshare01 fills in)")
     ap.add_argument("--now-channels", default=",".join(NOW_CHANNELS),
@@ -3445,6 +3620,12 @@ def main():
             print(f"  {sum(len(v) for v in got.values())} programmes on {len(got)} channel(s)")
             if got:
                 ss[prefix] = got
+    cy = {}
+    if not args.no_cyprus:
+        cy_days = [datetime.now(NICOSIA).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+        print(f"Cyprus: reading Cyta's TV guide {cy_days[0]} to {cy_days[-1]} ...")
+        cy = fetch_cyprus(cy_days, args.cy_keywords, details=not args.no_desc, debug=args.debug)
+        print(f"  {sum(len(v) for v in cy.values())} programmes on {len(cy)} channel(s)")
     now_hk = {}
     if not args.no_nowtv:
         hk_days = [datetime.now(ZoneInfo("Asia/Hong_Kong")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
@@ -3480,7 +3661,7 @@ def main():
         print(f"  {sum(len(v) for g in bein.values() for v in g.values())} programmes on "
               f"{sum(len(g) for g in bein.values())} channel(s)")
     if not il and not ch1 and not gr and not nl and not ro and not bg and not arena and not sk and not be \
-            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky:
+            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky and not cy:
         sys.exit("Nothing found - the sites may be unreachable from here, or changed.")
 
     if not args.no_translate:
@@ -3509,6 +3690,7 @@ def main():
         texts += [t for g in bein.values() for evs in g.values() for e in evs for t in (e["title"], e["sub"])]
         force += [t for evs in pl.values() for e in evs for t in (e["title"], e["sub"])]
         texts += [e["title"] for evs in now_hk.values() for e in evs]   # only Chinese text
+        texts += [t for evs in cy.values() for e in evs for t in (e["title"], e["sub"])]   # only Greek text
         texts += [t for evs in sky.values() for e in evs for t in (e["title"], e["sub"])]
         for group, got in eps.items():
             words = [t for evs in got.values() for e in evs for t in (e["title"], e["sub"])]
@@ -3547,6 +3729,9 @@ def main():
         uk = cid.startswith("UK.")
         records.append({"id": cid, "name": SKY_CHANNELS[cid][0], "tz": LONDON if uk else ZoneInfo("Europe/Dublin"),
                         "place": "UK" if uk else "Ireland", "filler": False, "back_to_back": True, "events": evs})
+    for chname, evs in cy.items():
+        records.append({"id": f"CY.{cyta_part(chname)}", "name": chname, "tz": NICOSIA, "place": "Cyprus",
+                        "filler": False, "back_to_back": True, "events": evs, "fix_caps": True})
     for cid, evs in now_hk.items():
         part, chname = NOW_CHANNELS.get(cid, (f"Now{cid}", f"Now TV {cid}"))
         records.append({"id": f"HK.{part}", "name": chname, "tz": ZoneInfo("Asia/Hong_Kong"), "place": "Hong Kong",
