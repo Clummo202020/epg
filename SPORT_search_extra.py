@@ -71,8 +71,11 @@ EXTRAS = {
                    "Astro.Cricket.my": "Astro Cricket", "Astro.Sports.Plus.my": "Astro Sports Plus",
                    "Astro.Sports.UHD.my": "Astro Sports UHD"}),
 }
-LIVE = re.compile(r"^\s*live\s*[:\-]|\(\s*live\s*\)|\blive\s*$", re.I)
-LIVE_STRIP = re.compile(r"^\s*live\s*[:\-]\s*|\s*\(\s*live\s*\)|\s*[-:]?\s*\blive\s*$", re.I)
+# Live markers: "Live PL: Nott'm Forest v Arsenal" (Sky UK), "(L) PL: ..." (Astro),
+# "... (Live)", "Live: ...", "... [Live]"
+LIVE = re.compile(r"^\s*live\b|^\s*\(L\)|\(\s*live\s*\)|\[\s*live\s*\]|\blive\s*$", re.I)
+LIVE_STRIP = re.compile(r"^\s*live\b\s*[:\-]?\s*|^\s*\(L\)\s*|\s*\(\s*live\s*\)|\s*\[\s*live\s*\]"
+                        r"|\s*[-:]?\s*\blive\s*$", re.I)
 
 
 def download(file):
@@ -159,7 +162,7 @@ def main():
                     start, stop = stamp(el.get("start")), stamp(el.get("stop"))
                     title = first_text(el, "title")
                     if start and stop and title and stop > now and start < until:
-                        cid = prefix + "." + re.sub(r"[^A-Za-z0-9]+", "", name)
+                        cid = prefix + "." + re.sub(r"[^A-Za-z0-9]+", "", name.replace("+", "Plus"))
                         if (cid, start) not in seen:            # an HD and SD copy: keep one
                             seen.add((cid, start))
                             live = bool(LIVE.search(title))
