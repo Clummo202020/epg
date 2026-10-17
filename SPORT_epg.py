@@ -125,6 +125,14 @@ INDIA - Tata Play's public guide API (JSON), one request per channel and day:
   Start and end times are given. Titles are mostly English; Hindi or regional-script
   titles are translated. Channels: IN.StarSports1, IN.SonySportsTen1, IN.DDSports ...
 
+UK / IRELAND - Sky's public TV guide (behind sky.com's TV guide; JSON, no login or key):
+    https://awk.epgsky.com/hawk/linear/schedule/20261021/4002,1120   (header X-SkyOTT-Territory: GB)
+    https://atlantis.epgsky.com/as/schedule/20261021/7201            (4K channels)
+  Sky Sports (Main Event, Premier League, Football, ... , Main Event 4K, F1 4K), TNT Sports 1-10,
+  Ultimate, Box Office 1-2, Premier Sports 1-2. --no-sky to leave out; epgshare01's UK1/IE1
+  files are the backup (and give Sky Sports NFL). Channels: UK.SkySportsMainEvent, UK.TNTSports1,
+  IE.PremierSports1 ...
+
 HONG KONG - Now TV's public guide (JSON), one request per day for all channels (cookie LANG=en):
     https://nowplayer.now.com/tvguide/epglist?channelIdList[]=631&channelIdList[]=638&day=1
   Channels chosen with --now-channels (Now TV channel numbers; default: its 40 sports
@@ -141,7 +149,9 @@ EPGSHARE01 - ready-made XMLTV files from https://epgshare01.online/epgshare01/ (
   Sky Sport NBA, DAZN 4): same IDs, used only when your own source has nothing. france also
   adds beIN SPORTS MAX 4-10 FR. sg/my/au back up beIN's own site under the same IDs
   (SG.beINSPORTS1 ...), and sg adds beIN SPORTS 4-5 and RUGBY SG. brazil backs up Claro
-  (SporTV, ESPN, Premiere) under the same IDs when Claro sends nothing.
+  (SporTV, ESPN, Premiere) under the same IDs when Claro sends nothing. sg also gives Hub Premier
+  1-6 and my Astro's sports channels; uk/ireland back up Sky's guide (and give Sky Sports NFL);
+  nz (Sky Sport NZ), usa (USA Network, NBC), canada (Sportsnet), cyprus (Cytavision Sports).
   Each channel has a fixed ID and a list of the file's own IDs for it, best first; the one
   with most programmes is used. Turkish, Latvian and Indonesian titles are translated.
   Channels: TR.beINSPORTS1 ... TR.TRTSpor, LV.GO3Sport1 ... LV.SetantaSports, HK.beINSPORTS1,
@@ -2420,6 +2430,101 @@ def fetch_now(days, ids, debug=False):
 
 
 # --------------------------------------------------------------------------
+# UK / Ireland: Sky's public TV guide (behind sky.com's TV guide; no login or key)
+# --------------------------------------------------------------------------
+SKY_HAWK = "https://awk.epgsky.com/hawk/linear/schedule/{date}/{sids}"
+SKY_ATLANTIS = "https://atlantis.epgsky.com/as/schedule/{date}/{sid}"
+SKY_HEADERS = {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json", "X-SkyOTT-Territory": "GB"}
+SKY_UHD_HEADERS = {**SKY_HEADERS, "X-SkyOTT-Proposition": "SKYQ", "X-SkyOTT-Provider": "SKY"}
+SKY_CHANNELS = {   # our ID -> (name, [Sky service ids, best first], 4K?); epgshare01's UK/IE files are the backup
+    "UK.SkySportsMainEvent": ("Sky Sports Main Event", ["4002", "1701", "4005"], False),
+    "UK.SkySportsPremierLeague": ("Sky Sports Premier League", ["4010", "1096", "4011"], False),
+    "UK.SkySportsFootball": ("Sky Sports Football", ["3939", "3843", "3942"], False),
+    "UK.SkySportsCricket": ("Sky Sports Cricket", ["4081", "1702", "4085"], False),
+    "UK.SkySportsGolf": ("Sky Sports Golf", ["4026", "1704", "4027"], False),
+    "UK.SkySportsF1": ("Sky Sports F1", ["3835", "3836", "4202"], False),
+    "UK.SkySportsAction": ("Sky Sports Action", ["4022", "1703", "4024"], False),
+    "UK.SkySportsMix": ("Sky Sports Mix", ["4090", "4092"], False),
+    "UK.SkySportsNews": ("Sky Sports News", ["4049", "1340", "4036"], False),
+    "UK.SkySportsRacing": ("Sky Sports Racing", ["4032", "4038"], False),
+    "UK.SkySportsTennis": ("Sky Sports Tennis", ["1705", "1284"], False),
+    "UK.SkySportsPlus": ("Sky Sports+", ["3940", "3858", "3945"], False),
+    "UK.SkySportsBoxOffice": ("Sky Sports Box Office", ["1035"], False),
+    "UK.SkySportsMainEvent4K": ("Sky Sports Main Event 4K", ["7201", "7211"], True),
+    "UK.SkySportsF14K": ("Sky Sports F1 4K", ["7202", "7212"], True),
+    "UK.TNTSports1": ("TNT Sports 1", ["1120", "3625", "1125"], False),
+    "UK.TNTSports2": ("TNT Sports 2", ["3627", "3628"], False),
+    "UK.TNTSports3": ("TNT Sports 3", ["3629", "3630"], False),
+    "UK.TNTSports4": ("TNT Sports 4", ["4040", "4041"], False),
+    "UK.TNTSports5": ("TNT Sports 5", ["1242"], False),
+    "UK.TNTSports6": ("TNT Sports 6", ["1239", "5382"], False),
+    "UK.TNTSports7": ("TNT Sports 7", ["1240", "5383"], False),
+    "UK.TNTSports8": ("TNT Sports 8", ["1241", "5384"], False),
+    "UK.TNTSports9": ("TNT Sports 9", ["1237", "5385"], False),
+    "UK.TNTSports10": ("TNT Sports 10", ["1243", "5386"], False),
+    "UK.TNTSportsBoxOffice": ("TNT Sports Box Office", ["1210", "6014"], False),
+    "UK.TNTSportsBoxOffice2": ("TNT Sports Box Office 2", ["1099", "1218"], False),
+    "UK.TNTSportsUltimate": ("TNT Sports Ultimate", ["1336", "1337"], True),
+    "IE.PremierSports1": ("Premier Sports 1", ["1192", "1289"], False),
+    "IE.PremierSports2": ("Premier Sports 2", ["1193", "1290"], False),
+}
+SKY_LIVE = re.compile(r"^\s*live\b|\(\s*live\s*\)|\blive\s*$", re.I)
+
+
+def fetch_sky(days, debug=False):
+    """{our id: [events]} from Sky's guide for the given days (UK dates)."""
+    per_sid = {}
+    hd = [sid for _, sids, uhd in SKY_CHANNELS.values() if not uhd for sid in sids]
+    uhd = [sid for _, sids, is_uhd in SKY_CHANNELS.values() if is_uhd for sid in sids]
+    first = datetime(days[0].year, days[0].month, days[0].day, tzinfo=LONDON).astimezone(timezone.utc)
+    last = days[-1] + timedelta(days=1)
+    end = datetime(last.year, last.month, last.day, tzinfo=LONDON).astimezone(timezone.utc)
+
+    def take(data):
+        for sched in (data or {}).get("schedule") or [] if isinstance(data, dict) else []:
+            if not isinstance(sched, dict):
+                continue
+            sid = str(sched.get("sid"))
+            for ev in sched.get("events") or []:
+                try:
+                    start = datetime.fromtimestamp(int(ev["st"]), timezone.utc)
+                    stop = start + timedelta(seconds=int(ev["d"]))
+                except (KeyError, TypeError, ValueError):
+                    continue
+                title = re.sub(r"\s+", " ", str(ev.get("t") or "")).strip()
+                if not title or stop <= first or start >= end:
+                    continue
+                live = bool(SKY_LIVE.search(title))
+                if live:   # "Live PL: Nott'm Forest v Arsenal" -> "PL: Nott'm Forest v Arsenal"
+                    title = re.sub(r"^\s*live\b\s*[:\-]?\s*|\s*\(\s*live\s*\)|\s*[-:]?\s*\blive\s*$", "",
+                                   title, flags=re.I).strip() or title
+                synopsis = re.sub(r"\s+", " ", str(ev.get("sy") or "")).strip()
+                m = re.match(r"(.{10,110}?[.!?])(\s|$)", synopsis)
+                sub = m.group(1) if m else ""     # "Bayern Munich v Arsenal (Kick-off 8.00pm)."
+                rest = synopsis[len(sub):].strip() if sub else synopsis   # the summary after the sub-title
+                per_sid.setdefault(sid, {})[start] = {
+                    "start": start, "stop": stop, "title": title, "sub": sub if sub != title else "",
+                    "live": live, "desc": short_desc(rest) if rest not in (title, sub) else ""}
+
+    dates = sorted({(datetime.combine(d, datetime.min.time(), LONDON).astimezone(timezone.utc) + timedelta(hours=h))
+                    .strftime("%Y%m%d") for d in days for h in (0, 23)})
+    for ymd in dates:
+        for i in range(0, len(hd), 20):                 # Sky answers up to 20 channels at once
+            take(get_json_url(SKY_HAWK.format(date=ymd, sids=",".join(hd[i:i + 20])), SKY_HEADERS))
+        for sid in uhd:                                 # 4K channels: Sky's other address
+            take(get_json_url(SKY_ATLANTIS.format(date=ymd, sid=sid), SKY_UHD_HEADERS, quiet=True))
+    out = {}
+    for cid, (name, sids, _) in SKY_CHANNELS.items():
+        best = max(sids, key=lambda x: len(per_sid.get(x) or {}))
+        evs = per_sid.get(best) or {}
+        if debug:
+            print(f"    {name}: {len(evs)} programmes from Sky service {best}")
+        if evs:
+            out[cid] = [evs[k] for k in sorted(evs)]
+    return out
+
+
+# --------------------------------------------------------------------------
 # epgshare01.online: ready-made XMLTV files, one per country (free, no login)
 # --------------------------------------------------------------------------
 EPGSHARE_URL = "{scheme}://epgshare01.online/epgshare01/epg_ripper_{file}.xml.gz"
@@ -2522,10 +2627,23 @@ EPGSHARE.update({
                "beINSPORTS1": ("beIN SPORTS 1 SG", ["beIN.SPORTS.(HD).sg"]),
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} SG", [f"beIN.SPORTS.{n}.(HD).sg"]) for n in range(2, 6)},
                "beINSPORTSRUGBY": ("beIN SPORTS RUGBY SG", ["beIN.SPORTS.RUGBY.HD.sg"]),
+               **{f"HubPremier{n}": (f"Hub Premier {n}", [f"Hub.Premier.{n}.sg"]) for n in range(1, 7)},
            }},
     "my": {"file": "MY1", "prefix": "MY", "place": "Malaysia", "tz": "Asia/Kuala_Lumpur", "english": True,
            "backup": True, "channels": {
-               f"beINSPORTS{n}": (f"beIN SPORTS {n} MY", [f"beIN.SPORTS.{n}.my"]) for n in range(1, 4)}},
+               **{f"beINSPORTS{n}": (f"beIN SPORTS {n} MY", [f"beIN.SPORTS.{n}.my"]) for n in range(1, 4)},
+               "AstroArena": ("Astro Arena", ["Astro.Arena.my"]),
+               "AstroArena2": ("Astro Arena 2", ["Astro.Arena.2.my"]),
+               "AstroFootball": ("Astro Football", ["Astro.Football.my"]),
+               "AstroPremierLeague": ("Astro Premier League", ["Astro.Premier.League.my"]),
+               **{f"AstroPremierLeague{n}": (f"Astro Premier League {n}", [f"Astro.Premier.League.{n}.my"])
+                  for n in range(2, 6)},
+               "AstroGrandstand": ("Astro Grandstand", ["Astro.Grandstand.my"]),
+               "AstroBadminton": ("Astro Badminton", ["Astro.Badminton.my"]),
+               "AstroCricket": ("Astro Cricket", ["Astro.Cricket.my"]),
+               "AstroSportsPlus": ("Astro Sports Plus", ["Astro.Sports.Plus.my"]),
+               "AstroSportsUHD": ("Astro Sports UHD", ["Astro.Sports.UHD.my"]),
+           }},
     "au": {"file": "AU1", "prefix": "AU", "place": "Australia", "tz": "Australia/Sydney", "english": True,
            "backup": True, "channels": {
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} AU", [f"beINSports{n}.au"]) for n in range(1, 4)},
@@ -2551,6 +2669,60 @@ EPGSHARE.update({
                    "PremiereClubes": ("Premiere Clubes", ["São.Paulo/SP..Premiere.Clubes.HD.br",
                                                           "São.Paulo/SP..Premiere.Clubes.br"]),
                }},
+    # UK and Ireland: backups for Sky's own guide (see SKY_CHANNELS), plus Sky Sports NFL
+    "uk": {"file": "UK1", "prefix": "UK", "place": "UK", "tz": "Europe/London", "english": True,
+           "backup": True, "channels": {
+               "SkySportsMainEvent": ("Sky Sports Main Event", ["SkySpMainEvHD.uk"]),
+               "SkySportsPremierLeague": ("Sky Sports Premier League", ["SkySp.PL.HD.uk"]),
+               "SkySportsFootball": ("Sky Sports Football", ["SkySp.Fball.HD.uk", "Sky.Sports.Football.HD.uk"]),
+               "SkySportsCricket": ("Sky Sports Cricket", ["SkySpCricket.HD.uk"]),
+               "SkySportsGolf": ("Sky Sports Golf", ["SkySp.Golf.HD.uk"]),
+               "SkySportsF1": ("Sky Sports F1", ["SkySp.F1.HD.uk"]),
+               "SkySportsAction": ("Sky Sports Action", ["SkySp.ActionHD.uk"]),
+               "SkySportsMix": ("Sky Sports Mix", ["SkySp.Mix.HD.uk"]),
+               "SkySportsNews": ("Sky Sports News", ["SkySp.News.HD.uk"]),
+               "SkySportsRacing": ("Sky Sports Racing", ["SkySp.Racing.HD.uk"]),
+               "SkySportsTennis": ("Sky Sports Tennis", ["SkySp.Tennis.HD.uk"]),
+               "SkySportsNFL": ("Sky Sports NFL", ["Sky.Sports.NFL.uk"]),
+               "SkySportsPlus": ("Sky Sports+", ["SkySp+HD.uk"]),
+               "SkySportsBoxOffice": ("Sky Sports Box Office", ["SkySpBoxOff.uk"]),
+               **{f"TNTSports{n}": (f"TNT Sports {n}", [f"TNT.Sports.{n}.HD.uk"]) for n in range(1, 11)},
+               "TNTSportsUltimate": ("TNT Sports Ultimate", ["TNT.Sports.Ultimate.HD.uk"]),
+               "TNTSportsBoxOffice": ("TNT Sports Box Office", ["TNT.Sport.BoxOffice.HD.uk"]),
+               "TNTSportsBoxOffice2": ("TNT Sports Box Office 2", ["TNTSBoxOff2HD.uk"]),
+           }},
+    "ireland": {"file": "IE1", "prefix": "IE", "place": "Ireland", "tz": "Europe/Dublin", "english": True,
+                "backup": True, "channels": {
+                    "PremierSports1": ("Premier Sports 1", ["Premier.Sports.1.HD.ie", "Premier.Sports.1.ie"]),
+                    "PremierSports2": ("Premier Sports 2", ["Premier.Sports.2.HD.ie", "Premier.Sports.2.ie"]),
+                }},
+    "nz": {"file": "NZ1", "prefix": "NZ", "place": "New Zealand", "tz": "Pacific/Auckland", "english": True,
+           "channels": {
+               **{f"SkySport{n}NZ": (f"Sky Sport {n} NZ", [f"Sky.Sport.{n}.nz"]) for n in range(1, 10)},
+               "SkySportPremierLeagueNZ": ("Sky Sport Premier League NZ", ["Sky.Sport.Premier.League.nz"]),
+               "SkySportSelectNZ": ("Sky Sport Select NZ", ["Sky.Sport.Select.nz"]),
+           }},
+    "usa": {"file": "US2", "prefix": "US", "place": "USA", "tz": "America/New_York", "english": True,
+            "channels": {"USANetwork": ("USA Network", ["USA.Network.HD.us2"]),
+                         "NBC": ("NBC", ["NBC.East.Stream.us2"])}},
+    "canada": {"file": "CA2", "prefix": "CA", "place": "Canada", "tz": "America/Toronto", "english": True,
+               "channels": {
+                   "SportsnetOntario": ("Sportsnet Ontario", ["Sportsnet.Ontario.HD.ca2"]),
+                   "SportsnetEast": ("Sportsnet East", ["Sportsnet.East.HD.ca2"]),
+                   "SportsnetWest": ("Sportsnet West", ["Sportsnet.West.HD.ca2"]),
+                   "SportsnetPacific": ("Sportsnet Pacific", ["Sportsnet.(Pacific).HD.ca2"]),
+                   "SportsnetOne": ("Sportsnet One", ["Sportsnet.One.HD.ca2"]),
+                   "Sportsnet360": ("Sportsnet 360", ["Sportsnet.360.HD.ca2"]),
+                   "SportsnetWorld": ("Sportsnet World", ["Sportsnet.World.HD.ca2"]),
+                   "Sportsnet4K": ("Sportsnet 4K", ["Sportsnet.4K.ca2"]),
+               }},
+    "cyprus": {"file": "CY1", "prefix": "CY", "place": "Cyprus", "tz": "Asia/Nicosia", "english": False,
+               "channels": {
+                   **{f"CytavisionSports{n}": (f"Cytavision Sports {n}", [f"Cytavision.Sports.{n}HD.cy"])
+                      for n in range(1, 9)},
+                   "CytavisionSportsPremierLeague": ("Cytavision Sports Premier League",
+                                                     ["Cytavision.Sports.Premier.League.cy"]),
+               }},
     "italy": {"file": "IT1", "prefix": "IT", "place": "Italy", "tz": "Europe/Rome", "english": False,
               "backup": True, "channels": {
                   **{f"SkySport{n}": (f"Sky Sport {n}", [f"Sky.Sport..{n}.it"]) for n in range(253, 260)},
@@ -2558,7 +2730,7 @@ EPGSHARE.update({
                   "DAZN4": ("DAZN 4", ["DAZN4.it"]),
               }},
 })
-EPGSHARE_LIVE = (r"\b(live|ao vivo|canlı|canli|tiešraide|tiesraide|langsung|siaran langsung|"
+EPGSHARE_LIVE = (r"^\s*\(L\)|\(\s*[ZΖ]\s*\)|\b(live|ao vivo|canlı|canli|tiešraide|tiesraide|langsung|siaran langsung|"
                  r"直播|現場直播|مباشر)\b|\(c\)\s*$|\bL\s*$")
 
 
@@ -2619,7 +2791,7 @@ def fetch_epgshare(group, days, debug=False):
                 if start and stop and stop > start and title and start < end and stop > first:
                     sub, desc = pick(el, "sub-title"), pick(el, "desc")
                     live = bool(re.search(EPGSHARE_LIVE, title, re.I) or el.find("live") is not None)
-                    title = re.sub(r"^\s*(live|ao vivo|canlı|canli)\s*[:\-]\s*|\s*[-(:]?\s*\(?\b(live|ao vivo|canlı|canli|"
+                    title = re.sub(r"^\s*\(L\)\s*|\s*\(\s*[ZΖ]\s*\)|^\s*(live|ao vivo|canlı|canli)\s*[:\-]\s*|^\s*live\s+(?=[^\s:]{1,14}:)|\s*[-(:]?\s*\(?\b(live|ao vivo|canlı|canli|"
                                    r"tiešraide|langsung)\b\)?\s*$|\s*\(c\)\s*$", "", title, flags=re.I).strip() or title
                     per.setdefault(eid, {})[start] = {
                         "start": start, "stop": stop, "title": title, "sub": sub if sub != title else "",
@@ -2650,7 +2822,7 @@ DESC_USED = {}            # translated description -> last day it was in the gui
 DESC_KEEP_DAYS = 14
 DESC_PENDING = set()      # descriptions not translated yet: left out of the guide this run
 ENGLISH_PLACES = {"Australia", "Malaysia", "Singapore", "Hong Kong", "Thailand",
-                  "South Africa", "Africa", "India", "Qatar"}   # their guides are already in English
+                  "South Africa", "Africa", "India", "Qatar", "UK", "Ireland", "New Zealand", "USA", "Canada"}   # their guides are already in English
 
 
 def load_cache():
@@ -2929,7 +3101,7 @@ def filler_blocks(start, stop):
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
-                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), epgshare01.online (TR/LV/HK/ID/MENA/FR/IT/SG/MY/AU/BR), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
+                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), Sky TV guide (UK/IE), epgshare01.online (TR/LV/HK/ID/MENA/FR/IT/SG/MY/AU/BR/UK/IE/NZ/US/CA/CY), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     count, listed = 0, []
     for rec in records:
@@ -2963,8 +3135,10 @@ def build_xmltv(records, suffix, minutes):
             orig = f" Original title: {ev['title']}." if title != ev["title"] else ""
             about = "" if ev.get("desc") in DESC_PENDING else en(ev.get("desc") or "")
             about = about + ("" if about[-1:] in ".!?…" else ".") + " " if about else ""
-            desc = (f"{'LIVE. ' if ev['live'] else ''}{sub + '. ' if sub else ''}{about}{name}, "
-                    f"{when} UK ({loc:%H:%M} {rec['place']}).{orig}")
+            local = "" if loc.utcoffset() == uk.utcoffset() else f" ({loc:%H:%M} {rec['place']})"
+            lead = (sub if sub[-1:] in ".!?…" else sub + ".") + " " if sub else ""
+            desc = (f"{'LIVE. ' if ev['live'] else ''}{lead}{about}{name}, "
+                    f"{when} UK{local}.{orig}")
             if rec["filler"]:
                 for a, b in filler_blocks(last_stop or now, start):
                     add_programme(tv, cid, a, b, f"{title} ({when})", "Coming up",
@@ -3102,6 +3276,7 @@ def main():
     ap.add_argument("--no-filler", action="store_true", help="no programmes between Israeli events")
     ap.add_argument("--no-translate", action="store_true", help="keep Hebrew / Greek titles")
     ap.add_argument("--no-nowtv", action="store_true", help="leave out Now TV (Hong Kong)")
+    ap.add_argument("--no-sky", action="store_true", help="leave out Sky's guide (UK/Ireland; epgshare01 fills in)")
     ap.add_argument("--now-channels", default=",".join(NOW_CHANNELS),
                     help="Now TV channel numbers, comma separated (e.g. 631,638)")
     ap.add_argument("--no-epgshare", action="store_true", help="leave out everything from epgshare01.online")
@@ -3277,6 +3452,12 @@ def main():
         print(f"Hong Kong: reading Now TV guide {hk_days[0]} to {hk_days[-1]} ...")
         now_hk = fetch_now(hk_days, args.now_channels, args.debug)
         print(f"  {sum(len(v) for v in now_hk.values())} programmes on {len(now_hk)} channel(s)")
+    sky = {}
+    if not args.no_sky:
+        uk_days = [datetime.now(LONDON).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+        print(f"UK/Ireland: reading Sky's TV guide {uk_days[0]} to {uk_days[-1]} ...")
+        sky = fetch_sky(uk_days, args.debug)
+        print(f"  {sum(len(v) for v in sky.values())} programmes on {len(sky)} channel(s)")
     eps = {}
     if not args.no_epgshare:
         for group in [g.strip().lower() for g in args.epgshare.split(",") if g.strip()]:
@@ -3300,7 +3481,7 @@ def main():
         print(f"  {sum(len(v) for g in bein.values() for v in g.values())} programmes on "
               f"{sum(len(g) for g in bein.values())} channel(s)")
     if not il and not ch1 and not gr and not nl and not ro and not bg and not arena and not sk and not be \
-            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk:
+            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky:
         sys.exit("Nothing found - the sites may be unreachable from here, or changed.")
 
     if not args.no_translate:
@@ -3329,6 +3510,7 @@ def main():
         texts += [t for g in bein.values() for evs in g.values() for e in evs for t in (e["title"], e["sub"])]
         force += [t for evs in pl.values() for e in evs for t in (e["title"], e["sub"])]
         texts += [e["title"] for evs in now_hk.values() for e in evs]   # only Chinese text
+        texts += [t for evs in sky.values() for e in evs for t in (e["title"], e["sub"])]
         for group, got in eps.items():
             words = [t for evs in got.values() for e in evs for t in (e["title"], e["sub"])]
             if EPGSHARE[group]["english"]:
@@ -3362,6 +3544,10 @@ def main():
             shown = name if re.search(rf"\b{suffix}\b", name) else f"{name} {suffix}"   # no 'Africa Africa'
             records.append({"id": f"{prefix}.{part}", "name": shown, "tz": ZoneInfo(zone),
                             "place": place, "filler": False, "back_to_back": True, "events": evs})
+    for cid, evs in sky.items():
+        uk = cid.startswith("UK.")
+        records.append({"id": cid, "name": SKY_CHANNELS[cid][0], "tz": LONDON if uk else ZoneInfo("Europe/Dublin"),
+                        "place": "UK" if uk else "Ireland", "filler": False, "back_to_back": True, "events": evs})
     for cid, evs in now_hk.items():
         part, chname = NOW_CHANNELS.get(cid, (f"Now{cid}", f"Now TV {cid}"))
         records.append({"id": f"HK.{part}", "name": chname, "tz": ZoneInfo("Asia/Hong_Kong"), "place": "Hong Kong",

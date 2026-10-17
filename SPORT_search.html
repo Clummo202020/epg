@@ -154,11 +154,6 @@
     "SPORT_epg.xml.gz",
     "https://raw.githubusercontent.com/Clummo202020/epg/main/SPORT_epg.xml.gz",
   ];
-  // Extra channels for searching only (not in the guide), made by SPORT_search_extra.py.
-  const EXTRA_SOURCES = [
-    "SPORT_search_extra.xml.gz",
-    "https://raw.githubusercontent.com/Clummo202020/epg/main/SPORT_search_extra.xml.gz",
-  ];
   const CLUSTER_MINUTES = 45;      // programmes starting within this of each other are one match
 
   const COUNTRIES = {
@@ -260,22 +255,7 @@
     programmes.sort((a, b) => a.start - b.start);
   }
 
-  let extrasNote = "";
-  async function loadExtras() {
-    for (const url of EXTRA_SOURCES) {
-      try {
-        const res = await fetch(url, { cache: "no-cache" });
-        if (!res.ok) continue;
-        const before = Object.keys(channels).length;
-        parseGuide(await gunzip(await res.arrayBuffer()));
-        const added = Object.keys(channels).length - before;
-        const places = [...new Set(Object.keys(channels).slice(before).map((id) => country(id)[1]))];
-        extrasNote = added ? ` Also searching ${added} extra channels (${places.join(", ")}).` : "";
-        return;
-      } catch (e) { /* try the next copy */ }
-    }
-    extrasNote = " The extra channels (SPORT_search_extra.xml.gz) aren’t available yet.";
-  }
+  const extrasNote = "";
 
   function search(query, liveOnly, inDesc) {
     const words = fold(query).split(/[\s,]+/).filter((w) => w.length > 1);
@@ -369,10 +349,8 @@
     q.disabled = false;
     q.value = new URL(location.href).searchParams.get("q") || "";
     if (guideDate) $("footer").textContent = `Guide last updated ${new Date(guideDate).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} UK time.`;
-    extrasNote = " Loading the extra countries…";
     render();
     q.focus();
-    loadExtras().then(() => { programmes.sort((a, b) => a.start - b.start); render(); });
   }).catch((e) => {
     statusEl.className = "status error";
     statusEl.textContent = `The guide couldn’t be read, so there’s nothing to search yet. Check that SPORT_epg.xml.gz is in the same GitHub repository as this page. Details: ${e.message}`;
