@@ -66,8 +66,8 @@ EXTRAS = {
         "SkySp.Mix.HD.uk": "Sky Sports Mix", "SkySp.News.HD.uk": "Sky Sports News",
         "SkySp.Racing.HD.uk": "Sky Sports Racing", "SkySp.Tennis.HD.uk": "Sky Sports Tennis",
         "Sky.Sports.NFL.uk": "Sky Sports NFL", "SkySp+HD.uk": "Sky Sports+",
-        "SkySpBoxOff.uk": "Sky Sports Box Office", "Sky.Sports.Ultra.HD.1.uk": "Sky Sports Ultra HD 1",
-        "Sky.Sports.Ultra.HD.2.uk": "Sky Sports Ultra HD 2",
+        "SkySpBoxOff.uk": "Sky Sports Box Office",
+        # (Sky Sports Ultra HD 1-2 left out: Sky's own guide gives Main Event 4K and F1 4K)
         **{f"TNT.Sports.{n}.HD.uk": f"TNT Sports {n}" for n in range(1, 11)},
         "TNT.Sports.Ultimate.HD.uk": "TNT Sports Ultimate",
         "TNT.Sport.BoxOffice.HD.uk": "TNT Sports Box Office", "TNTSBoxOff2HD.uk": "TNT Sports Box Office 2",
