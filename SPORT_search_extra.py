@@ -9,9 +9,12 @@ where the search page can read it.
 
 Source: epgshare01.online ready-made XMLTV files (free, no login), one per country.
 Times stay as given (with their offsets); the search page shows UK time.
+Titles in another script (Cytavision's Greek) are translated to English with SPORT_epg.py's
+translators and its cache, SPORT_translations.json (each text is translated only once).
 
     python3 SPORT_search_extra.py              # writes SPORT_search_extra.xml.gz
     python3 SPORT_search_extra.py --debug      # also lists programme counts per channel
+    python3 SPORT_search_extra.py --no-translate   # keep Greek titles as they are
 """
 import argparse
 import gzip
@@ -106,10 +109,32 @@ def first_text(el, tag):
     return re.sub(r"\s+", " ", (best.text or "") if best is not None else "").strip()
 
 
+def translate(programmes):
+    """Greek (or other non-Latin) titles and sub-titles in English, using SPORT_epg.py's
+    translators and cache. If that can't be used, the titles are kept as they are."""
+    try:
+        sys.path.insert(0, HERE)
+        import SPORT_epg as guide
+    except Exception as e:                            # never lose the file over a translation
+        print(f"  WARNING: translation skipped - SPORT_epg.py could not be used ({type(e).__name__}: {e})",
+              file=sys.stderr)
+        return programmes
+    guide.load_cache()
+    texts = {t for p in programmes for t in (p[3], p[4]) if t and guide.FOREIGN.search(t)}
+    if texts:
+        try:
+            guide.translate_all(texts)                # prints its own summary and saves the cache
+        except Exception as e:
+            print(f"  WARNING: translation stopped ({type(e).__name__}: {e})", file=sys.stderr)
+    return [(cid, start, stop, guide.en(title), guide.en(sub) if sub else sub, live)
+            for cid, start, stop, title, sub, live in programmes]
+
+
 def main():
     ap = argparse.ArgumentParser(description="Search-only extra channels from epgshare01.")
     ap.add_argument("--out", default=OUT, help="output file (default SPORT_search_extra.xml.gz)")
     ap.add_argument("--debug", action="store_true", help="list programme counts per channel")
+    ap.add_argument("--no-translate", action="store_true", help="keep titles in their own language")
     args = ap.parse_args()
 
     now = datetime.now(timezone.utc)
@@ -154,6 +179,8 @@ def main():
     if not programmes:
         print("Nothing found - keeping the previous file (if any).")
         return 0 if loaded else 1
+    if not args.no_translate:
+        programmes = translate(programmes)
     for cid, name in sorted(channels.items()):
         c = ET.SubElement(tv, "channel", {"id": cid})
         ET.SubElement(c, "display-name", {"lang": "en"}).text = name

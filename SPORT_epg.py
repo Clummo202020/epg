@@ -125,10 +125,22 @@ INDIA - Tata Play's public guide API (JSON), one request per channel and day:
   Start and end times are given. Titles are mostly English; Hindi or regional-script
   titles are translated. Channels: IN.StarSports1, IN.SonySportsTen1, IN.DDSports ...
 
+HONG KONG - Now TV's public guide (JSON), one request per day for all channels (cookie LANG=en):
+    https://nowplayer.now.com/tvguide/epglist?channelIdList[]=631&channelIdList[]=638&day=1
+  Channels chosen with --now-channels (Now TV channel numbers; default: its 40 sports
+  channels - Now Sports, Premier League 1-9, beIN SPORTS 1-6, NBA TV, MUTV, golf ...);
+  --no-nowtv to leave out. Start and end times are given. epgshare01's HK file is the backup.
+  Channels: HK.NowSports1, HK.NowSportsPL1, HK.beINSPORTS1, HK.NBATV ...
+
 EPGSHARE01 - ready-made XMLTV files from https://epgshare01.online/epgshare01/ (free, no login),
   one file per country, read once per run (gzip):
     https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz   (also LV1, HK1, ID1, BEIN1)
-  Groups chosen with --epgshare (default turkey,latvia,hk,id,mena); --no-epgshare for none.
+  Groups chosen with --epgshare (default turkey,latvia,hk,id,mena,france,golfplus,sg,my,au,italy);
+  --no-epgshare for none. france/golfplus/italy are backups for channels SFR and Sky Italia
+  list but send nothing for (Eurosport 1-2 FR, DAZN 1 FR, Golf+, Sky Sport 253-259,
+  Sky Sport NBA, DAZN 4): same IDs, used only when your own source has nothing. france also
+  adds beIN SPORTS MAX 4-10 FR. sg/my/au back up beIN's own site under the same IDs
+  (SG.beINSPORTS1 ...), and sg adds beIN SPORTS 4-5 and RUGBY SG.
   Each channel has a fixed ID and a list of the file's own IDs for it, best first; the one
   with most programmes is used. Turkish, Latvian and Indonesian titles are translated.
   Channels: TR.beINSPORTS1 ... TR.TRTSpor, LV.GO3Sport1 ... LV.SetantaSports, HK.beINSPORTS1,
@@ -2336,6 +2348,77 @@ def fetch_brazil(days, pattern, debug=False):
 
 
 # --------------------------------------------------------------------------
+# Hong Kong: Now TV's public guide (nowplayer.now.com), sports channels
+# --------------------------------------------------------------------------
+NOW_GUIDE = "https://nowplayer.now.com/tvguide/epglist?{ids}&day={day}"
+NOW_HEADERS = {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json, text/javascript, */*",
+               "X-Requested-With": "XMLHttpRequest", "Cookie": "LANG=en",
+               "Referer": "https://nowplayer.now.com/tvguide?filterType=G07"}
+NOW_CHANNELS = {         # Now TV channel number -> (id part, name); same IDs as epgshare01's HK file
+    "611": ("NowSports4K1", "Now Sports 4K 1"), "612": ("NowSports4K2", "Now Sports 4K 2"),
+    "613": ("NowSports4K3", "Now Sports 4K 3"),
+    "620": ("NowSportsPLTV", "Now Sports Premier League TV"),
+    **{str(620 + n): (f"NowSportsPL{n}", f"Now Sports Premier League {n}") for n in range(1, 10)},
+    "630": ("NowSportsPrime", "Now Sports Prime"),
+    **{str(630 + n): (f"NowSports{n}", f"Now Sports {n}") for n in range(1, 8)},
+    "638": ("beINSPORTS1", "beIN SPORTS 1 HK"), "639": ("beINSPORTS2", "beIN SPORTS 2 HK"),
+    "643": ("beINSPORTS3", "beIN SPORTS 3 HK"), "644": ("beINSPORTS4", "beIN SPORTS 4 HK"),
+    "645": ("beINSPORTS5", "beIN SPORTS 5 HK"), "646": ("beINSPORTS6", "beIN SPORTS 6 HK"),
+    "640": ("MUTV", "MUTV"), "642": ("NBATV", "NBA TV HK"),
+    **{n: (f"NowSports{n}", f"Now Sports {n}") for n in ("641", "647", "650", "651", "652")},
+    "668": ("Now668", "Now668"), "674": ("Cricbuzz", "Cricbuzz"), "679": ("PremierSports", "Premier Sports HK"),
+    "680": ("NowSportsPlus", "Now Sports Plus"), "683": ("NowGolf2", "Now Golf 2"), "684": ("NowGolf3", "Now Golf 3"),
+}
+
+
+def fetch_now(days, ids, debug=False):
+    """{channel number: [{start, stop, title, sub, live, desc}]} from Now TV, days 1..len(days)."""
+    wanted = [c.strip() for c in ids.split(",") if c.strip()]
+    per = {c: {} for c in wanted}
+
+    def take(cid, items):
+        n = 0
+        for it in items if isinstance(items, list) else []:
+            if not isinstance(it, dict):
+                continue
+            try:
+                start = datetime.fromtimestamp(int(it["start"]) / 1000, timezone.utc)
+                stop = datetime.fromtimestamp(int(it["end"]) / 1000, timezone.utc)
+            except (KeyError, TypeError, ValueError):
+                continue
+            title = re.sub(r"\s+", " ", str(it.get("name") or "")).strip()
+            if not title or stop <= start:
+                continue
+            # Now TV marks live matches "[Live]" (and "[Live Chat]"), e.g.
+            # "Premier League 26/27 -Nottingham Forest vs Arsenal [Live Chat][Live]"
+            live = bool(re.search(r"\[\s*live\s*\]|^\s*live\s*[:\-]|[(\-:]\s*\(?live\)?\s*$|直播", title, re.I))
+            title = re.sub(r"\s*\[\s*live(\s+chat)?\s*\]|^\s*live\s*[:\-]\s*|\s*[(\-:]\s*\(?live\)?\s*$",
+                           "", title, flags=re.I).strip() or title
+            title = re.sub(r"\s+-(?=\S)", " - ", title)   # "26/27 -Nottingham" -> "26/27 - Nottingham"
+            per[cid][start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live, "desc": ""}
+            n += 1
+        return n
+
+    for d in range(1, len(days) + 1):
+        q = "&".join("channelIdList%5B%5D=" + c for c in wanted)
+        data = get_json_url(NOW_GUIDE.format(ids=q, day=d), NOW_HEADERS)
+        if isinstance(data, list) and len(data) == len(wanted):    # one list per channel, in order
+            got = sum(take(c, lst) for c, lst in zip(wanted, data))
+            how = "one request"
+        else:                                                    # one channel at a time instead
+            got = 0
+            for c in wanted:
+                one = get_json_url(NOW_GUIDE.format(ids="channelIdList%5B%5D=" + c, day=d), NOW_HEADERS,
+                                   quiet=True)
+                got += take(c, one[0] if isinstance(one, list) and one else [])
+                time.sleep(0.3)
+            how = "channel by channel"
+        if debug:
+            print(f"  Now TV day {d}: {got} programmes ({how})")
+    return {c: [evs[k] for k in sorted(evs)] for c, evs in per.items() if evs}
+
+
+# --------------------------------------------------------------------------
 # epgshare01.online: ready-made XMLTV files, one per country (free, no login)
 # --------------------------------------------------------------------------
 EPGSHARE_URL = "{scheme}://epgshare01.online/epgshare01/epg_ripper_{file}.xml.gz"
@@ -2366,7 +2449,7 @@ EPGSHARE = {   # group -> file, id prefix, place, time zone, English?, {id part:
                    "SetantaSports2": ("Setanta Sports 2", ["Setanta.Sports.2.HD.lv"]),
                }},
     "hk": {"file": "HK1", "prefix": "HK", "place": "Hong Kong", "tz": "Asia/Hong_Kong", "english": True,
-           "channels": {
+           "backup": True, "channels": {                  # backup for Now TV's own guide
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} HK", [f"beIN.SPORTS.{n}.hk"]) for n in range(1, 7)},
                **{f"NowSports{n}": (f"Now Sports {n}", [f"Now.Sports.{n}.hk"]) for n in range(1, 8)},
                "NowSportsPrime": ("Now Sports Prime", ["Now.Sports.Prime.hk"]),
@@ -2419,6 +2502,41 @@ EPGSHARE = {   # group -> file, id prefix, place, time zone, English?, {id part:
                  **{f"Alkass{n}": (f"Alkass {n}", [f"Alkass_{n}_EN.bein", f"Alkass_{n}_AR.bein"]) for n in range(1, 9)},
              }},
 }
+# Backups: channels your own sources list but send nothing for. Same IDs as those sources;
+# a channel your own source does fill is kept from there and the backup copy is dropped.
+EPGSHARE.update({
+    "france": {"file": "FR1", "prefix": "FR", "place": "France", "tz": "Europe/Paris", "english": False,
+               "backup": True, "channels": {
+                   "Eurosport1": ("Eurosport 1 FR", ["Eurosport.1.fr", "Eurosport.1..fr"]),
+                   "Eurosport2": ("Eurosport 2 FR", ["Eurosport.2.fr", "Eurosport.2..fr"]),
+                   "DAZN1": ("DAZN 1 FR", ["DAZN.1.fr"]),
+                   **{f"beINSPORTSMAX{n}": (f"beIN SPORTS MAX {n} FR", [f"beIN.SPORTS.MAX.{n}.fr"])
+                      for n in range(4, 11)},             # not in SFR's guide at all
+               }},
+    "golfplus": {"file": "CH1", "prefix": "FR", "place": "France", "tz": "Europe/Paris", "english": False,
+                 "backup": True, "channels": {"GolfPlus": ("Golf+", ["GOLF+.ch"])}},
+    # beIN SPORTS Asia-Pacific: backups for beIN's own site (same IDs), plus SG 4-5 and Rugby
+    "sg": {"file": "SG1", "prefix": "SG", "place": "Singapore", "tz": "Asia/Singapore", "english": True,
+           "backup": True, "channels": {
+               "beINSPORTS1": ("beIN SPORTS 1 SG", ["beIN.SPORTS.(HD).sg"]),
+               **{f"beINSPORTS{n}": (f"beIN SPORTS {n} SG", [f"beIN.SPORTS.{n}.(HD).sg"]) for n in range(2, 6)},
+               "beINSPORTSRUGBY": ("beIN SPORTS RUGBY SG", ["beIN.SPORTS.RUGBY.HD.sg"]),
+           }},
+    "my": {"file": "MY1", "prefix": "MY", "place": "Malaysia", "tz": "Asia/Kuala_Lumpur", "english": True,
+           "backup": True, "channels": {
+               f"beINSPORTS{n}": (f"beIN SPORTS {n} MY", [f"beIN.SPORTS.{n}.my"]) for n in range(1, 4)}},
+    "au": {"file": "AU1", "prefix": "AU", "place": "Australia", "tz": "Australia/Sydney", "english": True,
+           "backup": True, "channels": {
+               **{f"beINSPORTS{n}": (f"beIN SPORTS {n} AU", [f"beINSports{n}.au"]) for n in range(1, 4)},
+               "beINSPORTSXTRA": ("beIN SPORTS XTRA AU", ["beINSportsXtra.au"]),
+           }},
+    "italy": {"file": "IT1", "prefix": "IT", "place": "Italy", "tz": "Europe/Rome", "english": False,
+              "backup": True, "channels": {
+                  **{f"SkySport{n}": (f"Sky Sport {n}", [f"Sky.Sport..{n}.it"]) for n in range(253, 260)},
+                  "SkySportNBA": ("Sky Sport NBA", ["Sky.Sport.NBA.it"]),
+                  "DAZN4": ("DAZN 4", ["DAZN4.it"]),
+              }},
+})
 EPGSHARE_LIVE = (r"\b(live|canlı|canli|tiešraide|tiesraide|langsung|siaran langsung|"
                  r"直播|現場直播|مباشر)\b|\(c\)\s*$|\bL\s*$")
 
@@ -2512,8 +2630,6 @@ DESC_KEEP_DAYS = 14
 DESC_PENDING = set()      # descriptions not translated yet: left out of the guide this run
 ENGLISH_PLACES = {"Australia", "Malaysia", "Singapore", "Hong Kong", "Thailand",
                   "South Africa", "Africa", "India", "Qatar"}   # their guides are already in English
-GOOGLE_LIMITED = [False]  # Google said 'too many requests': stop translating for the rest of this run
-GOOGLE_WHY = [""]         # the reason the last translation failed, for the summary line
 
 
 def load_cache():
@@ -2543,28 +2659,14 @@ def save_cache():
         print(f"WARNING: could not save translations: {e}", file=sys.stderr)
 
 
-def google_translate(text):
-    if GOOGLE_LIMITED[0]:
-        return None
-    params = {"client": "gtx", "sl": "auto", "tl": "en", "dt": "t", "q": text}
-    url = "https://translate.googleapis.com/translate_a/single?" + urllib.parse.urlencode(params)
-    for attempt in range(2):
-        try:
-            time.sleep(1.0)
-            req = urllib.request.Request(url, headers={"User-Agent": HEADERS["User-Agent"]})
-            with urllib.request.urlopen(req, timeout=30, context=CTX) as resp:
-                data = json.load(resp)
-            out = "".join(seg[0] for seg in data[0] if seg and seg[0]).strip()
-            if out:
-                return out
-        except urllib.error.HTTPError as e:
-            GOOGLE_WHY[0] = f"HTTP {e.code} {e.reason}"
-            if e.code == 429:
-                GOOGLE_LIMITED[0] = True     # rate limited: keep the original text this run
-                return None
-        except (urllib.error.URLError, TimeoutError, ValueError, IndexError, TypeError) as e:
-            GOOGLE_WHY[0] = f"{type(e).__name__}: {e}"[:120]
-        time.sleep(3 * (attempt + 1))
+def google_translate(text, short=True):
+    """One text through the first translator that still answers (None if none can)."""
+    for name, fn in TRANSLATORS:
+        if name in TRANSLATOR_DOWN or (name == "MyMemory" and not short):
+            continue
+        out = fn([text])
+        if out and out[0]:
+            return out[0]
     return None
 
 
@@ -2576,15 +2678,15 @@ def translate_all(texts, force=()):
         print(f"Translating {len(todo)} new text(s) (about {int(len(todo) * 1.5)}s)...")
     done = 0
     for t in todo:
-        if GOOGLE_LIMITED[0]:
+        if not translators_left(short=True):
             break
-        out = google_translate(t)
+        out = google_translate(t, short=True)
         if out:
             TRANSLATIONS[t] = out
             done += 1
     if todo:
-        why = f" - Google: {GOOGLE_WHY[0]}" if done < len(todo) and GOOGLE_WHY[0] else ""
-        stop = "; stopped, the rest will be tried next run" if GOOGLE_LIMITED[0] else ""
+        why = f" - {translator_report()}" if done < len(todo) and TRANSLATOR_WHY else ""
+        stop = "; stopped, the rest will be tried next run" if not translators_left(short=True) else ""
         print(f"  translated {done}/{len(todo)}{why}{stop}")
         save_cache()
 
@@ -2593,24 +2695,93 @@ def en(text):
     return TRANSLATIONS.get(text, text)
 
 
-def google_translate_batch(texts):
-    """Several one-line texts in one request (joined by new lines); None if that didn't work."""
-    params = {"client": "gtx", "sl": "auto", "tl": "en", "dt": "t", "q": "\n".join(texts)}
-    url = "https://translate.googleapis.com/translate_a/single?" + urllib.parse.urlencode(params)
+def _translator_get(name, url):
+    """GET url as JSON for translator name; marks it down (with the reason) when it refuses."""
+    time.sleep(1.0)
     try:
-        time.sleep(1.0)
         req = urllib.request.Request(url, headers={"User-Agent": HEADERS["User-Agent"]})
         with urllib.request.urlopen(req, timeout=30, context=CTX) as resp:
-            data = json.load(resp)
-        lines = "".join(seg[0] for seg in data[0] if seg and seg[0]).split("\n")
-        lines = [ln.strip() for ln in lines]
-        return lines if len(lines) == len(texts) and all(lines) else None
+            return json.load(resp)
     except urllib.error.HTTPError as e:
-        GOOGLE_WHY[0] = f"HTTP {e.code} {e.reason}"
-        if e.code == 429:
-            GOOGLE_LIMITED[0] = True
-    except (urllib.error.URLError, TimeoutError, ValueError, IndexError, TypeError) as e:
-        GOOGLE_WHY[0] = type(e).__name__
+        TRANSLATOR_WHY[name] = f"HTTP {e.code} {e.reason}"
+        if e.code in (403, 429):
+            TRANSLATOR_DOWN.add(name)              # refused: don't ask it again this run
+    except (urllib.error.URLError, TimeoutError, ValueError, OSError) as e:
+        TRANSLATOR_WHY[name] = f"{type(e).__name__}: {e}"[:100]
+    return None
+
+
+def _gtx(texts):
+    """Google's free translator; several texts joined by new lines."""
+    params = {"client": "gtx", "sl": "auto", "tl": "en", "dt": "t", "q": "\n".join(texts)}
+    data = _translator_get("Google", "https://translate.googleapis.com/translate_a/single?"
+                           + urllib.parse.urlencode(params))
+    try:
+        lines = [ln.strip() for ln in "".join(seg[0] for seg in data[0] if seg and seg[0]).split("\n")]
+    except (TypeError, IndexError, KeyError):
+        return None
+    return lines if len(lines) == len(texts) and all(lines) else None
+
+
+def _chrome(texts):
+    """Google's second free address (used by Chrome's translate); one 'q' per text."""
+    url = ("https://clients5.google.com/translate_a/t?client=dict-chrome-ex&sl=auto&tl=en&"
+           + urllib.parse.urlencode([("q", t) for t in texts]))
+    data = _translator_get("Google (Chrome)", url)
+    if isinstance(data, dict):                         # older answer shape, one text
+        out = ["".join(x.get("trans", "") for x in data.get("sentences") or [] if isinstance(x, dict))]
+    elif isinstance(data, list):
+        out = [(d[0] if isinstance(d, list) and d else d) for d in data]
+        if len(texts) == 1 and len(out) > 1 and all(isinstance(x, str) for x in out):
+            out = [out[0]]                             # ["text", "tr"] for a single text
+    else:
+        return None
+    out = [x.strip() if isinstance(x, str) else "" for x in out]
+    return out if len(out) == len(texts) and all(out) else None
+
+
+MYMEMORY_BUDGET = [4500]                               # its free daily allowance is about 5000 characters
+
+
+def _mymemory(texts):
+    """MyMemory's free service (no key): short texts only, one at a time."""
+    if len(texts) != 1 or len(texts[0]) > 300 or MYMEMORY_BUDGET[0] < len(texts[0]):
+        return None
+    MYMEMORY_BUDGET[0] -= len(texts[0])
+    data = _translator_get("MyMemory", "https://api.mymemory.translated.net/get?"
+                           + urllib.parse.urlencode({"q": texts[0], "langpair": "Autodetect|en"}))
+    if not isinstance(data, dict):
+        return None
+    text = str((data.get("responseData") or {}).get("translatedText") or "").strip()
+    if str(data.get("responseStatus")) != "200" or not text or "MYMEMORY WARNING" in text.upper():
+        TRANSLATOR_WHY["MyMemory"] = str(data.get("responseDetails") or text or "no answer")[:100]
+        if "QUOTA" in TRANSLATOR_WHY["MyMemory"].upper() or "WARNING" in text.upper():
+            TRANSLATOR_DOWN.add("MyMemory")
+        return None
+    return [text]
+
+
+TRANSLATORS = [("Google", _gtx), ("Google (Chrome)", _chrome), ("MyMemory", _mymemory)]
+TRANSLATOR_DOWN = set()                                # translators that refused this run
+TRANSLATOR_WHY = {}                                    # translator -> last failure reason
+
+
+def translators_left(short):
+    """Is any translator still answering? (MyMemory only counts for short texts.)"""
+    return any(n not in TRANSLATOR_DOWN and (short or n != "MyMemory") for n, _ in TRANSLATORS)
+
+
+def translator_report():
+    return "; ".join(f"{n}: {w}" for n, w in TRANSLATOR_WHY.items())
+
+
+def google_translate_batch(texts):
+    """Several texts in one request, from the first translator that can; None if none could."""
+    for name, fn in TRANSLATORS[:2]:
+        if name not in TRANSLATOR_DOWN:
+            out = fn(texts)
+            if out:
+                return out
     return None
 
 
@@ -2632,7 +2803,7 @@ def translate_descriptions(records, limit):
     if todo:
         print(f"Translating {len(todo)} new description(s), about ten at a time ...")
     done, i = 0, 0
-    while i < len(todo) and not GOOGLE_LIMITED[0]:
+    while i < len(todo) and translators_left(short=False):
         batch = []
         while i < len(todo) and len(batch) < 10 and \
                 len(urllib.parse.quote("\n".join(batch + [todo[i]]))) <= 6000:
@@ -2642,15 +2813,15 @@ def translate_descriptions(records, limit):
             batch, i = [todo[i]], i + 1
         out = google_translate_batch(batch) if len(batch) > 1 else None
         if out is None:                                # the batch didn't split cleanly: one by one
-            out = [google_translate(t) for t in batch]  # (returns None at once if Google refused)
+            out = [google_translate(t, short=False) for t in batch]
         for t, tr_ in zip(batch, out):
             if tr_:
                 TRANSLATIONS[t] = tr_
                 DESC_USED[t] = today
                 done += 1
     if todo:
-        why = f" - Google: {GOOGLE_WHY[0]}" if done < len(todo) and GOOGLE_WHY[0] else ""
-        stop = "; stopped, the rest will be tried next run" if GOOGLE_LIMITED[0] else ""
+        why = f" - {translator_report()}" if done < len(todo) and TRANSLATOR_WHY else ""
+        stop = "; stopped, the rest will be tried next run" if not translators_left(short=False) else ""
         print(f"  translated {done}/{len(todo)}{why}{stop}")
     DESC_PENDING.update(d for d in need if d not in TRANSLATIONS)
     if DESC_PENDING:
@@ -2737,7 +2908,7 @@ def filler_blocks(start, stop):
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
-                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), epgshare01.online (TR/LV/HK/ID/MENA), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
+                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), epgshare01.online (TR/LV/HK/ID/MENA/FR/IT/SG/MY/AU), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     count, listed = 0, []
     for rec in records:
@@ -2909,6 +3080,9 @@ def main():
                     help="which Ziggo channels to include, by name (default: 'ESPN|Ziggo Sport')")
     ap.add_argument("--no-filler", action="store_true", help="no programmes between Israeli events")
     ap.add_argument("--no-translate", action="store_true", help="keep Hebrew / Greek titles")
+    ap.add_argument("--no-nowtv", action="store_true", help="leave out Now TV (Hong Kong)")
+    ap.add_argument("--now-channels", default=",".join(NOW_CHANNELS),
+                    help="Now TV channel numbers, comma separated (e.g. 631,638)")
     ap.add_argument("--no-epgshare", action="store_true", help="leave out everything from epgshare01.online")
     ap.add_argument("--epgshare", default=",".join(EPGSHARE),
                     help=f"epgshare01 groups, comma separated (default {','.join(EPGSHARE)})")
@@ -3076,6 +3250,12 @@ def main():
             print(f"  {sum(len(v) for v in got.values())} programmes on {len(got)} channel(s)")
             if got:
                 ss[prefix] = got
+    now_hk = {}
+    if not args.no_nowtv:
+        hk_days = [datetime.now(ZoneInfo("Asia/Hong_Kong")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+        print(f"Hong Kong: reading Now TV guide {hk_days[0]} to {hk_days[-1]} ...")
+        now_hk = fetch_now(hk_days, args.now_channels, args.debug)
+        print(f"  {sum(len(v) for v in now_hk.values())} programmes on {len(now_hk)} channel(s)")
     eps = {}
     if not args.no_epgshare:
         for group in [g.strip().lower() for g in args.epgshare.split(",") if g.strip()]:
@@ -3099,7 +3279,7 @@ def main():
         print(f"  {sum(len(v) for g in bein.values() for v in g.values())} programmes on "
               f"{sum(len(g) for g in bein.values())} channel(s)")
     if not il and not ch1 and not gr and not nl and not ro and not bg and not arena and not sk and not be \
-            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps:
+            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk:
         sys.exit("Nothing found - the sites may be unreachable from here, or changed.")
 
     if not args.no_translate:
@@ -3127,6 +3307,7 @@ def main():
         force += [e["title"] for _, got in nordic.values() for evs in got.values() for e in evs]
         texts += [t for g in bein.values() for evs in g.values() for e in evs for t in (e["title"], e["sub"])]
         force += [t for evs in pl.values() for e in evs for t in (e["title"], e["sub"])]
+        texts += [e["title"] for evs in now_hk.values() for e in evs]   # only Chinese text
         for group, got in eps.items():
             words = [t for evs in got.values() for e in evs for t in (e["title"], e["sub"])]
             if EPGSHARE[group]["english"]:
@@ -3160,12 +3341,17 @@ def main():
             shown = name if re.search(rf"\b{suffix}\b", name) else f"{name} {suffix}"   # no 'Africa Africa'
             records.append({"id": f"{prefix}.{part}", "name": shown, "tz": ZoneInfo(zone),
                             "place": place, "filler": False, "back_to_back": True, "events": evs})
+    for cid, evs in now_hk.items():
+        part, chname = NOW_CHANNELS.get(cid, (f"Now{cid}", f"Now TV {cid}"))
+        records.append({"id": f"HK.{part}", "name": chname, "tz": ZoneInfo("Asia/Hong_Kong"), "place": "Hong Kong",
+                        "filler": False, "back_to_back": True, "events": evs})
     for group, got in eps.items():
         cfg = EPGSHARE[group]
         for part, evs in got.items():
             records.append({"id": f"{cfg['prefix']}.{part}", "name": cfg["channels"][part][0],
                             "tz": ZoneInfo(cfg["tz"]), "place": cfg["place"],
-                            "filler": False, "back_to_back": True, "events": evs})
+                            "filler": False, "back_to_back": True, "events": evs,
+                            "backup": bool(cfg.get("backup"))})
     for cc, got in bein.items():
         place, zone = BEIN_COUNTRIES[cc][0], ZoneInfo(BEIN_COUNTRIES[cc][1])
         for name, evs in got.items():
@@ -3262,6 +3448,11 @@ def main():
         run_no = args.suffix if args.suffix is not None else load_last_run() + 1
         suffix = f"-Run{run_no}"
 
+    own = {r["id"] for r in records if not r.get("backup")}
+    dropped = [r["id"] for r in records if r.get("backup") and r["id"] in own]
+    records = [r for r in records if not (r.get("backup") and r["id"] in own)]
+    if dropped and args.debug:
+        print(f"epgshare01 backups not needed (your own source has them): {', '.join(dropped)}")
     if args.no_desc:
         for rec in records:
             rec["events"] = [dict(e, desc="") for e in rec["events"]]

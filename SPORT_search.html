@@ -160,7 +160,6 @@
     "https://raw.githubusercontent.com/Clummo202020/epg/main/SPORT_search_extra.xml.gz",
   ];
   const CLUSTER_MINUTES = 45;      // programmes starting within this of each other are one match
-  const SHOW_CHANNELS = 8;         // channels shown before "Show all"
 
   const COUNTRIES = {
     AL: ["🇦🇱", "Albania"], AU: ["🇦🇺", "Australia"], BE: ["🇧🇪", "Belgium"], BG: ["🇧🇬", "Bulgaria"],
@@ -351,23 +350,14 @@
       }
       const title = bestTitle(g.items);
       const sub = (g.items.find((p) => p.title === title && p.sub && p.sub !== "Live") || {}).sub || "";
-      const id = "m" + g.first.getTime();
       html += `<article class="match">
         <div class="kickoff">${ukTime.format(ko)}</div>
         <div><h3 class="title">${esc(title)}</h3>${sub ? `<p class="sub">${esc(sub)}</p>` : ""}
-          <ul class="channels" id="${id}">${rows.slice(0, SHOW_CHANNELS).join("")}</ul>
-          ${rows.length > SHOW_CHANNELS ? `<button class="more" type="button" data-target="${id}" data-rows="${encodeURIComponent(rows.slice(SHOW_CHANNELS).join(""))}">Show all ${rows.length} channels</button>` : ""}
+          <ul class="channels">${rows.join("")}</ul>
         </div></article>`;
     }
     results.innerHTML = html;
   }
-
-  results.addEventListener("click", (e) => {
-    const b = e.target.closest(".more");
-    if (!b) return;
-    $(b.dataset.target).insertAdjacentHTML("beforeend", decodeURIComponent(b.dataset.rows));
-    b.remove();
-  });
 
   let timer;
   q.addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(render, 150); });
