@@ -7,7 +7,13 @@ read epgshare01's files from another site, so this script (run by GitHub Actions
 them, keeps only the channels below, and writes SPORT_search_extra.xml.gz next to the guide,
 where the search page can read it.
 
-Source: epgshare01.online ready-made XMLTV files (free, no login), one per country.
+Sources:
+  - Sky's public TV guide (the one behind sky.com's TV guide; free, no login or key) for
+    Sky Sports, TNT Sports and Premier Sports - 7 days ahead, with 4K channels:
+      https://awk.epgsky.com/hawk/linear/schedule/20261021/4002,1120     (header X-SkyOTT-Territory: GB)
+      https://atlantis.epgsky.com/as/schedule/20261021/7201              (4K channels)
+  - epgshare01.online ready-made XMLTV files (free, no login), one per country; for UK and
+    Ireland only a backup, used for a channel Sky's guide sends nothing for.
 Times stay as given (with their offsets); the search page shows UK time.
 Titles in another script (Cytavision's Greek) are translated to English with SPORT_epg.py's
 translators and its cache, SPORT_translations.json (each text is translated only once).
@@ -19,8 +25,10 @@ translators and its cache, SPORT_translations.json (each text is translated only
 import argparse
 import gzip
 import io
+import json
 import os
 import re
+import ssl
 import sys
 import time
 import urllib.error
@@ -34,6 +42,19 @@ URL = "{scheme}://epgshare01.online/epgshare01/epg_ripper_{file}.xml.gz"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 DAYS = 8                      # keep programmes up to this many days ahead
+
+
+def _ssl_context():
+    """Trusted certificates from certifi when installed (python.org's Python on a Mac has none
+    of its own), else the system's - as SPORT_epg.py does. Certificates are always checked."""
+    try:
+        import certifi
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
+
+
+CTX = _ssl_context()
 
 # file -> (ID prefix, {epgshare01 channel id: channel name}); ids sharing a name are one channel
 EXTRAS = {
@@ -73,9 +94,127 @@ EXTRAS = {
 }
 # Live markers: "Live PL: Nott'm Forest v Arsenal" (Sky UK), "(L) PL: ..." (Astro),
 # "... (Live)", "Live: ...", "... [Live]"
-LIVE = re.compile(r"^\s*live\b|^\s*\(L\)|\(\s*live\s*\)|\[\s*live\s*\]|\blive\s*$", re.I)
-LIVE_STRIP = re.compile(r"^\s*live\b\s*[:\-]?\s*|^\s*\(L\)\s*|\s*\(\s*live\s*\)|\s*\[\s*live\s*\]"
+# Cytavision marks live with "(Z)" / "(Ζ)" (Ζωντανά = live).
+LIVE = re.compile(r"^\s*live\b|^\s*\(L\)|\(\s*live\s*\)|\[\s*live\s*\]|\blive\s*$|\(\s*[ZΖ]\s*\)", re.I)
+LIVE_STRIP = re.compile(r"^\s*live\b\s*[:\-]?\s*|^\s*\(L\)\s*|\s*\(\s*live\s*\)|\s*\[\s*live\s*\]|\s*\(\s*[ZΖ]\s*\)"
                         r"|\s*[-:]?\s*\blive\s*$", re.I)
+
+
+# Sky's guide: our ID -> (name, [Sky service ids, best first], 4K?)
+SKY_HAWK = "https://awk.epgsky.com/hawk/linear/schedule/{date}/{sids}"
+SKY_ATLANTIS = "https://atlantis.epgsky.com/as/schedule/{date}/{sid}"
+SKY_CHANNELS = {
+    "UK.SkySportsMainEvent": ("Sky Sports Main Event", ["4002", "1701", "4005"], False),
+    "UK.SkySportsPremierLeague": ("Sky Sports Premier League", ["4010", "1096", "4011"], False),
+    "UK.SkySportsFootball": ("Sky Sports Football", ["3939", "3843", "3942"], False),
+    "UK.SkySportsCricket": ("Sky Sports Cricket", ["4081", "1702", "4085"], False),
+    "UK.SkySportsGolf": ("Sky Sports Golf", ["4026", "1704", "4027"], False),
+    "UK.SkySportsF1": ("Sky Sports F1", ["3835", "3836", "4202"], False),
+    "UK.SkySportsAction": ("Sky Sports Action", ["4022", "1703", "4024"], False),
+    "UK.SkySportsMix": ("Sky Sports Mix", ["4090", "4092"], False),
+    "UK.SkySportsNews": ("Sky Sports News", ["4049", "1340", "4036"], False),
+    "UK.SkySportsRacing": ("Sky Sports Racing", ["4032", "4038"], False),
+    "UK.SkySportsTennis": ("Sky Sports Tennis", ["1705", "1284"], False),
+    "UK.SkySportsPlus": ("Sky Sports+", ["3940", "3858", "3945"], False),
+    "UK.SkySportsBoxOffice": ("Sky Sports Box Office", ["1035"], False),
+    "UK.SkySportsMainEvent4K": ("Sky Sports Main Event 4K", ["7201", "7211"], True),
+    "UK.SkySportsF14K": ("Sky Sports F1 4K", ["7202", "7212"], True),
+    "UK.TNTSports1": ("TNT Sports 1", ["1120", "3625", "1125"], False),
+    "UK.TNTSports2": ("TNT Sports 2", ["3627", "3628"], False),
+    "UK.TNTSports3": ("TNT Sports 3", ["3629", "3630"], False),
+    "UK.TNTSports4": ("TNT Sports 4", ["4040", "4041"], False),
+    "UK.TNTSports5": ("TNT Sports 5", ["1242"], False),
+    "UK.TNTSports6": ("TNT Sports 6", ["1239", "5382"], False),
+    "UK.TNTSports7": ("TNT Sports 7", ["1240", "5383"], False),
+    "UK.TNTSports8": ("TNT Sports 8", ["1241", "5384"], False),
+    "UK.TNTSports9": ("TNT Sports 9", ["1237", "5385"], False),
+    "UK.TNTSports10": ("TNT Sports 10", ["1243", "5386"], False),
+    "UK.TNTSportsBoxOffice": ("TNT Sports Box Office", ["1210", "6014"], False),
+    "UK.TNTSportsBoxOffice2": ("TNT Sports Box Office 2", ["1099", "1218"], False),
+    "UK.TNTSportsUltimate": ("TNT Sports Ultimate", ["1336", "1337"], True),
+    "IE.PremierSports1": ("Premier Sports 1", ["1192", "1289"], False),
+    "IE.PremierSports2": ("Premier Sports 2", ["1193", "1290"], False),
+}
+SKY_DAYS = 7
+
+
+def sky_get(url, headers, state):
+    """JSON from Sky's guide, or None (the reason is printed). Gives up on Sky after 3 failures in a row."""
+    if state["fails"] >= 3:
+        return None
+    why = "no answer"
+    for attempt in range(2):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json", **headers})
+            with urllib.request.urlopen(req, timeout=60, context=CTX) as resp:
+                data = json.load(resp)
+            state["fails"] = 0
+            return data
+        except urllib.error.HTTPError as e:
+            why = f"HTTP {e.code} {e.reason}"
+            if e.code in (400, 403, 404):
+                break
+        except (urllib.error.URLError, TimeoutError, OSError, ValueError) as e:
+            why = f"{type(e).__name__}: {e}"[:120]
+        time.sleep(3 * (attempt + 1))
+    state["fails"] += 1
+    print(f"  WARNING: Sky guide: {url.split('/schedule/')[-1]}: {why}", file=sys.stderr)
+    if state["fails"] == 3:
+        print("  WARNING: Sky guide failed 3 times in a row - skipping the rest of it this run "
+              "(epgshare01 fills in)", file=sys.stderr)
+    return None
+
+
+def fetch_sky(now, debug=False):
+    """{our id: (name, [programme tuples])} from Sky's guide, for SKY_DAYS days from today."""
+    per_sid = {}                                       # Sky service id -> {start: programme}
+    state = {"fails": 0}
+    hd = [sid for _, sids, uhd in SKY_CHANNELS.values() if not uhd for sid in sids]
+    uhd = [sid for _, sids, is_uhd in SKY_CHANNELS.values() if is_uhd for sid in sids]
+    until = now + timedelta(days=DAYS)
+
+    def take(data):
+        for sched in (data or {}).get("schedule") or []:
+            if not isinstance(sched, dict):
+                continue
+            sid = str(sched.get("sid"))
+            for ev in sched.get("events") or []:
+                try:
+                    start = datetime.fromtimestamp(int(ev["st"]), timezone.utc)
+                    stop = start + timedelta(seconds=int(ev["d"]))
+                except (KeyError, TypeError, ValueError):
+                    continue
+                title = re.sub(r"\s+", " ", str(ev.get("t") or "")).strip()
+                if not title or stop <= now or start >= until:
+                    continue
+                live = bool(LIVE.search(title))
+                if live:
+                    title = LIVE_STRIP.sub("", title).strip() or title
+                synopsis = re.sub(r"\s+", " ", str(ev.get("sy") or "")).strip()
+                if len(synopsis) > 160:
+                    synopsis = synopsis[:160].rsplit(" ", 1)[0] + " …"
+                per_sid.setdefault(sid, {})[start] = (start, stop, title, synopsis, live)
+
+    for day in range(SKY_DAYS + 1):
+        date = (now + timedelta(days=day)).strftime("%Y%m%d")
+        for i in range(0, len(hd), 20):                # Sky answers up to 20 channels at once
+            take(sky_get(SKY_HAWK.format(date=date, sids=",".join(hd[i:i + 20])),
+                         {"X-SkyOTT-Territory": "GB"}, state))
+        for sid in uhd:                                # 4K channels: Sky's other address
+            take(sky_get(SKY_ATLANTIS.format(date=date, sid=sid),
+                         {"X-SkyOTT-Territory": "GB", "X-SkyOTT-Proposition": "SKYQ",
+                          "X-SkyOTT-Provider": "SKY"}, state))
+        time.sleep(0.3)
+    out = {}
+    for cid, (name, sids, _) in SKY_CHANNELS.items():
+        best = max(sids, key=lambda s: len(per_sid.get(s) or {}))
+        progs = per_sid.get(best) or {}
+        if debug:
+            print(f"    {name}: {len(progs)} from Sky service {best}")
+        if progs:
+            out[cid] = (name, [(cid, *progs[k]) for k in sorted(progs)])
+    print(f"Sky guide: {sum(len(p) for _, p in out.values())} programmes on {len(out)} channel(s)")
+    return out
 
 
 def download(file):
@@ -85,7 +224,7 @@ def download(file):
         for attempt in range(2):
             try:
                 req = urllib.request.Request(URL.format(scheme=scheme, file=file), headers={"User-Agent": UA})
-                with urllib.request.urlopen(req, timeout=120) as resp:
+                with urllib.request.urlopen(req, timeout=120, context=CTX) as resp:
                     raw = resp.read()
                 return gzip.decompress(raw) if raw[:2] == b"\x1f\x8b" else raw
             except urllib.error.HTTPError as e:
@@ -138,13 +277,19 @@ def main():
     ap.add_argument("--out", default=OUT, help="output file (default SPORT_search_extra.xml.gz)")
     ap.add_argument("--debug", action="store_true", help="list programme counts per channel")
     ap.add_argument("--no-translate", action="store_true", help="keep titles in their own language")
+    ap.add_argument("--no-sky", action="store_true", help="don't read Sky's guide (epgshare01 only)")
     args = ap.parse_args()
 
     now = datetime.now(timezone.utc)
     until = now + timedelta(days=DAYS)
     tv = ET.Element("tv", {"generator-info-name": "SPORT_search_extra.py",
-                           "source-info-name": "epgshare01.online (search page only)"})
+                           "source-info-name": "Sky TV guide, epgshare01.online (search page only)"})
     channels, programmes, loaded = {}, [], 0
+    sky = {} if args.no_sky else fetch_sky(now, args.debug)
+    for cid, (name, progs) in sky.items():
+        channels[cid] = name
+        programmes += progs
+    loaded += bool(sky)
     for file, (prefix, wanted) in EXTRAS.items():
         data = download(file)
         if data is None:
@@ -163,7 +308,9 @@ def main():
                     title = first_text(el, "title")
                     if start and stop and title and stop > now and start < until:
                         cid = prefix + "." + re.sub(r"[^A-Za-z0-9]+", "", name.replace("+", "Plus"))
-                        if (cid, start) not in seen:            # an HD and SD copy: keep one
+                        if cid in sky:                          # Sky's own guide has this channel
+                            pass
+                        elif (cid, start) not in seen:          # an HD and SD copy: keep one
                             seen.add((cid, start))
                             live = bool(LIVE.search(title))
                             if live:
