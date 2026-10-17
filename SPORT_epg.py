@@ -233,7 +233,7 @@ GREECE - Novasports' TV programme (novasports.gr/tv-program), one day at a time:
 Both:
   * Hebrew / Greek titles are translated to English (free Google endpoint,
     cached in SPORT_translations.json next to this script). --no-translate keeps them.
-  * Times are converted to UK time; descriptions also give local time.
+  * Times are converted to UK time.
   * FIXED CHANNEL IDS and a fixed file name (SPORT_epg.xml.gz, gzip-compressed;
     --out SPORT_epg.xml writes a plain file instead). --run-ids gives fresh
     ids (IL.5Sport-Run3, GR.NovasportsPrime-Run3) when PlaylistLabs must replace
@@ -3080,7 +3080,8 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live):
     ET.SubElement(p, "title", {"lang": "en"}).text = title
     if sub:
         ET.SubElement(p, "sub-title", {"lang": "en"}).text = sub
-    ET.SubElement(p, "desc", {"lang": "en"}).text = desc
+    if desc:
+        ET.SubElement(p, "desc", {"lang": "en"}).text = desc
     ET.SubElement(p, "category", {"lang": "en"}).text = "Sports"
     if live:
         ET.SubElement(p, "category", {"lang": "en"}).text = "Live"
@@ -3135,10 +3136,8 @@ def build_xmltv(records, suffix, minutes):
             orig = f" Original title: {ev['title']}." if title != ev["title"] else ""
             about = "" if ev.get("desc") in DESC_PENDING else en(ev.get("desc") or "")
             about = about + ("" if about[-1:] in ".!?…" else ".") + " " if about else ""
-            local = "" if loc.utcoffset() == uk.utcoffset() else f" ({loc:%H:%M} {rec['place']})"
             lead = (sub if sub[-1:] in ".!?…" else sub + ".") + " " if sub else ""
-            desc = (f"{'LIVE. ' if ev['live'] else ''}{lead}{about}{name}, "
-                    f"{when} UK{local}.{orig}")
+            desc = f"{'LIVE. ' if ev['live'] else ''}{lead}{about}{orig}".strip()
             if rec["filler"]:
                 for a, b in filler_blocks(last_stop or now, start):
                     add_programme(tv, cid, a, b, f"{title} ({when})", "Coming up",
