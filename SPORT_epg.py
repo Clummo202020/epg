@@ -140,7 +140,8 @@ EPGSHARE01 - ready-made XMLTV files from https://epgshare01.online/epgshare01/ (
   list but send nothing for (Eurosport 1-2 FR, DAZN 1 FR, Golf+, Sky Sport 253-259,
   Sky Sport NBA, DAZN 4): same IDs, used only when your own source has nothing. france also
   adds beIN SPORTS MAX 4-10 FR. sg/my/au back up beIN's own site under the same IDs
-  (SG.beINSPORTS1 ...), and sg adds beIN SPORTS 4-5 and RUGBY SG.
+  (SG.beINSPORTS1 ...), and sg adds beIN SPORTS 4-5 and RUGBY SG. brazil backs up Claro
+  (SporTV, ESPN, Premiere) under the same IDs when Claro sends nothing.
   Each channel has a fixed ID and a list of the file's own IDs for it, best first; the one
   with most programmes is used. Turkish, Latvian and Indonesian titles are translated.
   Channels: TR.beINSPORTS1 ... TR.TRTSpor, LV.GO3Sport1 ... LV.SetantaSports, HK.beINSPORTS1,
@@ -2530,6 +2531,26 @@ EPGSHARE.update({
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} AU", [f"beINSports{n}.au"]) for n in range(1, 4)},
                "beINSPORTSXTRA": ("beIN SPORTS XTRA AU", ["beINSportsXtra.au"]),
            }},
+    # Brazil: backup for Claro (same IDs, BR.SporTV ...), used only for channels Claro leaves empty
+    "brazil": {"file": "BR1", "prefix": "BR", "place": "Brasilia", "tz": "America/Sao_Paulo", "english": False,
+               "backup": True, "channels": {
+                   "SporTV": ("SporTV", ["São.Paulo/SP..SporTV.HD.³.br", "São.Paulo/SP..SporTV.br"]),
+                   "SporTV2": ("SporTV 2", ["São.Paulo/SP..SporTV.2.HD.³.br", "São.Paulo/SP..SporTV.2.br"]),
+                   "SporTV3": ("SporTV 3", ["São.Paulo/SP..SporTV.3.HD.³.br", "São.Paulo/SP..SporTV.3..br"]),
+                   "ESPN": ("ESPN", ["ESPN.br"]),
+                   "ESPN2": ("ESPN 2", ["ESPN.2.br"]),
+                   "ESPN3": ("ESPN 3", ["São.Paulo/SP..ESPN.3.HD.br"]),
+                   "ESPN4": ("ESPN 4", ["São.Paulo/SP..ESPN.4.HD.br", "São.Paulo/SP..Espn.4.br"]),
+                   "ESPN5": ("ESPN 5", ["ESPN.5.br"]),
+                   "ESPN6": ("ESPN 6", ["ESPN.6.br"]),
+                   "Premiere2": ("Premiere 2", ["São.Paulo/SP..Premiere.HD.2.br", "São.Paulo/SP..Premiere.2.br"]),
+                   **{f"Premiere{n}": (f"Premiere {n}", [f"São.Paulo/SP..PREMIERE.HD.{n}.³.br", f"São.Paulo/SP..Premiere.{n}.br"])
+                      for n in (3, 4, 5)},
+                   **{f"Premiere{n}": (f"Premiere {n}", [f"São.Paulo/SP..Premiere.{n}.br", f"Belo.Horizonte/MG..Premiere.{n}.br"])
+                      for n in (6, 7)},
+                   "PremiereClubes": ("Premiere Clubes", ["São.Paulo/SP..Premiere.Clubes.HD.br",
+                                                          "São.Paulo/SP..Premiere.Clubes.br"]),
+               }},
     "italy": {"file": "IT1", "prefix": "IT", "place": "Italy", "tz": "Europe/Rome", "english": False,
               "backup": True, "channels": {
                   **{f"SkySport{n}": (f"Sky Sport {n}", [f"Sky.Sport..{n}.it"]) for n in range(253, 260)},
@@ -2537,7 +2558,7 @@ EPGSHARE.update({
                   "DAZN4": ("DAZN 4", ["DAZN4.it"]),
               }},
 })
-EPGSHARE_LIVE = (r"\b(live|canlı|canli|tiešraide|tiesraide|langsung|siaran langsung|"
+EPGSHARE_LIVE = (r"\b(live|ao vivo|canlı|canli|tiešraide|tiesraide|langsung|siaran langsung|"
                  r"直播|現場直播|مباشر)\b|\(c\)\s*$|\bL\s*$")
 
 
@@ -2598,7 +2619,7 @@ def fetch_epgshare(group, days, debug=False):
                 if start and stop and stop > start and title and start < end and stop > first:
                     sub, desc = pick(el, "sub-title"), pick(el, "desc")
                     live = bool(re.search(EPGSHARE_LIVE, title, re.I) or el.find("live") is not None)
-                    title = re.sub(r"^\s*(live|canlı|canli)\s*[:\-]\s*|\s*[-(:]?\s*\(?\b(live|canlı|canli|"
+                    title = re.sub(r"^\s*(live|ao vivo|canlı|canli)\s*[:\-]\s*|\s*[-(:]?\s*\(?\b(live|ao vivo|canlı|canli|"
                                    r"tiešraide|langsung)\b\)?\s*$|\s*\(c\)\s*$", "", title, flags=re.I).strip() or title
                     per.setdefault(eid, {})[start] = {
                         "start": start, "stop": stop, "title": title, "sub": sub if sub != title else "",
@@ -2908,7 +2929,7 @@ def filler_blocks(start, stop):
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
-                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), epgshare01.online (TR/LV/HK/ID/MENA/FR/IT/SG/MY/AU), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
+                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), epgshare01.online (TR/LV/HK/ID/MENA/FR/IT/SG/MY/AU/BR), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     count, listed = 0, []
     for rec in records:
