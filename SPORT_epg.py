@@ -129,9 +129,10 @@ UK / IRELAND - Sky's public TV guide (behind sky.com's TV guide; JSON, no login 
     https://awk.epgsky.com/hawk/linear/schedule/20261021/4002,1120   (header X-SkyOTT-Territory: GB)
     https://atlantis.epgsky.com/as/schedule/20261021/7201            (4K channels)
   Sky Sports (Main Event, Premier League, Football, ... , Main Event 4K, F1 4K), TNT Sports 1-10,
-  Ultimate, Box Office 1-2, Premier Sports 1-2. --no-sky to leave out; epgshare01's UK1/IE1
-  files are the backup (and give Sky Sports NFL). Channels: UK.SkySportsMainEvent, UK.TNTSports1,
-  IE.PremierSports1 ...
+  Ultimate, Box Office 1-2, Premier Sports 1-2, RTÉ One, RTÉ2, Virgin Media One-Four.
+  --no-sky to leave out; epgshare01's UK1/IE1 files are the backup (and give Sky Sports NFL;
+  none for RTÉ or Virgin Media). Channels: UK.SkySportsMainEvent, UK.TNTSports1,
+  IE.PremierSports1, IE.RTEOne, IE.RTE2, IE.VirginMediaOne ... IE.VirginMediaFour
 
 CYPRUS - Cyta's own TV guide (epg.cyta.com.cy, JSON), as in cyta_epg.py:
     channels:     https://epg.cyta.com.cy/api/mediacatalog/fetchChannels?language=0
@@ -2641,6 +2642,12 @@ SKY_CHANNELS = {   # our ID -> (name, [Sky service ids, best first], 4K?); epgsh
     "UK.TNTSportsUltimate": ("TNT Sports Ultimate", ["1336", "1337"], True),
     "IE.PremierSports1": ("Premier Sports 1", ["1192", "1289"], False),
     "IE.PremierSports2": ("Premier Sports 2", ["1193", "1290"], False),
+    "IE.RTEOne": ("RTÉ One", ["2816"], False),
+    "IE.RTE2": ("RTÉ2", ["1270"], False),
+    "IE.VirginMediaOne": ("Virgin Media One", ["3881"], False),
+    "IE.VirginMediaTwo": ("Virgin Media Two", ["1046"], False),
+    "IE.VirginMediaThree": ("Virgin Media Three", ["2817"], False),
+    "IE.VirginMediaFour": ("Virgin Media Four", ["1316"], False),
 }
 SKY_LIVE = re.compile(r"^\s*live\b|\(\s*live\s*\)|\blive\s*$", re.I)
 
