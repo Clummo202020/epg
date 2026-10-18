@@ -1,0 +1,41 @@
+name: Update SPORT EPG
+
+on:
+  schedule:
+    - cron: "0 5 * * *"     # 05:00 UTC (06:00 UK summer time, 05:00 winter)
+    - cron: "0 17 * * *"    # 17:00 UTC (18:00 UK summer time, 17:00 winter)
+  workflow_dispatch:         # adds a "Run workflow" button on the Actions page
+
+permissions:
+  contents: write
+
+concurrency:
+  group: epg-commit          # never runs at the same moment as the football update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build the guide
+        run: python3 SPORT_epg.py
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add SPORT_epg.xml.gz SPORT_translations.json
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update SPORT EPG"
+            git pull --rebase
+            git push
+          fi
