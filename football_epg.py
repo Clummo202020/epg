@@ -409,7 +409,7 @@ def build_xmltv(channels, filler):
                         f_desc = f"Coming up: {m['desc']}"
                     else:
                         f_title = f"{m['title']} ({m['when']})"
-                        f_desc = f"Upcoming match. {m['desc']}"
+                        f_desc = f"Next Match: {m['desc']}"
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
                         f_title += f" - kick-off in {countdown(start - a)}"
                     add_programme(tv, chan_id, a, b, f_title, m["sub"], f_desc, m["comp"])
