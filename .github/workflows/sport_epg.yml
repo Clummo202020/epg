@@ -16,7 +16,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -25,7 +25,7 @@ jobs:
           python-version: "3.12"
 
       - name: Build the guide
-        run: python3 SPORT_epg.py
+        run: python3 -u SPORT_epg.py   # -u shows progress in the log as it happens
 
       - name: Commit if anything changed
         run: |
