@@ -1,42 +1,47 @@
-# Runs football_epg.py on GitHub's servers and commits the updated XML,
-# overwriting football_epg.xml so the raw link never changes.
-#
-# Put this file in the repository at:  .github/workflows/football_epg.yml
-# football_epg.py must be in the top level of the repository.
-
 name: Update football EPG
 
 on:
   schedule:
-    - cron: "0 5 * * *"     # every day at 05:00 UTC (06:00 UK summer time)
-  workflow_dispatch:         # adds a "Run workflow" button on the Actions tab
+    - cron: "30 5 * * *"    # 05:30 UTC (06:30 UK summer time, 05:30 winter)
+    - cron: "30 17 * * *"   # 17:30 UTC (18:30 UK summer time, 17:30 winter)
+  workflow_dispatch:         # adds a "Run workflow" button on the Actions page
 
 permissions:
-  contents: write            # lets the workflow commit the new XML
+  contents: write
+
+concurrency:
+  group: epg-commit          # never runs at the same moment as the SPORT update
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-      - name: Check out the repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Build the EPG
-        run: python football_epg.py --days 14
+      - name: Build the football guide
+        run: python3 -u football_epg.py
 
-      - name: Commit the XML if it changed
+      - name: Build the Scottish guide
+        run: python3 -u scottish_epg.py
+
+      - name: Commit if anything changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add football_epg.xml
+          git add football_epg.xml scottish_epg.xml
+          for f in football_epg_run.json scottish_epg_run.json; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
           if git diff --cached --quiet; then
-            echo "No changes to commit."
+            echo "No changes"
           else
-            git commit -m "Update football EPG"
+            git commit -m "Update football and Scottish EPG"
+            git pull --rebase
             git push
           fi
