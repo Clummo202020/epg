@@ -138,6 +138,16 @@ GOAL_RUSH_MIN = 2
 # Channels to name at the end of each Goal Rush description, e.g.
 # ["Hub Premier 1 (Singapore)", "Sky Sport 8 (New Zealand)"]; empty = none
 GOAL_RUSH_ON = []
+
+# The Goal Rush "main game" is whichever slot match these channels show live,
+# read from the SPORT guide (the local file in the repo, else the GitHub copy).
+GOAL_RUSH_MAIN_FROM = ["HK.NowSportsPLTV", "SG.HubPremier1", "NZ.SkySport8NZ"]   # first match wins
+GOAL_RUSH_GUIDE_FILE = "SPORT_epg.xml.gz"
+GOAL_RUSH_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/SPORT_epg.xml.gz"
+# PlaylistLabs never rewrites programmes it already holds, so a Goal Rush slot is
+# held back until its main game is known; a slot whose main game still isn't
+# listed this close to kick-off is published without one.
+GOAL_RUSH_WAIT_DAYS = 2
 FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap)
 DOCTYPE = True            # write the standard XMLTV DOCTYPE line
 COUNTDOWN = False         # add "- kick-off in 2d 23h" to each filler block
@@ -319,6 +329,88 @@ def collect_matches(events_by_comp, match_minutes):
     return matches
 
 
+def load_main_game_listings():
+    """[(start, stop, text)] for the GOAL_RUSH_MAIN_FROM channels in the SPORT guide."""
+    import gzip
+    raw = None
+    local = os.path.join(os.path.dirname(os.path.abspath(__file__)), GOAL_RUSH_GUIDE_FILE)
+    try:
+        if os.path.exists(local):
+            with open(local, "rb") as f:
+                raw = f.read()
+        else:
+            req = urllib.request.Request(GOAL_RUSH_GUIDE_URL, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=60, context=CTX) as resp:
+                raw = resp.read()
+        if raw[:2] == b"\x1f\x8b":
+            raw = gzip.decompress(raw)
+        root = ET.fromstring(raw)
+    except Exception as e:          # no guide = no main game, never a failed run
+        print(f"  WARNING: Goal Rush main game: could not read the SPORT guide ({e})")
+        return []
+    wanted = set(GOAL_RUSH_MAIN_FROM)
+    out = []
+    for p in root.iter("programme"):
+        if p.get("channel") not in wanted:
+            continue
+        try:
+            start = datetime.strptime(p.get("start"), "%Y%m%d%H%M%S %z")
+            stop = datetime.strptime(p.get("stop"), "%Y%m%d%H%M%S %z")
+        except (TypeError, ValueError):
+            continue
+        text = " ".join((e.text or "") for e in p if e.tag in ("title", "sub-title", "desc"))
+        out.append((GOAL_RUSH_MAIN_FROM.index(p.get("channel")), start, stop, text))
+    out.sort(key=lambda r: r[0])                 # channel priority order
+    return [(a, b, t) for _, a, b, t in out]
+
+
+TEAM_ALIASES = {
+    "manchester utd": ["man utd", "man united", "manchester united"],
+    "manchester city": ["man city"],
+    "tottenham hotspur": ["spurs", "tottenham"],
+    "wolves": ["wolverhampton"],
+    "nottingham forest": ["nott'm forest", "notts forest", "forest"],
+    "brighton & hove albion": ["brighton"],
+    "crystal palace": ["palace"],
+    "aston villa": ["villa"],
+    "west ham utd": ["west ham"],
+    "newcastle utd": ["newcastle"],
+    "leeds utd": ["leeds"],
+    "sheffield utd": ["sheffield united", "sheff utd"],
+}
+AMBIGUOUS_FIRST_WORDS = {"manchester", "west", "sheffield", "nottingham", "aston", "crystal",
+                         "queens", "afc", "fc", "real", "athletic"}
+
+
+def _norm(text):
+    text = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode().lower()
+    return " " + re.sub(r"[^a-z0-9'&]+", " ", text.replace(" and ", " & ")) + " "
+
+
+def _aliases(name):
+    n = _norm(name).strip()
+    names = {n, n.replace(" utd", " united"), n.replace("&", "and")}
+    names.update(TEAM_ALIASES.get(n, []))
+    first = n.split()[0] if n else ""
+    if first and first not in AMBIGUOUS_FIRST_WORDS and len(first) > 3:
+        names.add(first)
+    return [_norm(a) for a in names if a]
+
+
+def find_main_game(ms, listings):
+    """The slot match a GOAL_RUSH_MAIN_FROM channel shows live at kick-off, or None."""
+    ko = ms[0]["start"]
+    on_air = [t for a, b, t in listings
+              if a <= ko + timedelta(minutes=20) and b >= ko + timedelta(minutes=30)]
+    for text in on_air:
+        txt = _norm(text)
+        for m in ms:
+            h, a = (short_name(t.get("displayName")) for t in m["teams"])
+            if any(x in txt for x in _aliases(h)) and any(x in txt for x in _aliases(a)):
+                return m
+    return None
+
+
 def goal_rush_channel(matches, suffix):
     """A 'Premier League Goal Rush' channel: one programme for every time slot in
     which at least GOAL_RUSH_MIN Premier League matches kick off together
@@ -332,24 +424,35 @@ def goal_rush_channel(matches, suffix):
     for m in matches:
         if m["comp"] == GOAL_RUSH_COMP and not m.get("tbc"):
             slots.setdefault(m["start"], []).append(m)
+    listings = load_main_game_listings() if GOAL_RUSH_MAIN_FROM else []
+    hold_from = datetime.now(timezone.utc) + timedelta(days=GOAL_RUSH_WAIT_DAYS)
     shows = []
     for start, ms in sorted(slots.items()):
         if len(ms) < GOAL_RUSH_MIN:
             continue
         ko = start.astimezone(LONDON)
-        games = ", ".join(sorted(m["title"] for m in ms))
+        main = find_main_game(ms, listings) if listings else None
+        if main is None and GOAL_RUSH_MAIN_FROM and start > hold_from:
+            print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game not listed yet - held back")
+            break                       # later slots wait too, so nothing is skipped
+        if main:
+            others = sorted(m["title"] for m in ms if m is not main)
+            print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game {main['title']}")
+            desc = (f"Premier League Goal Rush. Main game: {main['title']}, with updates and "
+                    f"goal flashes from {', '.join(others)}.")
+        else:
+            games = ", ".join(sorted(m["title"] for m in ms))
+            desc = f"Premier League Goal Rush: live action from {len(ms)} matches - {games}."
         shows.append({
             "comp": GOAL_RUSH_COMP, "title": "Premier League Goal Rush", "sub": GOAL_RUSH_COMP,
-            "desc": f"Premier League Goal Rush: live action from {len(ms)} matches - {games}." + on_air,
+            "desc": desc + on_air,
             "start": start, "stop": max(m["stop"] for m in ms),
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
             "filler_prefix": "Coming up",
-            "filler_sub": f"⏭ Next Up: Premier League Goal Rush {ko:%a} {ko.day} {ko:%b}",
+            "filler_sub": f"⏭ Goal Rush {ko:%a} {ko.day} {ko:%b}",
             "live_sub": "🔴 LIVE: Goal Rush",
         })
-    if not shows:
-        return None
-    return (f"{GOAL_RUSH_ID}{suffix}", "Goal Rush", None, shows)
+    return (f"{GOAL_RUSH_ID}{suffix}", "Goal Rush", None, shows)   # kept even if empty
 
 
 def build_channels(matches, english, suffix, english_only):
