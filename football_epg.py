@@ -130,8 +130,9 @@ GOAL_RUSH = True                   # False = leave the channel out
 GOAL_RUSH_ID = "PremierLeague.GoalRush"
 GOAL_RUSH_COMP = "Premier League"
 GOAL_RUSH_MIN = 2
-# Channels that carry Goal Rush, named at the end of each description
-GOAL_RUSH_ON = ["Hub Premier 1 (Singapore)", "Sky Sport 8 (New Zealand)"]
+# Channels to name at the end of each Goal Rush description, e.g.
+# ["Hub Premier 1 (Singapore)", "Sky Sport 8 (New Zealand)"]; empty = none
+GOAL_RUSH_ON = []
 FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap)
 DOCTYPE = True            # write the standard XMLTV DOCTYPE line
 COUNTDOWN = False         # add "- kick-off in 2d 23h" to each filler block
@@ -334,10 +335,10 @@ def goal_rush_channel(matches, suffix):
         games = ", ".join(sorted(m["title"] for m in ms))
         shows.append({
             "comp": GOAL_RUSH_COMP, "title": "Premier League Goal Rush", "sub": GOAL_RUSH_COMP,
-            "desc": f"Premier League Goal Rush: live action from the {ko:%H:%M} kick-offs "
-                    f"({len(ms)} matches) - {games}. Kick-off: {ko:%H:%M}." + on_air,
+            "desc": f"Premier League Goal Rush: live action from {len(ms)} matches - {games}." + on_air,
             "start": start, "stop": max(m["stop"] for m in ms),
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
+            "filler_prefix": "Coming up",
         })
     if not shows:
         return None
@@ -453,7 +454,7 @@ def build_xmltv(channels, filler):
                         f_desc = f"Coming up: {m['desc']}"
                     else:
                         f_title = f"{m['title']} ({m['when']})"
-                        f_desc = f"Next Match: {m['desc']}"
+                        f_desc = f"{m.get('filler_prefix', 'Next Match')}: {m['desc']}"   # Goal Rush: "Coming up"
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
                         f_title += f" - kick-off in {countdown(start - a)}"
                     add_programme(tv, chan_id, a, b, f_title, f"⏭ Next Match: {m['sub']}", f_desc, m["comp"])
