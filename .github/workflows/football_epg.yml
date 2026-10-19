@@ -2,15 +2,15 @@ name: Update football EPG
 
 on:
   schedule:
-    - cron: "30 5 * * *"    # 05:30 UTC (06:30 UK summer time, 05:30 winter)
-    - cron: "30 17 * * *"   # 17:30 UTC (18:30 UK summer time, 17:30 winter)
+    - cron: "41 4 * * *"    # 04:41 UTC (05:41 UK summer time, 04:41 winter)
+    - cron: "41 16 * * *"   # 16:41 UTC (17:41 UK summer time, 16:41 winter)
   workflow_dispatch:         # adds a "Run workflow" button on the Actions page
 
 permissions:
   contents: write
 
 concurrency:
-  group: epg-commit          # never runs at the same moment as the SPORT update
+  group: football-epg          # never two of this workflow at once (the other one can run alongside)
   cancel-in-progress: false
 
 jobs:
@@ -42,6 +42,10 @@ jobs:
             echo "No changes"
           else
             git commit -m "Update football and Scottish EPG"
-            git pull --rebase
-            git push
+            ok=""
+            for i in 1 2 3 4 5; do
+              if git pull --rebase && git push; then ok=1; break; fi
+              sleep 15
+            done
+            [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }
           fi
