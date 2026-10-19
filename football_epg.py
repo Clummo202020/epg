@@ -344,13 +344,13 @@ def build_channels(matches, english, suffix, english_only):
 # --------------------------------------------------------------------------
 # XMLTV
 # --------------------------------------------------------------------------
-def add_programme(tv, chan_id, start, stop, title, sub, desc, comp):
+def add_programme(tv, chan_id, start, stop, title, sub, desc, comp, live=False):
     p = ET.SubElement(tv, "programme", {
         "start": xmltv_time(start), "stop": xmltv_time(stop), "channel": chan_id})
     ET.SubElement(p, "title", {"lang": "en"}).text = title
     ET.SubElement(p, "sub-title", {"lang": "en"}).text = sub
     ET.SubElement(p, "desc", {"lang": "en"}).text = desc
-    for cat in ("Sports", "Football", comp):
+    for cat in ("Sports", "Football", comp) + (("Live",) if live else ()):
         ET.SubElement(p, "category", {"lang": "en"}).text = cat
 
 
@@ -412,9 +412,11 @@ def build_xmltv(channels, filler):
                         f_desc = f"Next Match: {m['desc']}"
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
                         f_title += f" - kick-off in {countdown(start - a)}"
-                    add_programme(tv, chan_id, a, b, f_title, m["sub"], f_desc, m["comp"])
+                    add_programme(tv, chan_id, a, b, f_title, f"⏭ Next Match: {m['sub']}", f_desc, m["comp"])
                     count += 1
-            add_programme(tv, chan_id, start, stop, m["title"], m["sub"], m["desc"], m["comp"])
+            # the match itself: "🔴 LIVE: Premier League" (filler blocks say "⏭ Next Match: Premier League")
+            add_programme(tv, chan_id, start, stop, m["title"], f"🔴 LIVE: {m['sub']}", m["desc"],
+                          m["comp"], live=True)
             count += 1
             last_stop = stop
     return tv, count
