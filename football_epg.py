@@ -5,6 +5,7 @@ football_epg.py - XMLTV guide of football fixtures for IPTV event channels.
 One file covers everything that used to be split across two scripts:
   * English clubs (top four tiers): every competition they play in
   * Non-English clubs: UEFA Champions League, Europa League and Conference League
+  * Spanish clubs: La Liga (Real.Madrid.LaLiga, Barcelona.LaLiga ...)
 
 Data comes from ESPN's public (unofficial, key-free) site API.
 
@@ -83,6 +84,7 @@ COMPETITIONS = {
     "UEFA Champions League":  ("uefa.champions", "ChampsLge"),
     "UEFA Europa League":     ("uefa.europa", "Europa"),
     "UEFA Conference League": ("uefa.europa.conf", "ConfLeague"),
+    "La Liga":                ("esp.1", "LaLiga"),
 }
 
 # Leagues that define "English clubs".
@@ -90,6 +92,9 @@ ENGLISH_LEAGUES = ["Premier League", "Championship", "League One", "League Two"]
 
 # Competitions in which non-English clubs also get channels.
 UEFA_COMPETITIONS = ["UEFA Champions League", "UEFA Europa League", "UEFA Conference League"]
+
+# Foreign leagues in which every club gets a channel (--english-only skips them).
+OTHER_LEAGUES = ["La Liga"]
 
 # Fixtures with these statuses have no reliable kick-off and are skipped.
 SKIP_STATUSES = {"STATUS_POSTPONED", "STATUS_CANCELED", "STATUS_CANCELLED",
@@ -372,7 +377,7 @@ def build_channels(matches, english, suffix, english_only):
             tid = str(t.get("id", ""))
             if not tid:
                 continue
-            if tid in english or (not english_only and m["comp"] in UEFA_COMPETITIONS):
+            if tid in english or (not english_only and m["comp"] in UEFA_COMPETITIONS + OTHER_LEAGUES):
                 grouped.setdefault((tid, m["comp"]), []).append(m)
 
     channels = []
