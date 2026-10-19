@@ -123,6 +123,15 @@ def save_last_run(n):
     except OSError as e:
         print(f"WARNING: could not save run number to {RUN_STATE_FILE}: {e}")
 OUTPUT_NAME = "football_epg.xml"   # the file name on GitHub
+
+# Premier League Goal Rush channel: one programme for every slot where at least
+# GOAL_RUSH_MIN Premier League matches kick off at the same time (e.g. Sat 15:00).
+GOAL_RUSH = True                   # False = leave the channel out
+GOAL_RUSH_ID = "PremierLeague.GoalRush"
+GOAL_RUSH_COMP = "Premier League"
+GOAL_RUSH_MIN = 2
+# Channels that carry Goal Rush, named at the end of each description
+GOAL_RUSH_ON = ["Hub Premier 1 (Singapore)", "Sky Sport 8 (New Zealand)"]
 FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap)
 DOCTYPE = True            # write the standard XMLTV DOCTYPE line
 COUNTDOWN = False         # add "- kick-off in 2d 23h" to each filler block
@@ -299,9 +308,40 @@ def collect_matches(events_by_comp, match_minutes):
                 "comp": comp_name, "title": title, "sub": sub, "desc": utd(" ".join(desc)),
                 "start": start, "stop": start + timedelta(minutes=match_minutes),
                 "when": f"{ko:%a %d %b}, {'TBC' if tbc else f'{ko:%H:%M}'}",
-                "teams": [h, a],
+                "teams": [h, a], "tbc": tbc,
             })
     return matches
+
+
+def goal_rush_channel(matches, suffix):
+    """A 'Premier League Goal Rush' channel: one programme for every time slot in
+    which at least GOAL_RUSH_MIN Premier League matches kick off together
+    (usually Saturday 15:00), listing the matches in that slot."""
+    on_air = ""
+    if GOAL_RUSH_ON:
+        names = GOAL_RUSH_ON[0] if len(GOAL_RUSH_ON) == 1 else \
+            ", ".join(GOAL_RUSH_ON[:-1]) + " and " + GOAL_RUSH_ON[-1]
+        on_air = f" On {names}."
+    slots = {}
+    for m in matches:
+        if m["comp"] == GOAL_RUSH_COMP and not m.get("tbc"):
+            slots.setdefault(m["start"], []).append(m)
+    shows = []
+    for start, ms in sorted(slots.items()):
+        if len(ms) < GOAL_RUSH_MIN:
+            continue
+        ko = start.astimezone(LONDON)
+        games = ", ".join(sorted(m["title"] for m in ms))
+        shows.append({
+            "comp": GOAL_RUSH_COMP, "title": "Premier League Goal Rush", "sub": GOAL_RUSH_COMP,
+            "desc": f"Premier League Goal Rush: live action from the {ko:%H:%M} kick-offs "
+                    f"({len(ms)} matches) - {games}. Kick-off: {ko:%H:%M}." + on_air,
+            "start": start, "stop": max(m["stop"] for m in ms),
+            "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
+        })
+    if not shows:
+        return None
+    return (f"{GOAL_RUSH_ID}{suffix}", "Premier League Goal Rush", None, shows)
 
 
 def build_channels(matches, english, suffix, english_only):
@@ -337,6 +377,10 @@ def build_channels(matches, english, suffix, english_only):
         ext = COMPETITIONS[comp][1]
         channels.append((f"{bases[tid]}.{ext}{suffix}", f"{names[tid]} {comp}",
                          logos.get(tid), sorted(ms, key=lambda m: m["start"])))
+    if GOAL_RUSH:
+        gr = goal_rush_channel(matches, suffix)
+        if gr:
+            channels.append(gr)
     channels.sort(key=lambda c: c[1])
     return channels
 
