@@ -303,7 +303,7 @@ def collect_matches(events_by_comp, match_minutes):
             sub = utd(comp_name + (f" - {notes[0]}" if notes else ""))
 
             tbc = comp.get("timeValid") is False             # ESPN's time is only a placeholder
-            desc = [f"{sub}: {title}."]
+            desc = [f"{title}."]    # the competition is in the secondary title
             venue = comp.get("venue") or {}
             if venue.get("fullName"):
                 city = (venue.get("address") or {}).get("city")
