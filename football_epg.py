@@ -132,7 +132,7 @@ OUTPUT_NAME = "football_epg.xml"   # the file name on GitHub
 # Premier League Goal Rush channel: one programme for every slot where at least
 # GOAL_RUSH_MIN Premier League matches kick off at the same time (e.g. Sat 15:00).
 GOAL_RUSH = True                   # False = leave the channel out
-GOAL_RUSH_ID = "GoalRush.id"
+GOAL_RUSH_ID = "GoalRush2.id"
 GOAL_RUSH_COMP = "Premier League"
 GOAL_RUSH_MIN = 2
 # Channels to name at the end of each Goal Rush description, e.g.
