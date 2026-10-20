@@ -148,6 +148,16 @@ GOAL_RUSH_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/S
 # held back until its main game is known; a slot whose main game still isn't
 # listed this close to kick-off is published without one.
 GOAL_RUSH_WAIT_DAYS = 2
+
+# One general channel for every UEFA match: a programme for each kick-off time,
+# listing all the Champions / Europa / Conference League matches starting then.
+UEFA_CHANNEL = True                # False = leave the channel out
+UEFA_CHANNEL_ID = "UEFA.comps"
+UEFA_CHANNEL_NAME = "UEFA Competitions"
+UEFA_CHANNEL_TITLE = "Streams are live at match time only."
+UEFA_CHANNEL_DESC = ("Matches that fall under the UEFA umbrella.\n\n"
+                     "Club competitions: Champions League, Europa League, "
+                     "Conference League, and Super Cup.")
 FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap)
 DOCTYPE = True            # write the standard XMLTV DOCTYPE line
 COUNTDOWN = False         # add "- kick-off in 2d 23h" to each filler block
@@ -411,6 +421,40 @@ def find_main_game(ms, listings):
     return None
 
 
+def uefa_channel(matches, suffix):
+    """One channel for all UEFA club competitions: a programme per kick-off time
+    listing every UEFA match that starts then (programmes never overlap)."""
+    slots = {}
+    for m in matches:
+        if m["comp"] in UEFA_COMPETITIONS and not m.get("tbc"):
+            slots.setdefault(m["start"], []).append(m)
+    starts = sorted(slots)
+    shows = []
+    for i, start in enumerate(starts):
+        ms = slots[start]
+        ko = start.astimezone(LONDON)
+        comps = [c for c in UEFA_COMPETITIONS if any(m["comp"] == c for m in ms)]
+        label = comps[0] if len(comps) == 1 else "UEFA Competitions"
+        parts = []
+        for c in comps:
+            games = ", ".join(sorted(m["title"] for m in ms if m["comp"] == c))
+            parts.append(games + "." if len(comps) == 1 else f"{c}: {games}.")
+        n = len(ms)
+        desc = (f"{n} match{'es' if n > 1 else ''}: " if n > 1 else "") + " ".join(parts)
+        stop = max(m["stop"] for m in ms)
+        if i + 1 < len(starts):
+            stop = min(stop, starts[i + 1])          # never overlap the next kick-off
+        shows.append({
+            "comp": label, "title": label, "sub": label, "desc": desc,
+            "start": start, "stop": stop,
+            "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
+            "fixed_title": UEFA_CHANNEL_TITLE, "fixed_desc": UEFA_CHANNEL_DESC,
+            "filler_sub": "", "live_sub": "",          # no secondary title
+            "live_title": f"🔴 LIVE – {UEFA_CHANNEL_TITLE}",   # match blocks only
+        })
+    return (f"{UEFA_CHANNEL_ID}{suffix}", UEFA_CHANNEL_NAME, None, shows)
+
+
 def goal_rush_channel(matches, suffix):
     """A 'Premier League Goal Rush' channel: one programme for every time slot in
     which at least GOAL_RUSH_MIN Premier League matches kick off together
@@ -488,6 +532,8 @@ def build_channels(matches, english, suffix, english_only):
         ext = COMPETITIONS[comp][1]
         channels.append((f"{bases[tid]}.{ext}{suffix}", f"{names[tid]} {comp}",
                          logos.get(tid), sorted(ms, key=lambda m: m["start"])))
+    if UEFA_CHANNEL and not english_only:
+        channels.append(uefa_channel(matches, suffix))
     if GOAL_RUSH:
         gr = goal_rush_channel(matches, suffix)
         if gr:
@@ -503,7 +549,8 @@ def add_programme(tv, chan_id, start, stop, title, sub, desc, comp, live=False):
     p = ET.SubElement(tv, "programme", {
         "start": xmltv_time(start), "stop": xmltv_time(stop), "channel": chan_id})
     ET.SubElement(p, "title", {"lang": "en"}).text = title
-    ET.SubElement(p, "sub-title", {"lang": "en"}).text = sub
+    if sub:                                   # "" = no secondary title (UEFA.comps)
+        ET.SubElement(p, "sub-title", {"lang": "en"}).text = sub
     ET.SubElement(p, "desc", {"lang": "en"}).text = desc
     for cat in ("Sports", "Football", comp) + (("Live",) if live else ()):
         ET.SubElement(p, "category", {"lang": "en"}).text = cat
@@ -565,14 +612,16 @@ def build_xmltv(channels, filler):
                     else:
                         f_title = f"{m['title']} ({m['when']})"
                         f_desc = f"{m.get('filler_prefix', 'Next Match')}: {m['desc']}"   # Goal Rush: "Coming up"
+                    if "fixed_title" in m:        # UEFA.id: same title/description throughout
+                        f_title, f_desc = m["fixed_title"], m["fixed_desc"]
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
                         f_title += f" - kick-off in {countdown(start - a)}"
                     add_programme(tv, chan_id, a, b, f_title,
                                   m.get("filler_sub", f"⏭ Next Match: {m['sub']}"), f_desc, m["comp"])
                     count += 1
             # the match itself: "🔴 LIVE: Premier League" (filler blocks say "⏭ Next Match: Premier League")
-            add_programme(tv, chan_id, start, stop, m["title"],
-                          m.get("live_sub", f"🔴 LIVE: {m['sub']}"), m["desc"],
+            add_programme(tv, chan_id, start, stop, m.get("live_title", m.get("fixed_title", m["title"])),
+                          m.get("live_sub", f"🔴 LIVE: {m['sub']}"), m.get("fixed_desc", m["desc"]),
                           m["comp"], live=True)
             count += 1
             last_stop = stop
