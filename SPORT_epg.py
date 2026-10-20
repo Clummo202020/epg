@@ -3248,6 +3248,34 @@ def xmltv_time(dt):
     return dt.astimezone(LONDON).strftime("%Y%m%d%H%M%S %z")
 
 
+KICKOFF_RE = re.compile(r"kick-?\s?off:?\s*(\d{1,2})[.:](\d{2})\s*([ap]\.?m\.?)?", re.I)
+
+
+def kickoff_now(text, *local_times):
+    """True if `text` gives a kick-off time ("Kick-off: 16:30", "Kick-off 8.00pm") that
+    matches the programme's start in any of the given local times (to 15 minutes)."""
+    m = KICKOFF_RE.search(text or "")
+    if not m:
+        return False
+    h, mi, ap = int(m.group(1)), int(m.group(2)), (m.group(3) or "").lower()
+    if ap.startswith("p") and h < 12:
+        h += 12
+    elif ap.startswith("a") and h == 12:
+        h = 0
+    ko = h * 60 + mi
+    return any(abs((t.hour * 60 + t.minute) - ko) % 1440 <= 15 or
+               abs((t.hour * 60 + t.minute) - ko) % 1440 >= 1425 for t in local_times)
+
+
+def live_sub(sub):
+    """Secondary title for a live programme: "🔴 LIVE" or "🔴 LIVE: <sub-title>"."""
+    s = (sub or "").strip()
+    if not s or re.fullmatch(r"(?i)live[.!]?", s):
+        return "🔴 LIVE"
+    s = re.sub(r"(?i)^live\b[\s.,:;-]*", "", s) or s       # "Live. Northern Ireland..." -> "Northern Ireland..."
+    return f"🔴 LIVE: {s}"
+
+
 def add_programme(tv, cid, start, stop, title, sub, desc, live):
     p = ET.SubElement(tv, "programme", {
         "start": xmltv_time(start), "stop": xmltv_time(stop), "channel": cid})
@@ -3322,8 +3350,9 @@ def build_xmltv(records, suffix, minutes):
                                   f"Upcoming on {name}: {title}, {when} UK "
                                   f"({loc:%H:%M} {rec['place']}).", False)
                     count += 1
+            is_live = ev["live"] or kickoff_now(f"{sub or ''} {desc}", loc, uk)
             add_programme(tv, cid, start, stop, title,
-                          sub or ("Live" if ev["live"] else None), desc, ev["live"])
+                          live_sub(sub) if is_live else sub, desc, is_live)
             count += 1
             last_stop = stop
     return tv, count, listed
