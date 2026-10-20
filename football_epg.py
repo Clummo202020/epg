@@ -438,13 +438,13 @@ def goal_rush_channel(matches, suffix):
         if main:
             others = sorted(m["title"] for m in ms if m is not main)
             print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game {main['title']}")
-            desc = (f"Premier League Goal Rush. Main game: {main['title']}, with updates and "
+            desc = (f"Goal Rush. Main game: {main['title']}, with updates and "
                     f"goal flashes from {', '.join(others)}.")
         else:
             games = ", ".join(sorted(m["title"] for m in ms))
-            desc = f"Premier League Goal Rush: live action from {len(ms)} matches - {games}."
+            desc = f"Goal Rush: live action from {len(ms)} matches - {games}."
         shows.append({
-            "comp": GOAL_RUSH_COMP, "title": "Premier League Goal Rush", "sub": GOAL_RUSH_COMP,
+            "comp": GOAL_RUSH_COMP, "title": "Goal Rush", "sub": GOAL_RUSH_COMP,
             "desc": desc + on_air,
             "start": start, "stop": max(m["stop"] for m in ms),
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
