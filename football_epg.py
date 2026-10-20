@@ -158,7 +158,7 @@ UEFA_CHANNEL_TITLE = "Streams are live at match time only."
 # Generic (all-sport) streaming services: plain 2-hour blocks with the same
 # title and description, not tied to any fixtures. (id, name, title, description)
 DUMMY_CHANNELS = [
-    ("peacock.us", "Peacock", "Stream is live at event time only.",
+    ("peacock.liveUSA", "Peacock", "Stream is live at event time only.",
      "Peacock, live sports streaming."),
     ("stan.au", "Stan Sport", "Stream is live at event time only.",
      "Stan Sport, live sports streaming."),
