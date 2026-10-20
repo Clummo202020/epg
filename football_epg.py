@@ -205,6 +205,16 @@ DUMMY_CHANNELS = [
      "Various live events streamed for Canadian TV."),
     ("dazn.live", "DAZN", "Stream is live at event time only.",
      "DAZN, live sports streaming."),
+    ("nfl.us", "NFL", "Stream is live at event time only.",
+     "Live American football from the NFL."),
+    ("mlb.us", "MLB", "Stream is live at event time only.",
+     "Live baseball from the MLB."),
+    ("nba.us", "NBA", "Stream is live at event time only.",
+     "Live basketball from the NBA."),
+    ("nhl.us", "NHL", "Stream is live at event time only.",
+     "Live ice hockey from the NHL."),
+    ("tennis.live", "Tennis", "Stream is live at event time only.",
+     "Live tennis from around the world."),
 ]
 DUMMY_HOURS = 2          # block length
 DUMMY_DAYS = 10          # how far ahead the blocks run
