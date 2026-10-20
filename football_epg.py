@@ -203,6 +203,8 @@ DUMMY_CHANNELS = [
      "Various live events streamed for American TV."),
     ("canadalive.ca", "Canada Events", "Stream is live at event time only.",
      "Various live events streamed for Canadian TV."),
+    ("dazn.live", "DAZN", "Stream is live at event time only.",
+     "DAZN, live sports streaming."),
 ]
 DUMMY_HOURS = 2          # block length
 DUMMY_DAYS = 10          # how far ahead the blocks run
