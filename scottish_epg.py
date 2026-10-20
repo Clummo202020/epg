@@ -127,6 +127,9 @@ def save_last_run(n):
     except OSError as e:
         print(f"WARNING: could not save run number to {RUN_STATE_FILE}: {e}")
 OUTPUT_NAME = "scottish_epg.xml"   # the file name on GitHub
+
+# Club match blocks go LIVE this many minutes before kick-off (0 = at kick-off)
+MATCH_EARLY_MINUTES = 10
 FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap)
 DOCTYPE = True            # write the standard XMLTV DOCTYPE line
 COUNTDOWN = False         # add "- kick-off in 2d 23h" to each filler block
@@ -402,6 +405,8 @@ def build_xmltv(channels, filler):
         last_stop = None
         for m in ms:
             start, stop = m["start"], m["stop"]
+            if m.get("teams"):                         # club matches go LIVE a little before kick-off
+                start -= timedelta(minutes=MATCH_EARLY_MINUTES)
             if last_stop and start < last_stop:       # overlapping fixtures
                 start = last_stop
                 if stop <= start:

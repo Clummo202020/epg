@@ -129,12 +129,16 @@ def save_last_run(n):
         print(f"WARNING: could not save run number to {RUN_STATE_FILE}: {e}")
 OUTPUT_NAME = "football_epg.xml"   # the file name on GitHub
 
+# Club match blocks go LIVE this many minutes before kick-off (0 = at kick-off)
+MATCH_EARLY_MINUTES = 10
+
 # Premier League Goal Rush channel: one programme for every slot where at least
 # GOAL_RUSH_MIN Premier League matches kick off at the same time (e.g. Sat 15:00).
 GOAL_RUSH = True                   # False = leave the channel out
 GOAL_RUSH_ID = "GoalRush2.id"
 GOAL_RUSH_COMP = "Premier League"
 GOAL_RUSH_MIN = 2
+GOAL_RUSH_EARLY_MINUTES = 10       # Goal Rush goes LIVE this many minutes before kick-off
 # Channels to name at the end of each Goal Rush description, e.g.
 # ["Hub Premier 1 (Singapore)", "Sky Sport 8 (New Zealand)"]; empty = none
 GOAL_RUSH_ON = []
@@ -487,7 +491,7 @@ def find_main_game(ms, listings):
     return None
 
 
-def slot_channel(matches, comps, chan_id, name, title, desc, live_title=None):
+def slot_channel(matches, comps, chan_id, name, title, desc, live_title=None, early_minutes=0):
     """A general "streams are live at match time" channel: the same title and
     description throughout, split at the kick-off times of every match in
     `comps` (one block per kick-off time, never overlapping); match blocks get
@@ -503,11 +507,12 @@ def slot_channel(matches, comps, chan_id, name, title, desc, live_title=None):
         ko = start.astimezone(LONDON)
         label = ms[0]["comp"] if len({m["comp"] for m in ms}) == 1 else name
         stop = max(m["stop"] for m in ms)
+        early = timedelta(minutes=early_minutes)     # go LIVE a little before kick-off
         if i + 1 < len(starts):
-            stop = min(stop, starts[i + 1])          # never overlap the next kick-off
+            stop = min(stop, starts[i + 1] - early)  # never overlap the next slot
         shows.append({
             "comp": label, "title": label, "sub": "", "desc": desc,
-            "start": start, "stop": stop,
+            "start": start - early, "stop": stop,
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
             "fixed_title": title, "fixed_desc": desc,
             "filler_sub": "", "live_sub": "",          # no secondary title
@@ -519,7 +524,8 @@ def slot_channel(matches, comps, chan_id, name, title, desc, live_title=None):
 def uefa_channel(matches, suffix):
     return slot_channel(matches, UEFA_COMPETITIONS, f"{UEFA_CHANNEL_ID}{suffix}",
                         UEFA_CHANNEL_NAME, UEFA_CHANNEL_TITLE, UEFA_CHANNEL_DESC,
-                        live_title=f"🔴 LIVE – {UEFA_CHANNEL_TITLE}")
+                        live_title=f"🔴 LIVE – {UEFA_CHANNEL_TITLE}",
+                        early_minutes=MATCH_EARLY_MINUTES)
 
 
 def dummy_channel(chan_id, name, title, desc):
@@ -576,7 +582,8 @@ def goal_rush_channel(matches, suffix):
         shows.append({
             "comp": GOAL_RUSH_COMP, "title": "Goal Rush", "sub": GOAL_RUSH_COMP,
             "desc": desc + on_air,
-            "start": start, "stop": max(m["stop"] for m in ms),
+            "start": start - timedelta(minutes=GOAL_RUSH_EARLY_MINUTES),  # show starts before kick-off
+            "stop": max(m["stop"] for m in ms),
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
             "filler_prefix": "Coming up",
             "filler_sub": f"⏭ Goal Rush {ko:%a} {ko.day} {ko:%b}",
@@ -689,6 +696,8 @@ def build_xmltv(channels, filler):
         last_stop = None
         for m in ms:
             start, stop = m["start"], m["stop"]
+            if m.get("teams"):                         # club matches go LIVE a little before kick-off
+                start -= timedelta(minutes=MATCH_EARLY_MINUTES)
             if last_stop and start < last_stop:       # overlapping fixtures
                 start = last_stop
                 if stop <= start:
