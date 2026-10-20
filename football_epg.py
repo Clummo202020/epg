@@ -155,6 +155,58 @@ UEFA_CHANNEL = True                # False = leave the channel out
 UEFA_CHANNEL_ID = "UEFA.comps"
 UEFA_CHANNEL_NAME = "UEFA Competitions"
 UEFA_CHANNEL_TITLE = "Streams are live at match time only."
+# Generic (all-sport) streaming services: plain 2-hour blocks with the same
+# title and description, not tied to any fixtures. (id, name, title, description)
+DUMMY_CHANNELS = [
+    ("peacock.us", "Peacock", "Stream is live at event time only.",
+     "Peacock, live sports streaming."),
+    ("stan.au", "Stan Sport", "Stream is live at event time only.",
+     "Stan Sport, live sports streaming."),
+    ("paramountplus.us", "Paramount+", "Stream is live at event time only.",
+     "Paramount+, live sports streaming."),
+    ("hbomax.uk", "HBO Max", "Stream is live at event time only.",
+     "HBO Max, live sports streaming."),
+    ("sportsnetplus.ca", "Sportsnet+", "Stream is live at event time only.",
+     "Sportsnet+, live sports streaming."),
+    ("tsnplus.ca", "TSN+", "Stream is live at event time only.",
+     "TSN+, live sports streaming."),
+    ("tod.qa", "TOD", "Stream is live at event time only.",
+     "TOD, live sports streaming."),
+    ("skysports+.uk", "Sky Sports+", "Live at event time only.",
+     "Skysports+ is a streaming service. No programme guide is available. "
+     "You will need to scroll through the channels to see what's on where."),
+    ("aussie.rules", "Aussie Rules", "Stream is live at event time only",
+     "Aussie Rules footy from the Australian Football League (AFL)."),
+    ("darts.uk", "Darts", "Stream is live at event time only.",
+     "Live darts events from around the world."),
+    ("espn+.us", "ESPN+", "Stream is live at event time only.",
+     "Live sports from ESPN+ in the USA"),
+    ("f1drivers.uk", "F1 Drivers", "Stream is live at event time only.",
+     "Formula 1 driver onboard cameras, live during race weekends."),
+    ("f1.uk", "Formula 1", "Stream is live at event time only",
+     "Live F1 Grand Prix events and races."),
+    ("gaelic.sports", "Gaelic Sports", "Stream is live at event time only.",
+     "Gaelic Football, Hurling and Camogie. Live from Ireland."),
+    ("replay.uk", "Game Replays", "Replays",
+     "See INFO channel for schedules."),
+    ("mls.na", "MLS", "Stream is live at match time only.",
+     "Major League Soccer from North America."),
+    ("nrl.aus", "NRL", "Stream is live at event time only.",
+     "Rugby League action from Australia"),
+    ("ppv.events", "PPV Events", "Stream is live at event time only.",
+     "Live Pay Per View events from around the world."),
+    ("rugby.union", "Rugby Union", "Stream is live at event time only.",
+     "Live Rugby from around the world."),
+    ("rugby.league", "Super League Rugby", "Stream is live at event time only.",
+     "Action from the Bet Fred Super League."),
+    ("usaevents.us", "USA Events", "Stream is live at event time only.",
+     "Various live events streamed for American TV."),
+    ("canadalive.ca", "Canada Events", "Stream is live at event time only.",
+     "Various live events streamed for Canadian TV."),
+]
+DUMMY_HOURS = 2          # block length
+DUMMY_DAYS = 10          # how far ahead the blocks run
+
 UEFA_CHANNEL_DESC = ("Matches that fall under the UEFA umbrella.\n\n"
                      "Club competitions: Champions League, Europa League, "
                      "Conference League, and Super Cup.")
@@ -421,38 +473,58 @@ def find_main_game(ms, listings):
     return None
 
 
-def uefa_channel(matches, suffix):
-    """One channel for all UEFA club competitions: a programme per kick-off time
-    listing every UEFA match that starts then (programmes never overlap)."""
+def slot_channel(matches, comps, chan_id, name, title, desc, live_title=None):
+    """A general "streams are live at match time" channel: the same title and
+    description throughout, split at the kick-off times of every match in
+    `comps` (one block per kick-off time, never overlapping); match blocks get
+    live_title if given. No secondary title."""
     slots = {}
     for m in matches:
-        if m["comp"] in UEFA_COMPETITIONS and not m.get("tbc"):
+        if m["comp"] in comps and not m.get("tbc"):
             slots.setdefault(m["start"], []).append(m)
     starts = sorted(slots)
     shows = []
     for i, start in enumerate(starts):
         ms = slots[start]
         ko = start.astimezone(LONDON)
-        comps = [c for c in UEFA_COMPETITIONS if any(m["comp"] == c for m in ms)]
-        label = comps[0] if len(comps) == 1 else "UEFA Competitions"
-        parts = []
-        for c in comps:
-            games = ", ".join(sorted(m["title"] for m in ms if m["comp"] == c))
-            parts.append(games + "." if len(comps) == 1 else f"{c}: {games}.")
-        n = len(ms)
-        desc = (f"{n} match{'es' if n > 1 else ''}: " if n > 1 else "") + " ".join(parts)
+        label = ms[0]["comp"] if len({m["comp"] for m in ms}) == 1 else name
         stop = max(m["stop"] for m in ms)
         if i + 1 < len(starts):
             stop = min(stop, starts[i + 1])          # never overlap the next kick-off
         shows.append({
-            "comp": label, "title": label, "sub": label, "desc": desc,
+            "comp": label, "title": label, "sub": "", "desc": desc,
             "start": start, "stop": stop,
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
-            "fixed_title": UEFA_CHANNEL_TITLE, "fixed_desc": UEFA_CHANNEL_DESC,
+            "fixed_title": title, "fixed_desc": desc,
             "filler_sub": "", "live_sub": "",          # no secondary title
-            "live_title": f"🔴 LIVE – {UEFA_CHANNEL_TITLE}",   # match blocks only
+            "live_title": live_title or title,         # match blocks only
         })
-    return (f"{UEFA_CHANNEL_ID}{suffix}", UEFA_CHANNEL_NAME, None, shows)
+    return (chan_id, name, None, shows)
+
+
+def uefa_channel(matches, suffix):
+    return slot_channel(matches, UEFA_COMPETITIONS, f"{UEFA_CHANNEL_ID}{suffix}",
+                        UEFA_CHANNEL_NAME, UEFA_CHANNEL_TITLE, UEFA_CHANNEL_DESC,
+                        live_title=f"🔴 LIVE – {UEFA_CHANNEL_TITLE}")
+
+
+def dummy_channel(chan_id, name, title, desc):
+    """A generic channel: back-to-back DUMMY_HOURS blocks, same title and
+    description, no secondary title, not tied to any fixtures."""
+    now = datetime.now(LONDON)
+    t = now.replace(minute=0, second=0, microsecond=0)
+    t -= timedelta(hours=t.hour % DUMMY_HOURS)          # align to 00:00, 02:00 ...
+    end = t + timedelta(days=DUMMY_DAYS)
+    shows = []
+    while t < end:
+        stop = t + timedelta(hours=DUMMY_HOURS)
+        shows.append({
+            "comp": "Sports", "title": title, "sub": "", "desc": desc,
+            "start": t.astimezone(timezone.utc), "stop": stop.astimezone(timezone.utc),
+            "when": "", "teams": [], "tbc": False, "live_sub": "", "not_live": True,
+        })
+        t = stop
+    return (chan_id, name, None, shows)
 
 
 def goal_rush_channel(matches, suffix):
@@ -534,6 +606,8 @@ def build_channels(matches, english, suffix, english_only):
                          logos.get(tid), sorted(ms, key=lambda m: m["start"])))
     if UEFA_CHANNEL and not english_only:
         channels.append(uefa_channel(matches, suffix))
+    for cid, cname, ctitle, cdesc in DUMMY_CHANNELS:
+        channels.append(dummy_channel(f"{cid}{suffix}", cname, ctitle, cdesc))
     if GOAL_RUSH:
         gr = goal_rush_channel(matches, suffix)
         if gr:
@@ -552,7 +626,8 @@ def add_programme(tv, chan_id, start, stop, title, sub, desc, comp, live=False):
     if sub:                                   # "" = no secondary title (UEFA.comps)
         ET.SubElement(p, "sub-title", {"lang": "en"}).text = sub
     ET.SubElement(p, "desc", {"lang": "en"}).text = desc
-    for cat in ("Sports", "Football", comp) + (("Live",) if live else ()):
+    cats = ("Sports",) if comp == "Sports" else ("Sports", "Football", comp)   # generic: Sports only
+    for cat in cats + (("Live",) if live else ()):
         ET.SubElement(p, "category", {"lang": "en"}).text = cat
 
 
@@ -622,7 +697,7 @@ def build_xmltv(channels, filler):
             # the match itself: "🔴 LIVE: Premier League" (filler blocks say "⏭ Next Match: Premier League")
             add_programme(tv, chan_id, start, stop, m.get("live_title", m.get("fixed_title", m["title"])),
                           m.get("live_sub", f"🔴 LIVE: {m['sub']}"), m.get("fixed_desc", m["desc"]),
-                          m["comp"], live=True)
+                          m["comp"], live=not m.get("not_live"))
             count += 1
             last_stop = stop
     return tv, count
