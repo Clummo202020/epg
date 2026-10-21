@@ -101,6 +101,10 @@ SLOT_FIRST = re.compile(
     r"^\s*(?P<cc>[A-Z]{2})\s*\((?P<slot>[^)]*)\)\s*\|\s*(?P<title>.*?)\s*"
     r"\((?P<date>\d{4}-\d{2}-\d{2})[ T](?P<time>\d{1,2}:\d{2})(?::\d{2})?\)\s*$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+# "UEFA | 28 - Universitatea Craiova vs Getafe 20:00 pm" - kick-off time (UK) only, no date
+KICKOFF_ONLY = re.compile(r"^\s*(?P<label>[A-Za-z][A-Za-z0-9+ ]*?)\s*\|\s*(?P<num>\d+)\s*-\s*(?P<title>.+?)"
+                          r"\s+(?P<h>\d{1,2})[:.](?P<m>\d{2})\s*(?P<ap>[ap]\.?m\.?)?\s*$", re.I)
+KICKOFF_EARLY_MINUTES = 10     # these streams go LIVE this many minutes before kick-off
 # Name sections that are labels, not event information ("8K EXCLUSIVE", "4K", "HD" ...)
 JUNK_RE = re.compile(r"(?i)\s*((8K|4K|UHD|FHD|HD|SD)\s*)?(EXCLUSIVE|ONLY)?\s*|\s*(8K|4K|UHD|FHD|HD|SD)\s*")
 # "Wed 21 Oct 19:00 EDT (US)" - date and time in one field, no year
@@ -116,6 +120,25 @@ def slug(text):
 def parse_name(name):
     """{slot_id, slot_name, title, extra, start (UTC)} for an event name, else None."""
     name = re.sub(r"\s+", " ", name or "").strip()
+
+    k = KICKOFF_ONLY.match(name)                     # UEFA | 28 - A vs B 20:00 pm (UK, today)
+    if k:
+        h, mi, ap = int(k["h"]), int(k["m"]), (k["ap"] or "").lower()
+        if ap.startswith("p") and h < 12:
+            h += 12
+        elif ap.startswith("a") and h == 12:
+            h = 0
+        now = datetime.now(LONDON)
+        local = now.replace(hour=h, minute=mi, second=0, microsecond=0)
+        if local + timedelta(hours=EVENT_HOURS + PAST_EVENT_HOURS) < now:
+            local += timedelta(days=1)                # already over today -> tomorrow
+        label = k["label"].strip()
+        return {"name": name, "slot_id": f"{slug(label)}{int(k['num'])}.uk",
+                "slot_name": f"{label} | {int(k['num'])}",
+                "title": k["title"].strip(), "extra": "",
+                "comp": competition(k["title"]) or label,
+                "early": KICKOFF_EARLY_MINUTES,
+                "start": local.astimezone(timezone.utc)}
 
     m = SLOT_FIRST.match(name)                       # US (Peacock 003) | ... (date time)
     if m:
@@ -237,8 +260,10 @@ def build(events, now):
     count = 0
     for sid in sorted(by_slot):
         ev = by_slot[sid]
-        start, end = ev["start"], ev["start"] + timedelta(hours=EVENT_HOURS)
-        when = f"{uk(start):%a} {uk(start).day} {uk(start):%b}, {uk(start):%H:%M}"
+        kickoff = ev["start"]
+        start = kickoff - timedelta(minutes=ev.get("early", 0))   # LIVE a little early where set
+        end = kickoff + timedelta(hours=EVENT_HOURS)
+        when = f"{uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}, {uk(kickoff):%H:%M}"
         desc = f"{ev['title']}." + (f" {ev['extra']}." if ev["extra"] else "") + \
                f" Starts {when} UK time."
         in_range = start <= now + timedelta(days=MAX_DAYS_AHEAD)
@@ -251,7 +276,7 @@ def build(events, now):
             b = min(t + timedelta(hours=BLOCK_HOURS), stop_at)
             if in_range:                                   # "Coming up" blocks
                 add_programme(tv, sid, t, b, f"{ev['title']} ({when})",
-                              f"⏭ Coming up {uk(start):%a} {uk(start).day} {uk(start):%b}",
+                              f"⏭ Coming up {uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}",
                               f"Coming up: {desc}")
             else:                                          # filler until the event is in range
                 add_programme(tv, sid, t, b, FILLER_TITLE, None, FILLER_DESC)

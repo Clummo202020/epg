@@ -2463,7 +2463,7 @@ def fetch_cyprus(days, keywords, details=True, debug=False):
                     if not title or stop <= start:
                         continue
                     live = bool(re.search(CYTA_LIVE, title, re.I))
-                    title = re.sub(r"^\s*(live|ζωντανά|ζωντανα)\s*[:\-]?\s*|\s*[(\-:]?\s*\(?\b(live|ζωντανά|ζωντανα|ζωντανή|ζωντανη)\b\)?\s*$"
+                    title = re.sub(r"^\s*(live|ζωντανά|ζωντανα)\b\s*[:\-]?\s*|\s*[(\-:]?\s*\(?\b(live|ζωντανά|ζωντανα|ζωντανή|ζωντανη)\b\)?\s*$"
                                    r"|\s*\(\s*[ΖZ]\s*\)", "", title, flags=re.I).strip() or title
                     genre = str(pr.get("programEvent") or pr.get("category") or pr.get("genre") or "").strip()
                     per[cid][start] = {"start": start, "stop": stop, "title": title,
@@ -3305,7 +3305,31 @@ def live_title(title):
     return f"🔴 LIVE: {t}"
 
 
+def dedupe_sentences(text):
+    """Drop sentences that repeat an earlier one, and any "Original title: ..." part:
+    "LIVE. UEFA Champions League 2026-27. UEFA Champions League 2026-27." ->
+    "LIVE. UEFA Champions League 2026-27."""
+    if not text:
+        return text
+    text = re.sub(r"\s*Original title:.*$", "", text, flags=re.I | re.S).strip()
+    parts = re.split(r"(?<=[.!?…])\s+", text)
+    seen, out = set(), []
+    for part in parts:
+        key = re.sub(r"[\W_]+", " ", part).strip().lower()
+        if key and key in seen:
+            continue
+        seen.add(key)
+        out.append(part)
+    return " ".join(out).strip()
+
+
+def fix_names(text):
+    """Repair names a source has mangled, e.g. "Rpool" -> "Liverpool"."""
+    return re.sub(r"\bRpool\b", "Liverpool", text) if text else text
+
+
 def add_programme(tv, cid, start, stop, title, sub, desc, live):
+    title, sub, desc = fix_names(title), fix_names(sub), fix_names(desc)
     p = ET.SubElement(tv, "programme", {
         "start": xmltv_time(start), "stop": xmltv_time(stop), "channel": cid})
     ET.SubElement(p, "title", {"lang": "en"}).text = title
@@ -3366,13 +3390,14 @@ def build_xmltv(records, suffix, minutes):
             loc = ev["start"].astimezone(rec["tz"])
             uk = ev["start"].astimezone(LONDON)
             when = f"{uk:%a %d %b, %H:%M}"
-            orig = f"Original title: {ev['title']}." if en(ev["title"]) != ev["title"] else ""
+            orig = ""          # the original (untranslated) title is no longer shown
             about = "" if ev.get("desc") in DESC_PENDING else en(ev.get("desc") or "")
             if rec.get("fix_caps"):
                 about = fix_caps(about)
             about = about + ("" if about[-1:] in ".!?…" else ".") + " " if about else ""
             lead = (sub if sub[-1:] in ".!?…" else sub + ".") + " " if sub else ""
-            desc = re.sub(r"\s+", " ", f"{'LIVE. ' if ev['live'] else ''}{lead}{about}{orig}").strip()
+            desc = dedupe_sentences(re.sub(r"\s+", " ",
+                                           f"{'LIVE. ' if ev['live'] else ''}{lead}{about}{orig}").strip())
             if rec["filler"]:
                 for a, b in filler_blocks(last_stop or now, start):
                     add_programme(tv, cid, a, b, f"{title} ({when})", "Coming up",
