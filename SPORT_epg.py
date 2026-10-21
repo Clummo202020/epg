@@ -261,6 +261,7 @@ Only the Python standard library is needed. On Windows: pip install tzdata
 
 import argparse
 import gzip
+import http.client
 import io
 import json
 import socket
@@ -717,7 +718,8 @@ def fetch(url, data=None, headers=None, method=None, parse="text", retries=3, qu
                 break
             if e.code in (401, 403, 451):
                 break
-        except (urllib.error.URLError, TimeoutError, socket.timeout, ConnectionError) as e:
+        except (urllib.error.URLError, TimeoutError, socket.timeout, ConnectionError,
+                http.client.HTTPException, OSError) as e:      # incl. a download cut short
             last = _reason(e)
             r = getattr(e, "reason", None)
             if (isinstance(r, ssl.SSLCertVerificationError) and "local issuer" in str(r)
