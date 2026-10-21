@@ -87,7 +87,7 @@ def parse_name(name):
     if m:
         tz = ZoneInfo(COUNTRY_TZ.get(m["cc"], "Europe/London"))
         local = datetime.strptime(f"{m['date']} {m['time']}", "%Y-%m-%d %H:%M").replace(tzinfo=tz)
-        return {"slot_id": f"{slug(m['slot'])}.{m['cc'].lower()}",
+        return {"name": name, "slot_id": f"{slug(m['slot'])}.{m['cc'].lower()}",
                 "slot_name": f"{m['cc']} ({m['slot']})",
                 "title": m["title"].strip(), "extra": "",
                 "start": local.astimezone(timezone.utc)}
@@ -108,7 +108,7 @@ def parse_name(name):
                 text = text[1:]
             title = text[0] if text else slot_label.strip()
             extra = ". ".join(t for t in text[1:] if t)
-            return {"slot_id": f"{slug(slot_label)}.{cc.lower()}",
+            return {"name": name, "slot_id": f"{slug(slot_label)}.{cc.lower()}",
                     "slot_name": f"{cc}: {slot_label.strip()}",
                     "title": title, "extra": extra,
                     "start": local.astimezone(timezone.utc)}
@@ -170,6 +170,8 @@ def build(events, now):
             by_slot[ev["slot_id"]] = ev
     for sid in sorted(by_slot):
         c = ET.SubElement(tv, "channel", {"id": sid})
+        # the full stream name first, so PlaylistLabs' automatic search can match it exactly
+        ET.SubElement(c, "display-name", {"lang": "en"}).text = by_slot[sid]["name"]
         ET.SubElement(c, "display-name", {"lang": "en"}).text = by_slot[sid]["slot_name"]
     count = 0
     for sid in sorted(by_slot):
