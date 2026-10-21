@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <tv generator-info-name="event_epg.py">
+  <channel id="APPLETVF1PPV1.uk">
+    <display-name lang="en">NEXT | F1 WEEKEND WARM-UP | Thu 22 Oct 22:00 UTC (UK) | 8K EXCLUSIVE | UK: APPLE TV F1 PPV 1</display-name>
+    <display-name lang="en">UK: APPLE TV F1 PPV 1</display-name>
+  </channel>
+  <channel id="APPLETVF1PPV1.us">
+    <display-name lang="en">NEXT | F1 WEEKEND WARM-UP | Thu 22 Oct 18:00 EDT (US) | 8K EXCLUSIVE | US: APPLE TV F1 PPV 1</display-name>
+    <display-name lang="en">US: APPLE TV F1 PPV 1</display-name>
+  </channel>
   <channel id="DAZNPPV2.us">
     <display-name lang="en">Next | Gary Parrish Show | NBA | 2026-10-21 | 15:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 2</display-name>
     <display-name lang="en">US: DAZN PPV 2</display-name>
@@ -31,6 +39,190 @@
   <channel id="DAZNPPV9.us">
     <display-name lang="en">Next | PVV vs. Voorwaarts | Major League - Suriname | 2026-10-21 | 23:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 9</display-name>
     <display-name lang="en">US: DAZN PPV 9</display-name>
+  </channel>
+  <channel id="ESPNPPV10.us">
+    <display-name lang="en">NEXT | UC RIVERSIDE VS. CAL STATE BAKERSFIELD | Wed 21 Oct 13:30 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 10</display-name>
+    <display-name lang="en">US: ESPN+ PPV 10</display-name>
+  </channel>
+  <channel id="ESPNPPV11.us">
+    <display-name lang="en">NEXT | LEVANTE UD VS. ATHLETIC CLUB (MATCHDAY #6) | Wed 21 Oct 13:50 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 11</display-name>
+    <display-name lang="en">US: ESPN+ PPV 11</display-name>
+  </channel>
+  <channel id="ESPNPPV12.us">
+    <display-name lang="en">NEXT | EN ESPAÑOL-LEVANTE UD VS. ATHLETIC CLUB | Wed 21 Oct 13:55 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 12</display-name>
+    <display-name lang="en">US: ESPN+ PPV 12</display-name>
+  </channel>
+  <channel id="ESPNPPV13.us">
+    <display-name lang="en">NEXT | RENEGADES VS. FIREBALLS | Wed 21 Oct 15:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 13</display-name>
+    <display-name lang="en">US: ESPN+ PPV 13</display-name>
+  </channel>
+  <channel id="ESPNPPV14.us">
+    <display-name lang="en">NEXT | GEORGETOWN VS. DEPAUL | Wed 21 Oct 16:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 14</display-name>
+    <display-name lang="en">US: ESPN+ PPV 14</display-name>
+  </channel>
+  <channel id="ESPNPPV15.us">
+    <display-name lang="en">NEXT | WED, 10/21 - ESPN FC | Wed 21 Oct 17:30 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 15</display-name>
+    <display-name lang="en">US: ESPN+ PPV 15</display-name>
+  </channel>
+  <channel id="ESPNPPV16.us">
+    <display-name lang="en">NEXT | ST. JOHN'S VS. PROVIDENCE | Wed 21 Oct 18:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 16</display-name>
+    <display-name lang="en">US: ESPN+ PPV 16</display-name>
+  </channel>
+  <channel id="ESPNPPV17.us">
+    <display-name lang="en">NEXT | DUQUESNE VS. ST. BONAVENTURE | Wed 21 Oct 18:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 17</display-name>
+    <display-name lang="en">US: ESPN+ PPV 17</display-name>
+  </channel>
+  <channel id="ESPNPPV18.us">
+    <display-name lang="en">NEXT | DENVER VS. SAINT MARY'S | Wed 21 Oct 18:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 18</display-name>
+    <display-name lang="en">US: ESPN+ PPV 18</display-name>
+  </channel>
+  <channel id="ESPNPPV19.us">
+    <display-name lang="en">NEXT | FLORIDA ATLANTIC VS. SOUTH FLORIDA | Wed 21 Oct 18:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 19</display-name>
+    <display-name lang="en">US: ESPN+ PPV 19</display-name>
+  </channel>
+  <channel id="ESPNPPV2.us">
+    <display-name lang="en">NEXT | FAIRWAYS OF LIFE WITH MATT ADAMS | Wed 21 Oct 09:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 2</display-name>
+    <display-name lang="en">US: ESPN+ PPV 2</display-name>
+  </channel>
+  <channel id="ESPNPPV20.us">
+    <display-name lang="en">NEXT | VILLANOVA VS. SETON HALL | Wed 21 Oct 18:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 20</display-name>
+    <display-name lang="en">US: ESPN+ PPV 20</display-name>
+  </channel>
+  <channel id="ESPNPPV21.us">
+    <display-name lang="en">NEXT | SOUTHERN MISS VS. APP STATE | Wed 21 Oct 18:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 21</display-name>
+    <display-name lang="en">US: ESPN+ PPV 21</display-name>
+  </channel>
+  <channel id="ESPNPPV22.us">
+    <display-name lang="en">NEXT | GEORGIA STATE VS. OLD DOMINION | Wed 21 Oct 18:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 22</display-name>
+    <display-name lang="en">US: ESPN+ PPV 22</display-name>
+  </channel>
+  <channel id="ESPNPPV23.us">
+    <display-name lang="en">NEXT | NIAGARA VS. CANISIUS | Wed 21 Oct 18:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 23</display-name>
+    <display-name lang="en">US: ESPN+ PPV 23</display-name>
+  </channel>
+  <channel id="ESPNPPV24.us">
+    <display-name lang="en">NEXT | BROOKLYN FC VS. BIRMINGHAM LEGION FC | Wed 21 Oct 18:30 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 24</display-name>
+    <display-name lang="en">US: ESPN+ PPV 24</display-name>
+  </channel>
+  <channel id="ESPNPPV25.us">
+    <display-name lang="en">NEXT | SARASOTA PARADISE VS. FC NAPLES | Wed 21 Oct 18:30 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 25</display-name>
+    <display-name lang="en">US: ESPN+ PPV 25</display-name>
+  </channel>
+  <channel id="ESPNPPV3.us">
+    <display-name lang="en">NEXT | 2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAY 2 | Wed 21 Oct 09:30 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 3</display-name>
+    <display-name lang="en">US: ESPN+ PPV 3</display-name>
+  </channel>
+  <channel id="ESPNPPV4.us">
+    <display-name lang="en">NEXT | THE GOLICS | Wed 21 Oct 10:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 4</display-name>
+    <display-name lang="en">US: ESPN+ PPV 4</display-name>
+  </channel>
+  <channel id="ESPNPPV5.us">
+    <display-name lang="en">NEXT | THE PAT MCAFEE SHOW | Wed 21 Oct 12:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 5</display-name>
+    <display-name lang="en">US: ESPN+ PPV 5</display-name>
+  </channel>
+  <channel id="ESPNPPV6.us">
+    <display-name lang="en">NEXT | 2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAYS | Wed 21 Oct 12:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 6</display-name>
+    <display-name lang="en">US: ESPN+ PPV 6</display-name>
+  </channel>
+  <channel id="ESPNPPV7.us">
+    <display-name lang="en">NEXT | WED, 10/21 - THE RICH EISEN SHOW | Wed 21 Oct 12:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 7</display-name>
+    <display-name lang="en">US: ESPN+ PPV 7</display-name>
+  </channel>
+  <channel id="ESPNPPV8.us">
+    <display-name lang="en">NEXT | AMERICAN UNIVERSITY VS. ARMY | Wed 21 Oct 13:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 8</display-name>
+    <display-name lang="en">US: ESPN+ PPV 8</display-name>
+  </channel>
+  <channel id="ESPNPPV9.us">
+    <display-name lang="en">NEXT | MARIST VS. IONA | Wed 21 Oct 13:00 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 9</display-name>
+    <display-name lang="en">US: ESPN+ PPV 9</display-name>
+  </channel>
+  <channel id="MAXPPV1.uk">
+    <display-name lang="en">ENDED | CHEUNG KA WAI - STUART BINGHAM | Wed 21 Oct 09:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 1</display-name>
+    <display-name lang="en">UK: MAX PPV 1</display-name>
+  </channel>
+  <channel id="MAXPPV1.us">
+    <display-name lang="en">NEXT | FLYERS AT SABRES | Wed 21 Oct 19:00 EDT (US) | 8K EXCLUSIVE | US: MAX PPV 1</display-name>
+    <display-name lang="en">US: MAX PPV 1</display-name>
+  </channel>
+  <channel id="MAXPPV11.uk">
+    <display-name lang="en">NEXT | MICHAEL HOLT - JORDAN BROWN | Wed 21 Oct 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 11</display-name>
+    <display-name lang="en">UK: MAX PPV 11</display-name>
+  </channel>
+  <channel id="MAXPPV12.uk">
+    <display-name lang="en">NEXT | GAO YANG - DAVID GILBERT | Wed 21 Oct 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 12</display-name>
+    <display-name lang="en">UK: MAX PPV 12</display-name>
+  </channel>
+  <channel id="MAXPPV13.uk">
+    <display-name lang="en">NEXT | UEFA CHAMPIONS LEAGUE GOALS SHOW XTRA | Wed 21 Oct 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 13</display-name>
+    <display-name lang="en">UK: MAX PPV 13</display-name>
+  </channel>
+  <channel id="MAXPPV14.uk">
+    <display-name lang="en">NEXT | NOPPON SAENGKHAM - SCOTT DONALDSON | Wed 21 Oct 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 14</display-name>
+    <display-name lang="en">UK: MAX PPV 14</display-name>
+  </channel>
+  <channel id="MAXPPV15.uk">
+    <display-name lang="en">NEXT | ASTON VILLA - VIKING FK | Wed 21 Oct 18:45 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 15</display-name>
+    <display-name lang="en">UK: MAX PPV 15</display-name>
+  </channel>
+  <channel id="MAXPPV16.uk">
+    <display-name lang="en">NEXT | REAL MADRID - RB LEIPZIG | Wed 21 Oct 18:45 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 16</display-name>
+    <display-name lang="en">UK: MAX PPV 16</display-name>
+  </channel>
+  <channel id="MAXPPV17.uk">
+    <display-name lang="en">NEXT | CLUB BRUGGE - RC LENS | Wed 21 Oct 18:54 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 17</display-name>
+    <display-name lang="en">UK: MAX PPV 17</display-name>
+  </channel>
+  <channel id="MAXPPV18.uk">
+    <display-name lang="en">NEXT | INTER - SHAKHTAR DONETSK | Wed 21 Oct 18:54 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 18</display-name>
+    <display-name lang="en">UK: MAX PPV 18</display-name>
+  </channel>
+  <channel id="MAXPPV19.uk">
+    <display-name lang="en">NEXT | REAL BETIS - FEYENOORD | Wed 21 Oct 18:54 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 19</display-name>
+    <display-name lang="en">UK: MAX PPV 19</display-name>
+  </channel>
+  <channel id="MAXPPV2.uk">
+    <display-name lang="en">LIVE | PANG JUNXU - LIAM DAVIES | Wed 21 Oct 09:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 2</display-name>
+    <display-name lang="en">UK: MAX PPV 2</display-name>
+  </channel>
+  <channel id="MAXPPV20.uk">
+    <display-name lang="en">NEXT | SPORTING CP - LASK | Wed 21 Oct 18:54 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 20</display-name>
+    <display-name lang="en">UK: MAX PPV 20</display-name>
+  </channel>
+  <channel id="MAXPPV21.uk">
+    <display-name lang="en">NEXT | ELLIOT SLESSOR - JAMIE JONES | Wed 21 Oct 20:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 21</display-name>
+    <display-name lang="en">UK: MAX PPV 21</display-name>
+  </channel>
+  <channel id="MAXPPV22.uk">
+    <display-name lang="en">NEXT | LUCA BRECEL - MARTIN O'DONNELL | Wed 21 Oct 20:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 22</display-name>
+    <display-name lang="en">UK: MAX PPV 22</display-name>
+  </channel>
+  <channel id="MAXPPV3.uk">
+    <display-name lang="en">LIVE | DANIEL WELLS - RYAN DAY | Wed 21 Oct 12:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 3</display-name>
+    <display-name lang="en">UK: MAX PPV 3</display-name>
+  </channel>
+  <channel id="MAXPPV4.uk">
+    <display-name lang="en">LIVE | JOHN HIGGINS - JAK JONES | Wed 21 Oct 12:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 4</display-name>
+    <display-name lang="en">UK: MAX PPV 4</display-name>
+  </channel>
+  <channel id="MAXPPV5.uk">
+    <display-name lang="en">NEXT | ZHANG ANDA - MARK WILLIAMS | Wed 21 Oct 14:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 5</display-name>
+    <display-name lang="en">UK: MAX PPV 5</display-name>
+  </channel>
+  <channel id="MAXPPV6.uk">
+    <display-name lang="en">NEXT | SAM CRAIGIE - XU SI | Wed 21 Oct 13:59 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 6</display-name>
+    <display-name lang="en">UK: MAX PPV 6</display-name>
+  </channel>
+  <channel id="MAXPPV7.uk">
+    <display-name lang="en">NEXT | COMO - MANCHESTER UNITED | Wed 21 Oct 16:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 7</display-name>
+    <display-name lang="en">UK: MAX PPV 7</display-name>
+  </channel>
+  <channel id="MAXPPV8.uk">
+    <display-name lang="en">NEXT | MULTIVIEW | Wed 21 Oct 16:40 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 8</display-name>
+    <display-name lang="en">UK: MAX PPV 8</display-name>
+  </channel>
+  <channel id="MAXPPV9.uk">
+    <display-name lang="en">NEXT | LILLE - GALATASARAY | Wed 21 Oct 16:45 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</display-name>
+    <display-name lang="en">UK: MAX PPV 9</display-name>
   </channel>
   <channel id="Paramount001.us">
     <display-name lang="en">US (Paramount 001) | Como vs. Man. United (2026-10-21 12:00:00)</display-name>
@@ -564,173 +756,1517 @@
     <display-name lang="en">CA (TSN+ 020) | ATP 250 Tennis: Lyon _ Quarterfinals (2026-10-23 08:00:05)</display-name>
     <display-name lang="en">CA (TSN+ 020)</display-name>
   </channel>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261022000000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022000000 +0100" stop="20261022020000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022020000 +0100" stop="20261022040000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022040000 +0100" stop="20261022060000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022060000 +0100" stop="20261022080000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022080000 +0100" stop="20261022100000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022100000 +0100" stop="20261022120000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022120000 +0100" stop="20261022140000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022140000 +0100" stop="20261022160000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022160000 +0100" stop="20261022180000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022180000 +0100" stop="20261022200000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022200000 +0100" stop="20261022220000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022220000 +0100" stop="20261022230000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022230000 +0100" stop="20261023020000 +0100" channel="APPLETVF1PPV1.uk">
+    <title lang="en">🔴 LIVE: F1 WEEKEND WARM-UP</title>
+    <sub-title lang="en">F1</sub-title>
+    <desc lang="en">F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261022000000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022000000 +0100" stop="20261022020000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022020000 +0100" stop="20261022040000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022040000 +0100" stop="20261022060000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022060000 +0100" stop="20261022080000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022080000 +0100" stop="20261022100000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022100000 +0100" stop="20261022120000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022120000 +0100" stop="20261022140000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022140000 +0100" stop="20261022160000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022160000 +0100" stop="20261022180000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022180000 +0100" stop="20261022200000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022200000 +0100" stop="20261022220000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022220000 +0100" stop="20261022230000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">F1 WEEKEND WARM-UP (Thu 22 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022230000 +0100" stop="20261023020000 +0100" channel="APPLETVF1PPV1.us">
+    <title lang="en">🔴 LIVE: F1 WEEKEND WARM-UP</title>
+    <sub-title lang="en">F1</sub-title>
+    <desc lang="en">F1 WEEKEND WARM-UP. Starts Thu 22 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="DAZNPPV2.us">
     <title lang="en">Gary Parrish Show (Wed 21 Oct, 16:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: Gary Parrish Show. NBA. 8K EXCLUSIVE. Starts Wed 21 Oct, 16:00 UK time.</desc>
+    <desc lang="en">Coming up: Gary Parrish Show. NBA. Starts Wed 21 Oct, 16:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021160000 +0100" stop="20261021190000 +0100" channel="DAZNPPV2.us">
     <title lang="en">🔴 LIVE: Gary Parrish Show</title>
     <sub-title lang="en">NBA</sub-title>
-    <desc lang="en">Gary Parrish Show. NBA. 8K EXCLUSIVE. Starts Wed 21 Oct, 16:00 UK time.</desc>
+    <desc lang="en">Gary Parrish Show. NBA. Starts Wed 21 Oct, 16:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="DAZNPPV3.us">
     <title lang="en">Paynesville FC vs. Down Town FC (Wed 21 Oct, 17:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: Paynesville FC vs. Down Town FC. LFA First Division - Liberia. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <desc lang="en">Coming up: Paynesville FC vs. Down Town FC. LFA First Division - Liberia. Starts Wed 21 Oct, 17:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021160000 +0100" stop="20261021170000 +0100" channel="DAZNPPV3.us">
     <title lang="en">Paynesville FC vs. Down Town FC (Wed 21 Oct, 17:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: Paynesville FC vs. Down Town FC. LFA First Division - Liberia. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <desc lang="en">Coming up: Paynesville FC vs. Down Town FC. LFA First Division - Liberia. Starts Wed 21 Oct, 17:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021170000 +0100" stop="20261021200000 +0100" channel="DAZNPPV3.us">
     <title lang="en">🔴 LIVE: Paynesville FC vs. Down Town FC</title>
     <sub-title lang="en">LFA First Division - Liberia</sub-title>
-    <desc lang="en">Paynesville FC vs. Down Town FC. LFA First Division - Liberia. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <desc lang="en">Paynesville FC vs. Down Town FC. LFA First Division - Liberia. Starts Wed 21 Oct, 17:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="DAZNPPV4.us">
     <title lang="en">FA Šiauliai vs. FK Banga (Wed 21 Oct, 17:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: FA Šiauliai vs. FK Banga. A Lyga Women - Lithuania. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <desc lang="en">Coming up: FA Šiauliai vs. FK Banga. A Lyga Women - Lithuania. Starts Wed 21 Oct, 17:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021160000 +0100" stop="20261021170000 +0100" channel="DAZNPPV4.us">
     <title lang="en">FA Šiauliai vs. FK Banga (Wed 21 Oct, 17:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: FA Šiauliai vs. FK Banga. A Lyga Women - Lithuania. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <desc lang="en">Coming up: FA Šiauliai vs. FK Banga. A Lyga Women - Lithuania. Starts Wed 21 Oct, 17:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021170000 +0100" stop="20261021200000 +0100" channel="DAZNPPV4.us">
     <title lang="en">🔴 LIVE: FA Šiauliai vs. FK Banga</title>
     <sub-title lang="en">A Lyga Women - Lithuania</sub-title>
-    <desc lang="en">FA Šiauliai vs. FK Banga. A Lyga Women - Lithuania. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <desc lang="en">FA Šiauliai vs. FK Banga. A Lyga Women - Lithuania. Starts Wed 21 Oct, 17:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="DAZNPPV5.us">
     <title lang="en">FK TransINVEST vs. FK Gintra (Wed 21 Oct, 17:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: FK TransINVEST vs. FK Gintra. A Lyga Women - Lithuania. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <desc lang="en">Coming up: FK TransINVEST vs. FK Gintra. A Lyga Women - Lithuania. Starts Wed 21 Oct, 17:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021160000 +0100" stop="20261021170000 +0100" channel="DAZNPPV5.us">
     <title lang="en">FK TransINVEST vs. FK Gintra (Wed 21 Oct, 17:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: FK TransINVEST vs. FK Gintra. A Lyga Women - Lithuania. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <desc lang="en">Coming up: FK TransINVEST vs. FK Gintra. A Lyga Women - Lithuania. Starts Wed 21 Oct, 17:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021170000 +0100" stop="20261021200000 +0100" channel="DAZNPPV5.us">
     <title lang="en">🔴 LIVE: FK TransINVEST vs. FK Gintra</title>
     <sub-title lang="en">A Lyga Women - Lithuania</sub-title>
-    <desc lang="en">FK TransINVEST vs. FK Gintra. A Lyga Women - Lithuania. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <desc lang="en">FK TransINVEST vs. FK Gintra. A Lyga Women - Lithuania. Starts Wed 21 Oct, 17:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="DAZNPPV6.us">
     <title lang="en">Bullom Stars vs. Wilberforce Strikers (Wed 21 Oct, 17:15)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: Bullom Stars vs. Wilberforce Strikers. Premier League - Sierra Leone. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:15 UK time.</desc>
+    <desc lang="en">Coming up: Bullom Stars vs. Wilberforce Strikers. Premier League - Sierra Leone. Starts Wed 21 Oct, 17:15 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021160000 +0100" stop="20261021171500 +0100" channel="DAZNPPV6.us">
     <title lang="en">Bullom Stars vs. Wilberforce Strikers (Wed 21 Oct, 17:15)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: Bullom Stars vs. Wilberforce Strikers. Premier League - Sierra Leone. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:15 UK time.</desc>
+    <desc lang="en">Coming up: Bullom Stars vs. Wilberforce Strikers. Premier League - Sierra Leone. Starts Wed 21 Oct, 17:15 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021171500 +0100" stop="20261021201500 +0100" channel="DAZNPPV6.us">
     <title lang="en">🔴 LIVE: Bullom Stars vs. Wilberforce Strikers</title>
     <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Bullom Stars vs. Wilberforce Strikers. Premier League - Sierra Leone. 8K EXCLUSIVE. Starts Wed 21 Oct, 17:15 UK time.</desc>
+    <desc lang="en">Bullom Stars vs. Wilberforce Strikers. Premier League - Sierra Leone. Starts Wed 21 Oct, 17:15 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="DAZNPPV7.us">
     <title lang="en">Chris Vernon Show (Wed 21 Oct, 18:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: Chris Vernon Show. NBA. 8K EXCLUSIVE. Starts Wed 21 Oct, 18:00 UK time.</desc>
+    <desc lang="en">Coming up: Chris Vernon Show. NBA. Starts Wed 21 Oct, 18:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="DAZNPPV7.us">
     <title lang="en">Chris Vernon Show (Wed 21 Oct, 18:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: Chris Vernon Show. NBA. 8K EXCLUSIVE. Starts Wed 21 Oct, 18:00 UK time.</desc>
+    <desc lang="en">Coming up: Chris Vernon Show. NBA. Starts Wed 21 Oct, 18:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021180000 +0100" stop="20261021210000 +0100" channel="DAZNPPV7.us">
     <title lang="en">🔴 LIVE: Chris Vernon Show</title>
     <sub-title lang="en">NBA</sub-title>
-    <desc lang="en">Chris Vernon Show. NBA. 8K EXCLUSIVE. Starts Wed 21 Oct, 18:00 UK time.</desc>
+    <desc lang="en">Chris Vernon Show. NBA. Starts Wed 21 Oct, 18:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="DAZNPPV8.us">
     <title lang="en">Real Madrid vs. RB Leipzig (en Español) (Wed 21 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: Real Madrid vs. RB Leipzig (en Español). UEFA Champions League. 8K EXCLUSIVE. Starts Wed 21 Oct, 20:00 UK time.</desc>
+    <desc lang="en">Coming up: Real Madrid vs. RB Leipzig (en Español). UEFA Champions League. Starts Wed 21 Oct, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="DAZNPPV8.us">
     <title lang="en">Real Madrid vs. RB Leipzig (en Español) (Wed 21 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: Real Madrid vs. RB Leipzig (en Español). UEFA Champions League. 8K EXCLUSIVE. Starts Wed 21 Oct, 20:00 UK time.</desc>
+    <desc lang="en">Coming up: Real Madrid vs. RB Leipzig (en Español). UEFA Champions League. Starts Wed 21 Oct, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="DAZNPPV8.us">
     <title lang="en">Real Madrid vs. RB Leipzig (en Español) (Wed 21 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
-    <desc lang="en">Coming up: Real Madrid vs. RB Leipzig (en Español). UEFA Champions League. 8K EXCLUSIVE. Starts Wed 21 Oct, 20:00 UK time.</desc>
+    <desc lang="en">Coming up: Real Madrid vs. RB Leipzig (en Español). UEFA Champions League. Starts Wed 21 Oct, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021200000 +0100" stop="20261021230000 +0100" channel="DAZNPPV8.us">
     <title lang="en">🔴 LIVE: Real Madrid vs. RB Leipzig (en Español)</title>
     <sub-title lang="en">UEFA Champions League</sub-title>
-    <desc lang="en">Real Madrid vs. RB Leipzig (en Español). UEFA Champions League. 8K EXCLUSIVE. Starts Wed 21 Oct, 20:00 UK time.</desc>
+    <desc lang="en">Real Madrid vs. RB Leipzig (en Español). UEFA Champions League. Starts Wed 21 Oct, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="DAZNPPV9.us">
     <title lang="en">PVV vs. Voorwaarts (Thu 22 Oct, 00:00)</title>
     <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
-    <desc lang="en">Coming up: PVV vs. Voorwaarts. Major League - Suriname. 8K EXCLUSIVE. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <desc lang="en">Coming up: PVV vs. Voorwaarts. Major League - Suriname. Starts Thu 22 Oct, 00:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="DAZNPPV9.us">
     <title lang="en">PVV vs. Voorwaarts (Thu 22 Oct, 00:00)</title>
     <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
-    <desc lang="en">Coming up: PVV vs. Voorwaarts. Major League - Suriname. 8K EXCLUSIVE. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <desc lang="en">Coming up: PVV vs. Voorwaarts. Major League - Suriname. Starts Thu 22 Oct, 00:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="DAZNPPV9.us">
     <title lang="en">PVV vs. Voorwaarts (Thu 22 Oct, 00:00)</title>
     <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
-    <desc lang="en">Coming up: PVV vs. Voorwaarts. Major League - Suriname. 8K EXCLUSIVE. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <desc lang="en">Coming up: PVV vs. Voorwaarts. Major League - Suriname. Starts Thu 22 Oct, 00:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="DAZNPPV9.us">
     <title lang="en">PVV vs. Voorwaarts (Thu 22 Oct, 00:00)</title>
     <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
-    <desc lang="en">Coming up: PVV vs. Voorwaarts. Major League - Suriname. 8K EXCLUSIVE. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <desc lang="en">Coming up: PVV vs. Voorwaarts. Major League - Suriname. Starts Thu 22 Oct, 00:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261021220000 +0100" stop="20261022000000 +0100" channel="DAZNPPV9.us">
     <title lang="en">PVV vs. Voorwaarts (Thu 22 Oct, 00:00)</title>
     <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
-    <desc lang="en">Coming up: PVV vs. Voorwaarts. Major League - Suriname. 8K EXCLUSIVE. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <desc lang="en">Coming up: PVV vs. Voorwaarts. Major League - Suriname. Starts Thu 22 Oct, 00:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261022000000 +0100" stop="20261022030000 +0100" channel="DAZNPPV9.us">
     <title lang="en">🔴 LIVE: PVV vs. Voorwaarts</title>
     <sub-title lang="en">Major League - Suriname</sub-title>
-    <desc lang="en">PVV vs. Voorwaarts. Major League - Suriname. 8K EXCLUSIVE. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <desc lang="en">PVV vs. Voorwaarts. Major League - Suriname. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV10.us">
+    <title lang="en">UC RIVERSIDE VS. CAL STATE BAKERSFIELD (Wed 21 Oct, 18:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: UC RIVERSIDE VS. CAL STATE BAKERSFIELD. Starts Wed 21 Oct, 18:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV10.us">
+    <title lang="en">UC RIVERSIDE VS. CAL STATE BAKERSFIELD (Wed 21 Oct, 18:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: UC RIVERSIDE VS. CAL STATE BAKERSFIELD. Starts Wed 21 Oct, 18:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021183000 +0100" channel="ESPNPPV10.us">
+    <title lang="en">UC RIVERSIDE VS. CAL STATE BAKERSFIELD (Wed 21 Oct, 18:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: UC RIVERSIDE VS. CAL STATE BAKERSFIELD. Starts Wed 21 Oct, 18:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021183000 +0100" stop="20261021213000 +0100" channel="ESPNPPV10.us">
+    <title lang="en">🔴 LIVE: UC RIVERSIDE VS. CAL STATE BAKERSFIELD</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">UC RIVERSIDE VS. CAL STATE BAKERSFIELD. Starts Wed 21 Oct, 18:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV11.us">
+    <title lang="en">LEVANTE UD VS. ATHLETIC CLUB (MATCHDAY #6) (Wed 21 Oct, 18:50)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: LEVANTE UD VS. ATHLETIC CLUB (MATCHDAY #6). Starts Wed 21 Oct, 18:50 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV11.us">
+    <title lang="en">LEVANTE UD VS. ATHLETIC CLUB (MATCHDAY #6) (Wed 21 Oct, 18:50)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: LEVANTE UD VS. ATHLETIC CLUB (MATCHDAY #6). Starts Wed 21 Oct, 18:50 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021185000 +0100" channel="ESPNPPV11.us">
+    <title lang="en">LEVANTE UD VS. ATHLETIC CLUB (MATCHDAY #6) (Wed 21 Oct, 18:50)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: LEVANTE UD VS. ATHLETIC CLUB (MATCHDAY #6). Starts Wed 21 Oct, 18:50 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021185000 +0100" stop="20261021215000 +0100" channel="ESPNPPV11.us">
+    <title lang="en">🔴 LIVE: LEVANTE UD VS. ATHLETIC CLUB (MATCHDAY #6)</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">LEVANTE UD VS. ATHLETIC CLUB (MATCHDAY #6). Starts Wed 21 Oct, 18:50 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV12.us">
+    <title lang="en">EN ESPAÑOL-LEVANTE UD VS. ATHLETIC CLUB (Wed 21 Oct, 18:55)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: EN ESPAÑOL-LEVANTE UD VS. ATHLETIC CLUB. Starts Wed 21 Oct, 18:55 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV12.us">
+    <title lang="en">EN ESPAÑOL-LEVANTE UD VS. ATHLETIC CLUB (Wed 21 Oct, 18:55)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: EN ESPAÑOL-LEVANTE UD VS. ATHLETIC CLUB. Starts Wed 21 Oct, 18:55 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021185500 +0100" channel="ESPNPPV12.us">
+    <title lang="en">EN ESPAÑOL-LEVANTE UD VS. ATHLETIC CLUB (Wed 21 Oct, 18:55)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: EN ESPAÑOL-LEVANTE UD VS. ATHLETIC CLUB. Starts Wed 21 Oct, 18:55 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021185500 +0100" stop="20261021215500 +0100" channel="ESPNPPV12.us">
+    <title lang="en">🔴 LIVE: EN ESPAÑOL-LEVANTE UD VS. ATHLETIC CLUB</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">EN ESPAÑOL-LEVANTE UD VS. ATHLETIC CLUB. Starts Wed 21 Oct, 18:55 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV13.us">
+    <title lang="en">RENEGADES VS. FIREBALLS (Wed 21 Oct, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: RENEGADES VS. FIREBALLS. Starts Wed 21 Oct, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV13.us">
+    <title lang="en">RENEGADES VS. FIREBALLS (Wed 21 Oct, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: RENEGADES VS. FIREBALLS. Starts Wed 21 Oct, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV13.us">
+    <title lang="en">RENEGADES VS. FIREBALLS (Wed 21 Oct, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: RENEGADES VS. FIREBALLS. Starts Wed 21 Oct, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021230000 +0100" channel="ESPNPPV13.us">
+    <title lang="en">🔴 LIVE: RENEGADES VS. FIREBALLS</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">RENEGADES VS. FIREBALLS. Starts Wed 21 Oct, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV14.us">
+    <title lang="en">GEORGETOWN VS. DEPAUL (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GEORGETOWN VS. DEPAUL. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV14.us">
+    <title lang="en">GEORGETOWN VS. DEPAUL (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GEORGETOWN VS. DEPAUL. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV14.us">
+    <title lang="en">GEORGETOWN VS. DEPAUL (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GEORGETOWN VS. DEPAUL. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021210000 +0100" channel="ESPNPPV14.us">
+    <title lang="en">GEORGETOWN VS. DEPAUL (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GEORGETOWN VS. DEPAUL. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021210000 +0100" stop="20261022000000 +0100" channel="ESPNPPV14.us">
+    <title lang="en">🔴 LIVE: GEORGETOWN VS. DEPAUL</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">GEORGETOWN VS. DEPAUL. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV15.us">
+    <title lang="en">WED, 10/21 - ESPN FC (Wed 21 Oct, 22:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: WED, 10/21 - ESPN FC. Starts Wed 21 Oct, 22:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV15.us">
+    <title lang="en">WED, 10/21 - ESPN FC (Wed 21 Oct, 22:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: WED, 10/21 - ESPN FC. Starts Wed 21 Oct, 22:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV15.us">
+    <title lang="en">WED, 10/21 - ESPN FC (Wed 21 Oct, 22:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: WED, 10/21 - ESPN FC. Starts Wed 21 Oct, 22:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV15.us">
+    <title lang="en">WED, 10/21 - ESPN FC (Wed 21 Oct, 22:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: WED, 10/21 - ESPN FC. Starts Wed 21 Oct, 22:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021223000 +0100" channel="ESPNPPV15.us">
+    <title lang="en">WED, 10/21 - ESPN FC (Wed 21 Oct, 22:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: WED, 10/21 - ESPN FC. Starts Wed 21 Oct, 22:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021223000 +0100" stop="20261022013000 +0100" channel="ESPNPPV15.us">
+    <title lang="en">🔴 LIVE: WED, 10/21 - ESPN FC</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">WED, 10/21 - ESPN FC. Starts Wed 21 Oct, 22:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV16.us">
+    <title lang="en">ST. JOHN'S VS. PROVIDENCE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ST. JOHN'S VS. PROVIDENCE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV16.us">
+    <title lang="en">ST. JOHN'S VS. PROVIDENCE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ST. JOHN'S VS. PROVIDENCE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV16.us">
+    <title lang="en">ST. JOHN'S VS. PROVIDENCE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ST. JOHN'S VS. PROVIDENCE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV16.us">
+    <title lang="en">ST. JOHN'S VS. PROVIDENCE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ST. JOHN'S VS. PROVIDENCE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021230000 +0100" channel="ESPNPPV16.us">
+    <title lang="en">ST. JOHN'S VS. PROVIDENCE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ST. JOHN'S VS. PROVIDENCE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021230000 +0100" stop="20261022020000 +0100" channel="ESPNPPV16.us">
+    <title lang="en">🔴 LIVE: ST. JOHN'S VS. PROVIDENCE</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">ST. JOHN'S VS. PROVIDENCE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV17.us">
+    <title lang="en">DUQUESNE VS. ST. BONAVENTURE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: DUQUESNE VS. ST. BONAVENTURE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV17.us">
+    <title lang="en">DUQUESNE VS. ST. BONAVENTURE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: DUQUESNE VS. ST. BONAVENTURE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV17.us">
+    <title lang="en">DUQUESNE VS. ST. BONAVENTURE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: DUQUESNE VS. ST. BONAVENTURE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV17.us">
+    <title lang="en">DUQUESNE VS. ST. BONAVENTURE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: DUQUESNE VS. ST. BONAVENTURE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021230000 +0100" channel="ESPNPPV17.us">
+    <title lang="en">DUQUESNE VS. ST. BONAVENTURE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: DUQUESNE VS. ST. BONAVENTURE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021230000 +0100" stop="20261022020000 +0100" channel="ESPNPPV17.us">
+    <title lang="en">🔴 LIVE: DUQUESNE VS. ST. BONAVENTURE</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">DUQUESNE VS. ST. BONAVENTURE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV18.us">
+    <title lang="en">DENVER VS. SAINT MARY'S (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: DENVER VS. SAINT MARY'S. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV18.us">
+    <title lang="en">DENVER VS. SAINT MARY'S (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: DENVER VS. SAINT MARY'S. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV18.us">
+    <title lang="en">DENVER VS. SAINT MARY'S (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: DENVER VS. SAINT MARY'S. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV18.us">
+    <title lang="en">DENVER VS. SAINT MARY'S (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: DENVER VS. SAINT MARY'S. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021230000 +0100" channel="ESPNPPV18.us">
+    <title lang="en">DENVER VS. SAINT MARY'S (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: DENVER VS. SAINT MARY'S. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021230000 +0100" stop="20261022020000 +0100" channel="ESPNPPV18.us">
+    <title lang="en">🔴 LIVE: DENVER VS. SAINT MARY'S</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">DENVER VS. SAINT MARY'S. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV19.us">
+    <title lang="en">FLORIDA ATLANTIC VS. SOUTH FLORIDA (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: FLORIDA ATLANTIC VS. SOUTH FLORIDA. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV19.us">
+    <title lang="en">FLORIDA ATLANTIC VS. SOUTH FLORIDA (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: FLORIDA ATLANTIC VS. SOUTH FLORIDA. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV19.us">
+    <title lang="en">FLORIDA ATLANTIC VS. SOUTH FLORIDA (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: FLORIDA ATLANTIC VS. SOUTH FLORIDA. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV19.us">
+    <title lang="en">FLORIDA ATLANTIC VS. SOUTH FLORIDA (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: FLORIDA ATLANTIC VS. SOUTH FLORIDA. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021230000 +0100" channel="ESPNPPV19.us">
+    <title lang="en">FLORIDA ATLANTIC VS. SOUTH FLORIDA (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: FLORIDA ATLANTIC VS. SOUTH FLORIDA. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021230000 +0100" stop="20261022020000 +0100" channel="ESPNPPV19.us">
+    <title lang="en">🔴 LIVE: FLORIDA ATLANTIC VS. SOUTH FLORIDA</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">FLORIDA ATLANTIC VS. SOUTH FLORIDA. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021170000 +0100" channel="ESPNPPV2.us">
+    <title lang="en">🔴 LIVE: FAIRWAYS OF LIFE WITH MATT ADAMS</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">FAIRWAYS OF LIFE WITH MATT ADAMS. Starts Wed 21 Oct, 14:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV20.us">
+    <title lang="en">VILLANOVA VS. SETON HALL (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: VILLANOVA VS. SETON HALL. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV20.us">
+    <title lang="en">VILLANOVA VS. SETON HALL (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: VILLANOVA VS. SETON HALL. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV20.us">
+    <title lang="en">VILLANOVA VS. SETON HALL (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: VILLANOVA VS. SETON HALL. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV20.us">
+    <title lang="en">VILLANOVA VS. SETON HALL (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: VILLANOVA VS. SETON HALL. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021230000 +0100" channel="ESPNPPV20.us">
+    <title lang="en">VILLANOVA VS. SETON HALL (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: VILLANOVA VS. SETON HALL. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021230000 +0100" stop="20261022020000 +0100" channel="ESPNPPV20.us">
+    <title lang="en">🔴 LIVE: VILLANOVA VS. SETON HALL</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">VILLANOVA VS. SETON HALL. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV21.us">
+    <title lang="en">SOUTHERN MISS VS. APP STATE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SOUTHERN MISS VS. APP STATE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV21.us">
+    <title lang="en">SOUTHERN MISS VS. APP STATE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SOUTHERN MISS VS. APP STATE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV21.us">
+    <title lang="en">SOUTHERN MISS VS. APP STATE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SOUTHERN MISS VS. APP STATE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV21.us">
+    <title lang="en">SOUTHERN MISS VS. APP STATE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SOUTHERN MISS VS. APP STATE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021230000 +0100" channel="ESPNPPV21.us">
+    <title lang="en">SOUTHERN MISS VS. APP STATE (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SOUTHERN MISS VS. APP STATE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021230000 +0100" stop="20261022020000 +0100" channel="ESPNPPV21.us">
+    <title lang="en">🔴 LIVE: SOUTHERN MISS VS. APP STATE</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">SOUTHERN MISS VS. APP STATE. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV22.us">
+    <title lang="en">GEORGIA STATE VS. OLD DOMINION (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GEORGIA STATE VS. OLD DOMINION. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV22.us">
+    <title lang="en">GEORGIA STATE VS. OLD DOMINION (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GEORGIA STATE VS. OLD DOMINION. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV22.us">
+    <title lang="en">GEORGIA STATE VS. OLD DOMINION (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GEORGIA STATE VS. OLD DOMINION. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV22.us">
+    <title lang="en">GEORGIA STATE VS. OLD DOMINION (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GEORGIA STATE VS. OLD DOMINION. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021230000 +0100" channel="ESPNPPV22.us">
+    <title lang="en">GEORGIA STATE VS. OLD DOMINION (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GEORGIA STATE VS. OLD DOMINION. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021230000 +0100" stop="20261022020000 +0100" channel="ESPNPPV22.us">
+    <title lang="en">🔴 LIVE: GEORGIA STATE VS. OLD DOMINION</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">GEORGIA STATE VS. OLD DOMINION. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV23.us">
+    <title lang="en">NIAGARA VS. CANISIUS (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: NIAGARA VS. CANISIUS. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV23.us">
+    <title lang="en">NIAGARA VS. CANISIUS (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: NIAGARA VS. CANISIUS. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV23.us">
+    <title lang="en">NIAGARA VS. CANISIUS (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: NIAGARA VS. CANISIUS. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV23.us">
+    <title lang="en">NIAGARA VS. CANISIUS (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: NIAGARA VS. CANISIUS. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021230000 +0100" channel="ESPNPPV23.us">
+    <title lang="en">NIAGARA VS. CANISIUS (Wed 21 Oct, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: NIAGARA VS. CANISIUS. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021230000 +0100" stop="20261022020000 +0100" channel="ESPNPPV23.us">
+    <title lang="en">🔴 LIVE: NIAGARA VS. CANISIUS</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">NIAGARA VS. CANISIUS. Starts Wed 21 Oct, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV24.us">
+    <title lang="en">BROOKLYN FC VS. BIRMINGHAM LEGION FC (Wed 21 Oct, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: BROOKLYN FC VS. BIRMINGHAM LEGION FC. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV24.us">
+    <title lang="en">BROOKLYN FC VS. BIRMINGHAM LEGION FC (Wed 21 Oct, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: BROOKLYN FC VS. BIRMINGHAM LEGION FC. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV24.us">
+    <title lang="en">BROOKLYN FC VS. BIRMINGHAM LEGION FC (Wed 21 Oct, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: BROOKLYN FC VS. BIRMINGHAM LEGION FC. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV24.us">
+    <title lang="en">BROOKLYN FC VS. BIRMINGHAM LEGION FC (Wed 21 Oct, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: BROOKLYN FC VS. BIRMINGHAM LEGION FC. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021233000 +0100" channel="ESPNPPV24.us">
+    <title lang="en">BROOKLYN FC VS. BIRMINGHAM LEGION FC (Wed 21 Oct, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: BROOKLYN FC VS. BIRMINGHAM LEGION FC. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021233000 +0100" stop="20261022023000 +0100" channel="ESPNPPV24.us">
+    <title lang="en">🔴 LIVE: BROOKLYN FC VS. BIRMINGHAM LEGION FC</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">BROOKLYN FC VS. BIRMINGHAM LEGION FC. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV25.us">
+    <title lang="en">SARASOTA PARADISE VS. FC NAPLES (Wed 21 Oct, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SARASOTA PARADISE VS. FC NAPLES. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV25.us">
+    <title lang="en">SARASOTA PARADISE VS. FC NAPLES (Wed 21 Oct, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SARASOTA PARADISE VS. FC NAPLES. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="ESPNPPV25.us">
+    <title lang="en">SARASOTA PARADISE VS. FC NAPLES (Wed 21 Oct, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SARASOTA PARADISE VS. FC NAPLES. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="ESPNPPV25.us">
+    <title lang="en">SARASOTA PARADISE VS. FC NAPLES (Wed 21 Oct, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SARASOTA PARADISE VS. FC NAPLES. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261021233000 +0100" channel="ESPNPPV25.us">
+    <title lang="en">SARASOTA PARADISE VS. FC NAPLES (Wed 21 Oct, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SARASOTA PARADISE VS. FC NAPLES. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021233000 +0100" stop="20261022023000 +0100" channel="ESPNPPV25.us">
+    <title lang="en">🔴 LIVE: SARASOTA PARADISE VS. FC NAPLES</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">SARASOTA PARADISE VS. FC NAPLES. Starts Wed 21 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021143000 +0100" channel="ESPNPPV3.us">
+    <title lang="en">2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAY 2 (Wed 21 Oct, 14:30)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: 2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAY 2. Starts Wed 21 Oct, 14:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021143000 +0100" stop="20261021173000 +0100" channel="ESPNPPV3.us">
+    <title lang="en">🔴 LIVE: 2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAY 2</title>
+    <sub-title lang="en">Big 12</sub-title>
+    <desc lang="en">2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAY 2. Starts Wed 21 Oct, 14:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021150000 +0100" channel="ESPNPPV4.us">
+    <title lang="en">THE GOLICS (Wed 21 Oct, 15:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: THE GOLICS. Starts Wed 21 Oct, 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021150000 +0100" stop="20261021180000 +0100" channel="ESPNPPV4.us">
+    <title lang="en">🔴 LIVE: THE GOLICS</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">THE GOLICS. Starts Wed 21 Oct, 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV5.us">
+    <title lang="en">THE PAT MCAFEE SHOW (Wed 21 Oct, 17:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: THE PAT MCAFEE SHOW. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021170000 +0100" channel="ESPNPPV5.us">
+    <title lang="en">THE PAT MCAFEE SHOW (Wed 21 Oct, 17:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: THE PAT MCAFEE SHOW. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021170000 +0100" stop="20261021200000 +0100" channel="ESPNPPV5.us">
+    <title lang="en">🔴 LIVE: THE PAT MCAFEE SHOW</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">THE PAT MCAFEE SHOW. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV6.us">
+    <title lang="en">2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAYS (Wed 21 Oct, 17:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: 2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAYS. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021170000 +0100" channel="ESPNPPV6.us">
+    <title lang="en">2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAYS (Wed 21 Oct, 17:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: 2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAYS. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021170000 +0100" stop="20261021200000 +0100" channel="ESPNPPV6.us">
+    <title lang="en">🔴 LIVE: 2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAYS</title>
+    <sub-title lang="en">Big 12</sub-title>
+    <desc lang="en">2026 MONSTER ENERGY BIG 12 BASKETBALL MEDIA DAYS. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV7.us">
+    <title lang="en">WED, 10/21 - THE RICH EISEN SHOW (Wed 21 Oct, 17:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: WED, 10/21 - THE RICH EISEN SHOW. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021170000 +0100" channel="ESPNPPV7.us">
+    <title lang="en">WED, 10/21 - THE RICH EISEN SHOW (Wed 21 Oct, 17:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: WED, 10/21 - THE RICH EISEN SHOW. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021170000 +0100" stop="20261021200000 +0100" channel="ESPNPPV7.us">
+    <title lang="en">🔴 LIVE: WED, 10/21 - THE RICH EISEN SHOW</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">WED, 10/21 - THE RICH EISEN SHOW. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV8.us">
+    <title lang="en">AMERICAN UNIVERSITY VS. ARMY (Wed 21 Oct, 18:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: AMERICAN UNIVERSITY VS. ARMY. Starts Wed 21 Oct, 18:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV8.us">
+    <title lang="en">AMERICAN UNIVERSITY VS. ARMY (Wed 21 Oct, 18:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: AMERICAN UNIVERSITY VS. ARMY. Starts Wed 21 Oct, 18:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021210000 +0100" channel="ESPNPPV8.us">
+    <title lang="en">🔴 LIVE: AMERICAN UNIVERSITY VS. ARMY</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">AMERICAN UNIVERSITY VS. ARMY. Starts Wed 21 Oct, 18:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="ESPNPPV9.us">
+    <title lang="en">MARIST VS. IONA (Wed 21 Oct, 18:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: MARIST VS. IONA. Starts Wed 21 Oct, 18:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="ESPNPPV9.us">
+    <title lang="en">MARIST VS. IONA (Wed 21 Oct, 18:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: MARIST VS. IONA. Starts Wed 21 Oct, 18:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021210000 +0100" channel="ESPNPPV9.us">
+    <title lang="en">🔴 LIVE: MARIST VS. IONA</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">MARIST VS. IONA. Starts Wed 21 Oct, 18:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021100000 +0100" stop="20261021130000 +0100" channel="MAXPPV1.uk">
+    <title lang="en">🔴 LIVE: CHEUNG KA WAI - STUART BINGHAM</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">CHEUNG KA WAI - STUART BINGHAM. Starts Wed 21 Oct, 10:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV1.us">
+    <title lang="en">FLYERS AT SABRES (Thu 22 Oct, 00:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: FLYERS AT SABRES. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV1.us">
+    <title lang="en">FLYERS AT SABRES (Thu 22 Oct, 00:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: FLYERS AT SABRES. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="MAXPPV1.us">
+    <title lang="en">FLYERS AT SABRES (Thu 22 Oct, 00:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: FLYERS AT SABRES. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021220000 +0100" channel="MAXPPV1.us">
+    <title lang="en">FLYERS AT SABRES (Thu 22 Oct, 00:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: FLYERS AT SABRES. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021220000 +0100" stop="20261022000000 +0100" channel="MAXPPV1.us">
+    <title lang="en">FLYERS AT SABRES (Thu 22 Oct, 00:00)</title>
+    <sub-title lang="en">⏭ Coming up Thu 22 Oct</sub-title>
+    <desc lang="en">Coming up: FLYERS AT SABRES. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261022000000 +0100" stop="20261022030000 +0100" channel="MAXPPV1.us">
+    <title lang="en">🔴 LIVE: FLYERS AT SABRES</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">FLYERS AT SABRES. Starts Thu 22 Oct, 00:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV11.uk">
+    <title lang="en">MICHAEL HOLT - JORDAN BROWN (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: MICHAEL HOLT - JORDAN BROWN. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV11.uk">
+    <title lang="en">MICHAEL HOLT - JORDAN BROWN (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: MICHAEL HOLT - JORDAN BROWN. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021190000 +0100" channel="MAXPPV11.uk">
+    <title lang="en">MICHAEL HOLT - JORDAN BROWN (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: MICHAEL HOLT - JORDAN BROWN. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021190000 +0100" stop="20261021220000 +0100" channel="MAXPPV11.uk">
+    <title lang="en">🔴 LIVE: MICHAEL HOLT - JORDAN BROWN</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">MICHAEL HOLT - JORDAN BROWN. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV12.uk">
+    <title lang="en">GAO YANG - DAVID GILBERT (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GAO YANG - DAVID GILBERT. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV12.uk">
+    <title lang="en">GAO YANG - DAVID GILBERT (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GAO YANG - DAVID GILBERT. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021190000 +0100" channel="MAXPPV12.uk">
+    <title lang="en">GAO YANG - DAVID GILBERT (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: GAO YANG - DAVID GILBERT. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021190000 +0100" stop="20261021220000 +0100" channel="MAXPPV12.uk">
+    <title lang="en">🔴 LIVE: GAO YANG - DAVID GILBERT</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">GAO YANG - DAVID GILBERT. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV13.uk">
+    <title lang="en">UEFA CHAMPIONS LEAGUE GOALS SHOW XTRA (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: UEFA CHAMPIONS LEAGUE GOALS SHOW XTRA. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV13.uk">
+    <title lang="en">UEFA CHAMPIONS LEAGUE GOALS SHOW XTRA (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: UEFA CHAMPIONS LEAGUE GOALS SHOW XTRA. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021190000 +0100" channel="MAXPPV13.uk">
+    <title lang="en">UEFA CHAMPIONS LEAGUE GOALS SHOW XTRA (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: UEFA CHAMPIONS LEAGUE GOALS SHOW XTRA. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021190000 +0100" stop="20261021220000 +0100" channel="MAXPPV13.uk">
+    <title lang="en">🔴 LIVE: UEFA CHAMPIONS LEAGUE GOALS SHOW XTRA</title>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">UEFA CHAMPIONS LEAGUE GOALS SHOW XTRA. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV14.uk">
+    <title lang="en">NOPPON SAENGKHAM - SCOTT DONALDSON (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: NOPPON SAENGKHAM - SCOTT DONALDSON. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV14.uk">
+    <title lang="en">NOPPON SAENGKHAM - SCOTT DONALDSON (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: NOPPON SAENGKHAM - SCOTT DONALDSON. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021190000 +0100" channel="MAXPPV14.uk">
+    <title lang="en">NOPPON SAENGKHAM - SCOTT DONALDSON (Wed 21 Oct, 19:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: NOPPON SAENGKHAM - SCOTT DONALDSON. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021190000 +0100" stop="20261021220000 +0100" channel="MAXPPV14.uk">
+    <title lang="en">🔴 LIVE: NOPPON SAENGKHAM - SCOTT DONALDSON</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">NOPPON SAENGKHAM - SCOTT DONALDSON. Starts Wed 21 Oct, 19:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV15.uk">
+    <title lang="en">ASTON VILLA - VIKING FK (Wed 21 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ASTON VILLA - VIKING FK. Starts Wed 21 Oct, 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV15.uk">
+    <title lang="en">ASTON VILLA - VIKING FK (Wed 21 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ASTON VILLA - VIKING FK. Starts Wed 21 Oct, 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021194500 +0100" channel="MAXPPV15.uk">
+    <title lang="en">ASTON VILLA - VIKING FK (Wed 21 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ASTON VILLA - VIKING FK. Starts Wed 21 Oct, 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021194500 +0100" stop="20261021224500 +0100" channel="MAXPPV15.uk">
+    <title lang="en">🔴 LIVE: ASTON VILLA - VIKING FK</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">ASTON VILLA - VIKING FK. Starts Wed 21 Oct, 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV16.uk">
+    <title lang="en">REAL MADRID - RB LEIPZIG (Wed 21 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: REAL MADRID - RB LEIPZIG. Starts Wed 21 Oct, 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV16.uk">
+    <title lang="en">REAL MADRID - RB LEIPZIG (Wed 21 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: REAL MADRID - RB LEIPZIG. Starts Wed 21 Oct, 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021194500 +0100" channel="MAXPPV16.uk">
+    <title lang="en">REAL MADRID - RB LEIPZIG (Wed 21 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: REAL MADRID - RB LEIPZIG. Starts Wed 21 Oct, 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021194500 +0100" stop="20261021224500 +0100" channel="MAXPPV16.uk">
+    <title lang="en">🔴 LIVE: REAL MADRID - RB LEIPZIG</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">REAL MADRID - RB LEIPZIG. Starts Wed 21 Oct, 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV17.uk">
+    <title lang="en">CLUB BRUGGE - RC LENS (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: CLUB BRUGGE - RC LENS. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV17.uk">
+    <title lang="en">CLUB BRUGGE - RC LENS (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: CLUB BRUGGE - RC LENS. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021195400 +0100" channel="MAXPPV17.uk">
+    <title lang="en">CLUB BRUGGE - RC LENS (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: CLUB BRUGGE - RC LENS. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021195400 +0100" stop="20261021225400 +0100" channel="MAXPPV17.uk">
+    <title lang="en">🔴 LIVE: CLUB BRUGGE - RC LENS</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">CLUB BRUGGE - RC LENS. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV18.uk">
+    <title lang="en">INTER - SHAKHTAR DONETSK (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: INTER - SHAKHTAR DONETSK. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV18.uk">
+    <title lang="en">INTER - SHAKHTAR DONETSK (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: INTER - SHAKHTAR DONETSK. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021195400 +0100" channel="MAXPPV18.uk">
+    <title lang="en">INTER - SHAKHTAR DONETSK (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: INTER - SHAKHTAR DONETSK. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021195400 +0100" stop="20261021225400 +0100" channel="MAXPPV18.uk">
+    <title lang="en">🔴 LIVE: INTER - SHAKHTAR DONETSK</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">INTER - SHAKHTAR DONETSK. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV19.uk">
+    <title lang="en">REAL BETIS - FEYENOORD (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: REAL BETIS - FEYENOORD. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV19.uk">
+    <title lang="en">REAL BETIS - FEYENOORD (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: REAL BETIS - FEYENOORD. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021195400 +0100" channel="MAXPPV19.uk">
+    <title lang="en">REAL BETIS - FEYENOORD (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: REAL BETIS - FEYENOORD. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021195400 +0100" stop="20261021225400 +0100" channel="MAXPPV19.uk">
+    <title lang="en">🔴 LIVE: REAL BETIS - FEYENOORD</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">REAL BETIS - FEYENOORD. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021100000 +0100" stop="20261021130000 +0100" channel="MAXPPV2.uk">
+    <title lang="en">🔴 LIVE: PANG JUNXU - LIAM DAVIES</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">PANG JUNXU - LIAM DAVIES. Starts Wed 21 Oct, 10:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV20.uk">
+    <title lang="en">SPORTING CP - LASK (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SPORTING CP - LASK. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV20.uk">
+    <title lang="en">SPORTING CP - LASK (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SPORTING CP - LASK. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021195400 +0100" channel="MAXPPV20.uk">
+    <title lang="en">SPORTING CP - LASK (Wed 21 Oct, 19:54)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SPORTING CP - LASK. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021195400 +0100" stop="20261021225400 +0100" channel="MAXPPV20.uk">
+    <title lang="en">🔴 LIVE: SPORTING CP - LASK</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">SPORTING CP - LASK. Starts Wed 21 Oct, 19:54 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV21.uk">
+    <title lang="en">ELLIOT SLESSOR - JAMIE JONES (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ELLIOT SLESSOR - JAMIE JONES. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV21.uk">
+    <title lang="en">ELLIOT SLESSOR - JAMIE JONES (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ELLIOT SLESSOR - JAMIE JONES. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="MAXPPV21.uk">
+    <title lang="en">ELLIOT SLESSOR - JAMIE JONES (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ELLIOT SLESSOR - JAMIE JONES. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021210000 +0100" channel="MAXPPV21.uk">
+    <title lang="en">ELLIOT SLESSOR - JAMIE JONES (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ELLIOT SLESSOR - JAMIE JONES. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021210000 +0100" stop="20261022000000 +0100" channel="MAXPPV21.uk">
+    <title lang="en">🔴 LIVE: ELLIOT SLESSOR - JAMIE JONES</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">ELLIOT SLESSOR - JAMIE JONES. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV22.uk">
+    <title lang="en">LUCA BRECEL - MARTIN O'DONNELL (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: LUCA BRECEL - MARTIN O'DONNELL. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021180000 +0100" channel="MAXPPV22.uk">
+    <title lang="en">LUCA BRECEL - MARTIN O'DONNELL (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: LUCA BRECEL - MARTIN O'DONNELL. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021180000 +0100" stop="20261021200000 +0100" channel="MAXPPV22.uk">
+    <title lang="en">LUCA BRECEL - MARTIN O'DONNELL (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: LUCA BRECEL - MARTIN O'DONNELL. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021200000 +0100" stop="20261021210000 +0100" channel="MAXPPV22.uk">
+    <title lang="en">LUCA BRECEL - MARTIN O'DONNELL (Wed 21 Oct, 21:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: LUCA BRECEL - MARTIN O'DONNELL. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021210000 +0100" stop="20261022000000 +0100" channel="MAXPPV22.uk">
+    <title lang="en">🔴 LIVE: LUCA BRECEL - MARTIN O'DONNELL</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">LUCA BRECEL - MARTIN O'DONNELL. Starts Wed 21 Oct, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021130000 +0100" stop="20261021160000 +0100" channel="MAXPPV3.uk">
+    <title lang="en">🔴 LIVE: DANIEL WELLS - RYAN DAY</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">DANIEL WELLS - RYAN DAY. Starts Wed 21 Oct, 13:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021130000 +0100" stop="20261021160000 +0100" channel="MAXPPV4.uk">
+    <title lang="en">🔴 LIVE: JOHN HIGGINS - JAK JONES</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">JOHN HIGGINS - JAK JONES. Starts Wed 21 Oct, 13:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021150000 +0100" channel="MAXPPV5.uk">
+    <title lang="en">ZHANG ANDA - MARK WILLIAMS (Wed 21 Oct, 15:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: ZHANG ANDA - MARK WILLIAMS. Starts Wed 21 Oct, 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021150000 +0100" stop="20261021180000 +0100" channel="MAXPPV5.uk">
+    <title lang="en">🔴 LIVE: ZHANG ANDA - MARK WILLIAMS</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">ZHANG ANDA - MARK WILLIAMS. Starts Wed 21 Oct, 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021145900 +0100" channel="MAXPPV6.uk">
+    <title lang="en">SAM CRAIGIE - XU SI (Wed 21 Oct, 14:59)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: SAM CRAIGIE - XU SI. Starts Wed 21 Oct, 14:59 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021145900 +0100" stop="20261021175900 +0100" channel="MAXPPV6.uk">
+    <title lang="en">🔴 LIVE: SAM CRAIGIE - XU SI</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">SAM CRAIGIE - XU SI. Starts Wed 21 Oct, 14:59 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV7.uk">
+    <title lang="en">COMO - MANCHESTER UNITED (Wed 21 Oct, 17:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: COMO - MANCHESTER UNITED. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021170000 +0100" channel="MAXPPV7.uk">
+    <title lang="en">COMO - MANCHESTER UNITED (Wed 21 Oct, 17:00)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: COMO - MANCHESTER UNITED. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021170000 +0100" stop="20261021200000 +0100" channel="MAXPPV7.uk">
+    <title lang="en">🔴 LIVE: COMO - MANCHESTER UNITED</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">COMO - MANCHESTER UNITED. Starts Wed 21 Oct, 17:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV8.uk">
+    <title lang="en">MULTIVIEW (Wed 21 Oct, 17:40)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: MULTIVIEW. Starts Wed 21 Oct, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021174000 +0100" channel="MAXPPV8.uk">
+    <title lang="en">MULTIVIEW (Wed 21 Oct, 17:40)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: MULTIVIEW. Starts Wed 21 Oct, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021174000 +0100" stop="20261021204000 +0100" channel="MAXPPV8.uk">
+    <title lang="en">🔴 LIVE: MULTIVIEW</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">MULTIVIEW. Starts Wed 21 Oct, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261021140000 +0100" stop="20261021160000 +0100" channel="MAXPPV9.uk">
+    <title lang="en">LILLE - GALATASARAY (Wed 21 Oct, 17:45)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: LILLE - GALATASARAY. Starts Wed 21 Oct, 17:45 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021160000 +0100" stop="20261021174500 +0100" channel="MAXPPV9.uk">
+    <title lang="en">LILLE - GALATASARAY (Wed 21 Oct, 17:45)</title>
+    <sub-title lang="en">⏭ Coming up Wed 21 Oct</sub-title>
+    <desc lang="en">Coming up: LILLE - GALATASARAY. Starts Wed 21 Oct, 17:45 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261021174500 +0100" stop="20261021204500 +0100" channel="MAXPPV9.uk">
+    <title lang="en">🔴 LIVE: LILLE - GALATASARAY</title>
+    <sub-title lang="en">🔴 LIVE</sub-title>
+    <desc lang="en">LILLE - GALATASARAY. Starts Wed 21 Oct, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
