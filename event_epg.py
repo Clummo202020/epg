@@ -42,6 +42,7 @@ LONDON = ZoneInfo("Europe/London")
 EVENT_HOURS = 3            # how long each event is listed for
 BLOCK_HOURS = 2            # "Coming up" block length before the event
 PAST_EVENT_HOURS = 2       # an event that has ended still shows for this long
+MAX_DAYS_AHEAD = 2         # events further ahead than this are left for a later run
 
 # Time zone of the times in names that start with a country code, e.g. "US (Peacock 003) | ..."
 COUNTRY_TZ = {
@@ -162,6 +163,8 @@ def build(events, now):
         end = ev["start"] + timedelta(hours=EVENT_HOURS)
         if end + timedelta(hours=PAST_EVENT_HOURS) < now:
             continue
+        if ev["start"] > now + timedelta(days=MAX_DAYS_AHEAD):     # e.g. a wrong year in a name
+            continue
         cur = by_slot.get(ev["slot_id"])
         if cur is None or ev["start"] < cur["start"]:
             by_slot[ev["slot_id"]] = ev
@@ -184,7 +187,7 @@ def build(events, now):
                           f"Coming up: {desc}")
             count += 1
             t = b
-        add_programme(tv, sid, start, end, ev["title"], "🔴 LIVE", desc, live=True)
+        add_programme(tv, sid, start, end, f"🔴 LIVE: {ev['title']}", "🔴 LIVE", desc, live=True)
         count += 1
     return tv, len(by_slot), count
 
