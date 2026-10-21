@@ -588,6 +588,7 @@ def goal_rush_channel(matches, suffix):
             "filler_prefix": "Coming up",
             "filler_sub": f"⏭ Goal Rush {ko:%a} {ko.day} {ko:%b}",
             "live_sub": "🔴 LIVE: Goal Rush",
+            "live_title": "🔴 LIVE: Goal Rush",         # title of the show itself
         })
     return (f"{GOAL_RUSH_ID}{suffix}", "Goal Rush", None, shows)   # kept even if empty
 
@@ -718,7 +719,9 @@ def build_xmltv(channels, filler):
                                   m.get("filler_sub", f"⏭ Next Match: {m['sub']}"), f_desc, m["comp"])
                     count += 1
             # the match itself: "🔴 LIVE: Premier League" (filler blocks say "⏭ Next Match: Premier League")
-            add_programme(tv, chan_id, start, stop, m.get("live_title", m.get("fixed_title", m["title"])),
+            live_title = m.get("live_title") or (f"🔴 LIVE: {m['title']}" if m.get("teams")
+                                                 else m.get("fixed_title", m["title"]))
+            add_programme(tv, chan_id, start, stop, live_title,
                           m.get("live_sub", f"🔴 LIVE: {m['sub']}"), m.get("fixed_desc", m["desc"]),
                           m["comp"], live=not m.get("not_live"))
             count += 1

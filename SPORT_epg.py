@@ -3276,6 +3276,34 @@ def live_sub(sub):
     return f"🔴 LIVE: {s}"
 
 
+# Descriptions that mention "live" without the programme being live
+NOT_LIVE_WORDS = re.compile(
+    r"\b(highlights?|replay(ed|s)?|repeat(ed|s)?|recap|review|rewind|classic|best of|"
+    r"look(s|ing)? back|catch[- ]?up|relive|reliving|archive|delayed|previously)\b", re.I)
+# "live" used as a promo phrase rather than describing this programme
+LIVE_PROMO = re.compile(
+    r"\b(watch|stream(ed|ing)?|available|see it|catch it|follow)\s+(it\s+|all\s+|every\s+\w+\s+)?live\b"
+    r"|\blive\s+(and|&)\s+on[- ]demand\b|\blive\s+on\s+(sky\+?|now|the app)\b", re.I)
+
+
+def desc_says_live(desc):
+    """True if the description says the programme is live (not a highlights/replay
+    show, and not a promo line like "watch live on Sky+")."""
+    d = desc or ""
+    if NOT_LIVE_WORDS.search(d):
+        return False
+    return bool(re.search(r"\blive\b", LIVE_PROMO.sub(" ", d), re.I))
+
+
+def live_title(title):
+    """Title for a live programme: "🔴 LIVE: <title>" (without doubling a leading "Live")."""
+    t = (title or "").strip()
+    if t.startswith("🔴"):
+        return t
+    t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", t) or t
+    return f"🔴 LIVE: {t}"
+
+
 def add_programme(tv, cid, start, stop, title, sub, desc, live):
     p = ET.SubElement(tv, "programme", {
         "start": xmltv_time(start), "stop": xmltv_time(stop), "channel": cid})
@@ -3350,8 +3378,9 @@ def build_xmltv(records, suffix, minutes):
                                   f"Upcoming on {name}: {title}, {when} UK "
                                   f"({loc:%H:%M} {rec['place']}).", False)
                     count += 1
-            is_live = ev["live"] or kickoff_now(f"{sub or ''} {desc}", loc, uk)
-            add_programme(tv, cid, start, stop, title,
+            is_live = (ev["live"] or kickoff_now(f"{sub or ''} {desc}", loc, uk)
+                       or desc_says_live(desc))                # description says "live"
+            add_programme(tv, cid, start, stop, live_title(title) if is_live else title,
                           live_sub(sub) if is_live else sub, desc, is_live)
             count += 1
             last_stop = stop

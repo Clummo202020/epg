@@ -424,7 +424,7 @@ def build_xmltv(channels, filler):
                     add_programme(tv, chan_id, a, b, f_title, f"⏭ Next Match: {m['sub']}", f_desc, m["comp"])
                     count += 1
             # the match itself: "🔴 LIVE: Premier League" (filler blocks say "⏭ Next Match: Premier League")
-            add_programme(tv, chan_id, start, stop, m["title"], f"🔴 LIVE: {m['sub']}", m["desc"],
+            add_programme(tv, chan_id, start, stop, f"🔴 LIVE: {m['title']}", f"🔴 LIVE: {m['sub']}", m["desc"],
                           m["comp"], live=True)
             count += 1
             last_stop = stop
