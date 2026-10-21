@@ -3268,12 +3268,13 @@ def kickoff_now(text, *local_times):
 
 
 def live_sub(sub):
-    """Secondary title for a live programme: "🔴 LIVE" or "🔴 LIVE: <sub-title>"."""
+    """Secondary title for a live programme: the sub-title without a "Live" label
+    (🔴 LIVE is in the title), or None."""
     s = (sub or "").strip()
     if not s or re.fullmatch(r"(?i)live[.!]?", s):
-        return "🔴 LIVE"
+        return None
     s = re.sub(r"(?i)^live\b[\s.,:;-]*", "", s) or s       # "Live. Northern Ireland..." -> "Northern Ireland..."
-    return f"🔴 LIVE: {s}"
+    return s
 
 
 # Descriptions that mention "live" without the programme being live

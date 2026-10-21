@@ -10,7 +10,8 @@ Event streams are named with their start time, e.g.
 Each stream "slot" (US (Peacock 003), AU (STAN 08), GB: DAZN PPV 5 ...) becomes a guide
 channel - Peacock003.us, STAN08.au, DAZNPPV5.gb - showing:
     * "Coming up" blocks until the event starts
-    * the event itself (EVENT_HOURS long) with "🔴 LIVE" as the secondary title
+    * the event itself (EVENT_HOURS long), titled "🔴 LIVE: <event>", with the
+      competition (when the name gives one) as the secondary title
 Times are converted to UK time. Names with no date/time get no channel.
 
 The guide stops when the event ends: PlaylistLabs only adds programmes after the
@@ -250,7 +251,7 @@ def build(events, now):
             count += 1
             t = b
         add_programme(tv, sid, start, end, f"🔴 LIVE: {ev['title']}",
-                      ev.get("comp") or "🔴 LIVE", desc, live=True)     # secondary title: the competition
+                      ev.get("comp") or None, desc, live=True)     # secondary title: the competition
         count += 1
     return tv, len(by_slot), count
 
