@@ -67,6 +67,32 @@ STATUS_WORDS = {"end", "ended", "live", "upcoming", "next", "soon", "finished", 
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (event_epg.py)"}
 
+# Competitions recognised in event names (longest first wins), used as the secondary title
+COMPETITIONS = [
+    "UEFA Champions League", "UEFA Europa League", "UEFA Conference League", "UEFA Super Cup",
+    "UEFA Youth League", "Champions League", "Europa League", "Conference League",
+    "Concacaf Champions Cup", "Concacaf Nations League", "Copa Libertadores", "Copa Sudamericana",
+    "Premier League", "English Football League", "EFL Championship", "EFL League One",
+    "EFL League Two", "Carabao Cup", "FA Cup", "Scottish Premiership", "La Liga", "LaLiga",
+    "Serie A", "Bundesliga", "Ligue 1", "Eredivisie", "Liga MX", "MLS", "NWSL", "WSL",
+    "NFL", "NBA", "WNBA", "NHL", "MLB", "NCAA", "College Football", "College Basketball",
+    "UFC", "PFL", "Boxing", "WWE", "Formula 1", "F1", "MotoGP", "NASCAR", "IndyCar",
+    "PGA Tour", "LPGA", "DP World Tour", "Ryder Cup", "ATP", "WTA", "Grand Slam",
+    "Six Nations", "Super Rugby", "NRL", "AFL", "Big Ten", "SEC", "ACC", "Big 12",
+]
+_COMP_RE = re.compile(r"\b(" + "|".join(re.escape(c) for c in
+                      sorted(COMPETITIONS, key=len, reverse=True)) + r")\b", re.I)
+_COMP_CANON = {c.lower(): c for c in COMPETITIONS}
+
+
+def competition(*texts):
+    """The first known competition named in the texts, or ""."""
+    for t in texts:
+        m = _COMP_RE.search(t or "")
+        if m:
+            return _COMP_CANON[m.group(1).lower()]
+    return ""
+
 # "US (Peacock 003) | Title (2026-10-20 14:50:05)"
 SLOT_FIRST = re.compile(
     r"^\s*(?P<cc>[A-Z]{2})\s*\((?P<slot>[^)]*)\)\s*\|\s*(?P<title>.*?)\s*"
@@ -89,7 +115,7 @@ def parse_name(name):
         local = datetime.strptime(f"{m['date']} {m['time']}", "%Y-%m-%d %H:%M").replace(tzinfo=tz)
         return {"name": name, "slot_id": f"{slug(m['slot'])}.{m['cc'].lower()}",
                 "slot_name": f"{m['cc']} ({m['slot']})",
-                "title": m["title"].strip(), "extra": "",
+                "title": m["title"].strip(), "extra": "", "comp": competition(m["title"]),
                 "start": local.astimezone(timezone.utc)}
 
     parts = [p.strip() for p in name.split("|")]     # End | Title | Comp | date | time (TZ) | ... | GB: SLOT
@@ -108,9 +134,10 @@ def parse_name(name):
                 text = text[1:]
             title = text[0] if text else slot_label.strip()
             extra = ". ".join(t for t in text[1:] if t)
+            comp = text[1] if len(text) > 1 and not re.search(r"\b(8K|4K|HD|UHD|EXCLUSIVE)\b", text[1]) else ""
             return {"name": name, "slot_id": f"{slug(slot_label)}.{cc.lower()}",
                     "slot_name": f"{cc}: {slot_label.strip()}",
-                    "title": title, "extra": extra,
+                    "title": title, "extra": extra, "comp": comp or competition(title, extra),
                     "start": local.astimezone(timezone.utc)}
     return None
 
@@ -189,7 +216,8 @@ def build(events, now):
                           f"Coming up: {desc}")
             count += 1
             t = b
-        add_programme(tv, sid, start, end, f"🔴 LIVE: {ev['title']}", "🔴 LIVE", desc, live=True)
+        add_programme(tv, sid, start, end, f"🔴 LIVE: {ev['title']}",
+                      ev.get("comp") or "🔴 LIVE", desc, live=True)     # secondary title: the competition
         count += 1
     return tv, len(by_slot), count
 
