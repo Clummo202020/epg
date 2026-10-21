@@ -98,6 +98,11 @@ SLOT_FIRST = re.compile(
     r"^\s*(?P<cc>[A-Z]{2})\s*\((?P<slot>[^)]*)\)\s*\|\s*(?P<title>.*?)\s*"
     r"\((?P<date>\d{4}-\d{2}-\d{2})[ T](?P<time>\d{1,2}:\d{2})(?::\d{2})?\)\s*$")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+# Name sections that are labels, not event information ("8K EXCLUSIVE", "4K", "HD" ...)
+JUNK_RE = re.compile(r"(?i)\s*((8K|4K|UHD|FHD|HD|SD)\s*)?(EXCLUSIVE|ONLY)?\s*|\s*(8K|4K|UHD|FHD|HD|SD)\s*")
+# "Wed 21 Oct 19:00 EDT (US)" - date and time in one field, no year
+DAYTIME_RE = re.compile(r"^(?:[A-Za-z]{3}\s+)?(\d{1,2})\s+([A-Za-z]{3})[a-z]*\s+(\d{1,2}:\d{2})"
+                        r"(?:\s+([A-Z]{2,5}))?(?:\s*\([A-Z]{2}\))?$")
 TIME_RE = re.compile(r"^(\d{1,2}:\d{2})(?::\d{2})?\s*(?:\((\w+)\))?$")
 
 
@@ -123,6 +128,33 @@ def parse_name(name):
         di = next((i for i, p in enumerate(parts) if DATE_RE.match(p)), None)
         ti = next((i for i, p in enumerate(parts) if TIME_RE.match(p)), None)
         slot = next((p for p in reversed(parts) if re.match(r"^[A-Z]{2}:\s*\S", p)), None)
+        dti = next((i for i, p in enumerate(parts) if DAYTIME_RE.match(p)), None)
+        if (di is None or ti is None) and dti is not None and slot:      # HBO Max style
+            dm = DAYTIME_RE.match(parts[dti])
+            cc, slot_label = slot.split(":", 1)
+            zone = ABBREV_TZ.get((dm.group(4) or "").upper()) or COUNTRY_TZ.get(cc, "Europe/London")
+            tz = ZoneInfo(zone)
+            now = datetime.now(tz)
+            local = None
+            for year in (now.year, now.year + 1, now.year - 1):   # the year closest to today
+                try:
+                    cand = datetime.strptime(f"{dm.group(1)} {dm.group(2)} {year} {dm.group(3)}",
+                                             "%d %b %Y %H:%M").replace(tzinfo=tz)
+                except ValueError:
+                    continue
+                if local is None or abs(cand - now) < abs(local - now):
+                    local = cand
+            if local is not None:
+                text = [p for i, p in enumerate(parts) if i != dti and p != slot]
+                if text and text[0].lower() in STATUS_WORDS:
+                    text = text[1:]
+                text = [t for t in text if not JUNK_RE.fullmatch(t)]
+                title = text[0] if text else slot_label.strip()
+                extra = ". ".join(t for t in text[1:] if t)
+                return {"name": name, "slot_id": f"{slug(slot_label)}.{cc.lower()}",
+                        "slot_name": f"{cc}: {slot_label.strip()}",
+                        "title": title, "extra": extra, "comp": competition(title, extra),
+                        "start": local.astimezone(timezone.utc)}
         if di is not None and ti is not None and slot:
             tm = TIME_RE.match(parts[ti])
             cc, slot_label = slot.split(":", 1)
@@ -132,6 +164,7 @@ def parse_name(name):
             text = [p for i, p in enumerate(parts) if i not in (di, ti) and p != slot]
             if text and text[0].lower() in STATUS_WORDS:
                 text = text[1:]
+            text = [t for t in text if not JUNK_RE.fullmatch(t)]
             title = text[0] if text else slot_label.strip()
             extra = ". ".join(t for t in text[1:] if t)
             comp = text[1] if len(text) > 1 and not re.search(r"\b(8K|4K|HD|UHD|EXCLUSIVE)\b", text[1]) else ""
