@@ -43,7 +43,9 @@ LONDON = ZoneInfo("Europe/London")
 EVENT_HOURS = 3            # how long each event is listed for
 BLOCK_HOURS = 2            # "Coming up" block length before the event
 PAST_EVENT_HOURS = 2       # an event that has ended still shows for this long
-MAX_DAYS_AHEAD = 2         # events further ahead than this are left for a later run
+MAX_DAYS_AHEAD = 2         # events further ahead than this get filler until they come into range
+FILLER_TITLE = "Stream is live at event time only."
+FILLER_DESC = "The next event on this stream will be listed nearer the time."
 
 # Time zone of the times in names that start with a country code, e.g. "US (Peacock 003) | ..."
 COUNTRY_TZ = {
@@ -224,8 +226,6 @@ def build(events, now):
         end = ev["start"] + timedelta(hours=EVENT_HOURS)
         if end + timedelta(hours=PAST_EVENT_HOURS) < now:
             continue
-        if ev["start"] > now + timedelta(days=MAX_DAYS_AHEAD):     # e.g. a wrong year in a name
-            continue
         cur = by_slot.get(ev["slot_id"])
         if cur is None or ev["start"] < cur["start"]:
             by_slot[ev["slot_id"]] = ev
@@ -241,18 +241,26 @@ def build(events, now):
         when = f"{uk(start):%a} {uk(start).day} {uk(start):%b}, {uk(start):%H:%M}"
         desc = f"{ev['title']}." + (f" {ev['extra']}." if ev["extra"] else "") + \
                f" Starts {when} UK time."
+        in_range = start <= now + timedelta(days=MAX_DAYS_AHEAD)
+        # Out of range: generic filler only up to the range limit, so the event's own
+        # "Coming up" blocks can still be added after it on a later run.
+        stop_at = start if in_range else now + timedelta(days=MAX_DAYS_AHEAD)
         t = now.replace(minute=0, second=0, microsecond=0)
         t -= timedelta(hours=uk(t).hour % BLOCK_HOURS)
-        while t < start:                                   # "Coming up" blocks
-            b = min(t + timedelta(hours=BLOCK_HOURS), start)
-            add_programme(tv, sid, t, b, f"{ev['title']} ({when})",
-                          f"⏭ Coming up {uk(start):%a} {uk(start).day} {uk(start):%b}",
-                          f"Coming up: {desc}")
+        while t < stop_at:
+            b = min(t + timedelta(hours=BLOCK_HOURS), stop_at)
+            if in_range:                                   # "Coming up" blocks
+                add_programme(tv, sid, t, b, f"{ev['title']} ({when})",
+                              f"⏭ Coming up {uk(start):%a} {uk(start).day} {uk(start):%b}",
+                              f"Coming up: {desc}")
+            else:                                          # filler until the event is in range
+                add_programme(tv, sid, t, b, FILLER_TITLE, None, FILLER_DESC)
             count += 1
             t = b
-        add_programme(tv, sid, start, end, f"🔴 LIVE: {ev['title']}",
-                      ev.get("comp") or None, desc, live=True)     # secondary title: the competition
-        count += 1
+        if in_range:
+            add_programme(tv, sid, start, end, f"🔴 LIVE: {ev['title']}",
+                          ev.get("comp") or None, desc, live=True)  # secondary title: the competition
+            count += 1
     return tv, len(by_slot), count
 
 
