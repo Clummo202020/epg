@@ -585,7 +585,7 @@ def goal_rush_channel(matches, suffix):
             "start": start - timedelta(minutes=GOAL_RUSH_EARLY_MINUTES),  # show starts before kick-off
             "stop": max(m["stop"] for m in ms),
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
-            "filler_prefix": "Coming up",
+            "filler_prefix": f"Coming up {ko:%A}",      # "Coming up Saturday: Goal Rush. ..."
             "filler_sub": f"⏭ Goal Rush {ko:%a} {ko.day} {ko:%b}",
             "live_sub": GOAL_RUSH_COMP,                  # secondary title: Premier League
             "live_title": "🔴 LIVE: Goal Rush",         # title of the show itself
