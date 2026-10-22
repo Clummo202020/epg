@@ -30,6 +30,7 @@ import argparse
 import os
 import re
 import sys
+import unicodedata
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
@@ -105,6 +106,14 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 KICKOFF_ONLY = re.compile(r"^\s*(?P<label>[A-Za-z][A-Za-z0-9+ ]*?)\s*\|\s*(?P<num>\d+)\s*-\s*(?P<title>.+?)"
                           r"\s+(?P<h>\d{1,2})[:.](?P<m>\d{2})\s*(?P<ap>[ap]\.?m\.?)?\s*$", re.I)
 KICKOFF_EARLY_MINUTES = 10     # these streams go LIVE this many minutes before kick-off
+# "UEFA | 08 -" - a slot with nothing on it yet (shows filler)
+EMPTY_SLOT = re.compile(r"^\s*(?P<label>[A-Za-z][A-Za-z0-9+ ]*?)\s*\|\s*(?P<num>\d+)\s*-?\s*$")
+# Names like "UEFA | 01 - Como vs Manchester United 17:45 pm" carry no date, so the date is
+# taken from the football guide (football_epg.xml, in the repo): the fixture with the same
+# teams and kick-off. A name whose match is no longer in the football guide is over.
+FOOTBALL_GUIDE_FILE = "football_epg.xml"
+FOOTBALL_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/football_epg.xml"
+ENDED_FILLER_HOURS = 2         # a stream whose event is over shows filler for this long
 # Name sections that are labels, not event information ("8K EXCLUSIVE", "4K", "HD" ...)
 JUNK_RE = re.compile(r"(?i)\s*((8K|4K|UHD|FHD|HD|SD)\s*)?(EXCLUSIVE|ONLY)?\s*|\s*(8K|4K|UHD|FHD|HD|SD)\s*")
 # "Wed 21 Oct 19:00 EDT (US)" - date and time in one field, no year
@@ -117,9 +126,87 @@ def slug(text):
     return re.sub(r"[^A-Za-z0-9]+", "", text)
 
 
+_FIXTURES = None
+
+
+def _team_key(name):
+    """First significant word of a team name, for loose matching ("Manchester Utd" ->
+    "manchester", "AFC Bournemouth" -> "bournemouth")."""
+    words = re.sub(r"[^a-z0-9 ]+", " ", unicodedata.normalize("NFKD", name or "")
+                   .encode("ascii", "ignore").decode().lower()).split()
+    skip = {"fc", "afc", "cf", "sc", "ac", "as", "ss", "sk", "fk", "nk", "the", "real", "club",
+            "sporting", "athletic", "atletico", "inter", "dynamo", "dinamo", "olympique", "rc"}
+    for w in words:
+        if w not in skip and len(w) > 2:
+            return w
+    return words[0] if words else ""
+
+
+def load_fixtures():
+    """[(home_key, away_key, kick-off datetime UK)] from the football guide, or None."""
+    global _FIXTURES
+    if _FIXTURES is not None:
+        return _FIXTURES or None
+    raw = None
+    local = os.path.join(os.path.dirname(os.path.abspath(__file__)), FOOTBALL_GUIDE_FILE)
+    try:
+        if os.path.exists(local):
+            with open(local, "rb") as f:
+                raw = f.read()
+        else:
+            req = urllib.request.Request(FOOTBALL_GUIDE_URL, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=60) as r:
+                raw = r.read()
+        root = ET.fromstring(raw)
+    except Exception as e:
+        print(f"  WARNING: football guide not available for dating fixtures ({e})")
+        _FIXTURES = []
+        return None
+    out = set()
+    for p in root.iter("programme"):
+        t = (p.findtext("title") or "")
+        m = re.match(r"^(?:🔴 LIVE: )?(.+?) v (.+?) \((?:\w{3}) (\d{1,2}) (\w{3}), (\d{1,2}):(\d{2})\)$", t)
+        if not m:
+            continue
+        year = int((p.get("start") or "2000")[:4])
+        try:
+            ko = datetime.strptime(f"{m[3]} {m[4]} {year} {m[5]}:{m[6]}", "%d %b %Y %H:%M") \
+                .replace(tzinfo=LONDON)
+        except ValueError:
+            continue
+        out.add((_team_key(m[1]), _team_key(m[2]), ko))
+    _FIXTURES = sorted(out, key=lambda r: r[2])
+    return _FIXTURES or None
+
+
+def fixture_date(title, h, mi, now):
+    """Kick-off (UK) of the fixture named in `title` at h:mi, from the football guide.
+    Returns a datetime, False if the guide is loaded but has no such fixture (match over),
+    or None if the football guide isn't available."""
+    fx = load_fixtures()
+    if fx is None:
+        return None
+    sides = re.split(r"\s+(?:vs?\.?|-)\s+", title, maxsplit=1, flags=re.I)
+    if len(sides) != 2:
+        return None
+    hk, ak = _team_key(sides[0]), _team_key(sides[1])
+    hits = [ko for (fh, fa, ko) in fx if {fh, fa} == {hk, ak}]
+    if not hits:
+        return False
+    same_time = [ko for ko in hits if (ko.hour, ko.minute) == (h, mi)] or hits
+    return min(same_time, key=lambda ko: abs(ko - now))
+
+
 def parse_name(name):
     """{slot_id, slot_name, title, extra, start (UTC)} for an event name, else None."""
     name = re.sub(r"\s+", " ", name or "").strip()
+
+    e = EMPTY_SLOT.match(name)                       # "UEFA | 08 -": no match on this slot yet
+    if e:
+        label = e["label"].strip()
+        return {"name": name, "slot_id": f"{slug(label)}{int(e['num'])}.uk",
+                "slot_name": f"{label} | {int(e['num'])}", "title": "", "extra": "", "comp": "",
+                "start": datetime.now(timezone.utc) - timedelta(days=1)}   # -> filler only
 
     k = KICKOFF_ONLY.match(name)                     # UEFA | 28 - A vs B 20:00 pm (UK, today)
     if k:
@@ -129,9 +216,15 @@ def parse_name(name):
         elif ap.startswith("a") and h == 12:
             h = 0
         now = datetime.now(LONDON)
-        local = now.replace(hour=h, minute=mi, second=0, microsecond=0)
-        if local + timedelta(hours=EVENT_HOURS + PAST_EVENT_HOURS) < now:
-            local += timedelta(days=1)                # already over today -> tomorrow
+        found = fixture_date(k["title"].strip(), h, mi, now)
+        if found:                                     # date from the football guide
+            local = found
+        elif found is False:                          # match no longer listed: it's over
+            local = now.replace(hour=h, minute=mi, second=0, microsecond=0) - timedelta(days=1)
+        else:                                         # no football guide: assume today/tomorrow
+            local = now.replace(hour=h, minute=mi, second=0, microsecond=0)
+            if local + timedelta(hours=EVENT_HOURS + PAST_EVENT_HOURS) < now:
+                local += timedelta(days=1)
         label = k["label"].strip()
         return {"name": name, "slot_id": f"{slug(label)}{int(k['num'])}.uk",
                 "slot_name": f"{label} | {int(k['num'])}",
@@ -244,15 +337,22 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live=False):
 
 def build(events, now):
     tv = ET.Element("tv", {"generator-info-name": "event_epg.py"})
-    by_slot = {}
+    by_slot, ended = {}, {}
     for ev in events:                       # one event per slot: the next one still to finish
         end = ev["start"] + timedelta(hours=EVENT_HOURS)
         if end + timedelta(hours=PAST_EVENT_HOURS) < now:
+            ended.setdefault(ev["slot_id"], ev)
             continue
         cur = by_slot.get(ev["slot_id"])
         if cur is None or ev["start"] < cur["start"]:
             by_slot[ev["slot_id"]] = ev
-    for sid in sorted(by_slot):
+    ended = {sid: ev for sid, ev in ended.items() if sid not in by_slot}
+    for sid in sorted(set(by_slot) | set(ended)):
+        if sid in ended:          # event over, nothing new yet: a channel with short filler
+            c = ET.SubElement(tv, "channel", {"id": sid})
+            ET.SubElement(c, "display-name", {"lang": "en"}).text = ended[sid]["name"]
+            ET.SubElement(c, "display-name", {"lang": "en"}).text = ended[sid]["slot_name"]
+            continue
         c = ET.SubElement(tv, "channel", {"id": sid})
         # the full stream name first, so PlaylistLabs' automatic search can match it exactly
         ET.SubElement(c, "display-name", {"lang": "en"}).text = by_slot[sid]["name"]
@@ -286,7 +386,16 @@ def build(events, now):
             add_programme(tv, sid, start, end, f"🔴 LIVE: {ev['title']}",
                           ev.get("comp") or None, desc, live=True)  # secondary title: the competition
             count += 1
-    return tv, len(by_slot), count
+    t0 = now.replace(minute=0, second=0, microsecond=0)
+    t0 -= timedelta(hours=uk(t0).hour % BLOCK_HOURS)
+    for sid in sorted(ended):    # kept short, so the slot's next event can follow it
+        t = t0
+        while t < now + timedelta(hours=ENDED_FILLER_HOURS):
+            b = t + timedelta(hours=BLOCK_HOURS)
+            add_programme(tv, sid, t, b, FILLER_TITLE, None, FILLER_DESC)
+            count += 1
+            t = b
+    return tv, len(by_slot) + len(ended), count
 
 
 def main():
