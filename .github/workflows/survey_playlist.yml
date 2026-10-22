@@ -1,0 +1,27 @@
+name: Survey playlist (one-off)
+
+on:
+  workflow_dispatch:         # run by hand from the Actions page only
+
+jobs:
+  survey:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Survey the full playlist
+        env:
+          FULL_PLAYLIST_URL: ${{ secrets.FULL_PLAYLIST_URL }}
+        run: python3 -u survey_playlist.py
+
+      - name: Save the survey as a download (not added to the repo)
+        uses: actions/upload-artifact@v4
+        with:
+          name: playlist-survey
+          path: playlist_survey.csv
+          retention-days: 7
