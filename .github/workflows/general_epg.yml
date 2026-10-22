@@ -1,0 +1,47 @@
+name: Update general EPG
+
+on:
+  schedule:
+    - cron: "53 3 * * *"    # 03:53 UTC (04:53 UK summer time, 03:53 winter)
+    - cron: "53 15 * * *"   # 15:53 UTC (16:53 UK summer time, 15:53 winter)
+  workflow_dispatch:         # adds a "Run workflow" button on the Actions page
+
+permissions:
+  contents: write
+
+concurrency:
+  group: general-epg
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Build the general guide
+        env:
+          FULL_PLAYLIST_URL: ${{ secrets.FULL_PLAYLIST_URL }}
+        run: python3 -u general_epg.py
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add general_epg.xml.gz general_epg_report.csv
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update general EPG"
+            ok=""
+            for i in 1 2 3 4 5; do
+              if git pull --rebase && git push; then ok=1; break; fi
+              sleep 15
+            done
+            [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }
+          fi
