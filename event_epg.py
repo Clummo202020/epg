@@ -31,6 +31,7 @@ import os
 import re
 import sys
 import unicodedata
+from difflib import SequenceMatcher
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
@@ -174,9 +175,14 @@ def load_fixtures():
                 .replace(tzinfo=LONDON)
         except ValueError:
             continue
-        out.add((_team_key(m[1]), _team_key(m[2]), ko))
-    _FIXTURES = sorted(out, key=lambda r: r[2])
+        out.add((_team_key(m[1]), _team_key(m[2]), m[1].strip(), m[2].strip(), ko))
+    _FIXTURES = sorted(out, key=lambda r: r[4])
     return _FIXTURES or None
+
+
+def _norm(name):
+    return re.sub(r"[^a-z0-9 ]+", " ", unicodedata.normalize("NFKD", name or "")
+                  .encode("ascii", "ignore").decode().lower()).strip()
 
 
 def fixture_date(title, h, mi, now):
@@ -189,8 +195,23 @@ def fixture_date(title, h, mi, now):
     sides = re.split(r"\s+(?:vs?\.?|-)\s+", title, maxsplit=1, flags=re.I)
     if len(sides) != 2:
         return None
+    def similar(a_key, a_name, b_key, b_name):
+        """Same team, allowing for small spelling slips ("Araenal" = "Arsenal")."""
+        if a_key and a_key == b_key:
+            return True
+        return (SequenceMatcher(None, a_key, b_key).ratio() >= 0.8 or
+                SequenceMatcher(None, _norm(a_name), _norm(b_name)).ratio() >= 0.8)
+
     hk, ak = _team_key(sides[0]), _team_key(sides[1])
-    hits = [ko for (fh, fa, ko) in fx if {fh, fa} == {hk, ak}]
+    both, one = [], []
+    for fh, fa, fhn, fan, ko in fx:
+        h_ok = similar(hk, sides[0], fh, fhn) or similar(hk, sides[0], fa, fan)
+        a_ok = similar(ak, sides[1], fa, fan) or similar(ak, sides[1], fh, fhn)
+        if h_ok and a_ok:
+            both.append(ko)
+        elif (h_ok or a_ok) and (ko.hour, ko.minute) == (h, mi):
+            one.append(ko)            # one team matches and the kick-off time agrees
+    hits = both or one
     if not hits:
         return False
     same_time = [ko for ko in hits if (ko.hour, ko.minute) == (h, mi)] or hits
