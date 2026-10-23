@@ -48,6 +48,10 @@ PAST_EVENT_HOURS = 2       # an event that has ended still shows for this long
 MAX_DAYS_AHEAD = 2         # events further ahead than this get filler until they come into range
 FILLER_TITLE = "Stream is live at event time only."
 FILLER_DESC = "The next event on this stream will be listed nearer the time."
+# Shown on a slot whose event is over (or that is empty) until its stream name changes to a new event;
+# the new event's real titles/descriptions then replace it automatically.
+OFFLINE_TITLE = "Channel is offline"
+OFFLINE_DESC = "This channel is offline. The next event will be listed when the stream is updated."
 
 # Time zone of the times in names that start with a country code, e.g. "US (Peacock 003) | ..."
 COUNTRY_TZ = {
@@ -413,7 +417,7 @@ def build(events, now):
         t = t0
         while t < now + timedelta(hours=ENDED_FILLER_HOURS):
             b = t + timedelta(hours=BLOCK_HOURS)
-            add_programme(tv, sid, t, b, FILLER_TITLE, None, FILLER_DESC)
+            add_programme(tv, sid, t, b, OFFLINE_TITLE, None, OFFLINE_DESC)
             count += 1
             t = b
     return tv, len(by_slot) + len(ended), count
