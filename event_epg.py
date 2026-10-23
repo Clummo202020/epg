@@ -52,6 +52,8 @@ FILLER_DESC = "The next event on this stream will be listed nearer the time."
 # the new event's real titles/descriptions then replace it automatically.
 OFFLINE_TITLE = "Channel is offline"
 OFFLINE_DESC = "This channel is offline. The next event will be listed when the stream is updated."
+# Description used instead when the slot's last event has finished (an empty slot keeps OFFLINE_DESC)
+FINISHED_DESC = "This event has now finished. The next event will be listed when the stream is updated."
 
 # Time zone of the times in names that start with a country code, e.g. "US (Peacock 003) | ..."
 COUNTRY_TZ = {
@@ -425,10 +427,12 @@ def build(events, now):
     t0 = now.replace(minute=0, second=0, microsecond=0)
     t0 -= timedelta(hours=uk(t0).hour % BLOCK_HOURS)
     for sid in sorted(ended):    # kept short, so the slot's next event can follow it
+        # a finished event says so; an empty slot ("UEFA | 08 -", no title) just says offline
+        desc = FINISHED_DESC if ended[sid]["title"] else OFFLINE_DESC
         t = t0
         while t < now + timedelta(hours=ENDED_FILLER_HOURS):
             b = t + timedelta(hours=BLOCK_HOURS)
-            add_programme(tv, sid, t, b, OFFLINE_TITLE, None, OFFLINE_DESC)
+            add_programme(tv, sid, t, b, OFFLINE_TITLE, None, desc)
             count += 1
             t = b
     return tv, len(by_slot) + len(ended), count
