@@ -118,6 +118,10 @@ EMPTY_SLOT = re.compile(r"^\s*(?P<label>[A-Za-z][A-Za-z0-9+ ]*?)\s*\|\s*(?P<num>
 # teams and kick-off. A name whose match is no longer in the football guide is over.
 FOOTBALL_GUIDE_FILE = "football_epg.xml"
 FOOTBALL_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/football_epg.xml"
+# Names with these labels ("UEFA | 01 - ...") are only matched to fixtures in competitions whose
+# name starts with the same word, so a finished UEFA tie can't latch onto a later league match
+# of one of its teams (e.g. "Lillestrom vs Real Sociedad" -> Athletic Club v Real Sociedad).
+SAME_COMP_LABELS = {"uefa"}
 ENDED_FILLER_HOURS = 2         # a stream whose event is over shows filler for this long
 # Name sections that are labels, not event information ("8K EXCLUSIVE", "4K", "HD" ...)
 JUNK_RE = re.compile(r"(?i)\s*((8K|4K|UHD|FHD|HD|SD)\s*)?(EXCLUSIVE|ONLY)?\s*|\s*(8K|4K|UHD|FHD|HD|SD)\s*")
@@ -148,7 +152,8 @@ def _team_key(name):
 
 
 def load_fixtures():
-    """[(home_key, away_key, kick-off datetime UK)] from the football guide, or None."""
+    """[(home_key, away_key, home, away, kick-off datetime UK, competition)] from the
+    football guide, or None."""
     global _FIXTURES
     if _FIXTURES is not None:
         return _FIXTURES or None
@@ -179,7 +184,9 @@ def load_fixtures():
                 .replace(tzinfo=LONDON)
         except ValueError:
             continue
-        out.add((_team_key(m[1]), _team_key(m[2]), m[1].strip(), m[2].strip(), ko))
+        cats = [c.text or "" for c in p.findall("category")]
+        comp = cats[2] if len(cats) > 2 else ""          # Sports, Football, <competition>
+        out.add((_team_key(m[1]), _team_key(m[2]), m[1].strip(), m[2].strip(), ko, comp))
     _FIXTURES = sorted(out, key=lambda r: r[4])
     return _FIXTURES or None
 
@@ -189,10 +196,11 @@ def _norm(name):
                   .encode("ascii", "ignore").decode().lower()).strip()
 
 
-def fixture_date(title, h, mi, now):
+def fixture_date(title, h, mi, now, label=""):
     """Kick-off (UK) of the fixture named in `title` at h:mi, from the football guide.
     Returns a datetime, False if the guide is loaded but has no such fixture (match over),
-    or None if the football guide isn't available."""
+    or None if the football guide isn't available. A label in SAME_COMP_LABELS ("UEFA")
+    limits the search to that competition's fixtures."""
     fx = load_fixtures()
     if fx is None:
         return None
@@ -208,7 +216,10 @@ def fixture_date(title, h, mi, now):
 
     hk, ak = _team_key(sides[0]), _team_key(sides[1])
     both, one = [], []
-    for fh, fa, fhn, fan, ko in fx:
+    word = label.strip().split()[0].lower() if label.strip() else ""
+    for fh, fa, fhn, fan, ko, comp in fx:
+        if word in SAME_COMP_LABELS and not comp.lower().startswith(word):
+            continue                  # e.g. a UEFA stream never matches a league fixture
         h_ok = similar(hk, sides[0], fh, fhn) or similar(hk, sides[0], fa, fan)
         a_ok = similar(ak, sides[1], fa, fan) or similar(ak, sides[1], fh, fhn)
         if h_ok and a_ok:
@@ -241,7 +252,7 @@ def parse_name(name):
         elif ap.startswith("a") and h == 12:
             h = 0
         now = datetime.now(LONDON)
-        found = fixture_date(k["title"].strip(), h, mi, now)
+        found = fixture_date(k["title"].strip(), h, mi, now, k["label"])
         if found:                                     # date from the football guide
             local = found
         elif found is False:                          # match no longer listed: it's over

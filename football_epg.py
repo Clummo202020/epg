@@ -159,6 +159,10 @@ UEFA_CHANNEL = True                # False = leave the channel out
 UEFA_CHANNEL_ID = "UEFA.comps"
 UEFA_CHANNEL_NAME = "UEFA Competitions"
 UEFA_CHANNEL_TITLE = "Streams are live at match time only."
+# With no UEFA kick-offs in range (between matchdays) the channel gets plain blocks this far
+# ahead instead of nothing. Kept short: PlaylistLabs only adds after the last programme it
+# holds, so the next matchday's live blocks must be able to follow on a later run.
+UEFA_IDLE_HOURS = 24
 # Generic (all-sport) streaming services: plain 2-hour blocks with the same
 # title and description, not tied to any fixtures. (id, name, title, description)
 DUMMY_CHANNELS = [
@@ -522,10 +526,27 @@ def slot_channel(matches, comps, chan_id, name, title, desc, live_title=None, ea
 
 
 def uefa_channel(matches, suffix):
-    return slot_channel(matches, UEFA_COMPETITIONS, f"{UEFA_CHANNEL_ID}{suffix}",
+    chan = slot_channel(matches, UEFA_COMPETITIONS, f"{UEFA_CHANNEL_ID}{suffix}",
                         UEFA_CHANNEL_NAME, UEFA_CHANNEL_TITLE, UEFA_CHANNEL_DESC,
                         live_title=f"🔴 LIVE – {UEFA_CHANNEL_TITLE}",
                         early_minutes=MATCH_EARLY_MINUTES)
+    if chan[3]:
+        return chan
+    # No UEFA kick-offs in range: UEFA_IDLE_HOURS of plain blocks so the channel isn't empty
+    now = datetime.now(LONDON)
+    t = now.replace(minute=0, second=0, microsecond=0)
+    t -= timedelta(hours=t.hour % DUMMY_HOURS)          # align to 00:00, 02:00 ...
+    shows = []
+    while t < now + timedelta(hours=UEFA_IDLE_HOURS):
+        stop = t + timedelta(hours=DUMMY_HOURS)
+        shows.append({
+            "comp": UEFA_CHANNEL_NAME, "title": UEFA_CHANNEL_TITLE, "sub": "",
+            "desc": UEFA_CHANNEL_DESC, "start": t.astimezone(timezone.utc),
+            "stop": stop.astimezone(timezone.utc), "when": "", "teams": [], "tbc": False,
+            "live_sub": "", "not_live": True,
+        })
+        t = stop
+    return (chan[0], chan[1], chan[2], shows)
 
 
 def dummy_channel(chan_id, name, title, desc):
