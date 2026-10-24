@@ -6,6 +6,7 @@ Event streams are named with their start time, e.g.
     US (Peacock 003) | Celtics vs. Pistons (2026-10-20 14:50:05)
     AU (STAN 08) | Manchester City v AEK Athens  UEFA Champions League ... (2026-10-21 05:55:15)
     End | College Swimming League - Match 3 | College Swimming League | 2026-10-03 | 00:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 5
+    (Apple) (MLS) 001 | Montréal vs. Nashville (2026-10-24 13:25:00)        (US Eastern time)
 
 Each stream "slot" (US (Peacock 003), AU (STAN 08), GB: DAZN PPV 5 ...) becomes a guide
 channel - Peacock003.us, STAN08.au, DAZNPPV5.gb - showing:
@@ -131,6 +132,13 @@ JUNK_RE = re.compile(r"(?i)\s*((8K|4K|UHD|FHD|HD|SD)\s*)?(EXCLUSIVE|ONLY)?\s*|\s
 DAYTIME_RE = re.compile(r"^(?:[A-Za-z]{3}\s+)?(\d{1,2})\s+([A-Za-z]{3})[a-z]*\s+(\d{1,2}:\d{2})"
                         r"(?:\s+([A-Z]{2,5}))?(?:\s*\([A-Z]{2}\))?$")
 TIME_RE = re.compile(r"^(\d{1,2}:\d{2})(?::\d{2})?\s*(?:\((\w+)\))?$")
+# MLS streams (names start "(Apple) (MLS)"). Their times are US Eastern (checked against real kick-offs); the guide
+# shows them in UK time like every other stream.
+MLS_TZ = "America/New_York"
+# "(Apple) (MLS) 001 | Montréal vs. Nashville (2026-10-24 13:25:00)"  -> AppleMLS001.us
+MLS_APPLE = re.compile(
+    r"^\s*\((?P<prov>[^)]+)\)\s*\((?P<label>[^)]+)\)\s*(?P<num>\d+)\s*\|\s*(?P<title>.*?)\s*"
+    r"\((?P<date>\d{4}-\d{2}-\d{2})[ T](?P<time>\d{1,2}:\d{2})(?::\d{2})?\)\s*$")
 
 
 def slug(text):
@@ -271,6 +279,17 @@ def parse_name(name):
                 "title": k["title"].strip(), "extra": "",
                 "comp": competition(k["title"]) or label,
                 "early": KICKOFF_EARLY_MINUTES,
+                "start": local.astimezone(timezone.utc)}
+
+    a = MLS_APPLE.match(name)                        # (Apple) (MLS) 001 | A vs. B (date time)
+    if a:
+        local = datetime.strptime(f"{a['date']} {a['time']}", "%Y-%m-%d %H:%M") \
+            .replace(tzinfo=ZoneInfo(MLS_TZ))
+        label = a["label"].strip()
+        return {"name": name, "slot_id": f"{slug(a['prov'] + label)}{a['num']}.us",
+                "slot_name": f"({a['prov'].strip()}) ({label}) {a['num']}",
+                "title": a["title"].strip(), "extra": "",
+                "comp": competition(a["title"], label) or label,
                 "start": local.astimezone(timezone.utc)}
 
     m = SLOT_FIRST.match(name)                       # US (Peacock 003) | ... (date time)
