@@ -33,6 +33,8 @@ import json
 import os
 import re
 import sys
+import time
+from concurrent.futures import ThreadPoolExecutor
 import unicodedata
 from difflib import SequenceMatcher
 import urllib.request
@@ -150,8 +152,9 @@ NFL_EVENT_HOURS = 3.5          # NFL games usually run 3 h 10 - 3 h 30
 NFL_SHOWS = {"SNF": "Sunday Night Football", "TNF": "Thursday Night Football",
              "MNF": "Monday Night Football"}
 NFL_SHOW_DAY = {"SNF": 6, "TNF": 3, "MNF": 0}     # weekday (Mon=0) - used only without ESPN
-NFL_SCHEDULE_URL = ("https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard"
-                    "?dates={}-{}&limit=300")
+# One request per day (?dates=YYYYMMDD), the same way football_epg.py reads ESPN - a date
+# range in one request is rejected (HTTP 400).
+NFL_SCHEDULE_URL = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates={}"
 MLS_APPLE = re.compile(
     r"^\s*\((?P<prov>[^)]+)\)\s*\((?P<label>[^)]+)\)\s*(?P<num>\d+)\s*\|\s*(?P<title>.*?)\s*"
     r"\((?P<date>\d{4}-\d{2}-\d{2})[ T](?P<time>\d{1,2}:\d{2})(?::\d{2})?\)\s*$")
@@ -227,28 +230,44 @@ def load_nfl_games():
     if _NFL_GAMES is not None:
         return _NFL_GAMES if _NFL_GAMES != "failed" else None
     today = datetime.now(ZoneInfo(NFL_TZ)).date()
-    url = NFL_SCHEDULE_URL.format((today - timedelta(days=4)).strftime("%Y%m%d"),
-                                  (today + timedelta(days=10)).strftime("%Y%m%d"))
-    try:
-        req = urllib.request.Request(url, headers=HEADERS)
-        with urllib.request.urlopen(req, timeout=60) as r:
-            data = json.loads(r.read().decode("utf-8"))
-        games = []
-        for ev in data.get("events", []):
-            ko = datetime.strptime(ev["date"].replace("Z", ""), "%Y-%m-%dT%H:%M") \
-                .replace(tzinfo=timezone.utc)
+    days = [today + timedelta(days=d) for d in range(-4, 11)]
+
+    def grab(day):
+        url = NFL_SCHEDULE_URL.format(day.strftime("%Y%m%d"))
+        for attempt in range(3):
+            try:
+                req = urllib.request.Request(url, headers=HEADERS)
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    return json.loads(r.read().decode("utf-8")).get("events") or []
+            except Exception as e:
+                err = e
+                time.sleep(1.5 * (attempt + 1))
+        print(f"  WARNING: NFL schedule for {day} not available ({err})")
+        return None
+
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        results = list(pool.map(grab, days))
+    if all(r is None for r in results):
+        print("  WARNING: NFL schedule not available - NFL games dated by weekday instead")
+        _NFL_GAMES = "failed"
+        return None
+    games, seen = [], set()
+    for ev in (e for day in results if day for e in day):
+        try:
+            if ev.get("id") in seen:
+                continue
+            seen.add(ev.get("id"))
+            ko = datetime.strptime(ev["date"][:16], "%Y-%m-%dT%H:%M").replace(tzinfo=timezone.utc)
             sides = []
             for c in ev["competitions"][0]["competitors"]:
                 t = c.get("team", {})
                 sides.append({_norm(t.get(k, "")) for k in
                               ("name", "displayName", "shortDisplayName", "location", "abbreviation")}
                              - {""})
-            if len(sides) == 2:
-                games.append((sides[0], sides[1], ko))
-    except Exception as e:
-        print(f"  WARNING: NFL schedule not available for dating NFL games ({e})")
-        _NFL_GAMES = "failed"
-        return None
+        except (KeyError, IndexError, TypeError, ValueError):
+            continue
+        if len(sides) == 2:
+            games.append((sides[0], sides[1], ko))
     print(f"  NFL schedule: {len(games)} games")
     _NFL_GAMES = games
     return games
