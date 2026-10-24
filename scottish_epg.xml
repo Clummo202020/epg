@@ -25,6 +25,9 @@
     <display-name lang="en">Celtic Scottish Premiership</display-name>
     <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/256.png" />
   </channel>
+  <channel id="Clyde.ScotCup">
+    <display-name lang="en">Clyde Scottish Cup</display-name>
+  </channel>
   <channel id="Dumbarton.ScotCup">
     <display-name lang="en">Dumbarton Scottish Cup</display-name>
     <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/415.png" />
@@ -139,62 +142,6 @@
     <display-name lang="en">Stranraer Scottish Cup</display-name>
     <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/407.png" />
   </channel>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Aberdeen.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Aberdeen.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Aberdeen.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Aberdeen.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Aberdeen.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Aberdeen.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Aberdeen.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Aberdeen.ScotLgeCup">
     <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
     <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
@@ -908,62 +855,6 @@
     <category lang="en">Scottish League Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Aberdeen.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Aberdeen.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Aberdeen.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Aberdeen.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Aberdeen.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Aberdeen.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Aberdeen.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Aberdeen.ScotPrem">
     <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
@@ -1406,62 +1297,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Annan.Athletic.ScotCup">
-    <title lang="en">Huntly v Annan Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Huntly v Annan Athletic. Christie Park, Huntly. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Annan.Athletic.ScotCup">
-    <title lang="en">Huntly v Annan Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Huntly v Annan Athletic. Christie Park, Huntly. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Annan.Athletic.ScotCup">
-    <title lang="en">Huntly v Annan Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Huntly v Annan Athletic. Christie Park, Huntly. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Annan.Athletic.ScotCup">
-    <title lang="en">Huntly v Annan Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Huntly v Annan Athletic. Christie Park, Huntly. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Annan.Athletic.ScotCup">
-    <title lang="en">Huntly v Annan Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Huntly v Annan Athletic. Christie Park, Huntly. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Annan.Athletic.ScotCup">
-    <title lang="en">Huntly v Annan Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Huntly v Annan Athletic. Christie Park, Huntly. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Annan.Athletic.ScotCup">
-    <title lang="en">Huntly v Annan Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Huntly v Annan Athletic. Christie Park, Huntly. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Annan.Athletic.ScotCup">
     <title lang="en">Huntly v Annan Athletic (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
@@ -1494,62 +1329,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Arbroath.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Arbroath.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Arbroath.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Arbroath.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Arbroath.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Arbroath.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Arbroath.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Arbroath.ScotChamp">
     <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
@@ -2265,62 +2044,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Ayr.Utd.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Ayr.Utd.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Ayr.Utd.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Ayr.Utd.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Ayr.Utd.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Ayr.Utd.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Ayr.Utd.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Ayr.Utd.ScotChamp">
     <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
@@ -3034,62 +2757,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Celtic.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Celtic.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Celtic.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Celtic.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Celtic.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Celtic.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Celtic.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Celtic.ScotPrem">
     <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
@@ -3894,61 +3561,342 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Dumbarton.ScotCup">
-    <title lang="en">Dumbarton v Keith (Sat 24 Oct, 15:00)</title>
+  <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Dumbarton v Keith. Dumbarton Football Stadium, Dumbarton. Kick-off: 15:00.</desc>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Dumbarton.ScotCup">
-    <title lang="en">Dumbarton v Keith (Sat 24 Oct, 15:00)</title>
+  <programme start="20261024120000 +0100" stop="20261024140000 +0100" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Dumbarton v Keith. Dumbarton Football Stadium, Dumbarton. Kick-off: 15:00.</desc>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Dumbarton.ScotCup">
-    <title lang="en">Dumbarton v Keith (Sat 24 Oct, 15:00)</title>
+  <programme start="20261024140000 +0100" stop="20261024160000 +0100" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Dumbarton v Keith. Dumbarton Football Stadium, Dumbarton. Kick-off: 15:00.</desc>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Dumbarton.ScotCup">
-    <title lang="en">Dumbarton v Keith (Sat 24 Oct, 15:00)</title>
+  <programme start="20261024160000 +0100" stop="20261024180000 +0100" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Dumbarton v Keith. Dumbarton Football Stadium, Dumbarton. Kick-off: 15:00.</desc>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Dumbarton.ScotCup">
-    <title lang="en">Dumbarton v Keith (Sat 24 Oct, 15:00)</title>
+  <programme start="20261024180000 +0100" stop="20261024200000 +0100" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Dumbarton v Keith. Dumbarton Football Stadium, Dumbarton. Kick-off: 15:00.</desc>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Dumbarton.ScotCup">
-    <title lang="en">Dumbarton v Keith (Sat 24 Oct, 15:00)</title>
+  <programme start="20261024200000 +0100" stop="20261024220000 +0100" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Dumbarton v Keith. Dumbarton Football Stadium, Dumbarton. Kick-off: 15:00.</desc>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Dumbarton.ScotCup">
-    <title lang="en">Dumbarton v Keith (Sat 24 Oct, 15:00)</title>
+  <programme start="20261024220000 +0100" stop="20261025000000 +0100" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Dumbarton v Keith. Dumbarton Football Stadium, Dumbarton. Kick-off: 15:00.</desc>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025000000 +0100" stop="20261025020000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025020000 +0000" stop="20261025040000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025040000 +0000" stop="20261025060000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025060000 +0000" stop="20261025080000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025080000 +0000" stop="20261025100000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025100000 +0000" stop="20261025120000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025120000 +0000" stop="20261025140000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025140000 +0000" stop="20261025160000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025160000 +0000" stop="20261025180000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025180000 +0000" stop="20261025200000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025200000 +0000" stop="20261025220000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261025220000 +0000" stop="20261026000000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026000000 +0000" stop="20261026020000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026020000 +0000" stop="20261026040000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026040000 +0000" stop="20261026060000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026060000 +0000" stop="20261026080000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026080000 +0000" stop="20261026100000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026100000 +0000" stop="20261026120000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026120000 +0000" stop="20261026140000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026180000 +0000" stop="20261026200000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026200000 +0000" stop="20261026220000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261026220000 +0000" stop="20261027000000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027000000 +0000" stop="20261027020000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027020000 +0000" stop="20261027040000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027040000 +0000" stop="20261027060000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027060000 +0000" stop="20261027080000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027080000 +0000" stop="20261027100000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027120000 +0000" stop="20261027140000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027140000 +0000" stop="20261027160000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027160000 +0000" stop="20261027180000 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027180000 +0000" stop="20261027193500 +0000" channel="Clyde.ScotCup">
+    <title lang="en">Penicuik v Clyde (Tue 27 Oct, 19:45)</title>
+    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
+    <desc lang="en">Next Match: Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261027193500 +0000" stop="20261027214500 +0000" channel="Clyde.ScotCup">
+    <title lang="en">🔴 LIVE: Penicuik v Clyde</title>
+    <sub-title lang="en">Scottish Cup</sub-title>
+    <desc lang="en">Penicuik v Clyde. Montgomery Park, Penicuik. Kick-off: 19:45.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Dumbarton.ScotCup">
     <title lang="en">Dumbarton v Keith (Sat 24 Oct, 15:00)</title>
@@ -3982,62 +3930,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Dundee.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Dundee.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Dundee.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Dundee.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Dundee.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Dundee.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Dundee.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Dundee.ScotPrem">
     <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
@@ -4481,62 +4373,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Dundee.Utd.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Dundee.Utd.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Dundee.Utd.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Dundee.Utd.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Dundee.Utd.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Dundee.Utd.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Dundee.Utd.ScotPrem">
-    <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Aberdeen. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Dundee.Utd.ScotPrem">
     <title lang="en">Dundee Utd v Aberdeen (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
@@ -4978,62 +4814,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Dunfermline.Athletic.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Dunfermline.Athletic.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Dunfermline.Athletic.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Dunfermline.Athletic.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Dunfermline.Athletic.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Dunfermline.Athletic.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Dunfermline.Athletic.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Dunfermline.Athletic.ScotChamp">
     <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
@@ -5758,62 +5538,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Edinburgh.City.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Edinburgh.City.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Edinburgh.City.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Edinburgh.City.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Edinburgh.City.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Edinburgh.City.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Edinburgh.City.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Edinburgh.City.ScotCup">
     <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
@@ -5847,62 +5571,6 @@
     <category lang="en">Scottish Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Elgin.City.ScotCup">
-    <title lang="en">Stirling University v Elgin City (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stirling University v Elgin City. Forthbank Stadium, Stirling. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Elgin.City.ScotCup">
-    <title lang="en">Stirling University v Elgin City (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stirling University v Elgin City. Forthbank Stadium, Stirling. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Elgin.City.ScotCup">
-    <title lang="en">Stirling University v Elgin City (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stirling University v Elgin City. Forthbank Stadium, Stirling. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Elgin.City.ScotCup">
-    <title lang="en">Stirling University v Elgin City (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stirling University v Elgin City. Forthbank Stadium, Stirling. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Elgin.City.ScotCup">
-    <title lang="en">Stirling University v Elgin City (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stirling University v Elgin City. Forthbank Stadium, Stirling. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Elgin.City.ScotCup">
-    <title lang="en">Stirling University v Elgin City (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stirling University v Elgin City. Forthbank Stadium, Stirling. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Elgin.City.ScotCup">
-    <title lang="en">Stirling University v Elgin City (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stirling University v Elgin City. Forthbank Stadium, Stirling. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Elgin.City.ScotCup">
     <title lang="en">Stirling University v Elgin City (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
@@ -5935,62 +5603,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Falkirk.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Falkirk.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Falkirk.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Falkirk.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Falkirk.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Falkirk.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Falkirk.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Falkirk.ScotPrem">
     <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
@@ -6803,62 +6415,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Forfar.Athletic.ScotCup">
-    <title lang="en">Bo'ness Utd v Forfar Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Bo'ness Utd v Forfar Athletic. Newtown Park, Bo'ness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Forfar.Athletic.ScotCup">
-    <title lang="en">Bo'ness Utd v Forfar Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Bo'ness Utd v Forfar Athletic. Newtown Park, Bo'ness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Forfar.Athletic.ScotCup">
-    <title lang="en">Bo'ness Utd v Forfar Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Bo'ness Utd v Forfar Athletic. Newtown Park, Bo'ness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Forfar.Athletic.ScotCup">
-    <title lang="en">Bo'ness Utd v Forfar Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Bo'ness Utd v Forfar Athletic. Newtown Park, Bo'ness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Forfar.Athletic.ScotCup">
-    <title lang="en">Bo'ness Utd v Forfar Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Bo'ness Utd v Forfar Athletic. Newtown Park, Bo'ness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Forfar.Athletic.ScotCup">
-    <title lang="en">Bo'ness Utd v Forfar Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Bo'ness Utd v Forfar Athletic. Newtown Park, Bo'ness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Forfar.Athletic.ScotCup">
-    <title lang="en">Bo'ness Utd v Forfar Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Bo'ness Utd v Forfar Athletic. Newtown Park, Bo'ness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Forfar.Athletic.ScotCup">
     <title lang="en">Bo'ness Utd v Forfar Athletic (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
@@ -6891,62 +6447,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Greenock.Morton.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Greenock.Morton.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Greenock.Morton.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Greenock.Morton.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Greenock.Morton.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Greenock.Morton.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Greenock.Morton.ScotChamp">
-    <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Ayr Utd. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Greenock.Morton.ScotChamp">
     <title lang="en">Greenock Morton v Ayr Utd (Sat 24 Oct, 15:00)</title>
@@ -7661,62 +7161,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Hearts.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Hearts.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Hearts.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Hearts.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Hearts.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Hearts.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Hearts.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Hearts.ScotLgeCup">
     <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
@@ -8519,62 +7963,6 @@
     <category lang="en">Scottish League Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Hearts.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Hearts.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Hearts.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Hearts.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Hearts.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Hearts.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Hearts.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Hearts.ScotPrem">
     <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
@@ -9008,62 +8396,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Hibernian.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Hibernian.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Hibernian.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Hibernian.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Hibernian.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Hibernian.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Hibernian.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Hibernian.ScotLgeCup">
     <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
@@ -9866,62 +9198,6 @@
     <category lang="en">Scottish League Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Hibernian.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Hibernian.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Hibernian.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Hibernian.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Hibernian.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Hibernian.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Hibernian.ScotPrem">
-    <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hibernian v Celtic. Easter Road, Edinburgh. Kick-off: 12:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Hibernian.ScotPrem">
     <title lang="en">Hibernian v Celtic (Sun 25 Oct, 12:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
@@ -10355,62 +9631,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Inverness.CT.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Inverness.CT.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Inverness.CT.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Inverness.CT.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Inverness.CT.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Inverness.CT.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Inverness.CT.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Inverness.CT.ScotChamp">
     <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
@@ -11126,62 +10346,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Kelty.Hearts.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Kelty.Hearts.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Kelty.Hearts.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Kelty.Hearts.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Kelty.Hearts.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Kelty.Hearts.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Kelty.Hearts.ScotCup">
-    <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Kelty Hearts. Meadowbank Stadium, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Kelty.Hearts.ScotCup">
     <title lang="en">Edinburgh City v Kelty Hearts (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
@@ -11214,62 +10378,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Kilmarnock.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Kilmarnock.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Kilmarnock.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Kilmarnock.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Kilmarnock.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Kilmarnock.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Kilmarnock.ScotPrem">
-    <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Kilmarnock. Falkirk Stadium, Falkirk. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Kilmarnock.ScotPrem">
     <title lang="en">Falkirk v Kilmarnock (Sat 24 Oct, 15:00)</title>
@@ -11994,62 +11102,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Livingston.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Livingston.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Livingston.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Livingston.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Livingston.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Livingston.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Livingston.ScotChamp">
-    <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Livingston v Arbroath. Tony Macaroni Arena, Livingston. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Livingston.ScotChamp">
     <title lang="en">Livingston v Arbroath (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
@@ -12683,62 +11735,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Motherwell.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Motherwell.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Motherwell.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Motherwell.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Motherwell.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Motherwell.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Motherwell.ScotPrem">
-    <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Motherwell v Hearts. Fir Park, Motherwell. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Motherwell.ScotPrem">
     <title lang="en">Motherwell v Hearts (Sun 25 Oct, 14:00)</title>
@@ -13455,62 +12451,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Partick.Thistle.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Partick.Thistle.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Partick.Thistle.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Partick.Thistle.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Partick.Thistle.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Partick.Thistle.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Partick.Thistle.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Partick.Thistle.ScotChamp">
     <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
@@ -14224,62 +13164,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Queen.s.Park.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Queen.s.Park.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Queen.s.Park.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Queen.s.Park.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Queen.s.Park.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Queen.s.Park.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Queen.s.Park.ScotChamp">
-    <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Dunfermline Athletic. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Queen.s.Park.ScotChamp">
     <title lang="en">Queen's Park v Dunfermline Athletic (Sat 24 Oct, 15:00)</title>
@@ -14995,62 +13879,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Raith.Rovers.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Raith.Rovers.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Raith.Rovers.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Raith.Rovers.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Raith.Rovers.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Raith.Rovers.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Raith.Rovers.ScotChamp">
-    <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Inverness CT. Stark's Park, Fife. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Raith.Rovers.ScotChamp">
     <title lang="en">Raith Rovers v Inverness CT (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
@@ -15765,62 +14593,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Rangers.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Rangers.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Rangers.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Rangers.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Rangers.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Rangers.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Rangers.ScotLgeCup">
-    <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Rangers v Aberdeen. Hampden Park, Glasgow. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Rangers.ScotLgeCup">
     <title lang="en">Rangers v Aberdeen (Sat 31 Oct, 17:30)</title>
     <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
@@ -16534,62 +15306,6 @@
     <category lang="en">Scottish League Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Rangers.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Rangers.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Rangers.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Rangers.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Rangers.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Rangers.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Rangers.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Rangers.ScotPrem">
     <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
@@ -17032,62 +15748,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Spartans.FC.ScotCup">
-    <title lang="en">Lochee Utd v Spartans FC (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Lochee Utd v Spartans FC. Thomson Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Spartans.FC.ScotCup">
-    <title lang="en">Lochee Utd v Spartans FC (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Lochee Utd v Spartans FC. Thomson Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Spartans.FC.ScotCup">
-    <title lang="en">Lochee Utd v Spartans FC (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Lochee Utd v Spartans FC. Thomson Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Spartans.FC.ScotCup">
-    <title lang="en">Lochee Utd v Spartans FC (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Lochee Utd v Spartans FC. Thomson Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Spartans.FC.ScotCup">
-    <title lang="en">Lochee Utd v Spartans FC (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Lochee Utd v Spartans FC. Thomson Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Spartans.FC.ScotCup">
-    <title lang="en">Lochee Utd v Spartans FC (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Lochee Utd v Spartans FC. Thomson Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Spartans.FC.ScotCup">
-    <title lang="en">Lochee Utd v Spartans FC (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Lochee Utd v Spartans FC. Thomson Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Spartans.FC.ScotCup">
     <title lang="en">Lochee Utd v Spartans FC (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
@@ -17120,62 +15780,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="St.Johnstone.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="St.Johnstone.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="St.Johnstone.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="St.Johnstone.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="St.Johnstone.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="St.Johnstone.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="St.Johnstone.ScotPrem">
-    <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Rangers v St Johnstone. Ibrox Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="St.Johnstone.ScotPrem">
     <title lang="en">Rangers v St Johnstone (Sat 24 Oct, 15:00)</title>
@@ -17900,62 +16504,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="St.Mirren.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="St.Mirren.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="St.Mirren.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="St.Mirren.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="St.Mirren.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="St.Mirren.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="St.Mirren.ScotPrem">
-    <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Dundee. The SMISA Stadium, Paisley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="St.Mirren.ScotPrem">
     <title lang="en">St Mirren v Dundee (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
@@ -18679,62 +17227,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Stenhousemuir.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Stenhousemuir.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Stenhousemuir.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Stenhousemuir.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Stenhousemuir.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Stenhousemuir.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Stenhousemuir.ScotChamp">
-    <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Partick Thistle v Stenhousemuir. Firhill Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Stenhousemuir.ScotChamp">
     <title lang="en">Partick Thistle v Stenhousemuir (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
@@ -19378,62 +17870,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Stirling.Albion.ScotCup">
-    <title lang="en">Renfrew v Stirling Albion (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Renfrew v Stirling Albion. New Western Park, Renfrew. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Stirling.Albion.ScotCup">
-    <title lang="en">Renfrew v Stirling Albion (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Renfrew v Stirling Albion. New Western Park, Renfrew. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Stirling.Albion.ScotCup">
-    <title lang="en">Renfrew v Stirling Albion (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Renfrew v Stirling Albion. New Western Park, Renfrew. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Stirling.Albion.ScotCup">
-    <title lang="en">Renfrew v Stirling Albion (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Renfrew v Stirling Albion. New Western Park, Renfrew. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Stirling.Albion.ScotCup">
-    <title lang="en">Renfrew v Stirling Albion (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Renfrew v Stirling Albion. New Western Park, Renfrew. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Stirling.Albion.ScotCup">
-    <title lang="en">Renfrew v Stirling Albion (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Renfrew v Stirling Albion. New Western Park, Renfrew. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Stirling.Albion.ScotCup">
-    <title lang="en">Renfrew v Stirling Albion (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Renfrew v Stirling Albion. New Western Park, Renfrew. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Stirling.Albion.ScotCup">
     <title lang="en">Renfrew v Stirling Albion (Sat 24 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
@@ -19466,62 +17902,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261023210000 +0100" stop="20261023220000 +0100" channel="Stranraer.ScotCup">
-    <title lang="en">Stranraer v Tayport (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stranraer v Tayport. Stair Park, Stranraer. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261023220000 +0100" stop="20261024000000 +0100" channel="Stranraer.ScotCup">
-    <title lang="en">Stranraer v Tayport (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stranraer v Tayport. Stair Park, Stranraer. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024000000 +0100" stop="20261024020000 +0100" channel="Stranraer.ScotCup">
-    <title lang="en">Stranraer v Tayport (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stranraer v Tayport. Stair Park, Stranraer. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024020000 +0100" stop="20261024040000 +0100" channel="Stranraer.ScotCup">
-    <title lang="en">Stranraer v Tayport (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stranraer v Tayport. Stair Park, Stranraer. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024040000 +0100" stop="20261024060000 +0100" channel="Stranraer.ScotCup">
-    <title lang="en">Stranraer v Tayport (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stranraer v Tayport. Stair Park, Stranraer. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024060000 +0100" stop="20261024080000 +0100" channel="Stranraer.ScotCup">
-    <title lang="en">Stranraer v Tayport (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stranraer v Tayport. Stair Park, Stranraer. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261024080000 +0100" stop="20261024100000 +0100" channel="Stranraer.ScotCup">
-    <title lang="en">Stranraer v Tayport (Sat 24 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Next Match: Stranraer v Tayport. Stair Park, Stranraer. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261024100000 +0100" stop="20261024120000 +0100" channel="Stranraer.ScotCup">
     <title lang="en">Stranraer v Tayport (Sat 24 Oct, 15:00)</title>
