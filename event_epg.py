@@ -219,6 +219,20 @@ def slug(text):
     return re.sub(r"[^A-Za-z0-9]+", "", text)
 
 
+# Groups whose slot numbers repeat across regions ("CA: SOCCER PPV 198" and "US: SOCCER PPV 198"):
+# their IDs also start with the region code, so the two can't be mixed up when linking
+# (CASOCCERPPV198.ca, USSOCCERPPV198.us).
+REGION_PREFIX_GROUPS = {"SOCCERPPV"}
+
+
+def pipe_slot_id(cc, label):
+    """ID for a "CC: SLOT LABEL" stream ("GB: DAZN PPV 5" -> DAZNPPV5.gb)."""
+    base = slug(label)
+    if re.sub(r"\d+$", "", base).upper() in REGION_PREFIX_GROUPS:
+        base = cc.strip().upper() + base
+    return f"{base}.{cc.strip().lower()}"
+
+
 _FIXTURES = None
 
 
@@ -507,7 +521,7 @@ def parse_tod(name):
     if not sm:
         return None
     cc, label = sm["cc"], sm["label"].strip()
-    slot_id, slot_name = f"{slug(label)}.{cc.lower()}", f"{cc}: {label}"
+    slot_id, slot_name = pipe_slot_id(cc, label), f"{cc}: {label}"
     status = parts[0].lower() if parts[0].lower() in STATUS_WORDS else ""
     date = time_ = zone = None
     text, langs = [], []
@@ -629,7 +643,7 @@ def empty_slot(name):
         sm = PIPE_SLOT.match(parts[-1])
         if sm and all(_placeholder(p) for p in parts[:-1]):
             label = sm["label"].strip()
-            return _empty_slot(name, f"{slug(label)}.{sm['cc'].lower()}", f"{sm['cc']}: {label}")
+            return _empty_slot(name, pipe_slot_id(sm['cc'], label), f"{sm['cc']}: {label}")
     return None
 
 
@@ -796,7 +810,7 @@ def _parse_name(name):
                 text = [t for t in text if not JUNK_RE.fullmatch(t)]
                 title = text[0] if text else slot_label.strip()
                 extra = ". ".join(t for t in text[1:] if t)
-                return {"name": name, "slot_id": f"{slug(slot_label)}.{cc.lower()}",
+                return {"name": name, "slot_id": pipe_slot_id(cc, slot_label),
                         "slot_name": f"{cc}: {slot_label.strip()}",
                         "title": title, "extra": extra, "comp": competition(title, extra),
                         "start": local.astimezone(timezone.utc)}
@@ -813,7 +827,7 @@ def _parse_name(name):
             title = text[0] if text else slot_label.strip()
             extra = ". ".join(t for t in text[1:] if t)
             comp = text[1] if len(text) > 1 and not re.search(r"\b(8K|4K|HD|UHD|EXCLUSIVE)\b", text[1]) else ""
-            return {"name": name, "slot_id": f"{slug(slot_label)}.{cc.lower()}",
+            return {"name": name, "slot_id": pipe_slot_id(cc, slot_label),
                     "slot_name": f"{cc}: {slot_label.strip()}",
                     "title": title, "extra": extra, "comp": comp or competition(title, extra),
                     "start": local.astimezone(timezone.utc)}
