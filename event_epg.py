@@ -258,7 +258,9 @@ def parse_name(name):
         if found:                                     # date from the football guide
             local = found
         elif found is False:                          # match no longer listed: it's over
-            local = now.replace(hour=h, minute=mi, second=0, microsecond=0) - timedelta(days=1)
+            # dated 2 days back so it always counts as finished (1 day back made a late
+            # kick-off look like last night's game just after midnight, showing a false LIVE)
+            local = now.replace(hour=h, minute=mi, second=0, microsecond=0) - timedelta(days=2)
         else:                                         # no football guide: assume today/tomorrow
             local = now.replace(hour=h, minute=mi, second=0, microsecond=0)
             if local + timedelta(hours=EVENT_HOURS + PAST_EVENT_HOURS) < now:
