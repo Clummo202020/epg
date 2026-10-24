@@ -53,7 +53,9 @@ OUTPUT_NAME = "events_epg.xml"
 LONDON = ZoneInfo("Europe/London")
 EVENT_HOURS = 3            # how long each event is listed for
 BLOCK_HOURS = 2            # "Coming up" block length before the event
-PAST_EVENT_HOURS = 2       # an event that has ended still shows for this long
+PAST_EVENT_HOURS = 2       # an event that has ended keeps its slot for this long (its LIVE
+                           # block is followed straight away by ENDED_FILLER_HOURS of
+                           # "This event has now finished" blocks, so there's no gap)
 MAX_DAYS_AHEAD = 2         # events further ahead than this get filler until they come into range
 FILLER_TITLE = "Stream is live at event time only."
 FILLER_DESC = "The next event on this stream will be listed nearer the time."
@@ -850,6 +852,15 @@ def build(events, now):
             add_programme(tv, sid, start, end, f"🔴 LIVE: {ev['title']}",
                           ev.get("comp") or None, desc, live=True)  # secondary title: the competition
             count += 1
+            # Straight after LIVE: "finished" blocks, so there's no gap with nothing listed.
+            # Kept to ENDED_FILLER_HOURS, as PlaylistLabs only adds programmes after the last
+            # one it holds - the slot's next event must be able to follow on.
+            t = end
+            while t < end + timedelta(hours=ENDED_FILLER_HOURS):
+                b = min(t + timedelta(hours=BLOCK_HOURS), end + timedelta(hours=ENDED_FILLER_HOURS))
+                add_programme(tv, sid, t, b, OFFLINE_TITLE, None, FINISHED_DESC)
+                count += 1
+                t = b
     t0 = now.replace(minute=0, second=0, microsecond=0)
     t0 -= timedelta(hours=uk(t0).hour % BLOCK_HOURS)
     for sid in sorted(untimed):  # event named but no time given: its name, no LIVE block
