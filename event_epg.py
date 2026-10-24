@@ -135,6 +135,10 @@ FOOTBALL_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/fo
 # name starts with the same word, so a finished UEFA tie can't latch onto a later league match
 # of one of its teams (e.g. "Lillestrom vs Real Sociedad" -> Athletic Club v Real Sociedad).
 SAME_COMP_LABELS = {"uefa"}
+HORIZON_HOURS = 4              # the guide only lists this far ahead (see add_programme); the
+                               # workflow runs hourly, so PlaylistLabs must reload this source
+                               # more often than every ~3 h or the listings run dry
+PIECE_HOURS = 1                # programmes are written in pieces of at most this length
 ENDED_FILLER_HOURS = 2         # a stream whose event is over shows filler for this long
 # Name sections that are labels, not event information ("8K EXCLUSIVE", "4K", "HD" ...)
 JUNK_RE = re.compile(r"(?i)\s*((8K|4K|UHD|FHD|HD|SD)\s*)?(EXCLUSIVE|ONLY)?\s*|\s*(8K|4K|UHD|FHD|HD|SD)\s*")
@@ -573,6 +577,13 @@ def parse_fight_or_darts(name):
 
 def parse_name(name):
     """{slot_id, slot_name, title, extra, start (UTC)} for an event name, else None."""
+    ev = _parse_name(name)
+    if ev and ev.get("title"):       # "• Chelsea v Tottenham" (Stan's second feed) -> no bullet
+        ev["title"] = re.sub(r"^[\s•·*\-–]+", "", ev["title"]).strip()
+    return ev
+
+
+def _parse_name(name):
     name = re.sub(r"\s+", " ", name or "").strip()
 
     fd = parse_fight_or_darts(name)
@@ -779,20 +790,35 @@ def xmltv_time(dt):
     return uk(dt).strftime("%Y%m%d%H%M%S %z")
 
 
+_HORIZON = None    # set by build(): nothing is written that starts after this
+
+
 def add_programme(tv, cid, start, stop, title, sub, desc, live=False):
-    p = ET.SubElement(tv, "programme", {"start": xmltv_time(start), "stop": xmltv_time(stop),
-                                        "channel": cid})
-    ET.SubElement(p, "title", {"lang": "en"}).text = title
-    if sub:
-        ET.SubElement(p, "sub-title", {"lang": "en"}).text = sub
-    if desc:
-        ET.SubElement(p, "desc", {"lang": "en"}).text = desc
-    ET.SubElement(p, "category", {"lang": "en"}).text = "Sports"
-    if live:
-        ET.SubElement(p, "category", {"lang": "en"}).text = "Live"
+    """Writes the programme in pieces of at most PIECE_HOURS, and only the pieces that start
+    before the horizon (now + HORIZON_HOURS). PlaylistLabs never replaces a programme it has
+    loaded, so when the provider moves a slot to a new event, the old listing can only linger
+    until the end of what it already holds - at most HORIZON_HOURS."""
+    t = start
+    while t < stop:
+        if _HORIZON is not None and t >= _HORIZON:
+            break
+        b = min(t + timedelta(hours=PIECE_HOURS), stop)
+        p = ET.SubElement(tv, "programme", {"start": xmltv_time(t), "stop": xmltv_time(b),
+                                            "channel": cid})
+        ET.SubElement(p, "title", {"lang": "en"}).text = title
+        if sub:
+            ET.SubElement(p, "sub-title", {"lang": "en"}).text = sub
+        if desc:
+            ET.SubElement(p, "desc", {"lang": "en"}).text = desc
+        ET.SubElement(p, "category", {"lang": "en"}).text = "Sports"
+        if live:
+            ET.SubElement(p, "category", {"lang": "en"}).text = "Live"
+        t = b
 
 
 def build(events, now):
+    global _HORIZON
+    _HORIZON = now + timedelta(hours=HORIZON_HOURS)
     tv = ET.Element("tv", {"generator-info-name": "event_epg.py"})
     by_slot, ended = {}, {}
     untimed = {}
@@ -883,6 +909,7 @@ def build(events, now):
             add_programme(tv, sid, t, b, OFFLINE_TITLE, None, desc)
             count += 1
             t = b
+    count = len(tv.findall("programme"))
     return tv, len(by_slot) + len(ended) + len(untimed), count
 
 
