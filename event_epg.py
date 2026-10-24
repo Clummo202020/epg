@@ -8,6 +8,10 @@ Event streams are named with their start time, e.g.
     End | College Swimming League - Match 3 | College Swimming League | 2026-10-03 | 00:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 5
     (Apple) (MLS) 001 | Montréal vs. Nashville (2026-10-24 13:25:00)        (US Eastern time)
     NFL  | 13 - SNF 8:20pm Chiefs at Seahawks        (US Eastern time, date from ESPN's NFL schedule)
+    NHL | 04 - 7pm Rangers at Senators               (US Eastern time, date from ESPN's NHL schedule)
+    Charlotte Hornets vs Miami Heat  @ Oct 24 6:00 PM :NBA  01      (US Eastern time)
+    MLB 01 : Rays x Guardians start:2026-10-18 22:08:00 stop:2026-10-19 05:21:20
+    MLB 13 | Baltimore vs Tampa Bay @ Aug 14 7:00 PM
 
 Each stream "slot" (US (Peacock 003), AU (STAN 08), GB: DAZN PPV 5 ...) becomes a guide
 channel - Peacock003.us, STAN08.au, DAZNPPV5.gb - showing:
@@ -140,12 +144,15 @@ TIME_RE = re.compile(r"^(\d{1,2}:\d{2})(?::\d{2})?\s*(?:\((\w+)\))?$")
 # shows them in UK time like every other stream.
 MLS_TZ = "America/New_York"
 # "(Apple) (MLS) 001 | Montréal vs. Nashville (2026-10-24 13:25:00)"  -> AppleMLS001.us
-# NFL slots: "NFL  | 02 - 9:30am Steelers at Saints", "NFL  | 13 - SNF 8:20pm Chiefs at Seahawks".
-# The names carry no date and their times are US Eastern; the date is taken from ESPN's NFL
+# NFL and NHL slots: "NFL  | 02 - 9:30am Steelers at Saints", "NFL  | 13 - SNF 8:20pm Chiefs at
+# Seahawks", "NHL | 04 - 7pm Rangers at Senators", "NHL LIVE| 17 - ...".
+# The names carry no date and their times are US Eastern; the date is taken from ESPN's
 # schedule (the game with the same two teams nearest to now). A game no longer on the schedule
 # is over. Each slot keeps the ID of its empty version: "NFL | 02 -" and a game on slot 02 are
-# both NFL2.uk.
-NFL_SLOT = re.compile(r"^\s*NFL\s*\|\s*(?P<num>\d+)\s*-\s*(?P<rest>\S.*?)\s*$", re.I)
+# both NFL2.uk; "NHL LIVE| 17 -" is NHLLIVE17.uk.
+NFL_SLOT = re.compile(r"^\s*(?P<label>NFL|NHL(?:\s*LIVE)?)\s*\|\s*(?P<num>\d+)\s*-\s*(?P<rest>\S.*?)\s*$", re.I)
+# label word -> (ESPN schedule, LIVE block hours)
+US_LEAGUES = {"NFL": ("football/nfl", 3.5), "NHL": ("hockey/nhl", 3)}
 NFL_TIME = re.compile(r"\b(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\b\.?", re.I)
 NFL_TZ = "America/New_York"
 NFL_EVENT_HOURS = 3.5          # NFL games usually run 3 h 10 - 3 h 30
@@ -154,7 +161,35 @@ NFL_SHOWS = {"SNF": "Sunday Night Football", "TNF": "Thursday Night Football",
 NFL_SHOW_DAY = {"SNF": 6, "TNF": 3, "MNF": 0}     # weekday (Mon=0) - used only without ESPN
 # One request per day (?dates=YYYYMMDD), the same way football_epg.py reads ESPN - a date
 # range in one request is rejected (HTTP 400).
-NFL_SCHEDULE_URL = "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates={}"
+ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/{}/scoreboard?dates={}"
+NFL_ESPN = "football/nfl"
+# NBA streams: "Charlotte Hornets vs Miami Heat  @ Oct 24 6:00 PM :NBA  01" (US Eastern) -> NBA1.uk.
+# Only names ending ":NBA <number>" are read (the same layout with ":MLS 01" stays ignored).
+NBA_AT = re.compile(
+    r"^\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
+    r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*:\s*NBA\s*(?P<num>\d+)\s*$", re.I)
+NBA_TZ = "America/New_York"
+NBA_ESPN = "basketball/nba"
+NBA_EVENT_HOURS = 3
+# MLB streams, two styles:
+#   "MLB 01 : Rays x Guardians start:2026-10-18 22:08:00 stop:2026-10-19 05:21:20"  (MLB_START_TZ)
+#   "MLB 13 | Baltimore vs Tampa Bay @ Aug 14 7:00 PM"                              (US Eastern)
+# Both give slot IDs MLB1.uk, MLB13.uk ... When ESPN's MLB schedule has the same two teams
+# within MLB_MATCH_HOURS of the name's time, ESPN's first-pitch time is used instead (this also
+# corrects the time if MLB_START_TZ is wrong - the log prints a check line for each).
+MLB_START = re.compile(
+    r"^\s*MLB\s*(?P<num>\d+)\s*:\s*(?P<title>.+?)\s+start:\s*(?P<date>\d{4}-\d{2}-\d{2})[ T]"
+    r"(?P<time>\d{1,2}:\d{2})(?::\d{2})?(?:\s+stop:\s*\S+(?:\s+\d{1,2}:\d{2}(?::\d{2})?)?)?\s*$", re.I)
+MLB_AT = re.compile(
+    r"^\s*MLB\s*(?P<num>\d+)\s*\|\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})"
+    r"(?:st|nd|rd|th)?,?\s+(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*$", re.I)
+MLB_EMPTY = re.compile(r"^\s*MLB\s*(?P<num>\d+)\s*[:|\-]?\s*$", re.I)
+MLB_START_TZ = "UTC"           # "start:" times look like UTC (01:00 = 9 pm ET); check the log
+MLB_AT_TZ = "America/New_York"
+MLB_ESPN = "baseball/mlb"
+MLB_EVENT_HOURS = 3.5          # allows for extra innings
+MLB_EARLY_MINUTES = 10         # LIVE this long before first pitch
+MLB_MATCH_HOURS = 18
 MLS_APPLE = re.compile(
     r"^\s*\((?P<prov>[^)]+)\)\s*\((?P<label>[^)]+)\)\s*(?P<num>\d+)\s*\|\s*(?P<title>.*?)\s*"
     r"\((?P<date>\d{4}-\d{2}-\d{2})[ T](?P<time>\d{1,2}:\d{2})(?::\d{2})?\)\s*$")
@@ -220,20 +255,20 @@ def load_fixtures():
     return _FIXTURES or None
 
 
-_NFL_GAMES = None
+_ESPN_GAMES = {}         # sport path -> games, or "failed"
 
 
-def load_nfl_games():
-    """[(home names, away names, kick-off UTC)] from ESPN's NFL schedule (4 days back to
-    10 days ahead), or None if it can't be read."""
-    global _NFL_GAMES
-    if _NFL_GAMES is not None:
-        return _NFL_GAMES if _NFL_GAMES != "failed" else None
-    today = datetime.now(ZoneInfo(NFL_TZ)).date()
+def load_espn_games(sport, label):
+    """[(home names, away names, start UTC)] from ESPN's schedule for `sport` ("football/nfl",
+    "baseball/mlb"), 4 days back to 10 days ahead, or None if it can't be read."""
+    if sport in _ESPN_GAMES:
+        got = _ESPN_GAMES[sport]
+        return got if got != "failed" else None
+    today = datetime.now(ZoneInfo("America/New_York")).date()
     days = [today + timedelta(days=d) for d in range(-4, 11)]
 
     def grab(day):
-        url = NFL_SCHEDULE_URL.format(day.strftime("%Y%m%d"))
+        url = ESPN_SCOREBOARD.format(sport, day.strftime("%Y%m%d"))
         for attempt in range(3):
             try:
                 req = urllib.request.Request(url, headers=HEADERS)
@@ -242,14 +277,14 @@ def load_nfl_games():
             except Exception as e:
                 err = e
                 time.sleep(1.5 * (attempt + 1))
-        print(f"  WARNING: NFL schedule for {day} not available ({err})")
+        print(f"  WARNING: {label} schedule for {day} not available ({err})")
         return None
 
     with ThreadPoolExecutor(max_workers=8) as pool:
         results = list(pool.map(grab, days))
     if all(r is None for r in results):
-        print("  WARNING: NFL schedule not available - NFL games dated by weekday instead")
-        _NFL_GAMES = "failed"
+        print(f"  WARNING: {label} schedule not available - times taken from the stream names")
+        _ESPN_GAMES[sport] = "failed"
         return None
     games, seen = [], set()
     for ev in (e for day in results if day for e in day):
@@ -268,27 +303,27 @@ def load_nfl_games():
             continue
         if len(sides) == 2:
             games.append((sides[0], sides[1], ko))
-    print(f"  NFL schedule: {len(games)} games")
-    _NFL_GAMES = games
+    print(f"  {label} schedule: {len(games)} games")
+    _ESPN_GAMES[sport] = games
     return games
 
 
-def _nfl_team_match(name, aliases):
+def _team_match(name, aliases):
     n = _norm(name)
     return bool(n) and any(n == a or n in a.split() or (len(n) > 3 and n in a) for a in aliases)
 
 
-def nfl_kickoff(title, h, mi, show):
-    """Kick-off (UTC) of the NFL game in `title` ("Steelers at Saints") at h:mi US Eastern.
+def slot_kickoff(league, title, h, mi, show):
+    """Start (UTC) of the NFL/NHL game in `title` ("Steelers at Saints") at h:mi US Eastern.
     The date comes from ESPN's schedule; False = not on the schedule (game over)."""
     tz = ZoneInfo(NFL_TZ)
     now = datetime.now(timezone.utc)
     sides = re.split(r"\s+(?:at|vs?\.?|@)\s+", title, maxsplit=1, flags=re.I)
-    games = load_nfl_games()
+    games = load_espn_games(US_LEAGUES[league][0], league)
     if games is not None and len(sides) == 2:
         hits = [ko for a, b, ko in games
-                if (_nfl_team_match(sides[0], a) and _nfl_team_match(sides[1], b)) or
-                   (_nfl_team_match(sides[0], b) and _nfl_team_match(sides[1], a))]
+                if (_team_match(sides[0], a) and _team_match(sides[1], b)) or
+                   (_team_match(sides[0], b) and _team_match(sides[1], a))]
         if not hits:
             return False
         ko = min(hits, key=lambda k: abs(k - now))
@@ -298,6 +333,9 @@ def nfl_kickoff(title, h, mi, show):
         return local.replace(hour=h, minute=mi).astimezone(timezone.utc)
     if games is not None or h is None:
         return None
+    if league != "NFL":          # no schedule: games are listed on the day, so today (US Eastern)
+        d = now.astimezone(tz).date()
+        return datetime(d.year, d.month, d.day, h, mi, tzinfo=tz).astimezone(timezone.utc)
     # No schedule: the next game day (Sunday, or the day the SNF/TNF/MNF label gives)
     day = NFL_SHOW_DAY.get(show, 6)
     d = now.astimezone(tz).date() - timedelta(days=1)
@@ -308,6 +346,46 @@ def nfl_kickoff(title, h, mi, show):
             return cand.astimezone(timezone.utc)
         d += timedelta(days=1)
     return None
+
+
+_MLB_CHECKS = 0
+
+
+def month_day_time(mon, day, h, mi, ap, tz):
+    """"Oct 24", 6:00 PM in `tz` -> datetime in the year nearest today, or None."""
+    h = int(h) % 12 + (12 if ap.lower() == "p" else 0)
+    now_l = datetime.now(tz)
+    best = None
+    for year in (now_l.year, now_l.year - 1, now_l.year + 1):
+        try:
+            cand = datetime.strptime(f"{int(day)} {mon[:3]} {year}", "%d %b %Y") \
+                .replace(hour=h, minute=int(mi or 0), tzinfo=tz)
+        except ValueError:
+            continue
+        if best is None or abs(cand - now_l) < abs(best - now_l):
+            best = cand
+    return best
+
+
+def espn_start(sport, label, title, approx):
+    """ESPN's start (UTC) for `title` ("Rays vs Guardians") near `approx`, else `approx`."""
+    global _MLB_CHECKS
+    sides = re.split(r"\s+(?:x|vs?\.?|at|@)\s+", title, maxsplit=1, flags=re.I)
+    games = load_espn_games(sport, label) if len(sides) == 2 else None
+    if not games:
+        return approx
+    hits = [ko for a, b, ko in games
+            if ((_team_match(sides[0], a) and _team_match(sides[1], b)) or
+                (_team_match(sides[0], b) and _team_match(sides[1], a)))
+            and abs(ko - approx) <= timedelta(hours=MLB_MATCH_HOURS)]
+    if not hits:
+        return approx
+    ko = min(hits, key=lambda k: abs(k - approx))
+    if _MLB_CHECKS < 5:
+        _MLB_CHECKS += 1
+        print(f"  {label} time check: {title}: name {approx:%d %b %H:%M} UTC, "
+              f"ESPN start {ko:%d %b %H:%M} UTC")
+    return ko
 
 
 def _norm(name):
@@ -356,6 +434,39 @@ def parse_name(name):
     """{slot_id, slot_name, title, extra, start (UTC)} for an event name, else None."""
     name = re.sub(r"\s+", " ", name or "").strip()
 
+    mlb = MLB_START.match(name) or MLB_AT.match(name)
+    if mlb:                                          # MLB 01 : A x B start:... / MLB 13 | A vs B @ Aug 14 7:00 PM
+        title = re.sub(r"\s+x\s+", " vs ", mlb["title"].strip(), flags=re.I)
+        if "date" in mlb.groupdict():
+            approx = datetime.strptime(f"{mlb['date']} {mlb['time']}", "%Y-%m-%d %H:%M") \
+                .replace(tzinfo=ZoneInfo(MLB_START_TZ))
+        else:
+            approx = month_day_time(mlb["mon"], mlb["day"], mlb["h"], mlb["m"], mlb["ap"],
+                                    ZoneInfo(MLB_AT_TZ))
+            if approx is None:
+                return None
+        start = espn_start(MLB_ESPN, "MLB", title, approx.astimezone(timezone.utc))
+        num = int(mlb["num"])
+        return {"name": name, "slot_id": f"MLB{num}.uk", "slot_name": f"MLB {num}",
+                "title": title, "extra": "", "comp": "MLB", "hours": MLB_EVENT_HOURS,
+                "early": MLB_EARLY_MINUTES, "start": start}
+    b = NBA_AT.match(name)                           # A vs B @ Oct 24 6:00 PM :NBA 01 (US Eastern)
+    if b:
+        title = re.sub(r"\s+", " ", b["title"]).strip()
+        approx = month_day_time(b["mon"], b["day"], b["h"], b["m"], b["ap"], ZoneInfo(NBA_TZ))
+        if approx is None:
+            return None
+        start = espn_start(NBA_ESPN, "NBA", title, approx.astimezone(timezone.utc))
+        num = int(b["num"])
+        return {"name": name, "slot_id": f"NBA{num}.uk", "slot_name": f"NBA {num}",
+                "title": title, "extra": "", "comp": "NBA", "hours": NBA_EVENT_HOURS,
+                "start": start}
+    me = MLB_EMPTY.match(name)                       # "MLB 05" with nothing on it
+    if me:
+        num = int(me["num"])
+        return {"name": name, "slot_id": f"MLB{num}.uk", "slot_name": f"MLB {num}", "title": "",
+                "extra": "", "comp": "", "start": datetime.now(timezone.utc) - timedelta(days=1)}
+
     e = EMPTY_SLOT.match(name)                       # "UEFA | 08 -": no match on this slot yet
     if e:
         label = e["label"].strip()
@@ -364,7 +475,7 @@ def parse_name(name):
                 "start": datetime.now(timezone.utc) - timedelta(days=1)}   # -> filler only
 
     n = NFL_SLOT.match(name)                         # NFL | 02 - 9:30am Steelers at Saints (ET)
-    if n:
+    if n:                                            # (and NHL | 04 - 7pm Rangers at Senators)
         rest = n["rest"]
         show = next((w for w in NFL_SHOWS if re.search(rf"\b{w}\b", rest)), "")
         t = NFL_TIME.search(rest)
@@ -377,15 +488,19 @@ def parse_name(name):
         if show:
             rest = re.sub(rf"\b{show}\b", " ", rest)
         title = re.sub(r"\s+", " ", rest).strip(" -|:")
-        start = nfl_kickoff(title, h, mi, show)
+        league = "NHL" if n["label"].upper().startswith("NHL") else "NFL"
+        if league != "NFL":
+            show = ""
+        start = slot_kickoff(league, title, h, mi, show)
         if start is None:
             return None
         if start is False:                            # no longer on the schedule: it's over
             start = datetime.now(timezone.utc) - timedelta(days=2)
         num = int(n["num"])
-        return {"name": name, "slot_id": f"NFL{num}.uk", "slot_name": f"NFL | {num}",
-                "title": title, "extra": NFL_SHOWS.get(show, ""), "comp": "NFL",
-                "hours": NFL_EVENT_HOURS, "start": start}
+        label = re.sub(r"\s+", " ", n["label"].upper())
+        return {"name": name, "slot_id": f"{slug(label)}{num}.uk", "slot_name": f"{label} | {num}",
+                "title": title, "extra": NFL_SHOWS.get(show, ""), "comp": league,
+                "hours": US_LEAGUES[league][1], "start": start}
 
     k = KICKOFF_ONLY.match(name)                     # UEFA | 28 - A vs B 20:00 pm (UK, today)
     if k:
