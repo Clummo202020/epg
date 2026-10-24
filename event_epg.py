@@ -196,26 +196,17 @@ MLB_ESPN = "baseball/mlb"
 MLB_EVENT_HOURS = 3.5          # allows for extra innings
 MLB_EARLY_MINUTES = 10         # LIVE this long before first pitch
 MLB_MATCH_HOURS = 18
-# Boxing and PDC darts streams:
-#   "Boxing 1 |prelims  Dubois  v Wardley 2"          (no time)          -> Boxing1.uk
-#   "Boxing  05  :  FURY vs HALL  6PM"                 (UK time, no date) -> Boxing5.uk
-#   "Boxing 6: Fury v Makhmudov 19:00"                 (UK time, no date) -> Boxing6.uk
+# PDC darts streams (the Boxing group was removed from the playlist and from this script):
 #   "PDC Board 02 : Title | Day 3 - Evening Session Watch live ... start:2026-10-18 18:00:00
 #    stop:2026-10-18 23:00:00"                         (UK time)          -> PDCBoard2.uk
 #   "PDC event 01 : Title | Session Watch live ..."    (no time)          -> PDCEvent1.uk
-# A time with no date is dated by the day the stream name was first seen (kept in SEEN_FILE),
-# so the same name doesn't come round again the next day. An event with no time at all gets
-# UNTIMED_HOURS of blocks with its name (no LIVE block, as the time isn't known).
-BOXING = re.compile(r"^\s*Boxing\s*(?P<num>\d+)\s*[:|\-]?\s*(?P<rest>.*?)\s*$", re.I)
+# An event with no time gets UNTIMED_HOURS of blocks with its name (no LIVE block, as the time
+# isn't known). SEEN_FILE records when each name was first seen (used for TOD "Live" names).
 PDC = re.compile(r"^\s*PDC\s*(?P<kind>[A-Za-z]+)?\s*(?P<num>\d+)\s*[:|\-]?\s*(?P<rest>.*?)\s*$", re.I)
 START_STOP = re.compile(r"\s*start:\s*(?P<d1>\d{4}-\d{2}-\d{2})[ T](?P<t1>\d{1,2}:\d{2})(?::\d{2})?"
                         r"(?:\s*stop:\s*(?P<d2>\d{4}-\d{2}-\d{2})[ T](?P<t2>\d{1,2}:\d{2})(?::\d{2})?)?\s*$", re.I)
-TIME_12 = re.compile(r"\b(?P<h>\d{1,2})(?:[:.](?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\b\.?", re.I)
-TIME_24 = re.compile(r"\b(?P<h>[01]?\d|2[0-3]):(?P<m>[0-5]\d)\b")
 INFO_START = re.compile(r"\s(?=(?:Watch|Follow|Catch|Join|Don't|Live coverage|Coverage|See)\b)")
-FIGHT_TZ = "Europe/London"
 DARTS_TZ = "Europe/London"
-BOXING_EVENT_HOURS = 4
 DARTS_EVENT_HOURS = 5
 UNTIMED_HOURS = 12
 SEEN_FILE = "events_seen.json"
@@ -459,6 +450,22 @@ def fixture_date(title, h, mi, now, label=""):
     return min(same_time, key=lambda ko: abs(ko - now))
 
 
+# TOD (beIN, Middle East) streams:
+#   "Next | Austin Round - Reverse Grid Race || Arabic | F1 Academy | 24-10-2026 | 22:35 (GMT) |
+#    8K EXCLUSIVE | MENA: AR PPV 27"                                  -> ARPPV27.mena
+#   "Live | Zambia vs France || Arabic | FIFA U-17 Women's WC | 8K EXCLUSIVE | MENA: AR PPV 20"
+#   "End | Arsenal vs Everton || English | ... | 24-10-2026 | 13:40 (GMT) | ... | MENA: AR PPV 9"
+# Status first: "End" = over; "Live" with no time = live since the name was first seen
+# (SEEN_FILE). The language goes in the description, not the title.
+TOD_SLOT = re.compile(r"^(?P<cc>[A-Z]{3,5}):\s*(?P<label>\S.*)$")
+TOD_DATE = re.compile(r"^(?:(?P<d>\d{1,2})-(?P<m>\d{1,2})-(?P<y>\d{4})|(?P<y2>\d{4})-(?P<m2>\d{2})-(?P<d2>\d{2}))$")
+# Placeholder text on an empty slot ("NO EVENT STREAMING NOW -") - shown as "Channel is offline"
+NO_EVENT = re.compile(r"(?i)^\W*(no\s+(live\s+)?(event|events|stream|streams|match|game)s?\b|offline\b|"
+                      r"coming\s+soon\W*$|tba\W*$|tbc\W*$)")
+TOD_TZ = "Asia/Qatar"          # used only if the name gives a time without "(GMT)" etc.
+LANGUAGES = {"arabic", "english", "french", "spanish", "turkish", "persian", "urdu", "hindi",
+             "multi", "multilanguage", "multi-language", "portuguese", "german", "italian"}
+
 _SEEN, _SEEN_USED = None, {}
 
 
@@ -485,28 +492,6 @@ def save_seen():
         json.dump(dict(sorted(_SEEN_USED.items())), f, indent=1, ensure_ascii=False)
 
 
-def _time_in(text):
-    """(hour, minute, text without the time) from "6PM" / "7:30 pm" / "19:00", else None."""
-    m = TIME_12.search(text)
-    if m:
-        h = int(m["h"]) % 12 + (12 if m["ap"].lower() == "p" else 0)
-        return h, int(m["m"] or 0), text[:m.start()] + " " + text[m.end():]
-    m = TIME_24.search(text)
-    if m:
-        return int(m["h"]), int(m["m"]), text[:m.start()] + " " + text[m.end():]
-    return None
-
-
-def dated_by_first_seen(slot_id, name, h, mi, tz, hours):
-    """A time with no date: the day the name was first seen (or the next day if that time had
-    already passed by then)."""
-    seen = first_seen(slot_id, name).astimezone(tz)
-    start = seen.replace(hour=h, minute=mi, second=0, microsecond=0)
-    if start + timedelta(hours=hours) < seen:
-        start += timedelta(days=1)
-    return start.astimezone(timezone.utc)
-
-
 def _nice_title(t):
     t = re.sub(r"\s+", " ", t).strip(" -|:@")
     if re.sub(r"\b(?:vs?|v)\b\.?", "", t).isupper():
@@ -514,20 +499,64 @@ def _nice_title(t):
     return re.sub(r"\b(V|Vs|VS)\b\.?", lambda m: m.group(1).lower(), t)
 
 
-def parse_fight_or_darts(name):
-    b = BOXING.match(name)
-    p = None if b else PDC.match(name)
-    if not (b or p):
+def parse_tod(name):
+    parts = [p.strip() for p in name.split("|")]
+    if len(parts) < 3:
         return None
-    m = b or p
-    num = int(m["num"])
-    if b:
-        slot_id, slot_name, comp, hours, tz = f"Boxing{num}.uk", f"Boxing {num}", "Boxing", \
-            BOXING_EVENT_HOURS, ZoneInfo(FIGHT_TZ)
+    sm = TOD_SLOT.match(parts[-1])
+    if not sm:
+        return None
+    cc, label = sm["cc"], sm["label"].strip()
+    slot_id, slot_name = f"{slug(label)}.{cc.lower()}", f"{cc}: {label}"
+    status = parts[0].lower() if parts[0].lower() in STATUS_WORDS else ""
+    date = time_ = zone = None
+    text, langs = [], []
+    for p in parts[1 if status else 0:-1]:
+        if not p or JUNK_RE.fullmatch(p):
+            continue
+        dm, tm = TOD_DATE.match(p), TIME_RE.match(p)
+        if dm:
+            date = (int(dm["y"] or dm["y2"]), int(dm["m"] or dm["m2"]), int(dm["d"] or dm["d2"]))
+        elif tm:
+            time_ = tm.group(1)
+            zone = ABBREV_TZ.get((tm.group(2) or "").upper())
+        elif p.lower() in LANGUAGES:
+            langs.append(p.capitalize())
+        else:
+            text.append(p)
+    text = [t for t in text if not NO_EVENT.match(t)]
+    if not text:                                     # nothing on the slot ("NO EVENT STREAMING NOW -")
+        return {"name": name, "slot_id": slot_id, "slot_name": slot_name, "title": "",
+                "extra": "", "comp": "", "start": datetime.now(timezone.utc) - timedelta(days=1)}
+    title = text[0]
+    comp = text[1] if len(text) > 1 else competition(title)
+    extra = ". ".join(t for t in [*text[2:], f"{', '.join(langs)} commentary" if langs else ""] if t)
+    ev = {"name": name, "slot_id": slot_id, "slot_name": slot_name, "title": title,
+          "extra": extra, "comp": comp or "", "start": None}
+    now = datetime.now(timezone.utc)
+    if status in ("end", "ended", "finished", "off"):
+        ev["start"] = now - timedelta(days=2)            # the name says it's over
+    elif date and time_:
+        h, mi = map(int, time_.split(":"))
+        ev["start"] = datetime(*date, h, mi, tzinfo=ZoneInfo(zone or TOD_TZ)).astimezone(timezone.utc)
+    elif status == "live":
+        ev["start"] = first_seen(slot_id, name).replace(minute=0, second=0)   # live since we
+                                                         # first saw this name (from the hour)
     else:
-        kind = (p["kind"] or "").capitalize()
-        slot_id, slot_name, comp, hours, tz = f"PDC{kind}{num}.uk", f"PDC {kind} {num}".replace("  ", " "), \
-            "PDC Darts", DARTS_EVENT_HOURS, ZoneInfo(DARTS_TZ)
+        ev["untimed"] = True
+        ev["start"] = now
+    return ev
+
+
+def parse_darts(name):
+    p = PDC.match(name)
+    if not p:
+        return None
+    m = p
+    num = int(m["num"])
+    kind = (p["kind"] or "").capitalize()
+    slot_id, slot_name, comp, hours, tz = f"PDC{kind}{num}.uk", f"PDC {kind} {num}".replace("  ", " "), \
+        "PDC Darts", DARTS_EVENT_HOURS, ZoneInfo(DARTS_TZ)
     rest = m["rest"]
     if not rest:                                     # empty slot
         return {"name": name, "slot_id": slot_id, "slot_name": slot_name, "title": "",
@@ -543,26 +572,15 @@ def parse_fight_or_darts(name):
         start = start.astimezone(timezone.utc)
         rest = rest[:ss.start()]
     extra, info = "", ""
-    if b:
-        if re.search(r"\bprelim", rest, re.I):
-            extra = "Prelims"
-            rest = re.sub(r"\bprelim(?:inarie)?s?\b", " ", rest, flags=re.I)
-        if start is None:
-            t = _time_in(rest)
-            if t:
-                h, mi, rest = t
-                start = dated_by_first_seen(slot_id, name, h, mi, tz, hours)
-        title = _nice_title(rest)
-    else:
-        title, _, after = rest.partition("|")
-        title = _nice_title(title)
-        after = after.strip()
-        if after:
-            parts = INFO_START.split(after, maxsplit=1)
-            extra = parts[0].strip(" -|")
-            info = parts[1].strip() if len(parts) > 1 else ""
-            if info and info[-1] not in ".!?":
-                info += "…"
+    title, _, after = rest.partition("|")
+    title = _nice_title(title)
+    after = after.strip()
+    if after:
+        parts = INFO_START.split(after, maxsplit=1)
+        extra = parts[0].strip(" -|")
+        info = parts[1].strip() if len(parts) > 1 else ""
+        if info and info[-1] not in ".!?":
+            info += "…"
     if not title:
         return None
     ev = {"name": name, "slot_id": slot_id, "slot_name": slot_name, "title": title,
@@ -575,9 +593,54 @@ def parse_fight_or_darts(name):
     return ev
 
 
+# Empty slots in the other groups (shown as "Channel is offline", same ID as when filled):
+EMPTY_COUNTRY_SLOT = re.compile(r"^\s*(?P<cc>[A-Z]{2})\s*\((?P<slot>[^)]*\d[^)]*)\)\s*(?:\|\s*(?P<rest>.*?))?\s*$")
+EMPTY_APPLE = re.compile(r"^\s*\((?P<prov>[^)]+)\)\s*\((?P<label>[^)]+)\)\s*(?P<num>\d+)\s*(?:\|\s*(?P<rest>.*?))?\s*$")
+EMPTY_NBA = re.compile(r"^\W*NBA\s*(?P<num>\d+)\s*$", re.I)
+PIPE_SLOT = re.compile(r"^(?P<cc>[A-Z]{2,5}):\s*(?P<label>\S.*)$")
+
+
+def _empty_slot(name, slot_id, slot_name):
+    return {"name": name, "slot_id": slot_id, "slot_name": slot_name, "title": "", "extra": "",
+            "comp": "", "start": datetime.now(timezone.utc) - timedelta(days=1)}
+
+
+def _placeholder(text):
+    """True for nothing / "NO EVENT STREAMING NOW -" / "8K EXCLUSIVE" / a status word only."""
+    t = (text or "").strip(" -|:")
+    return not t or bool(NO_EVENT.match(t)) or bool(JUNK_RE.fullmatch(t)) or t.lower() in STATUS_WORDS
+
+
+def empty_slot(name):
+    """The slot of a stream with no event on it, in any group's naming style, else None."""
+    m = EMPTY_COUNTRY_SLOT.match(name)               # US (Peacock 099)  /  AU (STAN 40) | No event
+    if m and _placeholder(m["rest"]):
+        return _empty_slot(name, f"{slug(m['slot'])}.{m['cc'].lower()}", f"{m['cc']} ({m['slot']})")
+    m = EMPTY_APPLE.match(name)                      # (Apple) (MLS) 049 |
+    if m and _placeholder(m["rest"]):
+        label = m["label"].strip()
+        return _empty_slot(name, f"{slug(m['prov'] + label)}{m['num']}.us",
+                           f"({m['prov'].strip()}) ({label}) {m['num']}")
+    m = EMPTY_NBA.match(name)                        # NBA 05
+    if m:
+        return _empty_slot(name, f"NBA{int(m['num'])}.uk", f"NBA {int(m['num'])}")
+    parts = [p.strip() for p in name.split("|")]     # NO EVENT STREAMING NOW - | 8K EXCLUSIVE | GB: DAZN PPV 9
+    if len(parts) >= 2:
+        sm = PIPE_SLOT.match(parts[-1])
+        if sm and all(_placeholder(p) for p in parts[:-1]):
+            label = sm["label"].strip()
+            return _empty_slot(name, f"{slug(label)}.{sm['cc'].lower()}", f"{sm['cc']}: {label}")
+    return None
+
+
 def parse_name(name):
     """{slot_id, slot_name, title, extra, start (UTC)} for an event name, else None."""
+    name = re.sub(r"\s+", " ", name or "").strip()
     ev = _parse_name(name)
+    if ev is None:
+        return empty_slot(name)
+    if ev.get("title") and NO_EVENT.match(ev["title"]):    # "No Event (2026-10-24 20:00)" etc.
+        return _empty_slot(name, ev["slot_id"], ev["slot_name"])
     if ev and ev.get("title"):       # "• Chelsea v Tottenham" (Stan's second feed) -> no bullet
         ev["title"] = re.sub(r"^[\s•·*\-–]+", "", ev["title"]).strip()
     return ev
@@ -586,7 +649,7 @@ def parse_name(name):
 def _parse_name(name):
     name = re.sub(r"\s+", " ", name or "").strip()
 
-    fd = parse_fight_or_darts(name)
+    fd = parse_darts(name) or parse_tod(name)
     if fd:
         return fd
 
