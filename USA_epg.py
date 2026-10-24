@@ -50,6 +50,11 @@ MAX_DAYS_AHEAD = 14  # upper limit; the run finds how many days TV Passport actu
 PROBE_CHANNELS = ["cnn/70", "espn/594", "hbo--eastern-feed/614"]   # used to find that limit
 WORKERS = 4          # pages fetched at once - kept low to be polite
 LIVE_PREFIX = "LIVE: "
+# TV Passport flags studio shows as live too (SportsCenter, Get Up, MLB Tonight ...). Live sport
+# with one of these categories is not an event, so it doesn't get "LIVE:".
+NOT_EVENT_CATEGORIES = {"talk show", "news", "anthology", "magazine", "newsmagazine",
+                        "news magazine", "interview", "documentary", "instructional",
+                        "fishing", "outdoors", "hunting", "special", "awards"}
 
 # (channel ID, display name, TV Passport station path)
 CHANNELS = [
@@ -128,7 +133,7 @@ CHANNELS = [
     ("US.DisneyJunior", "Disney Junior", "disney-junior-usa--east/6867"),
     ("US.DisneyXD", "Disney XD", "disney-xd-usa--eastern-feed/1053"),
     ("US.CartoonNetwork", "Cartoon Network", "cartoon-network-usa--eastern-feed/661"),
-    ("US.AdultSwim", "Adult Swim", "cartoon-network--adult-swim/10611"),
+    ("US.AdultSwim", "Adult Swim", "adult-swim--east/607"),
     # News and weather
     ("US.CNN", "CNN", "cnn/70"),
     ("US.CNNInternational", "CNN International", "cnn-international-north-america/3008"),
@@ -302,8 +307,9 @@ def write(path, channels, guide):
     for cid, _, _, *rest in channels:
         lang = rest[0] if rest else "en"
         for p in guide.get(cid, []):
-            sport = any(c.lower().startswith("sports") for c in p["cats"])
-            live = p["live"] and sport
+            low = {c.lower() for c in p["cats"]}
+            sport = any(c.startswith("sports") for c in low)
+            live = p["live"] and sport and not (low & NOT_EVENT_CATEGORIES)
             title = (LIVE_PREFIX + p["title"]) if live else p["title"]
             cats = p["cats"] + (["Live"] if live else [])
             out = [f'  <programme start="{xmltv_time(p["start"])}" stop="{xmltv_time(p["stop"])}" '
@@ -370,10 +376,15 @@ def main():
                 print(f"  {i}/{len(jobs)} pages")
 
     guide = {cid: tidy(p, first, last) for cid, p in raw.items()}
-    ends = [p["stop"] for v in guide.values() for p in v]
+    ends = {cid: v[-1]["stop"] for cid, v in guide.items() if v}
     if ends:
-        print(f"  Listings run to {max(ends).astimezone(UK):%a %d %b %H:%M} UK time "
+        latest = max(ends.values())
+        print(f"  Listings run to {latest.astimezone(UK):%a %d %b %H:%M} UK time "
               f"(asked for up to {last - timedelta(minutes=1):%a %d %b %H:%M})")
+        short = sorted(cid for cid, e in ends.items() if e < latest - timedelta(days=1))
+        if short:
+            print(f"  NOTE: {len(short)} channels have shorter listings (TV Passport gives them "
+                  f"less): {', '.join(short)}")
     for msg in failed[:15]:
         print(f"  WARNING: failed {msg}")
     if len(failed) > 15:
