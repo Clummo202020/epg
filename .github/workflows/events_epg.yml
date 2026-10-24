@@ -35,6 +35,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add events_epg.xml
+          if [ -f events_seen.json ]; then git add events_seen.json; fi
           if git diff --cached --quiet; then
             echo "No changes"
           else
