@@ -190,6 +190,29 @@ MLB_ESPN = "baseball/mlb"
 MLB_EVENT_HOURS = 3.5          # allows for extra innings
 MLB_EARLY_MINUTES = 10         # LIVE this long before first pitch
 MLB_MATCH_HOURS = 18
+# Boxing and PDC darts streams:
+#   "Boxing 1 |prelims  Dubois  v Wardley 2"          (no time)          -> Boxing1.uk
+#   "Boxing  05  :  FURY vs HALL  6PM"                 (UK time, no date) -> Boxing5.uk
+#   "Boxing 6: Fury v Makhmudov 19:00"                 (UK time, no date) -> Boxing6.uk
+#   "PDC Board 02 : Title | Day 3 - Evening Session Watch live ... start:2026-10-18 18:00:00
+#    stop:2026-10-18 23:00:00"                         (UK time)          -> PDCBoard2.uk
+#   "PDC event 01 : Title | Session Watch live ..."    (no time)          -> PDCEvent1.uk
+# A time with no date is dated by the day the stream name was first seen (kept in SEEN_FILE),
+# so the same name doesn't come round again the next day. An event with no time at all gets
+# UNTIMED_HOURS of blocks with its name (no LIVE block, as the time isn't known).
+BOXING = re.compile(r"^\s*Boxing\s*(?P<num>\d+)\s*[:|\-]?\s*(?P<rest>.*?)\s*$", re.I)
+PDC = re.compile(r"^\s*PDC\s*(?P<kind>[A-Za-z]+)?\s*(?P<num>\d+)\s*[:|\-]?\s*(?P<rest>.*?)\s*$", re.I)
+START_STOP = re.compile(r"\s*start:\s*(?P<d1>\d{4}-\d{2}-\d{2})[ T](?P<t1>\d{1,2}:\d{2})(?::\d{2})?"
+                        r"(?:\s*stop:\s*(?P<d2>\d{4}-\d{2}-\d{2})[ T](?P<t2>\d{1,2}:\d{2})(?::\d{2})?)?\s*$", re.I)
+TIME_12 = re.compile(r"\b(?P<h>\d{1,2})(?:[:.](?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\b\.?", re.I)
+TIME_24 = re.compile(r"\b(?P<h>[01]?\d|2[0-3]):(?P<m>[0-5]\d)\b")
+INFO_START = re.compile(r"\s(?=(?:Watch|Follow|Catch|Join|Don't|Live coverage|Coverage|See)\b)")
+FIGHT_TZ = "Europe/London"
+DARTS_TZ = "Europe/London"
+BOXING_EVENT_HOURS = 4
+DARTS_EVENT_HOURS = 5
+UNTIMED_HOURS = 12
+SEEN_FILE = "events_seen.json"
 MLS_APPLE = re.compile(
     r"^\s*\((?P<prov>[^)]+)\)\s*\((?P<label>[^)]+)\)\s*(?P<num>\d+)\s*\|\s*(?P<title>.*?)\s*"
     r"\((?P<date>\d{4}-\d{2}-\d{2})[ T](?P<time>\d{1,2}:\d{2})(?::\d{2})?\)\s*$")
@@ -430,9 +453,129 @@ def fixture_date(title, h, mi, now, label=""):
     return min(same_time, key=lambda ko: abs(ko - now))
 
 
+_SEEN, _SEEN_USED = None, {}
+
+
+def first_seen(slot_id, name):
+    """When this stream name was first seen on this slot (UTC), from SEEN_FILE."""
+    global _SEEN
+    if _SEEN is None:
+        try:
+            with open(SEEN_FILE, encoding="utf-8") as f:
+                _SEEN = json.load(f)
+        except (OSError, ValueError):
+            _SEEN = {}
+    rec = _SEEN.get(slot_id)
+    if rec and rec.get("name") == name:
+        seen = datetime.fromisoformat(rec["seen"])
+    else:
+        seen = datetime.now(timezone.utc).replace(microsecond=0)
+    _SEEN_USED[slot_id] = {"name": name, "seen": seen.isoformat()}
+    return seen
+
+
+def save_seen():
+    with open(SEEN_FILE, "w", encoding="utf-8") as f:
+        json.dump(dict(sorted(_SEEN_USED.items())), f, indent=1, ensure_ascii=False)
+
+
+def _time_in(text):
+    """(hour, minute, text without the time) from "6PM" / "7:30 pm" / "19:00", else None."""
+    m = TIME_12.search(text)
+    if m:
+        h = int(m["h"]) % 12 + (12 if m["ap"].lower() == "p" else 0)
+        return h, int(m["m"] or 0), text[:m.start()] + " " + text[m.end():]
+    m = TIME_24.search(text)
+    if m:
+        return int(m["h"]), int(m["m"]), text[:m.start()] + " " + text[m.end():]
+    return None
+
+
+def dated_by_first_seen(slot_id, name, h, mi, tz, hours):
+    """A time with no date: the day the name was first seen (or the next day if that time had
+    already passed by then)."""
+    seen = first_seen(slot_id, name).astimezone(tz)
+    start = seen.replace(hour=h, minute=mi, second=0, microsecond=0)
+    if start + timedelta(hours=hours) < seen:
+        start += timedelta(days=1)
+    return start.astimezone(timezone.utc)
+
+
+def _nice_title(t):
+    t = re.sub(r"\s+", " ", t).strip(" -|:@")
+    if re.sub(r"\b(?:vs?|v)\b\.?", "", t).isupper():
+        t = t.title()
+    return re.sub(r"\b(V|Vs|VS)\b\.?", lambda m: m.group(1).lower(), t)
+
+
+def parse_fight_or_darts(name):
+    b = BOXING.match(name)
+    p = None if b else PDC.match(name)
+    if not (b or p):
+        return None
+    m = b or p
+    num = int(m["num"])
+    if b:
+        slot_id, slot_name, comp, hours, tz = f"Boxing{num}.uk", f"Boxing {num}", "Boxing", \
+            BOXING_EVENT_HOURS, ZoneInfo(FIGHT_TZ)
+    else:
+        kind = (p["kind"] or "").capitalize()
+        slot_id, slot_name, comp, hours, tz = f"PDC{kind}{num}.uk", f"PDC {kind} {num}".replace("  ", " "), \
+            "PDC Darts", DARTS_EVENT_HOURS, ZoneInfo(DARTS_TZ)
+    rest = m["rest"]
+    if not rest:                                     # empty slot
+        return {"name": name, "slot_id": slot_id, "slot_name": slot_name, "title": "",
+                "extra": "", "comp": "", "start": datetime.now(timezone.utc) - timedelta(days=1)}
+    start = None
+    ss = START_STOP.search(rest)
+    if ss:                                           # start:/stop: given (UK time)
+        start = datetime.strptime(f"{ss['d1']} {ss['t1']}", "%Y-%m-%d %H:%M").replace(tzinfo=tz)
+        if ss["d2"]:
+            stop = datetime.strptime(f"{ss['d2']} {ss['t2']}", "%Y-%m-%d %H:%M").replace(tzinfo=tz)
+            if timedelta(hours=1) <= stop - start <= timedelta(hours=14):
+                hours = (stop - start).total_seconds() / 3600
+        start = start.astimezone(timezone.utc)
+        rest = rest[:ss.start()]
+    extra, info = "", ""
+    if b:
+        if re.search(r"\bprelim", rest, re.I):
+            extra = "Prelims"
+            rest = re.sub(r"\bprelim(?:inarie)?s?\b", " ", rest, flags=re.I)
+        if start is None:
+            t = _time_in(rest)
+            if t:
+                h, mi, rest = t
+                start = dated_by_first_seen(slot_id, name, h, mi, tz, hours)
+        title = _nice_title(rest)
+    else:
+        title, _, after = rest.partition("|")
+        title = _nice_title(title)
+        after = after.strip()
+        if after:
+            parts = INFO_START.split(after, maxsplit=1)
+            extra = parts[0].strip(" -|")
+            info = parts[1].strip() if len(parts) > 1 else ""
+            if info and info[-1] not in ".!?":
+                info += "…"
+    if not title:
+        return None
+    ev = {"name": name, "slot_id": slot_id, "slot_name": slot_name, "title": title,
+          "extra": extra, "info": info, "comp": comp, "hours": hours}
+    if start is None:
+        ev["untimed"] = True
+        ev["start"] = datetime.now(timezone.utc)
+    else:
+        ev["start"] = start
+    return ev
+
+
 def parse_name(name):
     """{slot_id, slot_name, title, extra, start (UTC)} for an event name, else None."""
     name = re.sub(r"\s+", " ", name or "").strip()
+
+    fd = parse_fight_or_darts(name)
+    if fd:
+        return fd
 
     mlb = MLB_START.match(name) or MLB_AT.match(name)
     if mlb:                                          # MLB 01 : A x B start:... / MLB 13 | A vs B @ Aug 14 7:00 PM
@@ -614,11 +757,16 @@ def read_playlist(args):
 
 
 def stream_names(text):
-    """Display names of every #EXTINF line (the text after the last comma)."""
+    """Display names of every #EXTINF line: tvg-name, else the text after the comma that ends
+    the attributes (names can contain commas themselves, e.g. "St. Catharines, Ontario")."""
     for line in text.splitlines():
         if line.startswith("#EXTINF"):
             m = re.search(r'tvg-name="([^"]*)"', line)
-            yield (m.group(1) if m else line.rsplit(",", 1)[-1]).strip()
+            if m:
+                yield m.group(1).strip()
+                continue
+            bare = re.sub(r'\s[\w-]+="[^"]*"', "", line)
+            yield (bare.split(",", 1)[1] if "," in bare else bare).strip()
 
 
 def uk(dt):
@@ -645,7 +793,11 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live=False):
 def build(events, now):
     tv = ET.Element("tv", {"generator-info-name": "event_epg.py"})
     by_slot, ended = {}, {}
+    untimed = {}
     for ev in events:                       # one event per slot: the next one still to finish
+        if ev.get("untimed"):
+            untimed.setdefault(ev["slot_id"], ev)
+            continue
         end = ev["start"] + timedelta(hours=ev.get("hours", EVENT_HOURS))
         if end + timedelta(hours=PAST_EVENT_HOURS) < now:
             ended.setdefault(ev["slot_id"], ev)
@@ -653,7 +805,12 @@ def build(events, now):
         cur = by_slot.get(ev["slot_id"])
         if cur is None or ev["start"] < cur["start"]:
             by_slot[ev["slot_id"]] = ev
-    ended = {sid: ev for sid, ev in ended.items() if sid not in by_slot}
+    untimed = {sid: ev for sid, ev in untimed.items() if sid not in by_slot}
+    ended = {sid: ev for sid, ev in ended.items() if sid not in by_slot and sid not in untimed}
+    for sid in sorted(untimed):
+        c = ET.SubElement(tv, "channel", {"id": sid})
+        ET.SubElement(c, "display-name", {"lang": "en"}).text = untimed[sid]["name"]
+        ET.SubElement(c, "display-name", {"lang": "en"}).text = untimed[sid]["slot_name"]
     for sid in sorted(set(by_slot) | set(ended)):
         if sid in ended:          # event over, nothing new yet: a channel with short filler
             c = ET.SubElement(tv, "channel", {"id": sid})
@@ -672,7 +829,7 @@ def build(events, now):
         end = kickoff + timedelta(hours=ev.get("hours", EVENT_HOURS))
         when = f"{uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}, {uk(kickoff):%H:%M}"
         desc = f"{ev['title']}." + (f" {ev['extra']}." if ev["extra"] else "") + \
-               f" Starts {when} UK time."
+               f" Starts {when} UK time." + (f" {ev['info']}" if ev.get("info") else "")
         in_range = start <= now + timedelta(days=MAX_DAYS_AHEAD)
         # Out of range: generic filler only up to the range limit, so the event's own
         # "Coming up" blocks can still be added after it on a later run.
@@ -695,6 +852,17 @@ def build(events, now):
             count += 1
     t0 = now.replace(minute=0, second=0, microsecond=0)
     t0 -= timedelta(hours=uk(t0).hour % BLOCK_HOURS)
+    for sid in sorted(untimed):  # event named but no time given: its name, no LIVE block
+        ev = untimed[sid]
+        desc = f"{ev['title']}." + (f" {ev['extra']}." if ev["extra"] else "") + \
+               " The start time isn't given in the stream name." + \
+               (f" {ev['info']}" if ev.get("info") else "")
+        t = t0
+        while t < now + timedelta(hours=UNTIMED_HOURS):
+            b = t + timedelta(hours=BLOCK_HOURS)
+            add_programme(tv, sid, t, b, ev["title"], ev.get("comp") or None, desc)
+            count += 1
+            t = b
     for sid in sorted(ended):    # kept short, so the slot's next event can follow it
         # a finished event says so; an empty slot ("UEFA | 08 -", no title) just says offline
         desc = FINISHED_DESC if ended[sid]["title"] else OFFLINE_DESC
@@ -704,7 +872,7 @@ def build(events, now):
             add_programme(tv, sid, t, b, OFFLINE_TITLE, None, desc)
             count += 1
             t = b
-    return tv, len(by_slot) + len(ended), count
+    return tv, len(by_slot) + len(ended) + len(untimed), count
 
 
 def main():
@@ -717,6 +885,7 @@ def main():
     events = [e for e in (parse_name(n) for n in names) if e]
     print(f"{len(names)} streams in the playlist, {len(events)} with an event time")
     tv, chans, progs = build(events, now)
+    save_seen()
     ET.indent(tv, space="  ")
     ET.ElementTree(tv).write(args.out, encoding="utf-8", xml_declaration=True)
     print(f"Wrote {args.out}: {chans} channels, {progs} programmes")
