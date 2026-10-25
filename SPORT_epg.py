@@ -3271,7 +3271,7 @@ def kickoff_now(text, *local_times):
 
 def live_sub(sub):
     """Secondary title for a live programme: the sub-title without a "Live" label
-    (🔴 LIVE is in the title), or None."""
+    (LIVE is in the title), or None."""
     s = (sub or "").strip()
     if not s or re.fullmatch(r"(?i)live[.!]?", s):
         return None
@@ -3298,13 +3298,17 @@ def desc_says_live(desc):
     return bool(re.search(r"\blive\b", LIVE_PROMO.sub(" ", d), re.I))
 
 
-def live_title(title):
-    """Title for a live programme: "🔴 LIVE: <title>" (without doubling a leading "Live")."""
+# Start of a live programme's title. Plain "LIVE: " on these TV channels; the 🔴 is kept
+# for the event and match streams (event_epg.py, football_epg.py, scottish_epg.py).
+LIVE_PREFIX = "LIVE: "
+
+
+def live_title(title, cid=""):
+    """Title for a live programme: "LIVE: <title>" (without doubling a leading "Live")."""
     t = (title or "").strip()
-    if t.startswith("🔴"):
-        return t
+    t = re.sub(r"^🔴\s*", "", t)
     t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", t) or t
-    return f"🔴 LIVE: {t}"
+    return f"{LIVE_PREFIX}{t}"
 
 
 def dedupe_sentences(text):
@@ -3408,7 +3412,7 @@ def build_xmltv(records, suffix, minutes):
                     count += 1
             is_live = (ev["live"] or kickoff_now(f"{sub or ''} {desc}", loc, uk)
                        or desc_says_live(desc))                # description says "live"
-            add_programme(tv, cid, start, stop, live_title(title) if is_live else title,
+            add_programme(tv, cid, start, stop, live_title(title, cid) if is_live else title,
                           live_sub(sub) if is_live else sub, desc, is_live)
             count += 1
             last_stop = stop
