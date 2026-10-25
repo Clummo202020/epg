@@ -2,8 +2,9 @@ name: Update event EPG
 
 on:
   schedule:
-    - cron: "37 * * * *"     # every hour, at 37 minutes past (off the busy on-the-hour slot)
-  workflow_dispatch:         # adds a "Run workflow" button on the Actions page
+    - cron: "7,37 * * * *"   # backup timer: twice an hour at :07 and :37 (GitHub sometimes skips these;
+                             # the main trigger is cron-job.org, which presses "Run workflow" at the same times)
+  workflow_dispatch:         # adds a "Run workflow" button on the Actions page (also used by cron-job.org)
 
 permissions:
   contents: write
