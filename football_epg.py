@@ -148,10 +148,15 @@ GOAL_RUSH_ON = []
 GOAL_RUSH_MAIN_FROM = ["HK.NowSportsPLTV", "SG.HubPremier1", "NZ.SkySport8NZ"]   # first match wins
 GOAL_RUSH_GUIDE_FILE = "SPORT_epg.xml.gz"
 GOAL_RUSH_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/SPORT_epg.xml.gz"
-# PlaylistLabs never rewrites programmes it already holds, so a Goal Rush slot is
-# held back until its main game is known; a slot whose main game still isn't
-# listed this close to kick-off is published without one.
-GOAL_RUSH_WAIT_DAYS = 2
+# PlaylistLabs never rewrites programmes it already holds, and broadcasters can
+# change the main game late (25 Oct 2026: Liverpool v Brighton became Man Utd v
+# Bournemouth the evening before). So the main game is only named from matchday:
+#  - before matchday the channel runs "Coming up" blocks with a generic description
+#    (no main game) up to GOAL_RUSH_REVEAL_HOUR on matchday, and nothing after that;
+#  - the first run on matchday (04:41 UTC) adds the rest of that day's blocks and the
+#    LIVE show with the main game, read from the SPORT guide at that moment.
+# A slot whose main game still isn't listed on matchday keeps the generic description.
+GOAL_RUSH_REVEAL_HOUR = 8          # UK time on matchday when the main-game blocks start
 
 # One general channel for every UEFA match: a programme for each kick-off time,
 # listing all the Champions / Europa / Conference League matches starting then.
@@ -568,7 +573,7 @@ def dummy_channel(chan_id, name, title, desc):
     return (chan_id, name, None, shows)
 
 
-def goal_rush_channel(matches, suffix):
+def goal_rush_channel(matches, suffix, now=None):
     """A 'Premier League Goal Rush' channel: one programme for every time slot in
     which at least GOAL_RUSH_MIN Premier League matches kick off together
     (usually Saturday 15:00), listing the matches in that slot."""
@@ -582,35 +587,46 @@ def goal_rush_channel(matches, suffix):
         if m["comp"] == GOAL_RUSH_COMP and not m.get("tbc"):
             slots.setdefault(m["start"], []).append(m)
     listings = load_main_game_listings() if GOAL_RUSH_MAIN_FROM else []
-    hold_from = datetime.now(timezone.utc) + timedelta(days=GOAL_RUSH_WAIT_DAYS)
+    today_uk = (now or datetime.now(timezone.utc)).astimezone(LONDON).date()
     shows = []
     for start, ms in sorted(slots.items()):
         if len(ms) < GOAL_RUSH_MIN:
             continue
         ko = start.astimezone(LONDON)
-        main = find_main_game(ms, listings) if listings else None
-        if main is None and GOAL_RUSH_MAIN_FROM and start > hold_from:
-            print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game not listed yet - held back")
-            break                       # later slots wait too, so nothing is skipped
-        if main:
-            others = sorted(m["title"] for m in ms if m is not main)
-            print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game {main['title']}")
-            desc = (f"Goal Rush. Main game: {main['title']}, with updates and "
-                    f"goal flashes from {', '.join(others)}.")
-        else:
-            games = ", ".join(sorted(m["title"] for m in ms))
-            desc = f"Goal Rush: live action from {len(ms)} matches - {games}."
-        shows.append({
+        live_start = start - timedelta(minutes=GOAL_RUSH_EARLY_MINUTES)   # show starts before kick-off
+        reveal = datetime(ko.year, ko.month, ko.day, GOAL_RUSH_REVEAL_HOUR,
+                          tzinfo=LONDON).astimezone(timezone.utc)
+        reveal = min(reveal, live_start)
+        games = ", ".join(sorted(m["title"] for m in ms))
+        generic = f"Goal Rush. Live action from {len(ms)} matches: {games}.{on_air}"
+        show = {
             "comp": GOAL_RUSH_COMP, "title": "Goal Rush", "sub": GOAL_RUSH_COMP,
-            "desc": desc + on_air,
-            "start": start - timedelta(minutes=GOAL_RUSH_EARLY_MINUTES),  # show starts before kick-off
+            "desc": generic, "generic_desc": generic, "reveal": reveal,
+            "start": live_start,
             "stop": max(m["stop"] for m in ms),
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
             "filler_prefix": f"Coming up {ko:%A}",      # "Coming up Saturday: Goal Rush. ..."
             "filler_sub": f"⏭ Goal Rush {ko:%a} {ko.day} {ko:%b}",
             "live_sub": GOAL_RUSH_COMP,                  # secondary title: Premier League
             "live_title": "🔴 LIVE: Goal Rush",         # title of the show itself
-        })
+        }
+        if today_uk < ko.date():
+            # not matchday yet: generic "Coming up" blocks up to the reveal time, then
+            # nothing - so PlaylistLabs can still add the main-game blocks on matchday
+            print(f"  Goal Rush {ko:%a %d %b %H:%M}: before matchday - generic blocks until "
+                  f"{reveal.astimezone(LONDON):%a %H:%M}, main game named on the day")
+            show.update({"start": reveal, "stop": reveal, "filler_only": True})
+            shows.append(show)
+            break                       # later slots wait too, so nothing is skipped
+        main = find_main_game(ms, listings) if listings else None
+        if main:
+            others = sorted(m["title"] for m in ms if m is not main)
+            print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game {main['title']}")
+            show["desc"] = (f"Goal Rush. Main game: {main['title']}, with updates and "
+                            f"goal flashes from {', '.join(others)}.{on_air}")
+        else:
+            print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game not listed - generic description")
+        shows.append(show)
     return (f"{GOAL_RUSH_ID}{suffix}", "Goal Rush", None, shows)   # kept even if empty
 
 
@@ -725,13 +741,21 @@ def build_xmltv(channels, filler):
                 if stop <= start:
                     continue
             if filler:
-                for a, b in filler_blocks(last_stop or now, start):
+                cuts = [last_stop or now]
+                rv = m.get("reveal")             # Goal Rush: generic text before the reveal time
+                if rv and cuts[0] < rv < start:
+                    cuts.append(rv)
+                cuts.append(start)
+                pieces = [blk for i in range(len(cuts) - 1)
+                          for blk in filler_blocks(cuts[i], cuts[i + 1])]
+                for a, b in pieces:
+                    d = m["generic_desc"] if rv and a < rv else m["desc"]
                     if FILLER_STYLE == "next":
                         f_title = f"Next: {m['title']} - {m['when']}"
-                        f_desc = f"Coming up: {m['desc']}"
+                        f_desc = f"Coming up: {d}"
                     else:
                         f_title = f"{m['title']} ({m['when']})"
-                        f_desc = f"{m.get('filler_prefix', 'Next Match')}: {m['desc']}"   # Goal Rush: "Coming up"
+                        f_desc = f"{m.get('filler_prefix', 'Next Match')}: {d}"   # Goal Rush: "Coming up"
                     if "fixed_title" in m:        # UEFA.id: same title/description throughout
                         f_title, f_desc = m["fixed_title"], m["fixed_desc"]
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
@@ -739,6 +763,9 @@ def build_xmltv(channels, filler):
                     add_programme(tv, chan_id, a, b, f_title,
                                   m.get("filler_sub", f"⏭ Next Match: {m['sub']}"), f_desc, m["comp"])
                     count += 1
+            if m.get("filler_only"):                  # Goal Rush before matchday: no show yet
+                last_stop = start
+                continue
             # the match itself: title "🔴 LIVE: A v B", secondary title "Premier League"
             live_title = m.get("live_title") or (f"🔴 LIVE: {m['title']}" if m.get("teams")
                                                  else m.get("fixed_title", m["title"]))
