@@ -61,7 +61,14 @@ FILLER_TITLE = "Stream is live at event time only."
 FILLER_DESC = "The next event on this stream will be listed nearer the time."
 # Shown on a slot whose event is over (or that is empty) until its stream name changes to a new event;
 # the new event's real titles/descriptions then replace it automatically.
-OFFLINE_TITLE = "Channel is offline"
+OFFLINE_TITLE = "Channel is offline"   # only used if a stream has no name at all
+# Finished/empty slots are titled with the stream's own name (25 Oct 2026), e.g.
+# "US (Paramount 009) | Motherwell vs. Heart of Midlothian (2026-10-25 09:00:00)".
+
+
+def offline_title(ev):
+    """Title for the blocks of a finished or empty slot: the actual stream name."""
+    return (ev.get("name") or "").strip() or OFFLINE_TITLE
 OFFLINE_DESC = "This channel is offline. The next event will be listed when the stream is updated."
 # Description used instead when the slot's last event has finished (an empty slot keeps OFFLINE_DESC)
 FINISHED_DESC = "This event has now finished. The next event will be listed when the stream is updated."
@@ -965,7 +972,7 @@ def build(events, now):
             t = end
             while t < end + timedelta(hours=ENDED_FILLER_HOURS):
                 b = min(t + timedelta(hours=BLOCK_HOURS), end + timedelta(hours=ENDED_FILLER_HOURS))
-                add_programme(tv, sid, t, b, OFFLINE_TITLE, None, FINISHED_DESC)
+                add_programme(tv, sid, t, b, offline_title(ev), None, FINISHED_DESC)
                 count += 1
                 t = b
     t0 = now.replace(minute=0, second=0, microsecond=0)
@@ -987,7 +994,7 @@ def build(events, now):
         t = t0
         while t < now + timedelta(hours=ENDED_FILLER_HOURS):
             b = t + timedelta(hours=BLOCK_HOURS)
-            add_programme(tv, sid, t, b, OFFLINE_TITLE, None, desc)
+            add_programme(tv, sid, t, b, offline_title(ended[sid]), None, desc)
             count += 1
             t = b
     count = len(tv.findall("programme"))
