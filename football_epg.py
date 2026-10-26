@@ -50,7 +50,6 @@ used for SSL certificates if installed). On Windows: pip install tzdata
 
 import argparse
 import csv
-import io
 import json
 import os
 import re
@@ -788,101 +787,9 @@ def build_channels(matches, english, suffix, english_only):
 
 
 # --------------------------------------------------------------------------
-# Match images: both club badges side by side (added 26 Oct 2026)
-# --------------------------------------------------------------------------
-# Each club match programme gets an <icon> - a picture of the home badge, "v" and the
-# away badge - which players show next to the description (PlaylistLabs passes it on
-# with "Icon: Show event image" ticked). The pictures are made with Pillow from ESPN's
-# badges, saved in badges/ in the repo (one per home/away pair, reused across runs) and
-# served from GitHub. Pictures no longer used by the guide are deleted. If Pillow isn't
-# installed or a badge can't be downloaded, the programme simply has no picture.
-BADGES = True
-BADGE_DIR = "badges"
-BADGE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/badges/{name}"
-BADGE_SIZE = (480, 270)            # 16:9
-BADGE_BG = (18, 24, 38)            # dark navy, so white and dark badges both show
-BADGE_BOX = 180                    # each badge is fitted into a square this size
-
-try:
-    from PIL import Image, ImageDraw, ImageFont
-except ImportError:                # no Pillow: no pictures, nothing else changes
-    Image = None
-
-_logos = {}                        # logo URL -> PIL image (or None), per run
-_badges_used = set()               # file names referenced by this run's guide
-
-
-def _logo(url):
-    if url not in _logos:
-        img = None
-        try:
-            req = urllib.request.Request(url, headers=HEADERS)
-            with urllib.request.urlopen(req, timeout=30, context=CTX) as resp:
-                img = Image.open(io.BytesIO(resp.read())).convert("RGBA")
-            img.thumbnail((BADGE_BOX, BADGE_BOX), Image.LANCZOS)
-        except Exception as e:
-            print(f"  WARNING: badge {url} not available ({e}) - no picture", file=sys.stderr)
-        _logos[url] = img
-    return _logos[url]
-
-
-def _font(size):
-    for name in ("DejaVuSans-Bold.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-                 "Arial Bold.ttf", "arialbd.ttf"):
-        try:
-            return ImageFont.truetype(name, size)
-        except OSError:
-            pass
-    try:
-        return ImageFont.load_default(size=size)   # Pillow 10.1+
-    except TypeError:
-        return ImageFont.load_default()
-
-
-def match_badge(m):
-    """URL of the 'home v away' picture for a club match, making it if needed; or None."""
-    if not BADGES or Image is None or len(m.get("teams") or []) != 2:
-        return None
-    if "icon" in m:
-        return m["icon"]
-    h, a = m["teams"]
-    m["icon"] = None
-    if not (h.get("id") and a.get("id") and h.get("logo") and a.get("logo")):
-        return None
-    name = f"{h['id']}_{a['id']}.png"
-    path = os.path.join(BADGE_DIR, name)
-    if not os.path.exists(path):
-        hl, al = _logo(h["logo"]), _logo(a["logo"])
-        if hl is None or al is None:
-            return None
-        w, ht = BADGE_SIZE
-        img = Image.new("RGBA", BADGE_SIZE, BADGE_BG + (255,))
-        for logo, cx in ((hl, w // 4), (al, 3 * w // 4)):
-            img.alpha_composite(logo, (cx - logo.width // 2, ht // 2 - logo.height // 2))
-        draw = ImageDraw.Draw(img)
-        font = _font(48)
-        draw.text((w // 2, ht // 2), "v", fill=(235, 235, 235, 255), font=font, anchor="mm")
-        os.makedirs(BADGE_DIR, exist_ok=True)
-        img.convert("RGB").quantize(colors=128).save(path, optimize=True)
-    _badges_used.add(name)
-    m["icon"] = BADGE_URL.format(name=name)
-    return m["icon"]
-
-
-def prune_badges():
-    """Delete pictures this run's guide no longer uses (past or cancelled matches)."""
-    if not BADGES or Image is None or not os.path.isdir(BADGE_DIR):
-        return
-    gone = [f for f in os.listdir(BADGE_DIR) if f.endswith(".png") and f not in _badges_used]
-    for f in gone:
-        os.remove(os.path.join(BADGE_DIR, f))
-    print(f"Match pictures: {len(_badges_used)} in use, {len(gone)} old ones removed")
-
-
-# --------------------------------------------------------------------------
 # XMLTV
 # --------------------------------------------------------------------------
-def add_programme(tv, chan_id, start, stop, title, sub, desc, comp, live=False, icon=None):
+def add_programme(tv, chan_id, start, stop, title, sub, desc, comp, live=False):
     p = ET.SubElement(tv, "programme", {
         "start": xmltv_time(start), "stop": xmltv_time(stop), "channel": chan_id})
     ET.SubElement(p, "title", {"lang": "en"}).text = title
@@ -892,8 +799,6 @@ def add_programme(tv, chan_id, start, stop, title, sub, desc, comp, live=False, 
     cats = ("Sports",) if comp == "Sports" else ("Sports", "Football", comp)   # generic: Sports only
     for cat in cats + (("Live",) if live else ()):
         ET.SubElement(p, "category", {"lang": "en"}).text = cat
-    if icon:                                  # club matches: "home v away" badges picture
-        ET.SubElement(p, "icon", {"src": icon})
 
 
 def countdown(delta):
@@ -967,8 +872,7 @@ def build_xmltv(channels, filler):
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
                         f_title += f" - kick-off in {countdown(start - a)}"
                     add_programme(tv, chan_id, a, b, f_title,
-                                  m.get("filler_sub", f"⏭ Next Match: {m['sub']}"), f_desc, m["comp"],
-                                  icon=match_badge(m))
+                                  m.get("filler_sub", f"⏭ Next Match: {m['sub']}"), f_desc, m["comp"])
                     count += 1
             if m.get("filler_only"):                  # Goal Rush before matchday: no show yet
                 last_stop = start
@@ -978,7 +882,7 @@ def build_xmltv(channels, filler):
                                                  else m.get("fixed_title", m["title"]))
             add_programme(tv, chan_id, start, stop, live_title,
                           m.get("live_sub", m["sub"]), m.get("fixed_desc", m["desc"]),   # 🔴 is in the title
-                          m["comp"], live=not m.get("not_live"), icon=match_badge(m))
+                          m["comp"], live=not m.get("not_live"))
             count += 1
             last_stop = stop
     return tv, count
@@ -1074,7 +978,6 @@ def main():
     else:
         out_path = args.out
     write_xml(tv, out_path)
-    prune_badges()
     if run_no is not None:
         save_last_run(run_no)
 
