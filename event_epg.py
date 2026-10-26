@@ -528,11 +528,13 @@ def _nice_title(t):
     return re.sub(r"\b(V|Vs|VS)\b\.?", lambda m: m.group(1).lower(), t)
 
 
-def parse_tod(name):
+def parse_tod(name, any_region=False):
+    """any_region=True also takes 2-letter regions ("CA: SOCCER PPV 1") - used only as a last
+    resort, after the DAZN-style parser, so "GB: DAZN PPV 5" names are read as before."""
     parts = [p.strip() for p in name.split("|")]
     if len(parts) < 3:
         return None
-    sm = TOD_SLOT.match(parts[-1])
+    sm = (PIPE_SLOT if any_region else TOD_SLOT).match(parts[-1])
     if not sm:
         return None
     cc, label = sm["cc"], sm["label"].strip()
@@ -551,6 +553,8 @@ def parse_tod(name):
             zone = ABBREV_TZ.get((tm.group(2) or "").upper())
         elif p.lower() in LANGUAGES:
             langs.append(p.capitalize())
+        elif p.lower() == "all":                     # "all" (all languages/regions) - nothing to show
+            continue
         else:
             text.append(p)
     text = [t for t in text if not NO_EVENT.match(t)]
@@ -567,7 +571,8 @@ def parse_tod(name):
         ev["start"] = now - timedelta(days=2)            # the name says it's over
     elif date and time_:
         h, mi = map(int, time_.split(":"))
-        ev["start"] = datetime(*date, h, mi, tzinfo=ZoneInfo(zone or TOD_TZ)).astimezone(timezone.utc)
+        ev["start"] = datetime(*date, h, mi, tzinfo=ZoneInfo(zone or COUNTRY_TZ.get(cc, TOD_TZ))) \
+            .astimezone(timezone.utc)
     elif status == "live":
         ev["start"] = first_seen(slot_id, name).replace(minute=0, second=0)   # live since we
                                                          # first saw this name (from the hour)
@@ -846,7 +851,9 @@ def _parse_name(name):
                     "slot_name": f"{cc}: {slot_label.strip()}",
                     "title": title, "extra": extra, "comp": comp or competition(title, extra),
                     "start": local.astimezone(timezone.utc)}
-    return None
+    # Last resort: TOD-style names with a 2-letter region, e.g. Soccer PPV
+    # "End | 2026 NFL Draft | all | 26-10-2026 | 00:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1"
+    return parse_tod(name, any_region=True)
 
 
 def read_playlist(args):
