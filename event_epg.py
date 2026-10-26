@@ -238,45 +238,19 @@ def slug(text):
 # their IDs also start with the region code, so the two can't be mixed up when linking
 # (CASOCCERPPV198.ca, USSOCCERPPV198.us).
 REGION_PREFIX_GROUPS = {"SOCCERPPV"}
-# ...except in these regions: PlaylistLabs' auto-search kept linking US streams to the Canada IDs
-# (26 Oct 2026), so US Soccer PPV IDs are plain "SOCCERPPV123.us" (no US slots were linked yet).
-NO_PREFIX_REGIONS = {"us"}
-# PlaylistLabs' automatic search ignores the "CA:"/"US:" tag, so "... | CA: SOCCER PPV 123" and
-# "... | US: SOCCER PPV 123" look the same to it and US streams got linked to the Canada channels.
-# For these groups:
-#  - channels in ID_NAME_ONLY_REGIONS are named only by their ID ("CASOCCERPPV123.ca"), so they
-#    don't look like a stream name at all (Canada is all linked already, 26 Oct 2026; empty the
-#    set to auto-link Canada again - then US would clash);
-#  - every other region's channel also gets the empty-slot name ("NO EVENT STREAMING NOW - |
-#    8K EXCLUSIVE | US: SOCCER PPV 123"), the name auto-search links on, even while the slot has
-#    an event (PlaylistLabs' copy of the playlist can lag behind the names this run saw).
-ID_NAME_ONLY_REGIONS = {"ca"}
-EMPTY_SLOT_NAME = "NO EVENT STREAMING NOW - | 8K EXCLUSIVE | {}"
-
-
 def add_channel(tv, sid, ev):
-    """<channel> with the full stream name first (for PlaylistLabs' automatic search) and the
-    slot name second - full name left out for SHORT_NAME_ONLY_REGIONS (see there)."""
+    """<channel> with the full stream name first (so PlaylistLabs' automatic search can match
+    an empty slot's name exactly) and the slot name second."""
     c = ET.SubElement(tv, "channel", {"id": sid})
-    base, _, region = sid.rpartition(".")
-    prefixed = any(re.sub(r"\d+$", "", base).upper().endswith(g) for g in REGION_PREFIX_GROUPS)
-    if prefixed and region in ID_NAME_ONLY_REGIONS:
-        names = [sid]
-    else:
-        names = [ev["name"]]
-        if prefixed:
-            names.append(EMPTY_SLOT_NAME.format(ev["slot_name"]))
-        names.append(ev["slot_name"])
-    for n in dict.fromkeys(names):                   # in order, no repeats
-        ET.SubElement(c, "display-name", {"lang": "en"}).text = n
+    ET.SubElement(c, "display-name", {"lang": "en"}).text = ev["name"]
+    ET.SubElement(c, "display-name", {"lang": "en"}).text = ev["slot_name"]
     return c
 
 
 def pipe_slot_id(cc, label):
     """ID for a "CC: SLOT LABEL" stream ("GB: DAZN PPV 5" -> DAZNPPV5.gb)."""
     base = slug(label)
-    if re.sub(r"\d+$", "", base).upper() in REGION_PREFIX_GROUPS and \
-            cc.strip().lower() not in NO_PREFIX_REGIONS:
+    if re.sub(r"\d+$", "", base).upper() in REGION_PREFIX_GROUPS:
         base = cc.strip().upper() + base
     return f"{base}.{cc.strip().lower()}"
 
