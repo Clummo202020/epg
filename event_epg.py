@@ -238,6 +238,25 @@ def slug(text):
 # their IDs also start with the region code, so the two can't be mixed up when linking
 # (CASOCCERPPV198.ca, USSOCCERPPV198.us).
 REGION_PREFIX_GROUPS = {"SOCCERPPV"}
+# PlaylistLabs' automatic search ignores the "CA:"/"US:" tag, so "... | CA: SOCCER PPV 123" and
+# "... | US: SOCCER PPV 123" look the same to it and US streams got linked to the Canada channels.
+# Channels of these groups in the regions below get only the short name ("CA: SOCCER PPV 123"),
+# not the full stream name, so auto-search picks the other region's exact match. Canada is all
+# linked already (26 Oct 2026); empty this set to auto-link Canada again (then US would clash).
+SHORT_NAME_ONLY_REGIONS = {"ca"}
+
+
+def add_channel(tv, sid, ev):
+    """<channel> with the full stream name first (for PlaylistLabs' automatic search) and the
+    slot name second - full name left out for SHORT_NAME_ONLY_REGIONS (see there)."""
+    c = ET.SubElement(tv, "channel", {"id": sid})
+    base, _, region = sid.rpartition(".")
+    short_only = region in SHORT_NAME_ONLY_REGIONS and \
+        any(g in base.upper() for g in REGION_PREFIX_GROUPS)
+    if not short_only:
+        ET.SubElement(c, "display-name", {"lang": "en"}).text = ev["name"]
+    ET.SubElement(c, "display-name", {"lang": "en"}).text = ev["slot_name"]
+    return c
 
 
 def pipe_slot_id(cc, label):
@@ -479,6 +498,45 @@ def fixture_date(title, h, mi, now, label=""):
     return min(same_time, key=lambda ko: abs(ko - now))
 
 
+# Soccer PPV names ("Next | Walsall FC vs. Salford City FC | all | 26-10-2026 | 20:52 (GMT) |
+# ... | CA: SOCCER PPV 11") give a time that isn't the kick-off (that match started 20:00).
+# So for these, the real start is looked up: the football guide first, then ESPN's NFL, NBA,
+# NHL and MLB schedules - same two teams within REAL_START_HOURS of the name's time.
+REAL_START_HOURS = 12
+
+
+def real_start(title, approx):
+    """(start UTC, early minutes, competition) of the match in `title` near `approx`, else None."""
+    sides = re.split(r"\s+(?:vs?\.?|at|@|x|-)\s+", title, maxsplit=1, flags=re.I)
+    if len(sides) != 2:
+        return None
+    fx = load_fixtures() or []
+    best = None
+    for fh, fa, fhn, fan, ko, comp in fx:
+        def same(side, key, nm):
+            k = _team_key(side)
+            return bool(k) and (k == key or SequenceMatcher(None, k, key).ratio() >= 0.85 or
+                                SequenceMatcher(None, _norm(side), _norm(nm)).ratio() >= 0.8)
+        if ((same(sides[0], fh, fhn) and same(sides[1], fa, fan)) or
+                (same(sides[0], fa, fan) and same(sides[1], fh, fhn))):
+            k = ko.astimezone(timezone.utc)
+            if abs(k - approx) <= timedelta(hours=REAL_START_HOURS) and \
+                    (best is None or abs(k - approx) < abs(best[0] - approx)):
+                best = (k, comp)
+    if best:
+        return best[0], KICKOFF_EARLY_MINUTES, best[1]
+    for sport, label in ((NFL_ESPN, "NFL"), (NBA_ESPN, "NBA"), (US_LEAGUES["NHL"][0], "NHL"),
+                         (MLB_ESPN, "MLB")):
+        games = load_espn_games(sport, label) or []
+        hits = [ko for a, b, ko in games
+                if ((_team_match(sides[0], a) and _team_match(sides[1], b)) or
+                    (_team_match(sides[0], b) and _team_match(sides[1], a)))
+                and abs(ko - approx) <= timedelta(hours=REAL_START_HOURS)]
+        if hits:
+            return min(hits, key=lambda k: abs(k - approx)), 0, label
+    return None
+
+
 # TOD (beIN, Middle East) streams:
 #   "Next | Austin Round - Reverse Grid Race || Arabic | F1 Academy | 24-10-2026 | 22:35 (GMT) |
 #    8K EXCLUSIVE | MENA: AR PPV 27"                                  -> ARPPV27.mena
@@ -573,6 +631,12 @@ def parse_tod(name, any_region=False):
         h, mi = map(int, time_.split(":"))
         ev["start"] = datetime(*date, h, mi, tzinfo=ZoneInfo(zone or COUNTRY_TZ.get(cc, TOD_TZ))) \
             .astimezone(timezone.utc)
+        if any_region:                               # Soccer PPV: the name's time isn't the kick-off
+            rs = real_start(title, ev["start"])
+            if rs:
+                ev["start"], ev["early"] = rs[0], rs[1]
+                if not ev["comp"] and rs[2]:
+                    ev["comp"] = rs[2]
     elif status == "live":
         ev["start"] = first_seen(slot_id, name).replace(minute=0, second=0)   # live since we
                                                          # first saw this name (from the hour)
@@ -935,19 +999,9 @@ def build(events, now):
     untimed = {sid: ev for sid, ev in untimed.items() if sid not in by_slot}
     ended = {sid: ev for sid, ev in ended.items() if sid not in by_slot and sid not in untimed}
     for sid in sorted(untimed):
-        c = ET.SubElement(tv, "channel", {"id": sid})
-        ET.SubElement(c, "display-name", {"lang": "en"}).text = untimed[sid]["name"]
-        ET.SubElement(c, "display-name", {"lang": "en"}).text = untimed[sid]["slot_name"]
+        add_channel(tv, sid, untimed[sid])
     for sid in sorted(set(by_slot) | set(ended)):
-        if sid in ended:          # event over, nothing new yet: a channel with short filler
-            c = ET.SubElement(tv, "channel", {"id": sid})
-            ET.SubElement(c, "display-name", {"lang": "en"}).text = ended[sid]["name"]
-            ET.SubElement(c, "display-name", {"lang": "en"}).text = ended[sid]["slot_name"]
-            continue
-        c = ET.SubElement(tv, "channel", {"id": sid})
-        # the full stream name first, so PlaylistLabs' automatic search can match it exactly
-        ET.SubElement(c, "display-name", {"lang": "en"}).text = by_slot[sid]["name"]
-        ET.SubElement(c, "display-name", {"lang": "en"}).text = by_slot[sid]["slot_name"]
+        add_channel(tv, sid, ended[sid] if sid in ended else by_slot[sid])
     count = 0
     for sid in sorted(by_slot):
         ev = by_slot[sid]
