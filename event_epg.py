@@ -142,13 +142,17 @@ FOOTBALL_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/fo
 # name starts with the same word, so a finished UEFA tie can't latch onto a later league match
 # of one of its teams (e.g. "Lillestrom vs Real Sociedad" -> Athletic Club v Real Sociedad).
 SAME_COMP_LABELS = {"uefa"}
-HORIZON_HOURS = 12             # the guide only lists this far ahead (see add_programme).
-                               # Raised from 4 on 25 Oct 2026: PlaylistLabs re-downloads this
-                               # source on its own schedule (no setting for it), which proved too
-                               # infrequent for 4 h - the channels went blank between fetches.
-                               # Trade-off: when a slot moves to a new event, the old listing can
-                               # linger in PlaylistLabs for up to this long.
-PIECE_HOURS = 1                # programmes are written in pieces of at most this length
+HORIZON_HOURS = 24             # the guide only lists this far ahead (see add_programme).
+                               # 4 h until 25 Oct 2026, then 12 h, then 24 h: PlaylistLabs refreshes
+                               # each external EPG roughly once a day, in a rolling queue with no fixed
+                               # time (plus manual "Force Refresh"), and only appends after what it
+                               # holds - so the data must last until the next fetch. The user does one
+                               # manual refresh a day; the automatic one is the backup.
+                               # Trade-off: a listing is fixed up to this long before it airs, so when
+                               # a slot moves to a new event the old listing can linger that long.
+PIECE_HOURS = 2                # programmes are written in pieces of at most this length
+                               # (1 h until 25 Oct 2026; 2 h with the 24-h horizon keeps the file
+                               # about the size it was - PlaylistLabs may fail on very large files)
 ENDED_FILLER_HOURS = HORIZON_HOURS   # a finished/empty slot shows "Channel is offline" for this
                                # long (was 2 h; raised with the horizon so these don't go blank)
 # Name sections that are labels, not event information ("8K EXCLUSIVE", "4K", "HD" ...)
