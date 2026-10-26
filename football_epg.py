@@ -96,6 +96,113 @@ UEFA_COMPETITIONS = ["UEFA Champions League", "UEFA Europa League", "UEFA Confer
 # Foreign leagues in which every club gets a channel (--english-only skips them).
 OTHER_LEAGUES = ["La Liga"]
 
+# Cup rounds / UEFA stages (ESPN doesn't say which round or matchday a match is in). Each entry is the
+# first UK date of a round; a match gets the latest round that started on or before its
+# date, so a postponed tie keeps its round until the next one starts. Dates are the
+# confirmed 2026-27 round dates (EFL / The FA) - ADD NEXT SEASON'S IN SUMMER 2027; outside
+# a table the secondary title is just the cup name (and the log says so).
+CUP_ROUNDS = {
+    "Carabao Cup": [                     # EFL: w/c dates, so start the Saturday before
+        ("2026-07-25", "Preliminary Round"),
+        ("2026-08-06", "1st Round"),
+        ("2026-08-22", "2nd Round"),
+        ("2026-09-05", "3rd Round"),
+        ("2026-10-24", "4th Round"),
+        ("2026-12-12", "Quarter-final"),
+        ("2027-01-09", "Semi-final, 1st Leg"),
+        ("2027-01-30", "Semi-final, 2nd Leg"),
+        ("2027-03-20", "Final"),
+        ("2027-03-28", None),            # season over
+    ],
+    "FA Cup": [                          # The FA: round Saturdays, start the Thursday before
+        ("2026-10-15", "4th Qualifying Round"),
+        ("2026-11-05", "1st Round"),
+        ("2026-12-03", "2nd Round"),
+        ("2027-01-07", "3rd Round"),
+        ("2027-02-11", "4th Round"),
+        ("2027-03-04", "5th Round"),
+        ("2027-04-01", "Quarter-final"),
+        ("2027-04-22", "Semi-final"),
+        ("2027-05-20", "Final"),
+        ("2027-05-29", None),            # season over
+    ],
+    "UEFA Champions League": [           # UEFA: start the Saturday before each matchday week
+        # (MD7 date not published in my sources - any UCL match between MD6 and MD8 is MD7)
+        ("2026-09-05", "Matchday 1"),
+        ("2026-10-10", "Matchday 2"),
+        ("2026-10-17", "Matchday 3"),
+        ("2026-10-31", "Matchday 4"),
+        ("2026-11-21", "Matchday 5"),
+        ("2026-12-05", "Matchday 6"),
+        ("2027-01-16", "Matchday 7"),
+        ("2027-01-24", "Matchday 8"),
+        ("2027-02-13", "Knockout Play-off, 1st Leg"),
+        ("2027-02-20", "Knockout Play-off, 2nd Leg"),
+        ("2027-03-06", "Round of 16, 1st Leg"),
+        ("2027-03-13", "Round of 16, 2nd Leg"),
+        ("2027-04-03", "Quarter-final, 1st Leg"),
+        ("2027-04-10", "Quarter-final, 2nd Leg"),
+        ("2027-04-24", "Semi-final, 1st Leg"),
+        ("2027-05-01", "Semi-final, 2nd Leg"),
+        ("2027-05-29", "Final"),
+        ("2027-06-08", None),
+    ],
+    "UEFA Europa League": [
+        ("2026-09-12", "Matchday 1"),
+        ("2026-10-10", "Matchday 2"),
+        ("2026-10-17", "Matchday 3"),
+        ("2026-10-31", "Matchday 4"),
+        ("2026-11-21", "Matchday 5"),
+        ("2026-12-05", "Matchday 6"),
+        ("2027-01-16", "Matchday 7"),
+        ("2027-01-24", "Matchday 8"),
+        ("2027-02-13", "Knockout Play-off, 1st Leg"),
+        ("2027-02-20", "Knockout Play-off, 2nd Leg"),
+        ("2027-03-06", "Round of 16, 1st Leg"),
+        ("2027-03-13", "Round of 16, 2nd Leg"),
+        ("2027-04-03", "Quarter-final, 1st Leg"),
+        ("2027-04-10", "Quarter-final, 2nd Leg"),
+        ("2027-04-24", "Semi-final, 1st Leg"),
+        ("2027-05-01", "Semi-final, 2nd Leg"),
+        ("2027-05-22", "Final"),
+        ("2027-06-01", None),
+    ],
+    "UEFA Conference League": [
+        # (semi-final dates assumed = Europa League's: 29 Apr / 6 May 2027)
+        ("2026-10-10", "Matchday 1"),
+        ("2026-10-17", "Matchday 2"),
+        ("2026-10-31", "Matchday 3"),
+        ("2026-11-21", "Matchday 4"),
+        ("2026-12-05", "Matchday 5"),
+        ("2026-12-12", "Matchday 6"),
+        ("2027-02-13", "Knockout Play-off, 1st Leg"),
+        ("2027-02-20", "Knockout Play-off, 2nd Leg"),
+        ("2027-03-06", "Round of 16, 1st Leg"),
+        ("2027-03-13", "Round of 16, 2nd Leg"),
+        ("2027-04-03", "Quarter-final, 1st Leg"),
+        ("2027-04-10", "Quarter-final, 2nd Leg"),
+        ("2027-04-24", "Semi-final, 1st Leg"),
+        ("2027-05-01", "Semi-final, 2nd Leg"),
+        ("2027-05-29", "Final"),
+        ("2027-06-08", None),
+    ],
+}
+
+
+def cup_round(comp_name, day):
+    """The round of a domestic cup match on this UK date, or None if not known."""
+    table = CUP_ROUNDS.get(comp_name)
+    if not table:
+        return None
+    found = None
+    for start, name in table:
+        if day >= date.fromisoformat(start):
+            found = name
+    if found is None:
+        print(f"  WARNING: no {comp_name} round for {day} - update CUP_ROUNDS")
+    return found
+
+
 # Fixtures with these statuses have no reliable kick-off and are skipped.
 SKIP_STATUSES = {"STATUS_POSTPONED", "STATUS_CANCELED", "STATUS_CANCELLED",
                  "STATUS_ABANDONED", "STATUS_FORFEIT"}
@@ -399,7 +506,11 @@ def collect_matches(events_by_comp, match_minutes):
             ko = start.astimezone(LONDON)
 
             notes = [n.get("headline") for n in comp.get("notes", []) if n.get("headline")]
-            sub = utd(comp_name + (f" - {notes[0]}" if notes else ""))
+            rnd = cup_round(comp_name, ko.date())       # e.g. "Carabao Cup 4th Round"
+            if rnd:
+                sub = f"{comp_name} {rnd}"
+            else:
+                sub = utd(comp_name + (f" - {notes[0]}" if notes else ""))
 
             tbc = comp.get("timeValid") is False             # ESPN's time is only a placeholder
             desc = [f"{title}."]    # the competition is in the secondary title
