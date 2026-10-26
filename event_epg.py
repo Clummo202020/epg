@@ -240,10 +240,15 @@ def slug(text):
 REGION_PREFIX_GROUPS = {"SOCCERPPV"}
 # PlaylistLabs' automatic search ignores the "CA:"/"US:" tag, so "... | CA: SOCCER PPV 123" and
 # "... | US: SOCCER PPV 123" look the same to it and US streams got linked to the Canada channels.
-# Channels of these groups in the regions below get only the short name ("CA: SOCCER PPV 123"),
-# not the full stream name, so auto-search picks the other region's exact match. Canada is all
-# linked already (26 Oct 2026); empty this set to auto-link Canada again (then US would clash).
-SHORT_NAME_ONLY_REGIONS = {"ca"}
+# For these groups:
+#  - channels in ID_NAME_ONLY_REGIONS are named only by their ID ("CASOCCERPPV123.ca"), so they
+#    don't look like a stream name at all (Canada is all linked already, 26 Oct 2026; empty the
+#    set to auto-link Canada again - then US would clash);
+#  - every other region's channel also gets the empty-slot name ("NO EVENT STREAMING NOW - |
+#    8K EXCLUSIVE | US: SOCCER PPV 123"), the name auto-search links on, even while the slot has
+#    an event (PlaylistLabs' copy of the playlist can lag behind the names this run saw).
+ID_NAME_ONLY_REGIONS = {"ca"}
+EMPTY_SLOT_NAME = "NO EVENT STREAMING NOW - | 8K EXCLUSIVE | {}"
 
 
 def add_channel(tv, sid, ev):
@@ -251,11 +256,16 @@ def add_channel(tv, sid, ev):
     slot name second - full name left out for SHORT_NAME_ONLY_REGIONS (see there)."""
     c = ET.SubElement(tv, "channel", {"id": sid})
     base, _, region = sid.rpartition(".")
-    short_only = region in SHORT_NAME_ONLY_REGIONS and \
-        any(g in base.upper() for g in REGION_PREFIX_GROUPS)
-    if not short_only:
-        ET.SubElement(c, "display-name", {"lang": "en"}).text = ev["name"]
-    ET.SubElement(c, "display-name", {"lang": "en"}).text = ev["slot_name"]
+    prefixed = any(re.sub(r"\d+$", "", base).upper().endswith(g) for g in REGION_PREFIX_GROUPS)
+    if prefixed and region in ID_NAME_ONLY_REGIONS:
+        names = [sid]
+    else:
+        names = [ev["name"]]
+        if prefixed:
+            names.append(EMPTY_SLOT_NAME.format(ev["slot_name"]))
+        names.append(ev["slot_name"])
+    for n in dict.fromkeys(names):                   # in order, no repeats
+        ET.SubElement(c, "display-name", {"lang": "en"}).text = n
     return c
 
 
