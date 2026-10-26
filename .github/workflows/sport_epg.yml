@@ -31,15 +31,44 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add SPORT_epg.xml.gz SPORT_translations.json
-          if git diff --cached --quiet; then
-            echo "No changes"
-          else
+          # Keep this run's output aside, then put it on top of the LATEST repo each try.
+          # (A rebase can't merge the .gz file, so if the repo changed during the run the push used to fail.)
+          BASE=$(git rev-parse HEAD)
+          mkdir -p /tmp/out
+          cp SPORT_epg.xml.gz SPORT_translations.json /tmp/out/
+          ok=""
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/out/SPORT_epg.xml.gz .
+            if git diff --quiet "$BASE" origin/main -- SPORT_translations.json; then
+              cp /tmp/out/SPORT_translations.json .
+            else
+              echo "Translations changed in the repo during the run - merging both"
+              python3 - <<'EOF'
+          import json
+          with open("/tmp/out/SPORT_translations.json", encoding="utf-8") as f:
+              new = json.load(f)
+          try:
+              with open("SPORT_translations.json", encoding="utf-8") as f:
+                  old = json.load(f)
+          except (OSError, ValueError):
+              old = {}
+          used = dict(old.get("__desc_used__") or {})
+          for k, v in (new.get("__desc_used__") or {}).items():
+              if v >= used.get(k, ""):
+                  used[k] = v
+          merged = {k: v for k, v in old.items() if k != "__desc_used__"}
+          merged.update({k: v for k, v in new.items() if k != "__desc_used__"})
+          merged["__desc_used__"] = used
+          with open("SPORT_translations.json", "w", encoding="utf-8") as f:
+              json.dump(merged, f, ensure_ascii=False, indent=1, sort_keys=True)
+          EOF
+            fi
+            git add SPORT_epg.xml.gz SPORT_translations.json
+            if git diff --cached --quiet; then echo "No changes"; ok=1; break; fi
             git commit -m "Update SPORT EPG"
-            ok=""
-            for i in 1 2 3 4 5; do
-              if git pull --rebase && git push; then ok=1; break; fi
-              sleep 15
-            done
-            [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }
-          fi
+            if git push origin HEAD:main; then ok=1; break; fi
+            sleep 15
+          done
+          [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }
