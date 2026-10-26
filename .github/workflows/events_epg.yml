@@ -35,16 +35,45 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add events_epg.xml
-          if [ -f events_seen.json ]; then git add events_seen.json; fi
-          if git diff --cached --quiet; then
-            echo "No changes"
-          else
+          # Keep this run's output aside, then put it on top of the LATEST repo each try.
+          # (A rebase can't merge generated files, so if the repo changed during the run the push could fail.)
+          BASE=$(git rev-parse HEAD)
+          mkdir -p /tmp/out
+          cp events_epg.xml /tmp/out/
+          if [ -f events_seen.json ]; then cp events_seen.json /tmp/out/; fi
+          ok=""
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/out/events_epg.xml .
+            if [ -f /tmp/out/events_seen.json ]; then
+              if [ -f events_seen.json ] && ! git diff --quiet "$BASE" origin/main -- events_seen.json; then
+                echo "events_seen.json changed in the repo during the run - keeping the earliest first-seen times"
+                python3 - <<'EOF'
+          import json
+          with open("/tmp/out/events_seen.json", encoding="utf-8") as f:
+              new = json.load(f)
+          try:
+              with open("events_seen.json", encoding="utf-8") as f:
+                  old = json.load(f)
+          except (OSError, ValueError):
+              old = {}
+          for slot, rec in new.items():
+              o = old.get(slot)
+              if isinstance(o, dict) and o.get("name") == rec.get("name") and o.get("seen", "") < rec.get("seen", ""):
+                  rec["seen"] = o["seen"]
+          with open("events_seen.json", "w", encoding="utf-8") as f:
+              json.dump(dict(sorted(new.items())), f, indent=1, ensure_ascii=False)
+          EOF
+              else
+                cp /tmp/out/events_seen.json .
+              fi
+            fi
+            git add events_epg.xml
+            if [ -f events_seen.json ]; then git add events_seen.json; fi
+            if git diff --cached --quiet; then echo "No changes"; ok=1; break; fi
             git commit -m "Update event EPG"
-            ok=""
-            for i in 1 2 3 4 5; do
-              if git pull --rebase && git push; then ok=1; break; fi
-              sleep 15
-            done
-            [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }
-          fi
+            if git push origin HEAD:main; then ok=1; break; fi
+            sleep 15
+          done
+          [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }

@@ -31,15 +31,19 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add USA_epg.xml.gz CANADA_epg.xml.gz
-          if git diff --cached --quiet; then
-            echo "No changes"
-          else
+          # Keep this run's output aside, then put it on top of the LATEST repo each try.
+          # (A rebase can't merge the .gz files, so if the repo changed during the run the push could fail.)
+          mkdir -p /tmp/out
+          cp USA_epg.xml.gz CANADA_epg.xml.gz /tmp/out/
+          ok=""
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/out/USA_epg.xml.gz /tmp/out/CANADA_epg.xml.gz .
+            git add USA_epg.xml.gz CANADA_epg.xml.gz
+            if git diff --cached --quiet; then echo "No changes"; ok=1; break; fi
             git commit -m "Update USA and Canada EPG"
-            ok=""
-            for i in 1 2 3 4 5; do
-              if git pull --rebase && git push; then ok=1; break; fi
-              sleep 15
-            done
-            [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }
-          fi
+            if git push origin HEAD:main; then ok=1; break; fi
+            sleep 15
+          done
+          [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }

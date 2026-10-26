@@ -34,18 +34,38 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add football_epg.xml scottish_epg.xml
+          # Keep this run's output aside, then put it on top of the LATEST repo each try.
+          # (A rebase can't merge generated files, so if the repo changed during the run the push could fail.)
+          mkdir -p /tmp/out
+          cp football_epg.xml scottish_epg.xml /tmp/out/
           for f in football_epg_run.json scottish_epg_run.json; do
-            if [ -f "$f" ]; then git add "$f"; fi
+            if [ -f "$f" ]; then cp "$f" /tmp/out/; fi
           done
-          if git diff --cached --quiet; then
-            echo "No changes"
-          else
-            git commit -m "Update football and Scottish EPG"
-            ok=""
-            for i in 1 2 3 4 5; do
-              if git pull --rebase && git push; then ok=1; break; fi
-              sleep 15
+          ok=""
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/out/football_epg.xml /tmp/out/scottish_epg.xml .
+            git add football_epg.xml scottish_epg.xml
+            for f in football_epg_run.json scottish_epg_run.json; do
+              if [ -f "/tmp/out/$f" ]; then
+                # run counters: keep the higher number
+                python3 -c "
+          import json, sys
+          def num(p):
+              try:
+                  return int(json.load(open(p))['last_run'])
+              except Exception:
+                  return 0
+          n = max(num('/tmp/out/$f'), num('$f'))
+          json.dump({'last_run': n}, open('$f', 'w'))
+          "
+                git add "$f"
+              fi
             done
-            [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }
-          fi
+            if git diff --cached --quiet; then echo "No changes"; ok=1; break; fi
+            git commit -m "Update football and Scottish EPG"
+            if git push origin HEAD:main; then ok=1; break; fi
+            sleep 15
+          done
+          [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }
