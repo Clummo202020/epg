@@ -750,14 +750,6 @@
     <display-name lang="en">York City League Two</display-name>
     <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/315.png" />
   </channel>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="AEK.Athens.ChampsLge">
-    <title lang="en">AEK Athens v Real Madrid (Wed 04 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: AEK Athens v Real Madrid. OPAP Arena, Athens. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="AEK.Athens.ChampsLge">
     <title lang="en">AEK Athens v Real Madrid (Wed 04 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
@@ -1639,14 +1631,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="AFC.Wimbledon.League1">
-    <title lang="en">Stockport County v AFC Wimbledon (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Stockport County v AFC Wimbledon. Edgeley Park, Stockport. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="AFC.Wimbledon.League1">
     <title lang="en">Stockport County v AFC Wimbledon (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -2135,14 +2119,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="AS.Roma.ChampsLge">
-    <title lang="en">Manchester Utd v AS Roma (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Manchester Utd v AS Roma. Old Trafford, Manchester. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="AS.Roma.ChampsLge">
     <title lang="en">Manchester Utd v AS Roma (Tue 03 Nov, 20:00)</title>
@@ -2937,14 +2913,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Accrington.Stanley.League2">
-    <title lang="en">Accrington Stanley v Northampton Town (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Accrington Stanley v Northampton Town. Wham Stadium, Accrington. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Accrington.Stanley.League2">
     <title lang="en">Accrington Stanley v Northampton Town (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -3433,14 +3401,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Alaves.LaLiga">
-    <title lang="en">Barcelona v Alavés (Sat 31 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Barcelona v Alavés. Spotify Camp Nou, Barcelona. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Alaves.LaLiga">
     <title lang="en">Barcelona v Alavés (Sat 31 Oct, 20:00)</title>
@@ -3947,14 +3907,6 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Arsenal.Carabao">
-    <title lang="en">Fleetwood Town v Arsenal (Tue 27 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Fleetwood Town v Arsenal. Highbury Stadium, Fleetwood. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Arsenal.Carabao">
     <title lang="en">Fleetwood Town v Arsenal (Tue 27 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -4075,14 +4027,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Arsenal.Prem">
-    <title lang="en">Liverpool v Arsenal (Sun 01 Nov, 16:30)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Liverpool v Arsenal. Anfield, Liverpool. Kick-off: 16:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Arsenal.Prem">
     <title lang="en">Liverpool v Arsenal (Sun 01 Nov, 16:30)</title>
@@ -4676,14 +4620,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Arsenal.ChampsLge">
-    <title lang="en">Slavia Prague v Arsenal (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Slavia Prague v Arsenal. Fortuna Arena, Prague. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Arsenal.ChampsLge">
     <title lang="en">Slavia Prague v Arsenal (Wed 04 Nov, 20:00)</title>
@@ -5574,14 +5510,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Aston.Villa.Carabao">
-    <title lang="en">Bournemouth v Aston Villa (Wed 28 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Bournemouth v Aston Villa. Vitality Stadium, Bournemouth. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Aston.Villa.Carabao">
     <title lang="en">Bournemouth v Aston Villa (Wed 28 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -5798,14 +5726,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Aston.Villa.Prem">
-    <title lang="en">Aston Villa v Fulham (Sat 31 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Aston Villa v Fulham. Villa Park, Birmingham. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Aston.Villa.Prem">
     <title lang="en">Aston Villa v Fulham (Sat 31 Oct, 20:00)</title>
@@ -6311,14 +6231,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Aston.Villa.ChampsLge">
-    <title lang="en">Barcelona v Aston Villa (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Barcelona v Aston Villa. Spotify Camp Nou, Barcelona. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Aston.Villa.ChampsLge">
     <title lang="en">Barcelona v Aston Villa (Tue 03 Nov, 20:00)</title>
@@ -7113,14 +7025,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Athletic.Club.LaLiga">
-    <title lang="en">Athletic Club v Real Sociedad (Sun 01 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Athletic Club v Real Sociedad. San Mamés, Bilbao. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Athletic.Club.LaLiga">
     <title lang="en">Athletic Club v Real Sociedad (Sun 01 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -7722,14 +7626,6 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Atletico.Madrid.LaLiga">
-    <title lang="en">Levante v Atlético Madrid (Sat 31 Oct, 13:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Levante v Atlético Madrid. Estadi Ciutat de València, Manises. Kick-off: 13:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Atletico.Madrid.LaLiga">
     <title lang="en">Levante v Atlético Madrid (Sat 31 Oct, 13:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -8210,14 +8106,6 @@
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Atletico.Madrid.ChampsLge">
-    <title lang="en">Atlético Madrid v Bayern Munich (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Atlético Madrid v Bayern Munich. Riyadh Air Metropolitano, Madrid. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Atletico.Madrid.ChampsLge">
     <title lang="en">Atlético Madrid v Bayern Munich (Tue 03 Nov, 20:00)</title>
@@ -9012,11 +8900,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="aussie.rules">
-    <title lang="en">Stream is live at event time only</title>
-    <desc lang="en">Aussie Rules footy from the Australian Football League (AFL).</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="aussie.rules">
     <title lang="en">Stream is live at event time only</title>
     <desc lang="en">Aussie Rules footy from the Australian Football League (AFL).</desc>
@@ -9612,13 +9495,10 @@
     <desc lang="en">Aussie Rules footy from the Australian Football League (AFL).</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Barcelona.LaLiga">
-    <title lang="en">Barcelona v Alavés (Sat 31 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Barcelona v Alavés. Spotify Camp Nou, Barcelona. Kick-off: 20:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="aussie.rules">
+    <title lang="en">Stream is live at event time only</title>
+    <desc lang="en">Aussie Rules footy from the Australian Football League (AFL).</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Barcelona.LaLiga">
     <title lang="en">Barcelona v Alavés (Sat 31 Oct, 20:00)</title>
@@ -10124,14 +10004,6 @@
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Barcelona.ChampsLge">
-    <title lang="en">Barcelona v Aston Villa (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Barcelona v Aston Villa. Spotify Camp Nou, Barcelona. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Barcelona.ChampsLge">
     <title lang="en">Barcelona v Aston Villa (Tue 03 Nov, 20:00)</title>
@@ -10926,14 +10798,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Barnet.League2">
-    <title lang="en">Barnet v York City (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Barnet v York City. The Hive Stadium, Barnet. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Barnet.League2">
     <title lang="en">Barnet v York City (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -11432,14 +11296,6 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Barnsley.League1">
-    <title lang="en">Barnsley v Oxford Utd (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Barnsley v Oxford Utd. Oakwell, Barnsley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Barnsley.League1">
     <title lang="en">Barnsley v Oxford Utd (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -11928,14 +11784,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Bayern.Munich.ChampsLge">
-    <title lang="en">Atlético Madrid v Bayern Munich (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Atlético Madrid v Bayern Munich. Riyadh Air Metropolitano, Madrid. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Bayern.Munich.ChampsLge">
     <title lang="en">Atlético Madrid v Bayern Munich (Tue 03 Nov, 20:00)</title>
@@ -12729,14 +12577,6 @@
     <category lang="en">Football</category>
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Birmingham.City.Championship">
-    <title lang="en">Lincoln City v Birmingham City (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Lincoln City v Birmingham City. LNER Stadium, Lincoln. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Birmingham.City.Championship">
     <title lang="en">Lincoln City v Birmingham City (Sat 31 Oct, 12:30)</title>
@@ -13540,14 +13380,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Blackburn.Rovers.Championship">
-    <title lang="en">Swansea City v Blackburn Rovers (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Swansea City v Blackburn Rovers. Swansea.com Stadium, Swansea. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Blackburn.Rovers.Championship">
     <title lang="en">Swansea City v Blackburn Rovers (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Championship</sub-title>
@@ -14350,14 +14182,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Blackpool.League1">
-    <title lang="en">Sheffield Wednesday v Blackpool (Sun 01 Nov, 14:00)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Sheffield Wednesday v Blackpool. Hillsborough, Sheffield. Kick-off: 14:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Blackpool.League1">
     <title lang="en">Sheffield Wednesday v Blackpool (Sun 01 Nov, 14:00)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -14934,14 +14758,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Bodo.Glimt.ChampsLge">
-    <title lang="en">Bodo/Glimt v Lille (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Bodo/Glimt v Lille. Aspmyra Stadion, Bodø/Glimt. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Bodo.Glimt.ChampsLge">
     <title lang="en">Bodo/Glimt v Lille (Tue 03 Nov, 20:00)</title>
@@ -15735,14 +15551,6 @@
     <category lang="en">Football</category>
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Bolton.Wanderers.Championship">
-    <title lang="en">Bolton Wanderers v Bristol City (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Bolton Wanderers v Bristol City. Toughsheet Community Stadium, Bolton. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Bolton.Wanderers.Championship">
     <title lang="en">Bolton Wanderers v Bristol City (Sat 31 Oct, 15:00)</title>
@@ -16545,14 +16353,6 @@
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Borussia.Dortmund.ChampsLge">
-    <title lang="en">Borussia Dortmund v Real Betis (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Borussia Dortmund v Real Betis. Signal Iduna Park, Aue. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Borussia.Dortmund.ChampsLge">
     <title lang="en">Borussia Dortmund v Real Betis (Wed 04 Nov, 20:00)</title>
@@ -17443,14 +17243,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Bournemouth.Carabao">
-    <title lang="en">Bournemouth v Aston Villa (Wed 28 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Bournemouth v Aston Villa. Vitality Stadium, Bournemouth. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Bournemouth.Carabao">
     <title lang="en">Bournemouth v Aston Villa (Wed 28 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -17667,14 +17459,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Bournemouth.Prem">
-    <title lang="en">Bournemouth v Leeds Utd (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Bournemouth v Leeds Utd. Vitality Stadium, Bournemouth. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Bournemouth.Prem">
     <title lang="en">Bournemouth v Leeds Utd (Sat 31 Oct, 15:00)</title>
@@ -18164,11 +17948,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="boxing.live">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Live boxing from around the world.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="boxing.live">
     <title lang="en">Stream is live at event time only.</title>
@@ -18765,13 +18544,10 @@
     <desc lang="en">Live boxing from around the world.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Bradford.City.Carabao">
-    <title lang="en">Bradford City v Peterborough Utd (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Bradford City v Peterborough Utd. Valley Parade, Bradford. Kick-off: 19:45.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="boxing.live">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Live boxing from around the world.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Bradford.City.Carabao">
     <title lang="en">Bradford City v Peterborough Utd (Tue 27 Oct, 19:45)</title>
@@ -18893,14 +18669,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Bradford.City.League1">
-    <title lang="en">Bradford City v Huddersfield Town (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Bradford City v Huddersfield Town. Valley Parade, Bradford. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Bradford.City.League1">
     <title lang="en">Bradford City v Huddersfield Town (Sat 31 Oct, 12:30)</title>
@@ -19383,14 +19151,6 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Brentford.Carabao">
-    <title lang="en">Sunderland v Brentford (Wed 28 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Sunderland v Brentford. Stadium of Light, Sunderland. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Brentford.Carabao">
     <title lang="en">Sunderland v Brentford (Wed 28 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -19607,14 +19367,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Brentford.Prem">
-    <title lang="en">Brentford v Nottingham Forest (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Brentford v Nottingham Forest. Gtech Community Stadium, Brentford. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Brentford.Prem">
     <title lang="en">Brentford v Nottingham Forest (Sat 31 Oct, 15:00)</title>
@@ -20105,14 +19857,6 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Brighton.Hove.Albion.Carabao">
-    <title lang="en">Manchester City v Brighton &amp; Hove Albion (Wed 28 Oct, 19:30)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Manchester City v Brighton &amp; Hove Albion. Etihad Stadium, Manchester. Kick-off: 19:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Brighton.Hove.Albion.Carabao">
     <title lang="en">Manchester City v Brighton &amp; Hove Albion (Wed 28 Oct, 19:30)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -20329,14 +20073,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Brighton.Hove.Albion.Prem">
-    <title lang="en">Manchester City v Brighton &amp; Hove Albion (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Manchester City v Brighton &amp; Hove Albion. Etihad Stadium, Manchester. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Brighton.Hove.Albion.Prem">
     <title lang="en">Manchester City v Brighton &amp; Hove Albion (Sat 31 Oct, 15:00)</title>
@@ -20826,14 +20562,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Bristol.City.Championship">
-    <title lang="en">Bolton Wanderers v Bristol City (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Bolton Wanderers v Bristol City. Toughsheet Community Stadium, Bolton. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Bristol.City.Championship">
     <title lang="en">Bolton Wanderers v Bristol City (Sat 31 Oct, 15:00)</title>
@@ -21733,14 +21461,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Bristol.Rovers.League2">
-    <title lang="en">Fleetwood Town v Bristol Rovers (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Fleetwood Town v Bristol Rovers. Highbury Stadium, Fleetwood. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Bristol.Rovers.League2">
     <title lang="en">Fleetwood Town v Bristol Rovers (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -22229,14 +21949,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Bromley.League1">
-    <title lang="en">MK Dons v Bromley (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: MK Dons v Bromley. Stadium MK, Milton Keynes. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Bromley.League1">
     <title lang="en">MK Dons v Bromley (Tue 27 Oct, 19:45)</title>
@@ -22735,14 +22447,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Burnley.Championship">
-    <title lang="en">Burnley v Portsmouth (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Burnley v Portsmouth. Turf Moor, Burnley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Burnley.Championship">
     <title lang="en">Burnley v Portsmouth (Sat 31 Oct, 15:00)</title>
@@ -23546,14 +23250,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Burton.Albion.League1">
-    <title lang="en">Wycombe Wanderers v Burton Albion (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Wycombe Wanderers v Burton Albion. Adams Park, Wycombe. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Burton.Albion.League1">
     <title lang="en">Wycombe Wanderers v Burton Albion (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -24042,14 +23738,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Cambridge.Utd.League1">
-    <title lang="en">Sheffield Wednesday v Cambridge Utd (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Sheffield Wednesday v Cambridge Utd. Hillsborough, Sheffield. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Cambridge.Utd.League1">
     <title lang="en">Sheffield Wednesday v Cambridge Utd (Tue 27 Oct, 19:45)</title>
@@ -24540,11 +24228,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="canadalive.ca">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Various live events streamed for Canadian TV.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="canadalive.ca">
     <title lang="en">Stream is live at event time only.</title>
@@ -25141,13 +24824,10 @@
     <desc lang="en">Various live events streamed for Canadian TV.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Cardiff.City.Championship">
-    <title lang="en">Wolves v Cardiff City (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Wolves v Cardiff City. Molineux Stadium, Wolverhampton. Kick-off: 15:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="canadalive.ca">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Various live events streamed for Canadian TV.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Cardiff.City.Championship">
     <title lang="en">Wolves v Cardiff City (Sat 31 Oct, 15:00)</title>
@@ -26047,14 +25727,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Celta.Vigo.LaLiga">
-    <title lang="en">Rayo Vallecano v Celta Vigo (Sat 31 Oct, 15:15)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Rayo Vallecano v Celta Vigo. Estadio de Vallecas, Madrid. Kick-off: 15:15.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Celta.Vigo.LaLiga">
     <title lang="en">Rayo Vallecano v Celta Vigo (Sat 31 Oct, 15:15)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -26543,14 +26215,6 @@
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Charlton.Athletic.Championship">
-    <title lang="en">Middlesbrough v Charlton Athletic (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Middlesbrough v Charlton Athletic. Riverside Stadium, Middlesbrough. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Charlton.Athletic.Championship">
     <title lang="en">Middlesbrough v Charlton Athletic (Sat 31 Oct, 15:00)</title>
@@ -27354,14 +27018,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Chelsea.Carabao">
-    <title lang="en">Liverpool v Chelsea (Wed 28 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Liverpool v Chelsea. Anfield, Liverpool. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Chelsea.Carabao">
     <title lang="en">Liverpool v Chelsea (Wed 28 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -27578,14 +27234,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Chelsea.Prem">
-    <title lang="en">Chelsea v Manchester Utd (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Chelsea v Manchester Utd. Stamford Bridge, London. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Chelsea.Prem">
     <title lang="en">Chelsea v Manchester Utd (Sat 31 Oct, 12:30)</title>
@@ -28067,14 +27715,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Cheltenham.Town.League2">
-    <title lang="en">Tranmere Rovers v Cheltenham Town (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Tranmere Rovers v Cheltenham Town. Prenton Park, Birkenhead. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Cheltenham.Town.League2">
     <title lang="en">Tranmere Rovers v Cheltenham Town (Sat 31 Oct, 15:00)</title>
@@ -28565,14 +28205,6 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Chesterfield.League2">
-    <title lang="en">Newport County v Chesterfield (Fri 30 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Newport County v Chesterfield. Rodney Parade, Newport. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Chesterfield.League2">
     <title lang="en">Newport County v Chesterfield (Fri 30 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -28981,14 +28613,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Club.Brugge.ChampsLge">
-    <title lang="en">PSV Eindhoven v Club Brugge (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: PSV Eindhoven v Club Brugge. Philips Stadion, Eindhoven. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Club.Brugge.ChampsLge">
     <title lang="en">PSV Eindhoven v Club Brugge (Wed 04 Nov, 20:00)</title>
@@ -29879,14 +29503,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Colchester.Utd.League2">
-    <title lang="en">Colchester Utd v Walsall (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Colchester Utd v Walsall. JobServe Community Stadium, Colchester. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Colchester.Utd.League2">
     <title lang="en">Colchester Utd v Walsall (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -30375,14 +29991,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Como.ChampsLge">
-    <title lang="en">Lens v Como (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Lens v Como. Stade Bollaert-Delelis, Lens. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Como.ChampsLge">
     <title lang="en">Lens v Como (Wed 04 Nov, 20:00)</title>
@@ -31273,14 +30881,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Coventry.City.Prem">
-    <title lang="en">Coventry City v Sunderland (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Coventry City v Sunderland. Coventry Building Society Arena, Coventry. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Coventry.City.Prem">
     <title lang="en">Coventry City v Sunderland (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
@@ -31769,14 +31369,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Crawley.Town.League2">
-    <title lang="en">Oldham Athletic v Crawley Town (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Oldham Athletic v Crawley Town. Boundary Park, Oldham. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Crawley.Town.League2">
     <title lang="en">Oldham Athletic v Crawley Town (Sat 31 Oct, 15:00)</title>
@@ -32267,14 +31859,6 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Crewe.Alexandra.League2">
-    <title lang="en">Crewe Alexandra v Barnet (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Crewe Alexandra v Barnet. Mornflake Stadium, Crewe. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Crewe.Alexandra.League2">
     <title lang="en">Crewe Alexandra v Barnet (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -32764,14 +32348,6 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Crystal.Palace.Carabao">
-    <title lang="en">Fulham v Crystal Palace (Wed 28 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Fulham v Crystal Palace. Craven Cottage, London. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Crystal.Palace.Carabao">
     <title lang="en">Fulham v Crystal Palace (Wed 28 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -32988,14 +32564,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Crystal.Palace.Prem">
-    <title lang="en">Tottenham Hotspur v Crystal Palace (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Tottenham Hotspur v Crystal Palace. Tottenham Hotspur Stadium, London. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Crystal.Palace.Prem">
     <title lang="en">Tottenham Hotspur v Crystal Palace (Sat 31 Oct, 17:30)</title>
@@ -33493,11 +33061,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="dazn.live">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">DAZN, live sports streaming.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="dazn.live">
     <title lang="en">Stream is live at event time only.</title>
@@ -34094,9 +33657,9 @@
     <desc lang="en">DAZN, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="darts.uk">
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="dazn.live">
     <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Live darts events from around the world.</desc>
+    <desc lang="en">DAZN, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="darts.uk">
@@ -34694,13 +34257,10 @@
     <desc lang="en">Live darts events from around the world.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Deportivo.LaLiga">
-    <title lang="en">Deportivo v Osasuna (Mon 02 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Deportivo v Osasuna. Riazor, La Coruña. Kick-off: 20:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="darts.uk">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Live darts events from around the world.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Deportivo.LaLiga">
     <title lang="en">Deportivo v Osasuna (Mon 02 Nov, 20:00)</title>
@@ -35398,14 +34958,6 @@
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Derby.County.Championship">
-    <title lang="en">Millwall v Derby County (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Millwall v Derby County. The Den, London. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Derby.County.Championship">
     <title lang="en">Millwall v Derby County (Sat 31 Oct, 15:00)</title>
@@ -36209,14 +35761,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Doncaster.Rovers.League1">
-    <title lang="en">Luton Town v Doncaster Rovers (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Luton Town v Doncaster Rovers. Kenilworth Road, Luton. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Doncaster.Rovers.League1">
     <title lang="en">Luton Town v Doncaster Rovers (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -36714,11 +36258,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="espn+.us">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Live sports from ESPN+ in the USA</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="espn+.us">
     <title lang="en">Stream is live at event time only.</title>
@@ -37315,13 +36854,10 @@
     <desc lang="en">Live sports from ESPN+ in the USA</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Elche.LaLiga">
-    <title lang="en">Elche v Valencia (Sun 01 Nov, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Elche v Valencia. Estadio Martínez Valero, Elche. Kick-off: 17:30.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="espn+.us">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Live sports from ESPN+ in the USA</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Elche.LaLiga">
     <title lang="en">Elche v Valencia (Sun 01 Nov, 17:30)</title>
@@ -37916,14 +37452,6 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Espanyol.LaLiga">
-    <title lang="en">Villarreal v Espanyol (Fri 30 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Villarreal v Espanyol. Estadio de la Cerámica, Villarreal. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Espanyol.LaLiga">
     <title lang="en">Villarreal v Espanyol (Fri 30 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -38333,14 +37861,6 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Everton.Carabao">
-    <title lang="en">Everton v Newcastle Utd (Thu 29 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Everton v Newcastle Utd. Hill Dickinson Stadium, Liverpool. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Everton.Carabao">
     <title lang="en">Everton v Newcastle Utd (Thu 29 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -38653,14 +38173,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Everton.Prem">
-    <title lang="en">Newcastle Utd v Everton (Mon 02 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Newcastle Utd v Everton. St. James' Park, Newcastle-upon-Tyne. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Everton.Prem">
     <title lang="en">Newcastle Utd v Everton (Mon 02 Nov, 20:00)</title>
@@ -39359,14 +38871,6 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Exeter.City.League2">
-    <title lang="en">Salford City v Exeter City (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Salford City v Exeter City. Peninsula Stadium, Salford. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Exeter.City.League2">
     <title lang="en">Salford City v Exeter City (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -39855,11 +39359,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="f1drivers.uk">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Formula 1 driver onboard cameras, live during race weekends.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="f1drivers.uk">
     <title lang="en">Stream is live at event time only.</title>
@@ -40456,13 +39955,10 @@
     <desc lang="en">Formula 1 driver onboard cameras, live during race weekends.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="FC.Porto.ChampsLge">
-    <title lang="en">FC Porto v Napoli (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: FC Porto v Napoli. Estádio do Dragão, Porto. Kick-off: 20:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="f1drivers.uk">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Formula 1 driver onboard cameras, live during race weekends.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="FC.Porto.ChampsLge">
     <title lang="en">FC Porto v Napoli (Wed 04 Nov, 20:00)</title>
@@ -41353,14 +40849,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Fenerbahce.ChampsLge">
-    <title lang="en">Fenerbahce v Liverpool (Wed 04 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Fenerbahce v Liverpool. Şükrü Saracoğlu Stadium, Istanbul. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Fenerbahce.ChampsLge">
     <title lang="en">Fenerbahce v Liverpool (Wed 04 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
@@ -42242,14 +41730,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Feyenoord.ChampsLge">
-    <title lang="en">Feyenoord v Internazionale (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Feyenoord v Internazionale. De Kuip, Rotterdam. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Feyenoord.ChampsLge">
     <title lang="en">Feyenoord v Internazionale (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
@@ -43043,14 +42523,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Fleetwood.Town.Carabao">
-    <title lang="en">Fleetwood Town v Arsenal (Tue 27 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Fleetwood Town v Arsenal. Highbury Stadium, Fleetwood. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Fleetwood.Town.Carabao">
     <title lang="en">Fleetwood Town v Arsenal (Tue 27 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -43171,14 +42643,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Fleetwood.Town.League2">
-    <title lang="en">Fleetwood Town v Bristol Rovers (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Fleetwood Town v Bristol Rovers. Highbury Stadium, Fleetwood. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Fleetwood.Town.League2">
     <title lang="en">Fleetwood Town v Bristol Rovers (Sat 31 Oct, 15:00)</title>
@@ -43668,11 +43132,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="f1.uk">
-    <title lang="en">Stream is live at event time only</title>
-    <desc lang="en">Live F1 Grand Prix events and races.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="f1.uk">
     <title lang="en">Stream is live at event time only</title>
@@ -44269,13 +43728,10 @@
     <desc lang="en">Live F1 Grand Prix events and races.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Fulham.Carabao">
-    <title lang="en">Fulham v Crystal Palace (Wed 28 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Fulham v Crystal Palace. Craven Cottage, London. Kick-off: 19:45.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="f1.uk">
+    <title lang="en">Stream is live at event time only</title>
+    <desc lang="en">Live F1 Grand Prix events and races.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Fulham.Carabao">
     <title lang="en">Fulham v Crystal Palace (Wed 28 Oct, 19:45)</title>
@@ -44493,14 +43949,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Fulham.Prem">
-    <title lang="en">Aston Villa v Fulham (Sat 31 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Aston Villa v Fulham. Villa Park, Birmingham. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Fulham.Prem">
     <title lang="en">Aston Villa v Fulham (Sat 31 Oct, 20:00)</title>
@@ -45006,11 +44454,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="gaelic.sports">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Gaelic Football, Hurling and Camogie. Live from Ireland.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="gaelic.sports">
     <title lang="en">Stream is live at event time only.</title>
@@ -45607,13 +45050,10 @@
     <desc lang="en">Gaelic Football, Hurling and Camogie. Live from Ireland.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Galatasaray.ChampsLge">
-    <title lang="en">Galatasaray v VfB Stuttgart (Tue 03 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Galatasaray v VfB Stuttgart. RAMS Park, Istanbul. Kick-off: 17:45.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="gaelic.sports">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Gaelic Football, Hurling and Camogie. Live from Ireland.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Galatasaray.ChampsLge">
     <title lang="en">Galatasaray v VfB Stuttgart (Tue 03 Nov, 17:45)</title>
@@ -46400,11 +45840,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="replay.uk">
-    <title lang="en">Replays</title>
-    <desc lang="en">See INFO channel for schedules.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="replay.uk">
     <title lang="en">Replays</title>
     <desc lang="en">See INFO channel for schedules.</desc>
@@ -47000,13 +46435,10 @@
     <desc lang="en">See INFO channel for schedules.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Getafe.LaLiga">
-    <title lang="en">Getafe v Sevilla (Sun 01 Nov, 13:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Getafe v Sevilla. Estadio Coliseum, Getafe. Kick-off: 13:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="replay.uk">
+    <title lang="en">Replays</title>
+    <desc lang="en">See INFO channel for schedules.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Getafe.LaLiga">
     <title lang="en">Getafe v Sevilla (Sun 01 Nov, 13:00)</title>
@@ -47585,14 +47017,6 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Gillingham.League2">
-    <title lang="en">Shrewsbury Town v Gillingham (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Shrewsbury Town v Gillingham. The Croud Meadow, Shrewsbury. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Gillingham.League2">
     <title lang="en">Shrewsbury Town v Gillingham (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -48082,14 +47506,6 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="GoalRush2.id">
-    <title lang="en">Goal Rush (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Goal Rush Sat 31 Oct</sub-title>
-    <desc lang="en">Coming up Saturday: Goal Rush. Live action from 5 matches: Bournemouth v Leeds Utd, Brentford v Nottingham Forest, Coventry City v Sunderland, Hull City v Ipswich Town, Manchester City v Brighton &amp; Hove Albion.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="GoalRush2.id">
     <title lang="en">Goal Rush (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Goal Rush Sat 31 Oct</sub-title>
@@ -48537,14 +47953,6 @@
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Grimsby.Town.League2">
-    <title lang="en">Grimsby Town v York City (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Grimsby Town v York City. Blundell Park, Grimsby. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Grimsby.Town.League2">
     <title lang="en">Grimsby Town v York City (Sat 31 Oct, 12:30)</title>
@@ -49026,11 +48434,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="hbomax.uk">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">HBO Max, live sports streaming.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="hbomax.uk">
     <title lang="en">Stream is live at event time only.</title>
@@ -49627,13 +49030,10 @@
     <desc lang="en">HBO Max, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Huddersfield.Town.League1">
-    <title lang="en">Bradford City v Huddersfield Town (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Bradford City v Huddersfield Town. Valley Parade, Bradford. Kick-off: 12:30.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="hbomax.uk">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">HBO Max, live sports streaming.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Huddersfield.Town.League1">
     <title lang="en">Bradford City v Huddersfield Town (Sat 31 Oct, 12:30)</title>
@@ -50437,14 +49837,6 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Hull.City.Prem">
-    <title lang="en">Hull City v Ipswich Town (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Hull City v Ipswich Town. The MKM Stadium, Hull. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Hull.City.Prem">
     <title lang="en">Hull City v Ipswich Town (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
@@ -50933,14 +50325,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Internazionale.ChampsLge">
-    <title lang="en">Feyenoord v Internazionale (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Feyenoord v Internazionale. De Kuip, Rotterdam. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Internazionale.ChampsLge">
     <title lang="en">Feyenoord v Internazionale (Tue 03 Nov, 20:00)</title>
@@ -51735,14 +51119,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Ipswich.Town.Prem">
-    <title lang="en">Hull City v Ipswich Town (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Hull City v Ipswich Town. The MKM Stadium, Hull. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Ipswich.Town.Prem">
     <title lang="en">Hull City v Ipswich Town (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
@@ -52231,14 +51607,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="LASK.Linz.ChampsLge">
-    <title lang="en">LASK Linz v Slovan Bratislava (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: LASK Linz v Slovan Bratislava. Raiffeisen Arena (Linz), Linz. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="LASK.Linz.ChampsLge">
     <title lang="en">LASK Linz v Slovan Bratislava (Tue 03 Nov, 20:00)</title>
@@ -53033,14 +52401,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Leeds.Utd.Prem">
-    <title lang="en">Bournemouth v Leeds Utd (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Bournemouth v Leeds Utd. Vitality Stadium, Bournemouth. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Leeds.Utd.Prem">
     <title lang="en">Bournemouth v Leeds Utd (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
@@ -53529,14 +52889,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Leicester.City.League1">
-    <title lang="en">Leicester City v Wigan Athletic (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Leicester City v Wigan Athletic. King Power Stadium, Leicester. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Leicester.City.League1">
     <title lang="en">Leicester City v Wigan Athletic (Tue 27 Oct, 19:45)</title>
@@ -54035,14 +53387,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Lens.ChampsLge">
-    <title lang="en">Lens v Como (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Lens v Como. Stade Bollaert-Delelis, Lens. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Lens.ChampsLge">
     <title lang="en">Lens v Como (Wed 04 Nov, 20:00)</title>
@@ -54933,14 +54277,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Levante.LaLiga">
-    <title lang="en">Levante v Atlético Madrid (Sat 31 Oct, 13:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Levante v Atlético Madrid. Estadi Ciutat de València, Manises. Kick-off: 13:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Levante.LaLiga">
     <title lang="en">Levante v Atlético Madrid (Sat 31 Oct, 13:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -55422,14 +54758,6 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Leyton.Orient.League1">
-    <title lang="en">Leyton Orient v Cambridge Utd (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Leyton Orient v Cambridge Utd. Gaughan Group Stadium, London. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Leyton.Orient.League1">
     <title lang="en">Leyton Orient v Cambridge Utd (Sat 31 Oct, 12:30)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -55910,14 +55238,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Lille.ChampsLge">
-    <title lang="en">Bodo/Glimt v Lille (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Bodo/Glimt v Lille. Aspmyra Stadion, Bodø/Glimt. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Lille.ChampsLge">
     <title lang="en">Bodo/Glimt v Lille (Tue 03 Nov, 20:00)</title>
@@ -56711,14 +56031,6 @@
     <category lang="en">Football</category>
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Lincoln.City.Championship">
-    <title lang="en">Lincoln City v Birmingham City (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Lincoln City v Birmingham City. LNER Stadium, Lincoln. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Lincoln.City.Championship">
     <title lang="en">Lincoln City v Birmingham City (Sat 31 Oct, 12:30)</title>
@@ -57522,14 +56834,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Liverpool.Carabao">
-    <title lang="en">Liverpool v Chelsea (Wed 28 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Liverpool v Chelsea. Anfield, Liverpool. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Liverpool.Carabao">
     <title lang="en">Liverpool v Chelsea (Wed 28 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -57746,14 +57050,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Liverpool.Prem">
-    <title lang="en">Liverpool v Arsenal (Sun 01 Nov, 16:30)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Liverpool v Arsenal. Anfield, Liverpool. Kick-off: 16:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Liverpool.Prem">
     <title lang="en">Liverpool v Arsenal (Sun 01 Nov, 16:30)</title>
@@ -58347,14 +57643,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Liverpool.ChampsLge">
-    <title lang="en">Fenerbahce v Liverpool (Wed 04 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Fenerbahce v Liverpool. Şükrü Saracoğlu Stadium, Istanbul. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Liverpool.ChampsLge">
     <title lang="en">Fenerbahce v Liverpool (Wed 04 Nov, 17:45)</title>
@@ -59237,14 +58525,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Luton.Town.League1">
-    <title lang="en">Luton Town v Doncaster Rovers (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Luton Town v Doncaster Rovers. Kenilworth Road, Luton. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Luton.Town.League1">
     <title lang="en">Luton Town v Doncaster Rovers (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -60056,14 +59336,6 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="MK.Dons.League1">
-    <title lang="en">MK Dons v Bromley (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: MK Dons v Bromley. Stadium MK, Milton Keynes. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="MK.Dons.League1">
     <title lang="en">MK Dons v Bromley (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -60561,11 +59833,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="mlb.usa">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Live baseball from the MLB.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="mlb.usa">
     <title lang="en">Stream is live at event time only.</title>
@@ -61162,9 +60429,9 @@
     <desc lang="en">Live baseball from the MLB.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="mls.na">
-    <title lang="en">Stream is live at match time only.</title>
-    <desc lang="en">Major League Soccer from North America.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="mlb.usa">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Live baseball from the MLB.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="mls.na">
@@ -61762,13 +61029,10 @@
     <desc lang="en">Major League Soccer from North America.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Manchester.City.Carabao">
-    <title lang="en">Manchester City v Brighton &amp; Hove Albion (Wed 28 Oct, 19:30)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Manchester City v Brighton &amp; Hove Albion. Etihad Stadium, Manchester. Kick-off: 19:30.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="mls.na">
+    <title lang="en">Stream is live at match time only.</title>
+    <desc lang="en">Major League Soccer from North America.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Manchester.City.Carabao">
     <title lang="en">Manchester City v Brighton &amp; Hove Albion (Wed 28 Oct, 19:30)</title>
@@ -61986,14 +61250,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Manchester.City.Prem">
-    <title lang="en">Manchester City v Brighton &amp; Hove Albion (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Manchester City v Brighton &amp; Hove Albion. Etihad Stadium, Manchester. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Manchester.City.Prem">
     <title lang="en">Manchester City v Brighton &amp; Hove Albion (Sat 31 Oct, 15:00)</title>
@@ -62483,14 +61739,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Manchester.City.ChampsLge">
-    <title lang="en">RB Leipzig v Manchester City (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: RB Leipzig v Manchester City. Red Bull Arena, Leipzig. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Manchester.City.ChampsLge">
     <title lang="en">RB Leipzig v Manchester City (Wed 04 Nov, 20:00)</title>
@@ -63381,14 +62629,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Manchester.Utd.Prem">
-    <title lang="en">Chelsea v Manchester Utd (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Chelsea v Manchester Utd. Stamford Bridge, London. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Manchester.Utd.Prem">
     <title lang="en">Chelsea v Manchester Utd (Sat 31 Oct, 12:30)</title>
     <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
@@ -63869,14 +63109,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Manchester.Utd.ChampsLge">
-    <title lang="en">Manchester Utd v AS Roma (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Manchester Utd v AS Roma. Old Trafford, Manchester. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Manchester.Utd.ChampsLge">
     <title lang="en">Manchester Utd v AS Roma (Tue 03 Nov, 20:00)</title>
@@ -64670,14 +63902,6 @@
     <category lang="en">Football</category>
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Mansfield.Town.League1">
-    <title lang="en">Mansfield Town v Notts County (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Mansfield Town v Notts County. One Call Stadium, Mansfield. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Mansfield.Town.League1">
     <title lang="en">Mansfield Town v Notts County (Sat 31 Oct, 15:00)</title>
@@ -65480,14 +64704,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Middlesbrough.Championship">
-    <title lang="en">Middlesbrough v Charlton Athletic (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Middlesbrough v Charlton Athletic. Riverside Stadium, Middlesbrough. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Middlesbrough.Championship">
     <title lang="en">Middlesbrough v Charlton Athletic (Sat 31 Oct, 15:00)</title>
@@ -66387,14 +65603,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Millwall.Championship">
-    <title lang="en">Millwall v Derby County (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Millwall v Derby County. The Den, London. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Millwall.Championship">
     <title lang="en">Millwall v Derby County (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Championship</sub-title>
@@ -67197,14 +66405,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Malaga.LaLiga">
-    <title lang="en">Real Betis v Málaga (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Real Betis v Málaga. Estadio La Cartuja, Sevilla. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Malaga.LaLiga">
     <title lang="en">Real Betis v Málaga (Sat 31 Oct, 17:30)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -67701,11 +66901,6 @@
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="nba.usa">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Live basketball from the NBA.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="nba.usa">
     <title lang="en">Stream is live at event time only.</title>
@@ -68302,9 +67497,9 @@
     <desc lang="en">Live basketball from the NBA.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="nfl.usa">
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="nba.usa">
     <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Live American football from the NFL.</desc>
+    <desc lang="en">Live basketball from the NBA.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="nfl.usa">
@@ -68902,9 +68097,9 @@
     <desc lang="en">Live American football from the NFL.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="nhl.usa">
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="nfl.usa">
     <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Live ice hockey from the NHL.</desc>
+    <desc lang="en">Live American football from the NFL.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="nhl.usa">
@@ -69502,9 +68697,9 @@
     <desc lang="en">Live ice hockey from the NHL.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="nrl.aus">
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="nhl.usa">
     <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Rugby League action from Australia</desc>
+    <desc lang="en">Live ice hockey from the NHL.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="nrl.aus">
@@ -70102,13 +69297,10 @@
     <desc lang="en">Rugby League action from Australia</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Napoli.ChampsLge">
-    <title lang="en">FC Porto v Napoli (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: FC Porto v Napoli. Estádio do Dragão, Porto. Kick-off: 20:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="nrl.aus">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Rugby League action from Australia</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Napoli.ChampsLge">
     <title lang="en">FC Porto v Napoli (Wed 04 Nov, 20:00)</title>
@@ -70999,14 +70191,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Newcastle.Utd.Carabao">
-    <title lang="en">Everton v Newcastle Utd (Thu 29 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Everton v Newcastle Utd. Hill Dickinson Stadium, Liverpool. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Newcastle.Utd.Carabao">
     <title lang="en">Everton v Newcastle Utd (Thu 29 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -71319,14 +70503,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Newcastle.Utd.Prem">
-    <title lang="en">Newcastle Utd v Everton (Mon 02 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Newcastle Utd v Everton. St. James' Park, Newcastle-upon-Tyne. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Newcastle.Utd.Prem">
     <title lang="en">Newcastle Utd v Everton (Mon 02 Nov, 20:00)</title>
@@ -72025,14 +71201,6 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Newport.County.League2">
-    <title lang="en">Newport County v Chesterfield (Fri 30 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Newport County v Chesterfield. Rodney Parade, Newport. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Newport.County.League2">
     <title lang="en">Newport County v Chesterfield (Fri 30 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -72441,14 +71609,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Northampton.Town.League2">
-    <title lang="en">Accrington Stanley v Northampton Town (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Accrington Stanley v Northampton Town. Wham Stadium, Accrington. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Northampton.Town.League2">
     <title lang="en">Accrington Stanley v Northampton Town (Sat 31 Oct, 15:00)</title>
@@ -73252,14 +72412,6 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Norwich.City.Championship">
-    <title lang="en">Norwich City v Watford (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Norwich City v Watford. Carrow Road, Norwich. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Norwich.City.Championship">
     <title lang="en">Norwich City v Watford (Sat 31 Oct, 12:30)</title>
     <sub-title lang="en">⏭ Next Match: Championship</sub-title>
@@ -74062,14 +73214,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Nottingham.Forest.Prem">
-    <title lang="en">Brentford v Nottingham Forest (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Brentford v Nottingham Forest. Gtech Community Stadium, Brentford. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Nottingham.Forest.Prem">
     <title lang="en">Brentford v Nottingham Forest (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
@@ -74559,14 +73703,6 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Notts.County.League1">
-    <title lang="en">Mansfield Town v Notts County (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Mansfield Town v Notts County. One Call Stadium, Mansfield. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Notts.County.League1">
     <title lang="en">Mansfield Town v Notts County (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -75055,14 +74191,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Oldham.Athletic.League2">
-    <title lang="en">Oldham Athletic v Crawley Town (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Oldham Athletic v Crawley Town. Boundary Park, Oldham. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Oldham.Athletic.League2">
     <title lang="en">Oldham Athletic v Crawley Town (Sat 31 Oct, 15:00)</title>
@@ -75866,14 +74994,6 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Osasuna.LaLiga">
-    <title lang="en">Sevilla v Osasuna (Mon 26 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Sevilla v Osasuna. Ramón Sánchez Pizjuán Stadium, Sevilla. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Osasuna.LaLiga">
     <title lang="en">Sevilla v Osasuna (Mon 26 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -76571,14 +75691,6 @@
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Oxford.Utd.League1">
-    <title lang="en">Oxford Utd v Stockport County (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Oxford Utd v Stockport County. The Kassam Stadium, Oxford. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Oxford.Utd.League1">
     <title lang="en">Oxford Utd v Stockport County (Tue 27 Oct, 19:45)</title>
@@ -77487,11 +76599,6 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="ppv.events">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Live Pay Per View events from around the world.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="ppv.events">
     <title lang="en">Stream is live at event time only.</title>
     <desc lang="en">Live Pay Per View events from around the world.</desc>
@@ -78087,13 +77194,10 @@
     <desc lang="en">Live Pay Per View events from around the world.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="PSV.Eindhoven.ChampsLge">
-    <title lang="en">PSV Eindhoven v Club Brugge (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: PSV Eindhoven v Club Brugge. Philips Stadion, Eindhoven. Kick-off: 20:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="ppv.events">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Live Pay Per View events from around the world.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="PSV.Eindhoven.ChampsLge">
     <title lang="en">PSV Eindhoven v Club Brugge (Wed 04 Nov, 20:00)</title>
@@ -78984,11 +78088,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="paramountplus.us">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Paramount+, live sports streaming.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="paramountplus.us">
     <title lang="en">Stream is live at event time only.</title>
     <desc lang="en">Paramount+, live sports streaming.</desc>
@@ -79584,13 +78683,10 @@
     <desc lang="en">Paramount+, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Paris.Saint.Germain.ChampsLge">
-    <title lang="en">Villarreal v Paris Saint-Germain (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Villarreal v Paris Saint-Germain. Estadio de la Cerámica, Villarreal. Kick-off: 20:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="paramountplus.us">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Paramount+, live sports streaming.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Paris.Saint.Germain.ChampsLge">
     <title lang="en">Villarreal v Paris Saint-Germain (Tue 03 Nov, 20:00)</title>
@@ -80385,11 +79481,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="peacock.liveUSA">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Peacock, live sports streaming.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="peacock.liveUSA">
     <title lang="en">Stream is live at event time only.</title>
     <desc lang="en">Peacock, live sports streaming.</desc>
@@ -80985,13 +80076,10 @@
     <desc lang="en">Peacock, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Peterborough.Utd.Carabao">
-    <title lang="en">Bradford City v Peterborough Utd (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Bradford City v Peterborough Utd. Valley Parade, Bradford. Kick-off: 19:45.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="peacock.liveUSA">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Peacock, live sports streaming.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Peterborough.Utd.Carabao">
     <title lang="en">Bradford City v Peterborough Utd (Tue 27 Oct, 19:45)</title>
@@ -81113,14 +80201,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Peterborough.Utd.League1">
-    <title lang="en">Peterborough Utd v Luton Town (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Peterborough Utd v Luton Town. London Road Stadium, Peterborough. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Peterborough.Utd.League1">
     <title lang="en">Peterborough Utd v Luton Town (Sat 31 Oct, 15:00)</title>
@@ -81611,14 +80691,6 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Plymouth.Argyle.League1">
-    <title lang="en">Plymouth Argyle v Reading (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Plymouth Argyle v Reading. Home Park, Plymouth. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Plymouth.Argyle.League1">
     <title lang="en">Plymouth Argyle v Reading (Sat 31 Oct, 12:30)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -82100,14 +81172,6 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Port.Vale.League2">
-    <title lang="en">Port Vale v Rochdale (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Port Vale v Rochdale. Vale Park, Stoke-on-Trent. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Port.Vale.League2">
     <title lang="en">Port Vale v Rochdale (Sat 31 Oct, 12:30)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -82588,14 +81652,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Portsmouth.Championship">
-    <title lang="en">Burnley v Portsmouth (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Burnley v Portsmouth. Turf Moor, Burnley. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Portsmouth.Championship">
     <title lang="en">Burnley v Portsmouth (Sat 31 Oct, 15:00)</title>
@@ -83399,14 +82455,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Preston.North.End.Championship">
-    <title lang="en">Stoke City v Preston North End (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Stoke City v Preston North End. bet365 Stadium, Stoke-on-Trent. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Preston.North.End.Championship">
     <title lang="en">Stoke City v Preston North End (Sat 31 Oct, 12:30)</title>
     <sub-title lang="en">⏭ Next Match: Championship</sub-title>
@@ -84209,14 +83257,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Queens.Park.Rangers.Championship">
-    <title lang="en">Southampton v Queens Park Rangers (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Southampton v Queens Park Rangers. St. Mary's Stadium, Southampton. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Queens.Park.Rangers.Championship">
     <title lang="en">Southampton v Queens Park Rangers (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Championship</sub-title>
@@ -85018,14 +84058,6 @@
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="RB.Leipzig.ChampsLge">
-    <title lang="en">RB Leipzig v Manchester City (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: RB Leipzig v Manchester City. Red Bull Arena, Leipzig. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="RB.Leipzig.ChampsLge">
     <title lang="en">RB Leipzig v Manchester City (Wed 04 Nov, 20:00)</title>
@@ -85916,14 +84948,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Racing.Santander.LaLiga">
-    <title lang="en">Racing Santander v Real Madrid (Sun 01 Nov, 15:15)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Racing Santander v Real Madrid. El Sardineros, Santander. Kick-off: 15:15.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Racing.Santander.LaLiga">
     <title lang="en">Racing Santander v Real Madrid (Sun 01 Nov, 15:15)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -86509,14 +85533,6 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Rayo.Vallecano.LaLiga">
-    <title lang="en">Rayo Vallecano v Celta Vigo (Sat 31 Oct, 15:15)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Rayo Vallecano v Celta Vigo. Estadio de Vallecas, Madrid. Kick-off: 15:15.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Rayo.Vallecano.LaLiga">
     <title lang="en">Rayo Vallecano v Celta Vigo (Sat 31 Oct, 15:15)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -87005,14 +86021,6 @@
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Reading.League1">
-    <title lang="en">Plymouth Argyle v Reading (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Plymouth Argyle v Reading. Home Park, Plymouth. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Reading.League1">
     <title lang="en">Plymouth Argyle v Reading (Sat 31 Oct, 12:30)</title>
@@ -87912,14 +86920,6 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Real.Betis.LaLiga">
-    <title lang="en">Real Betis v Málaga (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Real Betis v Málaga. Estadio La Cartuja, Sevilla. Kick-off: 17:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Real.Betis.LaLiga">
     <title lang="en">Real Betis v Málaga (Sat 31 Oct, 17:30)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -88416,14 +87416,6 @@
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Real.Betis.ChampsLge">
-    <title lang="en">Borussia Dortmund v Real Betis (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Borussia Dortmund v Real Betis. Signal Iduna Park, Aue. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Real.Betis.ChampsLge">
     <title lang="en">Borussia Dortmund v Real Betis (Wed 04 Nov, 20:00)</title>
@@ -89314,14 +88306,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Real.Madrid.LaLiga">
-    <title lang="en">Racing Santander v Real Madrid (Sun 01 Nov, 15:15)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Racing Santander v Real Madrid. El Sardineros, Santander. Kick-off: 15:15.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Real.Madrid.LaLiga">
     <title lang="en">Racing Santander v Real Madrid (Sun 01 Nov, 15:15)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -89906,14 +88890,6 @@
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Real.Madrid.ChampsLge">
-    <title lang="en">AEK Athens v Real Madrid (Wed 04 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: AEK Athens v Real Madrid. OPAP Arena, Athens. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Real.Madrid.ChampsLge">
     <title lang="en">AEK Athens v Real Madrid (Wed 04 Nov, 17:45)</title>
@@ -90796,14 +89772,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Real.Sociedad.LaLiga">
-    <title lang="en">Athletic Club v Real Sociedad (Sun 01 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Athletic Club v Real Sociedad. San Mamés, Bilbao. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Real.Sociedad.LaLiga">
     <title lang="en">Athletic Club v Real Sociedad (Sun 01 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -91405,14 +90373,6 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Rochdale.League2">
-    <title lang="en">Port Vale v Rochdale (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Port Vale v Rochdale. Vale Park, Stoke-on-Trent. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Rochdale.League2">
     <title lang="en">Port Vale v Rochdale (Sat 31 Oct, 12:30)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -91893,14 +90853,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Rotherham.Utd.League2">
-    <title lang="en">Swindon Town v Rotherham Utd (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Swindon Town v Rotherham Utd. The County Ground, Swindon. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Rotherham.Utd.League2">
     <title lang="en">Swindon Town v Rotherham Utd (Sat 31 Oct, 15:00)</title>
@@ -92390,11 +91342,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="rugby.union">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Live Rugby from around the world.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="rugby.union">
     <title lang="en">Stream is live at event time only.</title>
@@ -92991,13 +91938,10 @@
     <desc lang="en">Live Rugby from around the world.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Sabah.FK.ChampsLge">
-    <title lang="en">Viking FK v Sabah FK (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Viking FK v Sabah FK. Viking Stadion, Stavanger. Kick-off: 20:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="rugby.union">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Live Rugby from around the world.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Sabah.FK.ChampsLge">
     <title lang="en">Viking FK v Sabah FK (Wed 04 Nov, 20:00)</title>
@@ -93888,14 +92832,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Salford.City.League2">
-    <title lang="en">Walsall v Salford City (Mon 26 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Walsall v Salford City. Bescot Stadium, Walsall. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Salford.City.League2">
     <title lang="en">Walsall v Salford City (Mon 26 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -94385,14 +93321,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Sevilla.LaLiga">
-    <title lang="en">Sevilla v Osasuna (Mon 26 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Sevilla v Osasuna. Ramón Sánchez Pizjuán Stadium, Sevilla. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Sevilla.LaLiga">
     <title lang="en">Sevilla v Osasuna (Mon 26 Oct, 20:00)</title>
@@ -94971,14 +93899,6 @@
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Shakhtar.Donetsk.ChampsLge">
-    <title lang="en">Shakhtar Donetsk v Sporting CP (Tue 03 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Shakhtar Donetsk v Sporting CP. Stamford Bridge, London. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Shakhtar.Donetsk.ChampsLge">
     <title lang="en">Shakhtar Donetsk v Sporting CP (Tue 03 Nov, 17:45)</title>
@@ -95764,14 +94684,6 @@
     <category lang="en">Football</category>
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Sheffield.Utd.Championship">
-    <title lang="en">Sheffield Utd v Wrexham (Fri 30 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Sheffield Utd v Wrexham. Bramall Lane, Sheffield. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Sheffield.Utd.Championship">
     <title lang="en">Sheffield Utd v Wrexham (Fri 30 Oct, 20:00)</title>
@@ -96567,14 +95479,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Sheffield.Wednesday.League1">
-    <title lang="en">Sheffield Wednesday v Cambridge Utd (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Sheffield Wednesday v Cambridge Utd. Hillsborough, Sheffield. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Sheffield.Wednesday.League1">
     <title lang="en">Sheffield Wednesday v Cambridge Utd (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -97161,14 +96065,6 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Shrewsbury.Town.League2">
-    <title lang="en">Shrewsbury Town v Gillingham (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Shrewsbury Town v Gillingham. The Croud Meadow, Shrewsbury. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Shrewsbury.Town.League2">
     <title lang="en">Shrewsbury Town v Gillingham (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -97657,11 +96553,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="skysports+.uk">
-    <title lang="en">Live at event time only.</title>
-    <desc lang="en">Skysports+ is a streaming service. No programme guide is available. You will need to scroll through the channels to see what's on where.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="skysports+.uk">
     <title lang="en">Live at event time only.</title>
@@ -98258,13 +97149,10 @@
     <desc lang="en">Skysports+ is a streaming service. No programme guide is available. You will need to scroll through the channels to see what's on where.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Slavia.Prague.ChampsLge">
-    <title lang="en">Slavia Prague v Arsenal (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Slavia Prague v Arsenal. Fortuna Arena, Prague. Kick-off: 20:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="skysports+.uk">
+    <title lang="en">Live at event time only.</title>
+    <desc lang="en">Skysports+ is a streaming service. No programme guide is available. You will need to scroll through the channels to see what's on where.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Slavia.Prague.ChampsLge">
     <title lang="en">Slavia Prague v Arsenal (Wed 04 Nov, 20:00)</title>
@@ -99155,14 +98043,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Slovan.Bratislava.ChampsLge">
-    <title lang="en">LASK Linz v Slovan Bratislava (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: LASK Linz v Slovan Bratislava. Raiffeisen Arena (Linz), Linz. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Slovan.Bratislava.ChampsLge">
     <title lang="en">LASK Linz v Slovan Bratislava (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
@@ -99955,14 +98835,6 @@
     <category lang="en">Football</category>
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Southampton.Championship">
-    <title lang="en">Southampton v Queens Park Rangers (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Southampton v Queens Park Rangers. St. Mary's Stadium, Southampton. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Southampton.Championship">
     <title lang="en">Southampton v Queens Park Rangers (Sat 31 Oct, 15:00)</title>
@@ -100766,14 +99638,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Sporting.CP.ChampsLge">
-    <title lang="en">Shakhtar Donetsk v Sporting CP (Tue 03 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Shakhtar Donetsk v Sporting CP. Stamford Bridge, London. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Sporting.CP.ChampsLge">
     <title lang="en">Shakhtar Donetsk v Sporting CP (Tue 03 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
@@ -101559,11 +100423,6 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="sportsnetplus.ca">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Sportsnet+, live sports streaming.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="sportsnetplus.ca">
     <title lang="en">Stream is live at event time only.</title>
     <desc lang="en">Sportsnet+, live sports streaming.</desc>
@@ -102159,9 +101018,9 @@
     <desc lang="en">Sportsnet+, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="stan.au">
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="sportsnetplus.ca">
     <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Stan Sport, live sports streaming.</desc>
+    <desc lang="en">Sportsnet+, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="stan.au">
@@ -102759,13 +101618,10 @@
     <desc lang="en">Stan Sport, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Stevenage.League1">
-    <title lang="en">Leicester City v Stevenage (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Leicester City v Stevenage. King Power Stadium, Leicester. Kick-off: 15:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="stan.au">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Stan Sport, live sports streaming.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Stevenage.League1">
     <title lang="en">Leicester City v Stevenage (Sat 31 Oct, 15:00)</title>
@@ -103255,14 +102111,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Stockport.County.League1">
-    <title lang="en">Oxford Utd v Stockport County (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Oxford Utd v Stockport County. The Kassam Stadium, Oxford. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Stockport.County.League1">
     <title lang="en">Oxford Utd v Stockport County (Tue 27 Oct, 19:45)</title>
@@ -103761,14 +102609,6 @@
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Stoke.City.Championship">
-    <title lang="en">Stoke City v Preston North End (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Stoke City v Preston North End. bet365 Stadium, Stoke-on-Trent. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Stoke.City.Championship">
     <title lang="en">Stoke City v Preston North End (Sat 31 Oct, 12:30)</title>
@@ -104572,14 +103412,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Sunderland.Carabao">
-    <title lang="en">Sunderland v Brentford (Wed 28 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
-    <desc lang="en">Next Match: Sunderland v Brentford. Stadium of Light, Sunderland. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Carabao Cup</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Sunderland.Carabao">
     <title lang="en">Sunderland v Brentford (Wed 28 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Carabao Cup 4th Round</sub-title>
@@ -104796,14 +103628,6 @@
     <category lang="en">Football</category>
     <category lang="en">Carabao Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Sunderland.Prem">
-    <title lang="en">Coventry City v Sunderland (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Coventry City v Sunderland. Coventry Building Society Arena, Coventry. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Sunderland.Prem">
     <title lang="en">Coventry City v Sunderland (Sat 31 Oct, 15:00)</title>
@@ -105293,11 +104117,6 @@
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="rugby.league">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Action from the Bet Fred Super League.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="rugby.league">
     <title lang="en">Stream is live at event time only.</title>
@@ -105894,13 +104713,10 @@
     <desc lang="en">Action from the Bet Fred Super League.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Swansea.City.Championship">
-    <title lang="en">Swansea City v Blackburn Rovers (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Swansea City v Blackburn Rovers. Swansea.com Stadium, Swansea. Kick-off: 15:00.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="rugby.league">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Action from the Bet Fred Super League.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Swansea.City.Championship">
     <title lang="en">Swansea City v Blackburn Rovers (Sat 31 Oct, 15:00)</title>
@@ -106704,14 +105520,6 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Swindon.Town.League2">
-    <title lang="en">Swindon Town v Rotherham Utd (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Swindon Town v Rotherham Utd. The County Ground, Swindon. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Swindon.Town.League2">
     <title lang="en">Swindon Town v Rotherham Utd (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -107200,11 +106008,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="tod.qa">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">TOD, live sports streaming.</desc>
-    <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="tod.qa">
     <title lang="en">Stream is live at event time only.</title>
@@ -107801,9 +106604,9 @@
     <desc lang="en">TOD, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="tsnplus.ca">
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="tod.qa">
     <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">TSN+, live sports streaming.</desc>
+    <desc lang="en">TOD, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="tsnplus.ca">
@@ -108401,9 +107204,9 @@
     <desc lang="en">TSN+, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="tennis.live">
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="tsnplus.ca">
     <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Live tennis from around the world.</desc>
+    <desc lang="en">TSN+, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="tennis.live">
@@ -109001,13 +107804,10 @@
     <desc lang="en">Live tennis from around the world.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Tottenham.Hotspur.Prem">
-    <title lang="en">Tottenham Hotspur v Crystal Palace (Sat 31 Oct, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
-    <desc lang="en">Next Match: Tottenham Hotspur v Crystal Palace. Tottenham Hotspur Stadium, London. Kick-off: 17:30.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="tennis.live">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Live tennis from around the world.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Tottenham.Hotspur.Prem">
     <title lang="en">Tottenham Hotspur v Crystal Palace (Sat 31 Oct, 17:30)</title>
@@ -109506,14 +108306,6 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Tranmere.Rovers.League2">
-    <title lang="en">Tranmere Rovers v Cheltenham Town (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Tranmere Rovers v Cheltenham Town. Prenton Park, Birkenhead. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Tranmere.Rovers.League2">
     <title lang="en">Tranmere Rovers v Cheltenham Town (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -110002,15 +108794,6 @@
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="UEFA.comps">
-    <title lang="en">Streams are live at match time only.</title>
-    <desc lang="en">Matches that fall under the UEFA umbrella.
-
-Club competitions: Champions League, Europa League, Conference League, and Super Cup.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="UEFA.comps">
     <title lang="en">Streams are live at match time only.</title>
@@ -111033,11 +109816,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="usaevents.us">
-    <title lang="en">Stream is live at event time only.</title>
-    <desc lang="en">Various live events streamed for American TV.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="usaevents.us">
     <title lang="en">Stream is live at event time only.</title>
     <desc lang="en">Various live events streamed for American TV.</desc>
@@ -111633,13 +110411,10 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <desc lang="en">Various live events streamed for American TV.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Valencia.LaLiga">
-    <title lang="en">Elche v Valencia (Sun 01 Nov, 17:30)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Elche v Valencia. Estadio Martínez Valero, Elche. Kick-off: 17:30.</desc>
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="usaevents.us">
+    <title lang="en">Stream is live at event time only.</title>
+    <desc lang="en">Various live events streamed for American TV.</desc>
     <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Valencia.LaLiga">
     <title lang="en">Elche v Valencia (Sun 01 Nov, 17:30)</title>
@@ -112233,14 +111008,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="VfB.Stuttgart.ChampsLge">
-    <title lang="en">Galatasaray v VfB Stuttgart (Tue 03 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Galatasaray v VfB Stuttgart. RAMS Park, Istanbul. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="VfB.Stuttgart.ChampsLge">
     <title lang="en">Galatasaray v VfB Stuttgart (Tue 03 Nov, 17:45)</title>
@@ -113026,14 +111793,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Football</category>
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Viking.FK.ChampsLge">
-    <title lang="en">Viking FK v Sabah FK (Wed 04 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Viking FK v Sabah FK. Viking Stadion, Stavanger. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Viking.FK.ChampsLge">
     <title lang="en">Viking FK v Sabah FK (Wed 04 Nov, 20:00)</title>
@@ -113924,14 +112683,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Villarreal.LaLiga">
-    <title lang="en">Villarreal v Espanyol (Fri 30 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
-    <desc lang="en">Next Match: Villarreal v Espanyol. Estadio de la Cerámica, Villarreal. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">La Liga</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Villarreal.LaLiga">
     <title lang="en">Villarreal v Espanyol (Fri 30 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
@@ -114340,14 +113091,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Football</category>
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Villarreal.ChampsLge">
-    <title lang="en">Villarreal v Paris Saint-Germain (Tue 03 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Next Match: Villarreal v Paris Saint-Germain. Estadio de la Cerámica, Villarreal. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">UEFA Champions League</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Villarreal.ChampsLge">
     <title lang="en">Villarreal v Paris Saint-Germain (Tue 03 Nov, 20:00)</title>
@@ -115142,14 +113885,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Walsall.League2">
-    <title lang="en">Walsall v Salford City (Mon 26 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Walsall v Salford City. Bescot Stadium, Walsall. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Walsall.League2">
     <title lang="en">Walsall v Salford City (Mon 26 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: League Two</sub-title>
@@ -115639,14 +114374,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Football</category>
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Watford.Championship">
-    <title lang="en">Norwich City v Watford (Sat 31 Oct, 12:30)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Norwich City v Watford. Carrow Road, Norwich. Kick-off: 12:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Watford.Championship">
     <title lang="en">Norwich City v Watford (Sat 31 Oct, 12:30)</title>
@@ -116450,14 +115177,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="West.Bromwich.Albion.Championship">
-    <title lang="en">West Ham Utd v West Bromwich Albion (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: West Ham Utd v West Bromwich Albion. London Stadium, London. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="West.Bromwich.Albion.Championship">
     <title lang="en">West Ham Utd v West Bromwich Albion (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Championship</sub-title>
@@ -117259,14 +115978,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="West.Ham.Utd.Championship">
-    <title lang="en">West Ham Utd v West Bromwich Albion (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: West Ham Utd v West Bromwich Albion. London Stadium, London. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="West.Ham.Utd.Championship">
     <title lang="en">West Ham Utd v West Bromwich Albion (Sat 31 Oct, 15:00)</title>
@@ -118166,14 +116877,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Wigan.Athletic.League1">
-    <title lang="en">Leicester City v Wigan Athletic (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Leicester City v Wigan Athletic. King Power Stadium, Leicester. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Wigan.Athletic.League1">
     <title lang="en">Leicester City v Wigan Athletic (Tue 27 Oct, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -118984,14 +117687,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Wolves.Championship">
-    <title lang="en">Wolves v Cardiff City (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Wolves v Cardiff City. Molineux Stadium, Wolverhampton. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Wolves.Championship">
     <title lang="en">Wolves v Cardiff City (Sat 31 Oct, 15:00)</title>
@@ -119891,14 +118586,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Wrexham.Championship">
-    <title lang="en">Sheffield Utd v Wrexham (Fri 30 Oct, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Championship</sub-title>
-    <desc lang="en">Next Match: Sheffield Utd v Wrexham. Bramall Lane, Sheffield. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Wrexham.Championship">
     <title lang="en">Sheffield Utd v Wrexham (Fri 30 Oct, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: Championship</sub-title>
@@ -120789,14 +119476,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="Wycombe.Wanderers.League1">
-    <title lang="en">Wycombe Wanderers v Burton Albion (Sat 31 Oct, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: League One</sub-title>
-    <desc lang="en">Next Match: Wycombe Wanderers v Burton Albion. Adams Park, Wycombe. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League One</category>
-  </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="Wycombe.Wanderers.League1">
     <title lang="en">Wycombe Wanderers v Burton Albion (Sat 31 Oct, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
@@ -121285,14 +119964,6 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Football</category>
     <category lang="en">League One</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261026140000 +0000" stop="20261026160000 +0000" channel="York.City.League2">
-    <title lang="en">Barnet v York City (Tue 27 Oct, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: League Two</sub-title>
-    <desc lang="en">Next Match: Barnet v York City. The Hive Stadium, Barnet. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">League Two</category>
   </programme>
   <programme start="20261026160000 +0000" stop="20261026180000 +0000" channel="York.City.League2">
     <title lang="en">Barnet v York City (Tue 27 Oct, 19:45)</title>
