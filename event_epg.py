@@ -238,6 +238,9 @@ def slug(text):
 # their IDs also start with the region code, so the two can't be mixed up when linking
 # (CASOCCERPPV198.ca, USSOCCERPPV198.us).
 REGION_PREFIX_GROUPS = {"SOCCERPPV"}
+# ...except in these regions: PlaylistLabs' auto-search kept linking US streams to the Canada IDs
+# (26 Oct 2026), so US Soccer PPV IDs are plain "SOCCERPPV123.us" (no US slots were linked yet).
+NO_PREFIX_REGIONS = {"us"}
 # PlaylistLabs' automatic search ignores the "CA:"/"US:" tag, so "... | CA: SOCCER PPV 123" and
 # "... | US: SOCCER PPV 123" look the same to it and US streams got linked to the Canada channels.
 # For these groups:
@@ -272,7 +275,8 @@ def add_channel(tv, sid, ev):
 def pipe_slot_id(cc, label):
     """ID for a "CC: SLOT LABEL" stream ("GB: DAZN PPV 5" -> DAZNPPV5.gb)."""
     base = slug(label)
-    if re.sub(r"\d+$", "", base).upper() in REGION_PREFIX_GROUPS:
+    if re.sub(r"\d+$", "", base).upper() in REGION_PREFIX_GROUPS and \
+            cc.strip().lower() not in NO_PREFIX_REGIONS:
         base = cc.strip().upper() + base
     return f"{base}.{cc.strip().lower()}"
 
