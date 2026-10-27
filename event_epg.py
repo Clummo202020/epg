@@ -314,9 +314,10 @@ def load_fixtures():
 _ESPN_GAMES = {}         # sport path -> games, or "failed"
 
 
-def load_espn_games(sport, label):
+def load_espn_games(sport, label, quiet=False):
     """[(home names, away names, start UTC)] from ESPN's schedule for `sport` ("football/nfl",
-    "baseball/mlb"), 4 days back to 10 days ahead, or None if it can't be read."""
+    "baseball/mlb"), 4 days back to 10 days ahead, or None if it can't be read.
+    quiet=True skips the per-day warnings (only the one "not available" line is printed)."""
     if sport in _ESPN_GAMES:
         got = _ESPN_GAMES[sport]
         return got if got != "failed" else None
@@ -333,7 +334,8 @@ def load_espn_games(sport, label):
             except Exception as e:
                 err = e
                 time.sleep(1.5 * (attempt + 1))
-        print(f"  WARNING: {label} schedule for {day} not available ({err})")
+        if not quiet:
+            print(f"  WARNING: {label} schedule for {day} not available ({err})")
         return None
 
     with ThreadPoolExecutor(max_workers=8) as pool:
@@ -367,6 +369,15 @@ def load_espn_games(sport, label):
 def _team_match(name, aliases):
     n = _norm(name)
     return bool(n) and any(n == a or n in a.split() or (len(n) > 3 and n in a) for a in aliases)
+
+
+def _side_match(name, aliases):
+    """_team_match, or the team's main word ("Walsall FC" -> "walsall") is a word of one of
+    ESPN's names for it - for football, where stream names add "FC", "SC" etc."""
+    if _team_match(name, aliases):
+        return True
+    k = _team_key(name)
+    return len(k) > 3 and any(k in a.split() for a in aliases)
 
 
 def slot_kickoff(league, title, h, mi, show):
@@ -488,9 +499,22 @@ def fixture_date(title, h, mi, now, label=""):
 
 # Soccer PPV names ("Next | Walsall FC vs. Salford City FC | all | 26-10-2026 | 20:52 (GMT) |
 # ... | CA: SOCCER PPV 11") give a time that isn't the kick-off (that match started 20:00).
-# So for these, the real start is looked up: the football guide first, then ESPN's NFL, NBA,
-# NHL and MLB schedules - same two teams within REAL_START_HOURS of the name's time.
+# So for these, the real start is looked up: the football guide first, then ESPN's schedules for
+# the football competitions in ESPN_FOOTBALL, then ESPN's NFL, NBA, NHL and MLB schedules -
+# same two teams within REAL_START_HOURS of the name's time.
 REAL_START_HOURS = 12
+# Football competitions NOT in the football guide, looked up on ESPN for Soccer PPV slots
+# (added 27 Oct 2026): ESPN league path -> name used as the secondary title. Matches go LIVE
+# KICKOFF_EARLY_MINUTES early, like the football guide. Each league is read at most once a run
+# (15 small requests) and only when a Soccer PPV name isn't in the football guide. To add a
+# competition, add its ESPN path here (e.g. "soccer/esp.copa_del_rey": "Copa del Rey").
+ESPN_FOOTBALL = {
+    "soccer/ger.1": "Bundesliga",
+    "soccer/ger.dfb_pokal": "DFB-Pokal",
+    "soccer/ita.1": "Serie A",
+    "soccer/fra.1": "Ligue 1",
+    "soccer/ned.1": "Eredivisie",
+}
 
 
 def real_start(title, approx):
@@ -512,6 +536,18 @@ def real_start(title, approx):
                     (best is None or abs(k - approx) < abs(best[0] - approx)):
                 best = (k, comp)
     if best:
+        return best[0], KICKOFF_EARLY_MINUTES, best[1]
+    for sport, label in ESPN_FOOTBALL.items():      # other football competitions on ESPN
+        games = load_espn_games(sport, label, quiet=True) or []
+        for a, b, ko in games:
+            if ((_side_match(sides[0], a) and _side_match(sides[1], b)) or
+                    (_side_match(sides[0], b) and _side_match(sides[1], a))) and \
+                    abs(ko - approx) <= timedelta(hours=REAL_START_HOURS) and \
+                    (best is None or abs(ko - approx) < abs(best[0] - approx)):
+                best = (ko, label)
+    if best:
+        print(f"  Soccer PPV kick-off: {title}: name {approx:%d %b %H:%M} UTC, "
+              f"{best[1]} {best[0]:%d %b %H:%M} UTC")
         return best[0], KICKOFF_EARLY_MINUTES, best[1]
     for sport, label in ((NFL_ESPN, "NFL"), (NBA_ESPN, "NBA"), (US_LEAGUES["NHL"][0], "NHL"),
                          (MLB_ESPN, "MLB")):
