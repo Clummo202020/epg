@@ -489,7 +489,7 @@
     <display-name lang="en">(Apple) (MLS) 050</display-name>
   </channel>
   <channel id="CASOCCERPPV1.ca">
-    <display-name lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</display-name>
+    <display-name lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</display-name>
     <display-name lang="en">CA: SOCCER PPV 1</display-name>
   </channel>
   <channel id="CASOCCERPPV10.ca">
@@ -537,7 +537,7 @@
     <display-name lang="en">CA: SOCCER PPV 109</display-name>
   </channel>
   <channel id="CASOCCERPPV11.ca">
-    <display-name lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</display-name>
+    <display-name lang="en">Next | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</display-name>
     <display-name lang="en">CA: SOCCER PPV 11</display-name>
   </channel>
   <channel id="CASOCCERPPV110.ca">
@@ -933,7 +933,7 @@
     <display-name lang="en">CA: SOCCER PPV 199</display-name>
   </channel>
   <channel id="CASOCCERPPV2.ca">
-    <display-name lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</display-name>
+    <display-name lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</display-name>
     <display-name lang="en">CA: SOCCER PPV 2</display-name>
   </channel>
   <channel id="CASOCCERPPV20.ca">
@@ -1069,7 +1069,7 @@
     <display-name lang="en">CA: SOCCER PPV 49</display-name>
   </channel>
   <channel id="CASOCCERPPV5.ca">
-    <display-name lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</display-name>
+    <display-name lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</display-name>
     <display-name lang="en">CA: SOCCER PPV 5</display-name>
   </channel>
   <channel id="CASOCCERPPV50.ca">
@@ -1245,7 +1245,7 @@
     <display-name lang="en">CA: SOCCER PPV 89</display-name>
   </channel>
   <channel id="CASOCCERPPV9.ca">
-    <display-name lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</display-name>
+    <display-name lang="en">Next | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</display-name>
     <display-name lang="en">CA: SOCCER PPV 9</display-name>
   </channel>
   <channel id="CASOCCERPPV90.ca">
@@ -6152,6 +6152,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261028111000 +0000" stop="20261028131000 +0000" channel="ARPPV10.mena">
+    <title lang="en">Next | Tommy Paul vs Andrey Rublev || Arabic | Erste Bank Open | 27-10-2026 | 12:10 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 10</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="ARPPV11.mena">
     <title lang="en">Jose Solano Marmolejo &amp; Ramiro Pereyra vs Jorge Nieto Ruiz &amp; Miguel Yanguas (Tue 27 Oct, 12:40)</title>
     <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
@@ -6453,6 +6458,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261028091000 +0000" stop="20261028111000 +0000" channel="ARPPV14.mena">
+    <title lang="en">Next | Giovanni Mpetshi Perricard vs Arthur Fils || Arabic | Swiss Indoors Basel | 27-10-2026 | 14:10 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 14</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028111000 +0000" stop="20261028131000 +0000" channel="ARPPV14.mena">
     <title lang="en">Next | Giovanni Mpetshi Perricard vs Arthur Fils || Arabic | Swiss Indoors Basel | 27-10-2026 | 14:10 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 14</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -6762,6 +6772,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261028091000 +0000" stop="20261028111000 +0000" channel="ARPPV18.mena">
+    <title lang="en">Next | Alexander Zverev vs Martin Landaluce || Arabic | Erste Bank Open | 27-10-2026 | 16:10 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 18</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028111000 +0000" stop="20261028131000 +0000" channel="ARPPV18.mena">
     <title lang="en">Next | Alexander Zverev vs Martin Landaluce || Arabic | Erste Bank Open | 27-10-2026 | 16:10 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 18</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -7227,6 +7242,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261028091000 +0000" stop="20261028111000 +0000" channel="ARPPV23.mena">
+    <title lang="en">Next | Stan Wawrinka vs Jiri Lehecka || Arabic | Swiss Indoors Basel | 27-10-2026 | 18:10 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 23</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028111000 +0000" stop="20261028131000 +0000" channel="ARPPV23.mena">
     <title lang="en">Next | Stan Wawrinka vs Jiri Lehecka || Arabic | Swiss Indoors Basel | 27-10-2026 | 18:10 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 23</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -11622,75 +11642,79 @@
     <desc lang="en">The next event on this stream will be listed nearer the time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027090000 +0000" stop="20261027110000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">🔴 LIVE: Tokyo Open: Day 2</title>
-    <desc lang="en">Tokyo Open: Day 2. Starts Tue 27 Oct, 09:00 UK time.</desc>
+  <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Hamburg vs. Frankfurt (Tue 27 Oct, 17:42)</title>
+    <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
+    <desc lang="en">Coming up: Hamburg vs. Frankfurt. Starts Tue 27 Oct, 17:42 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027120000 +0000" stop="20261027140000 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Hamburg vs. Frankfurt (Tue 27 Oct, 17:42)</title>
+    <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
+    <desc lang="en">Coming up: Hamburg vs. Frankfurt. Starts Tue 27 Oct, 17:42 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027140000 +0000" stop="20261027160000 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Hamburg vs. Frankfurt (Tue 27 Oct, 17:42)</title>
+    <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
+    <desc lang="en">Coming up: Hamburg vs. Frankfurt. Starts Tue 27 Oct, 17:42 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027160000 +0000" stop="20261027174200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Hamburg vs. Frankfurt (Tue 27 Oct, 17:42)</title>
+    <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
+    <desc lang="en">Coming up: Hamburg vs. Frankfurt. Starts Tue 27 Oct, 17:42 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027174200 +0000" stop="20261027194200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">🔴 LIVE: Hamburg vs. Frankfurt</title>
+    <desc lang="en">Hamburg vs. Frankfurt. Starts Tue 27 Oct, 17:42 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261027110000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">🔴 LIVE: Tokyo Open: Day 2</title>
-    <desc lang="en">Tokyo Open: Day 2. Starts Tue 27 Oct, 09:00 UK time.</desc>
+  <programme start="20261027194200 +0000" stop="20261027204200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">🔴 LIVE: Hamburg vs. Frankfurt</title>
+    <desc lang="en">Hamburg vs. Frankfurt. Starts Tue 27 Oct, 17:42 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261027120000 +0000" stop="20261027140000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+  <programme start="20261027204200 +0000" stop="20261027224200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Next | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027140000 +0000" stop="20261027160000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+  <programme start="20261027224200 +0000" stop="20261028004200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Next | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027160000 +0000" stop="20261027180000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+  <programme start="20261028004200 +0000" stop="20261028024200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Next | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027180000 +0000" stop="20261027200000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+  <programme start="20261028024200 +0000" stop="20261028044200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Next | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027200000 +0000" stop="20261027220000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+  <programme start="20261028044200 +0000" stop="20261028064200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Next | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027220000 +0000" stop="20261028000000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+  <programme start="20261028064200 +0000" stop="20261028084200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Next | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261028000000 +0000" stop="20261028020000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+  <programme start="20261028084200 +0000" stop="20261028104200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Next | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261028020000 +0000" stop="20261028040000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028040000 +0000" stop="20261028060000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028060000 +0000" stop="20261028080000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028080000 +0000" stop="20261028100000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028100000 +0000" stop="20261028120000 +0000" channel="CASOCCERPPV1.ca">
-    <title lang="en">Live | Tokyo Open: Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+  <programme start="20261028104200 +0000" stop="20261028124200 +0000" channel="CASOCCERPPV11.ca">
+    <title lang="en">Next | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -11765,78 +11789,6 @@
   </programme>
   <programme start="20261028110000 +0000" stop="20261028130000 +0000" channel="CASOCCERPPV14.ca">
     <title lang="en">Next | Day 2: Center Court | all | 27-10-2026 | 14:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 14</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027090000 +0000" stop="20261027110000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">🔴 LIVE: New Zealand vs. India</title>
-    <desc lang="en">New Zealand vs. India. Starts Tue 27 Oct, 09:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261027110000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">🔴 LIVE: New Zealand vs. India</title>
-    <desc lang="en">New Zealand vs. India. Starts Tue 27 Oct, 09:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261027120000 +0000" stop="20261027140000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027140000 +0000" stop="20261027160000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027160000 +0000" stop="20261027180000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027180000 +0000" stop="20261027200000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027200000 +0000" stop="20261027220000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027220000 +0000" stop="20261028000000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028000000 +0000" stop="20261028020000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028020000 +0000" stop="20261028040000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028040000 +0000" stop="20261028060000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028060000 +0000" stop="20261028080000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028080000 +0000" stop="20261028100000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028100000 +0000" stop="20261028120000 +0000" channel="CASOCCERPPV2.ca">
-    <title lang="en">Live | New Zealand vs. India | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -11984,76 +11936,76 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Day 2: Court 1 (Tue 27 Oct, 12:00)</title>
+  <programme start="20261027100000 +0000" stop="20261027110000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Day 2: Court 1 (Tue 27 Oct, 11:00)</title>
     <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
-    <desc lang="en">Coming up: Day 2: Court 1. Starts Tue 27 Oct, 12:00 UK time.</desc>
+    <desc lang="en">Coming up: Day 2: Court 1. Starts Tue 27 Oct, 11:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027120000 +0000" stop="20261027140000 +0000" channel="CASOCCERPPV5.ca">
+  <programme start="20261027110000 +0000" stop="20261027130000 +0000" channel="CASOCCERPPV5.ca">
     <title lang="en">🔴 LIVE: Day 2: Court 1</title>
-    <desc lang="en">Day 2: Court 1. Starts Tue 27 Oct, 12:00 UK time.</desc>
+    <desc lang="en">Day 2: Court 1. Starts Tue 27 Oct, 11:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261027140000 +0000" stop="20261027150000 +0000" channel="CASOCCERPPV5.ca">
+  <programme start="20261027130000 +0000" stop="20261027140000 +0000" channel="CASOCCERPPV5.ca">
     <title lang="en">🔴 LIVE: Day 2: Court 1</title>
-    <desc lang="en">Day 2: Court 1. Starts Tue 27 Oct, 12:00 UK time.</desc>
+    <desc lang="en">Day 2: Court 1. Starts Tue 27 Oct, 11:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261027150000 +0000" stop="20261027170000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261027140000 +0000" stop="20261027160000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027170000 +0000" stop="20261027190000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261027160000 +0000" stop="20261027180000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027190000 +0000" stop="20261027210000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261027180000 +0000" stop="20261027200000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027210000 +0000" stop="20261027230000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261027200000 +0000" stop="20261027220000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261027230000 +0000" stop="20261028010000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261027220000 +0000" stop="20261028000000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261028010000 +0000" stop="20261028030000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261028000000 +0000" stop="20261028020000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261028030000 +0000" stop="20261028050000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261028020000 +0000" stop="20261028040000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261028050000 +0000" stop="20261028070000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261028040000 +0000" stop="20261028060000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261028070000 +0000" stop="20261028090000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261028060000 +0000" stop="20261028080000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261028090000 +0000" stop="20261028110000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261028080000 +0000" stop="20261028100000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261028110000 +0000" stop="20261028130000 +0000" channel="CASOCCERPPV5.ca">
-    <title lang="en">Next | Day 2: Court 1 | all | 27-10-2026 | 12:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+  <programme start="20261028100000 +0000" stop="20261028120000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Live | Day 2: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -12276,6 +12228,81 @@
   </programme>
   <programme start="20261028110000 +0000" stop="20261028130000 +0000" channel="CASOCCERPPV8.ca">
     <title lang="en">Next | Early Round Coverage, Day 2 | all | 27-10-2026 | 14:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Day 2: glaubandich (Tue 27 Oct, 15:00)</title>
+    <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
+    <desc lang="en">Coming up: Day 2: glaubandich. Starts Tue 27 Oct, 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027120000 +0000" stop="20261027140000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Day 2: glaubandich (Tue 27 Oct, 15:00)</title>
+    <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
+    <desc lang="en">Coming up: Day 2: glaubandich. Starts Tue 27 Oct, 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027140000 +0000" stop="20261027150000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Day 2: glaubandich (Tue 27 Oct, 15:00)</title>
+    <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
+    <desc lang="en">Coming up: Day 2: glaubandich. Starts Tue 27 Oct, 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027150000 +0000" stop="20261027170000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">🔴 LIVE: Day 2: glaubandich</title>
+    <desc lang="en">Day 2: glaubandich. Starts Tue 27 Oct, 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261027170000 +0000" stop="20261027180000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">🔴 LIVE: Day 2: glaubandich</title>
+    <desc lang="en">Day 2: glaubandich. Starts Tue 27 Oct, 15:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261027180000 +0000" stop="20261027200000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Next | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027200000 +0000" stop="20261027220000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Next | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027220000 +0000" stop="20261028000000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Next | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028000000 +0000" stop="20261028020000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Next | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028020000 +0000" stop="20261028040000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Next | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028040000 +0000" stop="20261028060000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Next | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028060000 +0000" stop="20261028080000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Next | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028080000 +0000" stop="20261028100000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Next | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028100000 +0000" stop="20261028120000 +0000" channel="CASOCCERPPV9.ca">
+    <title lang="en">Next | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -14209,6 +14236,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261028112500 +0000" stop="20261028132500 +0000" channel="ESPNPPV23.us">
+    <title lang="en">NEXT | PALMEIRAS VS. ARSENAL (GROUP B) | Tue 27 Oct 16:25 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 23</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="ESPNPPV24.us">
     <title lang="en">CHELSEA FC VS. AJAX (GROUP A) (Tue 27 Oct, 20:25)</title>
     <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
@@ -14287,6 +14319,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261028112500 +0000" stop="20261028132500 +0000" channel="ESPNPPV24.us">
+    <title lang="en">NEXT | CHELSEA FC VS. AJAX (GROUP A) | Tue 27 Oct 16:25 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 24</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="ESPNPPV25.us">
     <title lang="en">RIVER PLATE VS. INTER MILAN (GROUP A) (Tue 27 Oct, 20:25)</title>
     <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
@@ -14361,6 +14398,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261028092500 +0000" stop="20261028112500 +0000" channel="ESPNPPV25.us">
+    <title lang="en">NEXT | RIVER PLATE VS. INTER MILAN (GROUP A) | Tue 27 Oct 16:25 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 25</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028112500 +0000" stop="20261028132500 +0000" channel="ESPNPPV25.us">
     <title lang="en">NEXT | RIVER PLATE VS. INTER MILAN (GROUP A) | Tue 27 Oct 16:25 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 25</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -15922,6 +15964,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261028113000 +0000" stop="20261028133000 +0000" channel="ESPNPPV43.us">
+    <title lang="en">NEXT | COLUMBUS BLUE JACKETS VS. PHILADELPHIA FLYERS | Tue 27 Oct 18:30 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 43</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="ESPNPPV5.us">
     <title lang="en">CINCINNATI FOOTBALL PRESS CONFERENCE (Tue 27 Oct, 16:00)</title>
     <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
@@ -16144,6 +16191,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261028091500 +0000" stop="20261028111500 +0000" channel="ESPNPPV7.us">
+    <title lang="en">NEXT | COWBOY FOOTBALL PRESS CONFERENCE | Tue 27 Oct 12:15 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 7</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028111500 +0000" stop="20261028131500 +0000" channel="ESPNPPV7.us">
     <title lang="en">NEXT | COWBOY FOOTBALL PRESS CONFERENCE | Tue 27 Oct 12:15 EDT (US) | 8K EXCLUSIVE | US: ESPN+ PPV 7</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -32086,6 +32138,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261028113000 +0000" stop="20261028133000 +0000" channel="SN022.ca">
+    <title lang="en">CA (SN+ 022) | Buffalo @ San Jose (2026-10-27 22:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="SN023.ca">
     <title lang="en">Sportsnet Central: Oct. 27 (Wed 28 Oct, 09:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 28 Oct</sub-title>
@@ -41932,6 +41989,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261028113000 +0000" stop="20261028133000 +0000" channel="TSN002.ca">
+    <title lang="en">CA (TSN+ 002) | ATP 500 Tennis: Vienna _ Early Round Coverage Day #2 (2026-10-27 08:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="TSN003.ca">
     <title lang="en">ATP 500 Tennis: Vienna _ Day #2 (Centre Court) (Tue 27 Oct, 12:30)</title>
     <sub-title lang="en">⏭ Coming up Tue 27 Oct</sub-title>
@@ -42004,6 +42066,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261028093000 +0000" stop="20261028113000 +0000" channel="TSN003.ca">
+    <title lang="en">CA (TSN+ 003) | ATP 500 Tennis: Vienna _ Day #2 (Centre Court) (2026-10-27 08:30:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028113000 +0000" stop="20261028133000 +0000" channel="TSN003.ca">
     <title lang="en">CA (TSN+ 003) | ATP 500 Tennis: Vienna _ Day #2 (Centre Court) (2026-10-27 08:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -51346,6 +51413,71 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027120000 +0000" stop="20261027140000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027140000 +0000" stop="20261027160000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027160000 +0000" stop="20261027180000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027180000 +0000" stop="20261027200000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027200000 +0000" stop="20261027220000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027220000 +0000" stop="20261028000000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028000000 +0000" stop="20261028020000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028020000 +0000" stop="20261028040000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028040000 +0000" stop="20261028060000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028060000 +0000" stop="20261028080000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028080000 +0000" stop="20261028100000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028100000 +0000" stop="20261028120000 +0000" channel="CASOCCERPPV1.ca">
+    <title lang="en">End | Tokyo Open: Day 2 | all | 27-10-2026 | 02:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV10.ca">
     <title lang="en">End | Köln vs. Union Berlin | all | 27-10-2026 | 20:27 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 10</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -52059,71 +52191,6 @@
   <programme start="20261028100000 +0000" stop="20261028120000 +0000" channel="CASOCCERPPV109.ca">
     <title lang="en">NO EVENT STREAMING NOW - | 8K EXCLUSIVE | CA: SOCCER PPV 109</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027120000 +0000" stop="20261027140000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027140000 +0000" stop="20261027160000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027160000 +0000" stop="20261027180000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027180000 +0000" stop="20261027200000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027200000 +0000" stop="20261027220000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027220000 +0000" stop="20261028000000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028000000 +0000" stop="20261028020000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028020000 +0000" stop="20261028040000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028040000 +0000" stop="20261028060000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028060000 +0000" stop="20261028080000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028080000 +0000" stop="20261028100000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028100000 +0000" stop="20261028120000 +0000" channel="CASOCCERPPV11.ca">
-    <title lang="en">End | Hamburg vs. Frankfurt | all | 27-10-2026 | 17:42 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 11</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV110.ca">
@@ -58431,6 +58498,71 @@
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027120000 +0000" stop="20261027140000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027140000 +0000" stop="20261027160000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027160000 +0000" stop="20261027180000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027180000 +0000" stop="20261027200000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027200000 +0000" stop="20261027220000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261027220000 +0000" stop="20261028000000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028000000 +0000" stop="20261028020000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028020000 +0000" stop="20261028040000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028040000 +0000" stop="20261028060000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028060000 +0000" stop="20261028080000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028080000 +0000" stop="20261028100000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261028100000 +0000" stop="20261028120000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">End | New Zealand vs. India | all | 27-10-2026 | 07:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV20.ca">
     <title lang="en">NO EVENT STREAMING NOW - | 8K EXCLUSIVE | CA: SOCCER PPV 20</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -63044,71 +63176,6 @@
   <programme start="20261028100000 +0000" stop="20261028120000 +0000" channel="CASOCCERPPV89.ca">
     <title lang="en">NO EVENT STREAMING NOW - | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027120000 +0000" stop="20261027140000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027140000 +0000" stop="20261027160000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027160000 +0000" stop="20261027180000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027180000 +0000" stop="20261027200000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027200000 +0000" stop="20261027220000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261027220000 +0000" stop="20261028000000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028000000 +0000" stop="20261028020000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028020000 +0000" stop="20261028040000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028040000 +0000" stop="20261028060000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028060000 +0000" stop="20261028080000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028080000 +0000" stop="20261028100000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261028100000 +0000" stop="20261028120000 +0000" channel="CASOCCERPPV9.ca">
-    <title lang="en">End | Day 2: glaubandich | all | 27-10-2026 | 15:00 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261027100000 +0000" stop="20261027120000 +0000" channel="CASOCCERPPV90.ca">
