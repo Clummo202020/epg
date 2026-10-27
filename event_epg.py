@@ -52,6 +52,27 @@ from zoneinfo import ZoneInfo
 OUTPUT_NAME = "events_epg.xml"
 LONDON = ZoneInfo("Europe/London")
 EVENT_HOURS = 3            # how long each event is listed for
+# Longer LIVE blocks for events that run longer (added 27 Oct 2026) - used only when the
+# stream's group doesn't set its own length (NFL, NBA, MLB, darts do). First match wins, so
+# cricket comes before the "Day N" rule (a Test's "Day 3" gets 8 h, not 10).
+#   cricket: a Test or ODI (~7-8 h a day), a T20 (~3.5 h)
+#   all-day sessions: "Day 2", "Day #2", "Court 1", "Centre Court" (tennis order of play etc.)
+LONG_EVENTS = [
+    (re.compile(r"(?i)\b(ODI|one[- ]day|\d+(st|nd|rd|th)\s+test|test\s+match|tests?\b.*\bvs?\b)"), 8),
+    (re.compile(r"(?i)\bT20I?\b"), 4),
+    (re.compile(r"(?i)\bday\s*#?\s*\d+\b|\bcourt\b"), 10),
+]
+
+
+def event_hours(ev):
+    """LIVE block length for `ev`: its own "hours", else LONG_EVENTS, else EVENT_HOURS."""
+    if ev.get("hours"):
+        return ev["hours"]
+    text = " ".join(str(ev.get(k) or "") for k in ("title", "extra", "comp"))
+    for pattern, hours in LONG_EVENTS:
+        if pattern.search(text):
+            return hours
+    return EVENT_HOURS
 BLOCK_HOURS = 2            # "Coming up" block length before the event
 PAST_EVENT_HOURS = 2       # an event that has ended keeps its slot for this long (its LIVE
                            # block is followed straight away by ENDED_FILLER_HOURS of
@@ -1031,7 +1052,7 @@ def build(events, now):
         if ev.get("untimed"):
             untimed.setdefault(ev["slot_id"], ev)
             continue
-        end = ev["start"] + timedelta(hours=ev.get("hours", EVENT_HOURS))
+        end = ev["start"] + timedelta(hours=event_hours(ev))
         if end + timedelta(hours=PAST_EVENT_HOURS) < now:
             ended.setdefault(ev["slot_id"], ev)
             continue
@@ -1049,7 +1070,7 @@ def build(events, now):
         ev = by_slot[sid]
         kickoff = ev["start"]
         start = kickoff - timedelta(minutes=ev.get("early", 0))   # LIVE a little early where set
-        end = kickoff + timedelta(hours=ev.get("hours", EVENT_HOURS))
+        end = kickoff + timedelta(hours=event_hours(ev))
         when = f"{uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}, {uk(kickoff):%H:%M}"
         desc = f"{ev['title']}." + (f" {ev['extra']}." if ev["extra"] else "") + \
                f" Starts {when} UK time." + (f" {ev['info']}" if ev.get("info") else "")
