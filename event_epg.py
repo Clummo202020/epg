@@ -261,7 +261,7 @@ _FIXTURES = None
 def _team_key(name):
     """First significant word of a team name, for loose matching ("Manchester Utd" ->
     "manchester", "AFC Bournemouth" -> "bournemouth")."""
-    words = re.sub(r"[^a-z0-9 ]+", " ", unicodedata.normalize("NFKD", name or "")
+    words = re.sub(r"[^a-z0-9 ]+", " ", unicodedata.normalize("NFKD", (name or "").replace("ß", "ss"))
                    .encode("ascii", "ignore").decode().lower()).split()
     skip = {"fc", "afc", "cf", "sc", "ac", "as", "ss", "sk", "fk", "nk", "the", "real", "club",
             "sporting", "athletic", "atletico", "inter", "dynamo", "dinamo", "olympique", "rc"}
@@ -371,13 +371,24 @@ def _team_match(name, aliases):
     return bool(n) and any(n == a or n in a.split() or (len(n) > 3 and n in a) for a in aliases)
 
 
+# Local city names in stream names -> the English names ESPN uses ("Köln" = ESPN's "Cologne").
+# Accents are already removed when this is applied. Add pairs here if a team doesn't match.
+ENGLISH_NAMES = {"koln": "cologne", "munchen": "munich", "nurnberg": "nuremberg",
+                 "monchengladbach": "gladbach"}
+
+
 def _side_match(name, aliases):
     """_team_match, or the team's main word ("Walsall FC" -> "walsall") is a word of one of
-    ESPN's names for it - for football, where stream names add "FC", "SC" etc."""
-    if _team_match(name, aliases):
-        return True
-    k = _team_key(name)
-    return len(k) > 3 and any(k in a.split() for a in aliases)
+    ESPN's names for it - for football, where stream names add "FC", "SC" etc. Also tries
+    the English city name (ENGLISH_NAMES)."""
+    english = " ".join(ENGLISH_NAMES.get(w, w) for w in _norm(name).split())
+    for n in {name, english}:
+        if _team_match(n, aliases):
+            return True
+        k = _team_key(n)
+        if len(k) > 3 and any(k in a.split() for a in aliases):
+            return True
+    return False
 
 
 def slot_kickoff(league, title, h, mi, show):
@@ -456,7 +467,7 @@ def espn_start(sport, label, title, approx):
 
 
 def _norm(name):
-    return re.sub(r"[^a-z0-9 ]+", " ", unicodedata.normalize("NFKD", name or "")
+    return re.sub(r"[^a-z0-9 ]+", " ", unicodedata.normalize("NFKD", (name or "").replace("ß", "ss"))
                   .encode("ascii", "ignore").decode().lower()).strip()
 
 
@@ -649,12 +660,19 @@ def parse_tod(name, any_region=False):
     ev = {"name": name, "slot_id": slot_id, "slot_name": slot_name, "title": title,
           "extra": extra, "comp": comp or "", "start": None}
     now = datetime.now(timezone.utc)
-    if status in ("end", "ended", "finished", "off"):
-        ev["start"] = now - timedelta(days=2)            # the name says it's over
-    elif date and time_:
+    named = None
+    if date and time_:
         h, mi = map(int, time_.split(":"))
-        ev["start"] = datetime(*date, h, mi, tzinfo=ZoneInfo(zone or COUNTRY_TZ.get(cc, TOD_TZ))) \
+        named = datetime(*date, h, mi, tzinfo=ZoneInfo(zone or COUNTRY_TZ.get(cc, TOD_TZ))) \
             .astimezone(timezone.utc)
+    if status in ("end", "ended", "finished", "off") and (named is None or named <= now):
+        ev["start"] = now - timedelta(days=2)            # the name says it's over
+    elif named:
+        # "End" on a name whose time is still ahead is ignored (27 Oct 2026: the provider put
+        # "End" on that evening's DFB-Pokal ties hours before kick-off) - listed as upcoming.
+        if status in ("end", "ended", "finished", "off"):
+            print(f"  Early \"End\" ignored (time still ahead): {name}")
+        ev["start"] = named
         if any_region:                               # Soccer PPV: the name's time isn't the kick-off
             rs = real_start(title, ev["start"])
             if rs:
