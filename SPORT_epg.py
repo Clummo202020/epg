@@ -3301,6 +3301,79 @@ def desc_says_live(desc):
 # Start of a live programme's title. Plain "LIVE: " on these TV channels; the 🔴 is kept
 # for the event and match streams (event_epg.py, football_epg.py, scottish_epg.py).
 LIVE_PREFIX = "LIVE: "
+# Never live, whatever the source says (27 Oct 2026: Hub Premier 2 showed "LIVE: End of
+# Transmission" between matches).
+OFF_AIR_RE = re.compile(r"(?i)^\s*(end of transmission|off[- ]?air|close ?down|station close|"
+                        r"no transmission|transmission ends?|test card)\b[\s.!]*$")
+# Channels whose source flags magazine shows as live ("LIVE: PL Stories"): there a programme
+# only counts as live when its title is a match ("Sunderland vs Leeds United (MW08) - ...")
+# and not highlights or a classic match. IDs starting with these:
+MATCH_ONLY_LIVE = ("SG.HubPremier",)
+MATCH_TITLE_RE = re.compile(r"\S\s+vs?\.?\s+\S", re.I)
+
+
+def really_live(title, cid):
+    """False for a programme the source wrongly marks live (off-air blocks; non-match
+    programmes on MATCH_ONLY_LIVE channels)."""
+    if OFF_AIR_RE.match(title or ""):
+        return False
+    if cid.startswith(MATCH_ONLY_LIVE):
+        return bool(MATCH_TITLE_RE.search(title or "")) and not NOT_LIVE_WORDS.search(title or "")
+    return True
+
+
+# Hub Premier 2 UHD (Singapore, added 27 Oct 2026): a 4K channel that only shows selected live
+# Premier League matches and loops a promo card in between. StarHub publishes no schedule for
+# it; its promo card lists Hub Premier 1 games, so it is built from Hub Premier 1's LIVE
+# matches. Not every one of those is shown in 4K - the descriptions say so.
+HUB_UHD_ID, HUB_UHD_NAME, HUB_UHD_FROM = "SG.HubPremier2UHD", "Hub Premier 2 UHD", "SG.HubPremier1"
+HUB_UHD_NOTE = ("Selected Premier League matches in 4K. Listed from Hub Premier 1's live matches - "
+                "not every one is shown in 4K.")
+
+
+def add_hub_uhd(tv, suffix):
+    """Add the Hub Premier 2 UHD channel to `tv`, built from Hub Premier 1's live matches.
+    Returns the number of programmes added (0 if Hub Premier 1 isn't in the guide)."""
+    src = HUB_UHD_FROM + suffix
+    progs = [p for p in tv.findall("programme") if p.get("channel") == src]
+    if not progs:
+        print(f"  NOTE: {HUB_UHD_NAME} not written - {HUB_UHD_FROM} has no listings this run")
+        return 0
+    cid = HUB_UHD_ID + suffix
+    c = ET.SubElement(tv, "channel", {"id": cid})
+    ET.SubElement(c, "display-name", {"lang": "en"}).text = HUB_UHD_NAME
+    now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
+    end = max(xmltv_stamp(p.get("stop")) for p in progs)
+    matches = sorted((xmltv_stamp(p.get("start")), xmltv_stamp(p.get("stop")), p) for p in progs
+                     if any(k.text == "Live" for k in p.findall("category")))
+    matches = [m for m in matches if m[1] > now]
+    count, t = 0, now
+    for i in range(len(matches) + 1):
+        if i < len(matches):
+            start, stop, p = matches[i]
+            name = re.sub(r"^" + re.escape(LIVE_PREFIX), "", p.findtext("title") or "")
+            uk = start.astimezone(LONDON)
+            when = f"{uk:%a %d %b, %H:%M}"
+            sg = start.astimezone(ZoneInfo("Asia/Singapore"))
+            gap = (f"{name} ({when})", "Coming up",
+                   f"Off air between matches. Next live match: {name}, {when} UK "
+                   f"({sg:%H:%M} Singapore). {HUB_UHD_NOTE}")
+        else:
+            start = stop = end
+            gap = (f"{HUB_UHD_NAME} - off air", None,
+                   f"Off air between matches. {HUB_UHD_NOTE} The next match will be listed "
+                   f"when Hub Premier 1's schedule has it.")
+        if start > t:
+            for a, b in filler_blocks(t, start):
+                add_programme(tv, cid, a, b, gap[0], gap[1], gap[2], False)
+                count += 1
+        if i < len(matches) and stop > t:
+            add_programme(tv, cid, max(start, t), stop, p.findtext("title"), p.findtext("sub-title"),
+                          ((p.findtext("desc") or "") + " " + HUB_UHD_NOTE).strip(), True)
+            count += 1
+            t = stop
+        t = max(t, start)
+    return count
 
 
 def live_title(title, cid=""):
@@ -3412,6 +3485,9 @@ def build_xmltv(records, suffix, minutes):
                     count += 1
             is_live = (ev["live"] or kickoff_now(f"{sub or ''} {desc}", loc, uk)
                        or desc_says_live(desc))                # description says "live"
+            if is_live and not really_live(title, cid):        # e.g. "End of Transmission"
+                is_live = False
+                desc = re.sub(r"^LIVE\.\s*", "", desc)
             add_programme(tv, cid, start, stop, live_title(title, cid) if is_live else title,
                           live_sub(sub) if is_live else sub, desc, is_live)
             count += 1
@@ -3954,6 +4030,10 @@ def main():
                                 if ev.get("desc") and ev["desc"] not in TRANSLATIONS
                                 and rec["place"] not in ENGLISH_PLACES)
     tv, count, listed = build_xmltv(records, suffix, args.minutes)
+    uhd = add_hub_uhd(tv, suffix)
+    if uhd:
+        count += uhd
+        listed.append((HUB_UHD_ID + suffix, HUB_UHD_NAME))
     out_path = unique_path(args.out) if args.unique else args.out
     write_xml(tv, out_path)
     if run_no is not None:
