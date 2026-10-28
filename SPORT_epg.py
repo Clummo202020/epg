@@ -2727,7 +2727,8 @@ def fetch_sky(days, debug=False):
 SKY_COMP_NAMES = {"PL": "Premier League", "EPL": "Premier League", "EFL CUP": "Carabao Cup", "EFL": "EFL",
                   "SPFL": "Scottish Premiership", "SPFL CUP": "Premier Sports Cup", "WSL": "Women's Super League",
                   "F1": "Formula 1", "PREM": "Gallagher PREM", "NFL": "NFL", "NBA": "NBA", "NHL": "NHL",
-                  "MLB": "MLB", "IPL": "Indian Premier League", "WPL": "Women's Premier League"}
+                  "MLB": "MLB", "IPL": "Indian Premier League", "WPL": "Women's Premier League",
+                  "SNF": "Premier League", "MNF": "Premier League"}   # Sky's Saturday/Monday Night Football
 SPORT_WORD_END = re.compile(r"^(.{3,}?)\s+(golf|tennis|cricket|darts|snooker|rugby|boxing|racing|athletics|"
                             r"netball|football|motorsport)$", re.I)
 
@@ -2787,8 +2788,8 @@ def uhd_next_event(evs):
         ev["title"] = f"{match} ({day}, {uk:%H:%M})"                  # "Hearts v Rangers (Wed 28th, 19:00)"
         ev["sub"] = f"⏭ Next Event: {comp}" if comp else "⏭ Next Event"
         lead = f"Next Event: {comp} – {match}." if comp and comp not in match else f"Next Event: {match}."
-        ev["desc"] = " ".join(x for x in (lead, detail if detail.rstrip('.') != match else "",
-                                          f"{when}: {day}, {uk:%H:%M}.") if x)
+        ev["desc"] = " ".join(x for x in (lead, detail if detail.rstrip('.') != match else "") if x)
+        # (no kick-off time here - it is in the title, "Spurs v C. Palace (Sat 31st, 17:00)")
         ev["live"], ev["no_lead"] = False, True
     return evs
 
