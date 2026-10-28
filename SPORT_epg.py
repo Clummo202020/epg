@@ -4026,6 +4026,71 @@ def filler_blocks(start, stop):
         cur = nxt
 
 
+# Astro's pop-up Premier League channels (28 Oct 2026): Astro (and epgshare01's copy) only list
+# 6-hour placeholder blocks titled with the channel name, whose description names the next match:
+#   "Catch the live broadcast of Premier League 2026/27: Match Week 9: Coventry City vs Sunderland
+#    at 2300hrs."
+# astro_matchday() replaces those blocks with "Coming up" blocks up to the match and a LIVE block from
+# ASTRO_LIVE_EARLY minutes before kick-off for ASTRO_MATCH_MINUTES, the kick-off date and time taken from
+# the football guide (same two teams, same Malaysian clock time). If the football guide doesn't have the
+# match, the placeholders stay but are no longer marked live. Log: "Astro PL4: Coventry City vs
+# Sunderland -> Sat 31 Oct 15:00 UK".
+ASTRO_PLACEHOLDER_RE = re.compile(r"(?i)^astro (premier league|football|sports uhd|arena)( \d)?$")
+ASTRO_MATCH_RE = re.compile(r"(?i)live broadcast of (?P<comp>.+?)(?:\s+\d{4}/\d{2,4})?:\s*(?P<round>(?:match ?week|"
+                            r"round|matchday)\s*\d+)?:?\s*(?P<a>.+?)\s+(?:vs?\.?)\s+(?P<b>.+?)\s+at\s+"
+                            r"(?P<hh>\d{2})(?P<mm>\d{2})\s*hrs")
+ASTRO_LIVE_EARLY = 10
+ASTRO_MATCH_MINUTES = 130
+MYT = timezone(timedelta(hours=8))
+
+
+def astro_matchday(records):
+    for rec in records:
+        if not rec.get("id", "").startswith("MY.Astro"):
+            continue
+        holders = [ev for ev in rec["events"] if ASTRO_PLACEHOLDER_RE.match((ev.get("title") or "").strip())]
+        if not holders:
+            continue
+        for ev in holders:                                   # never "live" as they stand
+            ev["live"], ev["never_live"] = False, True
+        m = next((ASTRO_MATCH_RE.search(ev.get("desc") or "") for ev in holders
+                  if ASTRO_MATCH_RE.search(ev.get("desc") or "")), None)
+        if not m:
+            continue
+        a, b = m["a"].strip(), m["b"].strip()
+        wa, wb = _team_words(a), _team_words(b)
+        first = min(ev["start"] for ev in holders)
+        ko = None
+        for when, h, w, _rest in load_kickoffs():
+            if when < first - timedelta(hours=3) or not ((wa & h and wb & w) or (wa & w and wb & h)):
+                continue
+            local = when.astimezone(MYT)
+            if (local.hour, local.minute) == (int(m["hh"]), int(m["mm"])) and (ko is None or when < ko):
+                ko = when
+        if not ko:
+            print(f"  Astro {rec['id']}: {a} vs {b} not in the football guide - placeholders kept (not live)")
+            continue
+        comp = m["comp"].strip()
+        rnd = re.sub(r"\s+", " ", (m["round"] or "").strip())         # "Match Week 9"
+        sub = f"{comp} – {rnd}" if rnd else comp
+        uk = ko.astimezone(LONDON)
+        when_txt = f"{uk:%a} {uk.day} {uk:%b}, {uk:%H:%M}"
+        live_from = ko - timedelta(minutes=ASTRO_LIVE_EARLY)
+        live_to = ko + timedelta(minutes=ASTRO_MATCH_MINUTES)
+        keep = [ev for ev in rec["events"] if not any(ev is h for h in holders)
+                and ((ev.get("stop") or ev["start"]) <= first or ev["start"] >= live_to)]
+        new = []
+        if first < live_from:
+            new.append({"start": first, "stop": live_from, "title": f"{a} vs {b} ({when_txt})",
+                        "sub": f"⏭ Coming up: {sub}", "live": False, "never_live": True, "no_lead": True,
+                        "desc": f"Coming up on {rec['name']}: {a} vs {b}, {comp}"
+                                f"{', ' + rnd if rnd else ''}. Kick-off {when_txt} UK time."})
+        new.append({"start": live_from, "stop": live_to, "title": f"{a} vs {b}", "sub": sub, "live": True,
+                    "no_lead": True, "desc": f"{a} vs {b}, {comp}{', ' + rnd if rnd else ''}."})
+        rec["events"] = sorted(keep + new, key=lambda ev: ev["start"])
+        print(f"  Astro {rec['id']}: {a} vs {b} -> {uk:%a %d %b %H:%M} UK")
+
+
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
@@ -4087,6 +4152,8 @@ def build_xmltv(records, suffix, minutes):
                        or desc_says_live(desc))                # description says "live"
             if cid.startswith(tuple(SKY_UHD_EVENT)):          # Sky Sports UHD 1/2: all but filler is live
                 is_live = bool(ev.get("uhd_live", not UHD_FILLER.match(title or "")))
+            if ev.get("never_live"):                           # Astro placeholders / "Coming up"
+                is_live = False
             if is_live and not really_live(title, cid):        # e.g. "End of Transmission"
                 is_live = False
                 desc = re.sub(r"^LIVE\.\s*", "", desc)
@@ -4702,6 +4769,7 @@ def main():
             DESC_PENDING.update(ev.get("desc") for rec in records for ev in rec["events"]
                                 if ev.get("desc") and ev["desc"] not in TRANSLATIONS
                                 and rec["place"] not in ENGLISH_PLACES)
+    astro_matchday(records)                         # Astro pop-up PL channels (28 Oct 2026)
     tv, count, listed = build_xmltv(records, suffix, args.minutes)
     if CARRY_OVER and not args.no_carry and not suffix and os.path.exists(args.out):
         kept = carry_over(tv, listed, args.out)       # sources that failed this run
