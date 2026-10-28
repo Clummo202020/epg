@@ -46,7 +46,7 @@ HEADERS = {
 }
 UK = ZoneInfo("Europe/London")
 ET = ZoneInfo("America/New_York")
-MAX_DAYS_AHEAD = 14  # upper limit; the run finds how many days TV Passport actually has
+MAX_DAYS_AHEAD = 7   # upper limit (was 14 until 28 Oct 2026 - cut to a week); the run checks TV Passport has them
 PROBE_CHANNELS = ["cnn/70", "espn/594", "hbo--eastern-feed/614"]   # used to find that limit
 WORKERS = 4          # pages fetched at once - kept low to be polite
 LIVE_PREFIX = "LIVE: "
