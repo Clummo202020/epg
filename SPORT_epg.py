@@ -3806,6 +3806,49 @@ RUGBY_LEAGUES = {
 }
 _RUGBY_COMP = {}            # title -> competition found by rugby_start (for the secondary title)
 
+# Sky Sport NZ secondary titles (28 Oct 2026): short competition prefixes written out ("PL: Spurs v
+# Crystal Palace" -> "Premier League: Spurs v Crystal Palace"), and on 🔴 events the kick-off is added
+# at the end ("... – Kick-off 17:30") when a lookup found it. Regions listed in SUB_KICKOFF_REGIONS.
+SUB_KICKOFF_REGIONS = ("NZ.",)
+NZ_SUB_PREFIXES = [("PL", "Premier League"), ("PREM", "Gallagher Premiership"), ("WSL", "Women's Super League"),
+                   ("ALM", "A-League Men"), ("ALW", "A-League Women"), ("AFLW", "AFL Women's"),
+                   ("WBBL", "Women's Big Bash League"), ("BBL", "Big Bash League"),
+                   ("RLWC Wheelchair", "Rugby League World Cup Wheelchair"), ("RLWC", "Rugby League World Cup"),
+                   ("UCL", "UEFA Champions League"), ("UEL", "UEFA Europa League"), ("NRL", "NRL"),
+                   ("NPC", "Bunnings NPC"), ("ANZ PL Darts", "ANZ Premier League Darts")]
+
+
+def nz_sub(sub):
+    """'PL: Spurs v Crystal Palace' -> 'Premier League: Spurs v Crystal Palace'."""
+    sub = re.sub(r"\s+Hls$", " Highlights", sub or "")              # "... Hls" -> "... Highlights"
+    for short, full in NZ_SUB_PREFIXES:
+        if re.match(rf"{re.escape(short)}\b:?\s", sub or ""):
+            return re.sub(rf"^{re.escape(short)}\b:?\s*", f"{full}: ", sub, count=1)
+    return sub
+
+
+def nz_teams_first(title, sub):
+    """Sky NZ: title "Premier League" + secondary "Premier League: Spurs v Crystal Palace" ->
+    title "Spurs v Crystal Palace", secondary "Premier League" (28 Oct 2026). Only for the
+    "Competition: Team v Team" form; anything else (golf rounds, "BLACKCAPS v India: 4th T20") is kept."""
+    m = re.match(r"^(?P<comp>[^:]{2,60}):\s*(?P<teams>.+?\S\s+(?:v|vs\.?)\s+\S.*)$", sub or "")
+    if not m or re.search(r"\s(?:v|vs\.?)\s", m["comp"]):
+        return title, sub
+    return m["teams"].strip(), m["comp"].strip()
+
+
+# Nicknames Sky Sport NZ uses (28 Oct 2026). Rugby clubs - used ONLY in rugby_start (football has
+# "Saints"/"Tigers" too); national team names - used by every lookup (cricket, rugby).
+RUGBY_CLUB_NICKNAMES = {"bears": "Bristol Bears", "tigers": "Leicester Tigers", "saints": "Northampton Saints",
+                        "quins": "Harlequins", "sarries": "Saracens", "chiefs": "Exeter Chiefs",
+                        "sharks": "Sale Sharks", "falcons": "Newcastle", "red bulls": "Newcastle",
+                        "cherry and whites": "Gloucester"}
+TEAM_NICKNAMES = [(r"(?i)\bblackcaps\b|\ball blacks\b", "New Zealand"),
+                  (r"(?i)\bwhite ferns\b|\bblack ferns\b", "New Zealand Women"),
+                  (r"(?i)\bwallabies\b", "Australia"), (r"(?i)\bwallaroos\b", "Australia Women"),
+                  (r"(?i)\bspringboks\b|\bproteas\b", "South Africa"),
+                  (r"(?i)\bred roses\b", "England Women")]
+
 # Rugby round (28 Oct 2026): ESPN gives none, so it is read from other listings in the same run -
 # Sky Sport NZ writes "... Round 5 of the Gallagher Premiership between the Bristol Bears and Leicester
 # Tigers at Ashton Gate ...". collect_rugby_rounds() gathers (team, team, round) from all the run's
@@ -3867,6 +3910,8 @@ def rugby_start(title, start):
     if not m:
         return ""
     a, b = m.group(1).strip(), m.group(2).strip()
+    a = RUGBY_CLUB_NICKNAMES.get(a.lower(), a)                  # Sky NZ: "Bears v Tigers"
+    b = RUGBY_CLUB_NICKNAMES.get(b.lower(), b)
     days = sorted({(start - timedelta(hours=6)).strftime("%Y%m%d"), start.strftime("%Y%m%d"),
                    (start + timedelta(hours=3)).strftime("%Y%m%d")})
     for league, label in RUGBY_LEAGUES.items():
@@ -3900,6 +3945,8 @@ _RUGBY_COUNT = {}
 def event_start_info(title, start):
     """The real start for a 🔴 event's description (see above), or "Coverage from: HH:MM."."""
     t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", title or "")
+    for pat, full in TEAM_NICKNAMES:                               # "BLACKCAPS" -> "New Zealand"
+        t = re.sub(pat, full, t)
     info = ""
     try:
         if re.search(r"(?i)\b(test|odi|t20i?)\b", t):
@@ -4020,6 +4067,9 @@ def build_xmltv(records, suffix, minutes):
             about = "" if ev.get("desc") in DESC_PENDING else en(ev.get("desc") or "")
             if rec.get("fix_caps"):
                 about = fix_caps(about)
+            if sub and cid.startswith(SUB_KICKOFF_REGIONS):
+                sub = nz_sub(sub)                               # "PL:" -> "Premier League:"
+                title, sub = nz_teams_first(title, sub)         # teams in the title
             sub = carabao_name(sub, title, ev["start"])          # "Carabao Cup 4th Round"
             about = carabao_name(about, title, ev["start"])
             about = about + ("" if about[-1:] in ".!?…" else ".") + " " if about else ""
@@ -4051,6 +4101,12 @@ def build_xmltv(records, suffix, minutes):
                 rugby_comp = _RUGBY_COMP.get(re.sub(r"(?i)^live\b[\s.,:;!-]*", "", title or ""))
                 if rugby_comp and not sub:                     # rugby: competition (and round)
                     sub = rugby_comp
+                ko = re.search(r"Kick-off: (\d{1,2}:\d{2})", more)
+                if ko and sub and cid.startswith(SUB_KICKOFF_REGIONS) and "Kick-off" not in sub:
+                    sub = f"{sub} – Kick-off {ko[1]}"           # Sky NZ: kick-off in the secondary title
+                venue, sep, rest = more.partition("Kick-off:")
+                if sep and venue.strip(" .") and venue.strip(" .") in desc:
+                    more = sep + rest                          # venue already in the description
                 if more not in desc:
                     desc = f"{desc} {more}".strip()
             add_programme(tv, cid, start, stop, live_title(title, cid, red) if is_live else title,
