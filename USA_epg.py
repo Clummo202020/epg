@@ -66,7 +66,8 @@ def is_event(p):
     """True for a game/match/draw (not a studio show) - used for the red ball."""
     if STUDIO_RE.search(p["title"]):
         return False
-    return bool(MATCHUP_RE.search(p["sub"] or "") or EVENT_WORDS_RE.search(f'{p["title"]} {p["sub"]}'))
+    return bool(MATCHUP_RE.search(f'{p["title"]} | {p["sub"] or ""}')     # "UFC Fight Night: A vs. B" too
+                or EVENT_WORDS_RE.search(f'{p["title"]} {p["sub"]}'))
 # TV Passport flags studio shows as live too (SportsCenter, Get Up, MLB Tonight ...). Live sport
 # with one of these categories is not an event, so it doesn't get "LIVE:".
 NOT_EVENT_CATEGORIES = {"talk show", "news", "anthology", "magazine", "newsmagazine",
