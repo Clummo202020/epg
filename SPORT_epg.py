@@ -261,6 +261,8 @@ Only the Python standard library is needed. On Windows: pip install tzdata
 
 import argparse
 import gzip
+import html
+import unicodedata
 import http.client
 import io
 import json
@@ -3415,11 +3417,303 @@ def really_live(title, cid):
 # (Hub Premier 2 UHD, Ch 232, closed 8 Oct 2026 and merged into Hub Premier 2, Ch 222, which now carries
 # the 4K games - its schedule is SG.HubPremier2. A copied "SG.HubPremier2UHD" channel was tried on
 # 27 Oct 2026 and removed the same day.)
-def live_title(title, cid=""):
-    """Title for a live programme: "LIVE: <title>" (without doubling a leading "Live")."""
+# UK/Ireland: live sports EVENTS get the 🔴 too (28 Oct 2026) - matches, races, sessions, rounds -
+# but not studio shows ("Sky Sports News", "The F1 Show", "Soccer Saturday Reaction", "Ted's Notebook").
+# Their description gets the kick-off (and venue) from the football guide when it has the match,
+# otherwise "Starts: HH:MM." (the programme's start).
+RED_BALL_REGIONS = ("UK.", "IE.")
+UK_EVENT_RE = re.compile(r"(?i)\S\s+(v|vs\.?|@)\s+\S|\b(test|odi|t20i?|grand prix|gp|practice|qualifying|sprint|"
+                         r"warm-?up|finals?|sfs|qfs|golf|tennis|atp|wta|racing|raceday|marathon|world series|"
+                         r"champs|championships?|cup|tour|curling|cyclocross|bmx|climbing|darts|snooker|boxing|"
+                         r"fight night|ufc|derby|stakes|open|masters)\b")
+UK_STUDIO_RE = re.compile(r"(?i)\b(show|news|social|reaction|weekend|ref watch|sky sports fc|sports? cent(re|er)|"
+                          r"desk|stateside|total football|lunchtime|preview|gameday|good morning|insiders|fantasy|"
+                          r"notebook|paddock|uncut|chequered flag|grand prix sunday|football night|"
+                          r"soccer (saturday|sunday|special)|this is|reload(ed)?|highlights|review|debate|podcast|"
+                          r"magazine|countdown|build-?up|press conference)\b")
+
+
+def uk_event(title):
+    """True for a live sports event (not a studio show) - gets the 🔴 on UK/Irish channels."""
+    t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", (title or "").strip())
+    return bool(UK_EVENT_RE.search(t)) and not UK_STUDIO_RE.search(t)
+
+
+FOOTBALL_GUIDE = "football_epg.xml"                 # in the repo (built by football_epg.py)
+FOOTBALL_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/football_epg.xml"
+_KICKOFFS = None
+TEAM_ALIASES = [(r"\bman\b", "manchester"), (r"\butd\b", "united"), (r"\bspurs\b", "tottenham"),
+                (r"\bc\.?\s*palace\b", "crystal palace"), (r"\bwest brom\b", "west bromwich"),
+                (r"\bwolves\b", "wolverhampton"), (r"\bforest\b", "nottingham forest"),
+                (r"\bb\.?\s*munich\b", "bayern munich"), (r"\bpsg\b", "paris saint germain"),
+                (r"\bsheff\b", "sheffield"), (r"\bqpr\b", "queens park rangers")]
+TEAM_GENERIC = {"fc", "afc", "city", "united", "town", "rovers", "athletic", "county", "the", "and", "of",
+                "hotspur", "albion", "wanderers", "north", "end", "sc", "cf", "ne"}
+
+
+def _team_words(name):
+    n = unicodedata.normalize("NFKD", (name or "").lower())
+    n = re.sub(r"[^a-z0-9. ]+", " ", "".join(c for c in n if not unicodedata.combining(c)))
+    for pat, rep_ in TEAM_ALIASES:
+        n = re.sub(pat, rep_, n)
+    n = re.sub(r"[.]", " ", n)
+    return {w for w in n.split() if len(w) >= 3 and w not in TEAM_GENERIC} or {n.strip()}
+
+
+def load_kickoffs():
+    """[(kick-off UTC, home words, away words, "Anfield, Liverpool. Kick-off: 20:00.")] from the
+    football guide's LIVE programmes."""
+    global _KICKOFFS
+    if _KICKOFFS is not None:
+        return _KICKOFFS
+    _KICKOFFS = []
+    text = ""
+    try:
+        if os.path.exists(FOOTBALL_GUIDE):
+            with open(FOOTBALL_GUIDE, encoding="utf-8") as f:
+                text = f.read()
+        else:
+            req = urllib.request.Request(FOOTBALL_GUIDE_URL, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                text = r.read().decode("utf-8", "replace")
+    except Exception as err:
+        print(f"  NOTE: football guide not available for kick-off times ({err})")
+        return _KICKOFFS
+    seen = set()
+    for m in re.finditer(r'<programme start="(\d{14}) ([+-]\d{4})"[^>]*>\s*<title[^>]*>🔴 LIVE: ([^<]*)</title>'
+                         r'(?:\s*<sub-title[^>]*>[^<]*</sub-title>)?\s*<desc[^>]*>([^<]*)', text):
+        ko = re.search(r"Kick-off: (\d{1,2}):(\d{2})", m.group(4))
+        sides = re.split(r"\s+(?:v|vs\.?)\s+", html.unescape(m.group(3)), maxsplit=1)
+        if not ko or len(sides) != 2:
+            continue
+        start = datetime.strptime(m.group(1) + m.group(2), "%Y%m%d%H%M%S%z").astimezone(LONDON)
+        when = start.replace(hour=int(ko.group(1)), minute=int(ko.group(2)), second=0)
+        if when < start - timedelta(hours=1):
+            when += timedelta(days=1)
+        key = (when, m.group(3))
+        if key in seen:
+            continue
+        seen.add(key)
+        rest = html.unescape(m.group(4)).split(". ", 1)[1] if ". " in m.group(4) else ""
+        _KICKOFFS.append((when.astimezone(timezone.utc), _team_words(sides[0]), _team_words(sides[1]),
+                          rest.strip()))
+    print(f"  Football guide: {len(_KICKOFFS)} kick-off times for the 🔴 UK/Irish events")
+    return _KICKOFFS
+
+
+def kickoff_info(title, start):
+    """"Anfield, Liverpool. Kick-off: 20:00." for a football match in the football guide whose
+    kick-off is within 3 h of the programme start, else ""."""
+    t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", title or "")
+    t = re.sub(r"^[^:]{2,30}:\s*", "", t)                         # "Carabao Cup: Liverpool v Chelsea"
+    sides = re.split(r"\s+(?:v|vs\.?)\s+", t, maxsplit=1)
+    if len(sides) != 2:
+        return ""
+    a, b = _team_words(sides[0]), _team_words(sides[1])
+    for ko, h, w, rest in load_kickoffs():
+        if start - timedelta(minutes=30) <= ko <= start + timedelta(hours=3) and \
+                ((a & h and b & w) or (a & w and b & h)):
+            return rest
+    return ""
+
+
+# Real start times for 🔴 events other than football (28 Oct 2026). Sky's programme starts with the
+# build-up, so the description gets the actual first ball / lights out / tip-off when a source has it:
+#   cricket  ESPN (series list + scoreboards)      "First ball: 08:30."  (Test day N: the match's start time)
+#   F1       OpenF1 session times                   "Lights out: 20:00." / "Session starts: 18:30."
+#   NFL/NBA/NHL/MLB  ESPN scoreboards               "Kick-off:" / "Tip-off:" / "Puck drop:" / "First pitch:"
+# Otherwise "Coverage from: HH:MM." (the programme's start). Each lookup is read at most once a run.
+ESPN_HDR = {"User-Agent": "Mozilla/5.0"}
+CRICKET_HEADER = "https://site.web.api.espn.com/apis/personalized/v2/scoreboard/header?sport=cricket&region=gb&tz=Europe/London"
+CRICKET_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/cricket/{series}/scoreboard"
+OPENF1_SESSIONS = "https://api.openf1.org/v1/sessions?year={year}"
+US_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/{path}/scoreboard?dates={ymd}"
+US_LEAGUES = {"NFL": ("football/nfl", "Kick-off"), "NBA": ("basketball/nba", "Tip-off"),
+              "NHL": ("hockey/nhl", "Puck drop"), "MLB": ("baseball/mlb", "First pitch")}
+_START_CACHE = {}
+_START_LOGGED = set()
+
+
+def _espn_events(data):
+    """Events (dicts) anywhere in an ESPN header/scoreboard reply."""
+    out = []
+    if isinstance(data, dict):
+        if isinstance(data.get("events"), list):
+            out += [e for e in data["events"] if isinstance(e, dict)]
+        for k in ("sports", "leagues"):
+            for x in data.get(k) or []:
+                out += _espn_events(x)
+    return out
+
+
+def _competitor_names(ev):
+    names = []
+    comps = ev.get("competitors") or []
+    if not comps:
+        for c in ev.get("competitions") or []:
+            comps += c.get("competitors") or []
+    for c in comps:
+        team = c.get("team") if isinstance(c.get("team"), dict) else c
+        names.append({str(team.get(k) or "").lower() for k in
+                      ("displayName", "shortDisplayName", "name", "abbreviation", "location", "nickname")} - {""})
+    return names
+
+
+def _side_hits(side, names):
+    s = re.sub(r"[^a-z0-9 ]", "", side.lower()).strip()
+    return bool(s) and any(s == n or (len(s) > 3 and (s in n or n in s)) for n in names if n)
+
+
+def _parse_iso(text):
+    try:
+        return datetime.fromisoformat(str(text).replace("Z", "+00:00")).astimezone(timezone.utc)
+    except ValueError:
+        return None
+
+
+def _log_start(text):
+    if text not in _START_LOGGED:
+        _START_LOGGED.add(text)
+        print(f"  {text}")
+
+
+def cricket_matches():
+    """[(start UTC, [name sets], label)] for current/upcoming cricket matches (ESPN)."""
+    if "cricket" in _START_CACHE:
+        return _START_CACHE["cricket"]
+    head = get_json_url(CRICKET_HEADER, ESPN_HDR, quiet=True)
+    evs = _espn_events(head)
+    series = set()
+    for sp in (head or {}).get("sports") or [] if isinstance(head, dict) else []:
+        for lg in sp.get("leagues") or []:
+            if lg.get("id"):
+                series.add(str(lg["id"]))
+    for sid in sorted(series)[:40]:
+        evs += _espn_events(get_json_url(CRICKET_SCOREBOARD.format(series=sid), ESPN_HDR, quiet=True))
+    out = []
+    for e in evs:
+        when = _parse_iso(e.get("date"))
+        names = _competitor_names(e)
+        if when and len(names) >= 2:
+            out.append((when, names, e.get("shortName") or e.get("name") or ""))
+    print(f"  Cricket (ESPN): {len(out)} matches from {len(series)} series" if out
+          else "  NOTE: cricket start times not available (ESPN)")
+    _START_CACHE["cricket"] = out
+    return out
+
+
+def cricket_start(title, start):
+    m = re.search(r"([A-Za-z][A-Za-z .']{1,30}?)\s+v\s+([A-Za-z][A-Za-z .']{1,30})$", title)
+    if not m:
+        return ""
+    a, b = m.group(1).strip(), m.group(2).strip()
+    day = re.search(r"(?i)\bday\s*(\d)", title)
+    for when, names, label in cricket_matches():
+        if not ((_side_hits(a, names[0]) and _side_hits(b, names[1])) or
+                (_side_hits(a, names[1]) and _side_hits(b, names[0]))):
+            continue
+        if day:                                   # Test day N: same time of day, N-1 days on
+            first = when + timedelta(days=int(day.group(1)) - 1)
+        else:                                     # one-day match: its start
+            first = when
+        if start - timedelta(hours=1) <= first <= start + timedelta(hours=4):
+            uk = first.astimezone(LONDON)
+            _log_start(f"Cricket start: {title} -> {uk:%a %d %b %H:%M} UK ({label})")
+            return f"First ball: {uk:%H:%M}."
+    return ""
+
+
+def f1_sessions(year):
+    key = f"f1{year}"
+    if key not in _START_CACHE:
+        data = get_json_url(OPENF1_SESSIONS.format(year=year), ESPN_HDR, quiet=True)
+        _START_CACHE[key] = data if isinstance(data, list) else []
+        print(f"  F1 (OpenF1): {len(_START_CACHE[key])} sessions in {year}" if _START_CACHE[key]
+              else f"  NOTE: F1 session times not available (OpenF1)")
+    return _START_CACHE[key]
+
+
+def f1_start(title, start):
+    t = title.lower()
+    pm = re.search(r"practice\s*([123])", t)
+    if pm:
+        want = "practice " + pm.group(1)
+    elif "sprint" in t and "qualif" in t:
+        want = "sprint qualifying"
+    elif "sprint" in t:
+        want = "sprint"
+    elif "qualif" in t:
+        want = "qualifying"
+    elif re.search(r"grand prix|\bgp\b|\brace\b", t):
+        want = "race"
+    else:
+        return ""
+    for sess in f1_sessions(start.year):
+        if str(sess.get("session_name") or "").lower() != want:
+            continue
+        when = _parse_iso(sess.get("date_start"))
+        if when and start - timedelta(minutes=30) <= when <= start + timedelta(hours=3):
+            uk = when.astimezone(LONDON)
+            _log_start(f"F1 start: {title} -> {uk:%a %d %b %H:%M} UK")
+            return f"Lights out: {uk:%H:%M}." if want in ("race", "sprint") else f"Session starts: {uk:%H:%M}."
+    return ""
+
+
+def us_start(title, start):
+    m = re.search(r"\b(NFL|NBA|NHL|MLB)\b", title)
+    if not m:
+        return ""
+    path, word = US_LEAGUES[m.group(1)]
+    rest = title[m.end():]
+    sides = re.split(r"\s+(?:@|at|v|vs\.?)\s+", re.sub(r"^[\s:,-]+", "", rest), maxsplit=1)
+    for ymd in sorted({(start - timedelta(hours=8)).strftime("%Y%m%d"), start.strftime("%Y%m%d")}):
+        key = f"{path}{ymd}"
+        if key not in _START_CACHE:
+            _START_CACHE[key] = _espn_events(get_json_url(US_SCOREBOARD.format(path=path, ymd=ymd),
+                                                          ESPN_HDR, quiet=True))
+        for e in _START_CACHE[key]:
+            when = _parse_iso(e.get("date"))
+            if not when or not (start - timedelta(minutes=30) <= when <= start + timedelta(hours=3)):
+                continue
+            names = _competitor_names(e)
+            if len(sides) == 2:
+                if len(names) < 2 or not ((_side_hits(sides[0], names[0]) and _side_hits(sides[1], names[1])) or
+                                          (_side_hits(sides[0], names[1]) and _side_hits(sides[1], names[0]))):
+                    continue
+            elif not re.search(r"(?i)world series|game \d|super bowl|finals?", title):
+                continue                              # no teams named: only for a one-game-a-day final
+            uk = when.astimezone(LONDON)
+            _log_start(f"{m.group(1)} start: {title} -> {uk:%a %d %b %H:%M} UK")
+            return f"{word}: {uk:%H:%M}."
+    return ""
+
+
+def event_start_info(title, start):
+    """The real start for a 🔴 event's description (see above), or "Coverage from: HH:MM."."""
+    t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", title or "")
+    info = ""
+    try:
+        if re.search(r"(?i)\b(test|odi|t20i?)\b", t):
+            info = cricket_start(t, start)
+        elif re.search(r"(?i)\bf1\b|formula 1", t):
+            info = f1_start(t, start)
+        elif re.search(r"\b(NFL|NBA|NHL|MLB)\b", t):
+            info = us_start(t, start)
+        else:
+            info = kickoff_info(t, start)
+    except Exception as err:                       # a lookup must never stop the guide
+        print(f"  NOTE: start time lookup failed for {t!r} ({err})")
+    return info or f"Coverage from: {start.astimezone(LONDON):%H:%M}."
+
+
+def live_title(title, cid="", red=False):
+    """Title for a live programme: "LIVE: <title>" (without doubling a leading "Live");
+    "🔴 LIVE: <title>" for event channels and (red=True) UK/Irish live events."""
     t = (title or "").strip()
     t = re.sub(r"^🔴\s*", "", t)
     t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", t) or t
+    if red and not cid.startswith(tuple(EVENT_LIVE_PREFIX)):
+        return f"🔴 {LIVE_PREFIX}{t}"
     if cid.startswith(tuple(EVENT_LIVE_PREFIX)):       # event-only channels get the 🔴 like event streams
         return f"{EVENT_LIVE_PREFIX[next(k for k in EVENT_LIVE_PREFIX if cid.startswith(k))]}{t}"
     return f"{LIVE_PREFIX}{t}"
@@ -3532,7 +3826,14 @@ def build_xmltv(records, suffix, minutes):
             if is_live and not really_live(title, cid):        # e.g. "End of Transmission"
                 is_live = False
                 desc = re.sub(r"^LIVE\.\s*", "", desc)
-            add_programme(tv, cid, start, stop, live_title(title, cid) if is_live else title,
+            red = is_live and (cid.startswith(tuple(EVENT_LIVE_PREFIX))
+                               or (cid.startswith(RED_BALL_REGIONS) and uk_event(title)))
+            if red:                                            # 🔴: no "LIVE." in the description, plus
+                desc = re.sub(r"^LIVE\.\s*", "", desc)        # kick-off/venue or the start time
+                more = event_start_info(title, ev["start"])
+                if more not in desc:
+                    desc = f"{desc} {more}".strip()
+            add_programme(tv, cid, start, stop, live_title(title, cid, red) if is_live else title,
                           live_sub(sub) if is_live else sub, desc, is_live)
             count += 1
             last_stop = stop
