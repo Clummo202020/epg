@@ -3393,8 +3393,8 @@ def desc_says_live(desc):
     return bool(re.search(r"\blive\b", LIVE_PROMO.sub(" ", d), re.I))
 
 
-# Start of a live programme's title. Plain "LIVE: " on these TV channels; the 🔴 is kept
-# for the event and match streams (event_epg.py, football_epg.py, scottish_epg.py).
+# Start of a live programme's title. Live sports EVENTS on every channel are "🔴 LIVE: ..."
+# (since 28 Oct 2026, see live_event); live studio shows keep plain "LIVE: ".
 LIVE_PREFIX = "LIVE: "
 # Exception (28 Oct 2026): part-time event-only channels are titled like the event streams.
 EVENT_LIVE_PREFIX = {"UK.SkySportsUHD1": "🔴 LIVE: ", "UK.SkySportsUHD2": "🔴 LIVE: ",
@@ -3423,26 +3423,113 @@ def really_live(title, cid):
 # (Hub Premier 2 UHD, Ch 232, closed 8 Oct 2026 and merged into Hub Premier 2, Ch 222, which now carries
 # the 4K games - its schedule is SG.HubPremier2. A copied "SG.HubPremier2UHD" channel was tried on
 # 27 Oct 2026 and removed the same day.)
-# UK/Ireland: live sports EVENTS get the 🔴 too (28 Oct 2026) - matches, races, sessions, rounds -
-# but not studio shows ("Sky Sports News", "The F1 Show", "Soccer Saturday Reaction", "Ted's Notebook").
-# Their description gets the kick-off (and venue) from the football guide when it has the match,
-# otherwise "Starts: HH:MM." (the programme's start).
-RED_BALL_REGIONS = ("UK.", "IE.")
-UK_EVENT_RE = re.compile(r"(?i)\S\s+(v|vs\.?|@)\s+\S|\b(test|odi|t20i?|grand prix|gp|practice|qualifying|sprint|"
-                         r"warm-?up|finals?|sfs|qfs|golf|tennis|atp|wta|racing|raceday|marathon|world series|"
-                         r"champs|championships?|cup|tour|curling|cyclocross|bmx|climbing|darts|snooker|boxing|"
-                         r"fight night|ufc|derby|stakes|open|masters)\b")
-UK_STUDIO_RE = re.compile(r"(?i)\b(show|news|social|reaction|weekend|ref watch|sky sports fc|sports? cent(re|er)|"
-                          r"desk|stateside|total football|lunchtime|preview|gameday|good morning|insiders|fantasy|"
-                          r"notebook|paddock|uncut|chequered flag|grand prix sunday|football night|"
-                          r"soccer (saturday|sunday|special)|this is|reload(ed)?|highlights|review|debate|podcast|"
-                          r"magazine|countdown|build-?up|press conference)\b")
+# Live sports EVENTS get the 🔴 - matches, races, sessions, rounds - but not studio shows ("Sky Sports
+# News", "The F1 Show", "Soccer Saturday Reaction", "First Take", "PL Studio"). UK/Ireland since
+# 28 Oct 2026, every channel since 28 Oct 2026 (evening). The test reads the title AND the secondary
+# title (many sources put the teams in the secondary title: "UEFA Champions League" / "Galatasaray -
+# VfB Stuttgart"). Match separators: v, vs, @, x ("Santos x Palmeiras"), lwn (Malay), "A - B",
+# "Team at Team". The description gets the kick-off (and venue) from the football guide when it has
+# the match, other real start times where known, otherwise "Coverage from: HH:MM.".
+EVENT_RE = re.compile(
+    r"(?i)\S\s+(v|vs\.?|@|x|lwn)\s+\S"                         # Arsenal v Spurs, Santos x Palmeiras
+    r"|\w[\w.)']*\s+[-–]\s+\w"                                 # Anderlecht - Westerlo
+    r"|(?-i:[A-Z][\w.']*\s+at\s+[A-Z])"                         # Milwaukee Brewers at Tampa Bay Rays
+    r"|\b(test|odi|t20i?|grand prix|gp|practice|free training|qualifying|sprint|warm-?up|"
+    r"finals?|semi-?finals?|quarter-?finals?|sfs|qfs|hf\d|qf\d|round of \d+|matchday|match ?day|"
+    r"(day|dag|tag|dia|día|jour|giorno) #?\d+|leg|race|rally|stage|golf|tennis|ténis|tenis|atp|wta|itf|"
+    r"padel|racing|raceday|marathon|world series|champs|championships?|cup|tour|curling|cyclocross|"
+    r"bmx|climbing|darts|snooker|boxing|fight night|ufc|derby|stakes|open|masters|"
+    r"league|liga|ligue|serie a|bundesliga|eredivisie|euroleague|nba|nfl|nhl|mlb|f1|formula \d|"
+    r"moto ?gp|moto[23]|indycar|nascar|superbike|wrc|football|soccer|futsal|basketball|handball|"
+    r"volleyball|hockey|rugby|cricket|baseball|cycling|athletics|swimming|biathlon|skiing|ski|"
+    r"table tennis|badminton|squash|wrestling|mma|tournament|grand slam|judo|karate|taekwondo|"
+    r"weightlifting|fencing|rowing|sailing|triathlon|gravel\w*|motorsport|cykel|giro|wtcr|trail)\b")
+STUDIO_RE = re.compile(
+    r"(?i)\b(show|news|social|reaction|weekend|ref watch|sky sports fc|sports? cent(re|er)|"
+    r"desk|stateside|total football|lunchtime|preview|gameday|good morning|insiders|fantasy|"
+    r"notebook|paddock|uncut|chequered flag|grand prix sunday|football night|"
+    r"soccer (saturday|sunday|special)|this is|reload(ed)?|highlights|review|debate|podcast|"
+    r"magazine|magazin|countdown|build-?up|press conference|studio|talk|extra|round ?table|"
+    r"football club|auction|post[- ]?(show|match|game)|pre[- ]?(match|game|race)|analysis|analyse|"
+    r"voorbeschouwing|nabeschouwing|vorbericht|nachbericht|first take|get up|"
+    r"documentary|docu|draw ceremony|awards?|today|tonight|central|nba tip-?off|inside the nba|"
+    r"sportscenter|now|blitz|courtside|nfl live|following|good evening|avant-match|plateau|"
+    r"emission|time for\b.{0,25}\bballs?|"
+    r"summar(y|ies))\b")
+UK_EVENT_RE, UK_STUDIO_RE = EVENT_RE, STUDIO_RE                   # (older names)
+
+# Carabao Cup round (28 Oct 2026): "EFL Carabao Cup 2026-27" (Cyta) -> "Carabao Cup 4th Round" in
+# secondary titles and descriptions. Same dates as CUP_ROUNDS["Carabao Cup"] in football_epg.py -
+# UPDATE BOTH for 2027-28 (summer 2027). Round = the latest one starting on or before the match
+# date (a date in the title, e.g. Cyta's replays "Liverpool - Chelsea 28/10/26", else the
+# programme's UK date). Outside the table: just "Carabao Cup".
+CARABAO_ROUNDS = [
+    ("2026-07-25", "Preliminary Round"),
+    ("2026-08-06", "1st Round"),
+    ("2026-08-22", "2nd Round"),
+    ("2026-09-05", "3rd Round"),
+    ("2026-10-24", "4th Round"),
+    ("2026-12-12", "Quarter-final"),
+    ("2027-01-09", "Semi-final, 1st Leg"),
+    ("2027-01-30", "Semi-final, 2nd Leg"),
+    ("2027-03-20", "Final"),
+    ("2027-03-28", None),            # season over
+]
+CARABAO_RE = re.compile(r"(?i)\b(?:EFL\s+)?Carabao\s+Cup\b(?:\s+\d{4}\s*[-/]\s*\d{2,4})?"
+                        r"(?!\s*[-:,]?\s*(?:preliminary|\d+(?:st|nd|rd|th)\s+round|quarter|semi|final))")
+
+
+def carabao_round(day):
+    rnd = None
+    for since, name in CARABAO_ROUNDS:
+        if day.isoformat() >= since:
+            rnd = name
+    return rnd
+
+
+def carabao_name(text, title, start):
+    """'EFL Carabao Cup 2026-27' -> 'Carabao Cup 4th Round' (see CARABAO_ROUNDS)."""
+    if not text or not CARABAO_RE.search(text):
+        return text
+    m = re.search(r"\b(\d{1,2})/(\d{1,2})/(\d{2})\b", title or "")
+    try:
+        day = date(2000 + int(m.group(3)), int(m.group(2)), int(m.group(1))) if m else None
+    except ValueError:
+        day = None
+    rnd = carabao_round(day or start.astimezone(LONDON).date())
+    return CARABAO_RE.sub("Carabao Cup" + (f" {rnd}" if rnd else ""), text)
+
+
+def live_event(title, sub=""):
+    """True for a live sports event (not a studio show) - gets the 🔴 on every channel.
+    The title decides when it names an event; otherwise the secondary title is read too
+    ("NBA" / "Cleveland Cavaliers - Oklahoma City Thunder"). A studio word in the title always
+    wins; one in the secondary title only counts when that is where the event was found
+    (Sky's secondary titles are often a synopsis: "... get the weekend up and running")."""
+    t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", (title or "").strip())
+    sub = (sub or "").strip()
+    if STUDIO_RE.search(t) or NOT_LIVE_WORDS.search(t):
+        return False
+    if EVENT_RE.search(t):
+        return True
+    return bool(sub and EVENT_RE.search(sub) and not STUDIO_RE.search(sub)
+                and not NOT_LIVE_WORDS.search(sub))
+
+
+# (A studio word in a SHORT secondary title also rules out a title that names an event:
+# "Cricket: Women's Premier League" / "WPL Auction 2027". Long ones are synopses - ignored.)
+_live_event_title = live_event
+
+
+def live_event(title, sub=""):
+    sub = (sub or "").strip()
+    if sub and len(sub) <= 40 and (STUDIO_RE.search(sub) or NOT_LIVE_WORDS.search(sub)):
+        return False
+    return _live_event_title(title, sub)
 
 
 def uk_event(title):
-    """True for a live sports event (not a studio show) - gets the 🔴 on UK/Irish channels."""
-    t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", (title or "").strip())
-    return bool(UK_EVENT_RE.search(t)) and not UK_STUDIO_RE.search(t)
+    return live_event(title)
 
 
 FOOTBALL_GUIDE = "football_epg.xml"                 # in the repo (built by football_epg.py)
@@ -3503,7 +3590,7 @@ def load_kickoffs():
         rest = html.unescape(m.group(4)).split(". ", 1)[1] if ". " in m.group(4) else ""
         _KICKOFFS.append((when.astimezone(timezone.utc), _team_words(sides[0]), _team_words(sides[1]),
                           rest.strip()))
-    print(f"  Football guide: {len(_KICKOFFS)} kick-off times for the 🔴 UK/Irish events")
+    print(f"  Football guide: {len(_KICKOFFS)} kick-off times for the 🔴 events")
     return _KICKOFFS
 
 
@@ -3513,8 +3600,11 @@ def kickoff_info(title, start):
     t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", title or "")
     t = re.sub(r"^[^:]{2,30}:\s*", "", t)                         # "Carabao Cup: Liverpool v Chelsea"
     sides = re.split(r"\s+(?:v|vs\.?)\s+", t, maxsplit=1)
+    if len(sides) != 2:                                          # "Udinese x Roma", "Bavaria - Magdeburg"
+        sides = re.split(r"\s+(?:x|lwn|[-–])\s+", t, maxsplit=1)
     if len(sides) != 2:
         return ""
+    sides[1] = re.split(r"[,(]", sides[1])[0]                    # "..., 10th matchday"
     a, b = _team_words(sides[0]), _team_words(sides[1])
     for ko, h, w, rest in load_kickoffs():
         if start - timedelta(minutes=30) <= ko <= start + timedelta(hours=3) and \
@@ -3694,6 +3784,69 @@ def us_start(title, start):
     return ""
 
 
+# Rugby union (28 Oct 2026): ESPN's rugby scoreboards, one request per competition per day, read only
+# for 🔴 "A v B" programmes no other lookup matched (TNT Sports' "Bristol Bears v Leicester" has no
+# competition in Sky's data). A match gets "Kick-off: HH:MM." in the description and the competition
+# (with "Round N" when ESPN gives the round) as the secondary title if it has none. ESPN league ids
+# below - if one stops working its log line shows 0 games; that competition just keeps "Coverage from".
+RUGBY_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/rugby/{league}/scoreboard?dates={ymd}"
+RUGBY_LEAGUES = {
+    "267979": "Gallagher PREM",
+    "270557": "United Rugby Championship",
+    "270559": "Top 14",
+    "271937": "Investec Champions Cup",
+    "272073": "EPCR Challenge Cup",
+    "289234": "Rugby International",             # ESPN's "International Test Match" list (Autumn Nations Series, summer tours)
+    "180659": "Six Nations",
+    "244293": "The Rugby Championship",
+    "242041": "Super Rugby Pacific",
+}
+_RUGBY_COMP = {}            # title -> competition found by rugby_start (for the secondary title)
+
+
+def _rugby_round(data, ev):
+    for src in (ev, data):
+        wk = src.get("week") if isinstance(src, dict) else None
+        if isinstance(wk, dict) and str(wk.get("number") or "").isdigit():
+            return f"Round {wk['number']}"
+    return ""
+
+
+def rugby_start(title, start):
+    m = re.search(r"([A-Za-z][A-Za-z .'&-]{1,40}?)\s+(?:v|vs\.?)\s+([A-Za-z][A-Za-z .'&-]{1,40})$",
+                  re.sub(r"^[^:]{2,30}:\s*", "", title))
+    if not m:
+        return ""
+    a, b = m.group(1).strip(), m.group(2).strip()
+    days = sorted({(start - timedelta(hours=6)).strftime("%Y%m%d"), start.strftime("%Y%m%d"),
+                   (start + timedelta(hours=3)).strftime("%Y%m%d")})
+    for league, label in RUGBY_LEAGUES.items():
+        for ymd in days:
+            key = f"rugby{league}{ymd}"
+            if key not in _START_CACHE:
+                data = get_json_url(RUGBY_SCOREBOARD.format(league=league, ymd=ymd), ESPN_HDR, quiet=True)
+                _START_CACHE[key] = (data if isinstance(data, dict) else {}, _espn_events(data))
+                _RUGBY_COUNT[label] = _RUGBY_COUNT.get(label, 0) + len(_START_CACHE[key][1])
+            data, events = _START_CACHE[key]
+            for e in events:
+                when = _parse_iso(e.get("date"))
+                if not when or not (start - timedelta(minutes=30) <= when <= start + timedelta(hours=3)):
+                    continue
+                names = _competitor_names(e)
+                if len(names) < 2 or not ((_side_hits(a, names[0]) and _side_hits(b, names[1])) or
+                                          (_side_hits(a, names[1]) and _side_hits(b, names[0]))):
+                    continue
+                rnd = _rugby_round(data, e)
+                _RUGBY_COMP[title] = f"{label} {rnd}".strip()
+                uk = when.astimezone(LONDON)
+                _log_start(f"Rugby start: {title} -> {uk:%a %d %b %H:%M} UK ({_RUGBY_COMP[title]})")
+                return f"Kick-off: {uk:%H:%M}."
+    return ""
+
+
+_RUGBY_COUNT = {}
+
+
 def event_start_info(title, start):
     """The real start for a 🔴 event's description (see above), or "Coverage from: HH:MM."."""
     t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", title or "")
@@ -3707,6 +3860,8 @@ def event_start_info(title, start):
             info = us_start(t, start)
         else:
             info = kickoff_info(t, start)
+            if not info and re.search(r"\s(?:v|vs\.?)\s", t):
+                info = rugby_start(t, start)                # rugby union (28 Oct 2026)
     except Exception as err:                       # a lookup must never stop the guide
         print(f"  NOTE: start time lookup failed for {t!r} ({err})")
     return info or f"Coverage from: {start.astimezone(LONDON):%H:%M}."
@@ -3714,7 +3869,7 @@ def event_start_info(title, start):
 
 def live_title(title, cid="", red=False):
     """Title for a live programme: "LIVE: <title>" (without doubling a leading "Live");
-    "🔴 LIVE: <title>" for event channels and (red=True) UK/Irish live events."""
+    "🔴 LIVE: <title>" for event channels and (red=True) live events."""
     t = (title or "").strip()
     t = re.sub(r"^🔴\s*", "", t)
     t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", t) or t
@@ -3814,6 +3969,8 @@ def build_xmltv(records, suffix, minutes):
             about = "" if ev.get("desc") in DESC_PENDING else en(ev.get("desc") or "")
             if rec.get("fix_caps"):
                 about = fix_caps(about)
+            sub = carabao_name(sub, title, ev["start"])          # "Carabao Cup 4th Round"
+            about = carabao_name(about, title, ev["start"])
             about = about + ("" if about[-1:] in ".!?…" else ".") + " " if about else ""
             lead = (sub if sub[-1:] in ".!?…" else sub + ".") + " " if sub and not ev.get("no_lead") else ""
             desc = dedupe_sentences(re.sub(r"\s+", " ",
@@ -3832,11 +3989,17 @@ def build_xmltv(records, suffix, minutes):
             if is_live and not really_live(title, cid):        # e.g. "End of Transmission"
                 is_live = False
                 desc = re.sub(r"^LIVE\.\s*", "", desc)
-            red = is_live and (cid.startswith(tuple(EVENT_LIVE_PREFIX))
-                               or (cid.startswith(RED_BALL_REGIONS) and uk_event(title)))
+            red = is_live and (cid.startswith(tuple(EVENT_LIVE_PREFIX)) or live_event(title, sub))
             if red:                                            # 🔴: no "LIVE." in the description, plus
                 desc = re.sub(r"^LIVE\.\s*", "", desc)        # kick-off/venue or the start time
                 more = event_start_info(title, ev["start"])
+                if more.startswith("Coverage from") and sub:   # teams in the secondary title
+                    alt = event_start_info(f"{title}: {sub}", ev["start"])
+                    if not alt.startswith("Coverage from"):
+                        more = alt
+                rugby_comp = _RUGBY_COMP.get(re.sub(r"(?i)^live\b[\s.,:;!-]*", "", title or ""))
+                if rugby_comp and not sub:                     # rugby: competition (and round)
+                    sub = rugby_comp
                 if more not in desc:
                     desc = f"{desc} {more}".strip()
             add_programme(tv, cid, start, stop, live_title(title, cid, red) if is_live else title,
@@ -3865,6 +4028,56 @@ def write_xml(tv, path):
         ok = ET.parse(path).getroot().tag == "tv"
     if not ok:
         sys.exit(f"ERROR: {path} did not write correctly")
+
+
+# Safeguard (28 Oct 2026): when a source fails for one run (seen 28 Oct 16:03 UTC: Cyta and the
+# Bulgarian site both returned nothing, so 30 channels vanished from the guide until the next run),
+# the channels missing from this run are kept from the previous guide - only their programmes that
+# haven't finished yet. A channel this run did fetch is never touched. Carried programmes run out by
+# themselves (the SPORT guide lists about a week), so a channel removed on purpose disappears within
+# a week, or straight away with --no-carry. Log: "Kept from the previous guide ...".
+CARRY_OVER = True
+
+
+def carry_over(tv, listed, prev_path):
+    """Add channels (and their programmes still to finish) that are in the previous guide at
+    prev_path but have no programmes in this run. Returns [(id, name, programmes kept)]."""
+    try:
+        if prev_path.endswith(".gz"):
+            with gzip.open(prev_path, "rb") as f:
+                old = ET.parse(f).getroot()
+        else:
+            old = ET.parse(prev_path).getroot()
+    except (OSError, ET.ParseError, EOFError) as err:
+        print(f"  NOTE: previous guide not readable for carry-over ({err})")
+        return []
+    have = {p.get("channel") for p in tv.iter("programme")}
+    now = datetime.now(timezone.utc)
+    kept_progs = {}
+    for p in old.iter("programme"):
+        cid = p.get("channel")
+        if cid in have:
+            continue
+        try:
+            stop = datetime.strptime(p.get("stop"), "%Y%m%d%H%M%S %z")
+        except (TypeError, ValueError):
+            continue
+        if stop > now:
+            kept_progs.setdefault(cid, []).append(p)
+    if not kept_progs:
+        return []
+    names = {c.get("id"): (c.findtext("display-name") or c.get("id")) for c in old.iter("channel")}
+    in_tv = {c.get("id") for c in tv.iter("channel")}
+    kept = []
+    for cid in sorted(kept_progs):
+        if cid not in in_tv:
+            c = ET.SubElement(tv, "channel", {"id": cid})
+            ET.SubElement(c, "display-name", {"lang": "en"}).text = names.get(cid, cid)
+            listed.append((cid, names.get(cid, cid)))
+        for p in kept_progs[cid]:
+            tv.append(p)
+        kept.append((cid, names.get(cid, cid), len(kept_progs[cid])))
+    return kept
 
 
 def load_last_run():
@@ -3900,6 +4113,8 @@ def unique_path(path):
 def main():
     ap = argparse.ArgumentParser(description="XMLTV guide of sports TV channels in several countries.")
     ap.add_argument("--out", default=OUTPUT_NAME, help=f"output file (default {OUTPUT_NAME})")
+    ap.add_argument("--no-carry", action="store_true",
+                    help="don't keep channels missing from this run from the previous guide")
     ap.add_argument("--unique", action="store_true", help="new file name each run")
     ap.add_argument("--days", type=int, default=7, help="days to cover from today (default 7)")
     ap.add_argument("--minutes", type=int, default=DEFAULT_MINUTES,
@@ -4381,6 +4596,14 @@ def main():
                                 if ev.get("desc") and ev["desc"] not in TRANSLATIONS
                                 and rec["place"] not in ENGLISH_PLACES)
     tv, count, listed = build_xmltv(records, suffix, args.minutes)
+    if CARRY_OVER and not args.no_carry and not suffix and os.path.exists(args.out):
+        kept = carry_over(tv, listed, args.out)       # sources that failed this run
+        if kept:
+            count += sum(n for _, _, n in kept)
+            print(f"Kept from the previous guide (no programmes this run - source failed?): "
+                  f"{len(kept)} channel(s), {sum(n for _, _, n in kept)} programmes")
+            for cid, name, n in kept:
+                print(f"  kept {cid} ({n} programmes)")
     out_path = unique_path(args.out) if args.unique else args.out
     write_xml(tv, out_path)
     if run_no is not None:

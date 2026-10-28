@@ -88,8 +88,14 @@ OFFLINE_TITLE = "Channel is offline"   # only used if a stream has no name at al
 
 
 def offline_title(ev):
-    """Title for the blocks of a finished or empty slot: the actual stream name."""
-    return (ev.get("name") or "").strip() or OFFLINE_TITLE
+    """Title for the blocks of a finished or empty slot: the actual stream name, without a
+    leading provider status word ("LIVE | Saint Peter's vs. Marist | ..." -> "Saint Peter's vs.
+    Marist | ..."), so a finished slot doesn't look live in the guide (changed 28 Oct 2026)."""
+    name = (ev.get("name") or "").strip()
+    head, sep, rest = name.partition("|")
+    if sep and head.strip().lower() in STATUS_WORDS and rest.strip():
+        name = rest.strip()
+    return name or OFFLINE_TITLE
 OFFLINE_DESC = "This channel is offline. The next event will be listed when the stream is updated."
 # Description used instead when the slot's last event has finished (an empty slot keeps OFFLINE_DESC)
 FINISHED_DESC = "This event has now finished. The next event will be listed when the stream is updated."
@@ -159,6 +165,20 @@ EMPTY_SLOT = re.compile(r"^\s*(?P<label>[A-Za-z][A-Za-z0-9+ ]*?)\s*\|\s*(?P<num>
 # teams and kick-off. A name whose match is no longer in the football guide is over.
 FOOTBALL_GUIDE_FILE = "football_epg.xml"
 FOOTBALL_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/football_epg.xml"
+# The Scottish guide is read as well (28 Oct 2026), for Scottish matches on Paramount+ / Soccer PPV.
+SCOTTISH_GUIDE_FILE = "scottish_epg.xml"
+SCOTTISH_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/scottish_epg.xml"
+# Slot groups whose stream-name time is when the STREAM starts, not the kick-off (28 Oct 2026):
+# Paramount+ opens its streams 10-60 min early ("Liverpool vs. Chelsea (15:00 ET)" = 19:00 UK for a
+# 19:45/20:00 kick-off). For these, real_start() looks up the real kick-off and the competition with
+# its round, like the Soccer PPV slots. Peacock added 28 Oct 2026 (its Premier League streams open
+# ~10 min early: "Hull City v. Ipswich Town (10:50 ET)" for a 15:00 UK kick-off).
+REAL_START_GROUPS = ("paramount", "peacock")
+TEAM_SHORT_NAMES = [(r"(?i)^\s*spurs\s*$", "Tottenham Hotspur"), (r"(?i)^\s*wolves\s*$", "Wolverhampton"),
+                    (r"(?i)\bnott'?m\.?\s+forest\b", "Nottingham Forest"),
+                    (r"(?i)^\s*forest\s*$", "Nottingham Forest"), (r"(?i)^\s*palace\s*$", "Crystal Palace"),
+                    (r"(?i)\bsheff\.?\s+(utd|united|wed|wednesday)\b", r"Sheffield \1"),
+                    (r"(?i)\bqpr\b", "Queens Park Rangers"), (r"(?i)\bwest brom\b", "West Bromwich")]
 # Names with these labels ("UEFA | 01 - ...") are only matched to fixtures in competitions whose
 # name starts with the same word, so a finished UEFA tie can't latch onto a later league match
 # of one of its teams (e.g. "Lillestrom vs Real Sociedad" -> Athletic Club v Real Sociedad).
@@ -298,23 +318,26 @@ def load_fixtures():
     global _FIXTURES
     if _FIXTURES is not None:
         return _FIXTURES or None
-    raw = None
-    local = os.path.join(os.path.dirname(os.path.abspath(__file__)), FOOTBALL_GUIDE_FILE)
-    try:
-        if os.path.exists(local):
-            with open(local, "rb") as f:
-                raw = f.read()
-        else:
-            req = urllib.request.Request(FOOTBALL_GUIDE_URL, headers=HEADERS)
-            with urllib.request.urlopen(req, timeout=60) as r:
-                raw = r.read()
-        root = ET.fromstring(raw)
-    except Exception as e:
-        print(f"  WARNING: football guide not available for dating fixtures ({e})")
+    roots = []
+    for fname, url, label in ((FOOTBALL_GUIDE_FILE, FOOTBALL_GUIDE_URL, "football"),
+                              (SCOTTISH_GUIDE_FILE, SCOTTISH_GUIDE_URL, "Scottish")):
+        local = os.path.join(os.path.dirname(os.path.abspath(__file__)), fname)
+        try:
+            if os.path.exists(local):
+                with open(local, "rb") as f:
+                    raw = f.read()
+            else:
+                req = urllib.request.Request(url, headers=HEADERS)
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    raw = r.read()
+            roots.append(ET.fromstring(raw))
+        except Exception as e:
+            print(f"  WARNING: {label} guide not available for dating fixtures ({e})")
+    if not roots:
         _FIXTURES = []
         return None
     out = set()
-    for p in root.iter("programme"):
+    for p in (p for root in roots for p in root.iter("programme")):
         t = (p.findtext("title") or "")
         m = re.match(r"^(?:🔴 LIVE: )?(.+?) v (.+?) \((?:\w{3}) (\d{1,2}) (\w{3}), (\d{1,2}):(\d{2})\)$", t)
         if not m:
@@ -327,6 +350,9 @@ def load_fixtures():
             continue
         cats = [c.text or "" for c in p.findall("category")]
         comp = cats[2] if len(cats) > 2 else ""          # Sports, Football, <competition>
+        nxt = re.match(r"^⏭\s*Next Match:\s*(.+)$", p.findtext("sub-title") or "")
+        if nxt and nxt[1].lower().startswith(comp.lower()):
+            comp = nxt[1].strip()                        # with the round: "Carabao Cup 4th Round"
         out.add((_team_key(m[1]), _team_key(m[2]), m[1].strip(), m[2].strip(), ko, comp))
     _FIXTURES = sorted(out, key=lambda r: r[4])
     return _FIXTURES or None
@@ -546,6 +572,8 @@ ESPN_FOOTBALL = {
     "soccer/ita.1": "Serie A",
     "soccer/fra.1": "Ligue 1",
     "soccer/ned.1": "Eredivisie",
+    "soccer/ita.coppa_italia": "Coppa Italia",                 # (28 Oct 2026, for Paramount+)
+    "soccer/uefa.wchampions": "UEFA Women's Champions League",
 }
 
 
@@ -554,6 +582,10 @@ def real_start(title, approx):
     sides = re.split(r"\s+(?:vs?\.?|at|@|x|-)\s+", title, maxsplit=1, flags=re.I)
     if len(sides) != 2:
         return None
+    # Short names used by Paramount+ / Peacock -> the football guide's names
+    sides = [re.sub(r"(?i)\bman\.?\s+(?=(city|united|utd)\b)", "Manchester ", x) for x in sides]
+    for pat, full in TEAM_SHORT_NAMES:
+        sides = [re.sub(pat, full, x) for x in sides]
     fx = load_fixtures() or []
     best = None
     for fh, fa, fhn, fan, ko, comp in fx:
@@ -578,7 +610,7 @@ def real_start(title, approx):
                     (best is None or abs(ko - approx) < abs(best[0] - approx)):
                 best = (ko, label)
     if best:
-        print(f"  Soccer PPV kick-off: {title}: name {approx:%d %b %H:%M} UTC, "
+        print(f"  Kick-off from ESPN: {title}: name {approx:%d %b %H:%M} UTC, "
               f"{best[1]} {best[0]:%d %b %H:%M} UTC")
         return best[0], KICKOFF_EARLY_MINUTES, best[1]
     for sport, label in ((NFL_ESPN, "NFL"), (NBA_ESPN, "NBA"), (US_LEAGUES["NHL"][0], "NHL"),
@@ -924,10 +956,19 @@ def _parse_name(name):
     if m:
         tz = ZoneInfo(COUNTRY_TZ.get(m["cc"], "Europe/London"))
         local = datetime.strptime(f"{m['date']} {m['time']}", "%Y-%m-%d %H:%M").replace(tzinfo=tz)
-        return {"name": name, "slot_id": f"{slug(m['slot'])}.{m['cc'].lower()}",
-                "slot_name": f"{m['cc']} ({m['slot']})",
-                "title": m["title"].strip(), "extra": "", "comp": competition(m["title"]),
-                "start": local.astimezone(timezone.utc)}
+        ev = {"name": name, "slot_id": f"{slug(m['slot'])}.{m['cc'].lower()}",
+              "slot_name": f"{m['cc']} ({m['slot']})",
+              "title": m["title"].strip(), "extra": "", "comp": competition(m["title"]),
+              "start": local.astimezone(timezone.utc)}
+        if m["slot"].lower().startswith(REAL_START_GROUPS):   # stream time -> real kick-off
+            rs = real_start(ev["title"], ev["start"])
+            if rs:
+                if abs(rs[0] - ev["start"]) >= timedelta(minutes=1):
+                    print(f"  {m['cc']} ({m['slot']}) kick-off: {ev['title']}: stream "
+                          f"{ev['start']:%d %b %H:%M} UTC, {rs[2] or '?'} {rs[0]:%d %b %H:%M} UTC")
+                ev["start"], ev["early"] = rs[0], rs[1]
+                ev["comp"] = rs[2] or ev["comp"]
+        return ev
 
     parts = [p.strip() for p in name.split("|")]     # End | Title | Comp | date | time (TZ) | ... | GB: SLOT
     if len(parts) >= 4:
@@ -1072,22 +1113,27 @@ def build(events, now):
         start = kickoff - timedelta(minutes=ev.get("early", 0))   # LIVE a little early where set
         end = kickoff + timedelta(hours=event_hours(ev))
         when = f"{uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}, {uk(kickoff):%H:%M}"
-        desc = f"{ev['title']}." + (f" {ev['extra']}." if ev["extra"] else "") + \
+        comp = ev.get("comp") or ""
+        if comp and (comp.lower() in ev["title"].lower() or comp.lower() in (ev["extra"] or "").lower()):
+            comp = ""                                      # already in the title / extra text
+        desc = f"{ev['title']}." + (f" {comp}." if comp else "") + \
+               (f" {ev['extra']}." if ev["extra"] else "") + \
                f" Starts {when} UK time." + (f" {ev['info']}" if ev.get("info") else "")
         in_range = start <= now + timedelta(days=MAX_DAYS_AHEAD)
-        # Out of range: generic filler only up to the range limit, so the event's own
-        # "Coming up" blocks can still be added after it on a later run.
+        # Out of range: "Coming up" blocks only up to the range limit (the guide stops at
+        # HORIZON_HOURS anyway); the LIVE block is added once the event comes into range.
         stop_at = start if in_range else now + timedelta(days=MAX_DAYS_AHEAD)
         t = now.replace(minute=0, second=0, microsecond=0)
         t -= timedelta(hours=uk(t).hour % BLOCK_HOURS)
         while t < stop_at:
             b = min(t + timedelta(hours=BLOCK_HOURS), stop_at)
-            if in_range:                                   # "Coming up" blocks
-                add_programme(tv, sid, t, b, f"{ev['title']} ({when})",
-                              f"⏭ Coming up {uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}",
-                              f"Coming up: {desc}")
-            else:                                          # filler until the event is in range
-                add_programme(tv, sid, t, b, FILLER_TITLE, None, FILLER_DESC)
+            # "Coming up" blocks naming the event - also for events more than MAX_DAYS_AHEAD away
+            # (changed 28 Oct 2026: those used to get the generic FILLER_TITLE, so e.g. 97 of the
+            # 100 Peacock slots showed "Stream is live at event time only." with no event name).
+            add_programme(tv, sid, t, b, f"{ev['title']} ({when})",       # competition (and round)
+                          f"⏭ Coming up: {ev['comp']}" if ev.get("comp") else   # when known (28 Oct)
+                          f"⏭ Coming up {uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}",
+                          f"Coming up: {desc}")
             count += 1
             t = b
         if in_range:
