@@ -2653,50 +2653,20 @@ SKY_CHANNELS = {   # our ID -> (name, [Sky service ids, best first], 4K?); epgsh
 }
 SKY_LIVE = re.compile(r"^\s*live\b|\(\s*live\s*\)|\blive\s*$", re.I)
 # Sky Sports UHD 1 / UHD 2 (added 28 Oct 2026): part-time 4K channels showing selected live events
-# (e.g. Hearts v Rangers), "This is Ultra HD" in between. Their Sky service ids aren't known, so each
-# run looks them up by name in Sky's channel list (SKY_SERVICES); the log prints every Sky channel with
-# "UHD"/"Ultra"/"4K" in its name. On these channels every programme except the filler is LIVE.
-SKY_SERVICES = "https://awk.epgsky.com/hawk/linear/services/{bouquet}/{sub}"
-SKY_BOUQUETS = [("4101", "1"), ("4097", "1"), ("4104", "50")]   # England (London) HD, SD, Ireland
-SKY_UHD_EVENT = {"UK.SkySportsUHD1": ("Sky Sports UHD 1", "1"), "UK.SkySportsUHD2": ("Sky Sports UHD 2", "2")}
-SKY_UHD_NAME = re.compile(r"sky\s*sports?\s*(?:uhd|ultra\s*hd)\s*([12])\b|sky\s*sports?\s*([12])\s*(?:uhd|ultra\s*hd)\b", re.I)
-UHD_FILLER = re.compile(r"(?i)^\s*(this is ultra hd|ultra hd|sky sports (uhd|ultra hd)( \d)?)\b[\s.!]*$")
-UHD_PROBE_SIDS = [str(n) for n in range(7203, 7231)]        # tried if the name lookup finds nothing
-
-
-def sky_find_uhd(debug=False):
-    """{our id: [Sky sids]} for Sky Sports UHD 1/2, looked up by name in Sky's channel lists."""
-    found = {}
-    for bouquet, sub in SKY_BOUQUETS:
-        data = get_json_url(SKY_SERVICES.format(bouquet=bouquet, sub=sub), SKY_HEADERS, quiet=True)
-        for svc in (data or {}).get("services") or [] if isinstance(data, dict) else []:
-            if not isinstance(svc, dict):
-                continue
-            name, sid = str(svc.get("t") or ""), str(svc.get("sid") or "")
-            if not sid or not re.search(r"uhd|ultra|4k", name, re.I):
-                continue
-            print(f"  Sky channel list {bouquet}/{sub}: {name!r} = service {sid} (number {svc.get('c')})")
-            m = SKY_UHD_NAME.search(name)
-            if m:
-                cid = f"UK.SkySportsUHD{m.group(1) or m.group(2)}"
-                if sid not in found.setdefault(cid, []):
-                    found[cid].append(sid)
-    return found
+# (e.g. "Live SPFL: Hearts v Rangers"), "This is Ultra HD" / "UHD Downtime" in between. Sky service
+# ids found 28 Oct 2026 by probing Sky's 4K address (atlantis): 7221 = UHD 1, 7222 = UHD 2 (7223 also
+# exists - probably UHD 3; 7211/7212 = Main Event / F1 4K). Every programme except the filler is LIVE.
+SKY_UHD_EVENT = {"UK.SkySportsUHD1": ("Sky Sports UHD 1", "7221"), "UK.SkySportsUHD2": ("Sky Sports UHD 2", "7222")}
+UHD_FILLER = re.compile(r"(?i)^\s*(this is ultra hd|ultra hd|uhd downtime|sky sports (uhd|ultra hd)( \d)?)\b[\s.!]*$")
 
 
 def fetch_sky(days, debug=False):
     """{our id: [events]} from Sky's guide for the given days (UK dates)."""
     per_sid = {}
-    extra = sky_find_uhd(debug)                          # Sky Sports UHD 1/2 - sids looked up by name
-    for cid, (name, _) in SKY_UHD_EVENT.items():
-        if extra.get(cid):
-            SKY_CHANNELS[cid] = (name, extra[cid], True)
-            print(f"  {name}: Sky service {', '.join(extra[cid])}")
-        else:
-            print(f"  NOTE: {name} not found in Sky's channel lists (epgshare01 backup used if it has it)")
+    for cid, (name, sid) in SKY_UHD_EVENT.items():      # Sky Sports UHD 1/2 (4K address)
+        SKY_CHANNELS[cid] = (name, [sid], True)
     hd = [sid for _, sids, uhd in SKY_CHANNELS.values() if not uhd for sid in sids]
     uhd = [sid for _, sids, is_uhd in SKY_CHANNELS.values() if is_uhd for sid in sids]
-    hd += [sid for sids in extra.values() for sid in sids if sid not in hd]   # try both of Sky's addresses
     first = datetime(days[0].year, days[0].month, days[0].day, tzinfo=LONDON).astimezone(timezone.utc)
     last = days[-1] + timedelta(days=1)
     end = datetime(last.year, last.month, last.day, tzinfo=LONDON).astimezone(timezone.utc)
@@ -2719,10 +2689,16 @@ def fetch_sky(days, debug=False):
                 if live:   # "Live PL: Nott'm Forest v Arsenal" -> "PL: Nott'm Forest v Arsenal"
                     title = re.sub(r"^\s*live\b\s*[:\-]?\s*|\s*\(\s*live\s*\)|\s*[-:]?\s*\blive\s*$", "",
                                    title, flags=re.I).strip() or title
+                m = re.match(r"^([^:]{2,12}):\s*(.+)$", title)    # "PL: Chelsea v Man United" ->
+                if m and m.group(1).strip().upper() in SKY_COMP_NAMES:   # "Premier League: Chelsea v Man United"
+                    title = f"{SKY_COMP_NAMES[m.group(1).strip().upper()]}: {m.group(2).strip()}"
                 synopsis = re.sub(r"\s+", " ", str(ev.get("sy") or "")).strip()
+                synopsis = re.sub(r"^live\s*[.:!-]\s*", "", synopsis, flags=re.I)   # Sky's own "LIVE. ..."
                 m = re.match(r"(.{10,110}?[.!?])(\s|$)", synopsis)
                 sub = m.group(1) if m else ""     # "Bayern Munich v Arsenal (Kick-off 8.00pm)."
                 rest = synopsis[len(sub):].strip() if sub else synopsis   # the summary after the sub-title
+                if sub and not rest:                     # one sentence only: description, not also a sub-title
+                    sub, rest = "", synopsis
                 per_sid.setdefault(sid, {})[start] = {
                     "start": start, "stop": stop, "title": title, "sub": sub if sub != title else "",
                     "live": live, "desc": short_desc(rest) if rest not in (title, sub) else ""}
@@ -2734,15 +2710,6 @@ def fetch_sky(days, debug=False):
             take(get_json_url(SKY_HAWK.format(date=ymd, sids=",".join(hd[i:i + 20])), SKY_HEADERS))
         for sid in uhd:                                 # 4K channels: Sky's other address
             take(get_json_url(SKY_ATLANTIS.format(date=ymd, sid=sid), SKY_UHD_HEADERS, quiet=True))
-    if not extra:                                       # UHD 1/2 not named: report 4K sids with listings
-        ymd = dates[min(1, len(dates) - 1)]
-        for sid in UHD_PROBE_SIDS:
-            d = get_json_url(SKY_ATLANTIS.format(date=ymd, sid=sid), SKY_UHD_HEADERS, quiet=True)
-            evs = [e for sc in ((d or {}).get("schedule") or [] if isinstance(d, dict) else [])
-                   if isinstance(sc, dict) for e in (sc.get("events") or [])]
-            if evs:
-                titles = sorted({str(e.get("t") or "") for e in evs})[:4]
-                print(f"  Sky 4K service {sid} ({ymd}): {len(evs)} programmes, e.g. {titles}")
     out = {}
     for cid, (name, sids, _) in SKY_CHANNELS.items():
         best = max(sids, key=lambda x: len(per_sid.get(x) or {}))
@@ -2751,7 +2718,74 @@ def fetch_sky(days, debug=False):
             print(f"    {name}: {len(evs)} programmes from Sky service {best}")
         if evs:
             out[cid] = [evs[k] for k in sorted(evs)]
+            if cid in SKY_UHD_EVENT:
+                out[cid] = uhd_next_event(out[cid])
     return out
+
+
+# Sky title prefixes -> competition names (UHD channels' secondary titles). Unknown prefixes are shown as given.
+SKY_COMP_NAMES = {"PL": "Premier League", "EPL": "Premier League", "EFL CUP": "Carabao Cup", "EFL": "EFL",
+                  "SPFL": "Scottish Premiership", "SPFL CUP": "Premier Sports Cup", "WSL": "Women's Super League",
+                  "F1": "Formula 1", "PREM": "Gallagher PREM", "NFL": "NFL", "NBA": "NBA", "NHL": "NHL",
+                  "MLB": "MLB", "IPL": "Indian Premier League", "WPL": "Women's Premier League"}
+SPORT_WORD_END = re.compile(r"^(.{3,}?)\s+(golf|tennis|cricket|darts|snooker|rugby|boxing|racing|athletics|"
+                            r"netball|football|motorsport)$", re.I)
+
+
+def uhd_comp(title):
+    """(competition, event) from a Sky title (without "Live"):
+    "PL: Chelsea v Man United" -> ("Premier League", "Chelsea v Man United");
+    "LPGA Tour Golf" -> ("LPGA Tour", "LPGA Tour Golf"); "The Open" / "Wimbledon" -> (title, title)."""
+    m = re.match(r"^([^:]{2,40}):\s*(.+)$", title)
+    if m:
+        abbr = m.group(1).strip()
+        return SKY_COMP_NAMES.get(abbr.upper(), abbr), m.group(2).strip()
+    m = SPORT_WORD_END.match(title)
+    if m:
+        return m.group(1).strip(), title
+    if re.search(r"\S\s+vs?\.?\s+\S", title):          # a bare match - competition unknown
+        return "", title
+    return title, title
+
+
+def uhd_next_event(evs):
+    """Sky Sports UHD 1/2: mark the real events live ("uhd_live") and turn the filler before each
+    one into a "Next Event" block, like the football guide's "Next Match":
+      title  Hearts v Rangers (Wed 28th, 19:00)      sub  ⏭ Next Event: SPFL
+      desc   Next Event: Hearts v Rangers. Heart of Midlothian v Rangers. Kick-off: Wed 28th, 19:00.
+    Filler after the last known event stays "This is Ultra HD" (the next one isn't listed yet)."""
+    for ev in evs:
+        ev["uhd_live"] = not UHD_FILLER.match(ev["title"] or "")
+        if ev["uhd_live"]:
+            comp, match = uhd_comp(ev["title"])
+            ev["comp"], ev["match"] = comp, match
+            ev["line"] = (ev.get("sub") or "").strip()          # Sky's first line, e.g. "Heart of Midlothian v Rangers."
+            if re.fullmatch(r"[^.!?]{2,60}\s+vs?\.?\s+[^.!?]{2,60}[.!?]?(\s*\([^)]*\)\.?)?", ev["line"]):
+                ev["line"] = ""                                  # just the teams again (full names) - not needed
+            if comp and comp != ev["title"]:
+                ev["desc"] = " ".join(x for x in (ev["line"], ev.get("desc") or "") if x)
+                ev["sub"], ev["no_lead"] = comp, True            # "Scottish Premiership", as in the football guide
+                ev["title"] = match                              # "Hearts v Rangers" (competition is the sub)
+    for i, ev in enumerate(evs):
+        if ev["uhd_live"]:
+            continue
+        nxt = next((e for e in evs[i + 1:] if e["uhd_live"]), None)
+        if nxt is None:
+            ev["sub"], ev["no_lead"] = "", True
+            ev["desc"] = "This is Ultra HD. The next event will be listed when Sky's schedule has it."
+            continue
+        comp, match = nxt["comp"], nxt["match"]                  # ("Scottish Premiership", "Hearts v Rangers")
+        uk = nxt["start"].astimezone(LONDON)
+        when = "Kick-off" if re.search(r"\S\s+vs?\.?\s+\S", match) else "Starts"
+        detail = nxt.get("line", "")
+        day = f"{uk:%a} {uk.day}{'th' if 10 <= uk.day % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(uk.day % 10, 'th')}"
+        ev["title"] = f"{match} ({day}, {uk:%H:%M})"                  # "Hearts v Rangers (Wed 28th, 19:00)"
+        ev["sub"] = f"⏭ Next Event: {comp}" if comp else "⏭ Next Event"
+        lead = f"Next Event: {comp} – {match}." if comp and comp not in match else f"Next Event: {match}."
+        ev["desc"] = " ".join(x for x in (lead, detail if detail.rstrip('.') != match else "",
+                                          f"{when}: {day}, {uk:%H:%M}.") if x)
+        ev["live"], ev["no_lead"] = False, True
+    return evs
 
 
 # --------------------------------------------------------------------------
@@ -2916,10 +2950,6 @@ EPGSHARE.update({
                "SkySportsNFL": ("Sky Sports NFL", ["Sky.Sports.NFL.uk"]),
                "SkySportsPlus": ("Sky Sports+", ["SkySp+HD.uk"]),
                "SkySportsBoxOffice": ("Sky Sports Box Office", ["SkySpBoxOff.uk"]),
-               "SkySportsUHD1": ("Sky Sports UHD 1", ["SkySpUHD1.uk", "SkySp.UHD1.uk", "Sky.Sports.UHD.1.uk",
-                                                      "Sky.Sports.Ultra.HD.1.uk", "SkySportsUHD1.uk"]),
-               "SkySportsUHD2": ("Sky Sports UHD 2", ["SkySpUHD2.uk", "SkySp.UHD2.uk", "Sky.Sports.UHD.2.uk",
-                                                      "Sky.Sports.Ultra.HD.2.uk", "SkySportsUHD2.uk"]),
                **{f"TNTSports{n}": (f"TNT Sports {n}", [f"TNT.Sports.{n}.HD.uk"]) for n in range(1, 11)},
                "TNTSportsUltimate": ("TNT Sports Ultimate", ["TNT.Sports.Ultimate.HD.uk"]),
                "TNTSportsBoxOffice": ("TNT Sports Box Office", ["TNT.Sport.BoxOffice.HD.uk"]),
@@ -3035,9 +3065,6 @@ def fetch_epgshare(group, days, debug=False):
                   + ("" if any(a in seen_ids for a in alts) else " (channel not in the file)"))
         if evs:
             out[part] = [evs[k] for k in sorted(evs)]
-    if group == "uk":                                  # help find Sky Sports UHD 1/2 ids (28 Oct 2026)
-        ids = sorted(i for i in seen_ids if i and re.search(r"uhd|ultra|4k", i, re.I))
-        print(f"  epgshare01 UK ids with UHD/Ultra/4K: {ids or 'none'}")
     return out
 
 
@@ -3482,9 +3509,10 @@ def build_xmltv(records, suffix, minutes):
             if rec.get("fix_caps"):
                 about = fix_caps(about)
             about = about + ("" if about[-1:] in ".!?…" else ".") + " " if about else ""
-            lead = (sub if sub[-1:] in ".!?…" else sub + ".") + " " if sub else ""
+            lead = (sub if sub[-1:] in ".!?…" else sub + ".") + " " if sub and not ev.get("no_lead") else ""
             desc = dedupe_sentences(re.sub(r"\s+", " ",
-                                           f"{'LIVE. ' if ev['live'] else ''}{lead}{about}{orig}").strip())
+                                           f"{'LIVE. ' if ev['live'] and not cid.startswith(tuple(EVENT_LIVE_PREFIX)) else ''}"
+                                           f"{lead}{about}{orig}").strip())   # (no "LIVE." under a 🔴 title)
             if rec["filler"]:
                 for a, b in filler_blocks(last_stop or now, start):
                     add_programme(tv, cid, a, b, f"{title} ({when})", "Coming up",
@@ -3494,7 +3522,7 @@ def build_xmltv(records, suffix, minutes):
             is_live = (ev["live"] or kickoff_now(f"{sub or ''} {desc}", loc, uk)
                        or desc_says_live(desc))                # description says "live"
             if cid.startswith(tuple(SKY_UHD_EVENT)):          # Sky Sports UHD 1/2: all but filler is live
-                is_live = not UHD_FILLER.match(title or "")
+                is_live = bool(ev.get("uhd_live", not UHD_FILLER.match(title or "")))
             if is_live and not really_live(title, cid):        # e.g. "End of Transmission"
                 is_live = False
                 desc = re.sub(r"^LIVE\.\s*", "", desc)
