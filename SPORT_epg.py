@@ -2652,13 +2652,51 @@ SKY_CHANNELS = {   # our ID -> (name, [Sky service ids, best first], 4K?); epgsh
     "IE.VirginMediaFour": ("Virgin Media Four", ["1316"], False),
 }
 SKY_LIVE = re.compile(r"^\s*live\b|\(\s*live\s*\)|\blive\s*$", re.I)
+# Sky Sports UHD 1 / UHD 2 (added 28 Oct 2026): part-time 4K channels showing selected live events
+# (e.g. Hearts v Rangers), "This is Ultra HD" in between. Their Sky service ids aren't known, so each
+# run looks them up by name in Sky's channel list (SKY_SERVICES); the log prints every Sky channel with
+# "UHD"/"Ultra"/"4K" in its name. On these channels every programme except the filler is LIVE.
+SKY_SERVICES = "https://awk.epgsky.com/hawk/linear/services/{bouquet}/{sub}"
+SKY_BOUQUETS = [("4101", "1"), ("4097", "1"), ("4104", "50")]   # England (London) HD, SD, Ireland
+SKY_UHD_EVENT = {"UK.SkySportsUHD1": ("Sky Sports UHD 1", "1"), "UK.SkySportsUHD2": ("Sky Sports UHD 2", "2")}
+SKY_UHD_NAME = re.compile(r"sky\s*sports?\s*(?:uhd|ultra\s*hd)\s*([12])\b|sky\s*sports?\s*([12])\s*(?:uhd|ultra\s*hd)\b", re.I)
+UHD_FILLER = re.compile(r"(?i)^\s*(this is ultra hd|ultra hd|sky sports (uhd|ultra hd)( \d)?)\b[\s.!]*$")
+UHD_PROBE_SIDS = [str(n) for n in range(7203, 7231)]        # tried if the name lookup finds nothing
+
+
+def sky_find_uhd(debug=False):
+    """{our id: [Sky sids]} for Sky Sports UHD 1/2, looked up by name in Sky's channel lists."""
+    found = {}
+    for bouquet, sub in SKY_BOUQUETS:
+        data = get_json_url(SKY_SERVICES.format(bouquet=bouquet, sub=sub), SKY_HEADERS, quiet=True)
+        for svc in (data or {}).get("services") or [] if isinstance(data, dict) else []:
+            if not isinstance(svc, dict):
+                continue
+            name, sid = str(svc.get("t") or ""), str(svc.get("sid") or "")
+            if not sid or not re.search(r"uhd|ultra|4k", name, re.I):
+                continue
+            print(f"  Sky channel list {bouquet}/{sub}: {name!r} = service {sid} (number {svc.get('c')})")
+            m = SKY_UHD_NAME.search(name)
+            if m:
+                cid = f"UK.SkySportsUHD{m.group(1) or m.group(2)}"
+                if sid not in found.setdefault(cid, []):
+                    found[cid].append(sid)
+    return found
 
 
 def fetch_sky(days, debug=False):
     """{our id: [events]} from Sky's guide for the given days (UK dates)."""
     per_sid = {}
+    extra = sky_find_uhd(debug)                          # Sky Sports UHD 1/2 - sids looked up by name
+    for cid, (name, _) in SKY_UHD_EVENT.items():
+        if extra.get(cid):
+            SKY_CHANNELS[cid] = (name, extra[cid], True)
+            print(f"  {name}: Sky service {', '.join(extra[cid])}")
+        else:
+            print(f"  NOTE: {name} not found in Sky's channel lists (epgshare01 backup used if it has it)")
     hd = [sid for _, sids, uhd in SKY_CHANNELS.values() if not uhd for sid in sids]
     uhd = [sid for _, sids, is_uhd in SKY_CHANNELS.values() if is_uhd for sid in sids]
+    hd += [sid for sids in extra.values() for sid in sids if sid not in hd]   # try both of Sky's addresses
     first = datetime(days[0].year, days[0].month, days[0].day, tzinfo=LONDON).astimezone(timezone.utc)
     last = days[-1] + timedelta(days=1)
     end = datetime(last.year, last.month, last.day, tzinfo=LONDON).astimezone(timezone.utc)
@@ -2696,6 +2734,15 @@ def fetch_sky(days, debug=False):
             take(get_json_url(SKY_HAWK.format(date=ymd, sids=",".join(hd[i:i + 20])), SKY_HEADERS))
         for sid in uhd:                                 # 4K channels: Sky's other address
             take(get_json_url(SKY_ATLANTIS.format(date=ymd, sid=sid), SKY_UHD_HEADERS, quiet=True))
+    if not extra:                                       # UHD 1/2 not named: report 4K sids with listings
+        ymd = dates[min(1, len(dates) - 1)]
+        for sid in UHD_PROBE_SIDS:
+            d = get_json_url(SKY_ATLANTIS.format(date=ymd, sid=sid), SKY_UHD_HEADERS, quiet=True)
+            evs = [e for sc in ((d or {}).get("schedule") or [] if isinstance(d, dict) else [])
+                   if isinstance(sc, dict) for e in (sc.get("events") or [])]
+            if evs:
+                titles = sorted({str(e.get("t") or "") for e in evs})[:4]
+                print(f"  Sky 4K service {sid} ({ymd}): {len(evs)} programmes, e.g. {titles}")
     out = {}
     for cid, (name, sids, _) in SKY_CHANNELS.items():
         best = max(sids, key=lambda x: len(per_sid.get(x) or {}))
@@ -2869,6 +2916,10 @@ EPGSHARE.update({
                "SkySportsNFL": ("Sky Sports NFL", ["Sky.Sports.NFL.uk"]),
                "SkySportsPlus": ("Sky Sports+", ["SkySp+HD.uk"]),
                "SkySportsBoxOffice": ("Sky Sports Box Office", ["SkySpBoxOff.uk"]),
+               "SkySportsUHD1": ("Sky Sports UHD 1", ["SkySpUHD1.uk", "SkySp.UHD1.uk", "Sky.Sports.UHD.1.uk",
+                                                      "Sky.Sports.Ultra.HD.1.uk", "SkySportsUHD1.uk"]),
+               "SkySportsUHD2": ("Sky Sports UHD 2", ["SkySpUHD2.uk", "SkySp.UHD2.uk", "Sky.Sports.UHD.2.uk",
+                                                      "Sky.Sports.Ultra.HD.2.uk", "SkySportsUHD2.uk"]),
                **{f"TNTSports{n}": (f"TNT Sports {n}", [f"TNT.Sports.{n}.HD.uk"]) for n in range(1, 11)},
                "TNTSportsUltimate": ("TNT Sports Ultimate", ["TNT.Sports.Ultimate.HD.uk"]),
                "TNTSportsBoxOffice": ("TNT Sports Box Office", ["TNT.Sport.BoxOffice.HD.uk"]),
@@ -2984,6 +3035,9 @@ def fetch_epgshare(group, days, debug=False):
                   + ("" if any(a in seen_ids for a in alts) else " (channel not in the file)"))
         if evs:
             out[part] = [evs[k] for k in sorted(evs)]
+    if group == "uk":                                  # help find Sky Sports UHD 1/2 ids (28 Oct 2026)
+        ids = sorted(i for i in seen_ids if i and re.search(r"uhd|ultra|4k", i, re.I))
+        print(f"  epgshare01 UK ids with UHD/Ultra/4K: {ids or 'none'}")
     return out
 
 
@@ -3301,6 +3355,9 @@ def desc_says_live(desc):
 # Start of a live programme's title. Plain "LIVE: " on these TV channels; the 🔴 is kept
 # for the event and match streams (event_epg.py, football_epg.py, scottish_epg.py).
 LIVE_PREFIX = "LIVE: "
+# Exception (28 Oct 2026): part-time event-only channels are titled like the event streams.
+EVENT_LIVE_PREFIX = {"UK.SkySportsUHD1": "🔴 LIVE: ", "UK.SkySportsUHD2": "🔴 LIVE: ",
+                     "UK.TNTSportsUltimate": "🔴 LIVE: "}    # (Ultimate: live = Sky's own "Live" flag)
 # Never live, whatever the source says (27 Oct 2026: Hub Premier 2 showed "LIVE: End of
 # Transmission" between matches).
 OFF_AIR_RE = re.compile(r"(?i)^\s*(end of transmission|off[- ]?air|close ?down|station close|"
@@ -3330,6 +3387,8 @@ def live_title(title, cid=""):
     t = (title or "").strip()
     t = re.sub(r"^🔴\s*", "", t)
     t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", t) or t
+    if cid.startswith(tuple(EVENT_LIVE_PREFIX)):       # event-only channels get the 🔴 like event streams
+        return f"{EVENT_LIVE_PREFIX[next(k for k in EVENT_LIVE_PREFIX if cid.startswith(k))]}{t}"
     return f"{LIVE_PREFIX}{t}"
 
 
@@ -3434,6 +3493,8 @@ def build_xmltv(records, suffix, minutes):
                     count += 1
             is_live = (ev["live"] or kickoff_now(f"{sub or ''} {desc}", loc, uk)
                        or desc_says_live(desc))                # description says "live"
+            if cid.startswith(tuple(SKY_UHD_EVENT)):          # Sky Sports UHD 1/2: all but filler is live
+                is_live = not UHD_FILLER.match(title or "")
             if is_live and not really_live(title, cid):        # e.g. "End of Transmission"
                 is_live = False
                 desc = re.sub(r"^LIVE\.\s*", "", desc)
