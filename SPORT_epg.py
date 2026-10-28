@@ -2760,9 +2760,14 @@ def uhd_next_event(evs):
             comp, match = uhd_comp(ev["title"])
             ev["comp"], ev["match"] = comp, match
             ev["line"] = (ev.get("sub") or "").strip()          # Sky's first line, e.g. "Heart of Midlothian v Rangers."
+            if not ev["line"] and re.fullmatch(r"[^.!?]{2,60}\s+vs?\.?\s+[^.!?]{2,60}[.!?]?", (ev.get("desc") or "").strip()):
+                ev["line"], ev["desc"] = ev["desc"].strip(), ""   # the whole synopsis is just the teams
             if re.fullmatch(r"[^.!?]{2,60}\s+vs?\.?\s+[^.!?]{2,60}[.!?]?(\s*\([^)]*\)\.?)?", ev["line"]):
-                ev["line"] = ""                                  # just the teams again (full names) - not needed
-            if comp and comp != ev["title"]:
+                if not re.search(r"\S\s+vs?\.?\s+\S", match):  # title "Scottish Premiership Football",
+                    match = ev["line"].rstrip(".")                 # line "Heart of Midlothian v Rangers": the match
+                    ev["match"] = match
+                ev["line"] = ""                                  # (otherwise just the teams again - not needed)
+            if comp and (comp != ev["title"] or match != ev["title"]):
                 ev["desc"] = " ".join(x for x in (ev["line"], ev.get("desc") or "") if x)
                 ev["sub"], ev["no_lead"] = comp, True            # "Scottish Premiership", as in the football guide
                 ev["title"] = match                              # "Hearts v Rangers" (competition is the sub)

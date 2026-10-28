@@ -50,6 +50,23 @@ MAX_DAYS_AHEAD = 14  # upper limit; the run finds how many days TV Passport actu
 PROBE_CHANNELS = ["cnn/70", "espn/594", "hbo--eastern-feed/614"]   # used to find that limit
 WORKERS = 4          # pages fetched at once - kept low to be polite
 LIVE_PREFIX = "LIVE: "
+# Red ball (28 Oct 2026) on these channels' live sports EVENTS only - a game/match/draw, not studio
+# shows ("Hockey Central Tonight", "MLB Central", "NHL Now" keep plain "LIVE: "). They are the
+# channels the user's Sportsnet UHD streams are linked to (the HD streams share the IDs).
+RED_BALL_CHANNELS = {"CA.SportsnetOne", "CA.Sportsnet360"}
+RED_BALL_PREFIX = "🔴 LIVE: "
+MATCHUP_RE = re.compile(r"\S\s+(at|vs?\.?|v)\s+\S", re.I)          # "Buffalo Sabres at San Jose Sharks"
+EVENT_WORDS_RE = re.compile(r"(?i)\b(draw \d+|game \d+|round \d+|(semi|quarter)-?finals?|finals?|"
+                            r"grand prix|grand slam|qualifying|race \d*|championships?|cup|tournament)\b")
+STUDIO_RE = re.compile(r"(?i)\b(central|tonight|now|pre-?game|post-?game|show|insider|coverage|preview|"
+                       r"recap|highlights|in 30|countdown|today|report|daily|best|top \d+|plays of)\b")
+
+
+def is_event(p):
+    """True for a game/match/draw (not a studio show) - used for the red ball."""
+    if STUDIO_RE.search(p["title"]):
+        return False
+    return bool(MATCHUP_RE.search(p["sub"] or "") or EVENT_WORDS_RE.search(f'{p["title"]} {p["sub"]}'))
 # TV Passport flags studio shows as live too (SportsCenter, Get Up, MLB Tonight ...). Live sport
 # with one of these categories is not an event, so it doesn't get "LIVE:".
 NOT_EVENT_CATEGORIES = {"talk show", "news", "anthology", "magazine", "newsmagazine",
@@ -310,7 +327,8 @@ def write(path, channels, guide):
             low = {c.lower() for c in p["cats"]}
             sport = any(c.startswith("sports") for c in low)
             live = p["live"] and sport and not (low & NOT_EVENT_CATEGORIES)
-            title = (LIVE_PREFIX + p["title"]) if live else p["title"]
+            prefix = RED_BALL_PREFIX if (cid in RED_BALL_CHANNELS and is_event(p)) else LIVE_PREFIX
+            title = (prefix + p["title"]) if live else p["title"]
             cats = p["cats"] + (["Live"] if live else [])
             out = [f'  <programme start="{xmltv_time(p["start"])}" stop="{xmltv_time(p["stop"])}" '
                    f'channel={quoteattr(cid)}>',
