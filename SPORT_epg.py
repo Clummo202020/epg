@@ -2726,11 +2726,17 @@ def fetch_sky(days, debug=False):
 
 
 # Sky title prefixes -> competition names (UHD channels' secondary titles). Unknown prefixes are shown as given.
-SKY_COMP_NAMES = {"PL": "Premier League", "EPL": "Premier League", "EFL CUP": "Carabao Cup", "EFL": "EFL",
+SKY_COMP_NAMES = {"PL": "Premier League", "EPL": "Premier League", "EFL CUP": "Carabao Cup", "EFL": "Football League",
                   "SPFL": "Scottish Premiership", "SPFL CUP": "Premier Sports Cup", "WSL": "Women's Super League",
-                  "F1": "Formula 1", "PREM": "Gallagher PREM", "NFL": "NFL", "NBA": "NBA", "NHL": "NHL",
+                  "F1": "Formula 1", "PREM": "Gallagher Premiership", "NFL": "NFL", "NBA": "NBA", "NHL": "NHL",
                   "MLB": "MLB", "IPL": "Indian Premier League", "WPL": "Women's Premier League",
-                  "SNF": "Premier League", "MNF": "Premier League"}   # Sky's Saturday/Monday Night Football
+                  "SNF": "Premier League", "MNF": "Premier League",
+                  "UCL": "Champions League", "UEFA CHAMPIONS LEAGUE": "Champions League", "CHAMPIONS LEAGUE": "Champions League",
+                  "UEL": "Europa League", "UEFA EUROPA LEAGUE": "Europa League", "EUROPA LEAGUE": "Europa League",
+                  "UECL": "Conference League", "UEFA CONFERENCE LEAGUE": "Conference League",
+                  "UEFA EUROPA CONFERENCE LEAGUE": "Conference League", "EUROPA CONFERENCE LEAGUE": "Conference League",
+                  "CONFERENCE LEAGUE": "Conference League", "UEFA CONF LEAGUE": "Conference League",
+                  "CONF LEAGUE": "Conference League"}   # (SNF/MNF = Sky's Saturday/Monday Night Football)
 SPORT_WORD_END = re.compile(r"^(.{3,}?)\s+(golf|tennis|cricket|darts|snooker|rugby|boxing|racing|athletics|"
                             r"netball|football|motorsport)$", re.I)
 
