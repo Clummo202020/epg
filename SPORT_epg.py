@@ -3475,8 +3475,11 @@ CARABAO_ROUNDS = [
     ("2027-03-20", "Final"),
     ("2027-03-28", None),            # season over
 ]
-CARABAO_RE = re.compile(r"(?i)\b(?:EFL\s+)?Carabao\s+Cup\b(?:\s+\d{4}\s*[-/]\s*\d{2,4})?"
-                        r"(?!\s*[-:,]?\s*(?:preliminary|\d+(?:st|nd|rd|th)\s+round|quarter|semi|final))")
+# Only Cyta's form - "EFL" in front and/or a season after ("EFL Carabao Cup 2026-27"); others such as
+# beIN's "Carabao Cup Classic"/"Mini"/"Highlights" or Diema's "Carabao Cup Round 4" are left alone
+# (narrowed 28 Oct 2026 after the first run).
+CARABAO_RE = re.compile(r"(?i)\bEFL\s+Carabao\s+Cup\b(?:\s+\d{4}\s*[-/]\s*\d{2,4})?"
+                        r"|\bCarabao\s+Cup\s+\d{4}\s*[-/]\s*\d{2,4}")
 
 
 def carabao_round(day):
@@ -3791,7 +3794,7 @@ def us_start(title, start):
 # below - if one stops working its log line shows 0 games; that competition just keeps "Coverage from".
 RUGBY_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/rugby/{league}/scoreboard?dates={ymd}"
 RUGBY_LEAGUES = {
-    "267979": "Gallagher PREM",
+    "267979": "Gallagher Premiership",
     "270557": "United Rugby Championship",
     "270559": "Top 14",
     "271937": "Investec Champions Cup",
@@ -3802,6 +3805,52 @@ RUGBY_LEAGUES = {
     "242041": "Super Rugby Pacific",
 }
 _RUGBY_COMP = {}            # title -> competition found by rugby_start (for the secondary title)
+
+# Rugby round (28 Oct 2026): ESPN gives none, so it is read from other listings in the same run -
+# Sky Sport NZ writes "... Round 5 of the Gallagher Premiership between the Bristol Bears and Leicester
+# Tigers at Ashton Gate ...". collect_rugby_rounds() gathers (team, team, round) from all the run's
+# programmes; rugby_start() uses the entry whose two teams match the ESPN match.
+RUGBY_ROUND_RE = re.compile(
+    r"\bRound (\d{1,2}) of (?:the )?[A-Z][\w' ]{2,40}? between (?:the )?(.{3,40}?) and (?:the )?(.{3,40}?)"
+    r"(?: at |[.,]|$)")
+_RUGBY_ROUNDS = []          # [(team a, team b, "Round 5")]
+
+
+def collect_rugby_rounds(records):
+    seen = set()
+    for rec in records:
+        for ev in rec.get("events") or []:
+            for text in (ev.get("desc"), ev.get("sub"), ev.get("title")):
+                for m in RUGBY_ROUND_RE.finditer(text or ""):
+                    key = (m.group(2).strip(), m.group(3).strip(), f"Round {int(m.group(1))}")
+                    if key not in seen:
+                        seen.add(key)
+                        _RUGBY_ROUNDS.append(key)
+    if _RUGBY_ROUNDS:
+        print(f"  Rugby rounds from other listings: {len(_RUGBY_ROUNDS)} matches")
+
+
+def rugby_round_for(names_a, names_b):
+    """'Round N' for the ESPN match with these two teams' names, from the other listings
+    ("" when none - or when the listings disagree, e.g. a pairing played in two rounds)."""
+    found = {rnd for ta, tb, rnd in _RUGBY_ROUNDS
+             if (_side_hits(ta, names_a) and _side_hits(tb, names_b)) or
+                (_side_hits(ta, names_b) and _side_hits(tb, names_a))}
+    return found.pop() if len(found) == 1 else ""
+
+
+def rugby_round_same_day(events, when):
+    """Round of the competition's other matches the same day (Saracens v Newcastle isn't on Sky NZ,
+    but Bath v Sale that afternoon is Round 5) - "" unless they all agree."""
+    found = set()
+    for e in events:
+        w = _parse_iso(e.get("date"))
+        names = _competitor_names(e)
+        if w and abs(w - when) <= timedelta(hours=14) and len(names) >= 2:
+            r = rugby_round_for(names[0], names[1])
+            if r:
+                found.add(r)
+    return found.pop() if len(found) == 1 else ""
 
 
 def _rugby_round(data, ev):
@@ -3836,7 +3885,8 @@ def rugby_start(title, start):
                 if len(names) < 2 or not ((_side_hits(a, names[0]) and _side_hits(b, names[1])) or
                                           (_side_hits(a, names[1]) and _side_hits(b, names[0]))):
                     continue
-                rnd = _rugby_round(data, e)
+                rnd = (_rugby_round(data, e) or rugby_round_for(names[0], names[1])
+                       or rugby_round_same_day(events, when))
                 _RUGBY_COMP[title] = f"{label} {rnd}".strip()
                 uk = when.astimezone(LONDON)
                 _log_start(f"Rugby start: {title} -> {uk:%a %d %b %H:%M} UK ({_RUGBY_COMP[title]})")
@@ -3935,6 +3985,7 @@ def build_xmltv(records, suffix, minutes):
                            "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), Sky TV guide (UK/IE), Cyta (CY), epgshare01.online (TR/LV/HK/ID/MENA/FR/IT/SG/MY/AU/BR/UK/IE/NZ/US/CA), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     count, listed = 0, []
+    collect_rugby_rounds(records)                  # rugby rounds named in other listings
     for rec in records:
         cid, name = f"{rec['id']}{suffix}", rec["name"]
         listed.append((cid, name))
