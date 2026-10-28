@@ -2859,6 +2859,7 @@ EPGSHARE = {   # group -> file, id prefix, place, time zone, English?, {id part:
                "SoccerChannel": ("Soccer Channel", ["Soccer.Channel.HD.id", "Soccer.Channel.id"]),
            }},
     "mena": {"file": "BEIN1", "prefix": "MENA", "place": "Qatar", "tz": "Asia/Qatar", "english": True,
+             "calibrate": True,      # its times were 2 h late (28 Oct 2026) - see calibrate_times()
              "channels": {
                  **{f"beINSPORTS{n}": (f"beIN SPORTS {n} MENA", [f"beIN_SPORTS{n}_DIGITAL_Mono_EN.bein",
                                                                 f"beIN_SPORTS{n}_DIGITAL_Mono_AR.bein"])
@@ -3079,7 +3080,68 @@ def fetch_epgshare(group, days, debug=False):
                   + ("" if any(a in seen_ids for a in alts) else " (channel not in the file)"))
         if evs:
             out[part] = [evs[k] for k in sorted(evs)]
+    if cfg.get("calibrate") and out:
+        calibrate_times(cfg, out)
     return out
+
+
+# Time check against the football guide (28 Oct 2026). epgshare01's beIN MENA file (BEIN1) had every
+# programme 2 h late: Carabao Cup ties kicking off 19:45 UK were listed from 21:35, Saturday's 15:00
+# Premier League games from 16:50 (beIN's coverage starts 10 min before kick-off) - probably Qatar
+# clock times written with a European offset. Rather than a fixed correction (which would break if
+# epgshare01 fixes it, or the error changes with the clocks), each run compares the group's football
+# matches with the real kick-offs: if most of them line up only after moving by whole hours, the whole
+# group is moved by that much. Log: "Time check: ... corrected" / "times OK". Groups with
+# "calibrate": True in EPGSHARE are checked.
+CALIBRATE_MIN_MATCHES = 3
+
+
+def _fixture_kickoffs(title):
+    """Kick-offs (UTC) of every football-guide match with the same two teams as `title`."""
+    t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", title or "")
+    t = re.sub(r"^[^:]{2,30}:\s*", "", t)
+    sides = re.split(r"\s+(?:v|vs\.?)\s+", t, maxsplit=1)
+    if len(sides) != 2:
+        sides = re.split(r"\s+(?:x|lwn|[-–])\s+", t, maxsplit=1)
+    if len(sides) != 2:
+        return []
+    sides[1] = re.split(r"[,(]", sides[1])[0]
+    a, b = _team_words(sides[0]), _team_words(sides[1])
+    return [ko for ko, h, w, _ in load_kickoffs() if (a & h and b & w) or (a & w and b & h)]
+
+
+def calibrate_times(cfg, out):
+    """Move every programme of one epgshare group by whole hours when its football matches only
+    line up with the real kick-offs after that move (see above). Changes `out` in place."""
+    cands = []                                         # (programme start, [real kick-offs])
+    for evs in out.values():
+        for ev in evs:
+            kos = _fixture_kickoffs(ev["title"])
+            if kos:
+                cands.append((ev["start"], kos))
+    if not cands:
+        print(f"  Time check ({cfg['place']}): no football matches to compare - times left as they are")
+        return
+
+    def hits(hours):
+        """Programmes that start 0-45 min before (or up to 5 min after) a real kick-off once
+        moved by `hours`."""
+        d = timedelta(hours=hours)
+        return sum(1 for st, kos in cands
+                   if any(timedelta(minutes=-5) <= ko - (st - d) <= timedelta(minutes=45) for ko in kos))
+
+    score = {h: hits(h) for h in range(-12, 13)}
+    best = max(score, key=lambda h: (score[h], -abs(h)))
+    if best == 0 or score[best] < CALIBRATE_MIN_MATCHES or score[best] <= 2 * score[0]:
+        print(f"  Time check ({cfg['place']}): times OK ({score[0]} live match(es) start at kick-off)")
+        return
+    d = timedelta(hours=best)
+    for evs in out.values():
+        for ev in evs:
+            ev["start"] -= d
+            ev["stop"] -= d
+    print(f"  Time check ({cfg['place']}): source times were {abs(best)} h {'late' if best > 0 else 'early'} "
+          f"({score[best]} match(es) line up after the move, {score[0]} before) - corrected")
 
 
 # --------------------------------------------------------------------------
@@ -3407,6 +3469,11 @@ OFF_AIR_RE = re.compile(r"(?i)^\s*(end of transmission|off[- ]?air|close ?down|s
 # only counts as live when its title is a match ("Sunderland vs Leeds United (MW08) - ...")
 # and not highlights or a classic match. IDs starting with these:
 MATCH_ONLY_LIVE = ("SG.HubPremier",)
+# Channels whose source never marks anything live (beIN MENA, 28 Oct 2026): there a football match
+# is LIVE when it starts 0-45 min before the real kick-off in the football guide (and runs at least
+# 90 min); its secondary title becomes the football guide's competition ("Carabao Cup 4th Round"
+# instead of beIN's "Round 4"). IDs starting with these:
+KICKOFF_LIVE = ("MENA.",)
 MATCH_TITLE_RE = re.compile(r"\S\s+vs?\.?\s+\S", re.I)
 
 
@@ -3538,6 +3605,7 @@ def uk_event(title):
 FOOTBALL_GUIDE = "football_epg.xml"                 # in the repo (built by football_epg.py)
 FOOTBALL_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/football_epg.xml"
 _KICKOFFS = None
+_KICKOFF_COMP = []          # competition of each _KICKOFFS entry ("Carabao Cup 4th Round"), same order
 TEAM_ALIASES = [(r"\bman\b", "manchester"), (r"\butd\b", "united"), (r"\bspurs\b", "tottenham"),
                 (r"\bc\.?\s*palace\b", "crystal palace"), (r"\bwest brom\b", "west bromwich"),
                 (r"\bwolves\b", "wolverhampton"), (r"\bforest\b", "nottingham forest"),
@@ -3577,8 +3645,8 @@ def load_kickoffs():
         return _KICKOFFS
     seen = set()
     for m in re.finditer(r'<programme start="(\d{14}) ([+-]\d{4})"[^>]*>\s*<title[^>]*>🔴 LIVE: ([^<]*)</title>'
-                         r'(?:\s*<sub-title[^>]*>[^<]*</sub-title>)?\s*<desc[^>]*>([^<]*)', text):
-        ko = re.search(r"Kick-off: (\d{1,2}):(\d{2})", m.group(4))
+                         r'(?:\s*<sub-title[^>]*>([^<]*)</sub-title>)?\s*<desc[^>]*>([^<]*)', text):
+        ko = re.search(r"Kick-off: (\d{1,2}):(\d{2})", m.group(5))
         sides = re.split(r"\s+(?:v|vs\.?)\s+", html.unescape(m.group(3)), maxsplit=1)
         if not ko or len(sides) != 2:
             continue
@@ -3590,30 +3658,38 @@ def load_kickoffs():
         if key in seen:
             continue
         seen.add(key)
-        rest = html.unescape(m.group(4)).split(". ", 1)[1] if ". " in m.group(4) else ""
+        rest = html.unescape(m.group(5)).split(". ", 1)[1] if ". " in m.group(5) else ""
         _KICKOFFS.append((when.astimezone(timezone.utc), _team_words(sides[0]), _team_words(sides[1]),
                           rest.strip()))
+        _KICKOFF_COMP.append(html.unescape(m.group(4) or "").strip())
     print(f"  Football guide: {len(_KICKOFFS)} kick-off times for the 🔴 events")
     return _KICKOFFS
 
 
-def kickoff_info(title, start):
-    """"Anfield, Liverpool. Kick-off: 20:00." for a football match in the football guide whose
-    kick-off is within 3 h of the programme start, else ""."""
+def find_fixture(title, start, before=timedelta(minutes=30), after=timedelta(hours=3)):
+    """The football guide's match for a programme titled "A v B" (also vs / x / lwn / -) whose
+    kick-off is between start - before and start + after: (kick-off UTC, "Anfield, Liverpool.
+    Kick-off: 20:00.", competition) - or None."""
     t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", title or "")
     t = re.sub(r"^[^:]{2,30}:\s*", "", t)                         # "Carabao Cup: Liverpool v Chelsea"
     sides = re.split(r"\s+(?:v|vs\.?)\s+", t, maxsplit=1)
     if len(sides) != 2:                                          # "Udinese x Roma", "Bavaria - Magdeburg"
         sides = re.split(r"\s+(?:x|lwn|[-–])\s+", t, maxsplit=1)
     if len(sides) != 2:
-        return ""
+        return None
     sides[1] = re.split(r"[,(]", sides[1])[0]                    # "..., 10th matchday"
     a, b = _team_words(sides[0]), _team_words(sides[1])
-    for ko, h, w, rest in load_kickoffs():
-        if start - timedelta(minutes=30) <= ko <= start + timedelta(hours=3) and \
-                ((a & h and b & w) or (a & w and b & h)):
-            return rest
-    return ""
+    for i, (ko, h, w, rest) in enumerate(load_kickoffs()):
+        if start - before <= ko <= start + after and ((a & h and b & w) or (a & w and b & h)):
+            return ko, rest, (_KICKOFF_COMP[i] if i < len(_KICKOFF_COMP) else "")
+    return None
+
+
+def kickoff_info(title, start):
+    """"Anfield, Liverpool. Kick-off: 20:00." for a football match in the football guide whose
+    kick-off is within 3 h of the programme start, else ""."""
+    found = find_fixture(title, start)
+    return found[1] if found else ""
 
 
 # Real start times for 🔴 events other than football (28 Oct 2026). Sky's programme starts with the
@@ -4137,6 +4213,13 @@ def build_xmltv(records, suffix, minutes):
                 title, sub = nz_teams_first(title, sub)         # teams in the title
             sub = carabao_name(sub, title, ev["start"])          # "Carabao Cup 4th Round"
             about = carabao_name(about, title, ev["start"])
+            fixture = None
+            if cid.startswith(KICKOFF_LIVE) and stop - start >= timedelta(minutes=90):
+                fixture = find_fixture(title, ev["start"], timedelta(minutes=5), timedelta(minutes=45))
+                if fixture and fixture[2]:
+                    if about.strip().rstrip(".") == (sub or "").strip().rstrip("."):
+                        about = ""                              # the description only repeated it
+                    sub = fixture[2]                            # "Round 4" -> "Carabao Cup 4th Round"
             about = about + ("" if about[-1:] in ".!?…" else ".") + " " if about else ""
             lead = (sub if sub[-1:] in ".!?…" else sub + ".") + " " if sub and not ev.get("no_lead") else ""
             desc = dedupe_sentences(re.sub(r"\s+", " ",
@@ -4149,7 +4232,8 @@ def build_xmltv(records, suffix, minutes):
                                   f"({loc:%H:%M} {rec['place']}).", False)
                     count += 1
             is_live = (ev["live"] or kickoff_now(f"{sub or ''} {desc}", loc, uk)
-                       or desc_says_live(desc))                # description says "live"
+                       or desc_says_live(desc)                 # description says "live"
+                       or fixture is not None)                 # starts at a real kick-off (KICKOFF_LIVE)
             if cid.startswith(tuple(SKY_UHD_EVENT)):          # Sky Sports UHD 1/2: all but filler is live
                 is_live = bool(ev.get("uhd_live", not UHD_FILLER.match(title or "")))
             if ev.get("never_live"):                           # Astro placeholders / "Coming up"
