@@ -1805,13 +1805,48 @@ def ss_name(raw):
     return "SuperSport " + " ".join(words) if words else raw
 
 
+# DStv's guide sometimes answers "404 Not Found" for a day it has (29 Oct 2026: 5 of 7 South
+# Africa days in one run). Days that fail are asked again after the others, in DSTV_RETRY_WAITS
+# more rounds (seconds to wait first), with a cache-busting extra so a stale CDN answer isn't
+# reused. Days still missing are listed in DSTV_MISSING (DStv country -> [(start, end) UTC]) and
+# filled from the previous guide after the build (fill_missing_days).
+DSTV_RETRY_WAITS = (30, 90)
+DSTV_MISSING = {}
+
+
 def fetch_dstv(country, extra, zone, days, lo, hi, debug=False):
     """{tidy channel name: [{start, stop, title, sub, live}]} for DStv channel numbers lo..hi"""
     tz, events, names = ZoneInfo(zone), {}, {}
+    pages, todo = {}, list(days)
+    for rnd in range(len(DSTV_RETRY_WAITS) + 1):
+        if rnd:
+            print(f"  DStv {country}: {len(todo)} day(s) failed - trying again in {DSTV_RETRY_WAITS[rnd - 1]} s")
+            time.sleep(DSTV_RETRY_WAITS[rnd - 1])
+        failed = []
+        for day in todo:
+            url = DSTV_GUIDE.format(day=day, extra=extra, country=country)
+            if rnd:
+                url += f"&_={int(time.time())}"
+            data = get_json_url(url, DSTV_HEADERS, quiet=bool(rnd))
+            chans = data.get("Channels") if isinstance(data, dict) else None
+            if isinstance(chans, list) and chans:
+                pages[day] = chans
+                if rnd:
+                    print(f"  DStv {country} {day}: OK on retry")
+            else:
+                failed.append(day)
+        todo = failed
+        if not todo:
+            break
+    if todo:
+        print(f"  WARNING: DStv {country}: no guide for {', '.join(str(d) for d in todo)} - "
+              f"those days are kept from the previous guide")
+        DSTV_MISSING[country] = [
+            (datetime(d.year, d.month, d.day, tzinfo=tz).astimezone(timezone.utc),
+             (datetime(d.year, d.month, d.day, tzinfo=tz) + timedelta(days=1)).astimezone(timezone.utc))
+            for d in todo]
     for day in days:
-        data = get_json_url(DSTV_GUIDE.format(day=day, extra=extra, country=country), DSTV_HEADERS) or {}
-        chans = data.get("Channels") if isinstance(data, dict) else None
-        chans = chans if isinstance(chans, list) else []
+        chans = pages.get(day, [])
         picked = 0
         for ch in chans:
             num = str(ch.get("Number") or "")
@@ -4401,6 +4436,58 @@ def carry_over(tv, listed, prev_path):
     return kept
 
 
+def fill_missing_days(tv, prev_path):
+    """For sources that lost whole days this run (DSTV_MISSING), add the previous guide's
+    programmes in those days on channels that DO have programmes this run (channels with none
+    are carry_over's job), where they don't overlap this run's programmes. [(id, n)]."""
+    windows = {}
+    for prefix, (country, *_rest) in SS_REGIONS.items():
+        if DSTV_MISSING.get(country):
+            windows[prefix + "."] = DSTV_MISSING[country]
+    if not windows:
+        return []
+    try:
+        if prev_path.endswith(".gz"):
+            with gzip.open(prev_path, "rb") as f:
+                old = ET.parse(f).getroot()
+        else:
+            old = ET.parse(prev_path).getroot()
+    except (OSError, ET.ParseError, EOFError) as err:
+        print(f"  NOTE: previous guide not readable to fill missing days ({err})")
+        return []
+
+    def span(p):
+        return (datetime.strptime(p.get("start"), "%Y%m%d%H%M%S %z"),
+                datetime.strptime(p.get("stop"), "%Y%m%d%H%M%S %z"))
+
+    have = {}
+    for p in tv.iter("programme"):
+        cid = p.get("channel") or ""
+        if any(cid.startswith(w) for w in windows):
+            try:
+                have.setdefault(cid, []).append(span(p))
+            except (TypeError, ValueError):
+                pass
+    now, added = datetime.now(timezone.utc), {}
+    for p in old.iter("programme"):
+        cid = p.get("channel") or ""
+        wins = next((w for pre, w in windows.items() if cid.startswith(pre)), None)
+        if not wins or cid not in have:
+            continue
+        try:
+            a, b = span(p)
+        except (TypeError, ValueError):
+            continue
+        if b <= now or not any(lo <= a < hi for lo, hi in wins):
+            continue
+        if any(a < y and x < b for x, y in have[cid]):
+            continue
+        tv.append(p)
+        have[cid].append((a, b))
+        added[cid] = added.get(cid, 0) + 1
+    return sorted(added.items())
+
+
 def load_last_run():
     try:
         with open(RUN_STATE_FILE, encoding="utf-8") as f:
@@ -4926,6 +5013,11 @@ def main():
                   f"{len(kept)} channel(s), {sum(n for _, _, n in kept)} programmes")
             for cid, name, n in kept:
                 print(f"  kept {cid} ({n} programmes)")
+        filled = fill_missing_days(tv, args.out)      # whole days a source lost (DStv)
+        if filled:
+            count += sum(n for _, n in filled)
+            print(f"Filled missing days from the previous guide: {len(filled)} channel(s), "
+                  f"{sum(n for _, n in filled)} programmes")
     out_path = unique_path(args.out) if args.unique else args.out
     write_xml(tv, out_path)
     if run_no is not None:
