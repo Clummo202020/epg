@@ -328,7 +328,7 @@ ISRAEL = ZoneInfo("Asia/Jerusalem")
 # yes (Israel) guide API (29 Oct 2026, as iptv-org's yes.co.il reader): one request per channel and day.
 # yes channel id -> (id part, name); IDs IL.<part>. Hebrew titles are translated.
 YES_EPG = "https://svc.yes.co.il/api/content/broadcast-schedule/channels/{cid}?date={day.year}-{day.month}-{day.day}"
-YES_CHANNELS = {"PT39": ("Eurosport1", "Eurosport 1 IL"), "CH33": ("Eurosport2", "Eurosport 2 IL")}
+YES_CHANNELS = {}   # 29 Oct 2026: yes refused GitHub (HTTP 403) - were PT39 Eurosport 1 IL, CH33 Eurosport 2 IL
 CHARLTON_PAGE = "https://sport1.maariv.co.il/broadcast-schedule/"
 CHARLTON_NAMES = {"2": "Sport 1", "3": "Sport 2", "4": "Sport 3", "5": "Sport 4", "1": "Sport 6"}
 ATHENS = ZoneInfo("Europe/Athens")
@@ -769,6 +769,20 @@ def _ssl_context():
 
 CTX = _ssl_context()
 HOST_CTX = {}             # host -> SSL context that also trusts intermediates fetched for it
+
+
+def _weak_dh_context():
+    """For old servers whose handshake uses a small DH key (OpenSSL refuses it by default:
+    'DH_KEY_TOO_SMALL'). Certificates are still checked; only the key-size rule is relaxed."""
+    ctx = _ssl_context()
+    try:
+        ctx.set_ciphers("DEFAULT:@SECLEVEL=0")
+    except ssl.SSLError:
+        ctx.set_ciphers("DEFAULT:@SECLEVEL=1")
+    return ctx
+
+
+HOST_CTX["m.tv.sms.cz"] = _weak_dh_context()   # 29 Oct 2026: the run failed with DH_KEY_TOO_SMALL
 
 
 def _ca_issuers(pem):
@@ -1613,7 +1627,8 @@ def fetch_maxtv(days, debug=False):
                     if not title or stop <= start:
                         continue
                     sub = re.sub(r"\s+", " ", str(it.get("episode_name") or "")).strip()
-                    flag = any(v is True for k, v in it.items() if "live" in k.lower())
+                    flag = (any(v is True for k, v in it.items() if "live" in k.lower())
+                            or "live" in str(it.get("airing_type") or "").lower())   # MAXtv field (29 Oct log)
                     rx = r"\b(uživo|uzivo|live)\b|\(u\)|\(už\)"
                     live = flag or bool(re.search(rx, title, re.I) or re.search(rx, sub, re.I))
                     title = re.sub(r"(?i)\s*[-(:,]?\s*(\b(uživo|uzivo|live)\b|\(u\)|\(už\))\s*\)?\s*$", "", title).strip() or title
@@ -3435,7 +3450,12 @@ def fetch_sky(days, debug=False):
         if len(sids) < 2:
             continue                                    # only one feed answered: leave it to the IE id
         pl = lambda x: sum("premier league" in e["title"].lower() for e in per_sid[x].values())
-        irish = max(sids, key=lambda x: (pl(x), len(per_sid[x])))
+        if max(pl(x) for x in sids):
+            irish = max(sids, key=pl)
+        else:                                           # no Premier League on either this run: the 29 Oct run showed
+            irish = SKY_CHANNELS[ie][1][0]              # the first service is the Irish one (1192 for Premier Sports 1)
+            if irish not in sids:
+                continue
         chosen[ie], chosen[uk] = irish, next(x for x in sids if x != irish)
         print(f"  Sky: {SKY_CHANNELS[ie][0]} Irish feed = service {irish} ({pl(irish)} Premier League), "
               f"UK feed = service {chosen[uk]} ({pl(chosen[uk])})")
@@ -5448,7 +5468,7 @@ def main():
         ch1 = fetch_charlton(il_days, args.debug)
         print(f"  {sum(len(v) for v in ch1.values())} broadcasts on {len(ch1)} channel(s)")
     il_yes = {}
-    if not args.no_israel:                             # Eurosport 1-2 Israel from yes (29 Oct 2026)
+    if not args.no_israel and YES_CHANNELS:            # Eurosport 1-2 Israel from yes (29 Oct 2026; empty - 403)
         print("Israel: reading yes TV guide (Eurosport 1-2) ...")
         il_yes = fetch_yes(il_days, args.debug)
     gr = {}
