@@ -54,7 +54,7 @@ LIVE_PREFIX = "LIVE: "
 # shows ("Hockey Central Tonight", "MLB Central", "NHL Now" keep plain "LIVE: "). They are the
 # channels the user's Sportsnet UHD streams are linked to (the HD streams share the IDs).
 RED_BALL_CHANNELS = {"CA.SportsnetOne", "CA.Sportsnet360",
-                     "US.CBSSportsNetwork", "US.CBSSportsGolazo"}     # (29 Oct 2026: CBS Sports channels)
+                     "US.CBSSportsNetwork", "US.CBSSportsGolazo", "CARIB.ESPN", "CARIB.ESPN2"}     # (29 Oct 2026: CBS Sports channels)
 RED_BALL_PREFIX = "🔴 LIVE: "
 # General (non-sports) channels (29 Oct 2026): only live sports EVENTS get a tag there, always the red
 # ball; everything else - studio shows ("Football Night in America", "Big Ten Countdown"), and anything
@@ -101,6 +101,9 @@ CHANNELS = [
     ("US.FS2", "FS2", "fox-sports-2/2114"),
     ("US.FoxDeportes", "Fox Deportes", "fox-deportes/1827"),
     ("US.CBSSportsNetwork", "CBS Sports Network", "cbs-sports-network-usa/3115"),
+    # Caribbean (29 Oct 2026) - TV Passport lists both; live events get the red ball
+    ("CARIB.ESPN", "ESPN Caribbean", "espn-caribbean/8135"),
+    ("CARIB.ESPN2", "ESPN2 Caribbean", "espn2--caribbean/32923"),
     ("US.NFLNetwork", "NFL Network", "nfl-network/3349"),
     ("US.NFLRedZone", "NFL RedZone", "nfl-redzone/6921"),
     ("US.NBATV", "NBA TV", "nba-tv-usa/3116"),

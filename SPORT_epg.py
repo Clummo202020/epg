@@ -152,6 +152,21 @@ HONG KONG - Now TV's public guide (JSON), one request per day for all channels (
   --no-nowtv to leave out. Start and end times are given. epgshare01's HK file is the backup.
   Channels: HK.NowSports1, HK.NowSportsPL1, HK.beINSPORTS1, HK.NBATV ...
 
+AUSTRALIA - Foxtel's TV guide pages (server-built HTML; added 29 Oct 2026), per channel and day:
+    https://www.foxtel.com.au/tv-guide/channel/FOX-CRICKET/FS1/2026/10/29
+  Fox Cricket, Fox League, Fox Sports 503, Fox Footy, Fox Sports 505, 506, 507 (Fox Sports More)
+  Fox Sports News, ESPN and ESPN2. Pages give start times only (each programme ends when the next starts).
+  Live = "Live" in the title or a live marker on the programme. --no-foxtel to leave out;
+  epgshare01's AU file is tried as the backup. Channels: AU.FoxCricket, AU.FoxLeague,
+  AU.FoxSports503, AU.FoxFooty, AU.FoxSports505, AU.FoxSports506, AU.FoxSports507, AU.FoxSportsNews,
+  AU.ESPN, AU.ESPN2.
+
+SINGAPORE - StarHub TV+'s guide API (JSON, no login; added 29 Oct 2026), per channel and day:
+    https://waf-starhub-metadata-api-p001.sh-ifs.com/v3.1/epg/schedules?...&in_channel_id=<id>
+  Hub Sports 1-8, found by name in StarHub's channel list (known ids as fallback). Live =
+  StarHub's schedule_type "live" (or "LIVE" in the title). --no-starhub to leave out;
+  epgshare01's SG file is tried as the backup. Channels: SG.HubSports1 ... SG.HubSports8.
+
 EPGSHARE01 - ready-made XMLTV files from https://epgshare01.online/epgshare01/ (free, no login),
   one file per country, read once per run (gzip):
     https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz   (also LV1, HK1, ID1, BEIN1)
@@ -2581,6 +2596,38 @@ NOW_GUIDE = "https://nowplayer.now.com/tvguide/epglist?{ids}&day={day}"
 NOW_HEADERS = {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json, text/javascript, */*",
                "X-Requested-With": "XMLHttpRequest", "Cookie": "LANG=en",
                "Referer": "https://nowplayer.now.com/tvguide?filterType=G07"}
+FOXTEL_PAGE = "https://www.foxtel.com.au/tv-guide/channel/{site}/{day:%Y/%m/%d}"
+FOXTEL_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                                "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+                  "Accept-Language": "en-AU,en;q=0.9", "Cookie": "AAMC_foxtel_0=REGION|7",
+                  "Referer": "https://www.foxtel.com.au/tv-guide"}
+FOXTEL_CHANNELS = {      # our id part -> (name, Foxtel page path; from iptv-org's Foxtel list)
+    "FoxCricket": ("Fox Cricket", "FOX-CRICKET/FS1"),
+    "FoxLeague": ("Fox League", "FOX-LEAGUE/SP2"),
+    "FoxSports503": ("Fox Sports 503", "FOX-SPORTS-503/FS3"),
+    "FoxFooty": ("Fox Footy", "Fox-Footy/FAF"),
+    "FoxSports505": ("Fox Sports 505", "FOX-SPORTS-505/FSP"),
+    "FoxSports506": ("Fox Sports 506", "FOX-SPORTS-506/SPS"),
+    "FoxSports507": ("Fox Sports 507", "Fox-Sports-More/FSS"),     # Fox Sports More
+    "FoxSportsNews": ("Fox Sports News", "Fox-Sports-News/FSN"),
+    "ESPN": ("ESPN AU", "ESPN/ESP"),
+    "ESPN2": ("ESPN2 AU", "ESPN2/ES2"),
+}
+FOXTEL_LIVE_TITLE = re.compile(r"(?i)^\s*live\s*[:\-]\s*|\s*[\(\[]live[\)\]]\s*$|\s+-\s+live\s*$")
+FOXTEL_LIVE_MARK = re.compile(r"(?i)class=\"[^\"]*\blive\b[^\"]*\"|>\s*live\s*<|data-live=\"(true|1)\"")
+
+STARHUB_API = "https://waf-starhub-metadata-api-p001.sh-ifs.com/v3.1/epg/"
+STARHUB_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                                 "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+                   "Accept": "application/json, */*", "Referer": "https://www.starhubtvplus.com/"}
+STARHUB_NAME_RE = re.compile(r"(?i)^\s*hub\s+sports\s+(\d+)\b")     # "Hub Sports 5 HD" -> 5
+STARHUB_KNOWN = {      # from iptv-org's StarHub list (Oct 2026), used if the channel list fails
+    1: "b5c3d45b-e2c9-462b-bcf1-06a149d68f25", 2: "347fa620-e966-423c-8d46-98469f0fc974",
+    3: "4ff7b357-9338-41a3-b7be-ede530555279", 4: "753b50fe-262e-48da-9b5e-3fd9894ff531",
+    5: "38df8124-1bcd-49b6-abb3-ee230a1f40d2", 6: "cc214bae-ddf2-4c17-84e2-7690fe4e65db",
+    7: "679c2e9d-474d-4d9d-9f94-28e0a6905bc0"}
+STARHUB_LIVE_TITLE = re.compile(r"(?i)^\s*(live\s*[:\-]|\(l\)|\[l\])\s*|\s*\((live|l)\)\s*$")
+
 NOW_CHANNELS = {         # Now TV channel number -> (id part, name); same IDs as epgshare01's HK file
     "611": ("NowSports4K1", "Now Sports 4K 1"), "612": ("NowSports4K2", "Now Sports 4K 2"),
     "613": ("NowSports4K3", "Now Sports 4K 3"),
@@ -2596,6 +2643,108 @@ NOW_CHANNELS = {         # Now TV channel number -> (id part, name); same IDs as
     "668": ("Now668", "Now668"), "674": ("Cricbuzz", "Cricbuzz"), "679": ("PremierSports", "Premier Sports HK"),
     "680": ("NowSportsPlus", "Now Sports Plus"), "683": ("NowGolf2", "Now Golf 2"), "684": ("NowGolf3", "Now Golf 3"),
 }
+
+
+def fetch_foxtel(days, debug=False):
+    """{id part: [{start, stop, title, sub, live, desc}]} for FOXTEL_CHANNELS from Foxtel's pages."""
+    out = {}
+    for part, (name, site) in FOXTEL_CHANNELS.items():
+        rows = {}
+        for day in days:
+            page = fetch(FOXTEL_PAGE.format(site=site, day=day), headers=FOXTEL_HEADERS, quiet=True,
+                         label=f"Foxtel {name} {day}")
+            if not page:
+                continue
+            i = page.find('id="epg-channel-events"')
+            body = page[i:] if i >= 0 else page
+            for m in re.finditer(r"<a\b([^>]*\bdata-scheduled-date=\"(\d{10,13})\"[^>]*)>(.*?)</a>", body, re.S):
+                attrs, stamp, inner = m.group(1), int(m.group(2)), m.group(3)
+                start = datetime.fromtimestamp(stamp / 1000 if stamp > 10**11 else stamp, timezone.utc)
+                d = re.search(r'class="[^"]*epg-event-description[^"]*"[^>]*>(.*)', inner, re.S)
+                d = d.group(1) if d else inner
+                title_html, _, rest = d.partition("<div")
+                title = html.unescape(re.sub(r"<[^>]+>", " ", title_html))
+                title = re.sub(r"\s+", " ", title).strip()
+                subtxt = re.sub(r"<abbr\b.*?</abbr>", " ", rest, flags=re.S)
+                subtxt = html.unescape(re.sub(r"<[^>]+>", " ", subtxt.partition(">")[2] if rest else ""))
+                subtxt = re.sub(r"\s+", " ", subtxt).strip()
+                sub = re.sub(r"\s*\([A-Z0-9+]{1,5}\)\s*$", "", subtxt.split(",")[-1]).strip() if subtxt else ""
+                if not title:
+                    continue
+                live = bool(FOXTEL_LIVE_TITLE.search(title) or FOXTEL_LIVE_TITLE.search(sub)
+                            or FOXTEL_LIVE_MARK.search(attrs) or FOXTEL_LIVE_MARK.search(inner))
+                title = FOXTEL_LIVE_TITLE.sub("", title).strip() or title
+                sub = FOXTEL_LIVE_TITLE.sub("", sub).strip()
+                rows[start] = {"start": start, "title": title, "sub": sub if sub != title else "",
+                               "live": live, "desc": ""}
+        starts = sorted(rows)
+        evs = []
+        for k, a in enumerate(starts):
+            stop = starts[k + 1] if k + 1 < len(starts) else a + timedelta(minutes=60)
+            if stop - a > timedelta(hours=12):          # a gap in the pages, not a 12-hour show
+                stop = a + timedelta(hours=2)
+            evs.append(dict(rows[a], stop=stop))
+        if evs:
+            out[part] = evs
+        if debug or not evs:
+            print(f"  Foxtel {name}: {len(evs)} programmes, {sum(e['live'] for e in evs)} live")
+    return out
+
+
+def fetch_starhub(days, debug=False):
+    """{n: [{start, stop, title, sub, live, desc}]} for Hub Sports n from StarHub TV+."""
+    chans = {}
+    for page in range(1, 20):
+        data = get_json_url(f"{STARHUB_API}channels?locale=en_US&locale_default=en_US&device=1"
+                            f"&limit=50&page={page}", STARHUB_HEADERS, quiet=page > 1)
+        res = (data or {}).get("resources") if isinstance(data, dict) else None
+        for ch in res or []:
+            m = STARHUB_NAME_RE.match(str(ch.get("title") or ""))
+            if m and ch.get("id"):
+                chans.setdefault(int(m.group(1)), ch["id"])
+        pg = (data or {}).get("page") if isinstance(data, dict) else None
+        if not res or not isinstance(pg, dict) or page >= int(pg.get("total") or 0):
+            break
+    if not chans:
+        print("  StarHub channel list not available - using the known Hub Sports ids")
+        chans = dict(STARHUB_KNOWN)
+    if debug:
+        print(f"  StarHub Hub Sports channels: {sorted(chans)}")
+    tz, out = ZoneInfo("Asia/Singapore"), {}
+    for n, sid in sorted(chans.items()):
+        evs = {}
+        for day in days:
+            a = int(datetime(day.year, day.month, day.day, tzinfo=tz).timestamp())
+            for page in range(1, 10):
+                data = get_json_url(f"{STARHUB_API}schedules?locale=en_US&locale_default=en_US&device=1"
+                                    f"&in_channel_id={sid}&gt_end={a}&lt_start={a + 86400}&limit=100&page={page}",
+                                    STARHUB_HEADERS, quiet=True)
+                res = (data or {}).get("resources") if isinstance(data, dict) else None
+                for it in res or []:
+                    try:
+                        start = datetime.fromtimestamp(int(it["start"]), timezone.utc)
+                        stop = datetime.fromtimestamp(int(it["end"]), timezone.utc)
+                    except (KeyError, TypeError, ValueError):
+                        continue
+                    series = re.sub(r"\s+", " ", str(it.get("serie_title") or "")).strip()
+                    ep = re.sub(r"\s+", " ", str(it.get("title") or "")).strip()
+                    title, sub = (series, ep if ep != series else "") if series else (ep, "")
+                    if not title or stop <= start:
+                        continue
+                    live = str(it.get("schedule_type") or "").lower() == "live"
+                    if STARHUB_LIVE_TITLE.search(title):
+                        live, title = True, STARHUB_LIVE_TITLE.sub("", title).strip() or title
+                    evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub, "live": live,
+                                  "desc": re.sub(r"\s+", " ", str(it.get("description") or
+                                                                 it.get("short_description") or "")).strip()}
+                pg = (data or {}).get("page") if isinstance(data, dict) else None
+                if not res or not isinstance(pg, dict) or page >= int(pg.get("total") or 0):
+                    break
+        if evs:
+            out[n] = [evs[k] for k in sorted(evs)]
+        if debug:
+            print(f"  StarHub Hub Sports {n}: {len(evs)} programmes, {sum(e['live'] for e in evs.values())} live")
+    return out
 
 
 def fetch_now(days, ids, debug=False):
@@ -2952,6 +3101,8 @@ EPGSHARE.update({
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} SG", [f"beIN.SPORTS.{n}.(HD).sg"]) for n in range(2, 6)},
                "beINSPORTSRUGBY": ("beIN SPORTS RUGBY SG", ["beIN.SPORTS.RUGBY.HD.sg"]),
                **{f"HubPremier{n}": (f"Hub Premier {n}", [f"Hub.Premier.{n}.sg"]) for n in range(1, 7)},
+               **{f"HubSports{n}": (f"Hub Sports {n}", [f"Hub.Sports.{n}.sg", f"Hub.Sports.{n}.HD.sg"])
+                  for n in range(1, 9)},                   # backup for StarHub (if epgshare has them)
            }},
     "my": {"file": "MY1", "prefix": "MY", "place": "Malaysia", "tz": "Asia/Kuala_Lumpur", "english": True,
            "backup": True, "channels": {
@@ -2972,7 +3123,26 @@ EPGSHARE.update({
            "backup": True, "channels": {
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} AU", [f"beINSports{n}.au"]) for n in range(1, 4)},
                "beINSPORTSXTRA": ("beIN SPORTS XTRA AU", ["beINSportsXtra.au"]),
+               # backups for Foxtel's own guide (29 Oct 2026; ids guessed in epgshare's style)
+               "FoxCricket": ("Fox Cricket", ["FoxCricket.au", "Fox.Cricket.au"]),
+               "FoxLeague": ("Fox League", ["FoxLeague.au", "Fox.League.au"]),
+               "FoxSports503": ("Fox Sports 503", ["FoxSports503.au", "Fox.Sports.503.au"]),
+               "FoxFooty": ("Fox Footy", ["FoxFooty.au", "Fox.Footy.au"]),
+               "FoxSports505": ("Fox Sports 505", ["FoxSports505.au", "Fox.Sports.505.au"]),
+               "FoxSports506": ("Fox Sports 506", ["FoxSports506.au", "Fox.Sports.506.au"]),
+               "FoxSports507": ("Fox Sports 507", ["FoxSportsMore.au", "FoxSports507.au", "Fox.Sports.More.au"]),
+               "FoxSportsNews": ("Fox Sports News", ["FoxSportsNews.au", "Fox.Sports.News.au"]),
+               "ESPN": ("ESPN AU", ["ESPN.au"]),
+               "ESPN2": ("ESPN2 AU", ["ESPN2.au", "ESPN.2.au"]),
            }},
+    # Caribbean (29 Oct 2026): Flow's Rush Sports 1-3 - in epgshare's Jamaica file only (no other
+    # source found); LIVE only where the title or description says so
+    "jamaica": {"file": "JM1", "prefix": "CARIB", "place": "Barbados", "tz": "America/Barbados", "english": True,
+                "channels": {
+                    "RushSports1": ("Rush Sports", ["Rush.Sports.bb", "Rush.Sports.1.bb", "Rush.Sports.jm"]),
+                    "RushSports2": ("Rush Sports 2", ["Rush.Sports.2.bb", "Rush.Sports.2.jm"]),
+                    "RushSports3": ("Rush Sports 3", ["Rush.Sports.3.bb", "Rush.Sports.3.jm"]),
+                }},
     # Brazil: backup for Claro (same IDs, BR.SporTV ...), used only for channels Claro leaves empty
     "brazil": {"file": "BR1", "prefix": "BR", "place": "Brasilia", "tz": "America/Sao_Paulo", "english": False,
                "backup": True, "channels": {
@@ -3547,7 +3717,8 @@ GENERAL_SPORT_RE = re.compile(
 GENERAL_STUDIO_RE = re.compile(
     r"(?i)\b(focus|final score|match of the day|motd|sportscene|special|question of sport|"
     r"sports personality|soccer republic|league sunday|inside|goals|sport(s)? (round-?up|bulletin)|"
-    r"results|scores?|quiz|a league of their own)\b")
+    r"results|scores?|quiz|a league of their own|mornings?|breakfast|countdown|kickoff show|"
+    r"pre-?show|post-?show|wrap|tonight)\b")
 
 
 def general_sport_live(title, sub, desc, flagged):
@@ -4597,6 +4768,8 @@ def main():
                     help="Cyta channels to take: comma-separated entries, each matching when all its "
                          "words are in the channel name (default 'cyta sport')")
     ap.add_argument("--no-nowtv", action="store_true", help="leave out Now TV (Hong Kong)")
+    ap.add_argument("--no-starhub", action="store_true", help="leave out StarHub (Hub Sports, Singapore)")
+    ap.add_argument("--no-foxtel", action="store_true", help="leave out Foxtel (Fox Sports, Australia)")
     ap.add_argument("--no-sky", action="store_true", help="leave out Sky's guide (UK/Ireland; epgshare01 fills in)")
     ap.add_argument("--now-channels", default=",".join(NOW_CHANNELS),
                     help="Now TV channel numbers, comma separated (e.g. 631,638)")
@@ -4779,6 +4952,20 @@ def main():
         print(f"Hong Kong: reading Now TV guide {hk_days[0]} to {hk_days[-1]} ...")
         now_hk = fetch_now(hk_days, args.now_channels, args.debug)
         print(f"  {sum(len(v) for v in now_hk.values())} programmes on {len(now_hk)} channel(s)")
+    fox = {}
+    if not args.no_foxtel:
+        au_days = [datetime.now(ZoneInfo("Australia/Sydney")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+        print(f"Australia: reading Foxtel's TV guide (Fox Sports) {au_days[0]} to {au_days[-1]} ...")
+        fox = fetch_foxtel(au_days, args.debug)
+        print(f"  {sum(len(v) for v in fox.values())} programmes on {len(fox)} channel(s), "
+              f"{sum(e['live'] for v in fox.values() for e in v)} live")
+    hub = {}
+    if not args.no_starhub:
+        sg_days = [datetime.now(ZoneInfo("Asia/Singapore")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+        print(f"Singapore: reading StarHub's TV guide (Hub Sports) {sg_days[0]} to {sg_days[-1]} ...")
+        hub = fetch_starhub(sg_days, args.debug)
+        print(f"  {sum(len(v) for v in hub.values())} programmes on {len(hub)} channel(s), "
+              f"{sum(e['live'] for v in hub.values() for e in v)} live")
     sky = {}
     if not args.no_sky:
         uk_days = [datetime.now(LONDON).date() + timedelta(days=i) for i in range(max(args.days, 1))]
@@ -4808,7 +4995,7 @@ def main():
         print(f"  {sum(len(v) for g in bein.values() for v in g.values())} programmes on "
               f"{sum(len(g) for g in bein.values())} channel(s)")
     if not il and not ch1 and not gr and not nl and not ro and not bg and not arena and not sk and not be \
-            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky and not cy:
+            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky and not cy and not hub and not fox:
         sys.exit("Nothing found - the sites may be unreachable from here, or changed.")
 
     if not args.no_translate:
@@ -4879,6 +5066,12 @@ def main():
     for chname, evs in cy.items():
         records.append({"id": f"CY.{cyta_part(chname)}", "name": chname, "tz": NICOSIA, "place": "Cyprus",
                         "filler": False, "back_to_back": True, "events": evs, "fix_caps": True})
+    for part, evs in fox.items():
+        records.append({"id": f"AU.{part}", "name": FOXTEL_CHANNELS[part][0], "tz": ZoneInfo("Australia/Sydney"),
+                        "place": "Australia", "filler": False, "back_to_back": True, "events": evs})
+    for n, evs in hub.items():
+        records.append({"id": f"SG.HubSports{n}", "name": f"Hub Sports {n}", "tz": ZoneInfo("Asia/Singapore"),
+                        "place": "Singapore", "filler": False, "back_to_back": True, "events": evs})
     for cid, evs in now_hk.items():
         part, chname = NOW_CHANNELS.get(cid, (f"Now{cid}", f"Now TV {cid}"))
         records.append({"id": f"HK.{part}", "name": chname, "tz": ZoneInfo("Asia/Hong_Kong"), "place": "Hong Kong",
