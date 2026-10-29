@@ -187,7 +187,9 @@ SWITZERLAND - Swisscom's public blue TV guide (JSON), one request per channel an
     https://services.sg101.prd.sctv.ch/catalog/tv/channels/list/(ids=483;start=YYYYMMDD0000;end=...;level=normal)
   Channels chosen with --ch-channels (blue TV channel numbers; default: blue Sport 1-2,
   blue Sport (FR), blue Sport Extra, MySports Eins/Un/2-9/EDGE, Swiss Sport TV, SRF zwei,
-  RTS 2, RSI LA 2). The numbered blue Sport Live / MySports Event channels are left out.
+  RTS 2, RSI LA 2, blue Sport 3-4, blue Zoom F - CH.blueZoomF). The other numbered blue Sport Live / MySports Event channels are
+  left out. blue Sport 3/4 (CH.blueSport3/4) = blue TV's "blue Sport 3/4 Live D" pop-up channels
+  (1250, 1440), or the older "Live" numbers (512, 513) if those are empty.
   Start and end times are given. German/French/Italian titles are translated.
   Channels: CH.blueSport1, CH.MySportsEins, CH.SRFzwei ...
 
@@ -473,7 +475,12 @@ CH_CHANNELS = {          # blue TV channel number -> (id part, channel name)
     "1722": ("MySportsEDGE", "MySports EDGE"), "1601": ("SwissSportTV", "Swiss Sport TV"),
     "401": ("SRFzwei", "SRF zwei"), "367": ("RTS2", "RTS 2"), "357": ("RSILA2", "RSI LA 2"),
     "1242": ("ChelseaTV", "Chelsea TV"),        # 29 Oct 2026: only source found (iptv-org) - ID CH.ChelseaTV
+    # blue Sport 3 and 4 (29 Oct 2026): blue TV has no plain "blue Sport 3/4", only live pop-up channels.
+    # "blue Sport 3/4 Live D" (newest numbers) first; if empty, the older "blue Sport 3/4 Live" (CH_FALLBACK).
+    "1250": ("blueSport3", "blue Sport 3"), "1440": ("blueSport4", "blue Sport 4"),
+    "420": ("blueZoomF", "blue Zoom (FR)"),      # 29 Oct 2026: French version (German = 1221 "blue Zoom D")
 }
+CH_FALLBACK = {"1250": ["512"], "1440": ["513"]}     # channel number -> numbers to try if it comes back empty
 TATAPLAY_GUIDE = "https://tm.tapi.videoready.tv/content-detail/pub/api/v2/channels/schedule?date={day:%d-%m-%Y}"
 TATAPLAY_HEADERS = {"User-Agent": IPTV_ORG_EDGE,                      # exactly as iptv-org asks
                     "Accept": "*/*", "Content-Type": "application/json", "locale": "ENG",
@@ -3786,7 +3793,8 @@ MATCH_TITLE_RE = re.compile(r"\S\s+vs?\.?\s+\S", re.I)
 # description names a sport, or Sky flags it live and the description says "live coverage" of a
 # sport. IDs starting with these:
 GENERAL_CHANNELS = ("UK.BBCOne", "UK.BBCTwo", "UK.ITV1", "UK.ITV4", "UK.Channel4", "UK.Channel5",
-                    "IE.RTEOne", "IE.RTE2", "IE.VirginMedia", "US.NBC", "US.USANetwork")
+                    "IE.RTEOne", "IE.RTE2", "IE.VirginMedia", "US.NBC", "US.USANetwork",
+                    "CH.blueZoom")           # blue Zoom F/D (29 Oct 2026): mixed channel, only live sport tagged
 GENERAL_SPORT_RE = re.compile(
     r"(?i)\b(football|soccer|rugby|gaa|gaelic|hurling|camogie|cricket|tennis|golf|snooker|darts|"
     r"racing|grand prix|formula (1|one)|f1|moto ?gp|boxing|ufc|mma|wrestling|nfl|nba|nhl|mlb|"
@@ -4991,6 +4999,14 @@ def main():
         ch_days = [datetime.now(ZURICH).date() + timedelta(days=i) for i in range(max(args.days, 1))]
         print(f"Switzerland: reading blue TV guide {ch_days[0]} to {ch_days[-1]} ...")
         swi = fetch_switzerland(ch_days, args.ch_channels, args.debug)
+        for cid, alts in CH_FALLBACK.items():          # blue Sport 3/4: try the older live channel numbers
+            if cid in [c.strip() for c in args.ch_channels.split(",")] and not swi.get(cid):
+                for alt in alts:
+                    got = fetch_switzerland(ch_days, alt, args.debug).get(alt)
+                    print(f"  {CH_CHANNELS[cid][1]}: channel {cid} empty, channel {alt}: {len(got or [])} programmes")
+                    if got:
+                        swi[cid] = got
+                        break
         print(f"  {sum(len(v) for v in swi.values())} programmes on {len(swi)} channel(s)")
     fra = {}
     if not args.no_france:
