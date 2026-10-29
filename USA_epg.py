@@ -217,10 +217,15 @@ CA_CHANNELS = [
 # Pluto lists only about a day ahead; the twice-daily runs and PlaylistLabs' appending keep it filled.
 PLUTO_GUIDE = "https://raw.githubusercontent.com/matthuisman/i.mjh.nz/master/PlutoTV/us.xml.gz"
 PLUTO_CHANNELS = {"US.CBSSportsGolazo": "63a0e33a45264d000850ed7e"}    # our ID -> Pluto channel id
+# Other free streaming channels from i.mjh.nz guides (29 Oct 2026): our ID -> (guide, channel id ending).
+# Listings only - never LIVE (Billiard TV shows dated replays: "Final: A vs. B from July 10, 2026").
+MJH_PLAIN = {"US.BilliardTV": ("https://raw.githubusercontent.com/matthuisman/i.mjh.nz/master/Plex/gb.xml.gz",
+                               "6334a8e48a7b2a349d903b8c")}
 PLUTO_MATCH_MINUTES = 100
 PLUTO_NOT_LIVE = re.compile(r"(?i)\b(\d+ in \d+|highlights?|replay|re-?airs?|rewind|classic|encore|"
                             r"best of|condensed|extended|recap|review|preview|show)\b")
 CHANNELS.append(("US.CBSSportsGolazo", "CBS Sports Golazo", "pluto"))
+CHANNELS.append(("US.BilliardTV", "Billiard TV", "pluto"))
 
 GUIDES = {"USA_epg.xml.gz": CHANNELS, "CANADA_epg.xml.gz": CA_CHANNELS}
 
@@ -331,6 +336,43 @@ def fetch_pluto():
                 seen.add(key)
         print(f"  Pluto TV {cid}: {len(progs)} programmes, {sum(p['live'] for p in progs)} live match(es)"
               + (f", to {progs[-1]['stop'].astimezone(UK):%a %d %b %H:%M} UK" if progs else ""))
+    return out
+
+
+def fetch_mjh_plain():
+    """{our id: [programmes]} for MJH_PLAIN (never live)."""
+    import xml.etree.ElementTree as XT
+    out, cache = {cid: [] for cid in MJH_PLAIN}, {}
+
+    def when(v):
+        return datetime.strptime(v, "%Y%m%d%H%M%S %z").astimezone(timezone.utc)
+
+    for cid, (url, chan) in MJH_PLAIN.items():
+        if url not in cache:
+            try:
+                req = urllib.request.Request(url, headers={"User-Agent": HEADERS["User-Agent"]})
+                with urllib.request.urlopen(req, timeout=60) as r:
+                    cache[url] = XT.fromstring(gzip.decompress(r.read()))
+            except Exception as e:
+                print(f"  WARNING: {url} not available ({e})")
+                cache[url] = None
+        root = cache[url]
+        if root is None:
+            continue
+        for el in root.iter("programme"):
+            if not (el.get("channel") or "").endswith(chan):
+                continue
+            try:
+                start, stop = when(el.get("start")), when(el.get("stop"))
+            except (TypeError, ValueError):
+                continue
+            out[cid].append({"start": start, "stop": stop, "title": (el.findtext("title") or "").strip(),
+                             "sub": (el.findtext("sub-title") or "").strip(),
+                             "desc": (el.findtext("desc") or "").strip(),
+                             "cats": [c.text.strip() for c in el.findall("category") if c.text and c.text.strip()]
+                                     or ["Sports"], "year": "", "rating": "", "live": False, "new": False})
+        out[cid].sort(key=lambda p: p["start"])
+        print(f"  {cid}: {len(out[cid])} programmes (i.mjh.nz)")
     return out
 
 
@@ -465,6 +507,7 @@ def main():
                 print(f"  {i}/{len(jobs)} pages")
 
     raw.update(fetch_pluto())                       # CBS Sports Golazo (Pluto TV)
+    raw.update(fetch_mjh_plain())                   # Billiard TV (Plex)
     guide = {cid: tidy(p, first, last) for cid, p in raw.items()}
     ends = {cid: v[-1]["stop"] for cid, v in guide.items() if v}
     if ends:

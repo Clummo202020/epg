@@ -129,7 +129,7 @@ UK / IRELAND - Sky's public TV guide (behind sky.com's TV guide; JSON, no login 
     https://awk.epgsky.com/hawk/linear/schedule/20261021/4002,1120   (header X-SkyOTT-Territory: GB)
     https://atlantis.epgsky.com/as/schedule/20261021/7201            (4K channels)
   Sky Sports (Main Event, Premier League, Football, ... , Main Event 4K, F1 4K), TNT Sports 1-10,
-  Ultimate, Box Office 1-2, Premier Sports 1-2, RTÉ One, RTÉ2, Virgin Media One-Four, BBC One,
+  Ultimate, Box Office 1-2, Premier Sports 1-2, Racing TV, MUTV, LFCTV, RTÉ One, RTÉ2, Virgin Media One-Four, BBC One,
   BBC Two, ITV1, ITV4, Channel 4, Channel 5 (general channels: only live sport events are LIVE - see GENERAL_CHANNELS).
   --no-sky to leave out; epgshare01's UK1/IE1 files are the backup (and give Sky Sports NFL;
   none for RTÉ, Virgin Media, BBC or ITV). Channels: UK.SkySportsMainEvent, UK.TNTSports1,
@@ -450,6 +450,7 @@ CH_CHANNELS = {          # blue TV channel number -> (id part, channel name)
     **{str(1542 + i): (f"MySports{i}", f"MySports {i}") for i in range(2, 10)},
     "1722": ("MySportsEDGE", "MySports EDGE"), "1601": ("SwissSportTV", "Swiss Sport TV"),
     "401": ("SRFzwei", "SRF zwei"), "367": ("RTS2", "RTS 2"), "357": ("RSILA2", "RSI LA 2"),
+    "1242": ("ChelseaTV", "Chelsea TV"),        # 29 Oct 2026: only source found (iptv-org) - ID CH.ChelseaTV
 }
 TATAPLAY_GUIDE = "https://tm.tapi.videoready.tv/content-detail/pub/api/v2/channels/schedule?date={day:%d-%m-%Y}"
 TATAPLAY_HEADERS = {"User-Agent": IPTV_ORG_EDGE,                      # exactly as iptv-org asks
@@ -2846,6 +2847,10 @@ SKY_CHANNELS = {   # our ID -> (name, [Sky service ids, best first], 4K?); epgsh
     "UK.ITV4": ("ITV4", ["6534"], False),                   # ITV4 HD
     "UK.Channel4": ("Channel 4", ["4075", "1202"], False),  # Channel 4 HD (UK, two Sky feeds)
     "UK.Channel5": ("Channel 5", ["4058"], False),          # 5 HD
+    # Club/racing channels (added 29 Oct 2026; sids from iptv-org's sky.com list)
+    "UK.RacingTV": ("Racing TV", ["5272"], False),          # Racing TV HD
+    "UK.MUTV": ("MUTV", ["1003"], False),                   # MUTV HD
+    "UK.LFCTV": ("LFCTV", ["3845"], False),                 # LFCTV HD
 }
 SKY_LIVE = re.compile(r"^\s*live\b|\(\s*live\s*\)|\blive\s*$", re.I)
 # Sky Sports UHD 1 / UHD 2 (added 28 Oct 2026): part-time 4K channels showing selected live events
@@ -3167,6 +3172,9 @@ EPGSHARE.update({
     "uk": {"file": "UK1", "prefix": "UK", "place": "UK", "tz": "Europe/London", "english": True,
            "backup": True, "channels": {
                "SkySportsMainEvent": ("Sky Sports Main Event", ["SkySpMainEvHD.uk"]),
+               "RacingTV": ("Racing TV", ["Racing.TV.HD.uk", "Racing.TV.uk"]),   # backups (29 Oct 2026)
+               "MUTV": ("MUTV", ["MUTV.HD.uk"]),
+               "LFCTV": ("LFCTV", ["LFCTV.HD.uk"]),
                "SkySportsPremierLeague": ("Sky Sports Premier League", ["SkySp.PL.HD.uk"]),
                "SkySportsFootball": ("Sky Sports Football", ["SkySp.Fball.HD.uk", "Sky.Sports.Football.HD.uk"]),
                "SkySportsCricket": ("Sky Sports Cricket", ["SkySpCricket.HD.uk"]),
