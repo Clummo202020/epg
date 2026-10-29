@@ -337,6 +337,11 @@ DUMMY_CHANNELS = [
      "Live tennis from around the world."),
     ("boxing.live", "Boxing", "Stream is live at event time only.",
      "Live boxing from around the world."),
+    # Azam Sports 1-4 (Tanzania, 29 Oct 2026): no programme guide anywhere, so plain blocks with a description
+    *[(f"azamsports{n}.tz", f"Azam Sports {n}", "Stream is live at event time only.",
+       f"Azam Sports {n} from Azam TV, Tanzania. Tanzanian and East African football, "
+       f"other local sport and, at times, live English football. No programme guide is available.")
+      for n in range(1, 5)],
 ]
 DUMMY_HOURS = 2          # block length
 DUMMY_DAYS = 10          # how far ahead the blocks run

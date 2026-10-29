@@ -60,7 +60,7 @@ RED_BALL_PREFIX = "🔴 LIVE: "
 # General (non-sports) channels (29 Oct 2026): only live sports EVENTS get a tag there, always the red
 # ball; everything else - studio shows ("Football Night in America", "Big Ten Countdown"), and anything
 # TV Passport files under Sports that isn't sport ("Saturday Night Live") - is never LIVE.
-GENERAL_CHANNELS = {"US.NBC", "US.USANetwork", "US.CBS", "US.FOX", "US.ABC"}
+GENERAL_CHANNELS = {"US.NBC", "US.USANetwork", "US.CBS", "US.FOX", "US.ABC", "US.NBCChicago"}
 MATCHUP_RE = re.compile(r"\S\s+(at|vs?\.?|v)\s+\S", re.I)          # "Buffalo Sabres at San Jose Sharks"
 EVENT_WORDS_RE = re.compile(r"(?i)\b(draw \d+|game \d+|round \d+|(semi|quarter)-?finals?|finals?|"
                             r"grand prix|grand slam|qualifying|race \d*|championships?|cup|tournament)\b")
@@ -87,6 +87,7 @@ CHANNELS = [
     ("US.CBS", "CBS (WCBS New York)", "cbs-wcbs-new-york-ny/1766"),
     ("US.ABC", "ABC (WABC New York)", "abc-wabc-new-york-ny/1769"),
     ("US.FOX", "FOX (WNYW New York)", "fox-wnyw-new-york-ny/1638"),
+    ("US.NBCChicago", "NBC (WMAQ Chicago)", "nbc-wmaq-chicago-il-hd/6492"),      # 29 Oct 2026 (Central time feed)
     ("US.CW", "CW (WPIX New York)", "wpix-new-york-superstation/63"),
     ("US.PBS", "PBS", "pbs--network-hd--eastern/4259"),
     # Sports
@@ -100,6 +101,7 @@ CHANNELS = [
     ("US.BigTenNetwork", "Big Ten Network", "big-ten-network/4499"),
     ("US.FS1", "FS1", "fox-sports-1/668"),
     ("US.FS2", "FS2", "fox-sports-2/2114"),
+    ("US.FoxSoccerPlus", "FOX Soccer Plus", "fox-soccer-plus/7538"),            # 29 Oct 2026 (HD page: fox-soccer-plus-hd/11551)
     ("US.FoxDeportes", "Fox Deportes", "fox-deportes/1827"),
     ("US.CBSSportsNetwork", "CBS Sports Network", "cbs-sports-network-usa/3115"),
     # Caribbean (29 Oct 2026) - TV Passport lists both; live events get the red ball
