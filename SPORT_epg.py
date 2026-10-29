@@ -439,6 +439,12 @@ SE_CHANNELS = {          # Allente channel number -> (id part, channel name)
     "50053": ("TV4Hockey", "TV4 Hockey"), "50059": ("TV4Motor", "TV4 Motor"),
     "20063": ("TV4Tennis", "TV4 Tennis"),
     "20061": ("Eurosport1", "Eurosport 1 SE"), "50055": ("Eurosport2", "Eurosport 2 SE"),
+    # 29 Oct 2026: found by NAME in Allente's Swedish guide ("re:" = pattern tried against the channel's text;
+    # their numbers aren't known - see FI_CHANNELS)
+    r"re:\bATG\s*Live": ("ATGLive", "ATG Live"),
+    r"re:Motorvision": ("MotorvisionTV", "Motorvision TV"),
+    **{rf"re:TV4\s*Sport\s*Live\s*{n}\b": (f"TV4SportLive{n}", f"TV4 Sport Live {n}") for n in range(1, 5)},
+    r"re:V\s*Sport\s*(1\s*Live|Live\s*1)\b": ("VSport1Live", "V Sport 1 Live"),
 }
 NO_CHANNELS = {
     "10099": ("TV2Sport1", "TV 2 Sport 1"), "10021": ("TV2Sport2", "TV 2 Sport 2"),
@@ -446,6 +452,8 @@ NO_CHANNELS = {
     "50047": ("VSport1", "V Sport 1 NO"), "50046": ("VSportPlus", "V Sport+ NO"),
     "50081": ("VSport3", "V Sport 3 NO"), "10106": ("VSportPremierLeague", "V Sport Premier League"),
     "10022": ("EurosportNorge", "Eurosport Norge"), "10091": ("Eurosport1", "Eurosport 1 NO"),
+    # 29 Oct 2026: found by NAME in Allente's Norwegian guide ("re:" = pattern, see FI_CHANNELS)
+    r"re:V\s*Sport\s*2\b": ("VSport2", "V Sport 2 NO"),
 }
 FI_CHANNELS = {
     "40051": ("VSport1", "V Sport 1 FI"), "40052": ("VSportPremium", "V Sport Premium FI"),
@@ -455,11 +463,21 @@ FI_CHANNELS = {
     "40015": ("MTVUrheilu1", "MTV Urheilu 1"), "40016": ("MTVUrheilu2", "MTV Urheilu 2"),
     "40054": ("MTVUrheilu3", "MTV Urheilu 3"), "40014": ("MTVMax", "MTV Max"),
     "20025": ("Eurosport1", "Eurosport 1 FI"),
+    # (29 Oct 2026, evening) "V Sport+ Suomi" and a Finnish "V Sport Motor" were tried here by name and removed:
+    # V Sport+ Suomi was renamed Viaplay 3 Urheilu in Aug 2025 (the user's stream shows Viaplay 1 Urheilu ->
+    # linked to FI.Viaplay1Urheilu), and V Sport Motor is one Nordic channel, only in Allente's Swedish list
+    # (SE.VSportMotor). The "re:" mechanism stays for the SE/NO/DK entries.
 }
 DK_CHANNELS = {
     "30011": ("TV2Sport", "TV 2 Sport DK"), "30051": ("TV2SportX", "TV 2 Sport X"),
     "30027": ("TV3Sport", "TV3 Sport DK"), "30050": ("TV3MAX", "TV3 MAX"),
     "50022": ("Eurosport1", "Eurosport 1 DK"), "30010": ("Eurosport2", "Eurosport 2 DK"),
+    # 29 Oct 2026: found by NAME in Allente's Danish guide ("re:" = pattern, see FI_CHANNELS); the Nordic-wide
+    # V Sport Ultra stays under Sweden (SE.VSportUltra)
+    r"re:(Viasat|V)\s*Sport\s*Ultra": ("ViasatSportUltra", "Viasat Sport Ultra"),
+    # Sport Live (F3 Mediagroup's small-sports channel, ex Dantoto Racing Live): the whole name must match,
+    # so "V Sport Live 1" etc. aren't picked up
+    r"re:^\W*Sport\s*Live\W*(HD)?\W*$": ("SportLive", "Sport Live DK"),
 }
 SFR_GUIDE = "https://static-cdn.tv.sfr.net/data/epg/gen8/guide_web_{day:%Y%m%d}.json"
 FR_CHANNELS = {          # SFR channel number -> (id part, channel name)
@@ -2061,15 +2079,30 @@ def fetch_allente(tld, days, ids, debug=False):
     hdrs = {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json, */*",
             "Referer": f"https://www.allente.{tld}/tv-guide/"}
     per = {c: {} for c in wanted}
+    warned = set()
     for day in days:
         data = get_json_url(ALLENTE_GUIDE.format(tld=tld, day=day), hdrs) or {}
         chans = data.get("channels") if isinstance(data, dict) else None
         chans = {str(c.get("id")): c for c in chans if isinstance(c, dict)} if isinstance(chans, list) else {}
+        found = {}                                     # "re:" entry -> Allente channel numbers whose text matches
+        for key in wanted:
+            if key.startswith("re:"):
+                rx = re.compile(key[3:], re.I)
+                found[key] = [c for c, ch in chans.items()
+                              if any(isinstance(v, str) and rx.search(v) for v in ch.values())]
+                if not found[key] and chans and key not in warned:
+                    warned.add(key)
+                    names = sorted({v for ch in chans.values() for v in ch.values()
+                                    if isinstance(v, str) and len(v) < 60 and re.search(r"sport|motor|urheilu", v, re.I)})
+                    print(f"  WARNING: Allente .{tld}: no channel matches {key[3:]!r}; channels with sport/motor in "
+                          f"their text: {', '.join(names[:20]) or 'none'}", file=sys.stderr)
         if debug:
             print(f"  Allente .{tld} {day}: {len(chans)} channels, "
-                  f"{sum(len((chans.get(c) or {}).get('programs') or []) for c in wanted)} programmes on the chosen ones")
+                  f"{sum(len((chans.get(c) or {}).get('programs') or []) for c in wanted)} programmes on the chosen ones"
+                  + "".join(f"; {k[3:]!r} -> {v}" for k, v in found.items()))
         for cid in wanted:
-            for pr in (chans.get(cid) or {}).get("programs") or []:
+            progs = [pr for src in (found.get(cid) or [cid]) for pr in (chans.get(src) or {}).get("programs") or []]
+            for pr in progs:
                 try:
                     start = datetime.fromisoformat(pr["eventStart"].replace("Z", "+00:00")).astimezone(timezone.utc)
                     stop = datetime.fromisoformat(pr["eventEnd"].replace("Z", "+00:00")).astimezone(timezone.utc)
@@ -3528,6 +3561,20 @@ EPGSHARE.update({
                      "RushSports3": ("Rush Sports 3", ["Rush.Sports.3.bb"]),
                      "RushPrime": ("RUSH Prime", ["RUSH.Prime.bb"]),
                  }},
+    # UAE (29 Oct 2026): Abu Dhabi Sports (AD Sports 1, 2 and Premium) - epgshare's AE1 file (listed in its
+    # ALL_SOURCES1 list: AD.Sports.1.HD.ae, AD.Sports.2.HD.ae, "en:" English copies, and an Arabic-named
+    # "Abu Dhabi Sports Premium" entry whose id the list shows garbled). An alternative starting "re:" is a
+    # pattern tried against every id in the file, so the exact spelling doesn't matter. The one with most
+    # programmes is used; Arabic titles are translated.
+    "uae": {"file": "AE1", "prefix": "AE", "place": "UAE", "tz": "Asia/Dubai", "english": True,
+            "channels": {
+                "ADSports1": ("AD Sports 1", ["AD.Sports.1.HD.ae", "en:.Abu.Dhabi.Sports.1.ae",
+                                              r"re:^(en:\W*)?(abu\W*dhabi\W*sports|ad\W*sports)\W*1(\W*hd)?\W*ae$"]),
+                "ADSports2": ("AD Sports 2", ["AD.Sports.2.HD.ae", "en:.Abu.Dhabi.Sports.2.ae",
+                                              r"re:^(en:\W*)?(abu\W*dhabi\W*sports|ad\W*sports)\W*2(\W*hd)?\W*ae$"]),
+                "ADSportsPremium": ("AD Sports Premium", [r"re:(abu\W*dhabi\W*sports|ad\W*sports)\W*premium",
+                                                           "re:أبوظبي.*بريميوم|بريميوم.*أبوظبي"]),
+            }},
     # Brazil: backup for Claro (same IDs, BR.SporTV ...), used only for channels Claro leaves empty
     "brazil": {"file": "BR1", "prefix": "BR", "place": "Brasilia", "tz": "America/Sao_Paulo", "english": False,
                "backup": True, "channels": {
@@ -3638,7 +3685,24 @@ def fetch_epgshare(group, days, debug=False):
         data = _gzip.decompress(raw)
     except OSError:
         data = raw                                     # already plain XML
-    wanted = {eid for _, alts in cfg["channels"].values() for eid in alts}
+    wanted = {eid for _, alts in cfg["channels"].values() for eid in alts if not eid.startswith("re:")}
+    patterns = [(a, re.compile(a[3:], re.I)) for _, alts in cfg["channels"].values() for a in alts
+                if a.startswith("re:")]                # "re:..." alternatives match any id in the file
+
+    def key_for(eid):
+        """The alternative an epgshare id belongs to: itself, or the first matching "re:" pattern."""
+        if eid in wanted:
+            return eid
+        for a, rx in patterns:
+            if eid and rx.search(eid):
+                return a
+        return None
+
+    def in_file(a, ids):
+        if a.startswith("re:"):
+            rx = re.compile(a[3:], re.I)
+            return any(i and rx.search(i) for i in ids)
+        return a in ids
     tz = ZoneInfo(cfg["tz"])
     first = datetime(days[0].year, days[0].month, days[0].day, tzinfo=tz).astimezone(timezone.utc)
     last_day = days[-1] + timedelta(days=1)
@@ -3661,7 +3725,8 @@ def fetch_epgshare(group, days, debug=False):
             if el.tag != "programme":
                 continue
             eid = el.get("channel")
-            if eid in wanted:
+            key = key_for(eid)
+            if key:
                 try:
                     start, stop = xmltv_stamp(el.get("start")), xmltv_stamp(el.get("stop"))
                 except ValueError:
@@ -3672,7 +3737,7 @@ def fetch_epgshare(group, days, debug=False):
                     live = bool(re.search(EPGSHARE_LIVE, title, re.I) or el.find("live") is not None)
                     title = re.sub(r"^\s*\(L\)\s*|\s*\(\s*[ZΖ]\s*\)|^\s*(live|ao vivo|canlı|canli)\s*[:\-]\s*|^\s*live\s+(?=[^\s:]{1,14}:)|\s*[-(:]?\s*\(?\b(live|ao vivo|canlı|canli|"
                                    r"tiešraide|langsung)\b\)?\s*$|\s*\(c\)\s*$", "", title, flags=re.I).strip() or title
-                    per.setdefault(eid, {})[start] = {
+                    per.setdefault(key, {})[start] = {
                         "start": start, "stop": stop, "title": title, "sub": sub if sub != title else "",
                         "live": live, "desc": short_desc(desc) if desc not in (title, sub) else ""}
             el.clear()
@@ -3684,9 +3749,9 @@ def fetch_epgshare(group, days, debug=False):
         evs = per.get(best) or {}
         if debug:
             print(f"    {name}: {len(evs)} programmes from {best}"
-                  + ("" if any(a in seen_ids for a in alts) else " (channel not in the file)"))
+                  + ("" if any(in_file(a, seen_ids) for a in alts) else " (channel not in the file)"))
         elif not evs and (not cfg.get("backup") or part in cfg.get("main", ())):   # say why a main channel is empty
-            if any(a in seen_ids for a in alts):
+            if any(in_file(a, seen_ids) for a in alts):
                 print(f"    {name}: in the file but no programmes in these days")
             else:
                 words = [w for w in re.findall(r"[a-z]{3,}", name.lower()) if w not in ("the", "sports", "sport", "channel")]
@@ -3770,7 +3835,7 @@ DESC_USED = {}            # translated description -> last day it was in the gui
 DESC_KEEP_DAYS = 14
 DESC_PENDING = set()      # descriptions not translated yet: left out of the guide this run
 ENGLISH_PLACES = {"Australia", "Malaysia", "Singapore", "Hong Kong", "Thailand",
-                  "South Africa", "Africa", "India", "Qatar", "UK", "Ireland", "New Zealand", "USA", "Canada", "Cyprus"}   # their guides are already in English
+                  "South Africa", "Africa", "India", "Qatar", "UK", "Ireland", "New Zealand", "USA", "Canada", "Cyprus", "UAE"}   # their guides are already in English
 
 
 def load_cache():
@@ -4142,10 +4207,15 @@ def general_sport_live(title, sub, desc, flagged):
                 and GENERAL_SPORT_RE.search(desc or "") and not NOT_LIVE_WORDS.search(desc or ""))
 
 
+MINI_RE = re.compile(r"(?i)\bmini\b(?:\s*[-–:]|\s*$)")
+
+
 def really_live(title, cid):
     """False for a programme the source wrongly marks live (off-air blocks; non-match
     programmes on MATCH_ONLY_LIVE channels)."""
     if OFF_AIR_RE.match(title or ""):
+        return False
+    if MINI_RE.search(title or ""):                    # "AFL Mini - Round 22" (condensed/preview, 20 min)
         return False
     if cid.startswith(MATCH_ONLY_LIVE):
         return bool(MATCH_TITLE_RE.search(title or "")) and not NOT_LIVE_WORDS.search(title or "")
@@ -4187,6 +4257,7 @@ STUDIO_RE = re.compile(
     r"documentary|docu|draw ceremony|awards?|today|tonight|central|nba tip-?off|inside the nba|"
     r"sportscenter|now|blitz|courtside|nfl live|following|good evening|avant-match|plateau|"
     r"emission|time for\b.{0,25}\bballs?|"
+    r"college football live|saturday league kick[- ]?off|"            # ESPN2 / Fox League studio shows (29 Oct 2026)
     r"summar(y|ies))\b")
 UK_EVENT_RE, UK_STUDIO_RE = EVENT_RE, STUDIO_RE                   # (older names)
 
@@ -4242,6 +4313,7 @@ def live_event(title, sub=""):
     wins; one in the secondary title only counts when that is where the event was found
     (Sky's secondary titles are often a synopsis: "... get the weekend up and running")."""
     t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", (title or "").strip())
+    t = TITLE_DATE_SUFFIX.sub("", t)
     sub = (sub or "").strip()
     if STUDIO_RE.search(t) or NOT_LIVE_WORDS.search(t):
         return False
@@ -4254,6 +4326,13 @@ def live_event(title, sub=""):
 # (A studio word in a SHORT secondary title also rules out a title that names an event:
 # "Cricket: Women's Premier League" / "WPL Auction 2027". Long ones are synopses - ignored.)
 _live_event_title = live_event
+
+# A date or episode number after a dash ("Pardon The Interruption - Friday 30 October 2026", "Saturday
+# League Kick Off - Episode 35") looked like the "A - B" match pattern and gave studio shows the 🔴
+# (Fox/ESPN AU, 29 Oct 2026). It is dropped before the event test (the title itself is not changed).
+TITLE_DATE_SUFFIX = re.compile(
+    r"(?i)\s+[-–]\s+(?:(?:mon|tues?|wed(?:nes)?|thu(?:rs?)?|fri|sat(?:ur)?|sun)(?:day)?\.?,?\s+\d{1,2}(?:st|nd|rd|th)?\s+[a-z]+(?:\s+\d{4})?"
+    r"|(?:episode|ep\.?)\s*\d+)\s*$")
 
 
 def live_event(title, sub=""):
@@ -4832,13 +4911,50 @@ def astro_matchday(records):
         print(f"  Astro {rec['id']}: {a} vs {b} -> {uk:%a %d %b %H:%M} UK")
 
 
+# Repeat airings flagged live (beIN AU, 29 Oct 2026): epgshare01's AU1 marks every airing of a match
+# live - "Bayern vs Dortmund" was live four times on beIN 2/3. On these channels only the first
+# airing of a match (same title and secondary title) stays live, plus any that overlap it (the same
+# game on two channels at once); airings that start after it has ended, within REPLAY_WINDOW (5 days),
+# are replays. If the real live airing was before the listing starts, the first one listed is still
+# taken as live.
+REPLAY_CHECK = ("AU.beINSPORTS",)
+REPLAY_WINDOW = timedelta(days=5)            # later than this after the first airing = a different match
+
+
+def drop_replay_live(records):
+    groups = {}
+    for rec in records:
+        if not rec.get("id", "").startswith(REPLAY_CHECK):
+            continue
+        for ev in rec["events"]:
+            if ev.get("live") and MATCH_TITLE_RE.search(ev.get("title") or ""):
+                key = ((ev.get("title") or "").strip().lower(), (ev.get("sub") or "").strip().lower())
+                groups.setdefault(key, []).append(ev)
+    dropped = 0
+    for key, evs in groups.items():
+        evs.sort(key=lambda e: e["start"])
+        first, until = None, None
+        for ev in evs:
+            stop = ev.get("stop") or ev["start"] + timedelta(hours=3)
+            if first is None or ev["start"] >= first + REPLAY_WINDOW:
+                first, until = ev["start"], stop       # a new match (e.g. a second leg a week later)
+            elif ev["start"] < until:
+                until = max(until, stop)               # same game on another channel at the same time
+            else:
+                ev["live"], ev["never_live"] = False, True
+                dropped += 1
+    if dropped:
+        print(f"Repeat airings no longer marked live (beIN AU): {dropped}")
+
+
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
-                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), Sky TV guide (UK/IE), Cyta (CY), epgshare01.online (TR/LV/HK/ID/MENA/FR/IT/SG/MY/AU/BR/UK/IE/NZ/US/CA), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
+                           "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), Sky TV guide (UK/IE), Cyta (CY), epgshare01.online (TR/LV/HK/ID/MENA/AE/FR/IT/SG/MY/AU/BR/UK/IE/NZ/US/CA), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     count, listed = 0, []
     collect_rugby_rounds(records)                  # rugby rounds named in other listings
+    drop_replay_live(records)                      # beIN AU: replays of a live match
     for rec in records:
         cid, name = f"{rec['id']}{suffix}", rec["name"]
         listed.append((cid, name))
@@ -5467,6 +5583,7 @@ def main():
         force = [e["title"] for evs in ro.values() for e in evs]
         force += [t for evs in arena.values() for e in evs for t in (e["title"], e["sub"])]
         force += [t for evs in sk.values() for e in evs for t in (e["title"], e["sub"])]
+        force += [t for evs in hrv.values() for e in evs for t in (e["title"], e["sub"])]    # Croatia (MAXtv): Latin script, so forced
         force += [e["sub"] for evs in be.values() for e in evs]
         force += [e["title"] for evs in es.values() for e in evs]
         force += [e["title"] for evs in pt.values() for e in evs]
