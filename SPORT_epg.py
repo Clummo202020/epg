@@ -91,7 +91,8 @@ CZECHIA - mujtvprogram.cz's public service (XML), one request per channel and da
     https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php
         ?channel_cid=18&day=0          (day = 0 today, 1 tomorrow ...)
   Start and end times are given. Channels chosen with --cz-channels (the site's channel
-  numbers; default: ČT sport, Nova Sport 1-6, Sport 1, Sport 2, Canal+ Sport 1-2).
+  numbers; default: ČT sport, Nova Sport 1-6, Sport 1, Sport 2, Canal+ Sport 1-2,
+  FightBox - CZ.FightBox).
   Czech titles are translated. Channels: CZ.CTSport, CZ.NovaSport1 ... CZ.CanalPlusSport
 
 SLOVAKIA - the same mujtvprogram.cz service as Czechia (Nova Sport, Sport 1/2 and
@@ -152,14 +153,10 @@ HONG KONG - Now TV's public guide (JSON), one request per day for all channels (
   --no-nowtv to leave out. Start and end times are given. epgshare01's HK file is the backup.
   Channels: HK.NowSports1, HK.NowSportsPL1, HK.beINSPORTS1, HK.NBATV ...
 
-AUSTRALIA - Foxtel's TV guide pages (server-built HTML; added 29 Oct 2026), per channel and day:
-    https://www.foxtel.com.au/tv-guide/channel/FOX-CRICKET/FS1/2026/10/29
-  Fox Cricket, Fox League, Fox Sports 503, Fox Footy, Fox Sports 505, 506, 507 (Fox Sports More)
-  Fox Sports News, ESPN and ESPN2. Pages give start times only (each programme ends when the next starts).
-  Live = "Live" in the title or a live marker on the programme. --no-foxtel to leave out;
-  epgshare01's AU file is tried as the backup. Channels: AU.FoxCricket, AU.FoxLeague,
-  AU.FoxSports503, AU.FoxFooty, AU.FoxSports505, AU.FoxSports506, AU.FoxSports507, AU.FoxSportsNews,
-  AU.ESPN, AU.ESPN2.
+AUSTRALIA - Fox Sports and ESPN AU come from epgshare01's AU1 file (group "au"; 29 Oct 2026 - Foxtel's own
+  pages refuse GitHub's servers with HTTP 403, so that reader was removed). AU1 has descriptions, stop times and
+  live flags. Channels: AU.FoxCricket, AU.FoxLeague, AU.FoxSports503, AU.FoxFooty, AU.FoxSports505,
+  AU.FoxSports506, AU.FoxSports507, AU.FoxSportsNews, AU.ESPN, AU.ESPN2.
 
 SINGAPORE - StarHub TV+'s guide API (JSON, no login; added 29 Oct 2026), per channel and day:
     https://waf-starhub-metadata-api-p001.sh-ifs.com/v3.1/epg/schedules?...&in_channel_id=<id>
@@ -198,7 +195,10 @@ FRANCE - SFR's public TV guide: one static JSON file per day with every channel 
     https://static-cdn.tv.sfr.net/data/epg/gen8/guide_web_YYYYMMDD.json
   Channels chosen with --fr-channels (SFR channel numbers; default: Canal+ Sport, Sport 360,
   Foot, beIN SPORTS 1-3, RMC Sport 1, RMC Sport Access, Eurosport 1-2, L'Équipe, DAZN 1,
-  Golf+, Automoto, Equidia). Start and end times and a live flag are given. French text is
+  Golf+, Automoto, Equidia, Sport en France). Canal+'s guide API (hodor.canalplus.pro, token + one
+  request per channel and day; --no-canal to leave out) gives Eurosport 360 1-8 (FR.Eurosport360_1 ...),
+  Canal+ Premier League (FR.CanalPlusPremierLeague) and Infosport+ (FR.InfosportPlus); epgshare01's FR1
+  file is the backup. Start and end times and a live flag are given. French text is
   translated. Channels: FR.CanalPlusSport, FR.beINSPORTS1, FR.RMCSport1, FR.LEquipe ...
 
 SWEDEN / NORWAY / DENMARK / FINLAND - Allente's public TV guides (Nordic satellite operator, JSON),
@@ -442,7 +442,27 @@ FR_CHANNELS = {          # SFR channel number -> (id part, channel name)
     "76": ("Eurosport1", "Eurosport 1 FR"), "439": ("Eurosport2", "Eurosport 2 FR"),
     "1401": ("LEquipe", "L'Équipe"), "3795": ("DAZN1", "DAZN 1 FR"), "1295": ("GolfPlus", "Golf+"),
     "15": ("Automoto", "Automoto"), "64": ("Equidia", "Equidia"),
+    "2837": ("SportEnFrance", "Sport en France"),     # 29 Oct 2026 (SFR number from iptv-org's tv.sfr.fr list)
 }
+# Canal+ (myCANAL) guide API (29 Oct 2026; as iptv-org's canalplus.com reader): a token from
+# authenticate.json, then one request per channel and day (day 0 = today UTC). Start times only.
+# For channels SFR doesn't carry: Eurosport 360 1-8 (pop-up event channels), Canal+ Premier League,
+# Infosport+. Channel ids from iptv-org's canalplus.com_fr list.
+CANAL_AUTH = ("https://hodor.canalplus.pro/api/v2/mycanal/authenticate.json/webapp/6.0"
+              "?experiments=beta-test-one-tv-guide:control")
+CANAL_DAY = "https://hodor.canalplus.pro/api/v2/mycanal/channels/{token}/{cid}/broadcasts/day/{n}"
+CANAL_HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                               "Chrome/145.0.0.0 Safari/537.36",
+                 "Accept": "application/json, text/plain, */*", "Accept-Language": "fr-FR,fr;q=0.6",
+                 "Origin": "https://www.canalplus.com", "Referer": "https://www.canalplus.com/"}
+CANAL_CHANNELS = {       # Canal+ channel id -> (id part, name)
+    "635": ("Eurosport360_1", "Eurosport 360 1"), "636": ("Eurosport360_2", "Eurosport 360 2"),
+    "637": ("Eurosport360_3", "Eurosport 360 3"), "638": ("Eurosport360_4", "Eurosport 360 4"),
+    "650": ("Eurosport360_5", "Eurosport 360 5"), "651": ("Eurosport360_6", "Eurosport 360 6"),
+    "652": ("Eurosport360_7", "Eurosport 360 7"), "653": ("Eurosport360_8", "Eurosport 360 8"),
+    "815": ("CanalPlusPremierLeague", "Canal+ Premier League"), "551": ("InfosportPlus", "Infosport+"),
+}
+CANAL_LIVE = re.compile(r"(?i)\b(en direct|direct|live)\b")
 BLUE_GUIDE = ("https://services.sg101.prd.sctv.ch/catalog/tv/channels/list/"
               "(ids={cid};start={day:%Y%m%d}0000;end={nxt:%Y%m%d}0000;level=normal)")
 CH_CHANNELS = {          # blue TV channel number -> (id part, channel name)
@@ -535,6 +555,7 @@ CZ_CHANNELS = {          # mujtvprogram.cz channel number -> (id part, channel n
     "1073": ("NovaSport5", "Nova Sport 5"), "1074": ("NovaSport6", "Nova Sport 6"),
     "61": ("Sport1", "Sport 1 CZ"), "93": ("Sport2", "Sport 2 CZ"),
     "1040": ("CanalPlusSport", "Canal+ Sport"), "1071": ("CanalPlusSport2", "Canal+ Sport 2"),
+    "301": ("FightBox", "FightBox"),     # 29 Oct 2026: one pan-European schedule (FR/NL/BE/CZ feeds differ only in audio)
 }
 IPKO_EPG = "https://stargate.ipko.tv/api/titan.tv.WebEpg/GetWebEpgData"
 IPKO_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
@@ -2090,6 +2111,61 @@ def fetch_france(days, ids, debug=False):
     return {cid: [evs[k] for k in sorted(evs)] for cid, evs in per.items() if evs}
 
 
+def fetch_canal(n_days, debug=False):
+    """{id part: [{start, stop, title, sub, live, desc}]} for CANAL_CHANNELS from the myCANAL guide API."""
+    auth = get_json_url(CANAL_AUTH, CANAL_HEADERS)
+    token = auth.get("token") if isinstance(auth, dict) else None
+    if not token:
+        print("  WARNING: Canal+ gave no guide token - Eurosport 360 / Canal+ Premier League / Infosport+ "
+              "left to epgshare01's FR1 backup", file=sys.stderr)
+        return {}
+    out, shown_fields = {}, False
+    for cid, (part, name) in CANAL_CHANNELS.items():
+        rows = {}
+        for n in range(n_days):
+            data = get_json_url(CANAL_DAY.format(token=token, cid=cid, n=n), CANAL_HEADERS, quiet=True)
+            slices = data.get("timeSlices") if isinstance(data, dict) else None
+            items = [c for sl in (slices or []) if isinstance(sl, dict) for c in (sl.get("contents") or [])
+                     if isinstance(c, dict)]
+            if not items:
+                if n == 0:
+                    break                                # nothing today: the channel isn't served
+                continue
+            if not shown_fields:                         # once per run, to check the fields on GitHub
+                print(f"    Canal+ programme fields: {sorted(items[0])}")
+                shown_fields = True
+            for it in items:
+                st = it.get("startTime")
+                try:
+                    if isinstance(st, (int, float)) or str(st).isdigit():
+                        st = int(st)
+                        start = datetime.fromtimestamp(st / 1000 if st > 10**11 else st, timezone.utc)
+                    else:
+                        start = datetime.fromisoformat(str(st).replace("Z", "+00:00")).astimezone(timezone.utc)
+                except (TypeError, ValueError):
+                    continue
+                title = re.sub(r"\s+", " ", str(it.get("title") or "")).strip()
+                sub = re.sub(r"\s+", " ", str(it.get("subtitle") or "")).strip()
+                if not title:
+                    continue
+                flag = any(v is True for k, v in it.items() if "live" in k.lower())
+                live = flag or bool(CANAL_LIVE.search(title) or CANAL_LIVE.search(sub))
+                title = re.sub(r"(?i)\s*[(\-:]?\s*\b(en direct|direct|live)\b\s*\)?\s*$", "", title).strip() or title
+                rows[start] = {"start": start, "title": title, "sub": sub if sub != title else "",
+                               "live": live, "desc": ""}
+        starts = sorted(rows)
+        evs = []
+        for k, a in enumerate(starts):
+            stop = starts[k + 1] if k + 1 < len(starts) else a + timedelta(hours=1)
+            if stop - a > timedelta(hours=12):           # a gap, not a 12-hour programme
+                stop = a + timedelta(hours=2)
+            evs.append(dict(rows[a], stop=stop))
+        if evs:
+            out[part] = evs
+        print(f"  Canal+ {name}: {len(evs)} programmes, {sum(e['live'] for e in evs)} live")
+    return out
+
+
 # --------------------------------------------------------------------------
 # Switzerland: Swisscom blue TV guide
 # --------------------------------------------------------------------------
@@ -2599,26 +2675,6 @@ NOW_GUIDE = "https://nowplayer.now.com/tvguide/epglist?{ids}&day={day}"
 NOW_HEADERS = {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json, text/javascript, */*",
                "X-Requested-With": "XMLHttpRequest", "Cookie": "LANG=en",
                "Referer": "https://nowplayer.now.com/tvguide?filterType=G07"}
-FOXTEL_PAGE = "https://www.foxtel.com.au/tv-guide/channel/{site}/{day:%Y/%m/%d}"
-FOXTEL_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-                                "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
-                  "Accept-Language": "en-AU,en;q=0.9", "Cookie": "AAMC_foxtel_0=REGION|7",
-                  "Referer": "https://www.foxtel.com.au/tv-guide"}
-FOXTEL_CHANNELS = {      # our id part -> (name, Foxtel page path; from iptv-org's Foxtel list)
-    "FoxCricket": ("Fox Cricket", "FOX-CRICKET/FS1"),
-    "FoxLeague": ("Fox League", "FOX-LEAGUE/SP2"),
-    "FoxSports503": ("Fox Sports 503", "FOX-SPORTS-503/FS3"),
-    "FoxFooty": ("Fox Footy", "Fox-Footy/FAF"),
-    "FoxSports505": ("Fox Sports 505", "FOX-SPORTS-505/FSP"),
-    "FoxSports506": ("Fox Sports 506", "FOX-SPORTS-506/SPS"),
-    "FoxSports507": ("Fox Sports 507", "Fox-Sports-More/FSS"),     # Fox Sports More
-    "FoxSportsNews": ("Fox Sports News", "Fox-Sports-News/FSN"),
-    "ESPN": ("ESPN AU", "ESPN/ESP"),
-    "ESPN2": ("ESPN2 AU", "ESPN2/ES2"),
-}
-FOXTEL_LIVE_TITLE = re.compile(r"(?i)^\s*live\s*[:\-]\s*|\s*[\(\[]live[\)\]]\s*$|\s+-\s+live\s*$")
-FOXTEL_LIVE_MARK = re.compile(r"(?i)class=\"[^\"]*\blive\b[^\"]*\"|>\s*live\s*<|data-live=\"(true|1)\"")
-
 # mewatch (Mediacorp, Singapore; added 29 Oct 2026) - for beIN SPORTS 4 and 5 SG, which beIN's own
 # API doesn't list (only 1-3). JSON, several channels per request, with a "live" flag per programme.
 MEWATCH_API = ("https://cdn.mewatch.sg/api/schedules?channels={ids}&date={day:%Y-%m-%d}&duration=24"
@@ -2652,52 +2708,6 @@ NOW_CHANNELS = {         # Now TV channel number -> (id part, name); same IDs as
     "668": ("Now668", "Now668"), "674": ("Cricbuzz", "Cricbuzz"), "679": ("PremierSports", "Premier Sports HK"),
     "680": ("NowSportsPlus", "Now Sports Plus"), "683": ("NowGolf2", "Now Golf 2"), "684": ("NowGolf3", "Now Golf 3"),
 }
-
-
-def fetch_foxtel(days, debug=False):
-    """{id part: [{start, stop, title, sub, live, desc}]} for FOXTEL_CHANNELS from Foxtel's pages."""
-    out = {}
-    for part, (name, site) in FOXTEL_CHANNELS.items():
-        rows = {}
-        for day in days:
-            page = fetch(FOXTEL_PAGE.format(site=site, day=day), headers=FOXTEL_HEADERS, quiet=True,
-                         label=f"Foxtel {name} {day}")
-            if not page:
-                continue
-            i = page.find('id="epg-channel-events"')
-            body = page[i:] if i >= 0 else page
-            for m in re.finditer(r"<a\b([^>]*\bdata-scheduled-date=\"(\d{10,13})\"[^>]*)>(.*?)</a>", body, re.S):
-                attrs, stamp, inner = m.group(1), int(m.group(2)), m.group(3)
-                start = datetime.fromtimestamp(stamp / 1000 if stamp > 10**11 else stamp, timezone.utc)
-                d = re.search(r'class="[^"]*epg-event-description[^"]*"[^>]*>(.*)', inner, re.S)
-                d = d.group(1) if d else inner
-                title_html, _, rest = d.partition("<div")
-                title = html.unescape(re.sub(r"<[^>]+>", " ", title_html))
-                title = re.sub(r"\s+", " ", title).strip()
-                subtxt = re.sub(r"<abbr\b.*?</abbr>", " ", rest, flags=re.S)
-                subtxt = html.unescape(re.sub(r"<[^>]+>", " ", subtxt.partition(">")[2] if rest else ""))
-                subtxt = re.sub(r"\s+", " ", subtxt).strip()
-                sub = re.sub(r"\s*\([A-Z0-9+]{1,5}\)\s*$", "", subtxt.split(",")[-1]).strip() if subtxt else ""
-                if not title:
-                    continue
-                live = bool(FOXTEL_LIVE_TITLE.search(title) or FOXTEL_LIVE_TITLE.search(sub)
-                            or FOXTEL_LIVE_MARK.search(attrs) or FOXTEL_LIVE_MARK.search(inner))
-                title = FOXTEL_LIVE_TITLE.sub("", title).strip() or title
-                sub = FOXTEL_LIVE_TITLE.sub("", sub).strip()
-                rows[start] = {"start": start, "title": title, "sub": sub if sub != title else "",
-                               "live": live, "desc": ""}
-        starts = sorted(rows)
-        evs = []
-        for k, a in enumerate(starts):
-            stop = starts[k + 1] if k + 1 < len(starts) else a + timedelta(minutes=60)
-            if stop - a > timedelta(hours=12):          # a gap in the pages, not a 12-hour show
-                stop = a + timedelta(hours=2)
-            evs.append(dict(rows[a], stop=stop))
-        if evs:
-            out[part] = evs
-        if debug or not evs:
-            print(f"  Foxtel {name}: {len(evs)} programmes, {sum(e['live'] for e in evs)} live")
-    return out
 
 
 def fetch_mewatch(days, debug=False):
@@ -3141,6 +3151,17 @@ EPGSHARE.update({
                    "DAZN1": ("DAZN 1 FR", ["DAZN.1.fr"]),
                    **{f"beINSPORTSMAX{n}": (f"beIN SPORTS MAX {n} FR", [f"beIN.SPORTS.MAX.{n}.fr"])
                       for n in range(4, 11)},             # not in SFR's guide at all
+                   # 29 Oct 2026: backups for Canal+'s guide (fetch_canal); ids GUESSED in epgshare's style
+                   "CanalPlusPremierLeague": ("Canal+ Premier League",
+                                              ["CANAL+.PREMIER.LEAGUE.fr", "Canal+.Premier.League.fr",
+                                               "CANAL+.Premier.League.fr", "Canal.Plus.Premier.League.fr",
+                                               "CanalPlus.Premier.League.fr"]),
+                   "InfosportPlus": ("Infosport+", ["INFOSPORT+.fr", "Infosport+.fr", "InfoSport+.fr",
+                                                    "Infosport.Plus.fr", "INFOSPORT.PLUS.fr"]),
+                   "SportEnFrance": ("Sport en France", ["Sport.en.France.fr", "SPORT.EN.FRANCE.fr",
+                                                         "Sport.En.France.fr"]),   # backup for SFR 2837
+                   **{f"Eurosport360_{n}": (f"Eurosport 360 {n}", [f"Eurosport.360.{n}.fr", f"Eurosport.360.HD.{n}.fr",
+                                                                    f"EUROSPORT.360.{n}.fr"]) for n in range(1, 9)},
                }},
     "golfplus": {"file": "CH1", "prefix": "FR", "place": "France", "tz": "Europe/Paris", "english": False,
                  "backup": True, "channels": {"GolfPlus": ("Golf+", ["GOLF+.ch"])}},
@@ -3173,7 +3194,8 @@ EPGSHARE.update({
            "backup": True, "channels": {
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} AU", [f"beINSports{n}.au"]) for n in range(1, 4)},
                "beINSPORTSXTRA": ("beIN SPORTS XTRA AU", ["beINSportsXtra.au"]),
-               # backups for Foxtel's own guide (29 Oct 2026; ids guessed in epgshare's style)
+               # Fox Sports + ESPN AU: AU1 is their ONLY source since 29 Oct 2026 (Foxtel's pages
+               # refuse GitHub with HTTP 403); listed in "main" so an empty one is reported in the log
                "FoxCricket": ("Fox Cricket", ["FoxCricket.au", "Fox.Cricket.au"]),
                "FoxLeague": ("Fox League", ["FoxLeague.au", "Fox.League.au"]),
                "FoxSports503": ("Fox Sports 503", ["FoxSports503.au", "Fox.Sports.503.au"]),
@@ -3184,7 +3206,9 @@ EPGSHARE.update({
                "FoxSportsNews": ("Fox Sports News", ["FoxSportsNews.au", "Fox.Sports.News.au"]),
                "ESPN": ("ESPN AU", ["ESPN.au"]),
                "ESPN2": ("ESPN2 AU", ["ESPN2.au", "ESPN.2.au"]),
-           }},
+           },
+           "main": {"FoxCricket", "FoxLeague", "FoxSports503", "FoxFooty", "FoxSports505", "FoxSports506",
+                    "FoxSports507", "FoxSportsNews", "ESPN", "ESPN2"}},
     # Caribbean (29 Oct 2026): Flow's Rush Sports 1-3 and RUSH Prime - epgshare's Barbados file BB1
     # (found in epgshare's ALL_SOURCES1.txt list; no other source); LIVE only where the title or
     # description says so ("Live: Test Cricket")
@@ -3348,7 +3372,7 @@ def fetch_epgshare(group, days, debug=False):
         if debug:
             print(f"    {name}: {len(evs)} programmes from {best}"
                   + ("" if any(a in seen_ids for a in alts) else " (channel not in the file)"))
-        elif not evs and not cfg.get("backup"):         # (29 Oct 2026) say why a main channel is empty
+        elif not evs and (not cfg.get("backup") or part in cfg.get("main", ())):   # say why a main channel is empty
             if any(a in seen_ids for a in alts):
                 print(f"    {name}: in the file but no programmes in these days")
             else:
@@ -4784,6 +4808,7 @@ def main():
     ap.add_argument("--bein", default=BEIN_DEFAULT,
                     help=f"beIN countries, comma separated (default {BEIN_DEFAULT}; also {','.join(c for c in BEIN_COUNTRIES if c not in BEIN_DEFAULT)})")
     ap.add_argument("--no-france", action="store_true", help="leave out the French channels")
+    ap.add_argument("--no-canal", action="store_true", help="leave out Canal+'s guide (Eurosport 360, Canal+ PL, Infosport+)")
     ap.add_argument("--fr-channels", default=",".join(FR_CHANNELS),
                     help="SFR channel numbers, comma separated (e.g. 35,1290,2665)")
     ap.add_argument("--no-switzerland", action="store_true", help="leave out the Swiss channels")
@@ -4832,7 +4857,6 @@ def main():
                          "words are in the channel name (default 'cyta sport')")
     ap.add_argument("--no-nowtv", action="store_true", help="leave out Now TV (Hong Kong)")
     ap.add_argument("--no-starhub", action="store_true", help="leave out StarHub (Hub Sports, Singapore)")
-    ap.add_argument("--no-foxtel", action="store_true", help="leave out Foxtel (Fox Sports, Australia)")
     ap.add_argument("--no-sky", action="store_true", help="leave out Sky's guide (UK/Ireland; epgshare01 fills in)")
     ap.add_argument("--now-channels", default=",".join(NOW_CHANNELS),
                     help="Now TV channel numbers, comma separated (e.g. 631,638)")
@@ -4974,6 +4998,12 @@ def main():
         print(f"France: reading SFR TV guide {fr_days[0]} to {fr_days[-1]} ...")
         fra = fetch_france(fr_days, args.fr_channels, args.debug)
         print(f"  {sum(len(v) for v in fra.values())} programmes on {len(fra)} channel(s)")
+    canal = {}
+    if not args.no_france and not args.no_canal:
+        print("France: reading Canal+'s TV guide (Eurosport 360 1-8, Canal+ Premier League, Infosport+) ...")
+        canal = fetch_canal(max(args.days, 1), args.debug)
+        print(f"  {sum(len(v) for v in canal.values())} programmes on {len(canal)} channel(s), "
+              f"{sum(e['live'] for v in canal.values() for e in v)} live")
     nordic = {}                                       # (prefix, tz, place, table) -> events
     for flag, tld, chans, prefix, zone, place, table in (
             ("no_sweden", "se", args.se_channels, "SE", STOCKHOLM, "Sweden", SE_CHANNELS),
@@ -5015,13 +5045,6 @@ def main():
         print(f"Hong Kong: reading Now TV guide {hk_days[0]} to {hk_days[-1]} ...")
         now_hk = fetch_now(hk_days, args.now_channels, args.debug)
         print(f"  {sum(len(v) for v in now_hk.values())} programmes on {len(now_hk)} channel(s)")
-    fox = {}
-    if not args.no_foxtel:
-        au_days = [datetime.now(ZoneInfo("Australia/Sydney")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
-        print(f"Australia: reading Foxtel's TV guide (Fox Sports) {au_days[0]} to {au_days[-1]} ...")
-        fox = fetch_foxtel(au_days, args.debug)
-        print(f"  {sum(len(v) for v in fox.values())} programmes on {len(fox)} channel(s), "
-              f"{sum(e['live'] for v in fox.values() for e in v)} live")
     hub, mew = {}, {}
     if not args.no_starhub:
         sg_days = [datetime.now(ZoneInfo("Asia/Singapore")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
@@ -5061,7 +5084,7 @@ def main():
         print(f"  {sum(len(v) for g in bein.values() for v in g.values())} programmes on "
               f"{sum(len(g) for g in bein.values())} channel(s)")
     if not il and not ch1 and not gr and not nl and not ro and not bg and not arena and not sk and not be \
-            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky and not cy and not hub and not fox and not mew:
+            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky and not cy and not hub and not mew and not canal:
         sys.exit("Nothing found - the sites may be unreachable from here, or changed.")
 
     if not args.no_translate:
@@ -5132,9 +5155,6 @@ def main():
     for chname, evs in cy.items():
         records.append({"id": f"CY.{cyta_part(chname)}", "name": chname, "tz": NICOSIA, "place": "Cyprus",
                         "filler": False, "back_to_back": True, "events": evs, "fix_caps": True})
-    for part, evs in fox.items():
-        records.append({"id": f"AU.{part}", "name": FOXTEL_CHANNELS[part][0], "tz": ZoneInfo("Australia/Sydney"),
-                        "place": "Australia", "filler": False, "back_to_back": True, "events": evs})
     for part, evs in mew.items():
         records.append({"id": f"SG.{part}", "name": f"beIN SPORTS {part[-1]} SG", "tz": ZoneInfo("Asia/Singapore"),
                         "place": "Singapore", "filler": False, "back_to_back": True, "events": evs})
@@ -5165,6 +5185,9 @@ def main():
                                            f"{place} channel {cid}"))
             records.append({"id": f"{prefix}.{part}", "name": chname, "tz": zone, "place": place,
                             "filler": False, "back_to_back": True, "events": evs})
+    for part, evs in canal.items():
+        records.append({"id": f"FR.{part}", "name": next(n for p, n in CANAL_CHANNELS.values() if p == part),
+                        "tz": PARIS, "place": "France", "filler": False, "back_to_back": True, "events": evs})
     for cid, evs in fra.items():
         part, chname = FR_CHANNELS.get(cid, (f"Channel{re.sub(r'[^A-Za-z0-9]+', '', cid)}",
                                              f"French channel {cid}"))
