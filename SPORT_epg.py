@@ -166,6 +166,8 @@ SINGAPORE - StarHub TV+'s guide API (JSON, no login; added 29 Oct 2026), per cha
   Hub Sports 1-8, found by name in StarHub's channel list (known ids as fallback). Live =
   StarHub's schedule_type "live" (or "LIVE" in the title). --no-starhub to leave out;
   epgshare01's SG file is tried as the backup. Channels: SG.HubSports1 ... SG.HubSports8.
+  beIN SPORTS 4 and 5 SG come from mewatch (cdn.mewatch.sg/api/schedules, with a live flag):
+  SG.beINSPORTS4, SG.beINSPORTS5 (beIN's own API lists only 1-3 for Singapore).
 
 EPGSHARE01 - ready-made XMLTV files from https://epgshare01.online/epgshare01/ (free, no login),
   one file per country, read once per run (gzip):
@@ -2617,6 +2619,12 @@ FOXTEL_CHANNELS = {      # our id part -> (name, Foxtel page path; from iptv-org
 FOXTEL_LIVE_TITLE = re.compile(r"(?i)^\s*live\s*[:\-]\s*|\s*[\(\[]live[\)\]]\s*$|\s+-\s+live\s*$")
 FOXTEL_LIVE_MARK = re.compile(r"(?i)class=\"[^\"]*\blive\b[^\"]*\"|>\s*live\s*<|data-live=\"(true|1)\"")
 
+# mewatch (Mediacorp, Singapore; added 29 Oct 2026) - for beIN SPORTS 4 and 5 SG, which beIN's own
+# API doesn't list (only 1-3). JSON, several channels per request, with a "live" flag per programme.
+MEWATCH_API = ("https://cdn.mewatch.sg/api/schedules?channels={ids}&date={day:%Y-%m-%d}&duration=24"
+               "&ff=idp,ldp,rpt,cd&hour=0&intersect=true&lang=en&segments=all")
+MEWATCH_CHANNELS = {"572425": "beINSPORTS4", "572409": "beINSPORTS5"}   # mewatch id -> SG.<id part>
+
 STARHUB_API = "https://waf-starhub-metadata-api-p001.sh-ifs.com/v3.1/epg/"
 STARHUB_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
                                  "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -2689,6 +2697,43 @@ def fetch_foxtel(days, debug=False):
             out[part] = evs
         if debug or not evs:
             print(f"  Foxtel {name}: {len(evs)} programmes, {sum(e['live'] for e in evs)} live")
+    return out
+
+
+def fetch_mewatch(days, debug=False):
+    """{id part: [{start, stop, title, sub, live, desc}]} for MEWATCH_CHANNELS (days are UTC days)."""
+    found = {}
+    utc_days = sorted({d for d in days} | {days[0] - timedelta(days=1)})
+    for day in utc_days:
+        data = get_json_url(MEWATCH_API.format(ids=",".join(MEWATCH_CHANNELS), day=day),
+                            {"User-Agent": STARHUB_HEADERS["User-Agent"], "Accept": "application/json"})
+        blocks = data if isinstance(data, list) else ([data] if isinstance(data, dict) else [])
+        for block in blocks:
+            for it in (block.get("schedules") or []) if isinstance(block, dict) else []:
+                part = MEWATCH_CHANNELS.get(str(it.get("channelId") or block.get("channelId") or ""))
+                info = it.get("item") or {}
+                if not part or it.get("isGap"):
+                    continue
+                try:
+                    start = datetime.fromisoformat(str(it["startDate"]).replace("Z", "+00:00"))
+                    stop = datetime.fromisoformat(str(it["endDate"]).replace("Z", "+00:00"))
+                except (KeyError, ValueError):
+                    continue
+                title = re.sub(r"\s+", " ", str(info.get("title") or "")).strip()
+                sub = re.sub(r"\s+", " ", str(info.get("episodeTitle") or "")).strip()
+                if sub and title.endswith(f" - {sub}"):
+                    title = title[: -len(sub) - 3].strip()
+                if sub == title:
+                    sub = ""
+                if not title or stop <= start:
+                    continue
+                found.setdefault(part, {})[start] = {
+                    "start": start, "stop": stop, "title": title, "sub": sub, "live": bool(it.get("live")),
+                    "desc": re.sub(r"\s+", " ", str(info.get("description") or "")).strip()}
+    out = {part: [evs[k] for k in sorted(evs)] for part, evs in found.items()}
+    for part in MEWATCH_CHANNELS.values():
+        evs = out.get(part, [])
+        print(f"  mewatch SG.{part}: {len(evs)} programmes, {sum(e['live'] for e in evs)} live")
     return out
 
 
@@ -3140,14 +3185,16 @@ EPGSHARE.update({
                "ESPN": ("ESPN AU", ["ESPN.au"]),
                "ESPN2": ("ESPN2 AU", ["ESPN2.au", "ESPN.2.au"]),
            }},
-    # Caribbean (29 Oct 2026): Flow's Rush Sports 1-3 - in epgshare's Jamaica file only (no other
-    # source found); LIVE only where the title or description says so
-    "jamaica": {"file": "JM1", "prefix": "CARIB", "place": "Barbados", "tz": "America/Barbados", "english": True,
-                "channels": {
-                    "RushSports1": ("Rush Sports", ["Rush.Sports.bb", "Rush.Sports.1.bb", "Rush.Sports.jm"]),
-                    "RushSports2": ("Rush Sports 2", ["Rush.Sports.2.bb", "Rush.Sports.2.jm"]),
-                    "RushSports3": ("Rush Sports 3", ["Rush.Sports.3.bb", "Rush.Sports.3.jm"]),
-                }},
+    # Caribbean (29 Oct 2026): Flow's Rush Sports 1-3 and RUSH Prime - epgshare's Barbados file BB1
+    # (found in epgshare's ALL_SOURCES1.txt list; no other source); LIVE only where the title or
+    # description says so ("Live: Test Cricket")
+    "barbados": {"file": "BB1", "prefix": "CARIB", "place": "Barbados", "tz": "America/Barbados", "english": True,
+                 "channels": {
+                     "RushSports1": ("Rush Sports", ["Rush.Sports.bb"]),
+                     "RushSports2": ("Rush Sports 2", ["Rush.Sports.2.bb"]),
+                     "RushSports3": ("Rush Sports 3", ["Rush.Sports.3.bb"]),
+                     "RushPrime": ("RUSH Prime", ["RUSH.Prime.bb"]),
+                 }},
     # Brazil: backup for Claro (same IDs, BR.SporTV ...), used only for channels Claro leaves empty
     "brazil": {"file": "BR1", "prefix": "BR", "place": "Brasilia", "tz": "America/Sao_Paulo", "english": False,
                "backup": True, "channels": {
@@ -3301,6 +3348,14 @@ def fetch_epgshare(group, days, debug=False):
         if debug:
             print(f"    {name}: {len(evs)} programmes from {best}"
                   + ("" if any(a in seen_ids for a in alts) else " (channel not in the file)"))
+        elif not evs and not cfg.get("backup"):         # (29 Oct 2026) say why a main channel is empty
+            if any(a in seen_ids for a in alts):
+                print(f"    {name}: in the file but no programmes in these days")
+            else:
+                words = [w for w in re.findall(r"[a-z]{3,}", name.lower()) if w not in ("the", "sports", "sport", "channel")]
+                like = sorted(i for i in seen_ids if i and words and all(w in i.lower() for w in words))[:8]
+                print(f"    {name}: not in the file ({len(seen_ids)} channels in it)"
+                      + (f" - similar ids: {', '.join(like)}" if like else ""))
         if evs:
             out[part] = [evs[k] for k in sorted(evs)]
     if cfg.get("calibrate") and out:
@@ -4967,11 +5022,14 @@ def main():
         fox = fetch_foxtel(au_days, args.debug)
         print(f"  {sum(len(v) for v in fox.values())} programmes on {len(fox)} channel(s), "
               f"{sum(e['live'] for v in fox.values() for e in v)} live")
-    hub = {}
+    hub, mew = {}, {}
     if not args.no_starhub:
         sg_days = [datetime.now(ZoneInfo("Asia/Singapore")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
         print(f"Singapore: reading StarHub's TV guide (Hub Sports) {sg_days[0]} to {sg_days[-1]} ...")
         hub = fetch_starhub(sg_days, args.debug)
+        print(f"Singapore: reading mewatch (beIN SPORTS 4-5 SG) ...")
+        mew = fetch_mewatch([datetime.now(timezone.utc).date() + timedelta(days=i) for i in range(max(args.days, 1))],
+                            args.debug)
         print(f"  {sum(len(v) for v in hub.values())} programmes on {len(hub)} channel(s), "
               f"{sum(e['live'] for v in hub.values() for e in v)} live")
     sky = {}
@@ -5003,7 +5061,7 @@ def main():
         print(f"  {sum(len(v) for g in bein.values() for v in g.values())} programmes on "
               f"{sum(len(g) for g in bein.values())} channel(s)")
     if not il and not ch1 and not gr and not nl and not ro and not bg and not arena and not sk and not be \
-            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky and not cy and not hub and not fox:
+            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky and not cy and not hub and not fox and not mew:
         sys.exit("Nothing found - the sites may be unreachable from here, or changed.")
 
     if not args.no_translate:
@@ -5077,6 +5135,9 @@ def main():
     for part, evs in fox.items():
         records.append({"id": f"AU.{part}", "name": FOXTEL_CHANNELS[part][0], "tz": ZoneInfo("Australia/Sydney"),
                         "place": "Australia", "filler": False, "back_to_back": True, "events": evs})
+    for part, evs in mew.items():
+        records.append({"id": f"SG.{part}", "name": f"beIN SPORTS {part[-1]} SG", "tz": ZoneInfo("Asia/Singapore"),
+                        "place": "Singapore", "filler": False, "back_to_back": True, "events": evs})
     for n, evs in hub.items():
         records.append({"id": f"SG.HubSports{n}", "name": f"Hub Sports {n}", "tz": ZoneInfo("Asia/Singapore"),
                         "place": "Singapore", "filler": False, "back_to_back": True, "events": evs})
