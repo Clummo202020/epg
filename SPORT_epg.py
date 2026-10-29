@@ -40,10 +40,26 @@ ROMANIA (Prima Sport) - Prima Play's TV page, all channels and ~10 days in one p
     https://www.primaplay.ro/programtv
   Prima Sport 1-5 and Prima Sport PPV1-4. Channels: RO.PrimaSport1 ... RO.PrimaSportPPV4
 
+ROMANIA (Sport Extra) - programetv.ro, one page per channel and weekday (luni ... duminica):
+    https://www.programetv.ro/program-tv/sport-extra/joi/
+  Channel: RO.SportExtra (29 Oct 2026). Add more in PROGRAMETV_CHANNELS.
+
 BALKANS - Arena Sport's own TV page (Serbian feed), all channels and 7 days in one page:
     https://tvarenasport.com/tv-scheme    (the data is the window.TV_SCHEMES object)
   Arena Sport 1-10, Arena Premium 1-5, Arena Tenis, Adrenalin, Arena 1X2.
   "uzivo" marks a live event. Serbian text is translated.
+  Serbian Eurosport 1-2 and Arena Fight from mts's TV guide (mts.rs, one JSON request per day):
+  RS.Eurosport1, RS.Eurosport2, RS.ArenaFight (29 Oct 2026).
+  SLOVENIA - Telekom Slovenije's NEO guide (stargate.telekom.si, same API as IPKO; one request per channel
+  and day): Arena Sport 1-4 SI, Arena Sport 1 Premium SI, Arena Fight SI, Šport TV 1-3 -> SI.ArenaSport1 ...,
+  SI.ArenaPremium1, SI.ArenaFight, SI.SportTV1 ... (29 Oct 2026). --no-slovenia to leave out.
+  (Sport Klub Slovenia already comes from Delo: SI.SK1 ...)
+  CROATIA - MAXtv's (Hrvatski Telekom) guide API (tv-hr-prod.yo-digital.com, 8 requests a day, all
+  channels): Arena Sport 1-10 HR, Arena Fight HR, MAX Sport 1-2, Sportska Televizija, Sport Klub 1-12 HR,
+  Sport Klub Golf HR -> HR.ArenaSport1 ..., HR.ArenaFight, HR.MAXSport1/2, HR.SportskaTV, HR.SportKlub1 ...,
+  HR.SportKlubGolf (29 Oct 2026). --no-croatia to leave out.
+  Bosnia and Herzegovina feed (own schedule) from tvarenasport.com/ba/tv-scheme: BA.ArenaSport1 ...,
+  BA.ArenaPremium1 ... (29 Oct 2026; "BH" dropped from the IDs).
   Channels: RS.ArenaSport1 ... RS.ArenaPremium1 ... RS.ArenaTenis, RS.Adrenalin
 
 BELGIUM - Telenet's Play Sports "sportkalender" page (one page, this week's big events):
@@ -53,6 +69,9 @@ BELGIUM - Telenet's Play Sports "sportkalender" page (one page, this week's big 
   events only (no full schedule), so FILLER fills the gaps, as for Israel.
   Events without a start time (multi-day golf, tennis weeks) are left out.
   Channels: BE.PlaySports1 ... BE.PlaySportsGolf, BE.DAZN1, BE.DAZN2, BE.DAZNJPL1 ...
+  Since 29 Oct 2026 Telenet's FULL guide (staticqbr-prod-be.gnp.cloud.telenet.tv, same platform as Ziggo)
+  replaces the calendar for Play Sports 1-4, Play Sports Golf, DAZN 1-2 and DAZN JPL 1-2 (= DAZN Pro
+  League 1-2); calendar events keep their LIVE and competition. See TELENET_CHANNELS.
 
 SPAIN - Movistar Plus+ TV guide, one request per channel and day.
   Read from Movistar's JSON guide (as iptv-org does), with exact start/end times and
@@ -74,7 +93,7 @@ PORTUGAL - MEO's public TV guide (JSON), one request per channel and day:
 BRAZIL - Claro's public TV guide (programacao.claro.com.br, JSON search service):
     channels:   .../gatekeeper/canal/select?q=id_cidade:1 ...
     programmes: .../gatekeeper/exibicao/select?q=id_revel:(1_471)+AND+id_cidade:1 ... one per channel and day
-  Channels whose name matches --br-channels (default: SporTV, Premiere and ESPN);
+  Channels whose name matches --br-channels (default: SporTV, Premiere, ESPN, BandSports, Combate);
   SD/HD copies are merged. Start and end times are
   given (Brasilia time). Portuguese titles are translated.
   Channels: BR.SporTV, BR.SporTV2, BR.SporTV3, BR.PremiereClubes, BR.Premiere2, BR.ESPN ...
@@ -237,7 +256,7 @@ SUPERSPORT AFRICA - DStv's public TV guide (JSON), every channel in one request 
 POLAND - Onet's TV guide (server-built HTML), one page per channel and day:
     https://programtv.onet.pl/program-tv/tvp-sport-40?dzien=0     (dzien = 0 today, 1 tomorrow ...)
   Channels chosen with --pl-channels (the page names; default: TVP Sport, Polsat Sport,
-  Extra, Fight, Premium 1-2, Canal+ Sport 1-5, Eleven Sports 1-4). Programmes run back to
+  Extra, Fight, Premium 1-2, Canal+ Sport 1-5, Eleven Sports 1-4, Eurosport 1-2). Programmes run back to
   back; the programme type is the sub-title. Polish text is translated; "na żywo" marks live.
   Channels: PL.TVPSport, PL.PolsatSport, PL.CanalPlusSport, PL.ElevenSports1 ...
 
@@ -260,6 +279,7 @@ GREECE - Novasports' TV programme (novasports.gr/tv-program), one day at a time:
   The full schedule of every channel on the page (Novasports, Eurosport,
   Magenta Sport ...). Channels: GR.NovasportsPrime, GR.Novasports1HD ...
   Programmes run back to back, so no filler is needed.
+  ERT Sports 1-2 (GR.ERTSports1/2) come from epgshare01's GR1 file (group "greece").
 
 Both:
   * Hebrew / Greek titles are translated to English (free Google endpoint,
@@ -315,12 +335,19 @@ NOVA_URL = "https://www.novasports.gr/wp-admin/admin-ajax.php"
 NOVA_PAGE = "https://www.novasports.gr/tv-program/"
 AMSTERDAM = ZoneInfo("Europe/Amsterdam")
 BUCHAREST = ZoneInfo("Europe/Bucharest")
+SARAJEVO = ZoneInfo("Europe/Sarajevo")
 DIGI_PAGE = "https://www.digisport.ro/program-tv/digisport-{n}"
 PRIMA_PAGE = "https://www.primaplay.ro/programtv"
+# programetv.ro (29 Oct 2026, as iptv-org's reader): one page per channel and WEEKDAY name, with the
+# programmes as JSON in "var pageData = {...};". For Romanian channels the other two pages don't have.
+PROGRAMETV_PAGE = "https://www.programetv.ro/program-tv/{slug}/{weekday}/"
+PROGRAMETV_DAYS = ("luni", "marti", "miercuri", "joi", "vineri", "sambata", "duminica")   # Monday first
+PROGRAMETV_CHANNELS = {"sport-extra": "Sport Extra"}      # page name -> channel name (ID RO.SportExtra)
 RO_MONTHS = {m: i for i, m in enumerate(["ianuarie", "februarie", "martie", "aprilie", "mai",
              "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"], 1)}
 SOFIA = ZoneInfo("Europe/Sofia")
 BELGRADE = ZoneInfo("Europe/Belgrade")
+ZAGREB = ZoneInfo("Europe/Zagreb")
 LJUBLJANA = ZoneInfo("Europe/Ljubljana")
 BRUSSELS = ZoneInfo("Europe/Brussels")
 MADRID = ZoneInfo("Europe/Madrid")
@@ -552,6 +579,8 @@ PL_CHANNELS = {          # Onet page name -> (id part, channel name)
     "eleven-sports-212": ("ElevenSports2", "Eleven Sports 2"),
     "eleven-extra-531": ("ElevenSports3", "Eleven Sports 3"),
     "eleven-sports-4-607": ("ElevenSports4", "Eleven Sports 4"),
+    "eurosport-1-93": ("Eurosport1", "Eurosport 1 PL"),      # 29 Oct 2026 (Onet page names from iptv-org)
+    "eurosport-2-76": ("Eurosport2", "Eurosport 2 PL"),
 }
 MUJTV_LIST = ("https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php"
               "?channel_cid={cid}&day={offset}")
@@ -570,6 +599,18 @@ IPKO_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) A
                 "Accept": "application/json, text/plain, */*", "Content-Type": "application/json",
                 "X-AppLayout": "1", "x-language": "sq",
                 "Origin": "https://ipko.tv", "Referer": "https://ipko.tv/"}
+# Slovenia (29 Oct 2026): Telekom Slovenije's NEO guide - the same "stargate" API as IPKO above
+# (iptv-org's neo.io reader). Slovenian feeds of Arena Sport / Arena Premium / Arena Fight and Šport TV.
+NEO_EPG = "https://stargate.telekom.si/api/titan.tv.WebEpg/GetWebEpgData"
+NEO_HEADERS = dict(IPKO_HEADERS, **{"x-language": "sl", "Origin": "https://neo.io", "Referer": "https://neo.io/"})
+NEO_CHANNELS = {         # NEO channel slug -> (id part, channel name); IDs SI.<part>
+    "arena-sport-1": ("ArenaSport1", "Arena Sport 1 SI"), "arena-sport-2": ("ArenaSport2", "Arena Sport 2 SI"),
+    "arena-sport-3": ("ArenaSport3", "Arena Sport 3 SI"), "arena-sport-4": ("ArenaSport4", "Arena Sport 4 SI"),
+    "arena-sport-1-premium": ("ArenaPremium1", "Arena Sport 1 Premium SI"),
+    "arena-fight": ("ArenaFight", "Arena Fight SI"),
+    "sport-tv-1": ("SportTV1", "Šport TV 1"), "sport-tv-2": ("SportTV2", "Šport TV 2"),
+    "sport-tv-3": ("SportTV3", "Šport TV 3"),
+}
 AL_DEFAULT = ",".join(f"supersport-{i}" for i in range(1, 8))
 CLARO_BASE = "https://programacao.claro.com.br/gatekeeper/"
 CLARO_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
@@ -577,7 +618,7 @@ CLARO_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) 
                  "Accept": "application/json, */*",
                  "Origin": "https://programacao.claro.com.br",
                  "Referer": "https://programacao.claro.com.br/", "Accept-Language": "pt-BR,pt;q=0.9"}
-BR_DEFAULT = r"sportv|premiere|espn"
+BR_DEFAULT = r"sportv|premiere|espn|band ?sports|combate"     # BandSports, Combate added 29 Oct 2026
 BR_FALLBACK = {          # used only if Claro's channel list can't be read
     "1_471": "SporTV", "1_470": "SporTV 2", "1_1023": "SporTV 3",
     "1_426": "ESPN", "1_427": "ESPN 2", "1_2251": "ESPN 3", "1_1034": "ESPN 4",
@@ -590,6 +631,37 @@ TELENET_CAL = ("https://www2.telenet.be/residential/nl/producten/telenet-tv/play
 DELO_PAGE = "https://tvspored.delo.si/oddaje/{slug}/vsi/vsi/{day:%Y%m%d}"
 SK_DEFAULT = ",".join(f"sk{i}" for i in range(1, 11))
 ARENA_PAGE = "https://www.tvarenasport.com/tv-scheme"
+# Bosnia and Herzegovina feed (29 Oct 2026): own schedule (Arena Sport 1-5 BH, Premium 1-3 BH ...) on the
+# same site; tried in order until one gives data. IDs BA.<name>, e.g. BA.ArenaSport1, BA.ArenaPremium1.
+# mts (Telekom Srbija) TV guide (29 Oct 2026, as iptv-org's mts.rs reader): one JSON request per day with
+# every channel. For Serbian channels Arena's own page doesn't list. mts code -> channel name (ID RS.<name>)
+MTS_SEARCH = ("https://mts.rs/hybris/ecommerce/b2c/v1/products/search?sort=pozicija-rastuce"
+              "&searchQueryContext=CHANNEL_PROGRAM&query=:pozicija-rastuce:tip-kanala-radio:TV%20kanali"
+              ":channelProgramDates:{day:%Y-%m-%d}&pageSize=10000")
+MTS_CHANNELS = {"eurosport_1": "Eurosport 1", "eurosport_2": "Eurosport 2", "arena_fight_hd": "Arena Fight"}
+# Croatia (29 Oct 2026): MAXtv (Hrvatski Telekom) guide API, as iptv-org's mojmaxtv.hrvatskitelekom.hr reader.
+# One request per 3-hour slice (8 per day) with every channel; guest headers incl. a sha256 x-txn-id.
+MAXTV_API = "https://tv-hr-prod.yo-digital.com/hr-bifrost"
+MAXTV_APP_KEY, MAXTV_APP_VERSION = "GWaBW4RTloLwpUgYVzOiW5zUxFLmoMj5", "02.0.1470"
+MAXTV_CHANNELS = {       # MAXtv station id -> (id part, channel name); IDs HR.<part>
+    "274914856088": ("ArenaSport1", "Arena Sport 1 HR"), "282238503965": ("ArenaSport2", "Arena Sport 2 HR"),
+    "282238503966": ("ArenaSport3", "Arena Sport 3 HR"), "282238503968": ("ArenaSport4", "Arena Sport 4 HR"),
+    "282235944358": ("ArenaSport5", "Arena Sport 5 HR"), "282238503971": ("ArenaSport6", "Arena Sport 6 HR"),
+    "282235944384": ("ArenaSport7", "Arena Sport 7 HR"), "282235944385": ("ArenaSport8", "Arena Sport 8 HR"),
+    "282237992142": ("ArenaSport9", "Arena Sport 9 HR"), "282237992144": ("ArenaSport10", "Arena Sport 10 HR"),
+    "346589736202": ("ArenaFight", "Arena Fight HR"),
+    "311616552052": ("MAXSport1", "MAX Sport 1"), "311620648169": ("MAXSport2", "MAX Sport 2"),
+    "276770856251": ("SportskaTV", "Sportska Televizija"),
+    "696524328080": ("SportKlub1", "Sport Klub 1 HR"), "696528936296": ("SportKlub2", "Sport Klub 2 HR"),
+    "696530472226": ("SportKlub3", "Sport Klub 3 HR"), "696530983951": ("SportKlub4", "Sport Klub 4 HR"),
+    "696521768448": ("SportKlub5", "Sport Klub 5 HR"), "696524328149": ("SportKlub6", "Sport Klub 6 HR"),
+    "696529959967": ("SportKlub7", "Sport Klub 7 HR"), "696523816253": ("SportKlub8", "Sport Klub 8 HR"),
+    "696529447952": ("SportKlub9", "Sport Klub 9 HR"), "696529448021": ("SportKlub10", "Sport Klub 10 HR"),
+    "704057896278": ("SportKlub11", "Sport Klub 11 HR"), "708158504296": ("SportKlub12", "Sport Klub 12 HR"),
+    "704057896326": ("SportKlubGolf", "Sport Klub Golf HR"),
+}
+ARENA_PAGES_BA = ("https://tvarenaprogram.com/live/v2/ba", "https://www.tvarenasport.com/ba/tv-scheme", "https://www.tvarenasport.ba/tv-scheme",
+                  "https://tvarenasport.ba/tv-scheme")
 BG_SITE = "https://www.xn----8sbafg9clhjcp.bg/tv/{slug}/{day}"
 BG_WEEKDAYS = ["Понеделник", "Вторник", "Сряда", "Четвъртък", "Петък", "Събота", "Неделя"]
 BG_CHANNELS = {          # page name on the site -> channel name
@@ -607,6 +679,18 @@ ZIGGO_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) 
                                "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
                  "Origin": "https://www.ziggogo.tv", "Referer": "https://www.ziggogo.tv/",
                  "Accept": "application/json"}
+# Belgium (29 Oct 2026): Telenet's full TV guide - the same Liberty Global platform as Ziggo (iptv-org's
+# telenet.tv reader): 4 six-hour segments a day, every channel. Telenet channel code -> our channel name
+# (the names the Play Sports calendar already uses, so the IDs BE.PlaySports1, BE.DAZNJPL1 ... stay).
+TELENET_SEGMENT = ("https://staticqbr-prod-be.gnp.cloud.telenet.tv/eng/web/epg-service-lite/be/nl/"
+                   "events/segments/{stamp}")
+TELENET_HEADERS = dict(ZIGGO_HEADERS, Origin="https://www.telenet.tv", Referer="https://www.telenet.tv/")
+TELENET_CHANNELS = {
+    "primesporthd": "Play Sports 1", "sportinghd2": "Play Sports 2", "sporting3": "Play Sports 3",
+    "sporting4": "Play Sports 4", "primegolf": "Play Sports Golf",
+    "jplnl01": "DAZN JPL 1", "jplnl02": "DAZN JPL 2",            # = DAZN (Eleven) Pro League 1 / 2
+    "11football": "DAZN 1", "11sports": "DAZN 2",                # = DAZN Eleven Sports 1 / 2
+}
 LONDON = ZoneInfo("Europe/London")
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
@@ -1068,9 +1152,9 @@ def ziggo_channels(pattern):
     return wanted
 
 
-def fetch_netherlands(days, pattern, debug=False):
-    """{channel_name: [{start, stop, title, sub, live}]}"""
-    names = ziggo_channels(pattern)
+def fetch_netherlands(days, pattern, debug=False, names=None, segment_url=ZIGGO_SEGMENT, headers=ZIGGO_HEADERS):
+    """{channel_name: [{start, stop, title, sub, live}]} (also Telenet, Belgium: names + segment_url given)"""
+    names = names if names is not None else ziggo_channels(pattern)
     if debug:
         print(f"  Netherlands: {len(names)} matching channels: {sorted(set(names.values()))}")
     if not names:
@@ -1079,7 +1163,7 @@ def fetch_netherlands(days, pattern, debug=False):
     for day in days:
         for hour in (0, 6, 12, 18):
             stamp = f"{day:%Y%m%d}{hour:02d}0000"
-            data = get_json_url(ZIGGO_SEGMENT.format(stamp=stamp), ZIGGO_HEADERS) or {}
+            data = get_json_url(segment_url.format(stamp=stamp), headers) or {}
             for entry in data.get("entries") or []:
                 code = entry.get("channelId")
                 if code not in events:
@@ -1170,6 +1254,52 @@ def fetch_digisport(days, debug=False):
             print(f"  Digi Sport {n}: {len(evs)} programmes")
         if evs:
             out[f"Digi Sport {n}"] = [evs[k] for k in sorted(evs)]
+    return out
+
+
+def fetch_programetv(days, debug=False):
+    """{channel_name: [{start, stop, title, sub, live, desc}]} for PROGRAMETV_CHANNELS."""
+    hdrs = {"User-Agent": HEADERS["User-Agent"], "Accept": "text/html,application/xhtml+xml,*/*;q=0.8",
+            "Accept-Language": "ro-RO,ro;q=0.9"}
+    out = {}
+    for slug, name in PROGRAMETV_CHANNELS.items():
+        rows = {}
+        for day in days:
+            page = get_text(PROGRAMETV_PAGE.format(slug=slug, weekday=PROGRAMETV_DAYS[day.weekday()]), {},
+                            headers=hdrs, retries=2, quiet=True)
+            m = re.search(r"var pageData = ({.+?});", page or "", re.S)
+            try:
+                data = json.loads(m.group(1)) if m else {}
+            except ValueError:
+                data = {}
+            for it in (data.get("shows") or []) if isinstance(data, dict) else []:
+                if not isinstance(it, dict):
+                    continue
+                try:
+                    times = []
+                    for k in ("start", "stop"):
+                        t = datetime.fromisoformat(str(it.get(k)).replace("Z", "+00:00").replace(" ", "T"))
+                        times.append((t if t.tzinfo else t.replace(tzinfo=BUCHAREST)).astimezone(timezone.utc))
+                except (TypeError, ValueError):
+                    continue
+                start, stop = times
+                if stop <= start or start.astimezone(BUCHAREST).date() != day:
+                    continue                             # a weekday page can hold another week's day
+                title = re.sub(r"\s+", " ", str(it.get("title") or "")).strip()
+                if not title:
+                    continue
+                sub = re.sub(r"\s+", " ", str(it.get("titleOriginal") or "")).strip()
+                desc = re.sub(r"\s+", " ", str(it.get("desc") or it.get("obs") or "")).strip()
+                rx = r"\b(live|în direct|in direct|direct)\b"
+                live = bool(it.get("live") is True or re.search(rx, title, re.I))
+                title = re.sub(r"(?i)^\s*live\s*[:\-]?\s*|\s*[(\-:]?\s*\(?\b(live|în direct|in direct|direct)\b\)?\s*$",
+                               "", title).strip() or title
+                rows[start] = {"start": start, "stop": stop, "title": title, "sub": sub if sub != title else "",
+                               "live": live, "desc": short_desc(desc) if desc not in (title, sub) else ""}
+        evs = [rows[k] for k in sorted(rows)]
+        if evs:
+            out[name] = evs
+        print(f"  programetv.ro {name}: {len(evs)} programmes, {sum(e['live'] for e in evs)} live")
     return out
 
 
@@ -1342,10 +1472,132 @@ def parse_arena_html(page, wanted, debug=False):
     return out
 
 
-def fetch_arena(days, debug=False):
+def fetch_mts(days, debug=False):
+    """{channel_name: [{start, stop, title, sub, live, desc}]} for MTS_CHANNELS from mts.rs."""
+    hdrs = {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json, */*",
+            "Accept-Language": "sr-RS,sr;q=0.9"}
+    rows = {name: {} for name in MTS_CHANNELS.values()}
+    shown = False
+    for day in days:
+        data = get_json_url(MTS_SEARCH.format(day=day), hdrs, quiet=True)
+        products = data.get("products") if isinstance(data, dict) else None
+        if not isinstance(products, list):
+            continue
+        for ch in products:
+            name = MTS_CHANNELS.get((ch or {}).get("code")) if isinstance(ch, dict) else None
+            if not name:
+                continue
+            for it in ch.get("programs") or []:
+                if not isinstance(it, dict):
+                    continue
+                if not shown:
+                    print(f"    mts programme fields: {sorted(it)}")
+                    shown = True
+                try:
+                    times = []
+                    for k in ("start", "end"):
+                        v = it.get(k)
+                        if isinstance(v, (int, float)) or str(v).isdigit():
+                            v = int(v)
+                            t = datetime.fromtimestamp(v / 1000 if v > 10**11 else v, timezone.utc)
+                        else:
+                            t = datetime.fromisoformat(str(v).replace("Z", "+00:00").replace(" ", "T"))
+                            t = t if t.tzinfo else t.replace(tzinfo=BELGRADE)
+                        times.append(t.astimezone(timezone.utc))
+                except (TypeError, ValueError):
+                    continue
+                start, stop = times
+                title = re.sub(r"\s+", " ", str(it.get("title") or "")).strip()
+                if not title or stop <= start:
+                    continue
+                cat = it.get("category")
+                sub = ", ".join(map(str, cat)) if isinstance(cat, list) else str(cat or "").strip()
+                desc = re.sub(r"\s+", " ", str(it.get("description") or "")).strip()
+                rx = r"\b(uživo|uzivo|live)\b|\(už\)|\(uz\)"
+                live = bool(it.get("live") is True or re.search(rx, title, re.I))
+                title = re.sub(r"(?i)\s*[-(:,]?\s*(\b(uživo|uzivo|live)\b|\(u[žz]\))\s*\)?\s*$", "", title).strip() or title
+                rows[name][start] = {"start": start, "stop": stop, "title": title,
+                                     "sub": sub if sub != title else "", "live": live,
+                                     "desc": short_desc(desc) if desc not in (title, sub) else ""}
+    out = {}
+    for name, evs in rows.items():
+        if evs:
+            out[name] = [evs[k] for k in sorted(evs)]
+        print(f"  mts {name}: {len(evs)} programmes, {sum(e['live'] for e in evs.values())} live")
+    return out
+
+
+def maxtv_headers():
+    """Guest headers for MAXtv's API (fresh tracking id + x-txn-id each request, like the web app)."""
+    import hashlib
+    h = {"app_key": MAXTV_APP_KEY, "app_version": MAXTV_APP_VERSION, "device-id": MAXTV_DEVICE,
+         "tenant": "tv", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                                       "(KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+         "Origin": "https://mojmaxtv.hrvatskitelekom.hr", "x-call-type": "GUEST_USER",
+         "x-call-time": str(int(time.time() * 1000)), "x-request-session-id": MAXTV_SESSION,
+         "x-request-tracking-id": str(uuid.uuid4()), "x-tv-step": "EPG_SCHEDULES", "x-tv-flow": "EPG",
+         "x-user-agent": f"web|web|Chrome-149|{MAXTV_APP_VERSION}|1", "Accept": "application/json, */*"}
+    h["x-txn-id"] = hashlib.sha256("".join((h["x-request-tracking-id"], MAXTV_SESSION, MAXTV_DEVICE,
+                                            h["x-call-time"])).encode()).hexdigest()[:32]
+    return h
+
+
+MAXTV_DEVICE, MAXTV_SESSION = str(uuid.uuid4()), str(uuid.uuid4())
+
+
+def fetch_maxtv(days, debug=False):
+    """{id part: [{start, stop, title, sub, live, desc}]} for MAXTV_CHANNELS (Croatia)."""
+    rows = {sid: {} for sid in MAXTV_CHANNELS}
+    shown, got_any = False, False
+    for day in days:
+        for offset in range(0, 24, 3):
+            url = (f"{MAXTV_API}/epg/channel/schedules?date={day:%Y-%m-%d}&hour_offset={offset}&hour_range=3"
+                   f"&channelMap_id=&filler=true&app_language=hr&natco_code=hr")
+            data = get_json_url(url, maxtv_headers(), quiet=True)
+            chans = data.get("channels") if isinstance(data, dict) else None
+            if not isinstance(chans, dict):
+                if day == days[0] and offset == 0 and not got_any:
+                    print("  WARNING: MAXtv gave no schedule (blocked or changed?) - skipping Croatia", file=sys.stderr)
+                    return {}
+                continue
+            got_any = True
+            for sid in MAXTV_CHANNELS:
+                for it in chans.get(sid) or []:
+                    if not isinstance(it, dict):
+                        continue
+                    if not shown:
+                        print(f"    MAXtv programme fields: {sorted(it)}")
+                        shown = True
+                    try:
+                        start, stop = (datetime.fromisoformat(str(it.get(k)).replace("Z", "+00:00"))
+                                       for k in ("start_time", "end_time"))
+                        start = (start if start.tzinfo else start.replace(tzinfo=ZAGREB)).astimezone(timezone.utc)
+                        stop = (stop if stop.tzinfo else stop.replace(tzinfo=ZAGREB)).astimezone(timezone.utc)
+                    except (TypeError, ValueError):
+                        continue
+                    title = re.sub(r"\s+", " ", str(it.get("description") or "")).strip()
+                    if not title or stop <= start:
+                        continue
+                    sub = re.sub(r"\s+", " ", str(it.get("episode_name") or "")).strip()
+                    flag = any(v is True for k, v in it.items() if "live" in k.lower())
+                    rx = r"\b(uživo|uzivo|live)\b|\(u\)|\(už\)"
+                    live = flag or bool(re.search(rx, title, re.I) or re.search(rx, sub, re.I))
+                    title = re.sub(r"(?i)\s*[-(:,]?\s*(\b(uživo|uzivo|live)\b|\(u\)|\(už\))\s*\)?\s*$", "", title).strip() or title
+                    rows[sid][start] = {"start": start, "stop": stop, "title": title,
+                                        "sub": sub if sub != title else "", "live": live, "desc": ""}
+    out = {}
+    for sid, (part, name) in MAXTV_CHANNELS.items():
+        evs = [rows[sid][k] for k in sorted(rows[sid])]
+        if evs:
+            out[part] = evs
+        if debug or not evs:
+            print(f"  MAXtv {name}: {len(evs)} programmes")
+    return out
+
+
+def fetch_arena(days, debug=False, url=ARENA_PAGE, lang="sr-RS,sr;q=0.9"):
     """{channel_name: [{start, title, sub, live}]} for the dates in days."""
-    page = get_text(ARENA_PAGE, {}, headers={"User-Agent": HEADERS["User-Agent"],
-                                             "Accept-Language": "sr-RS,sr;q=0.9"})
+    page = get_text(url, {}, headers={"User-Agent": HEADERS["User-Agent"], "Accept-Language": lang})
     if not page:
         return {}
     i = page.find("window.TV_SCHEMES")
@@ -2425,6 +2677,41 @@ def fetch_albania(days, slugs, debug=False):
     return out
 
 
+def fetch_neo(days, debug=False):
+    """{id part: [{start, stop, title, sub, live, desc}]} for NEO_CHANNELS (Slovenia)."""
+    out = {}
+    for slug, (part, name) in NEO_CHANNELS.items():
+        evs = {}
+        for day in days:
+            frm = int(datetime(day.year, day.month, day.day, tzinfo=LJUBLJANA).timestamp())
+            nxt = day + timedelta(days=1)
+            to = int(datetime(nxt.year, nxt.month, nxt.day, tzinfo=LJUBLJANA).timestamp())
+            data = post_json(NEO_EPG, {"ch_ext_id": slug, "from": frm, "to": to}, NEO_HEADERS) or {}
+            shows = data.get("shows") if isinstance(data, dict) else None
+            shows = shows if isinstance(shows, list) else []
+            if not shows and day == days[0]:
+                break                                  # channel not in NEO's guide
+            for sh in shows:
+                try:
+                    start = datetime.fromtimestamp(int(sh["show_start"]), timezone.utc)
+                    stop = datetime.fromtimestamp(int(sh["show_end"]), timezone.utc)
+                except (KeyError, TypeError, ValueError):
+                    continue
+                title = re.sub(r"\s+", " ", sh.get("title") or "").strip()
+                if not title or stop <= start:
+                    continue
+                rx = r"\b(live|v živo|neposredni prenos|prenos v živo|uživo)\b"
+                live = bool(sh.get("is_live")) or bool(re.search(rx, title, re.I))
+                title = re.sub(r"\s*[-(,:]?\s*" + rx + r"\s*\)?\s*$", "", title, flags=re.I).strip() or title
+                desc = pick_desc(sh, "summary", "description", "desc", "synopsis")
+                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                              "desc": desc if desc != title else ""}
+        if evs:
+            out[part] = [evs[k] for k in sorted(evs)]
+        print(f"  NEO {name}: {len(evs)} programmes, {sum(e['live'] for e in evs.values())} live")
+    return out
+
+
 # --------------------------------------------------------------------------
 # Brazil: Claro TV guide
 # --------------------------------------------------------------------------
@@ -3092,6 +3379,21 @@ EPGSHARE = {   # group -> file, id prefix, place, time zone, English?, {id part:
                    "Best4Sport2": ("Best4Sport 2", ["Best4Sport.TV-2.HD.lv"]),
                    "SetantaSports": ("Setanta Sports", ["Setanta.Sports.1.HD.lv"]),
                    "SetantaSports2": ("Setanta Sports 2", ["Setanta.Sports.2.HD.lv"]),
+                   # 29 Oct 2026 - ids GUESSED in LV1's style; if wrong, the log names similar ids
+                   "Eurosport1": ("Eurosport 1 LV", ["Eurosport.1.HD.lv", "Eurosport.1.lv", "Eurosport.HD.lv",
+                                                     "Eurosport.lv"]),
+                   "Eurosport2": ("Eurosport 2 LV", ["Eurosport.2.HD.lv", "Eurosport.2.lv"]),
+                   "FightSports": ("Fight Sports", ["Fight.Sports.HD.lv", "Fight.Sports.lv", "FightSports.HD.lv",
+                                                    "FightSports.lv"]),
+                   "TV3Life": ("TV3 Life", ["TV3.Life.HD.lv", "TV3.Life.lv", "TV3Life.lv"]),   # general channel
+               }},
+    # Greece (29 Oct 2026): ERT Sports 1-2 (ERT's sport channels, mainly on ERTflix) - Novasports' page
+    # doesn't list them. Ids GUESSED in epgshare's style; if wrong, the log names similar ids.
+    "greece": {"file": "GR1", "prefix": "GR", "place": "Greece", "tz": "Europe/Athens", "english": False,
+               "channels": {
+                   **{f"ERTSports{n}": (f"ERT Sports {n}", [f"ERT.Sports.{n}.gr", f"ERT.Sports.{n}.HD.gr",
+                                                            f"ERTSports{n}.gr", f"ERT.SPORTS.{n}.gr"])
+                      for n in (1, 2)},
                }},
     "hk": {"file": "HK1", "prefix": "HK", "place": "Hong Kong", "tz": "Asia/Hong_Kong", "english": True,
            "backup": True, "channels": {                  # backup for Now TV's own guide
@@ -3245,6 +3547,10 @@ EPGSHARE.update({
                       for n in (6, 7)},
                    "PremiereClubes": ("Premiere Clubes", ["São.Paulo/SP..Premiere.Clubes.HD.br",
                                                           "São.Paulo/SP..Premiere.Clubes.br"]),
+                   "BandSports": ("BandSports", ["São.Paulo/SP..BandSports.HD.br", "São.Paulo/SP..BandSports.br",
+                                                 "São.Paulo/SP..Band.Sports.HD.br", "BandSports.br"]),   # 29 Oct 2026, guessed
+                   "Combate": ("Combate", ["São.Paulo/SP..Combate.HD.br", "São.Paulo/SP..Combate.br",
+                                           "São.Paulo/SP..COMBATE.HD.³.br", "Combate.br"]),          # 29 Oct 2026, guessed
                }},
     # UK and Ireland: backups for Sky's own guide (see SKY_CHANNELS), plus Sky Sports NFL
     "uk": {"file": "UK1", "prefix": "UK", "place": "UK", "tz": "Europe/London", "english": True,
@@ -3794,7 +4100,7 @@ MATCH_TITLE_RE = re.compile(r"\S\s+vs?\.?\s+\S", re.I)
 # sport. IDs starting with these:
 GENERAL_CHANNELS = ("UK.BBCOne", "UK.BBCTwo", "UK.ITV1", "UK.ITV4", "UK.Channel4", "UK.Channel5",
                     "IE.RTEOne", "IE.RTE2", "IE.VirginMedia", "US.NBC", "US.USANetwork",
-                    "CH.blueZoom")           # blue Zoom F/D (29 Oct 2026): mixed channel, only live sport tagged
+                    "CH.blueZoom", "LV.TV3Life")           # blue Zoom F/D (29 Oct 2026): mixed channel, only live sport tagged
 GENERAL_SPORT_RE = re.compile(
     r"(?i)\b(football|soccer|rugby|gaa|gaelic|hurling|camogie|cricket|tennis|golf|snooker|darts|"
     r"racing|grand prix|formula (1|one)|f1|moto ?gp|boxing|ufc|mma|wrestling|nfl|nba|nhl|mlb|"
@@ -4816,6 +5122,8 @@ def main():
     ap.add_argument("--bein", default=BEIN_DEFAULT,
                     help=f"beIN countries, comma separated (default {BEIN_DEFAULT}; also {','.join(c for c in BEIN_COUNTRIES if c not in BEIN_DEFAULT)})")
     ap.add_argument("--no-france", action="store_true", help="leave out the French channels")
+    ap.add_argument("--no-slovenia", action="store_true", help="leave out NEO's Slovenian channels (Arena, Šport TV)")
+    ap.add_argument("--no-croatia", action="store_true", help="leave out the Croatian channels (MAXtv)")
     ap.add_argument("--no-canal", action="store_true", help="leave out Canal+'s guide (Eurosport 360, Canal+ PL, Infosport+)")
     ap.add_argument("--fr-channels", default=",".join(FR_CHANNELS),
                     help="SFR channel numbers, comma separated (e.g. 35,1290,2665)")
@@ -4909,6 +5217,7 @@ def main():
         print(f"Romania: reading Digi Sport and Prima Play {ro_days[0]} to {ro_days[-1]} ...")
         ro = fetch_digisport(ro_days, args.debug)
         ro.update(fetch_primaplay(ro_days, args.debug))
+        ro.update(fetch_programetv(ro_days, args.debug))
         print(f"  {sum(len(v) for v in ro.values())} programmes on {len(ro)} channel(s)")
     bg = {}
     if not args.no_bulgaria:
@@ -4916,12 +5225,42 @@ def main():
         print(f"Bulgaria: reading тв-програма.bg {bg_days[0]} to {bg_days[-1]} ...")
         bg = fetch_bulgaria(bg_days, args.bg_channels, args.debug)
         print(f"  {sum(len(v) for v in bg.values())} programmes on {len(bg)} channel(s)")
-    arena = {}
+    arena, arena_ba = {}, {}
     if not args.no_arena:
         ar_days = [datetime.now(BELGRADE).date() + timedelta(days=i) for i in range(max(args.days, 1))]
         print(f"Balkans: reading Arena Sport TV page {ar_days[0]} to {ar_days[-1]} ...")
         arena = fetch_arena(ar_days, args.debug)
         print(f"  {sum(len(v) for v in arena.values())} programmes on {len(arena)} channel(s)")
+        for url in ARENA_PAGES_BA:                     # Bosnia and Herzegovina feed (29 Oct 2026)
+            got = fetch_arena(ar_days, args.debug, url=url, lang="bs-BA,bs;q=0.9,sr;q=0.8")
+            if got:
+                same = got == arena
+                print(f"  Bosnia ({url}): {sum(len(v) for v in got.values())} programmes on {len(got)} channel(s)"
+                      + (" - SAME as the Serbian page (probably a redirect) - not used" if same else "")
+                      + (f": {', '.join(sorted(got))}" if not same else ""))
+                if not same:
+                    arena_ba = got
+                    break
+        else:
+            print("  WARNING: no Bosnian Arena Sport page gave a schedule", file=sys.stderr)
+        print("Serbia: reading mts TV guide (Eurosport 1-2, Arena Fight) ...")   # 29 Oct 2026
+        arena.update(fetch_mts(ar_days, args.debug))
+    neo = {}
+    if not args.no_slovenia:                           # 29 Oct 2026
+        si_days = [datetime.now(LJUBLJANA).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+        print(f"Slovenia: reading NEO's TV guide (Arena Sport, Arena Premium, Arena Fight, Šport TV) "
+              f"{si_days[0]} to {si_days[-1]} ...")
+        neo = fetch_neo(si_days, args.debug)
+        print(f"  {sum(len(v) for v in neo.values())} programmes on {len(neo)} channel(s), "
+              f"{sum(e['live'] for v in neo.values() for e in v)} live")
+    hrv = {}
+    if not args.no_croatia:                            # 29 Oct 2026
+        hr_days = [datetime.now(ZAGREB).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+        print(f"Croatia: reading MAXtv's TV guide (Arena, Sport Klub, MAX Sport, Sportska TV) "
+              f"{hr_days[0]} to {hr_days[-1]} ...")
+        hrv = fetch_maxtv(hr_days, args.debug)
+        print(f"  {sum(len(v) for v in hrv.values())} programmes on {len(hrv)} channel(s), "
+              f"{sum(e['live'] for v in hrv.values() for e in v)} live")
     sk = {}
     if not args.no_sportklub:
         sk_days = [datetime.now(LJUBLJANA).date() + timedelta(days=i) for i in range(max(args.days, 1))]
@@ -4934,6 +5273,20 @@ def main():
         print("Belgium: reading Telenet Play Sports calendar ...")
         be = fetch_belgium(be_days, args.debug)
         print(f"  {sum(len(v) for v in be.values())} events on {len(be)} channel(s)")
+        print("Belgium: reading Telenet's full TV guide (Play Sports, Golf, DAZN, DAZN Pro League) ...")
+        full = fetch_netherlands(be_days, "", args.debug, names=TELENET_CHANNELS,
+                                 segment_url=TELENET_SEGMENT, headers=TELENET_HEADERS)
+        for name, evs in full.items():                 # full schedule replaces the calendar's few events,
+            cal = {e["start"]: e for e in be.get(name, [])}   # keeping its competition/round and LIVE
+            for e in evs:
+                c = cal.get(e["start"])
+                if c:
+                    e["live"] = True
+                    e["sub"] = e["sub"] or c.get("sub", "")
+            be[name] = evs
+            print(f"  Telenet {name}: {len(evs)} programmes, {sum(e['live'] for e in evs)} live")
+        if not full:
+            print("  WARNING: Telenet's guide gave nothing - calendar events only", file=sys.stderr)
     es = {}
     if not args.no_spain:
         es_days = [datetime.now(MADRID).date() + timedelta(days=i) for i in range(max(args.days, 1))]
@@ -5100,7 +5453,7 @@ def main():
         print(f"  {sum(len(v) for g in bein.values() for v in g.values())} programmes on "
               f"{sum(len(g) for g in bein.values())} channel(s)")
     if not il and not ch1 and not gr and not nl and not ro and not bg and not arena and not sk and not be \
-            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky and not cy and not hub and not mew and not canal:
+            and not es and not pt and not br and not al and not cz and not svk and not pl and not it and not de and not ind and not swi and not fra and not nordic and not bein and not ss and not eps and not now_hk and not sky and not cy and not hub and not mew and not canal and not hrv and not neo:
         sys.exit("Nothing found - the sites may be unreachable from here, or changed.")
 
     if not args.no_translate:
@@ -5267,6 +5620,19 @@ def main():
     for chname, evs in arena.items():
         part = re.sub(r"[^A-Za-z0-9]+", "", chname) or "Channel"
         records.append({"id": f"RS.{part}", "name": chname, "tz": BELGRADE, "place": "Serbia",
+                        "filler": False, "back_to_back": True, "events": evs})
+    for part, evs in neo.items():
+        name = next(n for p, n in NEO_CHANNELS.values() if p == part)
+        records.append({"id": f"SI.{part}", "name": name, "tz": LJUBLJANA, "place": "Slovenia",
+                        "filler": False, "back_to_back": True, "events": evs})
+    for part, evs in hrv.items():
+        name = next(n for p, n in MAXTV_CHANNELS.values() if p == part)
+        records.append({"id": f"HR.{part}", "name": name, "tz": ZAGREB, "place": "Croatia",
+                        "filler": False, "back_to_back": True, "events": evs})
+    for chname, evs in arena_ba.items():
+        part = re.sub(r"[^A-Za-z0-9]+", "", re.sub(r"(?i)\s*\b(BH|BiH)\b", "", chname)) or "Channel"
+        records.append({"id": f"BA.{part}", "name": f"{chname} BiH" if not re.search(r"(?i)\b(BH|BiH)\b", chname)
+                        else chname, "tz": SARAJEVO, "place": "Bosnia and Herzegovina",
                         "filler": False, "back_to_back": True, "events": evs})
     for chname, evs in bg.items():
         part = re.sub(r"[^A-Za-z0-9]+", "", chname) or "Channel"
