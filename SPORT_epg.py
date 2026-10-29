@@ -129,9 +129,11 @@ UK / IRELAND - Sky's public TV guide (behind sky.com's TV guide; JSON, no login 
     https://awk.epgsky.com/hawk/linear/schedule/20261021/4002,1120   (header X-SkyOTT-Territory: GB)
     https://atlantis.epgsky.com/as/schedule/20261021/7201            (4K channels)
   Sky Sports (Main Event, Premier League, Football, ... , Main Event 4K, F1 4K), TNT Sports 1-10,
-  Ultimate, Box Office 1-2, Premier Sports 1-2, RTÉ One, RTÉ2, Virgin Media One-Four.
+  Ultimate, Box Office 1-2, Premier Sports 1-2, RTÉ One, RTÉ2, Virgin Media One-Four, BBC One,
+  BBC Two, ITV1, ITV4, Channel 4, Channel 5 (general channels: only live sport events are LIVE - see GENERAL_CHANNELS).
   --no-sky to leave out; epgshare01's UK1/IE1 files are the backup (and give Sky Sports NFL;
-  none for RTÉ or Virgin Media). Channels: UK.SkySportsMainEvent, UK.TNTSports1,
+  none for RTÉ, Virgin Media, BBC or ITV). Channels: UK.SkySportsMainEvent, UK.TNTSports1,
+  UK.BBCOne, UK.BBCTwo, UK.ITV1, UK.ITV4, UK.Channel4, UK.Channel5,
   IE.PremierSports1, IE.RTEOne, IE.RTE2, IE.VirginMediaOne ... IE.VirginMediaFour
 
 CYPRUS - Cyta's own TV guide (epg.cyta.com.cy, JSON), as in cyta_epg.py:
@@ -2652,6 +2654,14 @@ SKY_CHANNELS = {   # our ID -> (name, [Sky service ids, best first], 4K?); epgsh
     "IE.VirginMediaTwo": ("Virgin Media Two", ["1046"], False),
     "IE.VirginMediaThree": ("Virgin Media Three", ["2817"], False),
     "IE.VirginMediaFour": ("Virgin Media Four", ["1316"], False),
+    # General UK channels (added 29 Oct 2026) - only their live sport gets LIVE (see GENERAL_CHANNELS).
+    # Sky service ids from iptv-org's sky.com channel list (London HD feeds, a second feed as backup).
+    "UK.BBCOne": ("BBC One", ["3000", "3008"], False),      # BBC One London HD, South East HD
+    "UK.BBCTwo": ("BBC Two", ["2075"], False),              # BBC Two HD
+    "UK.ITV1": ("ITV1", ["6504", "1043"], False),           # ITV1 London HD (two Sky feeds)
+    "UK.ITV4": ("ITV4", ["6534"], False),                   # ITV4 HD
+    "UK.Channel4": ("Channel 4", ["4075", "1202"], False),  # Channel 4 HD (UK, two Sky feeds)
+    "UK.Channel5": ("Channel 5", ["4058"], False),          # 5 HD
 }
 SKY_LIVE = re.compile(r"^\s*live\b|\(\s*live\s*\)|\blive\s*$", re.I)
 # Sky Sports UHD 1 / UHD 2 (added 28 Oct 2026): part-time 4K channels showing selected live events
@@ -3475,6 +3485,54 @@ MATCH_ONLY_LIVE = ("SG.HubPremier",)
 # instead of beIN's "Round 4"). IDs starting with these:
 KICKOFF_LIVE = ("MENA.",)
 MATCH_TITLE_RE = re.compile(r"\S\s+vs?\.?\s+\S", re.I)
+# General (non-sports) channels (29 Oct 2026): ONLY live sport events get a LIVE tag, always
+# "🔴 LIVE: ..."; everything else - live chat shows, news, reality TV, studio sport shows such as
+# Football Focus or Final Score - is never LIVE there, whatever the source or description says (the
+# description test wrongly made "The Late Late Show", "Judge Judy" and "The Neighbourhood" LIVE).
+# A programme counts when it is live AND its title or secondary title names a sport/competition
+# (GENERAL_SPORT_RE), or its title is a match ("England v Wales") and Sky flags it live or the
+# description names a sport, or Sky flags it live and the description says "live coverage" of a
+# sport. IDs starting with these:
+GENERAL_CHANNELS = ("UK.BBCOne", "UK.BBCTwo", "UK.ITV1", "UK.ITV4", "UK.Channel4", "UK.Channel5",
+                    "IE.RTEOne", "IE.RTE2", "IE.VirginMedia", "US.NBC", "US.USANetwork")
+GENERAL_SPORT_RE = re.compile(
+    r"(?i)\b(football|soccer|rugby|gaa|gaelic|hurling|camogie|cricket|tennis|golf|snooker|darts|"
+    r"racing|grand prix|formula (1|one)|f1|moto ?gp|boxing|ufc|mma|wrestling|nfl|nba|nhl|mlb|"
+    r"athletics|cycling|tour de france|swimming|diving|gymnastics|netball|hockey|basketball|baseball|"
+    r"volleyball|handball|bowls|rowing|boat race|sailing|skiing|equestrian|show ?jumping|triathlon|"
+    r"marathon|olympics?|paralympics?|commonwealth games|champions league|europa league|"
+    r"conference league|premier league|premiership|super league|nations league|league of ireland|"
+    r"six nations|world cup|euro \d{4}|fa cup|carabao|scottish cup|urc|wimbledon|test match|odi|t20i?|"
+    r"the open|ryder cup|solheim cup|grand national|cheltenham|royal ascot|ascot|epsom|"
+    r"leopardstown|punchestown|galway races|all-ireland|ulster|munster|leinster|connacht|"
+    r"provincial|national league|wsl|matchday|kick-?off|"
+    r"wnba|ncaa|nascar|indycar|imsa|figure skating|skating|breeders'? cup|kentucky derby|preakness|"
+    r"belmont stakes|stanley cup|world series|super bowl|playoffs?|mls)\b")
+# Studio sport shows on those channels (in addition to STUDIO_RE) - never LIVE there
+GENERAL_STUDIO_RE = re.compile(
+    r"(?i)\b(focus|final score|match of the day|motd|sportscene|special|question of sport|"
+    r"sports personality|soccer republic|league sunday|inside|goals|sport(s)? (round-?up|bulletin)|"
+    r"results|scores?|quiz|a league of their own)\b")
+
+
+def general_sport_live(title, sub, desc, flagged):
+    """True for a live sport EVENT on a GENERAL_CHANNELS channel (see there). `flagged` = the
+    source itself marks it live (Sky's "Live ..."), not just a "live" in the description."""
+    t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", (title or "").strip())
+    sub = (sub or "").strip()
+    if OFF_AIR_RE.match(t) or STUDIO_RE.search(t) or GENERAL_STUDIO_RE.search(t) or NOT_LIVE_WORDS.search(t):
+        return False
+    if GENERAL_SPORT_RE.search(t):
+        return True
+    if sub and GENERAL_SPORT_RE.search(sub) and not NOT_LIVE_WORDS.search(sub) \
+            and not (len(sub) <= 40 and (STUDIO_RE.search(sub) or GENERAL_STUDIO_RE.search(sub))):
+        return True
+    if MATCH_TITLE_RE.search(t) and (flagged or GENERAL_SPORT_RE.search(desc or "")):
+        return True
+    # Sky flags it live and the description says it is live sport ("The Sunday Game" - "Live
+    # coverage of the All-Ireland football final")
+    return bool(flagged and re.search(r"(?i)\blive (coverage|action|commentary)\b", desc or "")
+                and GENERAL_SPORT_RE.search(desc or "") and not NOT_LIVE_WORDS.search(desc or ""))
 
 
 def really_live(title, cid):
@@ -4241,7 +4299,12 @@ def build_xmltv(records, suffix, minutes):
             if is_live and not really_live(title, cid):        # e.g. "End of Transmission"
                 is_live = False
                 desc = re.sub(r"^LIVE\.\s*", "", desc)
-            red = is_live and (cid.startswith(tuple(EVENT_LIVE_PREFIX)) or live_event(title, sub))
+            general = cid.startswith(GENERAL_CHANNELS)
+            if general:                                        # BBC/ITV/RTÉ/Virgin: live sport events only
+                is_live = is_live and general_sport_live(title, sub, desc, ev["live"])
+                if not is_live:
+                    desc = re.sub(r"^LIVE\.\s*", "", desc)
+            red = is_live and (general or cid.startswith(tuple(EVENT_LIVE_PREFIX)) or live_event(title, sub))
             if red:                                            # 🔴: no "LIVE." in the description, plus
                 desc = re.sub(r"^LIVE\.\s*", "", desc)        # kick-off/venue or the start time
                 more = event_start_info(title, ev["start"])
