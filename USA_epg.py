@@ -53,12 +53,17 @@ LIVE_PREFIX = "LIVE: "
 # Red ball (28 Oct 2026) on these channels' live sports EVENTS only - a game/match/draw, not studio
 # shows ("Hockey Central Tonight", "MLB Central", "NHL Now" keep plain "LIVE: "). They are the
 # channels the user's Sportsnet UHD streams are linked to (the HD streams share the IDs).
-RED_BALL_CHANNELS = {"CA.SportsnetOne", "CA.Sportsnet360"}
+RED_BALL_CHANNELS = {"CA.SportsnetOne", "CA.Sportsnet360",
+                     "US.CBSSportsNetwork", "US.CBSSportsGolazo"}     # (29 Oct 2026: CBS Sports channels)
 RED_BALL_PREFIX = "🔴 LIVE: "
+# General (non-sports) channels (29 Oct 2026): only live sports EVENTS get a tag there, always the red
+# ball; everything else - studio shows ("Football Night in America", "Big Ten Countdown"), and anything
+# TV Passport files under Sports that isn't sport ("Saturday Night Live") - is never LIVE.
+GENERAL_CHANNELS = {"US.NBC", "US.USANetwork", "US.CBS", "US.FOX", "US.ABC"}
 MATCHUP_RE = re.compile(r"\S\s+(at|vs?\.?|v)\s+\S", re.I)          # "Buffalo Sabres at San Jose Sharks"
 EVENT_WORDS_RE = re.compile(r"(?i)\b(draw \d+|game \d+|round \d+|(semi|quarter)-?finals?|finals?|"
                             r"grand prix|grand slam|qualifying|race \d*|championships?|cup|tournament)\b")
-STUDIO_RE = re.compile(r"(?i)\b(central|tonight|now|pre-?game|post-?game|show|insider|coverage|preview|"
+STUDIO_RE = re.compile(r"(?i)\b(central(?! american)|tonight|now|pre-?game|post-?game|show|insider|coverage|preview|"
                        r"recap|highlights|in 30|countdown|today|report|daily|best|top \d+|plays of)\b")
 
 
@@ -201,6 +206,19 @@ CA_CHANNELS = [
 ]
 
 # output file -> its channels
+# CBS Sports Golazo Network (added 29 Oct 2026) is a free streaming channel - not on TV Passport. Its
+# listings come from Pluto TV's guide as published by i.mjh.nz (matthuisman's GitHub repo; Pluto's own
+# API needs a session). Pluto marks EVERY programme live, so that flag is ignored: a programme is live
+# when it is a match ("Saprissa vs. CD LA Firpo"), at least PLUTO_MATCH_MINUTES long, not a highlights/
+# re-air show ("90 in 60"), and the first airing of that match in the listings (later ones are re-airs).
+# Pluto lists only about a day ahead; the twice-daily runs and PlaylistLabs' appending keep it filled.
+PLUTO_GUIDE = "https://raw.githubusercontent.com/matthuisman/i.mjh.nz/master/PlutoTV/us.xml.gz"
+PLUTO_CHANNELS = {"US.CBSSportsGolazo": "63a0e33a45264d000850ed7e"}    # our ID -> Pluto channel id
+PLUTO_MATCH_MINUTES = 100
+PLUTO_NOT_LIVE = re.compile(r"(?i)\b(\d+ in \d+|highlights?|replay|re-?airs?|rewind|classic|encore|"
+                            r"best of|condensed|extended|recap|review|preview|show)\b")
+CHANNELS.append(("US.CBSSportsGolazo", "CBS Sports Golazo", "pluto"))
+
 GUIDES = {"USA_epg.xml.gz": CHANNELS, "CANADA_epg.xml.gz": CA_CHANNELS}
 
 ITEM = re.compile(r'<div\s[^>]*class="list-group-item"[^>]*>', re.S)
@@ -267,6 +285,52 @@ def parse_page(page):
     return progs
 
 
+def fetch_pluto():
+    """{our id: [programmes]} for PLUTO_CHANNELS from the i.mjh.nz Pluto TV guide."""
+    import xml.etree.ElementTree as XT
+    out = {cid: [] for cid in PLUTO_CHANNELS}
+    try:
+        req = urllib.request.Request(PLUTO_GUIDE, headers={"User-Agent": HEADERS["User-Agent"]})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            root = XT.fromstring(gzip.decompress(r.read()))
+    except Exception as e:
+        print(f"  WARNING: Pluto TV guide not available ({e})")
+        return out
+    ours = {v: k for k, v in PLUTO_CHANNELS.items()}
+
+    def when(v):
+        return datetime.strptime(v, "%Y%m%d%H%M%S %z").astimezone(timezone.utc)
+
+    for el in root.iter("programme"):
+        cid = ours.get(el.get("channel"))
+        if not cid:
+            continue
+        try:
+            start, stop = when(el.get("start")), when(el.get("stop"))
+        except (TypeError, ValueError):
+            continue
+        out[cid].append({"start": start, "stop": stop, "title": (el.findtext("title") or "").strip(),
+                         "sub": (el.findtext("sub-title") or "").strip(),
+                         "desc": (el.findtext("desc") or "").strip(),
+                         "cats": [c.text.strip() for c in el.findall("category") if c.text and c.text.strip()],
+                         "year": "", "rating": "", "live": False, "new": False})
+    for cid, progs in out.items():
+        progs.sort(key=lambda p: p["start"])
+        seen = set()
+        for p in progs:
+            match = (p["sub"] if MATCHUP_RE.search(p["sub"]) else p["title"]) if \
+                MATCHUP_RE.search(f'{p["title"]} | {p["sub"]}') else ""
+            key = re.sub(r"\W+", " ", match.lower()).strip()
+            p["live"] = bool(match and key not in seen
+                             and p["stop"] - p["start"] >= timedelta(minutes=PLUTO_MATCH_MINUTES)
+                             and not PLUTO_NOT_LIVE.search(f'{p["title"]} {p["sub"]} {p["desc"]}'))
+            if key:
+                seen.add(key)
+        print(f"  Pluto TV {cid}: {len(progs)} programmes, {sum(p['live'] for p in progs)} live match(es)"
+              + (f", to {progs[-1]['stop'].astimezone(UK):%a %d %b %H:%M} UK" if progs else ""))
+    return out
+
+
 def grab(job):
     cid, path, day = job
     url = BASE.format(path, day.strftime("%Y-%m-%d"))
@@ -328,7 +392,10 @@ def write(path, channels, guide):
             low = {c.lower() for c in p["cats"]}
             sport = any(c.startswith("sports") for c in low)
             live = p["live"] and sport and not (low & NOT_EVENT_CATEGORIES)
-            prefix = RED_BALL_PREFIX if (cid in RED_BALL_CHANNELS and is_event(p)) else LIVE_PREFIX
+            if cid in GENERAL_CHANNELS:
+                live = live and is_event(p)
+            prefix = RED_BALL_PREFIX if ((cid in RED_BALL_CHANNELS or cid in GENERAL_CHANNELS)
+                                         and is_event(p)) else LIVE_PREFIX
             title = (prefix + p["title"]) if live else p["title"]
             cats = p["cats"] + (["Live"] if live else [])
             out = [f'  <programme start="{xmltv_time(p["start"])}" stop="{xmltv_time(p["stop"])}" '
@@ -380,7 +447,7 @@ def main():
     last = datetime(last_day.year, last_day.month, last_day.day, tzinfo=UK)
     days = [uk_today + timedelta(days=d) for d in range(-1, args.days_ahead + 1)]
     every = [c for chans in GUIDES.values() for c in chans]
-    jobs = [(c[0], c[2], d) for c in every for d in days]
+    jobs = [(c[0], c[2], d) for c in every for d in days if c[2] != "pluto"]
     print(f"Fetching {len(every)} channels x {len(days)} days ({len(jobs)} pages) ...")
 
     raw, failed, empty = {}, [], {}
@@ -394,6 +461,7 @@ def main():
             if i % 50 == 0:
                 print(f"  {i}/{len(jobs)} pages")
 
+    raw.update(fetch_pluto())                       # CBS Sports Golazo (Pluto TV)
     guide = {cid: tidy(p, first, last) for cid, p in raw.items()}
     ends = {cid: v[-1]["stop"] for cid, v in guide.items() if v}
     if ends:
