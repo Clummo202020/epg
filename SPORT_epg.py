@@ -1632,6 +1632,7 @@ def fetch_maxtv(days, debug=False):
                     rx = r"\b(uživo|uzivo|live)\b|\(u\)|\(už\)"
                     live = flag or bool(re.search(rx, title, re.I) or re.search(rx, sub, re.I))
                     title = re.sub(r"(?i)\s*[-(:,]?\s*(\b(uživo|uzivo|live)\b|\(u\)|\(už\))\s*\)?\s*$", "", title).strip() or title
+                    title = re.sub(r"(?i)^\s*(uživo|uzivo|live)\s*[:\-–]\s*", "", title).strip() or title   # leading "UŽIVO:"
                     rows[sid][start] = {"start": start, "stop": stop, "title": title,
                                         "sub": sub if sub != title else "", "live": live, "desc": ""}
     out = {}
@@ -3989,12 +3990,46 @@ ENGLISH_PLACES = {"Australia", "Malaysia", "Singapore", "Hong Kong", "Thailand",
                   "South Africa", "Africa", "India", "Qatar", "UK", "Ireland", "New Zealand", "USA", "Canada", "Cyprus", "UAE"}   # their guides are already in English
 
 
+# A "translation" that is just the source text back (sometimes cut short) - seen 29 Oct 2026 on German
+# descriptions ("Aktuell liegt eine Sendepause vor ..." cached as itself). Only counted as a failure when
+# the text clearly isn't English, so English or name-only texts ("Bayern - Dortmund") stay as they are.
+NON_EN_WORDS = re.compile(
+    r"(?i)\b(der|das|und|ist|nicht|mit|einen?|eine|wir|sind|aus|auf|für|von|zum|zur|werden|wird|bei|nach|über|"
+    r"auch|noch|dem|des|gezeigt|aktuell|die|im|ein|eines|einer|sich|wie|oder|als|sie|hat|haben|wurde|alle|"
+    r"mehr|zwischen|heute|gegen|direkt|le|les|et|est|une|du|pour|dans|avec|sur|aux|el|los|las|del|por|para|"
+    r"con|una|il|gli|della|che|per|è|os|em|com|het|een|voor|niet|się|jest|oraz|już|je|ve|na|za|od|které?|"
+    r"koji|koja|su|uživo|prenos)\b")
+EN_WORDS = re.compile(r"(?i)\b(the|and|of|to|is|for|with|on|at|from|by|are|this|that|will|live|match)\b")
+
+
+def looks_foreign(text):
+    f = len(NON_EN_WORDS.findall(text or ""))
+    return f >= 2 and f > len(EN_WORDS.findall(text or ""))
+
+
+def untranslated(src, out):
+    """True when out is src handed back (possibly cut short) and src isn't English."""
+    if not out:
+        return True
+    a = re.sub(r"\W+", " ", src).strip().lower()
+    b = re.sub(r"\W+", " ", out).strip().lower()
+    same = a == b or (len(b) >= 15 and a.startswith(b[:-4]))
+    # (29 Oct 2026, Switzerland) also a result still mostly in the source language - half translated
+    return looks_foreign(src) and (same or looks_foreign(out))
+
+
 def load_cache():
     path = CACHE_FILE if os.path.exists(CACHE_FILE) else OLD_CACHE_FILE
     try:
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
-        TRANSLATIONS.update({k: v for k, v in data.items() if isinstance(v, str)})
+        good = {k: v for k, v in data.items() if isinstance(v, str)}
+        bad = [k for k, v in good.items() if k != "__desc_used__" and untranslated(k, v)]
+        for k in bad:                                  # retranslated this run (29 Oct 2026 fix)
+            good.pop(k)
+        if bad:
+            print(f"Translation cache: {len(bad)} entr(y/ies) were the untranslated text - trying them again")
+        TRANSLATIONS.update(good)
         used = data.get("__desc_used__")
         DESC_USED.update({k: v for k, v in (used if isinstance(used, dict) else {}).items()
                           if isinstance(v, str)})
@@ -4022,8 +4057,8 @@ def google_translate(text, short=True):
         if name in TRANSLATOR_DOWN or (name == "MyMemory" and not short):
             continue
         out = fn([text])
-        if out and out[0]:
-            return out[0]
+        if out and out[0] and not untranslated(text, out[0]):
+            return out[0]                              # (the source handed back: try the next translator)
     return None
 
 
@@ -4172,6 +4207,8 @@ def translate_descriptions(records, limit):
         if out is None:                                # the batch didn't split cleanly: one by one
             out = [google_translate(t, short=False) for t in batch]
         for t, tr_ in zip(batch, out):
+            if tr_ and untranslated(t, tr_):           # came back untranslated: once more on its own
+                tr_ = google_translate(t, short=False)
             if tr_:
                 TRANSLATIONS[t] = tr_
                 DESC_USED[t] = today
@@ -4409,6 +4446,7 @@ STUDIO_RE = re.compile(
     r"sportscenter|now|blitz|courtside|nfl live|following|good evening|avant-match|plateau|"
     r"emission|time for\b.{0,25}\bballs?|"
     r"college football live|saturday league kick[- ]?off|"            # ESPN2 / Fox League studio shows (29 Oct 2026)
+    r"scoreboard|run home|full time live|"                            # ESPN2 / Fox League / Fox Sports News (29 Oct, late)
     r"summar(y|ies))\b")
 UK_EVENT_RE, UK_STUDIO_RE = EVENT_RE, STUDIO_RE                   # (older names)
 
@@ -5745,6 +5783,8 @@ def main():
         texts += [e["title"] for evs in ind.values() for e in evs]   # only Indian-script titles
         force = [e["title"] for evs in ro.values() for e in evs]
         force += [t for evs in arena.values() for e in evs for t in (e["title"], e["sub"])]
+        force += [t for evs in arena_ba.values() for e in evs for t in (e["title"], e["sub"])]   # Bosnia (29 Oct, late)
+        force += [t for evs in neo.values() for e in evs for t in (e["title"], e["sub"])]        # Slovenia (29 Oct, late)
         force += [t for evs in sk.values() for e in evs for t in (e["title"], e["sub"])]
         force += [t for evs in hrv.values() for e in evs for t in (e["title"], e["sub"])]    # Croatia (MAXtv): Latin script, so forced
         force += [e["sub"] for evs in be.values() for e in evs]
