@@ -1711,6 +1711,44 @@ def parse_delo(page):
     return (clean(name.group(1)) if name else None), rows
 
 
+# Slovenian titles (29 Oct 2026, late): "Am. nogomet (M): Broncos - Chiefs, NFL 2026/2027". Google does these badly
+# ("Football (M)", "Soccer (M)", "Am. football"), so the sport word, the (M)/(Ž) tag and common round/league words
+# are put into English first; anything left is translated as usual.
+SI_SPORTS = [("am. nogomet", "American football"), ("ameriški nogomet", "American football"), ("nogomet", "Football"),
+             ("košarka", "Basketball"), ("hokej na ledu", "Ice hockey"), ("hokej", "Ice hockey"),
+             ("rokomet", "Handball"), ("odbojka na mivki", "Beach volleyball"), ("odbojka", "Volleyball"),
+             ("bejzbol", "Baseball"), ("boks", "Boxing"), ("tenis", "Tennis"), ("smučanje", "Skiing"),
+             ("kolesarstvo", "Cycling"), ("atletika", "Athletics"), ("plavanje", "Swimming"), ("golf", "Golf"),
+             ("futsal", "Futsal"), ("mali nogomet", "Futsal"), ("vaterpolo", "Water polo"), ("pikado", "Darts"),
+             ("snooker", "Snooker"), ("borilne veščine", "Martial arts"), ("motociklizem", "Motorcycling")]
+SI_WORDS = [(r"\bosmina finala\b", "Round of 16"), (r"\bčetrtfinale\b", "Quarter-final"), (r"\bpolfinale\b", "Semi-final"),
+            (r"\bfinale\b", "Final"), (r"\bkončnica\b", "Play-offs"), (r"\bzaključni del\b", "Final stage"),
+            (r"\bskupina\b", "Group"), (r"\bpremier liga\b", "Premier League"), (r"\bliga prvakov\b", "Champions League"),
+            (r"\bprva liga\b", "First League"), (r"\bargentinska liga\b", "Argentine League"),
+            (r"\bškotska liga\b", "Scottish League"), (r"\bnizozemska liga\b", "Dutch League"),
+            (r"\bšvedska liga\b", "Swedish League"), (r"\bgrška liga\b", "Greek League"), (r"\balpska liga\b", "Alps League"),
+            (r"\bbolgarska\b", "Bulgarian"), (r"\bšpanska liga\b", "Spanish League"), (r"\bturška liga\b", "Turkish League"),
+            (r"\bdunaj\b", "Vienna"), (r"\bboks\b", "Boxing"), (r"\bliga\b", "League"), (r"\bženski nogometni magazin\b", "Women's football magazine")]
+
+
+def si_title(title):
+    """Slovenian sport title -> English where it's fixed wording (sport, gender, round, league)."""
+    t = title or ""
+    m = re.match(r"(?i)^\s*([^():]{2,25}?)\s*\((m|ž|z|w)\)\s*:\s*", t)
+    if m:
+        sport = m.group(1).strip().lower()
+        eng = next((e for k, e in SI_SPORTS if sport == k), None) or m.group(1).strip()
+        women = m.group(2).lower() in ("ž", "z", "w")
+        t = f"{eng}{' (Women)' if women else ''}: " + t[m.end():]
+    else:
+        m = re.match(r"(?i)^\s*([^():]{2,25}?)\s*:\s*", t)
+        if m and any(m.group(1).strip().lower() == k for k, _ in SI_SPORTS):
+            t = next(e for k, e in SI_SPORTS if m.group(1).strip().lower() == k) + ": " + t[m.end():]
+    for rx, eng in SI_WORDS:
+        t = re.sub("(?i)" + rx, eng, t)
+    return re.sub(r"\s+,", ",", re.sub(r"\s{2,}", " ", t)).strip()
+
+
 def fetch_sportklub(days, slugs, debug=False):
     """{channel_name: [{start, title, sub, live}]}"""
     out = {}
@@ -1740,7 +1778,7 @@ def fetch_sportklub(days, slugs, debug=False):
                     start += timedelta(days=1)
                 last = start
                 key = start.astimezone(timezone.utc)
-                evs[key] = {"start": key, "title": title,
+                evs[key] = {"start": key, "title": si_title(title),
                             "sub": genre.replace("•", "-"), "live": False}
         if evs:
             out[chname or slug.upper()] = [evs[k] for k in sorted(evs)]
@@ -2769,6 +2807,7 @@ def fetch_neo(days, debug=False):
                 live = bool(sh.get("is_live")) or bool(re.search(rx, title, re.I))
                 title = re.sub(r"\s*[-(,:]?\s*" + rx + r"\s*\)?\s*$", "", title, flags=re.I).strip() or title
                 desc = pick_desc(sh, "summary", "description", "desc", "synopsis")
+                title = si_title(title)                # Slovenian sport / round words -> English
                 evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
                               "desc": desc if desc != title else ""}
         if evs:
@@ -2885,6 +2924,72 @@ def fetch_yes(days, debug=False):
         if evs:
             out[part] = [evs[k] for k in sorted(evs)]
         print(f"  yes {name}: {len(evs)} programmes, {sum(e['live'] for e in evs.values())} live")
+    return out
+
+
+# Turkey (29 Oct 2026, late): Turkcell TV+ guide (as iptv-org's tvplus.com.tr reader) - has DESCRIPTIONS, unlike
+# epgshare's TR1 file. A guest login gives a cookie, then one request per channel and day. Not beIN (Digiturk only).
+TVPLUS_API = "https://izmaottvsc14.tvplus.com.tr:33207/EPG/JSON/"
+TVPLUS_CHANNELS = {"11": "SSport", "170": "SSport2", "3": "ASpor", "31": "TRTSpor"}   # TV+ id -> TR1 group id part
+
+
+def fetch_tvplus(days, debug=False):
+    """{TR id part: [{start, stop, title, sub, live, desc}]} from Turkcell TV+."""
+    import http.cookiejar
+    jar = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(jar),
+                                         urllib.request.HTTPSHandler(context=CTX))
+    hdrs = {"User-Agent": HEADERS["User-Agent"], "Content-Type": "application/json", "Accept": "application/json"}
+
+    def post(path, body):
+        req = urllib.request.Request(TVPLUS_API + path, data=json.dumps(body).encode(), headers=hdrs, method="POST")
+        try:
+            with opener.open(req, timeout=FETCH_TIMEOUT) as resp:
+                return json.loads(resp.read().decode("utf-8", "replace") or "{}")
+        except Exception as exc:                        # noqa: BLE001 - any failure: report and carry on
+            if debug:
+                print(f"    TV+ {path}: {exc}", file=sys.stderr)
+            return None
+
+    if post("Authenticate", {"terminaltype": "webtv", "terminalvendor": HEADERS["User-Agent"][13:],
+                             "osversion": "Win32", "userType": "3", "utcEnable": "1",
+                             "timezone": "Europe/Istanbul"}) is None:
+        print("  WARNING: TV+ (Turkey) login failed - S Sport / A Spor / TRT Spor stay on epgshare", file=sys.stderr)
+        return {}
+    out = {}
+    for cid, part in TVPLUS_CHANNELS.items():
+        rows = {}
+        for day in days:
+            a = datetime(day.year, day.month, day.day, tzinfo=timezone.utc)
+            data = post("PlayBillList", {"type": "2", "channelid": cid, "begintime": a.strftime("%Y%m%d%H%M%S"),
+                                         "endtime": (a + timedelta(days=1)).strftime("%Y%m%d%H%M%S"),
+                                         "isFillProgram": 1})
+            for it in (data or {}).get("playbilllist") or []:
+                try:
+                    times = []
+                    for k in ("starttime", "endtime"):
+                        m = re.match(r"(\d{4}-\d\d-\d\d) (\d\d:\d\d:\d\d)\s*(?:UTC)?\s*([+-]\d\d):?(\d\d)?",
+                                     str(it.get(k)))
+                        off = timedelta(hours=int(m.group(3)), minutes=int(m.group(4) or 0) * (1 if m.group(3)[0] == "+" else -1))
+                        t = datetime.fromisoformat(f"{m.group(1)}T{m.group(2)}").replace(tzinfo=timezone(off))
+                        times.append(t.astimezone(timezone.utc))
+                except (AttributeError, TypeError, ValueError):
+                    continue
+                start, stop = times
+                title = re.sub(r"\s+", " ", str(it.get("name") or "")).strip()
+                if not title or stop <= start:
+                    continue
+                desc = re.sub(r"\s+", " ", str(it.get("introduce") or "")).strip()
+                flag = any(str(v) in ("1", "true", "True") for k, v in it.items() if "live" in k.lower())
+                live = flag or bool(re.search(r"(?i)\bcanl[ıi]\b", title))
+                title = re.sub(r"(?i)\s*[-(]?\s*\bcanl[ıi]\b\s*\)?\s*$|^\s*canl[ıi]\s*[:\-]\s*", "", title).strip() or title
+                rows[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                               "desc": short_desc(desc) if desc and desc != title else ""}
+        evs = [rows[k] for k in sorted(rows)]
+        if evs:
+            out[part] = evs
+        print(f"  TV+ {part}: {len(evs)} programmes, {sum(e['live'] for e in evs)} live, "
+              f"{sum(bool(e['desc']) for e in evs)} with a description")
     return out
 
 
@@ -3998,7 +4103,16 @@ NON_EN_WORDS = re.compile(
     r"auch|noch|dem|des|gezeigt|aktuell|die|im|ein|eines|einer|sich|wie|oder|als|sie|hat|haben|wurde|alle|"
     r"mehr|zwischen|heute|gegen|direkt|le|les|et|est|une|du|pour|dans|avec|sur|aux|el|los|las|del|por|para|"
     r"con|una|il|gli|della|che|per|è|os|em|com|het|een|voor|niet|się|jest|oraz|już|je|ve|na|za|od|které?|"
-    r"koji|koja|su|uživo|prenos)\b")
+    r"koji|koja|su|uživo|prenos|"
+    # 29 Oct 2026 (late): Nordic, Finnish, Czech, Croatian, Turkish - so their untranslated / half-translated
+    # descriptions are caught too
+    r"och|på|med|för|av|från|som|är|inte|det|till|har|efter|matchen|säsong|omgång|möter|fotboll|sändningar?|"
+    r"fotball|jalkapallo|jääkiekko|fotbal|hokej|nogomet|košarka|futbol|basketbol|"
+    r"og|fra|er|ikke|etter|kampen|sesong|runde|møter|høydepunkter|magasin|ukentlig|"
+    r"ja|ottelu|kierros|kauden|vastaan|enemmän|lisää|jossa|myös|koe|suora|lähetys|"
+    r"se|ve|ze|pro|který|která|které|jsou|muži|ženy|přenos|utkání|zápas|kolo|moderátora|hosty|"
+    r"za|od|sa|utakmica|prijenos|emisija|muški|ženski|"
+    r"bir|ile|için|maç|maçı|canlı|haftası|ligi|özet|karşılaşması)\b")
 EN_WORDS = re.compile(r"(?i)\b(the|and|of|to|is|for|with|on|at|from|by|are|this|that|will|live|match)\b")
 
 
@@ -4083,8 +4197,19 @@ def translate_all(texts, force=()):
         save_cache()
 
 
+# Words Google often leaves in otherwise translated titles (29 Oct 2026, late): Czech / Finnish / Croatian ...
+LEFTOVER_WORDS = [(r"\bmuži\b", "men"), (r"\bmužů\b", "men's"), (r"\bženy\b", "women"), (r"\bžen\b", "women's"),
+                  (r"\bkierros\b", "round"), (r"\bmiehet\b", "men"), (r"\bnaiset\b", "women"),
+                  (r"\bherrer\b", "men"), (r"\bdamer\b", "women"), (r"\bherrar\b", "men"),
+                  (r"\bmuški\b", "men's"), (r"\bženski\b", "women's"), (r"\bLIGA\b", "LEAGUE")]
+
+
 def en(text):
-    return TRANSLATIONS.get(text, text)
+    out = TRANSLATIONS.get(text, text)
+    if out is not text:                                # only touch text that went through translation
+        for rx, word in LEFTOVER_WORDS:
+            out = re.sub(rx, word, out)
+    return out
 
 
 def _translator_get(name, url):
@@ -5761,7 +5886,12 @@ def main():
             print(f"  {sum(len(v) for v in got.values())} programmes on {len(got)} channel(s)")
             if got:
                 eps[group] = got
-    bein = {}
+        if "turkey" in [g.strip().lower() for g in args.epgshare.split(",")]:   # 29 Oct 2026 (late)
+            tr_days = [datetime.now(ZoneInfo("Europe/Istanbul")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+            print("Turkey: reading Turkcell TV+ guide (S Sport 1-2, A Spor, TRT Spor - with descriptions) ...")
+            tvp = fetch_tvplus(tr_days, args.debug)
+            if tvp:
+                eps.setdefault("turkey", {}).update(tvp)   # replaces epgshare's listing for these channels
     if not args.no_bein:
         bn_days = [datetime.now(ZoneInfo("Asia/Singapore")).date() + timedelta(days=i - 1)
                    for i in range(max(args.days, 1) + 1)]      # from yesterday (UTC days, Asia is ahead)
