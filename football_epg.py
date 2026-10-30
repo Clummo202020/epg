@@ -353,6 +353,11 @@ DUMMY_CHANNELS = [
     *[(f"starzplaycricbuzz{n}.live", f"STARZPLAY Cricbuzz {n}", "Stream is live at event time only.",
        f"STARZPLAY Cricbuzz {n}: live cricket (internationals, PSL, ILT20 and more) when a match is on. "
        f"No programme guide is available.") for n in (1, 2)],
+    # STARZPLAY Sports 1 and 3 (MENA, 30 Oct 2026; the provider labels them AD Sports Premium): no guide anywhere -
+    # STARZPLAY Sports 2 has a listing in the SPORT guide as AE.ADSportsPremium
+    *[(f"starzplaysports{n}.ae", f"STARZPLAY Sports {n}", "Stream is live at event time only.",
+       f"STARZPLAY Sports {n} (Middle East): Serie A, UFC, cricket and more, live and replays. "
+       f"No programme guide is available.") for n in (1, 3)],
 ]
 DUMMY_HOURS = 2          # block length
 DUMMY_DAYS = 10          # how far ahead the blocks run

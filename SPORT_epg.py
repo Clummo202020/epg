@@ -3721,16 +3721,6 @@ EPGSHARE = {   # group -> file, id prefix, place, time zone, English?, {id part:
                    "Eurosport1": ("Eurosport 1 TR", ["EUROSPORT.1.HD.tr"]),       # TR1 ids from the 30 Oct log
                    "Eurosport2": ("Eurosport 2 TR", ["EUROSPORT.2.TR.HD.tr"]),    # (backup for TV+)
                }},
-    # Pakistan (30 Oct 2026): Geo Super, A Sports, Ten Sports, PTV Sports - epgshare's PK1 file (file and ids GUESSED,
-    # all in "main" so the log says what the file has; if there is no PK1 file the log shows a fetch warning)
-    "pakistan": {"file": "PK1", "prefix": "PK", "place": "Pakistan", "tz": "Asia/Karachi", "english": False,
-                 "channels": {
-                     "GeoSuper": ("Geo Super", [r"re:(?i)^geo\W*super"]),
-                     "ASports": ("A Sports", [r"re:(?i)^a\W*sports(\W*hd)?\W*pk$"]),
-                     "TenSports": ("Ten Sports", [r"re:(?i)^ten\W*sports"]),
-                     "PTVSports": ("PTV Sports", [r"re:(?i)^ptv\W*sports(?!\W*world)"]),
-                 },
-                 "main": {"GeoSuper", "ASports", "TenSports", "PTVSports"}},
     "latvia": {"file": "LV1", "prefix": "LV", "place": "Latvia", "tz": "Europe/Riga", "english": False,
                "channels": {
                    "GO3Sport1": ("GO3 Sport 1", ["Go3.Sport.1.HD.lv"]),
@@ -3889,7 +3879,13 @@ EPGSHARE.update({
                                               r"re:^(en:\W*)?(abu\W*dhabi\W*sports|ad\W*sports)\W*2(\W*hd)?\W*ae$"]),
                 "ADSportsPremium": ("AD Sports Premium", [r"re:(abu\W*dhabi\W*sports|ad\W*sports)\W*premium(?!\W*[23])",
                                                            "re:أبوظبي.*بريميوم|بريميوم.*أبوظبي"]),
-            }},
+                # STARZPLAY (30 Oct 2026) - exact ids from epgshare's AE1 list (epg_ripper_AE1.txt)
+                **{f"StarzplaySports{n}": (f"STARZPLAY Sports {n}", [f"en:.STARZPLAY.Sports.{n}.ae"]) for n in (1, 2, 3)},
+                "Cricbuzz1": ("Cricbuzz 1", ["en:.Cricbuzz.1.ae"]),
+                "Cricbuzz2": ("Cricbuzz 2", ["en:.Cricbuzz.2.ae"]),
+            },
+            "main": {"StarzplaySports1", "StarzplaySports2", "StarzplaySports3",
+                     "Cricbuzz1", "Cricbuzz2"}},
     # Brazil: backup for Claro (same IDs, BR.SporTV ...), used only for channels Claro leaves empty
     "brazil": {"file": "BR1", "prefix": "BR", "place": "Brasilia", "tz": "America/Sao_Paulo", "english": False,
                "backup": True, "channels": {
