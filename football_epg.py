@@ -686,6 +686,59 @@ def uefa_channel(matches, suffix):
     return (chan[0], chan[1], chan[2], shows)
 
 
+# Sky Sports+ (30 Oct 2026): ONE guide channel for all the user's Sky Sports+ 1-40 streams (they share it).
+# Blocks at every EFL / Carabao Cup kick-off time that Sky Sports+ can show in the UK (not Saturday 14:45-17:15 -
+# the 3pm blackout; Sky's deal streams every EFL match outside it, the main-channel picks on Sky Sports itself), each listing that slot's matches; the time before a slot says what's coming up.
+SKYPLUS_CHANNEL = True
+SKYPLUS_ID = "SkySportsPlus.live"
+SKYPLUS_NAME = "Sky Sports+ streams"
+SKYPLUS_COMPS = ["Championship", "League One", "League Two", "Carabao Cup"]
+SKYPLUS_IDLE = ("Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels "
+                "(Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, "
+                "golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels "
+                "to find it. No Saturday 3pm football in the UK.")
+
+
+def skyplus_channel(matches):
+    """(id, name, None, shows) for the Sky Sports+ streams, or None when no slots."""
+    slots = {}
+    for m in matches:
+        if m["comp"] not in SKYPLUS_COMPS or m.get("tbc"):
+            continue
+        ko = m["start"].astimezone(LONDON)
+        hm = ko.hour * 60 + ko.minute
+        if ko.weekday() == 5 and 14 * 60 + 45 <= hm < 17 * 60 + 15:
+            continue                                   # Saturday 14:45-17:15 UK blackout
+        slots.setdefault(m["start"], []).append(m)
+    starts = sorted(slots)
+    shows = []
+    for i, start in enumerate(starts):
+        ms = sorted(slots[start], key=lambda m: (SKYPLUS_COMPS.index(m["comp"]), m["title"]))
+        ko = start.astimezone(LONDON)
+        comps = []
+        for c in SKYPLUS_COMPS:
+            games = [m["title"] for m in ms if m["comp"] == c]
+            if games:
+                comps.append(f"{c}: " + ", ".join(games))
+        n = len(ms)
+        what = ms[0]["comp"] if len({m["comp"] for m in ms}) == 1 else "EFL"
+        count = f"{n} match{'es' if n != 1 else ''}"
+        desc = (f"{ko:%a %d %b}, {ko:%H:%M} kick-off{'s' if n != 1 else ''} on the Sky Sports+ streams - "
+                + ". ".join(comps) + ".\n\n" + SKYPLUS_IDLE)
+        early = timedelta(minutes=MATCH_EARLY_MINUTES)
+        stop = max(m["stop"] for m in ms)
+        if i + 1 < len(starts):
+            stop = min(stop, starts[i + 1] - early)
+        shows.append({
+            "comp": what, "title": what, "sub": "", "desc": desc,
+            "start": start - early, "stop": stop, "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
+            "fixed_title": f"Sky Sports+ - next: {what}, {ko:%a %H:%M} ({count})",
+            "fixed_desc": desc, "filler_sub": "", "live_sub": "",
+            "live_title": f"🔴 LIVE - Sky Sports+: {what} ({count})",
+        })
+    return (SKYPLUS_ID, SKYPLUS_NAME, None, shows) if shows else None
+
+
 def dummy_channel(chan_id, name, title, desc):
     """A generic channel: back-to-back DUMMY_HOURS blocks, same title and
     description, no secondary title, not tied to any fixtures."""
@@ -799,6 +852,13 @@ def build_channels(matches, english, suffix, english_only):
         channels.append(uefa_channel(matches, suffix))
     for cid, cname, ctitle, cdesc in DUMMY_CHANNELS:
         channels.append(dummy_channel(f"{cid}{suffix}", cname, ctitle, cdesc))
+    if SKYPLUS_CHANNEL:
+        sp = skyplus_channel(matches)
+        if sp:
+            channels.append((f"{sp[0]}{suffix}",) + sp[1:])
+        else:                                          # no EFL in range: plain blocks, same id
+            channels.append(dummy_channel(f"{SKYPLUS_ID}{suffix}", SKYPLUS_NAME,
+                                          "Live at event time only.", SKYPLUS_IDLE))
     if GOAL_RUSH:
         gr = goal_rush_channel(matches, suffix)
         if gr:
