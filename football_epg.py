@@ -546,10 +546,15 @@ def collect_matches(events_by_comp, match_minutes):
     return matches
 
 
-def load_main_game_listings():
-    """[(start, stop, text)] for the GOAL_RUSH_MAIN_FROM channels in the SPORT guide."""
+_SPORT_GUIDE = []                    # parsed SPORT guide, read once per run ([root] or [None])
+
+
+def _sport_guide_root():
+    """The SPORT guide (local copy in the repo, else GitHub) as an XML root, or None."""
     import gzip
-    raw = None
+    if _SPORT_GUIDE:
+        return _SPORT_GUIDE[0]
+    root = None
     local = os.path.join(os.path.dirname(os.path.abspath(__file__)), GOAL_RUSH_GUIDE_FILE)
     try:
         if os.path.exists(local):
@@ -562,13 +567,21 @@ def load_main_game_listings():
         if raw[:2] == b"\x1f\x8b":
             raw = gzip.decompress(raw)
         root = ET.fromstring(raw)
-    except Exception as e:          # no guide = no main game, never a failed run
-        print(f"  WARNING: Goal Rush main game: could not read the SPORT guide ({e})")
+    except Exception as e:          # no guide = no main game / no filtering, never a failed run
+        print(f"  WARNING: could not read the SPORT guide ({e})")
+    _SPORT_GUIDE.append(root)
+    return root
+
+
+def load_guide_listings(channel_ids):
+    """[(channel, start, stop, text)] for these channels in the SPORT guide, in the order given."""
+    root = _sport_guide_root()
+    if root is None:
         return []
-    wanted = set(GOAL_RUSH_MAIN_FROM)
+    order = {c: i for i, c in enumerate(channel_ids)}
     out = []
     for p in root.iter("programme"):
-        if p.get("channel") not in wanted:
+        if p.get("channel") not in order:
             continue
         try:
             start = datetime.strptime(p.get("start"), "%Y%m%d%H%M%S %z")
@@ -576,9 +589,14 @@ def load_main_game_listings():
         except (TypeError, ValueError):
             continue
         text = " ".join((e.text or "") for e in p if e.tag in ("title", "sub-title", "desc"))
-        out.append((GOAL_RUSH_MAIN_FROM.index(p.get("channel")), start, stop, text))
-    out.sort(key=lambda r: r[0])                 # channel priority order
-    return [(a, b, t) for _, a, b, t in out]
+        out.append((p.get("channel"), start, stop, text))
+    out.sort(key=lambda r: order[r[0]])           # channel priority order
+    return out
+
+
+def load_main_game_listings():
+    """[(start, stop, text)] for the GOAL_RUSH_MAIN_FROM channels in the SPORT guide."""
+    return [(a, b, t) for _, a, b, t in load_guide_listings(GOAL_RUSH_MAIN_FROM)]
 
 
 TEAM_ALIASES = {
@@ -594,9 +612,13 @@ TEAM_ALIASES = {
     "newcastle utd": ["newcastle"],
     "leeds utd": ["leeds"],
     "sheffield utd": ["sheffield united", "sheff utd"],
+    "sheffield wednesday": ["sheff wed", "sheffield wed"],
+    "west bromwich albion": ["west brom"],
+    "queens park rangers": ["qpr"],
+    "milton keynes dons": ["mk dons"],
 }
 AMBIGUOUS_FIRST_WORDS = {"manchester", "west", "sheffield", "nottingham", "aston", "crystal",
-                         "queens", "afc", "fc", "real", "athletic"}
+                         "queens", "afc", "fc", "real", "athletic", "bristol"}
 
 
 def _norm(text):
@@ -685,19 +707,47 @@ def uefa_channel(matches, suffix):
 # Sky Sports+ (30 Oct 2026): ONE guide channel for all the user's Sky Sports+ 1-40 streams (they share it).
 # Blocks at every EFL / Carabao Cup kick-off time that Sky Sports+ can show in the UK (not Saturday 14:45-17:15 -
 # the 3pm blackout; Sky's deal streams every EFL match outside it, the main-channel picks on Sky Sports itself), each listing that slot's matches; the time before a slot says what's coming up.
+# 30 Oct 2026 (evening): matches listed on a main Sky Sports UK channel in the SPORT guide (SKYPLUS_MAIN_CHANNELS)
+# are left out, and kick-offs that overlap (Fri 19:45 + 20:00) share ONE block, so an earlier match no longer
+# disappears from the guide when a later kick-off starts (Newport v Chesterfield, Fri 30 Oct).
 SKYPLUS_CHANNEL = True
-SKYPLUS_ID = "SkySportsPlus.live"
+SKYPLUS_ID = "SkySportsPlus2.live"   # was SkySportsPlus.live (30 Oct: new id so PlaylistLabs loads the fixed blocks)
 SKYPLUS_NAME = "Sky Sports+ streams"
 SKYPLUS_COMPS = ["Championship", "League One", "League Two", "Carabao Cup"]
+SKYPLUS_MAIN_CHANNELS = [            # SPORT guide ids; a match live on any of these is not on the streams
+    "UK.SkySportsMainEvent", "UK.SkySportsFootball", "UK.SkySportsPremierLeague", "UK.SkySportsAction",
+    "UK.SkySportsMix", "UK.SkySportsPlus", "UK.SkySportsCricket", "UK.SkySportsGolf",
+    "UK.SkySportsTennis", "UK.SkySportsF1", "UK.SkySportsNFL", "UK.SkySportsRacing", "UK.SkySportsBoxOffice",
+    "UK.SkySportsMainEvent4K", "UK.SkySportsF14K", "UK.SkySportsUHD1", "UK.SkySportsUHD2",
+]
 SKYPLUS_IDLE = ("Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels "
                 "(Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, "
                 "golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels "
                 "to find it. No Saturday 3pm football in the UK.")
 
 
+def on_main_sky(m, listings):
+    """The main Sky Sports channel showing match m live (from the SPORT guide), or None."""
+    ko = m["start"]
+    h, a = (short_name(t.get("displayName")) for t in m["teams"])
+    ha, aa = _aliases(h), _aliases(a)
+    for ch, s, e, text in listings:
+        if s <= ko + timedelta(minutes=15) and e >= ko + timedelta(minutes=30):   # on air at kick-off
+            txt = _norm(text)
+            if any(x in txt for x in ha) and any(x in txt for x in aa):
+                return ch
+    return None
+
+
 def skyplus_channel(matches):
     """(id, name, None, shows) for the Sky Sports+ streams, or None when no slots."""
-    slots = {}
+    listings = load_guide_listings(SKYPLUS_MAIN_CHANNELS)
+    if not listings:
+        print("  Sky Sports+: no main Sky Sports listings in the SPORT guide - no matches left out")
+    else:
+        last = max(e for _, _, e, _ in listings).astimezone(LONDON)
+        print(f"  Sky Sports+: main Sky Sports listings up to {last:%a %d %b %H:%M}")
+    kept = []
     for m in matches:
         if m["comp"] not in SKYPLUS_COMPS or m.get("tbc"):
             continue
@@ -705,26 +755,47 @@ def skyplus_channel(matches):
         hm = ko.hour * 60 + ko.minute
         if ko.weekday() == 5 and 14 * 60 + 45 <= hm < 17 * 60 + 15:
             continue                                   # Saturday 14:45-17:15 UK blackout
-        slots.setdefault(m["start"], []).append(m)
-    starts = sorted(slots)
+        ch = on_main_sky(m, listings) if listings else None
+        if ch:
+            print(f"  Sky Sports+: {m['title']} ({ko:%a %d %b %H:%M}) is on {ch} - left out")
+            continue
+        kept.append(m)
+
+    early = timedelta(minutes=MATCH_EARLY_MINUTES)
+    groups = []                                        # overlapping kick-offs share one block
+    for m in sorted(kept, key=lambda m: m["start"]):
+        if groups and m["start"] - early < max(x["stop"] for x in groups[-1]):
+            groups[-1].append(m)
+        else:
+            groups.append([m])
+
     shows = []
-    for i, start in enumerate(starts):
-        ms = sorted(slots[start], key=lambda m: (SKYPLUS_COMPS.index(m["comp"]), m["title"]))
+    for i, ms in enumerate(groups):
+        start = min(m["start"] for m in ms)
         ko = start.astimezone(LONDON)
-        comps = []
-        for c in SKYPLUS_COMPS:
-            games = [m["title"] for m in ms if m["comp"] == c]
-            if games:
-                comps.append(f"{c}: " + ", ".join(games))
+        kos = sorted({m["start"] for m in ms})
+        parts = []
+        for k in kos:
+            at = [m for m in ms if m["start"] == k]
+            comps = []
+            for c in SKYPLUS_COMPS:
+                games = sorted(m["title"] for m in at if m["comp"] == c)
+                if games:
+                    comps.append(f"{c}: " + ", ".join(games))
+            parts.append((k, ". ".join(comps)))
         n = len(ms)
+        if len(kos) == 1:
+            desc = (f"{ko:%a %d %b}, {ko:%H:%M} kick-off{'s' if n != 1 else ''} on the Sky Sports+ streams - "
+                    + parts[0][1] + ".\n\n" + SKYPLUS_IDLE)
+        else:
+            desc = (f"{ko:%a %d %b} on the Sky Sports+ streams - "
+                    + " ".join(f"{k.astimezone(LONDON):%H:%M}: {txt}." for k, txt in parts)
+                    + "\n\n" + SKYPLUS_IDLE)
         what = ms[0]["comp"] if len({m["comp"] for m in ms}) == 1 else "EFL"
         count = f"{n} match{'es' if n != 1 else ''}"
-        desc = (f"{ko:%a %d %b}, {ko:%H:%M} kick-off{'s' if n != 1 else ''} on the Sky Sports+ streams - "
-                + ". ".join(comps) + ".\n\n" + SKYPLUS_IDLE)
-        early = timedelta(minutes=MATCH_EARLY_MINUTES)
         stop = max(m["stop"] for m in ms)
-        if i + 1 < len(starts):
-            stop = min(stop, starts[i + 1] - early)
+        if i + 1 < len(groups):
+            stop = min(stop, min(m["start"] for m in groups[i + 1]) - early)
         shows.append({
             "comp": what, "title": what, "sub": "", "desc": desc,
             "start": start - early, "stop": stop, "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
