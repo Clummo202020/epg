@@ -1007,7 +1007,7 @@
   <channel id="skysports+.uk">
     <display-name lang="en">Sky Sports+</display-name>
   </channel>
-  <channel id="SkySportsPlus.live">
+  <channel id="SkySportsPlus2.live">
     <display-name lang="en">Sky Sports+ streams</display-name>
   </channel>
   <channel id="Slavia.Prague.ChampsLge">
@@ -149335,7 +149335,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">Skysports+ is a streaming service. No programme guide is available. You will need to scroll through the channels to see what's on where.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261030193500 +0000" stop="20261030195000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261030193500 +0000" stop="20261030214500 +0000" channel="SkySportsPlus2.live">
     <title lang="en">🔴 LIVE - Sky Sports+: League Two (1 match)</title>
     <desc lang="en">Fri 30 Oct, 19:45 kick-off on the Sky Sports+ streams - League Two: Newport County v Chesterfield.
 
@@ -149345,99 +149345,98 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261030195000 +0000" stop="20261030220000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">🔴 LIVE - Sky Sports+: Championship (1 match)</title>
-    <desc lang="en">Fri 30 Oct, 20:00 kick-off on the Sky Sports+ streams - Championship: Sheffield Utd v Wrexham.
+  <programme start="20261030214500 +0000" stop="20261030220000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (6 matches)</title>
+    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Norwich City v Watford. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
 
 Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Championship</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261030220000 +0000" stop="20261031000000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (6 matches)</title>
+    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Norwich City v Watford. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (6 matches)</title>
+    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Norwich City v Watford. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261031020000 +0000" stop="20261031040000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (6 matches)</title>
+    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Norwich City v Watford. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261031040000 +0000" stop="20261031060000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (6 matches)</title>
+    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Norwich City v Watford. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261031060000 +0000" stop="20261031080000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (6 matches)</title>
+    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Norwich City v Watford. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261031080000 +0000" stop="20261031100000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (6 matches)</title>
+    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Norwich City v Watford. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261031100000 +0000" stop="20261031120000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (6 matches)</title>
+    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Norwich City v Watford. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261031120000 +0000" stop="20261031122000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (6 matches)</title>
+    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Norwich City v Watford. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261031122000 +0000" stop="20261031143000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">🔴 LIVE - Sky Sports+: EFL (6 matches)</title>
+    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Norwich City v Watford. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261030220000 +0000" stop="20261031000000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (8 matches)</title>
-    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Lincoln City v Birmingham City, Norwich City v Watford, Stoke City v Preston North End. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (8 matches)</title>
-    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Lincoln City v Birmingham City, Norwich City v Watford, Stoke City v Preston North End. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261031020000 +0000" stop="20261031040000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (8 matches)</title>
-    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Lincoln City v Birmingham City, Norwich City v Watford, Stoke City v Preston North End. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261031040000 +0000" stop="20261031060000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (8 matches)</title>
-    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Lincoln City v Birmingham City, Norwich City v Watford, Stoke City v Preston North End. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261031060000 +0000" stop="20261031080000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (8 matches)</title>
-    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Lincoln City v Birmingham City, Norwich City v Watford, Stoke City v Preston North End. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261031080000 +0000" stop="20261031100000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (8 matches)</title>
-    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Lincoln City v Birmingham City, Norwich City v Watford, Stoke City v Preston North End. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261031100000 +0000" stop="20261031120000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (8 matches)</title>
-    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Lincoln City v Birmingham City, Norwich City v Watford, Stoke City v Preston North End. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261031120000 +0000" stop="20261031122000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Sat 12:30 (8 matches)</title>
-    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Lincoln City v Birmingham City, Norwich City v Watford, Stoke City v Preston North End. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261031122000 +0000" stop="20261031143000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">🔴 LIVE - Sky Sports+: EFL (8 matches)</title>
-    <desc lang="en">Sat 31 Oct, 12:30 kick-offs on the Sky Sports+ streams - Championship: Lincoln City v Birmingham City, Norwich City v Watford, Stoke City v Preston North End. League One: Bradford City v Huddersfield Town, Leyton Orient v Cambridge Utd, Plymouth Argyle v Reading. League Two: Grimsby Town v York City, Port Vale v Rochdale.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031143000 +0000" stop="20261031160000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261031143000 +0000" stop="20261031160000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149446,7 +149445,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261031160000 +0000" stop="20261031180000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261031160000 +0000" stop="20261031180000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149455,7 +149454,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261031180000 +0000" stop="20261031200000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261031180000 +0000" stop="20261031200000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149464,7 +149463,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149473,7 +149472,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261031220000 +0000" stop="20261101000000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261031220000 +0000" stop="20261101000000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149482,7 +149481,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261101000000 +0000" stop="20261101020000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101000000 +0000" stop="20261101020000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149491,7 +149490,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261101020000 +0000" stop="20261101040000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101020000 +0000" stop="20261101040000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149500,7 +149499,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149509,7 +149508,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149518,7 +149517,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261101080000 +0000" stop="20261101100000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101080000 +0000" stop="20261101100000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149527,7 +149526,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261101100000 +0000" stop="20261101120000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101100000 +0000" stop="20261101120000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149536,7 +149535,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261101120000 +0000" stop="20261101135000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101120000 +0000" stop="20261101135000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: League One, Sun 14:00 (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149545,7 +149544,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">League One</category>
   </programme>
-  <programme start="20261101135000 +0000" stop="20261101160000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101135000 +0000" stop="20261101160000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">🔴 LIVE - Sky Sports+: League One (1 match)</title>
     <desc lang="en">Sun 01 Nov, 14:00 kick-off on the Sky Sports+ streams - League One: Sheffield Wednesday v Blackpool.
 
@@ -149555,7 +149554,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101160000 +0000" stop="20261101180000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101160000 +0000" stop="20261101180000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149564,7 +149563,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149573,7 +149572,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149582,7 +149581,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149591,7 +149590,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149600,7 +149599,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149609,7 +149608,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149618,7 +149617,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149627,7 +149626,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149636,7 +149635,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149645,7 +149644,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149654,7 +149653,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149663,7 +149662,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149672,7 +149671,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149681,7 +149680,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149690,7 +149689,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149699,7 +149698,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149708,7 +149707,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149717,7 +149716,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149726,7 +149725,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149735,7 +149734,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149744,7 +149743,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149753,7 +149752,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149762,7 +149761,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149771,7 +149770,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149780,7 +149779,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103180000 +0000" stop="20261103193500 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103180000 +0000" stop="20261103193500 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: EFL, Tue 19:45 (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149789,7 +149788,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">EFL</category>
   </programme>
-  <programme start="20261103193500 +0000" stop="20261103195000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261103193500 +0000" stop="20261103214500 +0000" channel="SkySportsPlus2.live">
     <title lang="en">🔴 LIVE - Sky Sports+: EFL (10 matches)</title>
     <desc lang="en">Tue 03 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Blackburn Rovers v Stoke City, Charlton Athletic v Bolton Wanderers, Derby County v Norwich City, Portsmouth v Swansea City, Preston North End v Sheffield Utd, Queens Park Rangers v Burnley, Watford v Lincoln City. League One: Huddersfield Town v Luton Town, Wigan Athletic v Mansfield Town. League Two: Northampton Town v Oldham Athletic.
 
@@ -149799,136 +149798,125 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">EFL</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261103195000 +0000" stop="20261103220000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">🔴 LIVE - Sky Sports+: Championship (2 matches)</title>
-    <desc lang="en">Tue 03 Nov, 20:00 kick-offs on the Sky Sports+ streams - Championship: Birmingham City v Millwall, West Bromwich Albion v Southampton.
+  <programme start="20261103214500 +0000" stop="20261103220000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
 
 Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Championship</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104000000 +0000" stop="20261104020000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104020000 +0000" stop="20261104040000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104080000 +0000" stop="20261104100000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104100000 +0000" stop="20261104120000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104120000 +0000" stop="20261104140000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104140000 +0000" stop="20261104160000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104180000 +0000" stop="20261104193500 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
+  </programme>
+  <programme start="20261104193500 +0000" stop="20261104214500 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">🔴 LIVE - Sky Sports+: EFL (2 matches)</title>
+    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">EFL</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104000000 +0000" stop="20261104020000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104020000 +0000" stop="20261104040000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104080000 +0000" stop="20261104100000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104100000 +0000" stop="20261104120000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104120000 +0000" stop="20261104140000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104140000 +0000" stop="20261104160000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104180000 +0000" stop="20261104193500 +0000" channel="SkySportsPlus.live">
-    <title lang="en">Sky Sports+ - next: EFL, Wed 19:45 (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-  </programme>
-  <programme start="20261104193500 +0000" stop="20261104195000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">🔴 LIVE - Sky Sports+: EFL (3 matches)</title>
-    <desc lang="en">Wed 04 Nov, 19:45 kick-offs on the Sky Sports+ streams - Championship: Cardiff City v West Ham Utd, Wrexham v Middlesbrough. League One: Oxford Utd v Reading.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">EFL</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261104195000 +0000" stop="20261104220000 +0000" channel="SkySportsPlus.live">
-    <title lang="en">🔴 LIVE - Sky Sports+: Championship (1 match)</title>
-    <desc lang="en">Wed 04 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Bristol City v Wolves.
-
-Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Championship</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261104214500 +0000" stop="20261104220000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -149937,7 +149925,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -149946,7 +149934,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -149955,7 +149943,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -149964,7 +149952,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -149973,7 +149961,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -149982,7 +149970,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -149991,7 +149979,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150000,7 +149988,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150009,7 +149997,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150018,7 +150006,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105180000 +0000" stop="20261105200000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150027,7 +150015,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105180000 +0000" stop="20261105200000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150036,7 +150024,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150045,7 +150033,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150054,7 +150042,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106020000 +0000" stop="20261106040000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150063,7 +150051,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106040000 +0000" stop="20261106060000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106020000 +0000" stop="20261106040000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150072,7 +150060,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106060000 +0000" stop="20261106080000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106040000 +0000" stop="20261106060000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150081,7 +150069,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106080000 +0000" stop="20261106100000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106060000 +0000" stop="20261106080000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150090,7 +150078,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106100000 +0000" stop="20261106120000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106080000 +0000" stop="20261106100000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150099,7 +150087,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106100000 +0000" stop="20261106120000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150108,7 +150096,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150117,7 +150105,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150126,7 +150114,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106180000 +0000" stop="20261106195000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150135,7 +150123,16 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261106195000 +0000" stop="20261106220000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106180000 +0000" stop="20261106195000 +0000" channel="SkySportsPlus2.live">
+    <title lang="en">Sky Sports+ - next: Championship, Fri 20:00 (1 match)</title>
+    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
+
+Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels (Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels to find it. No Saturday 3pm football in the UK.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Championship</category>
+  </programme>
+  <programme start="20261106195000 +0000" stop="20261106220000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">🔴 LIVE - Sky Sports+: Championship (1 match)</title>
     <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Sky Sports+ streams - Championship: Derby County v Bolton Wanderers.
 
@@ -150145,7 +150142,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Sat 12:30 (3 matches)</title>
     <desc lang="en">Sat 07 Nov, 12:30 kick-offs on the Sky Sports+ streams - Championship: Bristol City v Norwich City, Portsmouth v Stoke City, Wrexham v Wolves.
 
@@ -150154,7 +150151,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Sat 12:30 (3 matches)</title>
     <desc lang="en">Sat 07 Nov, 12:30 kick-offs on the Sky Sports+ streams - Championship: Bristol City v Norwich City, Portsmouth v Stoke City, Wrexham v Wolves.
 
@@ -150163,7 +150160,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Sat 12:30 (3 matches)</title>
     <desc lang="en">Sat 07 Nov, 12:30 kick-offs on the Sky Sports+ streams - Championship: Bristol City v Norwich City, Portsmouth v Stoke City, Wrexham v Wolves.
 
@@ -150172,7 +150169,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Sat 12:30 (3 matches)</title>
     <desc lang="en">Sat 07 Nov, 12:30 kick-offs on the Sky Sports+ streams - Championship: Bristol City v Norwich City, Portsmouth v Stoke City, Wrexham v Wolves.
 
@@ -150181,7 +150178,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Sat 12:30 (3 matches)</title>
     <desc lang="en">Sat 07 Nov, 12:30 kick-offs on the Sky Sports+ streams - Championship: Bristol City v Norwich City, Portsmouth v Stoke City, Wrexham v Wolves.
 
@@ -150190,7 +150187,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Sat 12:30 (3 matches)</title>
     <desc lang="en">Sat 07 Nov, 12:30 kick-offs on the Sky Sports+ streams - Championship: Bristol City v Norwich City, Portsmouth v Stoke City, Wrexham v Wolves.
 
@@ -150199,7 +150196,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Sat 12:30 (3 matches)</title>
     <desc lang="en">Sat 07 Nov, 12:30 kick-offs on the Sky Sports+ streams - Championship: Bristol City v Norwich City, Portsmouth v Stoke City, Wrexham v Wolves.
 
@@ -150208,7 +150205,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261107120000 +0000" stop="20261107122000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261107120000 +0000" stop="20261107122000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">Sky Sports+ - next: Championship, Sat 12:30 (3 matches)</title>
     <desc lang="en">Sat 07 Nov, 12:30 kick-offs on the Sky Sports+ streams - Championship: Bristol City v Norwich City, Portsmouth v Stoke City, Wrexham v Wolves.
 
@@ -150217,7 +150214,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
   </programme>
-  <programme start="20261107122000 +0000" stop="20261107143000 +0000" channel="SkySportsPlus.live">
+  <programme start="20261107122000 +0000" stop="20261107143000 +0000" channel="SkySportsPlus2.live">
     <title lang="en">🔴 LIVE - Sky Sports+: Championship (3 matches)</title>
     <desc lang="en">Sat 07 Nov, 12:30 kick-offs on the Sky Sports+ streams - Championship: Bristol City v Norwich City, Portsmouth v Stoke City, Wrexham v Wolves.
 
