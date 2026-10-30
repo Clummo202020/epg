@@ -716,7 +716,8 @@ SKYPLUS_ID = "SkySportsPlus2.live"   # was SkySportsPlus.live (30 Oct: new id so
 SKYPLUS_NAME = "Sky Sports+ streams"
 SKYPLUS_COMPS = ["Championship", "League One", "League Two", "Carabao Cup", "UEFA Nations League"]
 SKYPLUS_EFL = ["Championship", "League One", "League Two", "Carabao Cup"]
-SKYPLUS_SHORT = {"UEFA Nations League": "Nations League"}   # shorter name in titles/descriptions
+STREAMS_SHORT = {"UEFA Nations League": "Nations League",    # shorter names in titles/descriptions
+                 "UEFA Champions League": "Champions League"}
 # Nations League (30 Oct 2026): the streams show the bigger matches, so only League A ties (both teams below,
 # the 2026-27 League A) are listed - minus the home nations (England/Wales on ITV/BBC, not Sky). Update the
 # list for each new Nations League season (League A changes with promotion/relegation).
@@ -775,8 +776,16 @@ def skyplus_channel(matches):
             continue
         kept.append(m)
 
+    return streams_channel(kept, SKYPLUS_ID, SKYPLUS_NAME, "Sky Sports+", "the Sky Sports+ streams",
+                           SKYPLUS_COMPS, SKYPLUS_IDLE, efl_label=True)
+
+
+def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_label=False):
+    """(id, name, None, shows) for a shared event-streams channel (Sky Sports+, Setanta), or None.
+    One block per kick-off time; kick-offs that overlap share ONE block (so an earlier match doesn't vanish when
+    a later one starts); the time before a block says what's coming up."""
     early = timedelta(minutes=MATCH_EARLY_MINUTES)
-    groups = []                                        # overlapping kick-offs share one block
+    groups = []
     for m in sorted(kept, key=lambda m: m["start"]):
         if groups and m["start"] - early < max(x["stop"] for x in groups[-1]):
             groups[-1].append(m)
@@ -792,22 +801,22 @@ def skyplus_channel(matches):
         for k in kos:
             at = [m for m in ms if m["start"] == k]
             comps = []
-            for c in SKYPLUS_COMPS:
+            for c in comps_order:
                 games = sorted(m["title"] for m in at if m["comp"] == c)
                 if games:
-                    comps.append(f"{SKYPLUS_SHORT.get(c, c)}: " + ", ".join(games))
+                    comps.append(f"{STREAMS_SHORT.get(c, c)}: " + ", ".join(games))
             parts.append((k, ". ".join(comps)))
         n = len(ms)
         if len(kos) == 1:
-            desc = (f"{ko:%a %d %b}, {ko:%H:%M} kick-off{'s' if n != 1 else ''} on the Sky Sports+ streams - "
-                    + parts[0][1] + ".\n\n" + SKYPLUS_IDLE)
+            desc = (f"{ko:%a %d %b}, {ko:%H:%M} kick-off{'s' if n != 1 else ''} on {where} - "
+                    + parts[0][1] + ".\n\n" + idle)
         else:
-            desc = (f"{ko:%a %d %b} on the Sky Sports+ streams - "
+            desc = (f"{ko:%a %d %b} on {where} - "
                     + " ".join(f"{k.astimezone(LONDON):%H:%M}: {txt}." for k, txt in parts)
-                    + "\n\n" + SKYPLUS_IDLE)
+                    + "\n\n" + idle)
         cs = {m["comp"] for m in ms}
-        what = (SKYPLUS_SHORT.get(ms[0]["comp"], ms[0]["comp"]) if len(cs) == 1
-                else "EFL" if cs <= set(SKYPLUS_EFL) else "Football")
+        what = (STREAMS_SHORT.get(ms[0]["comp"], ms[0]["comp"]) if len(cs) == 1
+                else "EFL" if efl_label and cs <= set(SKYPLUS_EFL) else "Football")
         count = f"{n} match{'es' if n != 1 else ''}"
         stop = max(m["stop"] for m in ms)
         if i + 1 < len(groups):
@@ -815,11 +824,31 @@ def skyplus_channel(matches):
         shows.append({
             "comp": what, "title": what, "sub": "", "desc": desc,
             "start": start - early, "stop": stop, "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
-            "fixed_title": f"Sky Sports+ - next: {what}, {ko:%a %H:%M} ({count})",
+            "fixed_title": f"{label} - next: {what}, {ko:%a %H:%M} ({count})",
             "fixed_desc": desc, "filler_sub": "", "live_sub": "",
-            "live_title": f"🔴 LIVE - Sky Sports+: {what} ({count})",
+            "live_title": f"🔴 LIVE - {label}: {what} ({count})",
         })
-    return (SKYPLUS_ID, SKYPLUS_NAME, None, shows) if shows else None
+    return (chan_id, name, None, shows) if shows else None
+
+
+# Setanta Sports (30 Oct 2026): ONE guide channel for the user's "Setanta | Event 1-40" streams (group "Setanta
+# Sports PPV"), built like the Sky Sports+ one: a block at every Premier League / Champions League kick-off, listing
+# that slot's matches. Setanta is not a UK service, so there is no 3pm blackout and nothing is left out. Add more
+# competitions from COMPETITIONS to SETANTA_COMPS if wanted (e.g. "UEFA Europa League", "La Liga").
+SETANTA_CHANNEL = True
+SETANTA_ID = "SetantaSports.live"
+SETANTA_NAME = "Setanta Sports streams"
+SETANTA_COMPS = ["Premier League", "UEFA Champions League"]
+SETANTA_IDLE = ("Setanta Sports event streams carry Premier League and UEFA Champions League football, plus "
+                "other European football, UFC, NBA, NHL, tennis and motorsport. Each event is on its own stream - "
+                "scroll the Setanta channels to find it.")
+
+
+def setanta_channel(matches):
+    """(id, name, None, shows) for the Setanta Sports streams, or None when no matches."""
+    kept = [m for m in matches if m["comp"] in SETANTA_COMPS and not m.get("tbc")]
+    return streams_channel(kept, SETANTA_ID, SETANTA_NAME, "Setanta", "the Setanta Sports streams",
+                           SETANTA_COMPS, SETANTA_IDLE)
 
 
 # Formula 1 (30 Oct 2026): f1.uk and f1drivers.uk from OpenF1's session list (the SPORT guide already uses it)
@@ -1074,6 +1103,13 @@ def build_channels(matches, english, suffix, english_only):
         else:                                          # no EFL in range: plain blocks, same id
             channels.append(dummy_channel(f"{SKYPLUS_ID}{suffix}", SKYPLUS_NAME,
                                           "Live at event time only.", SKYPLUS_IDLE))
+    if SETANTA_CHANNEL:
+        st = setanta_channel(matches)
+        if st:
+            channels.append((f"{st[0]}{suffix}",) + st[1:])
+        else:                                          # no matches in range: plain blocks, same id
+            channels.append(dummy_channel(f"{SETANTA_ID}{suffix}", SETANTA_NAME,
+                                          "Live at event time only.", SETANTA_IDLE))
     if GOAL_RUSH:
         gr = goal_rush_channel(matches, suffix)
         if gr:
