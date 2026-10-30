@@ -741,7 +741,41 @@ def skyplus_channel(matches):
 # streams' own "NEXT | MEXICO: RACE | 18:50" names; other sessions 15 min); the time before says what's next.
 # The description lists the whole weekend in UK time. No OpenF1 data -> the old plain blocks.
 OPENF1_SESSIONS = "https://api.openf1.org/v1/sessions?year={year}"
-F1_CHANNELS = [("f1.uk", "Formula 1", "Formula 1"), ("f1drivers.uk", "F1 Drivers", "F1 driver onboards")]
+F1_CHANNELS = [("Formula1.live", "Formula 1", "Formula 1"),      # new id 30 Oct 2026 (user's request)
+               ("f1.uk", "Formula 1", "Formula 1"), ("f1drivers.uk", "F1 Drivers", "F1 driver onboards")]
+# Season schedule first from Jolpica (the Ergast successor - fixed timetable, always available); OpenF1 only as a
+# backup, because OpenF1 refuses free requests while a session is live (30 Oct 2026: the run during FP1 got nothing).
+JOLPICA_SEASON = "https://api.jolpi.ca/ergast/f1/{year}.json"
+JOLPICA_SESSIONS = [("FirstPractice", "Practice 1", 60), ("SecondPractice", "Practice 2", 60),
+                    ("ThirdPractice", "Practice 3", 60), ("SprintQualifying", "Sprint Qualifying", 45),
+                    ("SprintShootout", "Sprint Qualifying", 45), ("Sprint", "Sprint", 45),
+                    ("Qualifying", "Qualifying", 60), ("Race", "Race", 120)]
+
+
+def jolpica_sessions(years):
+    """OpenF1-shaped session dicts from Jolpica's season schedule."""
+    out = []
+    for year in years:
+        try:
+            data = get_json(JOLPICA_SEASON.format(year=year))
+        except NoData:
+            data = None
+        races = (((data or {}).get("MRData") or {}).get("RaceTable") or {}).get("Races") or []
+        for r in races:
+            loc = ((r.get("Circuit") or {}).get("Location") or {})
+            gp = str(r.get("raceName") or "").replace(" Grand Prix", "").strip()
+            for key, name, mins in JOLPICA_SESSIONS:
+                x = r if key == "Race" else r.get(key)
+                if not isinstance(x, dict) or not x.get("date") or not x.get("time"):
+                    continue
+                start = _iso(f"{x['date']}T{x['time']}")
+                if not start:
+                    continue
+                out.append({"session_name": name, "date_start": start.isoformat(),
+                            "date_end": (start + timedelta(minutes=mins)).isoformat(),
+                            "country_name": "", "location": gp, "meeting_key": f"{year}-{r.get('round')}",
+                            "circuit_short_name": str((r.get("Circuit") or {}).get("circuitName") or loc.get("locality") or "")})
+    return out
 F1_EARLY = {"Race": 70}                 # minutes of build-up before the session; others F1_EARLY_DEFAULT
 F1_EARLY_DEFAULT = 15
 F1_PLACE_BY_LOCATION = {"United States", "Italy", "Spain"}   # countries with two races: use the city
@@ -759,10 +793,17 @@ def _iso(text):
 def f1_channels(days):
     """[(id, name, None, shows)] for F1_CHANNELS from OpenF1, or [] when there's no data."""
     now = datetime.now(timezone.utc)
-    sess = []
-    for year in sorted({now.year, (now + timedelta(days=days)).year}):
-        data = get_json(OPENF1_SESSIONS.format(year=year))
-        sess += data if isinstance(data, list) else []
+    years = sorted({now.year, (now + timedelta(days=days)).year})
+    sess = jolpica_sessions(years)
+    src = "Jolpica"
+    if not sess:
+        src = "OpenF1"
+        for year in years:
+            try:
+                data = get_json(OPENF1_SESSIONS.format(year=year))
+            except NoData:
+                data = None
+            sess += data if isinstance(data, list) else []
     rows = []
     for x in sess:
         start, stop = _iso(x.get("date_start")), _iso(x.get("date_end"))
@@ -777,7 +818,7 @@ def f1_channels(days):
                      "meeting": x.get("meeting_key"), "circuit": str(x.get("circuit_short_name") or "").strip()})
     rows = [r for r in rows if r["stop"] > now - timedelta(hours=6) and r["start"] < now + timedelta(days=days)]
     if not rows:
-        print("  F1: no OpenF1 sessions in range - plain blocks")
+        print(f"  F1: no {src} sessions in range - plain blocks")
         return []
     rows.sort(key=lambda r: r["start"])
     by_meeting = {}
@@ -811,7 +852,7 @@ def f1_channels(days):
                 "live_title": f"🔴 LIVE - F1 {r['gp']}: {r['name']}",
             })
         out.append((cid, cname, None, shows))
-    print(f"  F1: {len(rows)} sessions from OpenF1")
+    print(f"  F1: {len(rows)} sessions from {src}")
     return out
 
 
@@ -932,8 +973,9 @@ def build_channels(matches, english, suffix, english_only):
     for cid, cname, logo, shows in f1:
         channels.append((f"{cid}{suffix}", cname, logo, shows))
     if not f1:                                         # OpenF1 down: the old placeholder blocks, same ids
-        channels.append(dummy_channel(f"f1.uk{suffix}", "Formula 1", "Stream is live at event time only.",
-                                      "Live F1 Grand Prix events and races."))
+        for fid in ("Formula1.live", "f1.uk"):
+            channels.append(dummy_channel(f"{fid}{suffix}", "Formula 1", "Stream is live at event time only.",
+                                          "Live F1 Grand Prix events and races."))
         channels.append(dummy_channel(f"f1drivers.uk{suffix}", "F1 Drivers", "Stream is live at event time only.",
                                       "Formula 1 driver onboard cameras, live during race weekends."))
     if SKYPLUS_CHANNEL:
