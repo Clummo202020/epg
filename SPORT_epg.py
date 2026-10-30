@@ -595,6 +595,7 @@ PL_CHANNELS = {          # Onet page name -> (id part, channel name)
     "polsat-sport-fight-546": ("PolsatSportFight", "Polsat Sport Fight"),
     "polsat-sport-premium-1-643": ("PolsatSportPremium1", "Polsat Sport Premium 1"),
     "polsat-sport-premium-2-644": ("PolsatSportPremium2", "Polsat Sport Premium 2"),
+    "canal-246": ("CanalPlusPremium", "Canal+ Premium"),   # 30 Oct 2026: films + sport - general channel
     "canal-sport-14": ("CanalPlusSport", "Canal+ Sport"),
     "canal-sport-2-15": ("CanalPlusSport2", "Canal+ Sport 2"),
     "canal-sport-3-674": ("CanalPlusSport3", "Canal+ Sport 3"),
@@ -704,6 +705,7 @@ BG_CHANNELS = {          # page name on the site -> channel name
     "diema-sport": "Diema Sport", "diema-sport-2": "Diema Sport 2", "diema-sport-3": "Diema Sport 3",
     "nova-sport": "Nova Sport", "ring-bg": "Ring", "bnt3": "BNT 3", "btv-action": "bTV Action",
     "eurosport": "Eurosport 1", "eurosport2": "Eurosport 2",
+    "fight-network": "Fight Network",                  # 30 Oct 2026 (page name guessed - BG.FightNetwork)
 }
 ZIGGO_CHANNELS = ("https://spark-prod-nl.gnp.cloud.ziggogo.tv/eng/web/linear-service/v2/channels"
                   "?cityId=65535&language=en&productClass=Orion-DASH&platform=web")
@@ -722,6 +724,7 @@ TELENET_HEADERS = dict(ZIGGO_HEADERS, Origin="https://www.telenet.tv", Referer="
 TELENET_CHANNELS = {
     "primesporthd": "Play Sports 1", "sportinghd2": "Play Sports 2", "sporting3": "Play Sports 3",
     "sporting4": "Play Sports 4", "primegolf": "Play Sports Golf",
+    "sporting5": "Play Sports Premier League",                   # 30 Oct 2026 (BE.PlaySportsPremierLeague)
     "jplnl01": "DAZN JPL 1", "jplnl02": "DAZN JPL 2",            # = DAZN (Eleven) Pro League 1 / 2
     "11football": "DAZN 1", "11sports": "DAZN 2",                # = DAZN Eleven Sports 1 / 2
 }
@@ -2930,7 +2933,44 @@ def fetch_yes(days, debug=False):
 # Turkey (29 Oct 2026, late): Turkcell TV+ guide (as iptv-org's tvplus.com.tr reader) - has DESCRIPTIONS, unlike
 # epgshare's TR1 file. A guest login gives a cookie, then one request per channel and day. Not beIN (Digiturk only).
 TVPLUS_API = "https://izmaottvsc14.tvplus.com.tr:33207/EPG/JSON/"
-TVPLUS_CHANNELS = {"11": "SSport", "170": "SSport2", "3": "ASpor", "31": "TRTSpor"}   # TV+ id -> TR1 group id part
+TVPLUS_CHANNELS = {"11": "SSport", "170": "SSport2", "3": "ASpor", "31": "TRTSpor",
+                   "77": "Eurosport1", "106": "Eurosport2"}               # Eurosport added 30 Oct 2026   # TV+ id -> TR1 group id part
+
+
+# Digiturk (beIN Turkey's own platform, 30 Oct 2026, as iptv-org's digiturk.com.tr reader): one HTML page per day
+# with every channel; titles and durations only. Fills beIN SPORTS 5 / MAX 1 / MAX 2 when TR1 has nothing.
+DIGITURK_PAGE = "https://www.digiturk.com.tr/Ajax/GetTvGuideFromDigiturk?Day={day:%m}%2F{day:%d}%2F{day:%Y}+00%3A00%3A00"
+DIGITURK_CHANNELS = {"506": "beINSPORTS5", "507": "beINSPORTSMAX1", "508": "beINSPORTSMAX2"}
+
+
+def fetch_digiturk(days, debug=False):
+    """{TR id part: [{start, stop, title, sub, live, desc}]} from Digiturk's guide page."""
+    hdrs = {"User-Agent": HEADERS["User-Agent"], "X-Requested-With": "XMLHttpRequest", "Accept-Language": "tr-TR"}
+    ist = ZoneInfo("Europe/Istanbul")
+    rows = {p: {} for p in DIGITURK_CHANNELS.values()}
+    for day in days:
+        page = get_text(DIGITURK_PAGE.format(day=day), {}, headers=hdrs, retries=2, quiet=True) or ""
+        for block in re.split(r'<div[^>]*class="[^"]*channelDetail', page)[1:]:
+            t = re.search(r'class="[^"]*tvGuideResult-box-wholeDates-title[^"]*"[^>]*onclick="[^"]*?\s(\d+)\)[^"]*"[^>]*>(.*?)</',
+                          block, re.S)
+            if not t or t.group(1) not in DIGITURK_CHANNELS:
+                continue
+            hm = re.search(r'tvGuideResult-box-wholeDates-time-hour[^>]*>\s*(\d{1,2}):(\d{2})', block)
+            mins = re.search(r'tvGuideResult-box-wholeDates-time-totalMinute[^>]*>\D*(\d+)', block)
+            if not hm or not mins:
+                continue
+            title = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", t.group(2)))).strip()
+            start = datetime(day.year, day.month, day.day, int(hm.group(1)), int(hm.group(2)), tzinfo=ist)
+            start = start.astimezone(timezone.utc)
+            live = bool(re.search(r"(?i)\bcanl[ıi]\b", title))
+            title = re.sub(r"(?i)\s*[-(]?\s*\bcanl[ıi]\b\s*\)?\s*$|^\s*canl[ıi]\s*[:\-]\s*", "", title).strip() or title
+            if title:
+                rows[DIGITURK_CHANNELS[t.group(1)]][start] = {"start": start, "stop": start + timedelta(minutes=int(mins.group(1))),
+                                                             "title": title, "sub": "", "live": live, "desc": ""}
+    out = {p: [r[k] for k in sorted(r)] for p, r in rows.items() if r}
+    for p in DIGITURK_CHANNELS.values():
+        print(f"  Digiturk {p}: {len(out.get(p, []))} programmes")
+    return out
 
 
 def fetch_tvplus(days, debug=False):
@@ -3674,6 +3714,10 @@ EPGSHARE = {   # group -> file, id prefix, place, time zone, English?, {id part:
                    "SSport2": ("S Sport 2", ["SSport.2.tr"]),
                    "TRTSpor": ("TRT Spor", ["TRT.SPOR.HD.tr", "TRT.SPOR.tr"]),
                    "ASpor": ("A Spor", ["A.SPOR.HD.tr", "A.SPOR.tr"]),
+                   # 30 Oct 2026: Eurosport 1/2 TR (from TV+, TVPLUS_CHANNELS) and beIN SPORTS 5 (also Digiturk)
+                   "Eurosport1": ("Eurosport 1 TR", ["Eurosport.1.tr", "EUROSPORT.1.tr", "Eurosport.1.HD.tr"]),
+                   "Eurosport2": ("Eurosport 2 TR", ["Eurosport.2.tr", "EUROSPORT.2.tr", "Eurosport.2.HD.tr"]),
+                   "beINSPORTS5": ("beIN SPORTS 5", ["beIN.SPORTS.5.tr", "Beinsports.5.tr"]),
                }},
     "latvia": {"file": "LV1", "prefix": "LV", "place": "Latvia", "tz": "Europe/Riga", "english": False,
                "channels": {
@@ -3770,10 +3814,13 @@ EPGSHARE.update({
                "beINSPORTS1": ("beIN SPORTS 1 SG", ["beIN.SPORTS.(HD).sg"]),
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} SG", [f"beIN.SPORTS.{n}.(HD).sg"]) for n in range(2, 6)},
                "beINSPORTSRUGBY": ("beIN SPORTS RUGBY SG", ["beIN.SPORTS.RUGBY.HD.sg"]),
-               **{f"HubPremier{n}": (f"Hub Premier {n}", [f"Hub.Premier.{n}.sg"]) for n in range(1, 7)},
+               **{f"HubPremier{n}": (f"Hub Premier {n}", [f"Hub.Premier.{n}.sg", f"Hub.Premier.{n}.HD.sg",
+                                                         rf"re:(?i)^Hub\.?Premier\.?{n}\b"])
+                  for n in range(1, 12)},                  # 7-11 added 30 Oct 2026 (in "main": logged if missing)
                **{f"HubSports{n}": (f"Hub Sports {n}", [f"Hub.Sports.{n}.sg", f"Hub.Sports.{n}.HD.sg"])
                   for n in range(1, 9)},                   # backup for StarHub (if epgshare has them)
-           }},
+           },
+           "main": {f"HubPremier{n}" for n in range(7, 12)}},
     "my": {"file": "MY1", "prefix": "MY", "place": "Malaysia", "tz": "Asia/Kuala_Lumpur", "english": True,
            "backup": True, "channels": {
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} MY", [f"beIN.SPORTS.{n}.my"]) for n in range(1, 4)},
@@ -3817,7 +3864,11 @@ EPGSHARE.update({
                      "RushSports2": ("Rush Sports 2", ["Rush.Sports.2.bb"]),
                      "RushSports3": ("Rush Sports 3", ["Rush.Sports.3.bb"]),
                      "RushPrime": ("RUSH Prime", ["RUSH.Prime.bb"]),
-                 }},
+                     # Flow Sports 1/2 (30 Oct 2026, Cable & Wireless Caribbean) - ids guessed; logged if missing
+                     "FlowSports1": ("Flow Sports 1", [r"re:(?i)^Flow\.?Sports(\.?1)?\.(HD\.)?[a-z]{2}$"]),
+                     "FlowSports2": ("Flow Sports 2", [r"re:(?i)^Flow\.?Sports\.?2\.(HD\.)?[a-z]{2}$"]),
+                 },
+                 "main": {"FlowSports1", "FlowSports2"}},
     # UAE (29 Oct 2026): Abu Dhabi Sports (AD Sports 1, 2 and Premium) - epgshare's AE1 file (listed in its
     # ALL_SOURCES1 list: AD.Sports.1.HD.ae, AD.Sports.2.HD.ae, "en:" English copies, and an Arabic-named
     # "Abu Dhabi Sports Premium" entry whose id the list shows garbled). An alternative starting "re:" is a
@@ -3829,9 +3880,14 @@ EPGSHARE.update({
                                               r"re:^(en:\W*)?(abu\W*dhabi\W*sports|ad\W*sports)\W*1(\W*hd)?\W*ae$"]),
                 "ADSports2": ("AD Sports 2", ["AD.Sports.2.HD.ae", "en:.Abu.Dhabi.Sports.2.ae",
                                               r"re:^(en:\W*)?(abu\W*dhabi\W*sports|ad\W*sports)\W*2(\W*hd)?\W*ae$"]),
-                "ADSportsPremium": ("AD Sports Premium", [r"re:(abu\W*dhabi\W*sports|ad\W*sports)\W*premium",
+                "ADSportsPremium": ("AD Sports Premium", [r"re:(abu\W*dhabi\W*sports|ad\W*sports)\W*premium(?!\W*[23])",
                                                            "re:أبوظبي.*بريميوم|بريميوم.*أبوظبي"]),
-            }},
+                # 30 Oct 2026: Premium 2 and 3 (guessed; logged if missing)
+                **{f"ADSportsPremium{n}": (f"AD Sports Premium {n}",
+                                           [rf"re:(abu\W*dhabi\W*sports|ad\W*sports)\W*premium\W*{n}"])
+                   for n in (2, 3)},
+            },
+            "main": {"ADSportsPremium2", "ADSportsPremium3"}},
     # Brazil: backup for Claro (same IDs, BR.SporTV ...), used only for channels Claro leaves empty
     "brazil": {"file": "BR1", "prefix": "BR", "place": "Brasilia", "tz": "America/Sao_Paulo", "english": False,
                "backup": True, "channels": {
@@ -3860,6 +3916,8 @@ EPGSHARE.update({
     "uk": {"file": "UK1", "prefix": "UK", "place": "UK", "tz": "Europe/London", "english": True,
            "backup": True, "channels": {
                "SkySportsMainEvent": ("Sky Sports Main Event", ["SkySpMainEvHD.uk"]),
+               # BBC Four (30 Oct 2026): not in our Sky list; general channel (only live sport gets LIVE)
+               "BBCFour": ("BBC Four", ["BBC.Four.HD.uk", "BBC.Four.uk", "BBCFourHD.uk", r"re:(?i)^BBC\.?Four"]),
                "RacingTV": ("Racing TV", ["Racing.TV.HD.uk", "Racing.TV.uk"]),   # backups (29 Oct 2026)
                "MUTV": ("MUTV", ["MUTV.HD.uk"]),
                "LFCTV": ("LFCTV", ["LFCTV.HD.uk"]),
@@ -3880,7 +3938,8 @@ EPGSHARE.update({
                "TNTSportsUltimate": ("TNT Sports Ultimate", ["TNT.Sports.Ultimate.HD.uk"]),
                "TNTSportsBoxOffice": ("TNT Sports Box Office", ["TNT.Sport.BoxOffice.HD.uk"]),
                "TNTSportsBoxOffice2": ("TNT Sports Box Office 2", ["TNTSBoxOff2HD.uk"]),
-           }},
+           },
+           "main": {"BBCFour"}},
     "ireland": {"file": "IE1", "prefix": "IE", "place": "Ireland", "tz": "Europe/Dublin", "english": True,
                 "backup": True, "channels": {
                     "PremierSports1": ("Premier Sports 1", ["Premier.Sports.1.HD.ie", "Premier.Sports.1.ie"]),
@@ -4478,7 +4537,8 @@ MATCH_TITLE_RE = re.compile(r"\S\s+vs?\.?\s+\S", re.I)
 # sport. IDs starting with these:
 GENERAL_CHANNELS = ("UK.BBCOne", "UK.BBCTwo", "UK.ITV1", "UK.ITV4", "UK.Channel4", "UK.Channel5",
                     "IE.RTEOne", "IE.RTE2", "IE.VirginMedia", "US.NBC", "US.USANetwork",
-                    "CH.blueZoom", "LV.TV3Life")           # blue Zoom F/D (29 Oct 2026): mixed channel, only live sport tagged
+                    "CH.blueZoom", "LV.TV3Life", "UK.BBCFour",
+                    "PL.CanalPlusPremium")           # blue Zoom F/D (29 Oct 2026): mixed channel, only live sport tagged
 GENERAL_SPORT_RE = re.compile(
     r"(?i)\b(football|soccer|rugby|gaa|gaelic|hurling|camogie|cricket|tennis|golf|snooker|darts|"
     r"racing|grand prix|formula (1|one)|f1|moto ?gp|boxing|ufc|mma|wrestling|nfl|nba|nhl|mlb|"
@@ -5892,6 +5952,10 @@ def main():
             tvp = fetch_tvplus(tr_days, args.debug)
             if tvp:
                 eps.setdefault("turkey", {}).update(tvp)   # replaces epgshare's listing for these channels
+            print("Turkey: reading Digiturk guide (beIN SPORTS 5, MAX 1, MAX 2) ...")
+            for part, evs in fetch_digiturk(tr_days, args.debug).items():
+                if not eps.get("turkey", {}).get(part):     # only where TR1 had nothing
+                    eps.setdefault("turkey", {})[part] = evs
     if not args.no_bein:
         bn_days = [datetime.now(ZoneInfo("Asia/Singapore")).date() + timedelta(days=i - 1)
                    for i in range(max(args.days, 1) + 1)]      # from yesterday (UTC days, Asia is ahead)

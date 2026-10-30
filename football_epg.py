@@ -342,6 +342,11 @@ DUMMY_CHANNELS = [
        f"Azam Sports {n} from Azam TV, Tanzania. Tanzanian and East African football, "
        f"other local sport and, at times, live English football. No programme guide is available.")
       for n in range(1, 5)],
+    # Sportsnet World Extra 1-4 (Canada, 30 Oct 2026): overflow channels with no guide anywhere
+    *[(f"sportsnetworldextra{n}.ca", f"Sportsnet World Extra {n}", "Stream is live at event time only.",
+       f"Sportsnet World Extra {n} (Canada): extra Sportsnet World channel for international football and "
+       f"rugby matches that don't fit on the main channel. No programme guide is available.")
+      for n in range(1, 5)],
 ]
 DUMMY_HOURS = 2          # block length
 DUMMY_DAYS = 10          # how far ahead the blocks run

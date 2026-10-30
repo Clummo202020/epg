@@ -104,6 +104,7 @@ CHANNELS = [
     ("US.BigTenNetwork", "Big Ten Network", "big-ten-network/4499"),
     ("US.FS1", "FS1", "fox-sports-1/668"),
     ("US.FS2", "FS2", "fox-sports-2/2114"),
+    ("US.PremierLeagueTV", "Premier League TV", "premier-league-tv/37457"),   # 30 Oct 2026 (iptv-org's TV Passport list)
     ("US.FoxSoccerPlus", "FOX Soccer Plus", "fox-soccer-plus/7538"),            # 29 Oct 2026 (HD page: fox-soccer-plus-hd/11551)
     ("US.FoxDeportes", "Fox Deportes", "fox-deportes/1827"),
     ("US.CBSSportsNetwork", "CBS Sports Network", "cbs-sports-network-usa/3115"),
