@@ -301,10 +301,6 @@ DUMMY_CHANNELS = [
      "Live darts events from around the world."),
     ("espn+.us", "ESPN+", "Stream is live at event time only.",
      "Live sports from ESPN+ in the USA"),
-    ("f1drivers.uk", "F1 Drivers", "Stream is live at event time only.",
-     "Formula 1 driver onboard cameras, live during race weekends."),
-    ("f1.uk", "Formula 1", "Stream is live at event time only",
-     "Live F1 Grand Prix events and races."),
     ("gaelic.sports", "Gaelic Sports", "Stream is live at event time only.",
      "Gaelic Football, Hurling and Camogie. Live from Ireland."),
     ("replay.uk", "Game Replays", "Replays",
@@ -739,6 +735,86 @@ def skyplus_channel(matches):
     return (SKYPLUS_ID, SKYPLUS_NAME, None, shows) if shows else None
 
 
+# Formula 1 (30 Oct 2026): f1.uk and f1drivers.uk from OpenF1's session list (the SPORT guide already uses it)
+# instead of plain placeholder blocks. Each session (Practice 1-3, Sprint Qualifying, Sprint, Qualifying, Race)
+# is a block, "🔴 LIVE - F1 Mexico: Race", starting when the coverage starts (race 70 min early, like the
+# streams' own "NEXT | MEXICO: RACE | 18:50" names; other sessions 15 min); the time before says what's next.
+# The description lists the whole weekend in UK time. No OpenF1 data -> the old plain blocks.
+OPENF1_SESSIONS = "https://api.openf1.org/v1/sessions?year={year}"
+F1_CHANNELS = [("f1.uk", "Formula 1", "Formula 1"), ("f1drivers.uk", "F1 Drivers", "F1 driver onboards")]
+F1_EARLY = {"Race": 70}                 # minutes of build-up before the session; others F1_EARLY_DEFAULT
+F1_EARLY_DEFAULT = 15
+F1_PLACE_BY_LOCATION = {"United States", "Italy", "Spain"}   # countries with two races: use the city
+F1_SHORT = {"Practice 1": "FP1", "Practice 2": "FP2", "Practice 3": "FP3", "Sprint Qualifying": "Sprint Quali",
+            "Sprint": "Sprint", "Qualifying": "Quali", "Race": "Race"}
+
+
+def _iso(text):
+    try:
+        return datetime.fromisoformat(str(text).replace("Z", "+00:00")).astimezone(timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
+def f1_channels(days):
+    """[(id, name, None, shows)] for F1_CHANNELS from OpenF1, or [] when there's no data."""
+    now = datetime.now(timezone.utc)
+    sess = []
+    for year in sorted({now.year, (now + timedelta(days=days)).year}):
+        data = get_json(OPENF1_SESSIONS.format(year=year))
+        sess += data if isinstance(data, list) else []
+    rows = []
+    for x in sess:
+        start, stop = _iso(x.get("date_start")), _iso(x.get("date_end"))
+        name = str(x.get("session_name") or "").strip()
+        if not start or not name:
+            continue
+        stop = stop if stop and stop > start else start + timedelta(hours=2)
+        country = str(x.get("country_name") or "").strip()
+        place = str(x.get("location") or "").strip()
+        gp = place if (country in F1_PLACE_BY_LOCATION or not country) else country
+        rows.append({"start": start, "stop": stop, "name": name, "gp": gp or "Grand Prix",
+                     "meeting": x.get("meeting_key"), "circuit": str(x.get("circuit_short_name") or "").strip()})
+    rows = [r for r in rows if r["stop"] > now - timedelta(hours=6) and r["start"] < now + timedelta(days=days)]
+    if not rows:
+        print("  F1: no OpenF1 sessions in range - plain blocks")
+        return []
+    rows.sort(key=lambda r: r["start"])
+    by_meeting = {}
+    for r in rows:
+        by_meeting.setdefault(r["meeting"], []).append(r)
+    out = []
+    for cid, cname, what in F1_CHANNELS:
+        shows = []
+        for i, r in enumerate(rows):
+            weekend = by_meeting.get(r["meeting"], [r])
+            plan = ", ".join(f"{F1_SHORT.get(w['name'], w['name'])} {w['start'].astimezone(LONDON):%a %H:%M}"
+                             for w in weekend)
+            uk = r["start"].astimezone(LONDON)
+            word = "Lights out" if r["name"] in ("Race", "Sprint") else "Session starts"
+            desc = (f"{what}: {r['gp']} {r['name']}" + (f" ({r['circuit']})" if r["circuit"] else "")
+                    + f". {word}: {uk:%a %d %b %H:%M} UK.\n\nThis weekend (UK time): {plan}.")
+            early = timedelta(minutes=F1_EARLY.get(r["name"], F1_EARLY_DEFAULT))
+            start, stop = r["start"] - early, r["stop"]
+            if i + 1 < len(rows):
+                nxt = rows[i + 1]["start"] - timedelta(minutes=F1_EARLY.get(rows[i + 1]["name"], F1_EARLY_DEFAULT))
+                stop = min(stop, nxt)
+            if shows and start < shows[-1]["stop"]:
+                start = shows[-1]["stop"]
+            if stop <= start:
+                continue
+            shows.append({
+                "comp": "Formula 1", "title": "Formula 1", "sub": "", "desc": desc,
+                "start": start, "stop": stop, "when": f"{uk:%a %d %b}, {uk:%H:%M}", "teams": [], "tbc": False,
+                "fixed_title": f"F1 - next: {r['gp']} {r['name']}, {uk:%a %H:%M}",
+                "fixed_desc": desc, "filler_sub": "", "live_sub": "",
+                "live_title": f"🔴 LIVE - F1 {r['gp']}: {r['name']}",
+            })
+        out.append((cid, cname, None, shows))
+    print(f"  F1: {len(rows)} sessions from OpenF1")
+    return out
+
+
 def dummy_channel(chan_id, name, title, desc):
     """A generic channel: back-to-back DUMMY_HOURS blocks, same title and
     description, no secondary title, not tied to any fixtures."""
@@ -852,6 +928,14 @@ def build_channels(matches, english, suffix, english_only):
         channels.append(uefa_channel(matches, suffix))
     for cid, cname, ctitle, cdesc in DUMMY_CHANNELS:
         channels.append(dummy_channel(f"{cid}{suffix}", cname, ctitle, cdesc))
+    f1 = f1_channels(DUMMY_DAYS)
+    for cid, cname, logo, shows in f1:
+        channels.append((f"{cid}{suffix}", cname, logo, shows))
+    if not f1:                                         # OpenF1 down: the old placeholder blocks, same ids
+        channels.append(dummy_channel(f"f1.uk{suffix}", "Formula 1", "Stream is live at event time only.",
+                                      "Live F1 Grand Prix events and races."))
+        channels.append(dummy_channel(f"f1drivers.uk{suffix}", "F1 Drivers", "Stream is live at event time only.",
+                                      "Formula 1 driver onboard cameras, live during race weekends."))
     if SKYPLUS_CHANNEL:
         sp = skyplus_channel(matches)
         if sp:
