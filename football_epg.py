@@ -742,7 +742,8 @@ def skyplus_channel(matches):
 # The description lists the whole weekend in UK time. No OpenF1 data -> the old plain blocks.
 OPENF1_SESSIONS = "https://api.openf1.org/v1/sessions?year={year}"
 F1_CHANNELS = [("Formula1.live", "Formula 1", "Formula 1"),      # new id 30 Oct 2026 (user's request)
-               ("f1.uk", "Formula 1", "Formula 1"), ("f1drivers.uk", "F1 Drivers", "F1 driver onboards")]
+               ("f1.uk", "Formula 1", "Formula 1"), ("f1drivers.uk", "F1 Drivers", "F1 driver onboards"),
+               ("F1Drivers.live", "F1 Drivers", "F1 driver onboards")]   # new id 30 Oct 2026 (PlaylistLabs caches old ids)
 # Season schedule first from Jolpica (the Ergast successor - fixed timetable, always available); OpenF1 only as a
 # backup, because OpenF1 refuses free requests while a session is live (30 Oct 2026: the run during FP1 got nothing).
 JOLPICA_SEASON = "https://api.jolpi.ca/ergast/f1/{year}.json"
@@ -976,8 +977,9 @@ def build_channels(matches, english, suffix, english_only):
         for fid in ("Formula1.live", "f1.uk"):
             channels.append(dummy_channel(f"{fid}{suffix}", "Formula 1", "Stream is live at event time only.",
                                           "Live F1 Grand Prix events and races."))
-        channels.append(dummy_channel(f"f1drivers.uk{suffix}", "F1 Drivers", "Stream is live at event time only.",
-                                      "Formula 1 driver onboard cameras, live during race weekends."))
+        for fid in ("F1Drivers.live", "f1drivers.uk"):
+            channels.append(dummy_channel(f"{fid}{suffix}", "F1 Drivers", "Stream is live at event time only.",
+                                          "Formula 1 driver onboard cameras, live during race weekends."))
     if SKYPLUS_CHANNEL:
         sp = skyplus_channel(matches)
         if sp:
