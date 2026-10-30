@@ -347,6 +347,12 @@ DUMMY_CHANNELS = [
        f"Sportsnet World Extra {n} (Canada): extra Sportsnet World channel for international football and "
        f"rugby matches that don't fit on the main channel. No programme guide is available.")
       for n in range(1, 5)],
+    # Cricbuzz / STARZPLAY Cricbuzz (30 Oct 2026): streaming-only cricket channels, no guide anywhere
+    ("cricbuzz.live", "Cricbuzz", "Stream is live at event time only.",
+     "Cricbuzz: live international and franchise cricket when a match is on. No programme guide is available."),
+    *[(f"starzplaycricbuzz{n}.live", f"STARZPLAY Cricbuzz {n}", "Stream is live at event time only.",
+       f"STARZPLAY Cricbuzz {n}: live cricket (internationals, PSL, ILT20 and more) when a match is on. "
+       f"No programme guide is available.") for n in (1, 2)],
 ]
 DUMMY_HOURS = 2          # block length
 DUMMY_DAYS = 10          # how far ahead the blocks run

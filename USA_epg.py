@@ -58,7 +58,7 @@ RED_BALL_CHANNELS = {"CA.SportsnetOne", "CA.Sportsnet360",
                      "US.beINSports", *[f"US.beINSports{n}" for n in range(3, 9)],     # (29 Oct 2026: CBS Sports channels)
                      # 29 Oct 2026 (late): FOX and ESPN channels, and TSN 1-5
                      "US.FS1", "US.FS2", "US.FoxSoccerPlus", "US.ESPN", "US.ESPN2", "US.ESPNU",
-                     *[f"CA.TSN{n}" for n in range(1, 6)]}
+                     *[f"CA.TSN{n}" for n in range(1, 6)], "CA.ATNCricketPlus"}
 RED_BALL_PREFIX = "🔴 LIVE: "
 # General (non-sports) channels (29 Oct 2026): only live sports EVENTS get a tag there, always the red
 # ball; everything else - studio shows ("Football Night in America", "Big Ten Countdown"), and anything
@@ -198,6 +198,7 @@ CA_CHANNELS = [
     ("CA.TSN3", "TSN3", "tsn3/13719"),
     ("CA.TSN4", "TSN4", "tsn4/279"),
     ("CA.TSN5", "TSN5", "tsn5/278"),
+    ("CA.ATNCricketPlus", "ATN Cricket Plus", "atn--cricket-plus/13695"),   # 30 Oct 2026 (TV Passport)
     ("CA.SportsnetOntario", "Sportsnet Ontario", "sportsnet-ontario/254"),
     ("CA.SportsnetEast", "Sportsnet East", "sportsnet-east/255"),
     ("CA.SportsnetWest", "Sportsnet West", "sportsnet-west/252"),
@@ -229,12 +230,16 @@ PLUTO_CHANNELS = {"US.CBSSportsGolazo": "63a0e33a45264d000850ed7e"}    # our ID 
 # Other free streaming channels from i.mjh.nz guides (29 Oct 2026): our ID -> (guide, channel id ending).
 # Listings only - never LIVE (Billiard TV shows dated replays: "Final: A vs. B from July 10, 2026").
 MJH_PLAIN = {"US.BilliardTV": ("https://raw.githubusercontent.com/matthuisman/i.mjh.nz/master/Plex/gb.xml.gz",
-                               "6334a8e48a7b2a349d903b8c")}
+                               "6334a8e48a7b2a349d903b8c"),
+             # GolfPass (30 Oct 2026): NBC's golf channel, free on Plex/Pluto/Samsung/Roku - Plex US has most listings
+             "US.GolfPass": ("https://raw.githubusercontent.com/matthuisman/i.mjh.nz/master/Plex/us.xml.gz",
+                             "5fc706038aba71002d8b7c8e")}
 PLUTO_MATCH_MINUTES = 100
 PLUTO_NOT_LIVE = re.compile(r"(?i)\b(\d+ in \d+|highlights?|replay|re-?airs?|rewind|classic|encore|"
                             r"best of|condensed|extended|recap|review|preview|show)\b")
 CHANNELS.append(("US.CBSSportsGolazo", "CBS Sports Golazo", "pluto"))
 CHANNELS.append(("US.BilliardTV", "Billiard TV", "pluto"))
+CHANNELS.append(("US.GolfPass", "GolfPass", "pluto"))
 
 GUIDES = {"USA_epg.xml.gz": CHANNELS, "CANADA_epg.xml.gz": CA_CHANNELS}
 

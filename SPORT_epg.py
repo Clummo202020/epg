@@ -442,7 +442,7 @@ SE_CHANNELS = {          # Allente channel number -> (id part, channel name)
     "20061": ("Eurosport1", "Eurosport 1 SE"), "50055": ("Eurosport2", "Eurosport 2 SE"),
     # 29 Oct 2026: found by NAME in Allente's Swedish guide ("re:" = pattern tried against the channel's text;
     # their numbers aren't known - see FI_CHANNELS)
-    r"re:\bATG\s*Live": ("ATGLive", "ATG Live"),
+    # (ATG Live: not in Allente's Swedish guide - removed 30 Oct 2026)
     # (Motorvision TV: not in Allente's guides - it comes from blue TV, CH.MotorvisionTV, see CH_CHANNELS)
     **{rf"re:TV4\s*Sport\s*Live\s*{n}\b": (f"TV4SportLive{n}", f"TV4 Sport Live {n}") for n in range(1, 5)},
     r"re:V\s*Sport\s*(1\s*Live|Live\s*1)\b": ("VSport1Live", "V Sport 1 Live"),
@@ -483,7 +483,7 @@ DK_CHANNELS = {
     "50022": ("Eurosport1", "Eurosport 1 DK"), "30010": ("Eurosport2", "Eurosport 2 DK"),
     # 29 Oct 2026: found by NAME in Allente's Danish guide ("re:" = pattern, see FI_CHANNELS); the Nordic-wide
     # V Sport Ultra stays under Sweden (SE.VSportUltra)
-    r"re:(Viasat|V)\s*Sport\s*Ultra": ("ViasatSportUltra", "Viasat Sport Ultra"),
+    # (Viasat Sport Ultra DK: not in Allente's Danish guide - use SE.VSportUltra; removed 30 Oct 2026)
     # Sport Live (F3 Mediagroup's small-sports channel, ex Dantoto Racing Live): Allente DK channel 30026
     # "Sport Live HD" (iptv-org's allente.dk list; the earlier "re:" name pattern found nothing)
     "30026": ("SportLive", "Sport Live DK"),
@@ -705,7 +705,6 @@ BG_CHANNELS = {          # page name on the site -> channel name
     "diema-sport": "Diema Sport", "diema-sport-2": "Diema Sport 2", "diema-sport-3": "Diema Sport 3",
     "nova-sport": "Nova Sport", "ring-bg": "Ring", "bnt3": "BNT 3", "btv-action": "bTV Action",
     "eurosport": "Eurosport 1", "eurosport2": "Eurosport 2",
-    "fight-network": "Fight Network",                  # 30 Oct 2026 (page name guessed - BG.FightNetwork)
 }
 ZIGGO_CHANNELS = ("https://spark-prod-nl.gnp.cloud.ziggogo.tv/eng/web/linear-service/v2/channels"
                   "?cityId=65535&language=en&productClass=Orion-DASH&platform=web")
@@ -2862,12 +2861,15 @@ def fetch_sms(days, debug=False):
             raw = fetch(SMS_PAGE.format(slug=slug, day=day), headers=HEADERS, parse="bytes", retries=2, quiet=True)
             if not raw:
                 continue
-            page = raw.decode("cp1250", "replace")
+            try:
+                page = raw.decode("utf-8")
+            except UnicodeDecodeError:
+                page = raw.decode("cp1250", "replace")   # the site's own pages are windows-1250
             cur = day
             prev = None
-            for block in re.split(r'<div[^>]*class="porad[" ]', page)[1:]:
+            for block in re.split(r"<div[^>]*class=[\"']porad[\"' ]", page)[1:]:
                 m = re.search(r"<span[^>]*>\s*(\d{1,2})[.:](\d{2})\s*</span>", block)
-                t = re.search(r'<a[^>]*class="nazev[^"]*"[^>]*>\s*<div[^>]*>(.*?)</div>', block, re.S)
+                t = re.search(r"<a[^>]*class=[\"']nazev[^\"']*[\"'][^>]*>\s*<div[^>]*>(.*?)</div>", block, re.S)
                 if not m or not t:
                     continue
                 start = datetime(cur.year, cur.month, cur.day, int(m.group(1)), int(m.group(2)), tzinfo=PRAGUE)
@@ -2877,7 +2879,7 @@ def fetch_sms(days, debug=False):
                 prev = start
                 title = html.unescape(re.sub(r"<[^>]+>|\s+", " ", t.group(1))).strip()
                 title = re.sub(r"\s+", " ", title)
-                d = re.search(r'<div[^>]*class="detail[^"]*"[^>]*>(.*?)</div>', block, re.S)
+                d = re.search(r"<div[^>]*class=[\"']detail[^\"']*[\"'][^>]*>(.*?)</div>", block, re.S)
                 desc = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", d.group(1)))).strip() if d else ""
                 live = bool(re.search(r"\b(živě|zive|live|přímý přenos)\b", f"{title} {desc}", re.I))
                 title = re.sub(r"(?i)\s*[-(,]?\s*\b(živě|live)\b\s*\)?\s*$", "", title).strip() or title
@@ -3300,7 +3302,8 @@ STARHUB_API = "https://waf-starhub-metadata-api-p001.sh-ifs.com/v3.1/epg/"
 STARHUB_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
                                  "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
                    "Accept": "application/json, */*", "Referer": "https://www.starhubtvplus.com/"}
-STARHUB_NAME_RE = re.compile(r"(?i)^\s*hub\s+sports\s+(\d+)\b")     # "Hub Sports 5 HD" -> 5
+STARHUB_NAME_RE = re.compile(r"(?i)^\s*hub\s+(sports|premier)\s+(\d+)\b")   # "Hub Sports 5 HD" -> (S, 5)
+# (30 Oct 2026: Hub Premier N too - epgshare's SG1 only has Premier 1-6; StarHub's own guide wins over SG1)
 STARHUB_KNOWN = {      # from iptv-org's StarHub list (Oct 2026), used if the channel list fails
     1: "b5c3d45b-e2c9-462b-bcf1-06a149d68f25", 2: "347fa620-e966-423c-8d46-98469f0fc974",
     3: "4ff7b357-9338-41a3-b7be-ede530555279", 4: "753b50fe-262e-48da-9b5e-3fd9894ff531",
@@ -3372,15 +3375,15 @@ def fetch_starhub(days, debug=False):
         for ch in res or []:
             m = STARHUB_NAME_RE.match(str(ch.get("title") or ""))
             if m and ch.get("id"):
-                chans.setdefault(int(m.group(1)), ch["id"])
+                chans.setdefault((m.group(1)[0].upper(), int(m.group(2))), ch["id"])
         pg = (data or {}).get("page") if isinstance(data, dict) else None
         if not res or not isinstance(pg, dict) or page >= int(pg.get("total") or 0):
             break
     if not chans:
         print("  StarHub channel list not available - using the known Hub Sports ids")
-        chans = dict(STARHUB_KNOWN)
+        chans = {("S", n): sid for n, sid in STARHUB_KNOWN.items()}
     if debug:
-        print(f"  StarHub Hub Sports channels: {sorted(chans)}")
+        print(f"  StarHub channels: {sorted(chans)}")
     tz, out = ZoneInfo("Asia/Singapore"), {}
     for n, sid in sorted(chans.items()):
         evs = {}
@@ -3715,10 +3718,19 @@ EPGSHARE = {   # group -> file, id prefix, place, time zone, English?, {id part:
                    "TRTSpor": ("TRT Spor", ["TRT.SPOR.HD.tr", "TRT.SPOR.tr"]),
                    "ASpor": ("A Spor", ["A.SPOR.HD.tr", "A.SPOR.tr"]),
                    # 30 Oct 2026: Eurosport 1/2 TR (from TV+, TVPLUS_CHANNELS) and beIN SPORTS 5 (also Digiturk)
-                   "Eurosport1": ("Eurosport 1 TR", ["Eurosport.1.tr", "EUROSPORT.1.tr", "Eurosport.1.HD.tr"]),
-                   "Eurosport2": ("Eurosport 2 TR", ["Eurosport.2.tr", "EUROSPORT.2.tr", "Eurosport.2.HD.tr"]),
-                   "beINSPORTS5": ("beIN SPORTS 5", ["beIN.SPORTS.5.tr", "Beinsports.5.tr"]),
+                   "Eurosport1": ("Eurosport 1 TR", ["EUROSPORT.1.HD.tr"]),       # TR1 ids from the 30 Oct log
+                   "Eurosport2": ("Eurosport 2 TR", ["EUROSPORT.2.TR.HD.tr"]),    # (backup for TV+)
                }},
+    # Pakistan (30 Oct 2026): Geo Super, A Sports, Ten Sports, PTV Sports - epgshare's PK1 file (file and ids GUESSED,
+    # all in "main" so the log says what the file has; if there is no PK1 file the log shows a fetch warning)
+    "pakistan": {"file": "PK1", "prefix": "PK", "place": "Pakistan", "tz": "Asia/Karachi", "english": False,
+                 "channels": {
+                     "GeoSuper": ("Geo Super", [r"re:(?i)^geo\W*super"]),
+                     "ASports": ("A Sports", [r"re:(?i)^a\W*sports(\W*hd)?\W*pk$"]),
+                     "TenSports": ("Ten Sports", [r"re:(?i)^ten\W*sports"]),
+                     "PTVSports": ("PTV Sports", [r"re:(?i)^ptv\W*sports(?!\W*world)"]),
+                 },
+                 "main": {"GeoSuper", "ASports", "TenSports", "PTVSports"}},
     "latvia": {"file": "LV1", "prefix": "LV", "place": "Latvia", "tz": "Europe/Riga", "english": False,
                "channels": {
                    "GO3Sport1": ("GO3 Sport 1", ["Go3.Sport.1.HD.lv"]),
@@ -3814,13 +3826,11 @@ EPGSHARE.update({
                "beINSPORTS1": ("beIN SPORTS 1 SG", ["beIN.SPORTS.(HD).sg"]),
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} SG", [f"beIN.SPORTS.{n}.(HD).sg"]) for n in range(2, 6)},
                "beINSPORTSRUGBY": ("beIN SPORTS RUGBY SG", ["beIN.SPORTS.RUGBY.HD.sg"]),
-               **{f"HubPremier{n}": (f"Hub Premier {n}", [f"Hub.Premier.{n}.sg", f"Hub.Premier.{n}.HD.sg",
-                                                         rf"re:(?i)^Hub\.?Premier\.?{n}\b"])
-                  for n in range(1, 12)},                  # 7-11 added 30 Oct 2026 (in "main": logged if missing)
+               **{f"HubPremier{n}": (f"Hub Premier {n}", [f"Hub.Premier.{n}.sg"]) for n in range(1, 7)},
+                                                          # backup for StarHub (7-11 only come from StarHub)
                **{f"HubSports{n}": (f"Hub Sports {n}", [f"Hub.Sports.{n}.sg", f"Hub.Sports.{n}.HD.sg"])
                   for n in range(1, 9)},                   # backup for StarHub (if epgshare has them)
-           },
-           "main": {f"HubPremier{n}" for n in range(7, 12)}},
+           }},
     "my": {"file": "MY1", "prefix": "MY", "place": "Malaysia", "tz": "Asia/Kuala_Lumpur", "english": True,
            "backup": True, "channels": {
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} MY", [f"beIN.SPORTS.{n}.my"]) for n in range(1, 4)},
@@ -3831,6 +3841,7 @@ EPGSHARE.update({
                **{f"AstroPremierLeague{n}": (f"Astro Premier League {n}", [f"Astro.Premier.League.{n}.my"])
                   for n in range(2, 6)},
                "AstroGrandstand": ("Astro Grandstand", ["Astro.Grandstand.my"]),
+               "AstroGolf": ("Astro Golf", ["Astro.Golf.my", "Astro.Golf.HD.my", r"re:(?i)^astro\W*golf"]),   # 30 Oct 2026
                "AstroBadminton": ("Astro Badminton", ["Astro.Badminton.my"]),
                "AstroCricket": ("Astro Cricket", ["Astro.Cricket.my"]),
                "AstroSportsPlus": ("Astro Sports Plus", ["Astro.Sports.Plus.my"]),
@@ -3864,11 +3875,7 @@ EPGSHARE.update({
                      "RushSports2": ("Rush Sports 2", ["Rush.Sports.2.bb"]),
                      "RushSports3": ("Rush Sports 3", ["Rush.Sports.3.bb"]),
                      "RushPrime": ("RUSH Prime", ["RUSH.Prime.bb"]),
-                     # Flow Sports 1/2 (30 Oct 2026, Cable & Wireless Caribbean) - ids guessed; logged if missing
-                     "FlowSports1": ("Flow Sports 1", [r"re:(?i)^Flow\.?Sports(\.?1)?\.(HD\.)?[a-z]{2}$"]),
-                     "FlowSports2": ("Flow Sports 2", [r"re:(?i)^Flow\.?Sports\.?2\.(HD\.)?[a-z]{2}$"]),
-                 },
-                 "main": {"FlowSports1", "FlowSports2"}},
+                 }},
     # UAE (29 Oct 2026): Abu Dhabi Sports (AD Sports 1, 2 and Premium) - epgshare's AE1 file (listed in its
     # ALL_SOURCES1 list: AD.Sports.1.HD.ae, AD.Sports.2.HD.ae, "en:" English copies, and an Arabic-named
     # "Abu Dhabi Sports Premium" entry whose id the list shows garbled). An alternative starting "re:" is a
@@ -3882,12 +3889,7 @@ EPGSHARE.update({
                                               r"re:^(en:\W*)?(abu\W*dhabi\W*sports|ad\W*sports)\W*2(\W*hd)?\W*ae$"]),
                 "ADSportsPremium": ("AD Sports Premium", [r"re:(abu\W*dhabi\W*sports|ad\W*sports)\W*premium(?!\W*[23])",
                                                            "re:أبوظبي.*بريميوم|بريميوم.*أبوظبي"]),
-                # 30 Oct 2026: Premium 2 and 3 (guessed; logged if missing)
-                **{f"ADSportsPremium{n}": (f"AD Sports Premium {n}",
-                                           [rf"re:(abu\W*dhabi\W*sports|ad\W*sports)\W*premium\W*{n}"])
-                   for n in (2, 3)},
-            },
-            "main": {"ADSportsPremium2", "ADSportsPremium3"}},
+            }},
     # Brazil: backup for Claro (same IDs, BR.SporTV ...), used only for channels Claro leaves empty
     "brazil": {"file": "BR1", "prefix": "BR", "place": "Brasilia", "tz": "America/Sao_Paulo", "english": False,
                "backup": True, "channels": {
@@ -5952,10 +5954,7 @@ def main():
             tvp = fetch_tvplus(tr_days, args.debug)
             if tvp:
                 eps.setdefault("turkey", {}).update(tvp)   # replaces epgshare's listing for these channels
-            print("Turkey: reading Digiturk guide (beIN SPORTS 5, MAX 1, MAX 2) ...")
-            for part, evs in fetch_digiturk(tr_days, args.debug).items():
-                if not eps.get("turkey", {}).get(part):     # only where TR1 had nothing
-                    eps.setdefault("turkey", {})[part] = evs
+            # (Digiturk refuses GitHub - HTTP 403, 30 Oct 2026 - so fetch_digiturk isn't called)
     if not args.no_bein:
         bn_days = [datetime.now(ZoneInfo("Asia/Singapore")).date() + timedelta(days=i - 1)
                    for i in range(max(args.days, 1) + 1)]      # from yesterday (UTC days, Asia is ahead)
@@ -6044,8 +6043,9 @@ def main():
     for part, evs in mew.items():
         records.append({"id": f"SG.{part}", "name": f"beIN SPORTS {part[-1]} SG", "tz": ZoneInfo("Asia/Singapore"),
                         "place": "Singapore", "filler": False, "back_to_back": True, "events": evs})
-    for n, evs in hub.items():
-        records.append({"id": f"SG.HubSports{n}", "name": f"Hub Sports {n}", "tz": ZoneInfo("Asia/Singapore"),
+    for (kind, n), evs in hub.items():
+        nm = "Sports" if kind == "S" else "Premier"
+        records.append({"id": f"SG.Hub{nm}{n}", "name": f"Hub {nm} {n}", "tz": ZoneInfo("Asia/Singapore"),
                         "place": "Singapore", "filler": False, "back_to_back": True, "events": evs})
     for cid, evs in now_hk.items():
         part, chname = NOW_CHANNELS.get(cid, (f"Now{cid}", f"Now TV {cid}"))
