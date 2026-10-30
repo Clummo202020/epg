@@ -85,6 +85,7 @@ COMPETITIONS = {
     "UEFA Europa League":     ("uefa.europa", "Europa"),
     "UEFA Conference League": ("uefa.europa.conf", "ConfLeague"),
     "La Liga":                ("esp.1", "LaLiga"),
+    "UEFA Nations League":    ("uefa.nations", "NationsLge"),   # used only by the Sky Sports+ streams channel
 }
 
 # Leagues that define "English clubs".
@@ -713,7 +714,16 @@ def uefa_channel(matches, suffix):
 SKYPLUS_CHANNEL = True
 SKYPLUS_ID = "SkySportsPlus2.live"   # was SkySportsPlus.live (30 Oct: new id so PlaylistLabs loads the fixed blocks)
 SKYPLUS_NAME = "Sky Sports+ streams"
-SKYPLUS_COMPS = ["Championship", "League One", "League Two", "Carabao Cup"]
+SKYPLUS_COMPS = ["Championship", "League One", "League Two", "Carabao Cup", "UEFA Nations League"]
+SKYPLUS_EFL = ["Championship", "League One", "League Two", "Carabao Cup"]
+SKYPLUS_SHORT = {"UEFA Nations League": "Nations League"}   # shorter name in titles/descriptions
+# Nations League (30 Oct 2026): the streams show the bigger matches, so only League A ties (both teams below,
+# the 2026-27 League A) are listed - minus the home nations (England/Wales on ITV/BBC, not Sky). Update the
+# list for each new Nations League season (League A changes with promotion/relegation).
+SKYPLUS_NL_TEAMS = {"portugal", "spain", "france", "germany", "italy", "netherlands", "denmark", "croatia",
+                    "serbia", "belgium", "england", "norway", "wales", "czechia", "czech republic", "greece",
+                    "turkiye", "turkey"}
+SKYPLUS_NL_SKIP = {"england", "wales", "scotland", "northern ireland"}
 SKYPLUS_MAIN_CHANNELS = [            # SPORT guide ids; a match live on any of these is not on the streams
     "UK.SkySportsMainEvent", "UK.SkySportsFootball", "UK.SkySportsPremierLeague", "UK.SkySportsAction",
     "UK.SkySportsMix", "UK.SkySportsPlus", "UK.SkySportsCricket", "UK.SkySportsGolf",
@@ -721,7 +731,7 @@ SKYPLUS_MAIN_CHANNELS = [            # SPORT guide ids; a match live on any of t
     "UK.SkySportsMainEvent4K", "UK.SkySportsF14K", "UK.SkySportsUHD1", "UK.SkySportsUHD2",
 ]
 SKYPLUS_IDLE = ("Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels "
-                "(Championship, League One, League Two and the Carabao Cup), plus extra tennis, darts, "
+                "(Championship, League One, League Two and the Carabao Cup), plus international football, tennis, darts, "
                 "golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels "
                 "to find it. No Saturday 3pm football in the UK.")
 
@@ -751,6 +761,10 @@ def skyplus_channel(matches):
     for m in matches:
         if m["comp"] not in SKYPLUS_COMPS or m.get("tbc"):
             continue
+        if m["comp"] == "UEFA Nations League":
+            sides = {_norm(short_name(t.get("displayName"))).strip() for t in m["teams"]}
+            if not sides <= SKYPLUS_NL_TEAMS or sides & SKYPLUS_NL_SKIP:
+                continue                               # not a League A tie, or a home nation (ITV/BBC)
         ko = m["start"].astimezone(LONDON)
         hm = ko.hour * 60 + ko.minute
         if ko.weekday() == 5 and 14 * 60 + 45 <= hm < 17 * 60 + 15:
@@ -781,7 +795,7 @@ def skyplus_channel(matches):
             for c in SKYPLUS_COMPS:
                 games = sorted(m["title"] for m in at if m["comp"] == c)
                 if games:
-                    comps.append(f"{c}: " + ", ".join(games))
+                    comps.append(f"{SKYPLUS_SHORT.get(c, c)}: " + ", ".join(games))
             parts.append((k, ". ".join(comps)))
         n = len(ms)
         if len(kos) == 1:
@@ -791,7 +805,9 @@ def skyplus_channel(matches):
             desc = (f"{ko:%a %d %b} on the Sky Sports+ streams - "
                     + " ".join(f"{k.astimezone(LONDON):%H:%M}: {txt}." for k, txt in parts)
                     + "\n\n" + SKYPLUS_IDLE)
-        what = ms[0]["comp"] if len({m["comp"] for m in ms}) == 1 else "EFL"
+        cs = {m["comp"] for m in ms}
+        what = (SKYPLUS_SHORT.get(ms[0]["comp"], ms[0]["comp"]) if len(cs) == 1
+                else "EFL" if cs <= set(SKYPLUS_EFL) else "Football")
         count = f"{n} match{'es' if n != 1 else ''}"
         stop = max(m["stop"] for m in ms)
         if i + 1 < len(groups):
