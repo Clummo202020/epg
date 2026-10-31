@@ -3542,7 +3542,18 @@ SKY_CHANNELS = {   # our ID -> (name, [Sky service ids, best first], 4K?); epgsh
     "UK.RacingTV": ("Racing TV", ["5272"], False),          # Racing TV HD
     "UK.MUTV": ("MUTV", ["1003"], False),                   # MUTV HD
     "UK.LFCTV": ("LFCTV", ["3845"], False),                 # LFCTV HD
+    # Sky Cinema (31 Oct 2026, user's Continuum "Movies" group): the 7 channels epgshare01's UK file lacks. Service ids from
+    # iptv-org's sky.com list (GB#4014 ...; their xmltv ids say SkyCinemaAction.uk etc.) - CHECK the first run's guide has films.
+    # Never "live" (SKY_CINEMA below), category "Movies".
+    "UK.SkyCinemaAction": ("Sky Cinema Action", ["4014"], False),
+    "UK.SkyCinemaDrama": ("Sky Cinema Drama", ["4016"], False),
+    "UK.SkyCinemaFamily": ("Sky Cinema Family", ["4018"], False),
+    "UK.SkyCinemaGreats": ("Sky Cinema Greats", ["4015"], False),
+    "UK.SkyCinemaPremiere": ("Sky Cinema Premiere", ["4021"], False),
+    "UK.SkyCinemaSciFiHorror": ("Sky Cinema Sci-fi & Horror", ["4017"], False),
+    "UK.SkyCinemaThriller": ("Sky Cinema Thriller", ["4062"], False),
 }
+SKY_CINEMA = "UK.SkyCinema"      # films: never tagged live (titles like "Live Free or Die Hard" / "Live and Let Die" must stay as they are)
 SKY_LIVE = re.compile(r"^\s*live\b|\(\s*live\s*\)|\blive\s*$", re.I)
 # Sky Sports UHD 1 / UHD 2 (added 28 Oct 2026): part-time 4K channels showing selected live events
 # (e.g. "Live SPFL: Hearts v Rangers"), "This is Ultra HD" / "UHD Downtime" in between. Sky service
@@ -3565,6 +3576,7 @@ def fetch_sky(days, debug=False):
     first = datetime(days[0].year, days[0].month, days[0].day, tzinfo=LONDON).astimezone(timezone.utc)
     last = days[-1] + timedelta(days=1)
     end = datetime(last.year, last.month, last.day, tzinfo=LONDON).astimezone(timezone.utc)
+    cinema = {sid for cid, (_n, sids, _u) in SKY_CHANNELS.items() if cid.startswith(SKY_CINEMA) for sid in sids}
 
     def take(data):
         for sched in (data or {}).get("schedule") or [] if isinstance(data, dict) else []:
@@ -3580,12 +3592,13 @@ def fetch_sky(days, debug=False):
                 title = re.sub(r"\s+", " ", str(ev.get("t") or "")).strip()
                 if not title or stop <= first or start >= end:
                     continue
-                live = bool(SKY_LIVE.search(title))
+                film = sid in cinema                                  # Sky Cinema: titles and flags left alone
+                live = bool(SKY_LIVE.search(title)) and not film
                 if live:   # "Live PL: Nott'm Forest v Arsenal" -> "PL: Nott'm Forest v Arsenal"
                     title = re.sub(r"^\s*live\b\s*[:\-]?\s*|\s*\(\s*live\s*\)|\s*[-:]?\s*\blive\s*$", "",
                                    title, flags=re.I).strip() or title
                 m = re.match(r"^([^:]{2,12}):\s*(.+)$", title)    # "PL: Chelsea v Man United" ->
-                if m and m.group(1).strip().upper() in SKY_COMP_NAMES:   # "Premier League: Chelsea v Man United"
+                if m and not film and m.group(1).strip().upper() in SKY_COMP_NAMES:   # "Premier League: Chelsea v Man United"
                     title = f"{SKY_COMP_NAMES[m.group(1).strip().upper()]}: {m.group(2).strip()}"
                 synopsis = re.sub(r"\s+", " ", str(ev.get("sy") or "")).strip()
                 synopsis = re.sub(r"^live\s*[.:!-]\s*", "", synopsis, flags=re.I)   # Sky's own "LIVE. ..."
@@ -3597,6 +3610,8 @@ def fetch_sky(days, debug=False):
                 per_sid.setdefault(sid, {})[start] = {
                     "start": start, "stop": stop, "title": title, "sub": sub if sub != title else "",
                     "live": live, "desc": short_desc(rest) if rest not in (title, sub) else ""}
+                if film:
+                    per_sid[sid][start]["never_live"] = True
 
     dates = sorted({(datetime.combine(d, datetime.min.time(), LONDON).astimezone(timezone.utc) + timedelta(hours=h))
                     .strftime("%Y%m%d") for d in days for h in (0, 23)})
@@ -4927,13 +4942,36 @@ def cricket_start(title, start):
     return ""
 
 
+JOLPICA_SEASON = "https://api.jolpi.ca/ergast/f1/{year}.json"      # Ergast's successor: fixed timetable, always up
+JOLPICA_KEYS = [("FirstPractice", "Practice 1"), ("SecondPractice", "Practice 2"), ("ThirdPractice", "Practice 3"),
+                ("SprintQualifying", "Sprint Qualifying"), ("SprintShootout", "Sprint Qualifying"), ("Sprint", "Sprint"),
+                ("Qualifying", "Qualifying"), ("Race", "Race")]
+
+
+def jolpica_f1_sessions(year):
+    """OpenF1-shaped sessions ({session_name, date_start}) from Jolpica - the backup when OpenF1 gives nothing
+    (it refuses free requests while an F1 session is live: 30 Oct 2026, the football run during FP1 got nothing)."""
+    data = get_json_url(JOLPICA_SEASON.format(year=year), ESPN_HDR, quiet=True)
+    races = (((data or {}).get("MRData") or {}).get("RaceTable") or {}).get("Races") or [] if isinstance(data, dict) else []
+    out = []
+    for r in races:
+        for key, name in JOLPICA_KEYS:
+            x = r if key == "Race" else r.get(key)
+            if isinstance(x, dict) and x.get("date") and x.get("time"):
+                out.append({"session_name": name, "date_start": f"{x['date']}T{x['time']}"})
+    return out
+
+
 def f1_sessions(year):
     key = f"f1{year}"
     if key not in _START_CACHE:
         data = get_json_url(OPENF1_SESSIONS.format(year=year), ESPN_HDR, quiet=True)
-        _START_CACHE[key] = data if isinstance(data, list) else []
-        print(f"  F1 (OpenF1): {len(_START_CACHE[key])} sessions in {year}" if _START_CACHE[key]
-              else f"  NOTE: F1 session times not available (OpenF1)")
+        sess, src = (data if isinstance(data, list) else []), "OpenF1"
+        if not sess:
+            sess, src = jolpica_f1_sessions(year), "Jolpica"
+        _START_CACHE[key] = sess
+        print(f"  F1 ({src}): {len(sess)} sessions in {year}" if sess
+              else f"  NOTE: F1 session times not available (OpenF1 and Jolpica)")
     return _START_CACHE[key]
 
 
@@ -4961,6 +4999,65 @@ def f1_start(title, start):
             _log_start(f"F1 start: {title} -> {uk:%a %d %b %H:%M} UK")
             return f"Lights out: {uk:%H:%M}." if want in ("race", "sprint") else f"Session starts: {uk:%H:%M}."
     return ""
+
+
+# F1 repeats marked live (31 Oct 2026): some sources flag EVERY airing of a session live (Sky Sport F1 DE listed "F1: Race - GP
+# Mexico" red 17 times, DAZN F1 ES 9 times). With OpenF1's real session times, an F1 session programme only counts as live when
+# it overlaps the real session (from F1_LEAD_IN before it starts to F1_SLACK after it should end); other airings are replays and
+# are shown plain. A title with no session word (\"F1 World Cup - Mexican GP\") is checked against ANY session. Studio/magazine
+# shows, F1 Academy/F2/F3 and e-sports are left alone, and nothing changes when OpenF1 has no sessions (it is down).
+F1_NOT_SESSION = re.compile(r"(?i)\b(parade|preliminary|press|conference|review|highlights?|magazine|weekend|reaction|show|"
+                            r"countdown|build-?up|preview|pre-?race|post-?race|grid|bullfight|launch|academy|f2|f3|"
+                            r"formula [23]|esports?|replay|rewind|classic|documentary|story)\b")
+F1_SESSION_MINUTES = {"practice 1": 60, "practice 2": 60, "practice 3": 60, "qualifying": 60, "sprint qualifying": 45,
+                      "sprint shootout": 45, "sprint": 35, "race": 120}
+F1_LEAD_IN = timedelta(minutes=60)
+F1_SLACK = timedelta(minutes=30)
+
+
+def f1_kind(t):
+    """OpenF1 session name a title asks for (\"race\", \"qualifying\" ...), or None for a generic F1 title."""
+    t = t.lower()
+    pm = re.search(r"practice\s*([123])(?!\d)|fp\s*([123])(?!\d)", t)      # not "Practice 2026"
+    if pm:
+        return "practice " + (pm.group(1) or pm.group(2))
+    om = re.search(r"\b(1st|first|2nd|second|3rd|third)\s+free practice", t)
+    if om:
+        return "practice " + {"1": "1", "f": "1", "2": "2", "s": "2", "3": "3", "t": "3"}[om.group(1)[0]]
+    if re.search(r"sprint", t) and re.search(r"qualif|shootout", t):
+        return "sprint qualifying"
+    if "sprint" in t:
+        return "sprint"
+    if re.search(r"qualif", t):
+        return "qualifying"
+    if re.search(r"\brace\b|\bcarrera\b|\brennen\b", t):
+        return "race"
+    return None
+
+
+F1_REPLAYS = []                 # channels of the F1 repeats set plain this run (for the log)
+
+
+def f1_is_replay(title, start, stop):
+    """True when an F1 session programme does not overlap the real session (a repeat); False when it does or when
+    this can't be decided (not an F1 session title, or no session times)."""
+    t = re.sub(r"(?i)^live\b[\s.,:;!-]*", "", title or "")
+    if not re.search(r"(?i)\bf1\b|formula (1|one)", t) or F1_NOT_SESSION.search(t):
+        return False
+    sessions = f1_sessions(start.year)
+    if not sessions:
+        return False
+    want = f1_kind(t)
+    stop = stop or start + timedelta(hours=2)
+    for sess in sessions:
+        name = str(sess.get("session_name") or "").lower()
+        if name not in F1_SESSION_MINUTES or (want and name != want):
+            continue
+        when = _parse_iso(sess.get("date_start"))
+        if when and start <= when + timedelta(minutes=F1_SESSION_MINUTES[name]) + F1_SLACK \
+                and stop >= when - F1_LEAD_IN:
+            return False
+    return True
 
 
 def us_start(title, start):
@@ -5214,7 +5311,7 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live):
         ET.SubElement(p, "sub-title", {"lang": "en"}).text = sub
     if desc:
         ET.SubElement(p, "desc", {"lang": "en"}).text = desc
-    ET.SubElement(p, "category", {"lang": "en"}).text = "Sports"
+    ET.SubElement(p, "category", {"lang": "en"}).text = "Movies" if cid.startswith(SKY_CINEMA) else "Sports"
     if live:
         ET.SubElement(p, "category", {"lang": "en"}).text = "Live"
 
@@ -5370,6 +5467,10 @@ def build_xmltv(records, suffix, minutes):
             if is_live and not really_live(title, cid):        # e.g. "End of Transmission"
                 is_live = False
                 desc = re.sub(r"^LIVE\.\s*", "", desc)
+            if is_live and f1_is_replay(f"{title} {sub or ''}".strip(), start, stop):   # F1 repeat marked live by the source
+                is_live = False
+                desc = re.sub(r"^LIVE\.\s*", "", desc)
+                F1_REPLAYS.append(cid)
             general = cid.startswith(GENERAL_CHANNELS)
             if general:                                        # BBC/ITV/RTÉ/Virgin: live sport events only
                 is_live = is_live and general_sport_live(title, sub, desc, ev["live"])
@@ -6203,6 +6304,8 @@ def main():
                                 and rec["place"] not in ENGLISH_PLACES)
     astro_matchday(records)                         # Astro pop-up PL channels (28 Oct 2026)
     tv, count, listed = build_xmltv(records, suffix, args.minutes)
+    if F1_REPLAYS:
+        print(f"F1 repeats no longer marked live (OpenF1 session times): {len(F1_REPLAYS)}")
     if CARRY_OVER and not args.no_carry and not suffix and os.path.exists(args.out):
         kept = carry_over(tv, listed, args.out)       # sources that failed this run
         if kept:
