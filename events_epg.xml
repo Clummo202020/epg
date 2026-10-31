@@ -8346,6 +8346,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101202500 +0000" stop="20261101222500 +0000" channel="AppleMLS018.us">
+    <title lang="en">(Apple) (MLS) 018 | Colorado vs. Chicago (2026-10-31 21:25:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="AppleMLS019.us">
     <title lang="en">Colorado vs. Chicago (Spanish) (Sun 1 Nov, 01:25)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -8414,6 +8419,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261101182500 +0000" stop="20261101202500 +0000" channel="AppleMLS019.us">
+    <title lang="en">(Apple) (MLS) 019 | Colorado vs. Chicago (Spanish) (2026-10-31 21:25:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101202500 +0000" stop="20261101222500 +0000" channel="AppleMLS019.us">
     <title lang="en">(Apple) (MLS) 019 | Colorado vs. Chicago (Spanish) (2026-10-31 21:25:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -8496,6 +8506,13 @@
     <desc lang="en">Coming up: Vancouver vs. Seattle. MLS. Starts Sun 1 Nov, 20:25 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101202500 +0000" stop="20261101222500 +0000" channel="AppleMLS020.us">
+    <title lang="en">🔴 LIVE: Vancouver vs. Seattle</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">Vancouver vs. Seattle. MLS. Starts Sun 1 Nov, 20:25 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="AppleMLS021.us">
     <title lang="en">Vancouver vs. Seattle (Spanish) (Sun 1 Nov, 20:25)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -8573,6 +8590,13 @@
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
     <desc lang="en">Coming up: Vancouver vs. Seattle (Spanish). MLS. Starts Sun 1 Nov, 20:25 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101202500 +0000" stop="20261101222500 +0000" channel="AppleMLS021.us">
+    <title lang="en">🔴 LIVE: Vancouver vs. Seattle (Spanish)</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">Vancouver vs. Seattle (Spanish). MLS. Starts Sun 1 Nov, 20:25 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="AppleMLS022.us">
     <title lang="en">Nashville vs. New_York (Sun 1 Nov, 21:25)</title>
@@ -13905,6 +13929,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101201500 +0000" stop="20261101221500 +0000" channel="PPVEVENT5.us">
+    <title lang="en">PPV EVENT 05: Post Fight Press Conference UFC FN (10.31 11:15 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031170000 +0000" stop="20261031190000 +0000" channel="PPVEVENT6.us">
     <title lang="en">🔴 LIVE: Open FC 71 Renzaei vs. Gadzhiev</title>
     <sub-title lang="en">PPV Event</sub-title>
@@ -15052,6 +15081,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261101183000 +0000" stop="20261101203000 +0000" channel="Paramount024.us">
+    <title lang="en">US (Paramount 024) | Como vs. Venezia (2026-11-01 07:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="Paramount024.us">
     <title lang="en">US (Paramount 024) | Como vs. Venezia (2026-11-01 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -21072,6 +21106,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="Peacock006.us">
+    <title lang="en">US (Peacock 006) | Breeders` Cup Player Show: Day 2 (2026-10-31 10:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031170000 +0000" stop="20261031190000 +0000" channel="Peacock007.us">
     <title lang="en">🔴 LIVE: Spurs v. Crystal Palace</title>
     <desc lang="en">Spurs v. Crystal Palace. Starts Sat 31 Oct, 17:00 UK time.</desc>
@@ -21865,71 +21904,79 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031195000 +0000" stop="20261031215000 +0000" channel="Peacock018.us">
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="Peacock017.us">
+    <title lang="en">US (Peacock 017) | Women`s Short Program (2026-10-31 15:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031193000 +0000" stop="20261031213000 +0000" channel="Peacock018.us">
     <title lang="en">🔴 LIVE: Aston Villa v. Fulham</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Aston Villa v. Fulham. Premier League. Starts Sat 31 Oct, 20:00 UK time.</desc>
+    <desc lang="en">Aston Villa v. Fulham. Starts Sat 31 Oct, 19:30 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031215000 +0000" stop="20261031230000 +0000" channel="Peacock018.us">
+  <programme start="20261031213000 +0000" stop="20261031223000 +0000" channel="Peacock018.us">
     <title lang="en">🔴 LIVE: Aston Villa v. Fulham</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Aston Villa v. Fulham. Premier League. Starts Sat 31 Oct, 20:00 UK time.</desc>
+    <desc lang="en">Aston Villa v. Fulham. Starts Sat 31 Oct, 19:30 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031230000 +0000" stop="20261101010000 +0000" channel="Peacock018.us">
+  <programme start="20261031223000 +0000" stop="20261101003000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101010000 +0000" stop="20261101030000 +0000" channel="Peacock018.us">
+  <programme start="20261101003000 +0000" stop="20261101023000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101030000 +0000" stop="20261101050000 +0000" channel="Peacock018.us">
+  <programme start="20261101023000 +0000" stop="20261101043000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101050000 +0000" stop="20261101070000 +0000" channel="Peacock018.us">
+  <programme start="20261101043000 +0000" stop="20261101063000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101070000 +0000" stop="20261101090000 +0000" channel="Peacock018.us">
+  <programme start="20261101063000 +0000" stop="20261101083000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101090000 +0000" stop="20261101110000 +0000" channel="Peacock018.us">
+  <programme start="20261101083000 +0000" stop="20261101103000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101110000 +0000" stop="20261101130000 +0000" channel="Peacock018.us">
+  <programme start="20261101103000 +0000" stop="20261101123000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101130000 +0000" stop="20261101150000 +0000" channel="Peacock018.us">
+  <programme start="20261101123000 +0000" stop="20261101143000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101150000 +0000" stop="20261101170000 +0000" channel="Peacock018.us">
+  <programme start="20261101143000 +0000" stop="20261101163000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101170000 +0000" stop="20261101190000 +0000" channel="Peacock018.us">
+  <programme start="20261101163000 +0000" stop="20261101183000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101190000 +0000" stop="20261101210000 +0000" channel="Peacock018.us">
+  <programme start="20261101183000 +0000" stop="20261101203000 +0000" channel="Peacock018.us">
+    <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="Peacock018.us">
     <title lang="en">US (Peacock 018) | Aston Villa v. Fulham (2026-10-31 15:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -21998,6 +22045,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261101182000 +0000" stop="20261101202000 +0000" channel="Peacock019.us">
+    <title lang="en">US (Peacock 019) | Rhythm Dance (2026-10-31 17:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101202000 +0000" stop="20261101222000 +0000" channel="Peacock019.us">
     <title lang="en">US (Peacock 019) | Rhythm Dance (2026-10-31 17:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -22365,6 +22417,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="Peacock024.us">
+    <title lang="en">US (Peacock 024) | Men`s &amp; Pairs Free Skate (2026-10-31 19:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Peacock025.us">
     <title lang="en">Liverpool v. Arsenal (Sun 1 Nov, 16:30)</title>
     <sub-title lang="en">⏭ Coming up: Premier League</sub-title>
@@ -22523,6 +22580,12 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261101183000 +0000" stop="20261101203000 +0000" channel="Peacock026.us">
+    <title lang="en">🔴 LIVE: ST World Tour: Montreal 2</title>
+    <desc lang="en">ST World Tour: Montreal 2. Starts Sun 1 Nov, 18:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261101203000 +0000" stop="20261101213000 +0000" channel="Peacock026.us">
     <title lang="en">🔴 LIVE: ST World Tour: Montreal 2</title>
     <desc lang="en">ST World Tour: Montreal 2. Starts Sun 1 Nov, 18:30 UK time.</desc>
     <category lang="en">Sports</category>
@@ -28300,78 +28363,6 @@
     <desc lang="en">Coming up: Patriots vs. Chargers. Starts Mon 30 Nov, 00:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031152000 +0000" stop="20261031172000 +0000" channel="SN023.ca">
-    <title lang="en">🔴 LIVE: Feyenoord vs. Fortuna Sittard</title>
-    <desc lang="en">Feyenoord vs. Fortuna Sittard. Starts Sat 31 Oct, 15:20 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031172000 +0000" stop="20261031182000 +0000" channel="SN023.ca">
-    <title lang="en">🔴 LIVE: Feyenoord vs. Fortuna Sittard</title>
-    <desc lang="en">Feyenoord vs. Fortuna Sittard. Starts Sat 31 Oct, 15:20 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031182000 +0000" stop="20261031202000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031202000 +0000" stop="20261031222000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031222000 +0000" stop="20261101002000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101002000 +0000" stop="20261101022000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101022000 +0000" stop="20261101042000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101042000 +0000" stop="20261101062000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101062000 +0000" stop="20261101082000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101082000 +0000" stop="20261101102000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101102000 +0000" stop="20261101122000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101122000 +0000" stop="20261101142000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101142000 +0000" stop="20261101162000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101162000 +0000" stop="20261101182000 +0000" channel="SN023.ca">
-    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261031170000 +0000" stop="20261031190000 +0000" channel="SN024.ca">
     <title lang="en">🔴 LIVE: Chicago @ Boston</title>
     <desc lang="en">Chicago @ Boston. Starts Sat 31 Oct, 17:00 UK time.</desc>
@@ -32104,101 +32095,6 @@
     <desc lang="en">Coming up: Hong Kong China v Canada Nations Cup Round 5 2026. Starts Sat 14 Nov, 13:50 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031083000 +0000" stop="20261031103000 +0000" channel="STAN12.au">
-    <title lang="en">🔴 LIVE: Guangzhou: Day 6 WTA 250</title>
-    <sub-title lang="en">WTA</sub-title>
-    <desc lang="en">Guangzhou: Day 6 WTA 250. Starts Sat 31 Oct, 08:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031103000 +0000" stop="20261031123000 +0000" channel="STAN12.au">
-    <title lang="en">🔴 LIVE: Guangzhou: Day 6 WTA 250</title>
-    <sub-title lang="en">WTA</sub-title>
-    <desc lang="en">Guangzhou: Day 6 WTA 250. Starts Sat 31 Oct, 08:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031123000 +0000" stop="20261031143000 +0000" channel="STAN12.au">
-    <title lang="en">🔴 LIVE: Guangzhou: Day 6 WTA 250</title>
-    <sub-title lang="en">WTA</sub-title>
-    <desc lang="en">Guangzhou: Day 6 WTA 250. Starts Sat 31 Oct, 08:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031143000 +0000" stop="20261031163000 +0000" channel="STAN12.au">
-    <title lang="en">🔴 LIVE: Guangzhou: Day 6 WTA 250</title>
-    <sub-title lang="en">WTA</sub-title>
-    <desc lang="en">Guangzhou: Day 6 WTA 250. Starts Sat 31 Oct, 08:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031163000 +0000" stop="20261031183000 +0000" channel="STAN12.au">
-    <title lang="en">🔴 LIVE: Guangzhou: Day 6 WTA 250</title>
-    <sub-title lang="en">WTA</sub-title>
-    <desc lang="en">Guangzhou: Day 6 WTA 250. Starts Sat 31 Oct, 08:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031183000 +0000" stop="20261031203000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031203000 +0000" stop="20261031223000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031223000 +0000" stop="20261101003000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101003000 +0000" stop="20261101023000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101023000 +0000" stop="20261101043000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101043000 +0000" stop="20261101063000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101063000 +0000" stop="20261101083000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101083000 +0000" stop="20261101103000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101103000 +0000" stop="20261101123000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101123000 +0000" stop="20261101143000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101143000 +0000" stop="20261101163000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101163000 +0000" stop="20261101183000 +0000" channel="STAN12.au">
-    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261031172000 +0000" stop="20261031192000 +0000" channel="STAN14.au">
     <title lang="en">🔴 LIVE: Tottenham Hotspur v Crystal Palace Premier League Matchweek 9 2026/2027</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -32936,6 +32832,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261101182500 +0000" stop="20261101202500 +0000" channel="STAN23.au">
+    <title lang="en">AU (STAN 23) | Seoul v Incheon K League 2026 (2026-11-01 18:25:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101202500 +0000" stop="20261101222500 +0000" channel="STAN23.au">
     <title lang="en">AU (STAN 23) | Seoul v Incheon K League 2026 (2026-11-01 18:25:50)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -33839,6 +33740,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101202500 +0000" stop="20261101222500 +0000" channel="STAN35.au">
+    <title lang="en">AU (STAN 35) | Seoul v Incheon K League 2026 (2026-11-01 18:25:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="STAN36.au">
     <title lang="en">Arsenal v Aston Villa WSL 2026/27 (Sun 1 Nov, 11:50)</title>
     <sub-title lang="en">⏭ Coming up: WSL</sub-title>
@@ -34386,6 +34292,11 @@
     <category lang="en">Live</category>
   </programme>
   <programme start="20261101183000 +0000" stop="20261101203000 +0000" channel="STAN42.au">
+    <title lang="en">AU (STAN 42) | Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 02:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="STAN42.au">
     <title lang="en">AU (STAN 42) | Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 02:30:50)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -39800,6 +39711,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="TSN040.ca">
+    <title lang="en">CA (TSN+ 040) | 2026 NASCAR O`Reilly Auto Parts Series Playoffs: National Debt Relief 250 (2026-10-31 15:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031193000 +0000" stop="20261031213000 +0000" channel="TSN041.ca">
     <title lang="en">🔴 LIVE: LaLiga: Barcelona vs. Alaves</title>
     <sub-title lang="en">LaLiga</sub-title>
@@ -39869,6 +39785,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | LaLiga: Barcelona vs. Alaves (2026-10-31 15:30:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031193000 +0000" stop="20261031213000 +0000" channel="TSN042.ca">
     <title lang="en">🔴 LIVE: NCAA Football: Florida vs. Georgia</title>
     <sub-title lang="en">NCAA</sub-title>
@@ -39934,6 +39855,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261101183000 +0000" stop="20261101203000 +0000" channel="TSN042.ca">
+    <title lang="en">CA (TSN+ 042) | NCAA Football: Florida vs. Georgia (2026-10-31 15:30:10)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="TSN042.ca">
     <title lang="en">CA (TSN+ 042) | NCAA Football: Florida vs. Georgia (2026-10-31 15:30:10)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -40823,6 +40749,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="TSN054.ca">
+    <title lang="en">CA (TSN+ 054) | NCAA Football: Georgia Tech vs. Pittsburgh (2026-10-31 19:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="TSN055.ca">
     <title lang="en">NCAA Football: Mississippi State vs. Texas (Sat 31 Oct, 23:30)</title>
     <sub-title lang="en">⏭ Coming up: NCAA</sub-title>
@@ -40890,6 +40821,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261101183000 +0000" stop="20261101203000 +0000" channel="TSN055.ca">
+    <title lang="en">CA (TSN+ 055) | NCAA Football: Mississippi State vs. Texas (2026-10-31 19:30:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101203000 +0000" stop="20261101223000 +0000" channel="TSN055.ca">
     <title lang="en">CA (TSN+ 055) | NCAA Football: Mississippi State vs. Texas (2026-10-31 19:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -41702,6 +41638,11 @@
     <desc lang="en">LaLiga: Elche vs. Valencia. Starts Sun 1 Nov, 17:18 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261101201800 +0000" stop="20261101221800 +0000" channel="TSN065.ca">
+    <title lang="en">CA (TSN+ 065) | LaLiga: Elche vs. Valencia (2026-11-01 12:18:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="TSN066.ca">
     <title lang="en">2026 FIFA U_17 Women`s World Cup: Quarterfinal _ TBD vs. TBD (Sun 1 Nov, 17:48)</title>
@@ -97344,6 +97285,71 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031220000 +0000" stop="20261101000000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101000000 +0000" stop="20261101020000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101020000 +0000" stop="20261101040000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101080000 +0000" stop="20261101100000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101100000 +0000" stop="20261101120000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101120000 +0000" stop="20261101140000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101140000 +0000" stop="20261101160000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101160000 +0000" stop="20261101180000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="SN023.ca">
+    <title lang="en">CA (SN+ 023) | Feyenoord vs. Fortuna Sittard (2026-10-31 11:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="STAN01.au">
     <title lang="en">AU (STAN 01) | Guangzhou: Day 5 WTA 250 (2026-10-30 15:59:31)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -98056,6 +98062,71 @@
   </programme>
   <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="STAN11.au">
     <title lang="en">AU (STAN 11) | Gwangju v Gimcheon K League 2026 (2026-10-31 18:25:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031220000 +0000" stop="20261101000000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101000000 +0000" stop="20261101020000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101020000 +0000" stop="20261101040000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101080000 +0000" stop="20261101100000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101100000 +0000" stop="20261101120000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101120000 +0000" stop="20261101140000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101140000 +0000" stop="20261101160000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101160000 +0000" stop="20261101180000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | Guangzhou: Day 6 WTA 250 (2026-10-31 19:30:50)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
