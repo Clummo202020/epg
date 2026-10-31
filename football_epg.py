@@ -858,6 +858,24 @@ def setanta_channel(matches):
                            SETANTA_COMPS, SETANTA_IDLE)
 
 
+# Premier League+ (31 Oct 2026): ONE guide channel for the "Premier League+ 1-10" streams (both playlists), built like
+# the Setanta one: a block at every Premier League kick-off listing that slot's matches. Nothing is filtered (no 3pm
+# blackout). New id PremierLeaguePlus.live.
+PLPLUS_CHANNEL = True
+PLPLUS_ID = "PremierLeaguePlus.live"
+PLPLUS_NAME = "Premier League+ streams"
+PLPLUS_COMPS = ["Premier League"]
+PLPLUS_IDLE = ("Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - "
+               "scroll the Premier League+ channels to find the one you want.")
+
+
+def plplus_channel(matches):
+    """(id, name, None, shows) for the Premier League+ streams, or None when no matches."""
+    kept = [m for m in matches if m["comp"] in PLPLUS_COMPS and not m.get("tbc")]
+    return streams_channel(kept, PLPLUS_ID, PLPLUS_NAME, "Premier League+", "the Premier League+ streams",
+                           PLPLUS_COMPS, PLPLUS_IDLE)
+
+
 # Formula 1 (30 Oct 2026): f1.uk and f1drivers.uk from OpenF1's session list (the SPORT guide already uses it)
 # instead of plain placeholder blocks. Each session (Practice 1-3, Sprint Qualifying, Sprint, Qualifying, Race)
 # is a block, "🔴 LIVE - F1 Mexico: Race", starting when the coverage starts (race 70 min early, like the
@@ -1117,6 +1135,13 @@ def build_channels(matches, english, suffix, english_only):
         else:                                          # no matches in range: plain blocks, same id
             channels.append(dummy_channel(f"{SETANTA_ID}{suffix}", SETANTA_NAME,
                                           "Live at event time only.", SETANTA_IDLE))
+    if PLPLUS_CHANNEL:
+        pl = plplus_channel(matches)
+        if pl:
+            channels.append((f"{pl[0]}{suffix}",) + pl[1:])
+        else:                                          # no matches in range: plain blocks, same id
+            channels.append(dummy_channel(f"{PLPLUS_ID}{suffix}", PLPLUS_NAME,
+                                          "Live at event time only.", PLPLUS_IDLE))
     if GOAL_RUSH:
         gr = goal_rush_channel(matches, suffix)
         if gr:
