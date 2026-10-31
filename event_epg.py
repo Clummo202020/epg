@@ -28,8 +28,8 @@ The playlist link usually contains your provider login, so it is never stored in
 the repository: the workflow passes it in from a GitHub Secret (PLAYLIST_URL).
 
 Usage:
-    PLAYLIST_URL=... python3 event_epg.py       # download the playlist, write events_epg.xml
-    python3 event_epg.py --m3u playlist.m3u     # use a local file instead
+    PLAYLIST_URL=... [PLAYLIST_URL_2=...] python3 event_epg.py   # download the playlist(s), write events_epg.xml
+    python3 event_epg.py --m3u a.m3u [b.m3u]                      # use local files instead
 """
 
 import argparse
@@ -1071,16 +1071,36 @@ def _parse_name(name):
     return parse_tod(name, any_region=True)
 
 
+# Playlists to read (30 Oct 2026): the user has TWO PlaylistLabs playlists sharing this guide, mostly the same
+# streams but each with a few the other lacks. Both are read and their stream names merged (a name in both counts
+# once), so every slot from either playlist is in the guide. PLAYLIST_URL_2 is optional.
+PLAYLIST_SECRETS = ["PLAYLIST_URL", "PLAYLIST_URL_2"]
+
+
 def read_playlist(args):
+    """[(label, text)] for each playlist read."""
     if args.m3u:
-        with open(args.m3u, encoding="utf-8", errors="replace") as f:
-            return f.read()
-    url = os.environ.get("PLAYLIST_URL", "").strip()
-    if not url:
-        sys.exit("No playlist: set the PLAYLIST_URL secret, or use --m3u FILE.")
-    req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=120) as r:
-        return r.read().decode("utf-8", errors="replace")
+        out = []
+        for path in args.m3u:
+            with open(path, encoding="utf-8", errors="replace") as f:
+                out.append((path, f.read()))
+        return out
+    out = []
+    for key in PLAYLIST_SECRETS:
+        url = os.environ.get(key, "").strip()
+        if not url:
+            if key != PLAYLIST_SECRETS[0]:
+                print(f"{key} not set - skipped")
+            continue
+        try:
+            req = urllib.request.Request(url, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=120) as r:
+                out.append((key, r.read().decode("utf-8", errors="replace")))
+        except Exception as e:              # one playlist down: carry on with the other
+            print(f"WARNING: could not download {key} ({type(e).__name__}) - skipped")
+    if not out:
+        sys.exit("No playlist: set the PLAYLIST_URL secret (and optionally PLAYLIST_URL_2), or use --m3u FILE.")
+    return out
 
 
 def stream_names(text):
@@ -1224,13 +1244,19 @@ def build(events, now):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[1])
-    ap.add_argument("--m3u", help="read this playlist file instead of PLAYLIST_URL")
+    ap.add_argument("--m3u", nargs="+", help="read these playlist files instead of PLAYLIST_URL / PLAYLIST_URL_2")
     ap.add_argument("--out", default=OUTPUT_NAME)
     args = ap.parse_args()
     now = datetime.now(timezone.utc)
-    names = list(stream_names(read_playlist(args)))
+    names, seen = [], set()
+    for label, text in read_playlist(args):
+        mine = list(stream_names(text))
+        new = [n for n in dict.fromkeys(mine) if n not in seen]
+        seen.update(new)
+        names.extend(new)
+        print(f"{label}: {len(mine)} streams, {len(new)} names not already read")
     events = [e for e in (parse_name(n) for n in names) if e]
-    print(f"{len(names)} streams in the playlist, {len(events)} with an event time")
+    print(f"{len(names)} streams in the playlist(s), {len(events)} with an event time")
     tv, chans, progs = build(events, now)
     save_seen()
     ET.indent(tv, space="  ")
