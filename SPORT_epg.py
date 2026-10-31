@@ -4066,6 +4066,7 @@ def fetch_epgshare(group, days, debug=False):
         elif not evs and (not cfg.get("backup") or part in cfg.get("main", ())):   # say why a main channel is empty
             if any(in_file(a, seen_ids) for a in alts):
                 print(f"    {name}: in the file but no programmes in these days")
+                EMPTY_CHANNELS[f"{cfg['prefix']}.{part}"] = name       # gets a placeholder (add_empty_placeholders)
             else:
                 words = [w for w in re.findall(r"[a-z]{3,}", name.lower()) if w not in ("the", "sports", "sport", "channel")]
                 like = sorted(i for i in seen_ids if i and words and all(w in i.lower() for w in words))[:8]
@@ -5408,6 +5409,40 @@ def write_xml(tv, path):
         sys.exit(f"ERROR: {path} did not write correctly")
 
 
+# Placeholders for empty channels (31 Oct 2026): a channel the script knows (epgshare01 "main" channels such as
+# Alkass 1-8, beIN SPORTS MAX 1/2 TR, Champions TV 3) but whose source lists nothing in these days used to be left
+# out of the guide, so its rows showed no information at all. It now gets 2-hour blocks naming the channel for
+# EMPTY_FILLER_HOURS (24 h, like the events guide: PlaylistLabs keeps what it loads, so a long placeholder would hide
+# real listings that appear later). Real listings replace it on the next run; a channel that has programmes this run
+# (own source, backup, carried over) is never touched. EXTRA_EMPTY_CHANNELS: channels with no source at all.
+# Log: "Placeholders for empty channels: N".
+EMPTY_CHANNELS = {}
+EXTRA_EMPTY_CHANNELS = {"TR.beINSPORTS5": "beIN SPORTS 5"}      # Digiturk refuses GitHub - no source
+EMPTY_FILLER_HOURS = 24
+EMPTY_FILLER_SUB = "No schedule available"
+EMPTY_FILLER_DESC = ("{name}: no programmes are listed for this channel at the moment. The schedule will appear "
+                     "here when the broadcaster publishes it (some channels only run during events).")
+
+
+def add_empty_placeholders(tv, listed):
+    """[(id, name)] of the channels given a placeholder (see EMPTY_CHANNELS)."""
+    have = {c.get("id") for c in tv.iter("channel")}
+    wanted = {**EMPTY_CHANNELS, **{k: v for k, v in EXTRA_EMPTY_CHANNELS.items() if k not in EMPTY_CHANNELS}}
+    now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
+    added = []
+    for cid in sorted(wanted):
+        if cid in have:
+            continue
+        name = wanted[cid]
+        c = ET.SubElement(tv, "channel", {"id": cid})
+        ET.SubElement(c, "display-name", {"lang": "en"}).text = name
+        listed.append((cid, name))
+        for a, b in filler_blocks(now, now + timedelta(hours=EMPTY_FILLER_HOURS)):
+            add_programme(tv, cid, a, b, name, EMPTY_FILLER_SUB, EMPTY_FILLER_DESC.format(name=name), False)
+        added.append((cid, name))
+    return added
+
+
 # Safeguard (28 Oct 2026): when a source fails for one run (seen 28 Oct 16:03 UTC: Cyta and the
 # Bulgarian site both returned nothing, so 30 channels vanished from the guide until the next run),
 # the channels missing from this run are kept from the previous guide - only their programmes that
@@ -5415,6 +5450,9 @@ def write_xml(tv, path):
 # themselves (the SPORT guide lists about a week), so a channel removed on purpose disappears within
 # a week, or straight away with --no-carry. Log: "Kept from the previous guide ...".
 CARRY_OVER = True
+# Channels removed on purpose are never carried over (31 Oct 2026: beIN AU - the streams are unreliable - came
+# back from the previous guide for a week after its sources were removed).
+CARRY_SKIP = ("AU.beINSPORTS",)
 
 
 def carry_over(tv, listed, prev_path):
@@ -5434,7 +5472,7 @@ def carry_over(tv, listed, prev_path):
     kept_progs = {}
     for p in old.iter("programme"):
         cid = p.get("channel")
-        if cid in have:
+        if cid in have or (cid or "").startswith(CARRY_SKIP):
             continue
         try:
             stop = datetime.strptime(p.get("stop"), "%Y%m%d%H%M%S %z")
@@ -6163,6 +6201,13 @@ def main():
             count += sum(n for _, n in filled)
             print(f"Filled missing days from the previous guide: {len(filled)} channel(s), "
                   f"{sum(n for _, n in filled)} programmes")
+    if not suffix:
+        empties = add_empty_placeholders(tv, listed)
+        if empties:
+            count += sum(1 for _ in tv.iter("programme") if _.get("channel") in {c for c, _n in empties})
+            print(f"Placeholders for empty channels: {len(empties)}")
+            for cid, name in empties:
+                print(f"  placeholder {cid} ({name})")
     out_path = unique_path(args.out) if args.unique else args.out
     write_xml(tv, out_path)
     if run_no is not None:
