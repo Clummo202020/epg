@@ -284,22 +284,6 @@ PPV_TZ = {"ET": "America/New_York", "EST": "America/New_York", "EDT": "America/N
           "GMT": "Europe/London", "BST": "Europe/London", "UK": "Europe/London"}
 PPV_DEFAULT_TZ = "America/New_York"     # when the name gives no zone
 
-# Tennis group (31 Oct 2026, Continuum): the streams are named
-#   "Kudermetova P, Timofeeva M vs Tjen J, Williams V @ Oct 31 07:30 AM - WTA Guangzhou :Tennis  01"   (with a time)
-#   "Cerundolo F, Etcheverry T M vs Seggerman R, Tien L - ATP Vienna :Tennis  03"                      (no time)
-#   ":Tennis  14"                                                                                      (empty slot)
-# -> TENNIS1.uk ... TENNIS30.uk. The time is read as US Eastern (the same layout as the NBA streams - CHECK the first
-# real run: Oct 31 07:30 AM = 11:30 UTC = 19:30 in Guangzhou). A match with a time gets a LIVE block of TENNIS_EVENT_HOURS;
-# one with no time shows its name (no LIVE block), like an untimed darts event. Secondary title = the tour/event.
-TENNIS_AT = re.compile(
-    r"^\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
-    r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*(?:-\s*(?P<comp>[^:@]+?)\s*)?:\s*Tennis\s*(?P<num>\d+)\s*$",
-    re.I)
-TENNIS_PLAIN = re.compile(r"^\s*(?P<title>.+?)\s+-\s+(?P<comp>[^:@]+?)\s*:\s*Tennis\s*(?P<num>\d+)\s*$", re.I)
-TENNIS_EMPTY = re.compile(r"^\W*Tennis\s*(?P<num>\d+)\s*$", re.I)
-TENNIS_TZ = "America/New_York"
-TENNIS_EVENT_HOURS = 3         # best-of-3 singles ~2 h, doubles ~1.5 h, best-of-5 3-4 h
-
 
 def parse_ppv_event(name):
     """"PPV EVENT 01: Title (10.30 8:30 PM ET)" -> event, "PPV EVENT 07" -> empty slot, else None."""
@@ -904,28 +888,6 @@ def _parse_name(name):
     ppv = parse_ppv_event(name)                      # PPV EVENT 01: Title (10.30 8:30 PM ET)
     if ppv:
         return ppv
-
-    te = TENNIS_EMPTY.match(name)                    # ":Tennis  14" with nothing on it
-    if te:
-        num = int(te["num"])
-        return _empty_slot(name, f"TENNIS{num}.uk", f"Tennis {num}")
-    ta = TENNIS_AT.match(name)                       # A vs B @ Oct 31 07:30 AM - WTA Guangzhou :Tennis 01
-    if ta:
-        title = re.sub(r"\s+", " ", ta["title"]).strip(" -|:")
-        start = month_day_time(ta["mon"], ta["day"], ta["h"], ta["m"], ta["ap"], ZoneInfo(TENNIS_TZ))
-        if start is None:
-            return None
-        num = int(ta["num"])
-        return {"name": name, "slot_id": f"TENNIS{num}.uk", "slot_name": f"Tennis {num}", "title": title,
-                "extra": "", "comp": (ta["comp"] or "").strip() or "Tennis", "hours": TENNIS_EVENT_HOURS,
-                "start": start.astimezone(timezone.utc)}
-    tp = TENNIS_PLAIN.match(name)                    # A vs B - ATP Vienna :Tennis 03 (no time)
-    if tp:
-        num = int(tp["num"])
-        return {"name": name, "slot_id": f"TENNIS{num}.uk", "slot_name": f"Tennis {num}",
-                "title": re.sub(r"\s+", " ", tp["title"]).strip(" -|:"), "extra": "",
-                "comp": tp["comp"].strip(), "hours": TENNIS_EVENT_HOURS, "untimed": True,
-                "start": datetime.now(timezone.utc)}
 
     fd = parse_darts(name) or parse_tod(name)
     if fd:

@@ -330,8 +330,6 @@ DUMMY_CHANNELS = [
      "Live basketball from the NBA."),
     ("nhl.usa", "NHL", "Stream is live at event time only.",
      "Live ice hockey from the NHL."),
-    ("tennis.live", "Tennis", "Stream is live at event time only.",
-     "Live tennis from around the world."),
     ("boxing.live", "Boxing", "Stream is live at event time only.",
      "Live boxing from around the world."),
     # Azam Sports 1-4 (Tanzania, 29 Oct 2026): no programme guide anywhere, so plain blocks with a description
