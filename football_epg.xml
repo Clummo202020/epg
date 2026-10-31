@@ -860,9 +860,6 @@
     <display-name lang="en">Portsmouth Championship</display-name>
     <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/385.png" />
   </channel>
-  <channel id="PremierLeaguePlus.live">
-    <display-name lang="en">Premier League+ streams</display-name>
-  </channel>
   <channel id="Preston.North.End.Championship">
     <display-name lang="en">Preston North End Championship</display-name>
     <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/394.png" />
@@ -1224,7 +1221,7 @@
     <display-name lang="en">York City League Two</display-name>
     <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/315.png" />
   </channel>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="AC.Milan.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="AC.Milan.Europa">
     <title lang="en">AC Milan v Ferencvaros (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: AC Milan v Ferencvaros. San Siro, Milano. Kick-off: 17:45.</desc>
@@ -1705,7 +1702,7 @@
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="AEK.Athens.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="AEK.Athens.ChampsLge">
     <title lang="en">AEK Athens v Real Madrid (Wed 04 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: AEK Athens v Real Madrid. OPAP Arena, Athens. Kick-off: 17:45.</desc>
@@ -2090,7 +2087,7 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="AFC.Wimbledon.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="AFC.Wimbledon.FACup">
     <title lang="en">Crewe Alexandra v AFC Wimbledon (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Crewe Alexandra v AFC Wimbledon. Mornflake Stadium, Crewe. Kick-off: 15:00.</desc>
@@ -2764,7 +2761,7 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="AGF.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="AGF.ConfLeague">
     <title lang="en">AGF v Braga (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: AGF v Braga. Cepheus Park Randers, Randers. Kick-off: 17:45.</desc>
@@ -3245,7 +3242,7 @@
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="AS.Monaco.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="AS.Monaco.ConfLeague">
     <title lang="en">AS Monaco v FC Nordsjælland (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: AS Monaco v FC Nordsjælland. Stade Louis II, Monaco. Kick-off: 20:00.</desc>
@@ -3734,7 +3731,7 @@
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="AS.Roma.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="AS.Roma.ChampsLge">
     <title lang="en">Manchester Utd v AS Roma (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Manchester Utd v AS Roma. Old Trafford, Manchester. Kick-off: 20:00.</desc>
@@ -4031,7 +4028,7 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="AZ.Alkmaar.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="AZ.Alkmaar.Europa">
     <title lang="en">AZ Alkmaar v Juventus (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: AZ Alkmaar v Juventus. AFAS Stadion, Alkmaar. Kick-off: 20:00.</desc>
@@ -4520,7 +4517,7 @@
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Accrington.Stanley.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Accrington.Stanley.FACup">
     <title lang="en">Accrington Stanley v Wycombe Wanderers (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Accrington Stanley v Wycombe Wanderers. Wham Stadium, Accrington. Kick-off: 15:00.</desc>
@@ -5194,7 +5191,7 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Ajax.Amsterdam.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Ajax.Amsterdam.ConfLeague">
     <title lang="en">FC Midtjylland v Ajax Amsterdam (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: FC Midtjylland v Ajax Amsterdam. MCH Arena, Herning. Kick-off: 17:45.</desc>
@@ -6261,7 +6258,7 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Anderlecht.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Anderlecht.Europa">
     <title lang="en">Anderlecht v RB Salzburg (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Anderlecht v RB Salzburg. Lotto Park, Brussels. Kick-off: 17:45.</desc>
@@ -6742,7 +6739,7 @@
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Ararat.Armenia.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Ararat.Armenia.Europa">
     <title lang="en">Torreense v Ararat-Armenia (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Torreense v Ararat-Armenia. Estádio Dr. Magalhaes Pessoa, Leiria. Kick-off: 20:00.</desc>
@@ -7231,7 +7228,7 @@
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Arsenal.Prem">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Arsenal.Prem">
     <title lang="en">Liverpool v Arsenal (Sun 01 Nov, 16:30)</title>
     <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
     <desc lang="en">Next Match: Liverpool v Arsenal. Anfield, Liverpool. Kick-off: 16:30.</desc>
@@ -7905,7 +7902,7 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Arsenal.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Arsenal.ChampsLge">
     <title lang="en">Slavia Prague v Arsenal (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Slavia Prague v Arsenal. Fortuna Arena, Prague. Kick-off: 20:00.</desc>
@@ -9068,7 +9065,7 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Aston.Villa.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Aston.Villa.ChampsLge">
     <title lang="en">Barcelona v Aston Villa (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Barcelona v Aston Villa. Spotify Camp Nou, Barcelona. Kick-off: 20:00.</desc>
@@ -9365,7 +9362,7 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Atalanta.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Atalanta.ConfLeague">
     <title lang="en">Atalanta v Kairat Almaty (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Atalanta v Kairat Almaty. New Balance Arena, Bergamo. Kick-off: 17:45.</desc>
@@ -9846,7 +9843,7 @@
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Athletic.Club.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Athletic.Club.LaLiga">
     <title lang="en">Athletic Club v Real Sociedad (Sun 01 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Athletic Club v Real Sociedad. San Mamés, Bilbao. Kick-off: 20:00.</desc>
@@ -11330,7 +11327,7 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Atletico.Madrid.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Atletico.Madrid.ChampsLge">
     <title lang="en">Atlético Madrid v Bayern Munich (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Atlético Madrid v Bayern Munich. Riyadh Air Metropolitano, Madrid. Kick-off: 20:00.</desc>
@@ -15405,7 +15402,7 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Barcelona.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Barcelona.ChampsLge">
     <title lang="en">Barcelona v Aston Villa (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Barcelona v Aston Villa. Spotify Camp Nou, Barcelona. Kick-off: 20:00.</desc>
@@ -15702,7 +15699,7 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Barnet.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Barnet.FACup">
     <title lang="en">Barnet v Tranmere Rovers (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Barnet v Tranmere Rovers. The Hive Stadium, Barnet. Kick-off: 15:00.</desc>
@@ -16376,7 +16373,7 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Barnsley.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Barnsley.FACup">
     <title lang="en">Barnsley v Aldershot Town (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Barnsley v Aldershot Town. Oakwell, Barnsley. Kick-off: 15:00.</desc>
@@ -17050,7 +17047,7 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Bayer.Leverkusen.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Bayer.Leverkusen.Europa">
     <title lang="en">Bayer Leverkusen v Marseille (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Bayer Leverkusen v Marseille. BayArena, Leverkusen. Kick-off: 20:00.</desc>
@@ -17539,7 +17536,7 @@
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Bayern.Munich.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Bayern.Munich.ChampsLge">
     <title lang="en">Atlético Madrid v Bayern Munich (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Atlético Madrid v Bayern Munich. Riyadh Air Metropolitano, Madrid. Kick-off: 20:00.</desc>
@@ -17836,7 +17833,7 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Benfica.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Benfica.Europa">
     <title lang="en">Benfica v Lech Poznan (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Benfica v Lech Poznan. Estádio da Luz, Lisbon. Kick-off: 20:00.</desc>
@@ -18325,7 +18322,7 @@
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Besiktas.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Besiktas.Europa">
     <title lang="en">Celtic v Besiktas (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Celtic v Besiktas. Celtic Park, Glasgow. Kick-off: 20:00.</desc>
@@ -20212,7 +20209,7 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Blackpool.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Blackpool.FACup">
     <title lang="en">AFC Hornchurch v Blackpool (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: AFC Hornchurch v Blackpool. Hornchurch Stadium, East London. Kick-off: 15:00.</desc>
@@ -20877,7 +20874,7 @@
     <category lang="en">FA Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Blackpool.League1">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Blackpool.League1">
     <title lang="en">Sheffield Wednesday v Blackpool (Sun 01 Nov, 14:00)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
     <desc lang="en">Next Match: Sheffield Wednesday v Blackpool. Hillsborough, Sheffield. Kick-off: 14:00.</desc>
@@ -20958,7 +20955,7 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Bodo.Glimt.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Bodo.Glimt.ChampsLge">
     <title lang="en">Bodo/Glimt v Lille (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Bodo/Glimt v Lille. Aspmyra Stadion, Bodø/Glimt. Kick-off: 20:00.</desc>
@@ -21874,7 +21871,7 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Borac.Banja.Luka.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Borac.Banja.Luka.ConfLeague">
     <title lang="en">Mjällby AIF v Borac Banja Luka (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Mjällby AIF v Borac Banja Luka. Olympia, Helsingborg. Kick-off: 17:45.</desc>
@@ -22355,7 +22352,7 @@
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Borussia.Dortmund.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Borussia.Dortmund.ChampsLge">
     <title lang="en">Borussia Dortmund v Real Betis (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Borussia Dortmund v Real Betis. Signal Iduna Park, Aue. Kick-off: 20:00.</desc>
@@ -23526,7 +23523,7 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Bournemouth.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Bournemouth.Europa">
     <title lang="en">Sparta Prague v Bournemouth (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Sparta Prague v Bournemouth. Generali Arena, Prague. Kick-off: 17:45.</desc>
@@ -24607,7 +24604,7 @@
     <desc lang="en">Live boxing from around the world.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Bradford.City.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Bradford.City.FACup">
     <title lang="en">Bradford City v Marine (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Bradford City v Marine. Valley Parade, Bradford. Kick-off: 15:00.</desc>
@@ -25281,7 +25278,7 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Braga.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Braga.ConfLeague">
     <title lang="en">AGF v Braga (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: AGF v Braga. Cepheus Park Randers, Randers. Kick-off: 17:45.</desc>
@@ -27318,7 +27315,7 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Brighton.Hove.Albion.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Brighton.Hove.Albion.ConfLeague">
     <title lang="en">Getafe v Brighton &amp; Hove Albion (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Getafe v Brighton &amp; Hove Albion. Estadio Coliseum, Getafe. Kick-off: 20:00.</desc>
@@ -28490,7 +28487,7 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Bristol.Rovers.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Bristol.Rovers.FACup">
     <title lang="en">Bristol Rovers v Cambridge Utd (Fri 06 Nov, 19:30)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Bristol Rovers v Cambridge Utd. Memorial Stadium, Bristol. Kick-off: 19:30.</desc>
@@ -29084,7 +29081,7 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Bromley.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Bromley.FACup">
     <title lang="en">Bromley v Rotherham Utd (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Bromley v Rotherham Utd. RELOC8 EM Community Stadium, Bromley. Kick-off: 15:00.</desc>
@@ -30457,7 +30454,7 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Burton.Albion.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Burton.Albion.FACup">
     <title lang="en">Burton Albion v AFC Rushden &amp; Diamonds (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Burton Albion v AFC Rushden &amp; Diamonds. Pirelli Stadium, Burton-upon-Trent, Staffordshire. Kick-off: 15:00.</desc>
@@ -31131,7 +31128,7 @@
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="CSKA.Sofia.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="CSKA.Sofia.ConfLeague">
     <title lang="en">Panathinaikos v CSKA Sofia (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Panathinaikos v CSKA Sofia. Athens Olympic Stadium, Athens. Kick-off: 20:00.</desc>
@@ -31620,7 +31617,7 @@
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="CSU.Craiova.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="CSU.Craiova.ConfLeague">
     <title lang="en">CSU Craiova v Egnatia (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: CSU Craiova v Egnatia. Stadionul Ion Oblemenco, Craiova. Kick-off: 20:00.</desc>
@@ -32109,7 +32106,7 @@
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Cambridge.Utd.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Cambridge.Utd.FACup">
     <title lang="en">Bristol Rovers v Cambridge Utd (Fri 06 Nov, 19:30)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Bristol Rovers v Cambridge Utd. Memorial Stadium, Bristol. Kick-off: 19:30.</desc>
@@ -34796,7 +34793,7 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Celta.Vigo.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Celta.Vigo.Europa">
     <title lang="en">Celta Vigo v Union St.-Gilloise (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Celta Vigo v Union St.-Gilloise. Balaidos, Vigo. Kick-off: 20:00.</desc>
@@ -35285,7 +35282,7 @@
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Celtic.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Celtic.Europa">
     <title lang="en">Celtic v Besiktas (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Celtic v Besiktas. Celtic Park, Glasgow. Kick-off: 20:00.</desc>
@@ -37259,7 +37256,7 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Cheltenham.Town.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Cheltenham.Town.FACup">
     <title lang="en">Cheltenham Town v FC Halifax Town (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Cheltenham Town v FC Halifax Town. The Completely-Suzuki Stadium, Cheltenham. Kick-off: 15:00.</desc>
@@ -37933,7 +37930,7 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Chesterfield.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Chesterfield.FACup">
     <title lang="en">Chesterfield v Yeovil Town (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Chesterfield v Yeovil Town. SMH Group Stadium, Chesterfield. Kick-off: 15:00.</desc>
@@ -38598,7 +38595,7 @@
     <category lang="en">FA Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Club.Brugge.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Club.Brugge.ChampsLge">
     <title lang="en">PSV Eindhoven v Club Brugge (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: PSV Eindhoven v Club Brugge. Philips Stadion, Eindhoven. Kick-off: 20:00.</desc>
@@ -38991,7 +38988,7 @@
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Colchester.Utd.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Colchester.Utd.FACup">
     <title lang="en">Colchester Utd v Worcester City (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Colchester Utd v Worcester City. JobServe Community Stadium, Colchester. Kick-off: 15:00.</desc>
@@ -39665,7 +39662,7 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Como.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Como.ChampsLge">
     <title lang="en">Lens v Como (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Lens v Como. Stade Bollaert-Delelis, Lens. Kick-off: 20:00.</desc>
@@ -40668,7 +40665,7 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Crawley.Town.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Crawley.Town.FACup">
     <title lang="en">Wimborne Town v Crawley Town (Sun 08 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Wimborne Town v Crawley Town. The Wyatt Homes Stadium, Somerset. Kick-off: 15:00.</desc>
@@ -41438,7 +41435,7 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Crewe.Alexandra.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Crewe.Alexandra.FACup">
     <title lang="en">Crewe Alexandra v AFC Wimbledon (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Crewe Alexandra v AFC Wimbledon. Mornflake Stadium, Crewe. Kick-off: 15:00.</desc>
@@ -43482,7 +43479,7 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Crystal.Palace.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Crystal.Palace.Europa">
     <title lang="en">Crystal Palace v TSG Hoffenheim (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Crystal Palace v TSG Hoffenheim. Selhurst Park, London. Kick-off: 17:45.</desc>
@@ -45163,7 +45160,7 @@
     <desc lang="en">Live darts events from around the world.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Deportivo.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Deportivo.LaLiga">
     <title lang="en">Deportivo v Osasuna (Mon 02 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Deportivo v Osasuna. Riazor, La Coruña. Kick-off: 20:00.</desc>
@@ -46448,7 +46445,7 @@
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Dinamo.Zagreb.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Dinamo.Zagreb.Europa">
     <title lang="en">Sunderland v Dinamo Zagreb (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Sunderland v Dinamo Zagreb. Stadium of Light, Sunderland. Kick-off: 20:00.</desc>
@@ -46937,7 +46934,7 @@
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Doncaster.Rovers.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Doncaster.Rovers.FACup">
     <title lang="en">Kidderminster Harriers v Doncaster Rovers (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Kidderminster Harriers v Doncaster Rovers. Aggborough Stadium, Kidderminster. Kick-off: 15:00.</desc>
@@ -48211,7 +48208,7 @@
     <desc lang="en">Live sports from ESPN+ in the USA</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Egnatia.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Egnatia.ConfLeague">
     <title lang="en">CSU Craiova v Egnatia (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: CSU Craiova v Egnatia. Stadionul Ion Oblemenco, Craiova. Kick-off: 20:00.</desc>
@@ -48700,7 +48697,7 @@
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Elche.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Elche.LaLiga">
     <title lang="en">Elche v Valencia (Sun 01 Nov, 17:30)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Elche v Valencia. Estadio Martínez Valero, Elche. Kick-off: 17:30.</desc>
@@ -49462,7 +49459,7 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Espanyol.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Espanyol.LaLiga">
     <title lang="en">Espanyol v Deportivo (Sat 07 Nov, 15:15)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Espanyol v Deportivo. RCDE Stadium, Barcelona. Kick-off: 15:15.</desc>
@@ -50127,7 +50124,7 @@
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Everton.Prem">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Everton.Prem">
     <title lang="en">Newcastle Utd v Everton (Mon 02 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
     <desc lang="en">Next Match: Newcastle Utd v Everton. St. James' Park, Newcastle-upon-Tyne. Kick-off: 20:00.</desc>
@@ -50713,7 +50710,7 @@
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Exeter.City.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Exeter.City.FACup">
     <title lang="en">Huddersfield Town v Exeter City (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Huddersfield Town v Exeter City. John Smith's Stadium, Huddersfield. Kick-off: 15:00.</desc>
@@ -51387,7 +51384,7 @@
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="F.C.Kbenhavn.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="F.C.Kbenhavn.ConfLeague">
     <title lang="en">F.C. København v Iberia 1999 (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: F.C. København v Iberia 1999. Parken Stadium, Copenhagen. Kick-off: 20:00.</desc>
@@ -53746,7 +53743,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Formula 1</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="FC.Lugano.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="FC.Lugano.ConfLeague">
     <title lang="en">FC Lugano v Kauno Zalgiris (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: FC Lugano v Kauno Zalgiris. AIL Arena, Lugano. Kick-off: 20:00.</desc>
@@ -54235,7 +54232,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="FC.Midtjylland.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="FC.Midtjylland.ConfLeague">
     <title lang="en">FC Midtjylland v Ajax Amsterdam (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: FC Midtjylland v Ajax Amsterdam. MCH Arena, Herning. Kick-off: 17:45.</desc>
@@ -54716,7 +54713,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="FC.Nordsjlland.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="FC.Nordsjlland.ConfLeague">
     <title lang="en">AS Monaco v FC Nordsjælland (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: AS Monaco v FC Nordsjælland. Stade Louis II, Monaco. Kick-off: 20:00.</desc>
@@ -55205,7 +55202,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="FC.Porto.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="FC.Porto.ChampsLge">
     <title lang="en">FC Porto v Napoli (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: FC Porto v Napoli. Estádio do Dragão, Porto. Kick-off: 20:00.</desc>
@@ -55598,7 +55595,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="FC.Thun.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="FC.Thun.ConfLeague">
     <title lang="en">FC Thun v Heart of Midlothian (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: FC Thun v Heart of Midlothian. Stockhorn Arena, Thun. Kick-off: 17:45.</desc>
@@ -56079,7 +56076,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="FC.Twente.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="FC.Twente.ConfLeague">
     <title lang="en">FC Twente v Pafos (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: FC Twente v Pafos. De Grolsch Veste, Enschede. Kick-off: 20:00.</desc>
@@ -56568,7 +56565,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Fenerbahce.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Fenerbahce.ChampsLge">
     <title lang="en">Fenerbahce v Liverpool (Wed 04 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Fenerbahce v Liverpool. Şükrü Saracoğlu Stadium, Istanbul. Kick-off: 17:45.</desc>
@@ -56953,7 +56950,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Ferencvaros.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Ferencvaros.Europa">
     <title lang="en">AC Milan v Ferencvaros (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: AC Milan v Ferencvaros. San Siro, Milano. Kick-off: 17:45.</desc>
@@ -57434,7 +57431,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Feyenoord.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Feyenoord.ChampsLge">
     <title lang="en">Feyenoord v Internazionale (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Feyenoord v Internazionale. De Kuip, Rotterdam. Kick-off: 20:00.</desc>
@@ -57731,7 +57728,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Fleetwood.Town.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Fleetwood.Town.FACup">
     <title lang="en">Fleetwood Town v Rochdale (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Fleetwood Town v Rochdale. Highbury Stadium, Fleetwood. Kick-off: 15:00.</desc>
@@ -61541,7 +61538,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">Gaelic Football, Hurling and Camogie. Live from Ireland.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Galatasaray.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Galatasaray.ChampsLge">
     <title lang="en">Galatasaray v VfB Stuttgart (Tue 03 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Galatasaray v VfB Stuttgart. RAMS Park, Istanbul. Kick-off: 17:45.</desc>
@@ -62430,7 +62427,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">See INFO channel for schedules.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Getafe.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Getafe.LaLiga">
     <title lang="en">Getafe v Sevilla (Sun 01 Nov, 13:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Getafe v Sevilla. Estadio Coliseum, Getafe. Kick-off: 13:00.</desc>
@@ -63208,7 +63205,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Getafe.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Getafe.ConfLeague">
     <title lang="en">Getafe v Brighton &amp; Hove Albion (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Getafe v Brighton &amp; Hove Albion. Estadio Coliseum, Getafe. Kick-off: 20:00.</desc>
@@ -63697,7 +63694,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Gillingham.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Gillingham.FACup">
     <title lang="en">Gillingham v Barrow (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Gillingham v Barrow. Priestfield Stadium, Gillingham. Kick-off: 15:00.</desc>
@@ -65020,7 +65017,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Football</category>
     <category lang="en">Premier League</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Grimsby.Town.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Grimsby.Town.FACup">
     <title lang="en">Stafford Rangers v Grimsby Town (Sun 08 Nov, 12:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Stafford Rangers v Grimsby Town. The Stan Robinson Stadium, Stafford. Kick-off: 12:00.</desc>
@@ -66374,7 +66371,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">HBO Max, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Hajduk.Split.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Hajduk.Split.ConfLeague">
     <title lang="en">Lincoln Red Imps v Hajduk Split (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Lincoln Red Imps v Hajduk Split. Europa Point Stadium, Gibraltar. Kick-off: 17:45.</desc>
@@ -66855,7 +66852,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Hapoel.Be.er.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Hapoel.Be.er.Europa">
     <title lang="en">Hapoel Be'er v OFI Crete (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Hapoel Be'er v OFI Crete. Giulesti Stadium, Bucuresti. Kick-off: 20:00.</desc>
@@ -67344,7 +67341,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Heart.of.Midlothian.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Heart.of.Midlothian.ConfLeague">
     <title lang="en">FC Thun v Heart of Midlothian (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: FC Thun v Heart of Midlothian. Stockhorn Arena, Thun. Kick-off: 17:45.</desc>
@@ -70825,7 +70822,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">Hub Premier 9 (StarHub, Singapore): overflow channel for Premier League matches that don't fit on Hub Premier 1-6, used when several games kick off at the same time. No programme guide is available.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Huddersfield.Town.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Huddersfield.Town.FACup">
     <title lang="en">Huddersfield Town v Exeter City (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Huddersfield Town v Exeter City. John Smith's Stadium, Huddersfield. Kick-off: 15:00.</desc>
@@ -72510,7 +72507,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Iberia.1999.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Iberia.1999.ConfLeague">
     <title lang="en">F.C. København v Iberia 1999 (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: F.C. København v Iberia 1999. Parken Stadium, Copenhagen. Kick-off: 20:00.</desc>
@@ -72999,7 +72996,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Inter.D.Escaldes.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Inter.D.Escaldes.ConfLeague">
     <title lang="en">Red Star Belgrade v Inter D'Escaldes (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Red Star Belgrade v Inter D'Escaldes. Rajko Mitic Stadium, Belgrade. Kick-off: 17:45.</desc>
@@ -73480,7 +73477,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Internazionale.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Internazionale.ChampsLge">
     <title lang="en">Feyenoord v Internazionale (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Feyenoord v Internazionale. De Kuip, Rotterdam. Kick-off: 20:00.</desc>
@@ -74555,7 +74552,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Jablonec.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Jablonec.ConfLeague">
     <title lang="en">Riga FC v Jablonec (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Riga FC v Jablonec. Skonto Stadions, Riga. Kick-off: 20:00.</desc>
@@ -75044,7 +75041,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Jagiellonia.Bialystok.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Jagiellonia.Bialystok.Europa">
     <title lang="en">Levski Sofia v Jagiellonia Bialystok (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Levski Sofia v Jagiellonia Bialystok. Vasil Levski National Stadium, Sofia. Kick-off: 17:45.</desc>
@@ -75525,7 +75522,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Juventus.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Juventus.Europa">
     <title lang="en">AZ Alkmaar v Juventus (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: AZ Alkmaar v Juventus. AFAS Stadion, Alkmaar. Kick-off: 20:00.</desc>
@@ -76014,7 +76011,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="KAA.Gent.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="KAA.Gent.ConfLeague">
     <title lang="en">KuPS Kuopio v KAA Gent (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: KuPS Kuopio v KAA Gent. Tammelan Stadion, Tampere. Kick-off: 17:45.</desc>
@@ -76495,7 +76492,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Kairat.Almaty.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Kairat.Almaty.ConfLeague">
     <title lang="en">Atalanta v Kairat Almaty (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Atalanta v Kairat Almaty. New Balance Arena, Bergamo. Kick-off: 17:45.</desc>
@@ -76976,7 +76973,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Kauno.Zalgiris.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Kauno.Zalgiris.ConfLeague">
     <title lang="en">FC Lugano v Kauno Zalgiris (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: FC Lugano v Kauno Zalgiris. AIL Arena, Lugano. Kick-off: 20:00.</desc>
@@ -77465,7 +77462,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="KuPS.Kuopio.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="KuPS.Kuopio.ConfLeague">
     <title lang="en">KuPS Kuopio v KAA Gent (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: KuPS Kuopio v KAA Gent. Tammelan Stadion, Tampere. Kick-off: 17:45.</desc>
@@ -77946,7 +77943,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="LASK.Linz.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="LASK.Linz.ChampsLge">
     <title lang="en">LASK Linz v Slovan Bratislava (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: LASK Linz v Slovan Bratislava. Raiffeisen Arena (Linz), Linz. Kick-off: 20:00.</desc>
@@ -78243,7 +78240,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Lech.Poznan.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Lech.Poznan.Europa">
     <title lang="en">Benfica v Lech Poznan (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Benfica v Lech Poznan. Estádio da Luz, Lisbon. Kick-off: 20:00.</desc>
@@ -79414,7 +79411,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Leicester.City.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Leicester.City.FACup">
     <title lang="en">Oxford City v Leicester City (Fri 06 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Oxford City v Leicester City. RAW Charging Stadium, Oxford. Kick-off: 19:45.</desc>
@@ -80008,7 +80005,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Lens.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Lens.ChampsLge">
     <title lang="en">Lens v Como (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Lens v Como. Stade Bollaert-Delelis, Lens. Kick-off: 20:00.</desc>
@@ -81203,7 +81200,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Levski.Sofia.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Levski.Sofia.Europa">
     <title lang="en">Levski Sofia v Jagiellonia Bialystok (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Levski Sofia v Jagiellonia Bialystok. Vasil Levski National Stadium, Sofia. Kick-off: 17:45.</desc>
@@ -81684,7 +81681,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Leyton.Orient.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Leyton.Orient.FACup">
     <title lang="en">Leyton Orient v Harborough Town (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Leyton Orient v Harborough Town. Gaughan Group Stadium, London. Kick-off: 15:00.</desc>
@@ -82358,7 +82355,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Lille.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Lille.ChampsLge">
     <title lang="en">Bodo/Glimt v Lille (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Bodo/Glimt v Lille. Aspmyra Stadion, Bodø/Glimt. Kick-off: 20:00.</desc>
@@ -82655,7 +82652,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Lillestrom.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Lillestrom.Europa">
     <title lang="en">Lillestrom v Viktoria Plzen (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Lillestrom v Viktoria Plzen. Arasen Stadion, Lillestrøm. Kick-off: 17:45.</desc>
@@ -83843,7 +83840,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Lincoln.Red.Imps.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Lincoln.Red.Imps.ConfLeague">
     <title lang="en">Lincoln Red Imps v Hajduk Split (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Lincoln Red Imps v Hajduk Split. Europa Point Stadium, Gibraltar. Kick-off: 17:45.</desc>
@@ -84324,7 +84321,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Liverpool.Prem">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Liverpool.Prem">
     <title lang="en">Liverpool v Arsenal (Sun 01 Nov, 16:30)</title>
     <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
     <desc lang="en">Next Match: Liverpool v Arsenal. Anfield, Liverpool. Kick-off: 16:30.</desc>
@@ -85086,7 +85083,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Liverpool.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Liverpool.ChampsLge">
     <title lang="en">Fenerbahce v Liverpool (Wed 04 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Fenerbahce v Liverpool. Şükrü Saracoğlu Stadium, Istanbul. Kick-off: 17:45.</desc>
@@ -85471,7 +85468,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Luton.Town.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Luton.Town.FACup">
     <title lang="en">Luton Town v Forest Green Rovers (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Luton Town v Forest Green Rovers. Kenilworth Road, Luton. Kick-off: 15:00.</desc>
@@ -86458,7 +86455,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Lyon.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Lyon.Europa">
     <title lang="en">Real Sociedad v Lyon (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Real Sociedad v Lyon. Reale Arena, San Sebastian. Kick-off: 17:45.</desc>
@@ -86939,7 +86936,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="MK.Dons.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="MK.Dons.FACup">
     <title lang="en">MK Dons v Swindon Town (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: MK Dons v Swindon Town. Stadium MK, Milton Keynes. Kick-off: 15:00.</desc>
@@ -89511,7 +89508,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Manchester.City.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Manchester.City.ChampsLge">
     <title lang="en">RB Leipzig v Manchester City (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: RB Leipzig v Manchester City. Red Bull Arena, Leipzig. Kick-off: 20:00.</desc>
@@ -90706,7 +90703,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Manchester.Utd.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Manchester.Utd.ChampsLge">
     <title lang="en">Manchester Utd v AS Roma (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Manchester Utd v AS Roma. Old Trafford, Manchester. Kick-off: 20:00.</desc>
@@ -91003,7 +91000,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Mansfield.Town.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Mansfield.Town.FACup">
     <title lang="en">Mansfield Town v Macclesfield FC (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Mansfield Town v Macclesfield FC. One Call Stadium, Mansfield. Kick-off: 15:00.</desc>
@@ -91990,7 +91987,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Marseille.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Marseille.Europa">
     <title lang="en">Bayer Leverkusen v Marseille (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Bayer Leverkusen v Marseille. BayArena, Leverkusen. Kick-off: 20:00.</desc>
@@ -93869,7 +93866,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Mjallby.AIF.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Mjallby.AIF.ConfLeague">
     <title lang="en">Mjällby AIF v Borac Banja Luka (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Mjällby AIF v Borac Banja Luka. Olympia, Helsingborg. Kick-off: 17:45.</desc>
@@ -95624,7 +95621,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">Live basketball from the NBA.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="NEC.Nijmegen.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="NEC.Nijmegen.Europa">
     <title lang="en">NEC Nijmegen v Omonia Nicosia (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: NEC Nijmegen v Omonia Nicosia. Goffertstadion, Nijmegen. Kick-off: 17:45.</desc>
@@ -97305,7 +97302,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">Live ice hockey from the NHL.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="NK.Celje.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="NK.Celje.Europa">
     <title lang="en">SK Sturm Graz v NK Celje (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: SK Sturm Graz v NK Celje. Merkur Arena, Graz. Kick-off: 20:00.</desc>
@@ -98394,7 +98391,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">Rugby League action from Australia</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Napoli.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Napoli.ChampsLge">
     <title lang="en">FC Porto v Napoli (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: FC Porto v Napoli. Estádio do Dragão, Porto. Kick-off: 20:00.</desc>
@@ -98787,7 +98784,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Newcastle.Utd.Prem">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Newcastle.Utd.Prem">
     <title lang="en">Newcastle Utd v Everton (Mon 02 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: Premier League</sub-title>
     <desc lang="en">Next Match: Newcastle Utd v Everton. St. James' Park, Newcastle-upon-Tyne. Kick-off: 20:00.</desc>
@@ -99453,7 +99450,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Newport.County.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Newport.County.FACup">
     <title lang="en">Newport County v Walsall (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Newport County v Walsall. Rodney Parade, Newport. Kick-off: 15:00.</desc>
@@ -100118,7 +100115,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">FA Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Northampton.Town.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Northampton.Town.FACup">
     <title lang="en">York City v Northampton Town (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: York City v Northampton Town. LNER Community Stadium, York. Kick-off: 15:00.</desc>
@@ -102502,7 +102499,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Notts.County.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Notts.County.FACup">
     <title lang="en">Altrincham v Notts County (Sat 07 Nov, 17:30)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Altrincham v Notts County. J. Davidson Stadium, Manchester. Kick-off: 17:30.</desc>
@@ -103184,7 +103181,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="OFI.Crete.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="OFI.Crete.Europa">
     <title lang="en">Hapoel Be'er v OFI Crete (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Hapoel Be'er v OFI Crete. Giulesti Stadium, Bucuresti. Kick-off: 20:00.</desc>
@@ -103673,7 +103670,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Oldham.Athletic.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Oldham.Athletic.FACup">
     <title lang="en">Oldham Athletic v Sheffield Wednesday (Sun 08 Nov, 17:15)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Oldham Athletic v Sheffield Wednesday. Boundary Park, Oldham. Kick-off: 17:15.</desc>
@@ -104764,7 +104761,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Olympiacos.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Olympiacos.Europa">
     <title lang="en">Stade Rennais v Olympiacos (Wed 04 Nov, 15:30)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Stade Rennais v Olympiacos. Roazhon Park, Rennes. Kick-off: 15:30.</desc>
@@ -105141,7 +105138,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Omonia.Nicosia.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Omonia.Nicosia.Europa">
     <title lang="en">NEC Nijmegen v Omonia Nicosia (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: NEC Nijmegen v Omonia Nicosia. Goffertstadion, Nijmegen. Kick-off: 17:45.</desc>
@@ -105622,7 +105619,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Osasuna.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Osasuna.LaLiga">
     <title lang="en">Deportivo v Osasuna (Mon 02 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Deportivo v Osasuna. Riazor, La Coruña. Kick-off: 20:00.</desc>
@@ -106296,7 +106293,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Oxford.Utd.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Oxford.Utd.FACup">
     <title lang="en">Oxford Utd v Stevenage (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Oxford Utd v Stevenage. The Kassam Stadium, Oxford. Kick-off: 15:00.</desc>
@@ -107979,7 +107976,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">Live Pay Per View events from around the world.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="PSV.Eindhoven.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="PSV.Eindhoven.ChampsLge">
     <title lang="en">PSV Eindhoven v Club Brugge (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: PSV Eindhoven v Club Brugge. Philips Stadion, Eindhoven. Kick-off: 20:00.</desc>
@@ -108372,7 +108369,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Pafos.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Pafos.ConfLeague">
     <title lang="en">FC Twente v Pafos (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: FC Twente v Pafos. De Grolsch Veste, Enschede. Kick-off: 20:00.</desc>
@@ -108861,7 +108858,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Panathinaikos.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Panathinaikos.ConfLeague">
     <title lang="en">Panathinaikos v CSKA Sofia (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Panathinaikos v CSKA Sofia. Athens Olympic Stadium, Athens. Kick-off: 20:00.</desc>
@@ -109950,7 +109947,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">Paramount+, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Paris.Saint.Germain.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Paris.Saint.Germain.ChampsLge">
     <title lang="en">Villarreal v Paris Saint-Germain (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Villarreal v Paris Saint-Germain. Estadio de la Cerámica, Villarreal. Kick-off: 20:00.</desc>
@@ -110847,7 +110844,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <desc lang="en">Peacock, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Peterborough.Utd.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Peterborough.Utd.FACup">
     <title lang="en">Peterborough Utd v Reading (Sat 07 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Peterborough Utd v Reading. London Road Stadium, Peterborough. Kick-off: 20:00.</desc>
@@ -111537,7 +111534,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Plymouth.Argyle.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Plymouth.Argyle.FACup">
     <title lang="en">Plymouth Argyle v Alvechurch (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Plymouth Argyle v Alvechurch. Home Park, Plymouth. Kick-off: 15:00.</desc>
@@ -112211,7 +112208,7 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Port.Vale.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Port.Vale.FACup">
     <title lang="en">Port Vale v Scunthorpe Utd (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Port Vale v Scunthorpe Utd. Vale Park, Stoke-on-Trent. Kick-off: 15:00.</desc>
@@ -113574,972 +113571,6 @@ This weekend (UK time): FP1 Fri 15:30, FP2 Fri 19:00, FP3 Sat 14:30, Quali Sat 1
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Championship</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031122000 +0000" stop="20261031143000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (1 match)</title>
-    <desc lang="en">Sat 31 Oct, 12:30 kick-off on the Premier League+ streams - Premier League: Chelsea v Manchester Utd.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031143000 +0000" stop="20261031145000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 15:00 (5 matches)</title>
-    <desc lang="en">Sat 31 Oct, 15:00 kick-offs on the Premier League+ streams - Premier League: Bournemouth v Leeds Utd, Brentford v Nottingham Forest, Coventry City v Sunderland, Hull City v Ipswich Town, Manchester City v Brighton &amp; Hove Albion.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261031145000 +0000" stop="20261031170000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (5 matches)</title>
-    <desc lang="en">Sat 31 Oct, 15:00 kick-offs on the Premier League+ streams - Premier League: Bournemouth v Leeds Utd, Brentford v Nottingham Forest, Coventry City v Sunderland, Hull City v Ipswich Town, Manchester City v Brighton &amp; Hove Albion.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031170000 +0000" stop="20261031172000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 17:30 (1 match)</title>
-    <desc lang="en">Sat 31 Oct, 17:30 kick-off on the Premier League+ streams - Premier League: Tottenham Hotspur v Crystal Palace.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261031172000 +0000" stop="20261031193000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (1 match)</title>
-    <desc lang="en">Sat 31 Oct, 17:30 kick-off on the Premier League+ streams - Premier League: Tottenham Hotspur v Crystal Palace.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031193000 +0000" stop="20261031195000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 20:00 (1 match)</title>
-    <desc lang="en">Sat 31 Oct, 20:00 kick-off on the Premier League+ streams - Premier League: Aston Villa v Fulham.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261031195000 +0000" stop="20261031220000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (1 match)</title>
-    <desc lang="en">Sat 31 Oct, 20:00 kick-off on the Premier League+ streams - Premier League: Aston Villa v Fulham.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261031220000 +0000" stop="20261101000000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101000000 +0000" stop="20261101020000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101020000 +0000" stop="20261101040000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101080000 +0000" stop="20261101100000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101100000 +0000" stop="20261101120000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101120000 +0000" stop="20261101140000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101140000 +0000" stop="20261101160000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101160000 +0000" stop="20261101162000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101162000 +0000" stop="20261101183000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (1 match)</title>
-    <desc lang="en">Sun 01 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Liverpool v Arsenal.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101183000 +0000" stop="20261101200000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102180000 +0000" stop="20261102195000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Mon 20:00 (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261102195000 +0000" stop="20261102220000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (1 match)</title>
-    <desc lang="en">Mon 02 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Newcastle Utd v Everton.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104000000 +0000" stop="20261104020000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104020000 +0000" stop="20261104040000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104080000 +0000" stop="20261104100000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104100000 +0000" stop="20261104120000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104120000 +0000" stop="20261104140000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104140000 +0000" stop="20261104160000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105180000 +0000" stop="20261105200000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106020000 +0000" stop="20261106040000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106040000 +0000" stop="20261106060000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106060000 +0000" stop="20261106080000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106080000 +0000" stop="20261106100000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106100000 +0000" stop="20261106120000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106180000 +0000" stop="20261106195000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Fri 20:00 (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261106195000 +0000" stop="20261106220000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (1 match)</title>
-    <desc lang="en">Fri 06 Nov, 20:00 kick-off on the Premier League+ streams - Premier League: Everton v Coventry City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 12:30 (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 12:30 kick-off on the Premier League+ streams - Premier League: Leeds Utd v Tottenham Hotspur.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 12:30 (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 12:30 kick-off on the Premier League+ streams - Premier League: Leeds Utd v Tottenham Hotspur.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 12:30 (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 12:30 kick-off on the Premier League+ streams - Premier League: Leeds Utd v Tottenham Hotspur.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 12:30 (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 12:30 kick-off on the Premier League+ streams - Premier League: Leeds Utd v Tottenham Hotspur.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 12:30 (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 12:30 kick-off on the Premier League+ streams - Premier League: Leeds Utd v Tottenham Hotspur.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 12:30 (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 12:30 kick-off on the Premier League+ streams - Premier League: Leeds Utd v Tottenham Hotspur.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 12:30 (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 12:30 kick-off on the Premier League+ streams - Premier League: Leeds Utd v Tottenham Hotspur.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107122000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 12:30 (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 12:30 kick-off on the Premier League+ streams - Premier League: Leeds Utd v Tottenham Hotspur.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107122000 +0000" stop="20261107143000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 12:30 kick-off on the Premier League+ streams - Premier League: Leeds Utd v Tottenham Hotspur.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107143000 +0000" stop="20261107145000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 15:00 (2 matches)</title>
-    <desc lang="en">Sat 07 Nov, 15:00 kick-offs on the Premier League+ streams - Premier League: Arsenal v Hull City, Fulham v Newcastle Utd.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107145000 +0000" stop="20261107170000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (2 matches)</title>
-    <desc lang="en">Sat 07 Nov, 15:00 kick-offs on the Premier League+ streams - Premier League: Arsenal v Hull City, Fulham v Newcastle Utd.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107170000 +0000" stop="20261107172000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sat 17:30 (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 17:30 kick-off on the Premier League+ streams - Premier League: Nottingham Forest v Manchester City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107172000 +0000" stop="20261107193000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (1 match)</title>
-    <desc lang="en">Sat 07 Nov, 17:30 kick-off on the Premier League+ streams - Premier League: Nottingham Forest v Manchester City.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107193000 +0000" stop="20261107200000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 14:00 (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 14:00 (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 14:00 (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 14:00 (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 14:00 (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 14:00 (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 14:00 (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 14:00 (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 14:00 (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261108120000 +0000" stop="20261108135000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 14:00 (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261108135000 +0000" stop="20261108160000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (4 matches)</title>
-    <desc lang="en">Sun 08 Nov, 14:00 kick-offs on the Premier League+ streams - Premier League: Brighton &amp; Hove Albion v Brentford, Crystal Palace v Liverpool, Ipswich Town v Bournemouth, Sunderland v Chelsea.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261108160000 +0000" stop="20261108162000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">Premier League+ - next: Premier League, Sun 16:30 (1 match)</title>
-    <desc lang="en">Sun 08 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Manchester Utd v Aston Villa.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
-  </programme>
-  <programme start="20261108162000 +0000" stop="20261108183000 +0000" channel="PremierLeaguePlus.live">
-    <title lang="en">🔴 LIVE - Premier League+: Premier League (1 match)</title>
-    <desc lang="en">Sun 08 Nov, 16:30 kick-off on the Premier League+ streams - Premier League: Manchester Utd v Aston Villa.
-
-Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - scroll the Premier League+ channels to find the one you want.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261031122000 +0000" stop="20261031143000 +0000" channel="Preston.North.End.Championship">
@@ -115948,7 +114979,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="RB.Leipzig.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="RB.Leipzig.ChampsLge">
     <title lang="en">RB Leipzig v Manchester City (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: RB Leipzig v Manchester City. Red Bull Arena, Leipzig. Kick-off: 20:00.</desc>
@@ -116341,7 +115372,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="RB.Salzburg.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="RB.Salzburg.Europa">
     <title lang="en">Anderlecht v RB Salzburg (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Anderlecht v RB Salzburg. Lotto Park, Brussels. Kick-off: 17:45.</desc>
@@ -116822,7 +115853,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Racing.Santander.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Racing.Santander.LaLiga">
     <title lang="en">Racing Santander v Real Madrid (Sun 01 Nov, 15:15)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Racing Santander v Real Madrid. El Sardineros, Santander. Kick-off: 15:15.</desc>
@@ -118274,7 +117305,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Reading.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Reading.FACup">
     <title lang="en">Peterborough Utd v Reading (Sat 07 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Peterborough Utd v Reading. London Road Stadium, Peterborough. Kick-off: 20:00.</desc>
@@ -120151,7 +119182,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Real.Betis.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Real.Betis.ChampsLge">
     <title lang="en">Borussia Dortmund v Real Betis (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Borussia Dortmund v Real Betis. Signal Iduna Park, Aue. Kick-off: 20:00.</desc>
@@ -120544,7 +119575,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Real.Madrid.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Real.Madrid.LaLiga">
     <title lang="en">Racing Santander v Real Madrid (Sun 01 Nov, 15:15)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Racing Santander v Real Madrid. El Sardineros, Santander. Kick-off: 15:15.</desc>
@@ -121234,7 +120265,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Real.Madrid.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Real.Madrid.ChampsLge">
     <title lang="en">AEK Athens v Real Madrid (Wed 04 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: AEK Athens v Real Madrid. OPAP Arena, Athens. Kick-off: 17:45.</desc>
@@ -121619,7 +120650,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Real.Sociedad.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Real.Sociedad.LaLiga">
     <title lang="en">Athletic Club v Real Sociedad (Sun 01 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Athletic Club v Real Sociedad. San Mamés, Bilbao. Kick-off: 20:00.</desc>
@@ -122381,7 +121412,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Real.Sociedad.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Real.Sociedad.Europa">
     <title lang="en">Real Sociedad v Lyon (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Real Sociedad v Lyon. Reale Arena, San Sebastian. Kick-off: 17:45.</desc>
@@ -122862,7 +121893,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Red.Star.Belgrade.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Red.Star.Belgrade.ConfLeague">
     <title lang="en">Red Star Belgrade v Inter D'Escaldes (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Red Star Belgrade v Inter D'Escaldes. Rajko Mitic Stadium, Belgrade. Kick-off: 17:45.</desc>
@@ -123343,7 +122374,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Riga.FC.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Riga.FC.ConfLeague">
     <title lang="en">Riga FC v Jablonec (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Riga FC v Jablonec. Skonto Stadions, Riga. Kick-off: 20:00.</desc>
@@ -123832,7 +122863,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Rochdale.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Rochdale.FACup">
     <title lang="en">Fleetwood Town v Rochdale (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Fleetwood Town v Rochdale. Highbury Stadium, Fleetwood. Kick-off: 15:00.</desc>
@@ -124506,7 +123537,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Rotherham.Utd.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Rotherham.Utd.FACup">
     <title lang="en">Bromley v Rotherham Utd (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Bromley v Rotherham Utd. RELOC8 EM Community Stadium, Bromley. Kick-off: 15:00.</desc>
@@ -125780,7 +124811,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <desc lang="en">Live Rugby from around the world.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="SC.Freiburg.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="SC.Freiburg.ConfLeague">
     <title lang="en">Trabzonspor v SC Freiburg (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Trabzonspor v SC Freiburg. Papara Park, Trabzon. Kick-off: 17:45.</desc>
@@ -126261,7 +125292,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="SK.Brann.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="SK.Brann.ConfLeague">
     <title lang="en">Sint-Truidense v SK Brann (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Sint-Truidense v SK Brann. Daio Wasabi Stayen Stadium, Sint-Truiden. Kick-off: 20:00.</desc>
@@ -126750,7 +125781,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="SK.Sturm.Graz.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="SK.Sturm.Graz.Europa">
     <title lang="en">SK Sturm Graz v NK Celje (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: SK Sturm Graz v NK Celje. Merkur Arena, Graz. Kick-off: 20:00.</desc>
@@ -129639,7 +128670,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <desc lang="en">STARZPLAY Sports 3 (Middle East): Serie A, UFC, cricket and more, live and replays. No programme guide is available.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Sabah.FK.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Sabah.FK.ChampsLge">
     <title lang="en">Viking FK v Sabah FK (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Viking FK v Sabah FK. Viking Stadion, Stavanger. Kick-off: 20:00.</desc>
@@ -130032,7 +129063,7 @@ Premier League+ streams carry the Premier League matches, each on its own stream
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Salford.City.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Salford.City.FACup">
     <title lang="en">Carlisle Utd v Salford City (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Carlisle Utd v Salford City. Brunton Park, Carlisle. Kick-off: 15:00.</desc>
@@ -131694,7 +130725,7 @@ Setanta Sports event streams carry Premier League and UEFA Champions League foot
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Sevilla.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Sevilla.LaLiga">
     <title lang="en">Getafe v Sevilla (Sun 01 Nov, 13:00)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Getafe v Sevilla. Estadio Coliseum, Getafe. Kick-off: 13:00.</desc>
@@ -132288,7 +131319,7 @@ Setanta Sports event streams carry Premier League and UEFA Champions League foot
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Shakhtar.Donetsk.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Shakhtar.Donetsk.ChampsLge">
     <title lang="en">Shakhtar Donetsk v Sporting CP (Tue 03 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Shakhtar Donetsk v Sporting CP. Stamford Bridge, London. Kick-off: 17:45.</desc>
@@ -132577,7 +131608,7 @@ Setanta Sports event streams carry Premier League and UEFA Champions League foot
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Sheffield.Utd.Championship">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Sheffield.Utd.Championship">
     <title lang="en">Preston North End v Sheffield Utd (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Championship</sub-title>
     <desc lang="en">Next Match: Preston North End v Sheffield Utd. Deepdale, Preston. Kick-off: 19:45.</desc>
@@ -133251,7 +132282,7 @@ Setanta Sports event streams carry Premier League and UEFA Champions League foot
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Sheffield.Wednesday.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Sheffield.Wednesday.FACup">
     <title lang="en">Oldham Athletic v Sheffield Wednesday (Sun 08 Nov, 17:15)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Oldham Athletic v Sheffield Wednesday. Boundary Park, Oldham. Kick-off: 17:15.</desc>
@@ -134020,7 +133051,7 @@ Setanta Sports event streams carry Premier League and UEFA Champions League foot
     <category lang="en">FA Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Sheffield.Wednesday.League1">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Sheffield.Wednesday.League1">
     <title lang="en">Sheffield Wednesday v Blackpool (Sun 01 Nov, 14:00)</title>
     <sub-title lang="en">⏭ Next Match: League One</sub-title>
     <desc lang="en">Next Match: Sheffield Wednesday v Blackpool. Hillsborough, Sheffield. Kick-off: 14:00.</desc>
@@ -134101,7 +133132,7 @@ Setanta Sports event streams carry Premier League and UEFA Champions League foot
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Shrewsbury.Town.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Shrewsbury.Town.FACup">
     <title lang="en">Eastleigh v Shrewsbury Town (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Eastleigh v Shrewsbury Town. Silverlake Stadium, Eastleigh. Kick-off: 15:00.</desc>
@@ -134775,7 +133806,7 @@ Setanta Sports event streams carry Premier League and UEFA Champions League foot
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Sint.Truidense.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Sint.Truidense.ConfLeague">
     <title lang="en">Sint-Truidense v SK Brann (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Sint-Truidense v SK Brann. Daio Wasabi Stayen Stadium, Sint-Truiden. Kick-off: 20:00.</desc>
@@ -136661,7 +135692,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Slavia.Prague.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Slavia.Prague.ChampsLge">
     <title lang="en">Slavia Prague v Arsenal (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Slavia Prague v Arsenal. Fortuna Arena, Prague. Kick-off: 20:00.</desc>
@@ -137054,7 +136085,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Slovan.Bratislava.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Slovan.Bratislava.ChampsLge">
     <title lang="en">LASK Linz v Slovan Bratislava (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: LASK Linz v Slovan Bratislava. Raiffeisen Arena (Linz), Linz. Kick-off: 20:00.</desc>
@@ -138042,7 +137073,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Sparta.Prague.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Sparta.Prague.Europa">
     <title lang="en">Sparta Prague v Bournemouth (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Sparta Prague v Bournemouth. Generali Arena, Prague. Kick-off: 17:45.</desc>
@@ -138523,7 +137554,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Sporting.CP.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Sporting.CP.ChampsLge">
     <title lang="en">Shakhtar Donetsk v Sporting CP (Tue 03 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Shakhtar Donetsk v Sporting CP. Stamford Bridge, London. Kick-off: 17:45.</desc>
@@ -141812,7 +140843,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <desc lang="en">Sportsnet+, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Stade.Rennais.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Stade.Rennais.Europa">
     <title lang="en">Stade Rennais v Olympiacos (Wed 04 Nov, 15:30)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Stade Rennais v Olympiacos. Roazhon Park, Rennes. Kick-off: 15:30.</desc>
@@ -142789,7 +141820,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <desc lang="en">Stan Sport, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Stevenage.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Stevenage.FACup">
     <title lang="en">Oxford Utd v Stevenage (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Oxford Utd v Stevenage. The Kassam Stadium, Oxford. Kick-off: 15:00.</desc>
@@ -143463,7 +142494,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Stockport.County.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Stockport.County.FACup">
     <title lang="en">Cray Wanderers v Stockport County (Sun 08 Nov, 14:15)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Cray Wanderers v Stockport County. Flamingo Park, Chislehurst. Kick-off: 14:15.</desc>
@@ -145710,7 +144741,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Sunderland.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Sunderland.Europa">
     <title lang="en">Sunderland v Dinamo Zagreb (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Sunderland v Dinamo Zagreb. Stadium of Light, Sunderland. Kick-off: 20:00.</desc>
@@ -147498,7 +146529,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Swindon.Town.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Swindon.Town.FACup">
     <title lang="en">MK Dons v Swindon Town (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: MK Dons v Swindon Town. Stadium MK, Milton Keynes. Kick-off: 15:00.</desc>
@@ -148772,7 +147803,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <desc lang="en">TOD, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="TSG.Hoffenheim.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="TSG.Hoffenheim.Europa">
     <title lang="en">Crystal Palace v TSG Hoffenheim (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Crystal Palace v TSG Hoffenheim. Selhurst Park, London. Kick-off: 17:45.</desc>
@@ -149853,7 +148884,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <desc lang="en">TSN+, live sports streaming.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Torreense.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Torreense.Europa">
     <title lang="en">Torreense v Ararat-Armenia (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Torreense v Ararat-Armenia. Estádio Dr. Magalhaes Pessoa, Leiria. Kick-off: 20:00.</desc>
@@ -151016,7 +150047,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">Premier League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Trabzonspor.ConfLeague">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Trabzonspor.ConfLeague">
     <title lang="en">Trabzonspor v SC Freiburg (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Conference League Matchday 3</sub-title>
     <desc lang="en">Next Match: Trabzonspor v SC Freiburg. Papara Park, Trabzon. Kick-off: 17:45.</desc>
@@ -151497,7 +150528,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">UEFA Conference League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Tranmere.Rovers.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Tranmere.Rovers.FACup">
     <title lang="en">Barnet v Tranmere Rovers (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Barnet v Tranmere Rovers. The Hive Stadium, Barnet. Kick-off: 15:00.</desc>
@@ -152171,7 +151202,7 @@ Sky Sports+ streams carry every EFL match not shown on the main Sky Sports chann
     <category lang="en">League Two</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="UEFA.comps">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="UEFA.comps">
     <title lang="en">Streams are live at match time only.</title>
     <desc lang="en">Matches that fall under the UEFA umbrella.
 
@@ -153363,7 +152394,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <desc lang="en">Various live events streamed for American TV.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Union.St.Gilloise.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Union.St.Gilloise.Europa">
     <title lang="en">Celta Vigo v Union St.-Gilloise (Thu 05 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Celta Vigo v Union St.-Gilloise. Balaidos, Vigo. Kick-off: 20:00.</desc>
@@ -153852,7 +152883,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Valencia.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Valencia.LaLiga">
     <title lang="en">Elche v Valencia (Sun 01 Nov, 17:30)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Elche v Valencia. Estadio Martínez Valero, Elche. Kick-off: 17:30.</desc>
@@ -154542,7 +153573,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="VfB.Stuttgart.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="VfB.Stuttgart.ChampsLge">
     <title lang="en">Galatasaray v VfB Stuttgart (Tue 03 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Galatasaray v VfB Stuttgart. RAMS Park, Istanbul. Kick-off: 17:45.</desc>
@@ -154831,7 +153862,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Viking.FK.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Viking.FK.ChampsLge">
     <title lang="en">Viking FK v Sabah FK (Wed 04 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Viking FK v Sabah FK. Viking Stadion, Stavanger. Kick-off: 20:00.</desc>
@@ -155224,7 +154255,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Viktoria.Plzen.Europa">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Viktoria.Plzen.Europa">
     <title lang="en">Lillestrom v Viktoria Plzen (Thu 05 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Europa League Matchday 4</sub-title>
     <desc lang="en">Next Match: Lillestrom v Viktoria Plzen. Arasen Stadion, Lillestrøm. Kick-off: 17:45.</desc>
@@ -155705,7 +154736,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">UEFA Europa League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Villarreal.LaLiga">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Villarreal.LaLiga">
     <title lang="en">Villarreal v Getafe (Sun 08 Nov, 17:30)</title>
     <sub-title lang="en">⏭ Next Match: La Liga</sub-title>
     <desc lang="en">Next Match: Villarreal v Getafe. Estadio de la Cerámica, Villarreal. Kick-off: 17:30.</desc>
@@ -156474,7 +155505,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">La Liga</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Villarreal.ChampsLge">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Villarreal.ChampsLge">
     <title lang="en">Villarreal v Paris Saint-Germain (Tue 03 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Next Match: UEFA Champions League Matchday 4</sub-title>
     <desc lang="en">Next Match: Villarreal v Paris Saint-Germain. Estadio de la Cerámica, Villarreal. Kick-off: 20:00.</desc>
@@ -156771,7 +155802,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">UEFA Champions League</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Walsall.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Walsall.FACup">
     <title lang="en">Newport County v Walsall (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Newport County v Walsall. Rodney Parade, Newport. Kick-off: 15:00.</desc>
@@ -159542,7 +158573,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Wigan.Athletic.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Wigan.Athletic.FACup">
     <title lang="en">Boreham Wood v Wigan Athletic (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Boreham Wood v Wigan Athletic. Meadow Park, Borehamwood. Kick-off: 15:00.</desc>
@@ -161212,7 +160243,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Wrexham.Championship">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Wrexham.Championship">
     <title lang="en">Wrexham v Middlesbrough (Wed 04 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Championship</sub-title>
     <desc lang="en">Next Match: Wrexham v Middlesbrough. STōK Cae Ras, Wrexham. Kick-off: 19:45.</desc>
@@ -161878,7 +160909,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Wycombe.Wanderers.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="Wycombe.Wanderers.FACup">
     <title lang="en">Accrington Stanley v Wycombe Wanderers (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: Accrington Stanley v Wycombe Wanderers. Wham Stadium, Accrington. Kick-off: 15:00.</desc>
@@ -162552,7 +161583,7 @@ Club competitions: Champions League, Europa League, Conference League, and Super
     <category lang="en">League One</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="York.City.FACup">
+  <programme start="20261031210000 +0000" stop="20261031220000 +0000" channel="York.City.FACup">
     <title lang="en">York City v Northampton Town (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: FA Cup 1st Round</sub-title>
     <desc lang="en">Next Match: York City v Northampton Town. LNER Community Stadium, York. Kick-off: 15:00.</desc>
