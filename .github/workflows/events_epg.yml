@@ -24,9 +24,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Build the event guide (from the playlist's stream names)
+      - name: Build the event guide (from the playlists' stream names)
         env:
           PLAYLIST_URL: ${{ secrets.PLAYLIST_URL }}
+          PLAYLIST_URL_2: ${{ secrets.PLAYLIST_URL_2 }}   # optional second playlist (merged with the first)
         run: |
           if [ -z "$PLAYLIST_URL" ]; then echo "No PLAYLIST_URL secret yet - add it under Settings > Secrets"; exit 1; fi
           python3 -u event_epg.py
