@@ -270,6 +270,49 @@ MLS_APPLE = re.compile(
     r"^\s*\((?P<prov>[^)]+)\)\s*\((?P<label>[^)]+)\)\s*(?P<num>\d+)\s*\|\s*(?P<title>.*?)\s*"
     r"\((?P<date>\d{4}-\d{2}-\d{2})[ T](?P<time>\d{1,2}:\d{2})(?::\d{2})?\)\s*$")
 
+# "PPV Events" group (30 Oct 2026): "PPV EVENT 01: Trophy Cup at Tulare Thunderbowl (10.30 8:30 PM ET)" - month.day and
+# a US time with its zone -> PPVEVENT1.us (two rows with the same name share the id). An empty slot ("PPV EVENT 07",
+# "PPV EVENT 07: No Event") keeps the same id and shows filler.
+PPV_EVENT = re.compile(
+    r"^\s*PPV\s*EVENT\s*(?P<num>\d+)\s*[:|\-]?\s*(?P<title>.+?)\s*\(\s*(?P<mo>\d{1,2})[./-](?P<d>\d{1,2})"
+    r"(?:[./-]\d{2,4})?,?\s+(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*(?P<tz>[A-Z]{2,3})?\s*\)\s*$", re.I)
+PPV_EMPTY = re.compile(r"^\s*PPV\s*EVENT\s*(?P<num>\d+)\s*[:|\-]?\s*(?P<rest>.*?)\s*$", re.I)
+PPV_TZ = {"ET": "America/New_York", "EST": "America/New_York", "EDT": "America/New_York",
+          "CT": "America/Chicago", "CST": "America/Chicago", "CDT": "America/Chicago",
+          "MT": "America/Denver", "MST": "America/Denver", "MDT": "America/Denver",
+          "PT": "America/Los_Angeles", "PST": "America/Los_Angeles", "PDT": "America/Los_Angeles",
+          "GMT": "Europe/London", "BST": "Europe/London", "UK": "Europe/London"}
+PPV_DEFAULT_TZ = "America/New_York"     # when the name gives no zone
+
+
+def parse_ppv_event(name):
+    """"PPV EVENT 01: Title (10.30 8:30 PM ET)" -> event, "PPV EVENT 07" -> empty slot, else None."""
+    p = PPV_EVENT.match(name)
+    if p:
+        num = int(p["num"])
+        tz = ZoneInfo(PPV_TZ.get((p["tz"] or "").upper(), PPV_DEFAULT_TZ))
+        h = int(p["h"]) % 12 + (12 if p["ap"].lower() == "p" else 0)
+        now_l = datetime.now(tz)
+        local = None
+        for year in (now_l.year, now_l.year - 1, now_l.year + 1):     # the year nearest today
+            try:
+                cand = datetime(year, int(p["mo"]), int(p["d"]), h, int(p["m"] or 0), tzinfo=tz)
+            except ValueError:
+                continue
+            if local is None or abs(cand - now_l) < abs(local - now_l):
+                local = cand
+        if local is None:
+            return None
+        title = p["title"].strip(" -|:")
+        return {"name": name, "slot_id": f"PPVEVENT{num}.us", "slot_name": f"PPV EVENT {num:02d}",
+                "title": title, "extra": "", "comp": competition(title) or "PPV Event",
+                "start": local.astimezone(timezone.utc)}
+    e = PPV_EMPTY.match(name)
+    if e and _placeholder(e["rest"]):
+        num = int(e["num"])
+        return _empty_slot(name, f"PPVEVENT{num}.us", f"PPV EVENT {num:02d}")
+    return None
+
 
 def slug(text):
     return re.sub(r"[^A-Za-z0-9]+", "", text)
@@ -841,6 +884,10 @@ def parse_name(name):
 
 def _parse_name(name):
     name = re.sub(r"\s+", " ", name or "").strip()
+
+    ppv = parse_ppv_event(name)                      # PPV EVENT 01: Title (10.30 8:30 PM ET)
+    if ppv:
+        return ppv
 
     fd = parse_darts(name) or parse_tod(name)
     if fd:
