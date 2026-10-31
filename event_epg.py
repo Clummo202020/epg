@@ -1200,69 +1200,6 @@ def apply_overrides(events, now):
             print(f"WARNING: override #{o['i']} ({o['label']}) matched no stream - check the words against the stream name")
 
 
-# ---------------------------------------------------------------------------
-# DAZN schedule trial (31 Oct 2026): only LOOKS at DAZN's public schedule page and prints what it finds - it
-# changes nothing in the guide. Purpose: see whether the page carries real start times for DAZN-only events
-# (boxing cards). Set DAZN_TRIAL=0 to switch it off. Remove once we know.
-# ---------------------------------------------------------------------------
-DAZN_SCHEDULE = "https://www.dazn.com/en-GB/schedule"
-DAZN_TRIAL_WORDS = ("mbilli", "canelo", "oktagon")
-_ISO_TIME = re.compile(r"20\d\d-\d\d-\d\d[T ]\d\d:\d\d(?::\d\d)?(?:\.\d+)?(?:Z|[+-]\d\d:?\d\d)?")
-
-
-def _dazn_get(url):
-    req = urllib.request.Request(url, headers={
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) "
-                      "Version/17.0 Safari/605.1.15", "Accept-Language": "en-GB,en;q=0.9"})
-    with urllib.request.urlopen(req, timeout=25) as r:
-        return r.read().decode("utf-8", errors="replace")
-
-
-def _dazn_report(label, html):
-    times = _ISO_TIME.findall(html)
-    keys = sorted(set(re.findall(r'"([A-Za-z]*(?:start|Start|kickoff|Kickoff|scheduled|Scheduled)[A-Za-z]*)"\s*:', html)))
-    print(f"DAZN trial: {label}: {len(html):,} bytes, {len(times)} timestamps"
-          f"{' e.g. ' + ', '.join(times[:3]) if times else ''}; time-like keys: {keys[:8] or 'none'}")
-    hosts = sorted(set(re.findall(r"https?://[a-z0-9.-]*dazn[a-z0-9.-]*\.com/[A-Za-z0-9_./-]{0,60}", html)))
-    api = [h for h in hosts if re.search(r"epg|api|schedule|metadata", h)]
-    if api:
-        print(f"DAZN trial: {label}: data addresses in the page: {api[:6]}")
-    return times
-
-
-def dazn_trial():
-    if os.environ.get("DAZN_TRIAL", "1") == "0":
-        return
-    try:
-        html = _dazn_get(DAZN_SCHEDULE)
-    except Exception as e:                                   # a trial must never break the guide
-        print(f"DAZN trial: schedule page failed ({type(e).__name__}: {e})")
-        return
-    _dazn_report("schedule page", html)
-    low = html.lower()
-    for word in DAZN_TRIAL_WORDS:
-        i = low.find(word)
-        if i < 0:
-            continue
-        around = re.sub(r"\s+", " ", html[max(0, i - 200):i + 200])
-        print(f"DAZN trial: around '{word}' in the schedule page: ...{around}...")
-        links = re.findall(r'href="(/en-GB/home/[^"]+)"', html[:i + 80])
-        if links:
-            url = "https://www.dazn.com" + links[-1]
-            try:
-                page = _dazn_get(url)
-                times = _dazn_report("event page", page)
-                if times:
-                    j = page.find(times[0])
-                    print("DAZN trial: first timestamp in the event page: ..."
-                          + re.sub(r"\s+", " ", page[max(0, j - 150):j + 100]) + "...")
-            except Exception as e:
-                print(f"DAZN trial: event page failed ({type(e).__name__}: {e})")
-        break
-    else:
-        print("DAZN trial: none of " + ", ".join(DAZN_TRIAL_WORDS) + " found in the schedule page text")
-
-
 def read_playlist(args):
     """[(label, text)] for each playlist read."""
     if args.m3u:
@@ -1444,7 +1381,6 @@ def main():
     events = [e for e in (parse_name(n) for n in names) if e]
     apply_overrides(events, now)
     print(f"{len(names)} streams in the playlist(s), {len(events)} with an event time")
-    dazn_trial()
     tv, chans, progs = build(events, now)
     save_seen()
     ET.indent(tv, space="  ")
