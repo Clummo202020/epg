@@ -3309,6 +3309,14 @@ STARHUB_KNOWN = {      # from iptv-org's StarHub list (Oct 2026), used if the ch
     3: "4ff7b357-9338-41a3-b7be-ede530555279", 4: "753b50fe-262e-48da-9b5e-3fd9894ff531",
     5: "38df8124-1bcd-49b6-abb3-ee230a1f40d2", 6: "cc214bae-ddf2-4c17-84e2-7690fe4e65db",
     7: "679c2e9d-474d-4d9d-9f94-28e0a6905bc0"}
+# StarHub's own live flag (31 Oct 2026, read from the diagnostic log): schedule_type is "original" for a FIRST airing and "rerun" for
+# a repeat (100 / 748 in one run). A first airing of an EVENT (match, round, session, final, fight card) is live; first airings
+# of magazine / highlights / series titles ("ATP Tour 2026", "Badminton Weekly 2026", "... HLs", "ASO Cycling Programming 2026") are not.
+STARHUB_EVENT = re.compile(r"(?i)\b(vs?\.?|sf\s*\d?|qf\s*\d?|r(16|32|64|128)|finals?|semi-?finals?|quarter-?finals?|sessions?|prelims?|"
+                           r"main card|fight night|day \d+|round \d+|qualifiers?|3rd place|play-?offs?|grand prix|practice|qualifying|race|"
+                           r"leg \d|game \d)\b")
+STARHUB_NOT_LIVE = re.compile(r"(?i)\b(hls?|highlights?|weekly|programming|unlimited|originals?|this week|the cut|racing on the edge|"
+                              r"series|review|preview|magazine|best of|classic|legends|rewind|recap|show|extra)\b")
 STARHUB_LIVE_TITLE = re.compile(r"(?i)^\s*(live\s*[:\-]|\(l\)|\[l\])\s*|\s*\((live|l)\)\s*$")
 
 NOW_CHANNELS = {         # Now TV channel number -> (id part, name); same IDs as epgshare01's HK file
@@ -3413,7 +3421,10 @@ def fetch_starhub(days, debug=False):
                         if tag in title + " " + ep and tag not in sh_sample:
                             sh_sample[tag] = {k: (str(v)[:50] + "…" if len(str(v)) > 50 else v)
                                               for k, v in it.items() if k not in ("description", "short_description")}
-                    live = str(it.get("schedule_type") or "").lower() == "live"
+                    stype = str(it.get("schedule_type") or "").lower()
+                    ev_text = f"{title} {sub}"
+                    live = stype == "live" or (stype == "original" and bool(STARHUB_EVENT.search(ev_text))
+                                               and not STARHUB_NOT_LIVE.search(ev_text))
                     if STARHUB_LIVE_TITLE.search(title):
                         live, title = True, STARHUB_LIVE_TITLE.sub("", title).strip() or title
                     evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub, "live": live,
@@ -3429,8 +3440,6 @@ def fetch_starhub(days, debug=False):
     if sh_keys:                                       # always printed - read this to find StarHub's live flag
         print(f"  StarHub schedule fields: {sorted(sh_keys)}")
         print(f"  StarHub schedule_type values: {sh_types}")
-        for tag, smp in sh_sample.items():
-            print(f"  StarHub sample ({tag or 'first'}): {smp}")
     return out
 
 
@@ -5589,6 +5598,8 @@ def carry_over(tv, listed, prev_path):
     for p in old.iter("programme"):
         cid = p.get("channel")
         if cid in have or (cid or "").startswith(CARRY_SKIP):
+            continue
+        if p.findtext("sub-title") == EMPTY_FILLER_SUB:      # last run's "No schedule available" placeholder - regenerate, don't carry
             continue
         try:
             stop = datetime.strptime(p.get("stop"), "%Y%m%d%H%M%S %z")
