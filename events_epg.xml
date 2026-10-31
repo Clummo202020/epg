@@ -3928,10 +3928,6 @@
     <display-name lang="en">US (Peacock 009) | Coventry City v. Sunderland (2026-10-31 10:50:10)</display-name>
     <display-name lang="en">US (Peacock 009)</display-name>
   </channel>
-  <channel id="Peacock01.us">
-    <display-name lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</display-name>
-    <display-name lang="en">US (Peacock 01)</display-name>
-  </channel>
   <channel id="Peacock010.us">
     <display-name lang="en">US (Peacock 010) | Hull City v. Ipswich Town (2026-10-31 10:50:15)</display-name>
     <display-name lang="en">US (Peacock 010)</display-name>
@@ -7851,6 +7847,13 @@
     <desc lang="en">Coming up: Colorado vs. Chicago. MLS. Starts Sun 1 Nov, 01:25 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101012500 +0000" stop="20261101032500 +0000" channel="AppleMLS018.us">
+    <title lang="en">🔴 LIVE: Colorado vs. Chicago</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">Colorado vs. Chicago. MLS. Starts Sun 1 Nov, 01:25 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="AppleMLS019.us">
     <title lang="en">Colorado vs. Chicago (Spanish) (Sun 1 Nov, 01:25)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -7928,6 +7931,13 @@
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
     <desc lang="en">Coming up: Colorado vs. Chicago (Spanish). MLS. Starts Sun 1 Nov, 01:25 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101012500 +0000" stop="20261101032500 +0000" channel="AppleMLS019.us">
+    <title lang="en">🔴 LIVE: Colorado vs. Chicago (Spanish)</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">Colorado vs. Chicago (Spanish). MLS. Starts Sun 1 Nov, 01:25 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="AppleMLS020.us">
     <title lang="en">Vancouver vs. Seattle (Sun 1 Nov, 20:25)</title>
@@ -17382,77 +17392,8 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261030202500 +0000" stop="20261030222500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">🔴 LIVE: Zenith Racing Series at Daytona</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">Zenith Racing Series at Daytona. PPV Event. Starts Fri 30 Oct, 20:25 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261030222500 +0000" stop="20261030232500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">🔴 LIVE: Zenith Racing Series at Daytona</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">Zenith Racing Series at Daytona. PPV Event. Starts Fri 30 Oct, 20:25 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261030232500 +0000" stop="20261031012500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031012500 +0000" stop="20261031032500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031032500 +0000" stop="20261031052500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031052500 +0000" stop="20261031072500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031072500 +0000" stop="20261031092500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031092500 +0000" stop="20261031112500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031112500 +0000" stop="20261031132500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031132500 +0000" stop="20261031152500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031152500 +0000" stop="20261031172500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031172500 +0000" stop="20261031192500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031192500 +0000" stop="20261031212500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031212500 +0000" stop="20261031232500 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+  <programme start="20261101013000 +0000" stop="20261101033000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: Trophy Cup at Tulare Thunderbowl (10.30 8:30 PM ET)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -17977,6 +17918,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101013000 +0000" stop="20261101033000 +0000" channel="Paramount006.us">
+    <title lang="en">US (Paramount 006) | Lincoln City vs. Birmingham City (2026-10-31 08:20:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="Paramount007.us">
     <title lang="en">Stoke City vs. Preston North End (Sat 31 Oct, 12:30)</title>
     <sub-title lang="en">⏭ Coming up: Championship</sub-title>
@@ -18058,6 +18004,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101013000 +0000" stop="20261101033000 +0000" channel="Paramount007.us">
+    <title lang="en">US (Paramount 007) | Stoke City vs. Preston North End (2026-10-31 08:20:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="Paramount008.us">
     <title lang="en">Everton vs. Man. United (Sat 31 Oct, 12:35)</title>
     <sub-title lang="en">⏭ Coming up Sat 31 Oct</sub-title>
@@ -18133,6 +18084,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261031233500 +0000" stop="20261101013500 +0000" channel="Paramount008.us">
+    <title lang="en">US (Paramount 008) | Everton vs. Man. United (2026-10-31 08:35:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101013500 +0000" stop="20261101033500 +0000" channel="Paramount008.us">
     <title lang="en">US (Paramount 008) | Everton vs. Man. United (2026-10-31 08:35:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -18537,6 +18493,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261031233000 +0000" stop="20261101013000 +0000" channel="Paramount013.us">
+    <title lang="en">US (Paramount 013) | Wolves vs. Cardiff City (2026-10-31 10:30:10)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101013000 +0000" stop="20261101033000 +0000" channel="Paramount013.us">
     <title lang="en">US (Paramount 013) | Wolves vs. Cardiff City (2026-10-31 10:30:10)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -27257,6 +27218,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261101013000 +0000" stop="20261101023000 +0000" channel="Peacock024.us">
+    <title lang="en">🔴 LIVE: Men`s &amp; Pairs Free Skate</title>
+    <desc lang="en">Men`s &amp; Pairs Free Skate. Starts Sat 31 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="Peacock025.us">
     <title lang="en">Liverpool v. Arsenal (Sun 1 Nov, 16:30)</title>
     <sub-title lang="en">⏭ Coming up: Premier League</sub-title>
@@ -33766,6 +33733,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101013000 +0000" stop="20261101033000 +0000" channel="SN017.ca">
+    <title lang="en">CA (SN+ 017) | Tissot Sprint _ Grand Prix of Malaysia (2026-10-31 02:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="SN018.ca">
     <title lang="en">Sportsnet Central: Oct. 30 (Sat 31 Oct, 09:00)</title>
     <sub-title lang="en">⏭ Coming up Sat 31 Oct</sub-title>
@@ -33918,6 +33890,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261031233500 +0000" stop="20261101013500 +0000" channel="SN019.ca">
+    <title lang="en">CA (SN+ 019) | Everton vs. Manchester United (2026-10-31 08:35:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101013500 +0000" stop="20261101033500 +0000" channel="SN019.ca">
     <title lang="en">CA (SN+ 019) | Everton vs. Manchester United (2026-10-31 08:35:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -38916,6 +38893,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101012000 +0000" stop="20261101032000 +0000" channel="STAN14.au">
+    <title lang="en">AU (STAN 14) | • Chelsea v Manchester United Premier League Matchweek 9 2026/2027 (2026-10-31 23:20:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="STAN15.au">
     <title lang="en">Everton v Manchester United WSL 2026/27 (Sat 31 Oct, 12:35)</title>
     <sub-title lang="en">⏭ Coming up: WSL</sub-title>
@@ -38993,6 +38975,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261031233500 +0000" stop="20261101013500 +0000" channel="STAN15.au">
+    <title lang="en">AU (STAN 15) | Everton v Manchester United WSL 2026/27 (2026-10-31 23:35:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101013500 +0000" stop="20261101033500 +0000" channel="STAN15.au">
     <title lang="en">AU (STAN 15) | Everton v Manchester United WSL 2026/27 (2026-10-31 23:35:50)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -40222,6 +40209,11 @@
     <desc lang="en">PL Saturday Wrap: Matchweek 9 Nov 1. Starts Sat 31 Oct, 22:30 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261101013000 +0000" stop="20261101033000 +0000" channel="STAN30.au">
+    <title lang="en">AU (STAN 30) | PL Saturday Wrap: Matchweek 9 Nov 1 (2026-11-01 09:30:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="STAN31.au">
     <title lang="en">Tokyo: Day 7 WTA 500 (Sun 1 Nov, 03:00)</title>
@@ -46421,6 +46413,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101013000 +0000" stop="20261101033000 +0000" channel="TSN023.ca">
+    <title lang="en">CA (TSN+ 023) | NCAA Football: Kent State vs. Sacramento State (2026-10-30 22:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="TSN024.ca">
     <title lang="en">LaLiga: Levante vs. Atletico Madrid (Sat 31 Oct, 12:48)</title>
     <sub-title lang="en">⏭ Coming up: LaLiga</sub-title>
@@ -48163,6 +48160,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101011500 +0000" stop="20261101031500 +0000" channel="TSN045.ca">
+    <title lang="en">CA (TSN+ 045) | NCAA Football: South Carolina vs. Oklahoma (2026-10-31 16:15:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="TSN046.ca">
     <title lang="en">Formula 1 Timing Channel _ Mexico City Grand Prix Qualifying (Sat 31 Oct, 20:50)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -48923,6 +48925,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261101013000 +0000" stop="20261101023000 +0000" channel="TSN054.ca">
+    <title lang="en">🔴 LIVE: NCAA Football: Georgia Tech vs. Pittsburgh</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Football: Georgia Tech vs. Pittsburgh. Starts Sat 31 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="TSN055.ca">
     <title lang="en">NCAA Football: Mississippi State vs. Texas (Sat 31 Oct, 23:30)</title>
     <sub-title lang="en">⏭ Coming up: NCAA</sub-title>
@@ -48996,6 +49005,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261031233000 +0000" stop="20261101013000 +0000" channel="TSN055.ca">
+    <title lang="en">🔴 LIVE: NCAA Football: Mississippi State vs. Texas</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Football: Mississippi State vs. Texas. Starts Sat 31 Oct, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261101013000 +0000" stop="20261101023000 +0000" channel="TSN055.ca">
     <title lang="en">🔴 LIVE: NCAA Football: Mississippi State vs. Texas</title>
     <sub-title lang="en">NCAA</sub-title>
     <desc lang="en">NCAA Football: Mississippi State vs. Texas. Starts Sat 31 Oct, 23:30 UK time.</desc>
@@ -97675,6 +97691,71 @@
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031020000 +0000" stop="20261031040000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031040000 +0000" stop="20261031060000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031060000 +0000" stop="20261031080000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031080000 +0000" stop="20261031100000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031100000 +0000" stop="20261031120000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031120000 +0000" stop="20261031140000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031140000 +0000" stop="20261031160000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031160000 +0000" stop="20261031180000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031180000 +0000" stop="20261031200000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261031220000 +0000" stop="20261101000000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101000000 +0000" stop="20261101020000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Zenith Racing Series at Daytona (10.30 4:25 PM ET)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="PPVEVENT20.us">
     <title lang="en">PPV EVENT 20</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -100077,71 +100158,6 @@
   </programme>
   <programme start="20261101000000 +0000" stop="20261101020000 +0000" channel="Paramount05.us">
     <title lang="en">US (Paramount 05) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031000000 +0000" stop="20261031020000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031020000 +0000" stop="20261031040000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031040000 +0000" stop="20261031060000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031060000 +0000" stop="20261031080000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031080000 +0000" stop="20261031100000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031100000 +0000" stop="20261031120000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031120000 +0000" stop="20261031140000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031140000 +0000" stop="20261031160000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031160000 +0000" stop="20261031180000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031180000 +0000" stop="20261031200000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031200000 +0000" stop="20261031220000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261031220000 +0000" stop="20261101000000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101000000 +0000" stop="20261101020000 +0000" channel="Peacock01.us">
-    <title lang="en">US (Peacock 01) | La Vuelta a España: Stage 11 (2025-09-03 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
