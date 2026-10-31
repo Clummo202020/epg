@@ -339,6 +339,15 @@ DUMMY_CHANNELS = [
        f"Azam Sports {n} from Azam TV, Tanzania. Tanzanian and East African football, "
        f"other local sport and, at times, live English football. No programme guide is available.")
       for n in range(1, 5)],
+    # Hub Premier 7-11 (StarHub, Singapore, 31 Oct 2026): not in StarHub's guide or epgshare (only Hub Premier 1-6
+    # are), so plain blocks with a description. 8 = data channel, 7 and 9-11 = overflow channels.
+    ("hubpremier8.sg", "Hub Premier 8", "Stream is live at event time only.",
+     "Hub Premier 8 (StarHub, Singapore): Premier League data channel - live scores, stats and match data "
+     "during Premier League games. No programme guide is available."),
+    *[(f"hubpremier{n}.sg", f"Hub Premier {n}", "Stream is live at event time only.",
+       f"Hub Premier {n} (StarHub, Singapore): overflow channel for Premier League matches that don't fit on "
+       f"Hub Premier 1-6, used when several games kick off at the same time. No programme guide is available.")
+      for n in (7, 9, 10, 11)],
     # Sportsnet World Extra 1-4 (Canada, 30 Oct 2026): overflow channels with no guide anywhere
     *[(f"sportsnetworldextra{n}.ca", f"Sportsnet World Extra {n}", "Stream is live at event time only.",
        f"Sportsnet World Extra {n} (Canada): extra Sportsnet World channel for international football and "
