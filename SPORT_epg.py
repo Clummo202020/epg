@@ -3385,6 +3385,7 @@ def fetch_starhub(days, debug=False):
     if debug:
         print(f"  StarHub channels: {sorted(chans)}")
     tz, out = ZoneInfo("Asia/Singapore"), {}
+    sh_keys, sh_types, sh_sample = set(), {}, {}      # diagnostics (31 Oct 2026): what flags does StarHub send?
     for n, sid in sorted(chans.items()):
         evs = {}
         for day in days:
@@ -3405,6 +3406,13 @@ def fetch_starhub(days, debug=False):
                     title, sub = (series, ep if ep != series else "") if series else (ep, "")
                     if not title or stop <= start:
                         continue
+                    sh_keys.update(it)
+                    st = str(it.get("schedule_type"))
+                    sh_types[st] = sh_types.get(st, 0) + 1
+                    for tag in ("UFC", "ATP", "Premier", ""):               # one sample item of each kind
+                        if tag in title + " " + ep and tag not in sh_sample:
+                            sh_sample[tag] = {k: (str(v)[:50] + "…" if len(str(v)) > 50 else v)
+                                              for k, v in it.items() if k not in ("description", "short_description")}
                     live = str(it.get("schedule_type") or "").lower() == "live"
                     if STARHUB_LIVE_TITLE.search(title):
                         live, title = True, STARHUB_LIVE_TITLE.sub("", title).strip() or title
@@ -3418,6 +3426,11 @@ def fetch_starhub(days, debug=False):
             out[n] = [evs[k] for k in sorted(evs)]
         if debug:
             print(f"  StarHub Hub Sports {n}: {len(evs)} programmes, {sum(e['live'] for e in evs.values())} live")
+    if sh_keys:                                       # always printed - read this to find StarHub's live flag
+        print(f"  StarHub schedule fields: {sorted(sh_keys)}")
+        print(f"  StarHub schedule_type values: {sh_types}")
+        for tag, smp in sh_sample.items():
+            print(f"  StarHub sample ({tag or 'first'}): {smp}")
     return out
 
 
@@ -5452,7 +5465,9 @@ def add_empty_placeholders(tv, listed):
 CARRY_OVER = True
 # Channels removed on purpose are never carried over (31 Oct 2026: beIN AU - the streams are unreliable - came
 # back from the previous guide for a week after its sources were removed).
-CARRY_SKIP = ("AU.beINSPORTS",)
+CARRY_SKIP = ("AU.beINSPORTS",
+              # dropped 31 Oct 2026 (user): sources removed/never matched, only old listings were being carried
+              "DK.ViasatSportUltra", "SE.ATGLive", "HK.NowGolf3", "HK.PremierSports")
 
 
 def carry_over(tv, listed, prev_path):
