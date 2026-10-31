@@ -3,10 +3,11 @@
 TEAMS_epg.py - our own "next game" guide for the NFL, NBA, MLB and NHL team channels (31 Oct 2026), a replacement for
 PlaylistLabs' built-in "USA Sports Teams" source, with every time in LONDON time.
 
-Each team channel keeps the id it already has in the playlist (NFL-ArizonaCardinals.us, NBA-LAClippers.us ...) and shows:
-    "Next game: Arizona Cardinals at Dallas Cowboys"   sub-title "Sun 1 Nov, 18:00 UK time"
+Team channel ids are NFL-ArizonaCardinals.uk, NBA-LAClippers.uk ... (31 Oct 2026: '.uk' instead of the playlist's '.us', so they can NOT clash with
+PlaylistLabs' built-in "USA Sports Teams" ids, which won over ours and showed EST times with no red ball). Each channel shows:
+    "Next game: Arizona Cardinals at Dallas Cowboys (Sun 1 Nov, 18:00 UK)"   sub-title "Sun 1 Nov, 18:00 UK time"
     description: kick-off in UK time, venue and city, TV channel(s), and the last result when the team played in the last 4 days
-    "Game on now: ..." while the game is being played (estimated length per sport), then the next "Next game" block.
+    "🔴 LIVE: ..." while the game is being played (estimated length per sport), then the next "Next game" block.
 No game in range: "No game scheduled" (the MLB winter, a bye week beyond the range).
 
 Source: ESPN's public scoreboard, one request per day and league (the same endpoint event_epg.py uses), 4 days back and 21
@@ -47,130 +48,130 @@ HORIZON_HOURS = 48
 PIECE_HOURS = 6
 
 TEAMS = [   # (league, tvg-id in the playlist, team name)
-    ('NFL', 'NFL-ArizonaCardinals.us', 'Arizona Cardinals'),
-    ('NFL', 'NFL-AtlantaFalcons.us', 'Atlanta Falcons'),
-    ('NFL', 'NFL-BaltimoreRavens.us', 'Baltimore Ravens'),
-    ('NFL', 'NFL-BuffaloBills.us', 'Buffalo Bills'),
-    ('NFL', 'NFL-CarolinaPanthers.us', 'Carolina Panthers'),
-    ('NFL', 'NFL-ChicagoBears.us', 'Chicago Bears'),
-    ('NFL', 'NFL-CincinnatiBengals.us', 'Cincinnati Bengals'),
-    ('NFL', 'NFL-ClevelandBrowns.us', 'Cleveland Browns'),
-    ('NFL', 'NFL-DallasCowboys.us', 'Dallas Cowboys'),
-    ('NFL', 'NFL-DenverBroncos.us', 'Denver Broncos'),
-    ('NFL', 'NFL-DetroitLions.us', 'Detroit Lions'),
-    ('NFL', 'NFL-GreenBayPackers.us', 'Green Bay Packers'),
-    ('NFL', 'NFL-HoustonTexans.us', 'Houston Texans'),
-    ('NFL', 'NFL-IndianapolisColts.us', 'Indianapolis Colts'),
-    ('NFL', 'NFL-JacksonvilleJaguars.us', 'Jacksonville Jaguars'),
-    ('NFL', 'NFL-KansasCityChiefs.us', 'Kansas City Chiefs'),
-    ('NFL', 'NFL-LasVegasRaiders.us', 'Las Vegas Raiders'),
-    ('NFL', 'NFL-LosAngelesChargers.us', 'Los Angeles Chargers'),
-    ('NFL', 'NFL-LosAngelesRams.us', 'Los Angeles Rams'),
-    ('NFL', 'NFL-MiamiDolphins.us', 'Miami Dolphins'),
-    ('NFL', 'NFL-MinnesotaVikings.us', 'Minnesota Vikings'),
-    ('NFL', 'NFL-NewEnglandPatriots.us', 'New England Patriots'),
-    ('NFL', 'NFL-NewOrleansSaints.us', 'New Orleans Saints'),
-    ('NFL', 'NFL-NewYorkGiants.us', 'New York Giants'),
-    ('NFL', 'NFL-NewYorkJets.us', 'New York Jets'),
-    ('NFL', 'NFL-PhiladelphiaEagles.us', 'Philadelphia Eagles'),
-    ('NFL', 'NFL-PittsburghSteelers.us', 'Pittsburgh Steelers'),
-    ('NFL', 'NFL-SanFrancisco49ers.us', 'San Francisco 49ers'),
-    ('NFL', 'NFL-SeattleSeahawks.us', 'Seattle Seahawks'),
-    ('NFL', 'NFL-TampaBayBuccaneers.us', 'Tampa Bay Buccaneers'),
-    ('NFL', 'NFL-TennesseeTitans.us', 'Tennessee Titans'),
-    ('NFL', 'NFL-WashingtonCommanders.us', 'Washington Commanders'),
-    ('NBA', 'NBA-AtlantaHawks.us', 'Atlanta Hawks'),
-    ('NBA', 'NBA-BostonCeltics.us', 'Boston Celtics'),
-    ('NBA', 'NBA-BrooklynNets.us', 'Brooklyn Nets'),
-    ('NBA', 'NBA-CharlotteHornets.us', 'Charlotte Hornets'),
-    ('NBA', 'NBA-ChicagoBulls.us', 'Chicago Bulls'),
-    ('NBA', 'NBA-ClevelandCavaliers.us', 'Cleveland Cavaliers'),
-    ('NBA', 'NBA-DallasMavericks.us', 'Dallas Mavericks'),
-    ('NBA', 'NBA-DenverNuggets.us', 'Denver Nuggets'),
-    ('NBA', 'NBA-DetroitPistons.us', 'Detroit Pistons'),
-    ('NBA', 'NBA-GoldenStateWarriors.us', 'Golden State Warriors'),
-    ('NBA', 'NBA-HoustonRockets.us', 'Houston Rockets'),
-    ('NBA', 'NBA-IndianaPacers.us', 'Indiana Pacers'),
-    ('NBA', 'NBA-LAClippers.us', 'Los Angeles Clippers'),
-    ('NBA', 'NBA-LosAngelesLakers.us', 'Los Angeles Lakers'),
-    ('NBA', 'NBA-MemphisGrizzlies.us', 'Memphis Grizzlies'),
-    ('NBA', 'NBA-MiamiHeat.us', 'Miami Heat'),
-    ('NBA', 'NBA-MilwaukeeBucks.us', 'Milwaukee Bucks'),
-    ('NBA', 'NBA-MinnesotaTimberwolves.us', 'Minnesota Timberwolves'),
-    ('NBA', 'NBA-NewOrleansPelicans.us', 'New Orleans Pelicans'),
-    ('NBA', 'NBA-NewYorkKnicks.us', 'New York Knicks'),
-    ('NBA', 'NBA-OklahomaCityThunder.us', 'Oklahoma City Thunder'),
-    ('NBA', 'NBA-OrlandoMagic.us', 'Orlando Magic'),
-    ('NBA', 'NBA-Philadelphia76ers.us', 'Philadelphia 76ers'),
-    ('NBA', 'NBA-PhoenixSuns.us', 'Phoenix Suns'),
-    ('NBA', 'NBA-PortlandTrailBlazers.us', 'Portland Trail Blazers'),
-    ('NBA', 'NBA-SacramentoKings.us', 'Sacramento Kings'),
-    ('NBA', 'NBA-SanAntonioSpurs.us', 'San Antonio Spurs'),
-    ('NBA', 'NBA-TorontoRaptors.us', 'Toronto Raptors'),
-    ('NBA', 'NBA-UtahJazz.us', 'Utah Jazz'),
-    ('NBA', 'NBA-WashingtonWizards.us', 'Washington Wizards'),
-    ('MLB', 'MLB-ArizonaDiamondbacks.us', 'Arizona Diamondbacks'),
-    ('MLB', 'MLB-AtlantaBraves.us', 'Atlanta Braves'),
-    ('MLB', 'MLB-BaltimoreOrioles.us', 'Baltimore Orioles'),
-    ('MLB', 'MLB-BostonRedSox.us', 'Boston Red Sox'),
-    ('MLB', 'MLB-ChicagoCubs.us', 'Chicago Cubs'),
-    ('MLB', 'MLB-CincinnatiReds.us', 'Cincinnati Reds'),
-    ('MLB', 'MLB-ClevelandGuardians.us', 'Cleveland Guardians'),
-    ('MLB', 'MLB-ColoradoRockies.us', 'Colorado Rockies'),
-    ('MLB', 'MLB-ChicagoWhiteSox.us', 'Chicago White Sox'),
-    ('MLB', 'MLB-DetroitTigers.us', 'Detroit Tigers'),
-    ('MLB', 'MLB-HoustonAstros.us', 'Houston Astros'),
-    ('MLB', 'MLB-KansasCityRoyals.us', 'Kansas City Royals'),
-    ('MLB', 'MLB-LosAngelesAngels.us', 'Los Angeles Angels'),
-    ('MLB', 'MLB-LosAngelesDodgers.us', 'Los Angeles Dodgers'),
-    ('MLB', 'MLB-MiamiMarlins.us', 'Miami Marlins'),
-    ('MLB', 'MLB-MilwaukeeBrewers.us', 'Milwaukee Brewers'),
-    ('MLB', 'MLB-MinnesotaTwins.us', 'Minnesota Twins'),
-    ('MLB', 'MLB-NewYorkMets.us', 'New York Mets'),
-    ('MLB', 'MLB-NewYorkYankees.us', 'New York Yankees'),
-    ('MLB', 'MLB-Athletics.us', 'Athletics'),
-    ('MLB', 'MLB-PhiladelphiaPhillies.us', 'Philadelphia Phillies'),
-    ('MLB', 'MLB-PittsburghPirates.us', 'Pittsburgh Pirates'),
-    ('MLB', 'MLB-SanDiegoPadres.us', 'San Diego Padres'),
-    ('MLB', 'MLB-SeattleMariners.us', 'Seattle Mariners'),
-    ('MLB', 'MLB-SanFranciscoGiants.us', 'San Francisco Giants'),
-    ('MLB', 'MLB-St.LouisCardinals.us', 'St. Louis Cardinals'),
-    ('MLB', 'MLB-TampaBayRays.us', 'Tampa Bay Rays'),
-    ('MLB', 'MLB-TexasRangers.us', 'Texas Rangers'),
-    ('MLB', 'MLB-TorontoBlueJays.us', 'Toronto Blue Jays'),
-    ('MLB', 'MLB-WashingtonNationals.us', 'Washington Nationals'),
-    ('NHL', 'NHL-AnaheimDucks.us', 'Anaheim Ducks'),
-    ('NHL', 'NHL-BostonBruins.us', 'Boston Bruins'),
-    ('NHL', 'NHL-BuffaloSabres.us', 'Buffalo Sabres'),
-    ('NHL', 'NHL-CalgaryFlames.us', 'Calgary Flames'),
-    ('NHL', 'NHL-CarolinaHurricanes.us', 'Carolina Hurricanes'),
-    ('NHL', 'NHL-ChicagoBlackhawks.us', 'Chicago Blackhawks'),
-    ('NHL', 'NHL-ColoradoAvalanche.us', 'Colorado Avalanche'),
-    ('NHL', 'NHL-ColumbusBlueJackets.us', 'Columbus Blue Jackets'),
-    ('NHL', 'NHL-DallasStars.us', 'Dallas Stars'),
-    ('NHL', 'NHL-DetroitRedWings.us', 'Detroit Red Wings'),
-    ('NHL', 'NHL-EdmontonOilers.us', 'Edmonton Oilers'),
-    ('NHL', 'NHL-FloridaPanthers.us', 'Florida Panthers'),
-    ('NHL', 'NHL-LosAngelesKings.us', 'Los Angeles Kings'),
-    ('NHL', 'NHL-MinnesotaWild.us', 'Minnesota Wild'),
-    ('NHL', 'NHL-MontrealCanadiens.us', 'Montreal Canadiens'),
-    ('NHL', 'NHL-NashvillePredators.us', 'Nashville Predators'),
-    ('NHL', 'NHL-NewJerseyDevils.us', 'New Jersey Devils'),
-    ('NHL', 'NHL-NewYorkIslanders.us', 'New York Islanders'),
-    ('NHL', 'NHL-NewYorkRangers.us', 'New York Rangers'),
-    ('NHL', 'NHL-OttawaSenators.us', 'Ottawa Senators'),
-    ('NHL', 'NHL-PhiladelphiaFlyers.us', 'Philadelphia Flyers'),
-    ('NHL', 'NHL-PittsburghPenguins.us', 'Pittsburgh Penguins'),
-    ('NHL', 'NHL-SanJoseSharks.us', 'San Jose Sharks'),
-    ('NHL', 'NHL-SeattleKraken.us', 'Seattle Kraken'),
-    ('NHL', 'NHL-St.LouisBlues.us', 'St. Louis Blues'),
-    ('NHL', 'NHL-TampaBayLightning.us', 'Tampa Bay Lightning'),
-    ('NHL', 'NHL-TorontoMapleLeafs.us', 'Toronto Maple Leafs'),
-    ('NHL', 'NHL-UtahMammoth.us', 'Utah Mammoth'),
-    ('NHL', 'NHL-VancouverCanucks.us', 'Vancouver Canucks'),
-    ('NHL', 'NHL-VegasGoldenKnights.us', 'Vegas Golden Knights'),
-    ('NHL', 'NHL-WashingtonCapitals.us', 'Washington Capitals'),
-    ('NHL', 'NHL-WinnipegJets.us', 'Winnipeg Jets'),
+    ('NFL', 'NFL-ArizonaCardinals.uk', 'Arizona Cardinals'),
+    ('NFL', 'NFL-AtlantaFalcons.uk', 'Atlanta Falcons'),
+    ('NFL', 'NFL-BaltimoreRavens.uk', 'Baltimore Ravens'),
+    ('NFL', 'NFL-BuffaloBills.uk', 'Buffalo Bills'),
+    ('NFL', 'NFL-CarolinaPanthers.uk', 'Carolina Panthers'),
+    ('NFL', 'NFL-ChicagoBears.uk', 'Chicago Bears'),
+    ('NFL', 'NFL-CincinnatiBengals.uk', 'Cincinnati Bengals'),
+    ('NFL', 'NFL-ClevelandBrowns.uk', 'Cleveland Browns'),
+    ('NFL', 'NFL-DallasCowboys.uk', 'Dallas Cowboys'),
+    ('NFL', 'NFL-DenverBroncos.uk', 'Denver Broncos'),
+    ('NFL', 'NFL-DetroitLions.uk', 'Detroit Lions'),
+    ('NFL', 'NFL-GreenBayPackers.uk', 'Green Bay Packers'),
+    ('NFL', 'NFL-HoustonTexans.uk', 'Houston Texans'),
+    ('NFL', 'NFL-IndianapolisColts.uk', 'Indianapolis Colts'),
+    ('NFL', 'NFL-JacksonvilleJaguars.uk', 'Jacksonville Jaguars'),
+    ('NFL', 'NFL-KansasCityChiefs.uk', 'Kansas City Chiefs'),
+    ('NFL', 'NFL-LasVegasRaiders.uk', 'Las Vegas Raiders'),
+    ('NFL', 'NFL-LosAngelesChargers.uk', 'Los Angeles Chargers'),
+    ('NFL', 'NFL-LosAngelesRams.uk', 'Los Angeles Rams'),
+    ('NFL', 'NFL-MiamiDolphins.uk', 'Miami Dolphins'),
+    ('NFL', 'NFL-MinnesotaVikings.uk', 'Minnesota Vikings'),
+    ('NFL', 'NFL-NewEnglandPatriots.uk', 'New England Patriots'),
+    ('NFL', 'NFL-NewOrleansSaints.uk', 'New Orleans Saints'),
+    ('NFL', 'NFL-NewYorkGiants.uk', 'New York Giants'),
+    ('NFL', 'NFL-NewYorkJets.uk', 'New York Jets'),
+    ('NFL', 'NFL-PhiladelphiaEagles.uk', 'Philadelphia Eagles'),
+    ('NFL', 'NFL-PittsburghSteelers.uk', 'Pittsburgh Steelers'),
+    ('NFL', 'NFL-SanFrancisco49ers.uk', 'San Francisco 49ers'),
+    ('NFL', 'NFL-SeattleSeahawks.uk', 'Seattle Seahawks'),
+    ('NFL', 'NFL-TampaBayBuccaneers.uk', 'Tampa Bay Buccaneers'),
+    ('NFL', 'NFL-TennesseeTitans.uk', 'Tennessee Titans'),
+    ('NFL', 'NFL-WashingtonCommanders.uk', 'Washington Commanders'),
+    ('NBA', 'NBA-AtlantaHawks.uk', 'Atlanta Hawks'),
+    ('NBA', 'NBA-BostonCeltics.uk', 'Boston Celtics'),
+    ('NBA', 'NBA-BrooklynNets.uk', 'Brooklyn Nets'),
+    ('NBA', 'NBA-CharlotteHornets.uk', 'Charlotte Hornets'),
+    ('NBA', 'NBA-ChicagoBulls.uk', 'Chicago Bulls'),
+    ('NBA', 'NBA-ClevelandCavaliers.uk', 'Cleveland Cavaliers'),
+    ('NBA', 'NBA-DallasMavericks.uk', 'Dallas Mavericks'),
+    ('NBA', 'NBA-DenverNuggets.uk', 'Denver Nuggets'),
+    ('NBA', 'NBA-DetroitPistons.uk', 'Detroit Pistons'),
+    ('NBA', 'NBA-GoldenStateWarriors.uk', 'Golden State Warriors'),
+    ('NBA', 'NBA-HoustonRockets.uk', 'Houston Rockets'),
+    ('NBA', 'NBA-IndianaPacers.uk', 'Indiana Pacers'),
+    ('NBA', 'NBA-LAClippers.uk', 'Los Angeles Clippers'),
+    ('NBA', 'NBA-LosAngelesLakers.uk', 'Los Angeles Lakers'),
+    ('NBA', 'NBA-MemphisGrizzlies.uk', 'Memphis Grizzlies'),
+    ('NBA', 'NBA-MiamiHeat.uk', 'Miami Heat'),
+    ('NBA', 'NBA-MilwaukeeBucks.uk', 'Milwaukee Bucks'),
+    ('NBA', 'NBA-MinnesotaTimberwolves.uk', 'Minnesota Timberwolves'),
+    ('NBA', 'NBA-NewOrleansPelicans.uk', 'New Orleans Pelicans'),
+    ('NBA', 'NBA-NewYorkKnicks.uk', 'New York Knicks'),
+    ('NBA', 'NBA-OklahomaCityThunder.uk', 'Oklahoma City Thunder'),
+    ('NBA', 'NBA-OrlandoMagic.uk', 'Orlando Magic'),
+    ('NBA', 'NBA-Philadelphia76ers.uk', 'Philadelphia 76ers'),
+    ('NBA', 'NBA-PhoenixSuns.uk', 'Phoenix Suns'),
+    ('NBA', 'NBA-PortlandTrailBlazers.uk', 'Portland Trail Blazers'),
+    ('NBA', 'NBA-SacramentoKings.uk', 'Sacramento Kings'),
+    ('NBA', 'NBA-SanAntonioSpurs.uk', 'San Antonio Spurs'),
+    ('NBA', 'NBA-TorontoRaptors.uk', 'Toronto Raptors'),
+    ('NBA', 'NBA-UtahJazz.uk', 'Utah Jazz'),
+    ('NBA', 'NBA-WashingtonWizards.uk', 'Washington Wizards'),
+    ('MLB', 'MLB-ArizonaDiamondbacks.uk', 'Arizona Diamondbacks'),
+    ('MLB', 'MLB-AtlantaBraves.uk', 'Atlanta Braves'),
+    ('MLB', 'MLB-BaltimoreOrioles.uk', 'Baltimore Orioles'),
+    ('MLB', 'MLB-BostonRedSox.uk', 'Boston Red Sox'),
+    ('MLB', 'MLB-ChicagoCubs.uk', 'Chicago Cubs'),
+    ('MLB', 'MLB-CincinnatiReds.uk', 'Cincinnati Reds'),
+    ('MLB', 'MLB-ClevelandGuardians.uk', 'Cleveland Guardians'),
+    ('MLB', 'MLB-ColoradoRockies.uk', 'Colorado Rockies'),
+    ('MLB', 'MLB-ChicagoWhiteSox.uk', 'Chicago White Sox'),
+    ('MLB', 'MLB-DetroitTigers.uk', 'Detroit Tigers'),
+    ('MLB', 'MLB-HoustonAstros.uk', 'Houston Astros'),
+    ('MLB', 'MLB-KansasCityRoyals.uk', 'Kansas City Royals'),
+    ('MLB', 'MLB-LosAngelesAngels.uk', 'Los Angeles Angels'),
+    ('MLB', 'MLB-LosAngelesDodgers.uk', 'Los Angeles Dodgers'),
+    ('MLB', 'MLB-MiamiMarlins.uk', 'Miami Marlins'),
+    ('MLB', 'MLB-MilwaukeeBrewers.uk', 'Milwaukee Brewers'),
+    ('MLB', 'MLB-MinnesotaTwins.uk', 'Minnesota Twins'),
+    ('MLB', 'MLB-NewYorkMets.uk', 'New York Mets'),
+    ('MLB', 'MLB-NewYorkYankees.uk', 'New York Yankees'),
+    ('MLB', 'MLB-Athletics.uk', 'Athletics'),
+    ('MLB', 'MLB-PhiladelphiaPhillies.uk', 'Philadelphia Phillies'),
+    ('MLB', 'MLB-PittsburghPirates.uk', 'Pittsburgh Pirates'),
+    ('MLB', 'MLB-SanDiegoPadres.uk', 'San Diego Padres'),
+    ('MLB', 'MLB-SeattleMariners.uk', 'Seattle Mariners'),
+    ('MLB', 'MLB-SanFranciscoGiants.uk', 'San Francisco Giants'),
+    ('MLB', 'MLB-St.LouisCardinals.uk', 'St. Louis Cardinals'),
+    ('MLB', 'MLB-TampaBayRays.uk', 'Tampa Bay Rays'),
+    ('MLB', 'MLB-TexasRangers.uk', 'Texas Rangers'),
+    ('MLB', 'MLB-TorontoBlueJays.uk', 'Toronto Blue Jays'),
+    ('MLB', 'MLB-WashingtonNationals.uk', 'Washington Nationals'),
+    ('NHL', 'NHL-AnaheimDucks.uk', 'Anaheim Ducks'),
+    ('NHL', 'NHL-BostonBruins.uk', 'Boston Bruins'),
+    ('NHL', 'NHL-BuffaloSabres.uk', 'Buffalo Sabres'),
+    ('NHL', 'NHL-CalgaryFlames.uk', 'Calgary Flames'),
+    ('NHL', 'NHL-CarolinaHurricanes.uk', 'Carolina Hurricanes'),
+    ('NHL', 'NHL-ChicagoBlackhawks.uk', 'Chicago Blackhawks'),
+    ('NHL', 'NHL-ColoradoAvalanche.uk', 'Colorado Avalanche'),
+    ('NHL', 'NHL-ColumbusBlueJackets.uk', 'Columbus Blue Jackets'),
+    ('NHL', 'NHL-DallasStars.uk', 'Dallas Stars'),
+    ('NHL', 'NHL-DetroitRedWings.uk', 'Detroit Red Wings'),
+    ('NHL', 'NHL-EdmontonOilers.uk', 'Edmonton Oilers'),
+    ('NHL', 'NHL-FloridaPanthers.uk', 'Florida Panthers'),
+    ('NHL', 'NHL-LosAngelesKings.uk', 'Los Angeles Kings'),
+    ('NHL', 'NHL-MinnesotaWild.uk', 'Minnesota Wild'),
+    ('NHL', 'NHL-MontrealCanadiens.uk', 'Montreal Canadiens'),
+    ('NHL', 'NHL-NashvillePredators.uk', 'Nashville Predators'),
+    ('NHL', 'NHL-NewJerseyDevils.uk', 'New Jersey Devils'),
+    ('NHL', 'NHL-NewYorkIslanders.uk', 'New York Islanders'),
+    ('NHL', 'NHL-NewYorkRangers.uk', 'New York Rangers'),
+    ('NHL', 'NHL-OttawaSenators.uk', 'Ottawa Senators'),
+    ('NHL', 'NHL-PhiladelphiaFlyers.uk', 'Philadelphia Flyers'),
+    ('NHL', 'NHL-PittsburghPenguins.uk', 'Pittsburgh Penguins'),
+    ('NHL', 'NHL-SanJoseSharks.uk', 'San Jose Sharks'),
+    ('NHL', 'NHL-SeattleKraken.uk', 'Seattle Kraken'),
+    ('NHL', 'NHL-St.LouisBlues.uk', 'St. Louis Blues'),
+    ('NHL', 'NHL-TampaBayLightning.uk', 'Tampa Bay Lightning'),
+    ('NHL', 'NHL-TorontoMapleLeafs.uk', 'Toronto Maple Leafs'),
+    ('NHL', 'NHL-UtahMammoth.uk', 'Utah Mammoth'),
+    ('NHL', 'NHL-VancouverCanucks.uk', 'Vancouver Canucks'),
+    ('NHL', 'NHL-VegasGoldenKnights.uk', 'Vegas Golden Knights'),
+    ('NHL', 'NHL-WashingtonCapitals.uk', 'Washington Capitals'),
+    ('NHL', 'NHL-WinnipegJets.uk', 'Winnipeg Jets'),
 ]
 
 
@@ -262,7 +263,7 @@ def result_line(g):
     return f"Last game: {name_of(a)} {sa} - {sh} {name_of(h)} (final)."
 
 
-def add(tv, cid, start, stop, title, sub, desc):
+def add(tv, cid, start, stop, title, sub, desc, live=False):
     fmt = lambda d: d.astimezone(timezone.utc).strftime("%Y%m%d%H%M%S +0000")
     p = ET.SubElement(tv, "programme", {"start": fmt(start), "stop": fmt(stop), "channel": cid})
     ET.SubElement(p, "title", {"lang": "en"}).text = title
@@ -271,6 +272,8 @@ def add(tv, cid, start, stop, title, sub, desc):
     if desc:
         ET.SubElement(p, "desc", {"lang": "en"}).text = desc
     ET.SubElement(p, "category", {"lang": "en"}).text = "Sports"
+    if live:                                                   # same as the SPORT guide: a second category "Live"
+        ET.SubElement(p, "category", {"lang": "en"}).text = "Live"
 
 
 def pieces(start, stop):
@@ -292,11 +295,11 @@ def build_team(tv, cid, league, games, now, horizon):
         active = next((g for g in games if not g["completed"] and g["ko"] <= t < g["ko"] + dur), None)
         if active:
             end = min(active["ko"] + dur, horizon)
-            title = f"Game on now: {name_of(active['away'])} at {name_of(active['home'])}"
+            title = f"🔴 LIVE: {name_of(active['away'])} at {name_of(active['home'])}"
             desc = (f"{word} was {uk(active['ko'])} UK time. {active['where']}." +
                     (f" TV: {', '.join(active['tv'])}." if active["tv"] else "")).replace("..", ".")
             for a, b in pieces(t, end):
-                add(tv, cid, a, b, title, f"Started {active['ko'].astimezone(LONDON):%H:%M} UK time", desc)
+                add(tv, cid, a, b, title, f"Started {active['ko'].astimezone(LONDON):%H:%M} UK time", desc, True)
             t = end
             continue
         nxt = next((g for g in games if not g["completed"] and g["ko"] > t), None)
@@ -304,7 +307,7 @@ def build_team(tv, cid, league, games, now, horizon):
         if end <= t:
             end = min(t + timedelta(hours=1), horizon)
         if nxt:
-            title = f"Next game: {name_of(nxt['away'])} at {name_of(nxt['home'])}"
+            title = f"Next game: {name_of(nxt['away'])} at {name_of(nxt['home'])} ({uk(nxt['ko'])} UK)"
             sub = uk(nxt["ko"]) + " UK time"
             desc = f"{word} {uk(nxt['ko'])} UK time." + (f" {nxt['where']}." if nxt["where"] else "") + \
                    (f" TV: {', '.join(nxt['tv'])}." if nxt["tv"] else "") + (f" {last}" if last else "")
