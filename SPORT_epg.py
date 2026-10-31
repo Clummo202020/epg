@@ -239,8 +239,8 @@ beIN SPORTS ASIA-PACIFIC - beIN's own public API (JSON), as iptv-org uses:
   their own codes). A country whose list comes back identical to one already used is
   skipped, so one country's schedule is never shown under another's name. Same-named
   feeds within a country are merged (fullest kept). Start and end times are given; the
-  competition is the sub-title. Choose countries with --bein (default au,my,sg; hk,th,id have no programmes on beIN's site).
-  Channels: AU.beINSPORTS1, MY.beINSPORTS1, SG.beINSPORTS1, HK..., TH..., ID...
+  competition is the sub-title. Choose countries with --bein (default my,sg; hk,th,id have no programmes on beIN's site).
+  Channels: MY.beINSPORTS1, SG.beINSPORTS1, HK..., TH..., ID...
 
 SUPERSPORT AFRICA - DStv's public TV guide (JSON), every channel in one request per day:
     https://www.dstv.com/umbraco/api/TvGuide/GetProgrammes?d=YYYY-MM-DD&country=zaf
@@ -427,7 +427,7 @@ BEIN_COUNTRIES = {       # code -> (place, time zone, region codes to try, fallb
     "th": ("Thailand", "Asia/Bangkok", ["en-th", "th-th"], {}),
     "id": ("Indonesia", "Asia/Jakarta", ["en-id", "id-id"], {}),
 }
-BEIN_DEFAULT = "au,my,sg"  # hk, th, id: beIN lists the channels but publishes no programmes (checked Oct 2026)
+BEIN_DEFAULT = "my,sg"  # hk, th, id: beIN lists the channels but publishes no programmes (checked Oct 2026)
 STOCKHOLM, OSLO, COPENHAGEN = ZoneInfo("Europe/Stockholm"), ZoneInfo("Europe/Oslo"), ZoneInfo("Europe/Copenhagen")
 HELSINKI = ZoneInfo("Europe/Helsinki")
 ALLENTE_GUIDE = "https://www.allente.{tld}/api/epg/refetch-epg-data?Start={day:%Y-%m-%d}"
@@ -3839,8 +3839,7 @@ EPGSHARE.update({
            }},
     "au": {"file": "AU1", "prefix": "AU", "place": "Australia", "tz": "Australia/Sydney", "english": True,
            "backup": True, "channels": {
-               **{f"beINSPORTS{n}": (f"beIN SPORTS {n} AU", [f"beINSports{n}.au"]) for n in range(1, 4)},
-               "beINSPORTSXTRA": ("beIN SPORTS XTRA AU", ["beINSportsXtra.au"]),
+               # (beIN SPORTS 1-3 + XTRA AU removed 31 Oct 2026 - the streams are unreliable)
                # Fox Sports + ESPN AU: AU1 is their ONLY source since 29 Oct 2026 (Foxtel's pages
                # refuse GitHub with HTTP 403); listed in "main" so an empty one is reported in the log
                "FoxCricket": ("Fox Cricket", ["FoxCricket.au", "Fox.Cricket.au"]),
@@ -4523,7 +4522,7 @@ MATCH_ONLY_LIVE = ("SG.HubPremier",)
 # is LIVE when it starts 0-45 min before the real kick-off in the football guide (and runs at least
 # 90 min); its secondary title becomes the football guide's competition ("Carabao Cup 4th Round"
 # instead of beIN's "Round 4"). IDs starting with these:
-KICKOFF_LIVE = ("MENA.",)
+KICKOFF_LIVE = ("MENA.", "SG.HubPremier", "SG.HubSports")   # + Hub Premier / Hub Sports 31 Oct 2026: StarHub's own guide flags nothing live
 MATCH_TITLE_RE = re.compile(r"\S\s+vs?\.?\s+\S", re.I)
 # General (non-sports) channels (29 Oct 2026): ONLY live sport events get a LIVE tag, always
 # "🔴 LIVE: ..."; everything else - live chat shows, news, reality TV, studio sport shows such as
@@ -5283,42 +5282,6 @@ def astro_matchday(records):
         print(f"  Astro {rec['id']}: {a} vs {b} -> {uk:%a %d %b %H:%M} UK")
 
 
-# Repeat airings flagged live (beIN AU, 29 Oct 2026): epgshare01's AU1 marks every airing of a match
-# live - "Bayern vs Dortmund" was live four times on beIN 2/3. On these channels only the first
-# airing of a match (same title and secondary title) stays live, plus any that overlap it (the same
-# game on two channels at once); airings that start after it has ended, within REPLAY_WINDOW (5 days),
-# are replays. If the real live airing was before the listing starts, the first one listed is still
-# taken as live.
-REPLAY_CHECK = ("AU.beINSPORTS",)
-REPLAY_WINDOW = timedelta(days=5)            # later than this after the first airing = a different match
-
-
-def drop_replay_live(records):
-    groups = {}
-    for rec in records:
-        if not rec.get("id", "").startswith(REPLAY_CHECK):
-            continue
-        for ev in rec["events"]:
-            if ev.get("live") and MATCH_TITLE_RE.search(ev.get("title") or ""):
-                key = ((ev.get("title") or "").strip().lower(), (ev.get("sub") or "").strip().lower())
-                groups.setdefault(key, []).append(ev)
-    dropped = 0
-    for key, evs in groups.items():
-        evs.sort(key=lambda e: e["start"])
-        first, until = None, None
-        for ev in evs:
-            stop = ev.get("stop") or ev["start"] + timedelta(hours=3)
-            if first is None or ev["start"] >= first + REPLAY_WINDOW:
-                first, until = ev["start"], stop       # a new match (e.g. a second leg a week later)
-            elif ev["start"] < until:
-                until = max(until, stop)               # same game on another channel at the same time
-            else:
-                ev["live"], ev["never_live"] = False, True
-                dropped += 1
-    if dropped:
-        print(f"Repeat airings no longer marked live (beIN AU): {dropped}")
-
-
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
@@ -5326,7 +5289,6 @@ def build_xmltv(records, suffix, minutes):
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     count, listed = 0, []
     collect_rugby_rounds(records)                  # rugby rounds named in other listings
-    drop_replay_live(records)                      # beIN AU: replays of a live match
     for rec in records:
         cid, name = f"{rec['id']}{suffix}", rec["name"]
         listed.append((cid, name))
