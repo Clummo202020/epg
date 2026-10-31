@@ -1,0 +1,49 @@
+name: Update Teams EPG
+
+on:
+  schedule:
+    - cron: "37 5 * * *"     # 05:37 UTC (06:37 UK summer time, 05:37 winter)
+    - cron: "37 17 * * *"    # 17:37 UTC (18:37 UK summer time, 17:37 winter)
+  workflow_dispatch:         # adds a "Run workflow" button on the Actions page
+
+permissions:
+  contents: write
+
+concurrency:
+  group: teams-epg         # never two of this workflow at once (the others can run alongside)
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Build the NFL, NBA, MLB and NHL team guide (London time)
+        run: python3 -u TEAMS_epg.py
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Keep this run's output aside, then put it on top of the LATEST repo each try.
+          # (A rebase can't merge the .gz file, so if the repo changed during the run the push could fail.)
+          mkdir -p /tmp/out
+          cp TEAMS_epg.xml.gz /tmp/out/
+          ok=""
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/out/TEAMS_epg.xml.gz .
+            git add TEAMS_epg.xml.gz
+            if git diff --cached --quiet; then echo "No changes"; ok=1; break; fi
+            git commit -m "Update Teams EPG"
+            if git push origin HEAD:main; then ok=1; break; fi
+            sleep 15
+          done
+          [ -n "$ok" ] || { echo "Push failed after 5 tries"; exit 1; }
