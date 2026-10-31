@@ -91,7 +91,7 @@ def offline_title(ev):
     """Title for the blocks of a finished or empty slot: the actual stream name, without a
     leading provider status word ("LIVE | Saint Peter's vs. Marist | ..." -> "Saint Peter's vs.
     Marist | ..."), so a finished slot doesn't look live in the guide (changed 28 Oct 2026)."""
-    name = (ev.get("name") or "").strip()
+    name = (ev.get("offline_name") or ev.get("name") or "").strip()
     head, sep, rest = name.partition("|")
     if sep and head.strip().lower() in STATUS_WORDS and rest.strip():
         name = rest.strip()
@@ -285,6 +285,27 @@ PPV_TZ = {"ET": "America/New_York", "EST": "America/New_York", "EDT": "America/N
 PPV_DEFAULT_TZ = "America/New_York"     # when the name gives no zone
 
 
+# How long a PPV Event is listed as LIVE (31 Oct 2026). The name's time is when the broadcast STARTS, and a
+# fight card runs far longer than the generic 3 h (Canelo v Mbilli: card from 17:00, still on the undercard at
+# 20:52, yet the guide said "finished" at 20:00). First match wins; err on the long side - a LIVE block that
+# runs on a little is better than "finished" while the stream is live.
+PPV_HOURS = [
+    (re.compile(r"(?i)press\s*conference|post[- ]?fight|weigh[- ]?in|face[- ]?off"), 2),
+    (re.compile(r"(?i)\bprelims?\b|\bearly\b"), 4),
+    (re.compile(r"(?i)\b(UFC|FN|MMA|PFL|Bellator|OKTAGON|Open\s*FC|KSW|ONE|Cage\s*Warriors|Fight\s*Night)\b"), 5),
+    (re.compile(r"(?i)\bvs?\.?\s"), 10),         # a boxing card: undercard, then the main event (Canelo v Mbilli:
+                                                  # broadcast from 17:00, main event expected ~01:00 UK)
+]
+PPV_DEFAULT_HOURS = 4                                # motorsport, anything else
+
+
+def ppv_hours(title):
+    for pattern, hours in PPV_HOURS:
+        if pattern.search(title):
+            return hours
+    return PPV_DEFAULT_HOURS
+
+
 def parse_ppv_event(name):
     """"PPV EVENT 01: Title (10.30 8:30 PM ET)" -> event, "PPV EVENT 07" -> empty slot, else None."""
     p = PPV_EVENT.match(name)
@@ -304,9 +325,14 @@ def parse_ppv_event(name):
         if local is None:
             return None
         title = p["title"].strip(" -|:")
-        return {"name": name, "slot_id": f"PPVEVENT{num}.us", "slot_name": f"PPV EVENT {num:02d}",
+        uk_start = local.astimezone(LONDON)
+        # 31 Oct 2026: finished blocks used the raw stream name, so they still showed the US time
+        # ("10.31 5:00 PM ET"). The name shown in the guide now carries the London time instead.
+        shown = f"PPV EVENT {num:02d}: {title} ({uk_start:%a} {uk_start.day} {uk_start:%b}, {uk_start:%H:%M})"
+        return {"name": name, "offline_name": shown,
+                "slot_id": f"PPVEVENT{num}.us", "slot_name": f"PPV EVENT {num:02d}",
                 "title": title, "extra": "", "comp": competition(title) or "PPV Event",
-                "start": local.astimezone(timezone.utc)}
+                "hours": ppv_hours(title), "start": local.astimezone(timezone.utc)}
     e = PPV_EMPTY.match(name)
     if e and _placeholder(e["rest"]):
         num = int(e["num"])
@@ -1077,6 +1103,166 @@ def _parse_name(name):
 PLAYLIST_SECRETS = ["PLAYLIST_URL", "PLAYLIST_URL_2"]
 
 
+# ---------------------------------------------------------------------------
+# Overrides file (31 Oct 2026): events_overrides.json, edited by hand in the repo, for the big events where the
+# stream name's time or the generic length is wrong (e.g. DAZN-only boxing cards that no other guide lists).
+#   [{"match": ["canelo", "mbilli"], "exclude": ["prelims"],
+#     "start": "2026-10-31 17:00", "end": "2026-11-01 03:00", "note": "Main event about 01:00"}]
+# All times are UK time. Every word in "match" must be in the stream name (capitals/accents ignored), none of
+# "exclude". "start" replaces the time from the name, "end" sets how long the LIVE block runs; give either or both.
+# An entry stops applying OVERRIDE_KEEP_HOURS after its end. A broken file or entry is reported and skipped -
+# the guide is then built from the stream names as usual.
+# ---------------------------------------------------------------------------
+OVERRIDES_FILE = "events_overrides.json"
+OVERRIDE_KEEP_HOURS = 24
+
+
+def _override_time(value):
+    text = str(value).strip().replace("T", " ")
+    return datetime.strptime(text, "%Y-%m-%d %H:%M").replace(tzinfo=LONDON).astimezone(timezone.utc)
+
+
+def load_overrides():
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), OVERRIDES_FILE)
+    if not os.path.exists(path):
+        return []
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, ValueError) as e:
+        print(f"WARNING: {OVERRIDES_FILE} could not be read ({e}) - ignored")
+        return []
+    if not isinstance(data, list):
+        print(f"WARNING: {OVERRIDES_FILE} must be a list of entries [ {{...}}, {{...}} ] - ignored")
+        return []
+    out = []
+    for i, e in enumerate(data, 1):
+        if not isinstance(e, dict):
+            continue
+        words = e.get("match")
+        words = [words] if isinstance(words, str) else words
+        if not isinstance(words, list) or not words or not all(isinstance(w, str) and _norm(w) for w in words):
+            print(f"WARNING: override #{i}: \"match\" must be a word or a list of words - skipped")
+            continue
+        excl = e.get("exclude") or []
+        excl = [excl] if isinstance(excl, str) else excl
+        try:
+            start = _override_time(e["start"]) if e.get("start") else None
+            end = _override_time(e["end"]) if e.get("end") else None
+        except (ValueError, TypeError):
+            print(f"WARNING: override #{i} ({' + '.join(words)}): times must look like \"2026-10-31 17:00\" - skipped")
+            continue
+        if start is None and end is None:
+            print(f"WARNING: override #{i} ({' + '.join(words)}): needs a \"start\" or an \"end\" - skipped")
+            continue
+        if start and end and end <= start:
+            print(f"WARNING: override #{i} ({' + '.join(words)}): \"end\" is not after \"start\" - skipped")
+            continue
+        out.append({"i": i, "label": " + ".join(words), "match": [_norm(w) for w in words],
+                    "exclude": [_norm(x) for x in excl if isinstance(x, str) and _norm(x)],
+                    "start": start, "end": end, "note": str(e.get("note") or "").strip()})
+    return out
+
+
+def apply_overrides(events, now):
+    """Changes the start / length of the parsed events that an override entry matches (first matching entry wins)."""
+    overrides = load_overrides()
+    if not overrides:
+        return
+    active = []
+    for o in overrides:
+        last = o["end"] or (o["start"] + timedelta(hours=12))
+        if now <= last + timedelta(hours=OVERRIDE_KEEP_HOURS):
+            active.append(o)
+    hits = {o["i"]: 0 for o in active}
+    for ev in events:
+        if not ev.get("title"):                              # empty slots stay empty
+            continue
+        text = _norm(ev.get("name"))
+        for o in active:
+            if all(w in text for w in o["match"]) and not any(x in text for x in o["exclude"]):
+                if ev.get("untimed") and not o["start"]:
+                    print(f"WARNING: override #{o['i']} ({o['label']}) matches a stream with no time in its name "
+                          f"but has no \"start\" - skipped")
+                    break
+                if o["start"]:
+                    ev["start"] = o["start"]
+                    ev.pop("untimed", None)
+                if o["end"]:
+                    ev["hours"] = max((o["end"] - ev["start"]).total_seconds() / 3600, 0.5)
+                if o["note"]:
+                    ev["info"] = (ev.get("info", "") + " " + o["note"]).strip()
+                hits[o["i"]] += 1
+                break
+    print(f"Overrides: {len(active)} active of {len(overrides)} entries, {sum(hits.values())} streams changed")
+    for o in active:
+        if not hits[o["i"]]:
+            print(f"WARNING: override #{o['i']} ({o['label']}) matched no stream - check the words against the stream name")
+
+
+# ---------------------------------------------------------------------------
+# DAZN schedule trial (31 Oct 2026): only LOOKS at DAZN's public schedule page and prints what it finds - it
+# changes nothing in the guide. Purpose: see whether the page carries real start times for DAZN-only events
+# (boxing cards). Set DAZN_TRIAL=0 to switch it off. Remove once we know.
+# ---------------------------------------------------------------------------
+DAZN_SCHEDULE = "https://www.dazn.com/en-GB/schedule"
+DAZN_TRIAL_WORDS = ("mbilli", "canelo", "oktagon")
+_ISO_TIME = re.compile(r"20\d\d-\d\d-\d\d[T ]\d\d:\d\d(?::\d\d)?(?:\.\d+)?(?:Z|[+-]\d\d:?\d\d)?")
+
+
+def _dazn_get(url):
+    req = urllib.request.Request(url, headers={
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) "
+                      "Version/17.0 Safari/605.1.15", "Accept-Language": "en-GB,en;q=0.9"})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        return r.read().decode("utf-8", errors="replace")
+
+
+def _dazn_report(label, html):
+    times = _ISO_TIME.findall(html)
+    keys = sorted(set(re.findall(r'"([A-Za-z]*(?:start|Start|kickoff|Kickoff|scheduled|Scheduled)[A-Za-z]*)"\s*:', html)))
+    print(f"DAZN trial: {label}: {len(html):,} bytes, {len(times)} timestamps"
+          f"{' e.g. ' + ', '.join(times[:3]) if times else ''}; time-like keys: {keys[:8] or 'none'}")
+    hosts = sorted(set(re.findall(r"https?://[a-z0-9.-]*dazn[a-z0-9.-]*\.com/[A-Za-z0-9_./-]{0,60}", html)))
+    api = [h for h in hosts if re.search(r"epg|api|schedule|metadata", h)]
+    if api:
+        print(f"DAZN trial: {label}: data addresses in the page: {api[:6]}")
+    return times
+
+
+def dazn_trial():
+    if os.environ.get("DAZN_TRIAL", "1") == "0":
+        return
+    try:
+        html = _dazn_get(DAZN_SCHEDULE)
+    except Exception as e:                                   # a trial must never break the guide
+        print(f"DAZN trial: schedule page failed ({type(e).__name__}: {e})")
+        return
+    _dazn_report("schedule page", html)
+    low = html.lower()
+    for word in DAZN_TRIAL_WORDS:
+        i = low.find(word)
+        if i < 0:
+            continue
+        around = re.sub(r"\s+", " ", html[max(0, i - 200):i + 200])
+        print(f"DAZN trial: around '{word}' in the schedule page: ...{around}...")
+        links = re.findall(r'href="(/en-GB/home/[^"]+)"', html[:i + 80])
+        if links:
+            url = "https://www.dazn.com" + links[-1]
+            try:
+                page = _dazn_get(url)
+                times = _dazn_report("event page", page)
+                if times:
+                    j = page.find(times[0])
+                    print("DAZN trial: first timestamp in the event page: ..."
+                          + re.sub(r"\s+", " ", page[max(0, j - 150):j + 100]) + "...")
+            except Exception as e:
+                print(f"DAZN trial: event page failed ({type(e).__name__}: {e})")
+        break
+    else:
+        print("DAZN trial: none of " + ", ".join(DAZN_TRIAL_WORDS) + " found in the schedule page text")
+
+
 def read_playlist(args):
     """[(label, text)] for each playlist read."""
     if args.m3u:
@@ -1256,7 +1442,9 @@ def main():
         names.extend(new)
         print(f"{label}: {len(mine)} streams, {len(new)} names not already read")
     events = [e for e in (parse_name(n) for n in names) if e]
+    apply_overrides(events, now)
     print(f"{len(names)} streams in the playlist(s), {len(events)} with an event time")
+    dazn_trial()
     tv, chans, progs = build(events, now)
     save_seen()
     ET.indent(tv, space="  ")
