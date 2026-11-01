@@ -186,14 +186,6 @@
     <display-name lang="en">Stirling Albion Scottish Challenge Cup</display-name>
     <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/417.png" />
   </channel>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Aberdeen.ScotPrem">
-    <title lang="en">Aberdeen v Hibernian (Sat 07 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Aberdeen v Hibernian. Pittodrie Stadium, Aberdeen. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Aberdeen.ScotPrem">
     <title lang="en">Aberdeen v Hibernian (Sat 07 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
@@ -827,14 +819,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Alloa.Athletic.ChallengeCup">
-    <title lang="en">Clydebank v Alloa Athletic (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Clydebank v Alloa Athletic. Holm Park, Clydebank. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Alloa.Athletic.ChallengeCup">
     <title lang="en">Clydebank v Alloa Athletic (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -1091,14 +1075,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Annan.Athletic.ChallengeCup">
-    <title lang="en">Annan Athletic v Ayr Utd (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Annan Athletic v Ayr Utd. Galabank, Annan. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Annan.Athletic.ChallengeCup">
     <title lang="en">Annan Athletic v Ayr Utd (Tue 03 Nov, 19:45)</title>
@@ -1357,14 +1333,6 @@
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Arbroath.ChallengeCup">
-    <title lang="en">Arbroath v Queen of the South (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Arbroath v Queen of the South. Gayfield Park, Arbroath. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Arbroath.ChallengeCup">
     <title lang="en">Arbroath v Queen of the South (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -1621,14 +1589,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Arbroath.ScotChamp">
-    <title lang="en">Arbroath v Ayr Utd (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Arbroath v Ayr Utd. Gayfield Park, Arbroath. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Arbroath.ScotChamp">
     <title lang="en">Arbroath v Ayr Utd (Sat 07 Nov, 15:00)</title>
@@ -2255,14 +2215,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Ayr.Utd.ChallengeCup">
-    <title lang="en">Annan Athletic v Ayr Utd (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Annan Athletic v Ayr Utd. Galabank, Annan. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Ayr.Utd.ChallengeCup">
     <title lang="en">Annan Athletic v Ayr Utd (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -2519,14 +2471,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Ayr.Utd.ScotChamp">
-    <title lang="en">Arbroath v Ayr Utd (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Arbroath v Ayr Utd. Gayfield Park, Arbroath. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Ayr.Utd.ScotChamp">
     <title lang="en">Arbroath v Ayr Utd (Sat 07 Nov, 15:00)</title>
@@ -3152,14 +3096,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Celtic.ScotPrem">
-    <title lang="en">Falkirk v Celtic (Sun 01 Nov, 13:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Celtic. Falkirk Stadium, Falkirk. Kick-off: 13:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Celtic.ScotPrem">
     <title lang="en">Falkirk v Celtic (Sun 01 Nov, 13:00)</title>
@@ -3891,14 +3827,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Cove.Rangers.ChallengeCup">
-    <title lang="en">Formartine Utd v Cove Rangers (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Formartine Utd v Cove Rangers. North Lodge Park, Formartine. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Cove.Rangers.ChallengeCup">
     <title lang="en">Formartine Utd v Cove Rangers (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -4155,14 +4083,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Dundee.ScotPrem">
-    <title lang="en">St Johnstone v Dundee (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Johnstone v Dundee. McDiarmid Park, Perth. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Dundee.ScotPrem">
     <title lang="en">St Johnstone v Dundee (Sat 07 Nov, 15:00)</title>
@@ -4789,14 +4709,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Dundee.Utd.ScotPrem">
-    <title lang="en">Dundee Utd v Motherwell (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Motherwell. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Dundee.Utd.ScotPrem">
     <title lang="en">Dundee Utd v Motherwell (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
@@ -5422,14 +5334,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Dunfermline.Athletic.ChallengeCup">
-    <title lang="en">Bonnyrigg Rose v Dunfermline Athletic (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Bonnyrigg Rose v Dunfermline Athletic. New Dundas Park, Bonnyrigg. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Dunfermline.Athletic.ChallengeCup">
     <title lang="en">Bonnyrigg Rose v Dunfermline Athletic (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -5686,14 +5590,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Dunfermline.Athletic.ScotChamp">
-    <title lang="en">Raith Rovers v Dunfermline Athletic (Fri 06 Nov, 19:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Dunfermline Athletic. Stark's Park, Fife. Kick-off: 19:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Dunfermline.Athletic.ScotChamp">
     <title lang="en">Raith Rovers v Dunfermline Athletic (Fri 06 Nov, 19:30)</title>
@@ -6240,14 +6136,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="East.Kilbride.ChallengeCup">
-    <title lang="en">East Kilbride v Stirling Albion (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: East Kilbride v Stirling Albion. K-Park Training Academy, East Kilbride. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="East.Kilbride.ChallengeCup">
     <title lang="en">East Kilbride v Stirling Albion (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -6504,14 +6392,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Edinburgh.City.ChallengeCup">
-    <title lang="en">Edinburgh City v Partick Thistle (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Partick Thistle. Meadowbank Stadium, Edinburgh. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Edinburgh.City.ChallengeCup">
     <title lang="en">Edinburgh City v Partick Thistle (Tue 03 Nov, 19:45)</title>
@@ -6770,14 +6650,6 @@
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Elgin.City.ChallengeCup">
-    <title lang="en">Airdrieonians v Elgin City (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Airdrieonians v Elgin City. Excelsior Stadium, Airdrie. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Elgin.City.ChallengeCup">
     <title lang="en">Airdrieonians v Elgin City (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -7034,14 +6906,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Falkirk.ScotPrem">
-    <title lang="en">Falkirk v Celtic (Sun 01 Nov, 13:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Falkirk v Celtic. Falkirk Stadium, Falkirk. Kick-off: 13:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Falkirk.ScotPrem">
     <title lang="en">Falkirk v Celtic (Sun 01 Nov, 13:00)</title>
@@ -7773,14 +7637,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Greenock.Morton.ChallengeCup">
-    <title lang="en">Greenock Morton v Kelty Hearts (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Kelty Hearts. Cappielow Park, Greenock. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Greenock.Morton.ChallengeCup">
     <title lang="en">Greenock Morton v Kelty Hearts (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -8037,14 +7893,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Greenock.Morton.ScotChamp">
-    <title lang="en">Greenock Morton v Stenhousemuir (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Stenhousemuir. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Greenock.Morton.ScotChamp">
     <title lang="en">Greenock Morton v Stenhousemuir (Sat 07 Nov, 15:00)</title>
@@ -8671,14 +8519,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Hamilton.Academical.ChallengeCup">
-    <title lang="en">Hamilton Academical v Raith Rovers (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Hamilton Academical v Raith Rovers. New Douglas Park, Hamilton. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Hamilton.Academical.ChallengeCup">
     <title lang="en">Hamilton Academical v Raith Rovers (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -8936,14 +8776,6 @@
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Hearts.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Hearts.ScotLgeCup">
     <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
@@ -8992,14 +8824,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Hearts.ScotPrem">
-    <title lang="en">Hearts v Falkirk (Sun 08 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Hearts v Falkirk. Tynecastle Park, Edinburgh. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Hearts.ScotPrem">
     <title lang="en">Hearts v Falkirk (Sun 08 Nov, 15:00)</title>
@@ -9722,14 +9546,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Hibernian.ScotLgeCup">
-    <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
-    <desc lang="en">Next Match: Hearts v Hibernian. Hampden Park, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Hibernian.ScotLgeCup">
     <title lang="en">Hearts v Hibernian (Sun 01 Nov, 15:00)</title>
     <sub-title lang="en">⏭ Next Match: Scottish League Cup</sub-title>
@@ -9778,14 +9594,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Hibernian.ScotPrem">
-    <title lang="en">Aberdeen v Hibernian (Sat 07 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Aberdeen v Hibernian. Pittodrie Stadium, Aberdeen. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Hibernian.ScotPrem">
     <title lang="en">Aberdeen v Hibernian (Sat 07 Nov, 17:45)</title>
@@ -10420,14 +10228,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Inverness.CT.ChallengeCup">
-    <title lang="en">Inverness CT v Montrose (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Inverness CT v Montrose. Caledonian Stadium, Inverness. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Inverness.CT.ChallengeCup">
     <title lang="en">Inverness CT v Montrose (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -10684,14 +10484,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Inverness.CT.ScotChamp">
-    <title lang="en">Inverness CT v Livingston (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Inverness CT v Livingston. Caledonian Stadium, Inverness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Inverness.CT.ScotChamp">
     <title lang="en">Inverness CT v Livingston (Sat 07 Nov, 15:00)</title>
@@ -11318,14 +11110,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Kelty.Hearts.ChallengeCup">
-    <title lang="en">Greenock Morton v Kelty Hearts (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Kelty Hearts. Cappielow Park, Greenock. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Kelty.Hearts.ChallengeCup">
     <title lang="en">Greenock Morton v Kelty Hearts (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -11582,14 +11366,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Kilmarnock.ScotPrem">
-    <title lang="en">Celtic v Kilmarnock (Sun 08 Nov, 16:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Celtic v Kilmarnock. Celtic Park, Glasgow. Kick-off: 16:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Kilmarnock.ScotPrem">
     <title lang="en">Celtic v Kilmarnock (Sun 08 Nov, 16:00)</title>
@@ -12312,14 +12088,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Livingston.ChallengeCup">
-    <title lang="en">Spartans FC v Livingston (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Spartans FC v Livingston. Ainslie Park, Edinburgh. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Livingston.ChallengeCup">
     <title lang="en">Spartans FC v Livingston (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -12576,14 +12344,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Livingston.ScotChamp">
-    <title lang="en">Inverness CT v Livingston (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Inverness CT v Livingston. Caledonian Stadium, Inverness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Livingston.ScotChamp">
     <title lang="en">Inverness CT v Livingston (Sat 07 Nov, 15:00)</title>
@@ -13210,14 +12970,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Montrose.ChallengeCup">
-    <title lang="en">Inverness CT v Montrose (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Inverness CT v Montrose. Caledonian Stadium, Inverness. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Montrose.ChallengeCup">
     <title lang="en">Inverness CT v Montrose (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -13474,14 +13226,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Motherwell.ScotPrem">
-    <title lang="en">Dundee Utd v Motherwell (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: Dundee Utd v Motherwell. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Motherwell.ScotPrem">
     <title lang="en">Dundee Utd v Motherwell (Sat 07 Nov, 15:00)</title>
@@ -14108,14 +13852,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Partick.Thistle.ChallengeCup">
-    <title lang="en">Edinburgh City v Partick Thistle (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Edinburgh City v Partick Thistle. Meadowbank Stadium, Edinburgh. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Partick.Thistle.ChallengeCup">
     <title lang="en">Edinburgh City v Partick Thistle (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -14372,14 +14108,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Partick.Thistle.ScotChamp">
-    <title lang="en">Queen's Park v Partick Thistle (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Partick Thistle. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Partick.Thistle.ScotChamp">
     <title lang="en">Queen's Park v Partick Thistle (Sat 07 Nov, 15:00)</title>
@@ -15006,14 +14734,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Peterhead.ChallengeCup">
-    <title lang="en">St Mirren B v Peterhead (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: St Mirren B v Peterhead. The SMISA Stadium, Paisley. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Peterhead.ChallengeCup">
     <title lang="en">St Mirren B v Peterhead (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -15270,14 +14990,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Queen.of.the.South.ChallengeCup">
-    <title lang="en">Arbroath v Queen of the South (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Arbroath v Queen of the South. Gayfield Park, Arbroath. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Queen.of.the.South.ChallengeCup">
     <title lang="en">Arbroath v Queen of the South (Tue 03 Nov, 19:45)</title>
@@ -15536,14 +15248,6 @@
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Queen.s.Park.ChallengeCup">
-    <title lang="en">Aberdeen B v Queen's Park (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Aberdeen B v Queen's Park. Balmoral Stadium, Aberdeen. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Queen.s.Park.ChallengeCup">
     <title lang="en">Aberdeen B v Queen's Park (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -15800,14 +15504,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Queen.s.Park.ScotChamp">
-    <title lang="en">Queen's Park v Partick Thistle (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Queen's Park v Partick Thistle. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Queen.s.Park.ScotChamp">
     <title lang="en">Queen's Park v Partick Thistle (Sat 07 Nov, 15:00)</title>
@@ -16434,14 +16130,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Raith.Rovers.ChallengeCup">
-    <title lang="en">Hamilton Academical v Raith Rovers (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Hamilton Academical v Raith Rovers. New Douglas Park, Hamilton. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Raith.Rovers.ChallengeCup">
     <title lang="en">Hamilton Academical v Raith Rovers (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -16698,14 +16386,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Raith.Rovers.ScotChamp">
-    <title lang="en">Raith Rovers v Dunfermline Athletic (Fri 06 Nov, 19:30)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Raith Rovers v Dunfermline Athletic. Stark's Park, Fife. Kick-off: 19:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Raith.Rovers.ScotChamp">
     <title lang="en">Raith Rovers v Dunfermline Athletic (Fri 06 Nov, 19:30)</title>
@@ -17251,14 +16931,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Rangers.ScotPrem">
-    <title lang="en">St Mirren v Rangers (Sat 07 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Rangers. The SMISA Stadium, Paisley. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Rangers.ScotPrem">
     <title lang="en">St Mirren v Rangers (Sat 07 Nov, 20:00)</title>
@@ -17901,14 +17573,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Spartans.FC.ChallengeCup">
-    <title lang="en">Spartans FC v Livingston (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Spartans FC v Livingston. Ainslie Park, Edinburgh. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Spartans.FC.ChallengeCup">
     <title lang="en">Spartans FC v Livingston (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -18165,14 +17829,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="St.Johnstone.ScotPrem">
-    <title lang="en">St Johnstone v Dundee (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Johnstone v Dundee. McDiarmid Park, Perth. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="St.Johnstone.ScotPrem">
     <title lang="en">St Johnstone v Dundee (Sat 07 Nov, 15:00)</title>
@@ -18798,14 +18454,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="St.Mirren.ScotPrem">
-    <title lang="en">St Mirren v Rangers (Sat 07 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Next Match: St Mirren v Rangers. The SMISA Stadium, Paisley. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="St.Mirren.ScotPrem">
     <title lang="en">St Mirren v Rangers (Sat 07 Nov, 20:00)</title>
@@ -19448,14 +19096,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Stenhousemuir.ChallengeCup">
-    <title lang="en">Stenhousemuir v Berwick Rangers (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: Stenhousemuir v Berwick Rangers. Ochilview Park, Stenhousemuir. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Stenhousemuir.ChallengeCup">
     <title lang="en">Stenhousemuir v Berwick Rangers (Tue 03 Nov, 19:45)</title>
     <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
@@ -19712,14 +19352,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Stenhousemuir.ScotChamp">
-    <title lang="en">Greenock Morton v Stenhousemuir (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Next Match: Greenock Morton v Stenhousemuir. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Stenhousemuir.ScotChamp">
     <title lang="en">Greenock Morton v Stenhousemuir (Sat 07 Nov, 15:00)</title>
@@ -20345,14 +19977,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101040000 +0000" stop="20261101060000 +0000" channel="Stirling.Albion.ChallengeCup">
-    <title lang="en">East Kilbride v Stirling Albion (Tue 03 Nov, 19:45)</title>
-    <sub-title lang="en">⏭ Next Match: Scottish Challenge Cup</sub-title>
-    <desc lang="en">Next Match: East Kilbride v Stirling Albion. K-Park Training Academy, East Kilbride. Kick-off: 19:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
   </programme>
   <programme start="20261101060000 +0000" stop="20261101080000 +0000" channel="Stirling.Albion.ChallengeCup">
     <title lang="en">East Kilbride v Stirling Albion (Tue 03 Nov, 19:45)</title>
