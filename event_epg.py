@@ -196,6 +196,15 @@ PIECE_HOURS = 2                # programmes are written in pieces of at most thi
                                # about the size it was - PlaylistLabs may fail on very large files)
 ENDED_FILLER_HOURS = HORIZON_HOURS   # a finished/empty slot shows "Channel is offline" for this
                                # long (was 2 h; raised with the horizon so these don't go blank)
+# Slots that get a different match within a day (Peacock, Paramount+): their finished/empty blocks
+# only run this far ahead (1 Nov 2026), so a slot that switches to a new event isn't stuck behind
+# up to 24 h of old "finished" blocks PlaylistLabs already holds (Peacock 003 showed Bournemouth v.
+# Leeds until 04:00 the next day for Liverpool v. Arsenal). Trade-off: these rows go blank this long
+# after the last refresh. Slots are matched by id prefix, like REAL_START_GROUPS.
+SHORT_ENDED_GROUPS = ("paramount", "peacock")
+SHORT_ENDED_HOURS = 4
+def ended_filler_hours(slot_id):
+    return SHORT_ENDED_HOURS if slot_id.lower().startswith(SHORT_ENDED_GROUPS) else ENDED_FILLER_HOURS
 # Name sections that are labels, not event information ("8K EXCLUSIVE", "4K", "HD" ...)
 JUNK_RE = re.compile(r"(?i)\s*((8K|4K|UHD|FHD|HD|SD)\s*)?(EXCLUSIVE|ONLY)?\s*|\s*(8K|4K|UHD|FHD|HD|SD)\s*")
 # "Wed 21 Oct 19:00 EDT (US)" - date and time in one field, no year
@@ -1334,8 +1343,9 @@ def build(events, now):
             # Kept to ENDED_FILLER_HOURS, as PlaylistLabs only adds programmes after the last
             # one it holds - the slot's next event must be able to follow on.
             t = end
-            while t < end + timedelta(hours=ENDED_FILLER_HOURS):
-                b = min(t + timedelta(hours=BLOCK_HOURS), end + timedelta(hours=ENDED_FILLER_HOURS))
+            fill = timedelta(hours=ended_filler_hours(sid))
+            while t < end + fill:
+                b = min(t + timedelta(hours=BLOCK_HOURS), end + fill)
                 add_programme(tv, sid, t, b, offline_title(ev), None, FINISHED_DESC)
                 count += 1
                 t = b
@@ -1356,7 +1366,7 @@ def build(events, now):
         # a finished event says so; an empty slot ("UEFA | 08 -", no title) just says offline
         desc = FINISHED_DESC if ended[sid]["title"] else OFFLINE_DESC
         t = t0
-        while t < now + timedelta(hours=ENDED_FILLER_HOURS):
+        while t < now + timedelta(hours=ended_filler_hours(sid)):
             b = t + timedelta(hours=BLOCK_HOURS)
             add_programme(tv, sid, t, b, offline_title(ended[sid]), None, desc)
             count += 1
