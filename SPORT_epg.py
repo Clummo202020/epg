@@ -200,7 +200,7 @@ EPGSHARE01 - ready-made XMLTV files from https://epgshare01.online/epgshare01/ (
   Each channel has a fixed ID and a list of the file's own IDs for it, best first; the one
   with most programmes is used. Turkish, Latvian and Indonesian titles are translated.
   Channels: TR.beINSPORTS1 ... TR.TRTSpor, LV.GO3Sport1 ... LV.SetantaSports, HK.beINSPORTS1,
-  HK.NowSports1 ..., ID.beINSPORTS1, ID.SPOTV ..., MENA.beINSPORTS1 ..., MENA.Alkass1 ...
+  HK.NowSports1 ..., ID.beINSPORTS1, ID.SPOTV ..., MENA.beINSPORTS1 ...
 
 SWITZERLAND - Swisscom's public blue TV guide (JSON), one request per channel and day:
     https://services.sg101.prd.sctv.ch/catalog/tv/channels/list/(ids=483;start=YYYYMMDD0000;end=...;level=normal)
@@ -3826,7 +3826,6 @@ EPGSHARE = {   # group -> file, id prefix, place, time zone, English?, {id part:
                  "beINSPORTSXTRA9": ("beIN SPORTS XTRA 9 MENA", ["beIN_SPORTS_XTRA_Digital_09_Bein.com_EN.bein"]),
                  "beINSPORTSNews": ("beIN SPORTS News MENA", ["NEWS_DIGITAL_Mono_EN.bein", "NEWS_DIGITAL_Mono_AR.bein"]),
                  "beINSPORTSFTA": ("beIN SPORTS FTA MENA", ["bein_SPORTS_FTA_DIGITAL_Mono_EN.bein"]),
-                 **{f"Alkass{n}": (f"Alkass {n}", [f"Alkass_{n}_EN.bein", f"Alkass_{n}_AR.bein"]) for n in range(1, 9)},
              }},
 }
 # Backups: channels your own sources list but send nothing for. Same IDs as those sources;
@@ -5533,7 +5532,7 @@ def write_xml(tv, path):
 
 
 # Placeholders for empty channels (31 Oct 2026): a channel the script knows (epgshare01 "main" channels such as
-# Alkass 1-8, beIN SPORTS MAX 1/2 TR, Champions TV 3) but whose source lists nothing in these days used to be left
+# beIN SPORTS MAX 1/2 TR, Champions TV 3) but whose source lists nothing in these days used to be left
 # out of the guide, so its rows showed no information at all. It now gets 2-hour blocks naming the channel for
 # EMPTY_FILLER_HOURS (24 h, like the events guide: PlaylistLabs keeps what it loads, so a long placeholder would hide
 # real listings that appear later). Real listings replace it on the next run; a channel that has programmes this run
@@ -5576,6 +5575,8 @@ CARRY_OVER = True
 # Channels removed on purpose are never carried over (31 Oct 2026: beIN AU - the streams are unreliable - came
 # back from the previous guide for a week after its sources were removed).
 CARRY_SKIP = ("AU.beINSPORTS",
+              # dropped 1 Nov 2026 (user): Alkass 1-8 - epgshare's BEIN1 data ran out (ended 31 Oct), AE1 looked like filler
+              "MENA.Alkass",
               # dropped 31 Oct 2026 (user): sources removed/never matched, only old listings were being carried
               "DK.ViasatSportUltra", "SE.ATGLive", "HK.NowGolf3", "HK.PremierSports")
 
