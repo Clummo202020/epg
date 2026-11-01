@@ -3897,7 +3897,7 @@
     <display-name lang="en">US (Paramount 100)</display-name>
   </channel>
   <channel id="Peacock002.us">
-    <display-name lang="en">US (Peacock 002) | Men`s Rugby Pool Play (2026-11-01 08:10:00)</display-name>
+    <display-name lang="en">US (Peacock 002) | Man City v. Brighton (2026-10-31 10:50:00)</display-name>
     <display-name lang="en">US (Peacock 002)</display-name>
   </channel>
   <channel id="Peacock003.us">
@@ -3973,7 +3973,7 @@
     <display-name lang="en">US (Peacock 020)</display-name>
   </channel>
   <channel id="Peacock021.us">
-    <display-name lang="en">US (Peacock 021) | Men`s Rugby Pool Play (2026-11-01 08:10:00)</display-name>
+    <display-name lang="en">US (Peacock 021) | Trampoline World Champs: Day 2 (2026-11-07 01:00:00)</display-name>
     <display-name lang="en">US (Peacock 021)</display-name>
   </channel>
   <channel id="Peacock022.us">
@@ -7151,6 +7151,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102182500 +0000" stop="20261102202500 +0000" channel="AppleMLS022.us">
+    <title lang="en">(Apple) (MLS) 022 | Nashville vs. New_York (2026-11-01 16:25:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="AppleMLS023.us">
     <title lang="en">Nashville vs. New_York (Spanish) (Sun 1 Nov, 21:25)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -7218,6 +7223,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102162500 +0000" stop="20261102182500 +0000" channel="AppleMLS023.us">
+    <title lang="en">(Apple) (MLS) 023 | Nashville vs. New_York (Spanish) (2026-11-01 16:25:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102182500 +0000" stop="20261102202500 +0000" channel="AppleMLS023.us">
     <title lang="en">(Apple) (MLS) 023 | Nashville vs. New_York (Spanish) (2026-11-01 16:25:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -7293,6 +7303,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102182500 +0000" stop="20261102202500 +0000" channel="AppleMLS024.us">
+    <title lang="en">(Apple) (MLS) 024 | Atlanta vs. Toronto (2026-11-01 16:25:10)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="AppleMLS025.us">
     <title lang="en">Atlanta vs. Toronto (Spanish) (Sun 1 Nov, 21:25)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -7360,6 +7375,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102162500 +0000" stop="20261102182500 +0000" channel="AppleMLS025.us">
+    <title lang="en">(Apple) (MLS) 025 | Atlanta vs. Toronto (Spanish) (2026-11-01 16:25:15)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102182500 +0000" stop="20261102202500 +0000" channel="AppleMLS025.us">
     <title lang="en">(Apple) (MLS) 025 | Atlanta vs. Toronto (Spanish) (2026-11-01 16:25:15)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -7436,6 +7456,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102182500 +0000" stop="20261102202500 +0000" channel="AppleMLS026.us">
+    <title lang="en">(Apple) (MLS) 026 | New England vs. Miami (2026-11-01 18:25:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="AppleMLS027.us">
     <title lang="en">New England vs. Miami (Spanish) (Sun 1 Nov, 23:25)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -7504,6 +7529,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102162500 +0000" stop="20261102182500 +0000" channel="AppleMLS027.us">
+    <title lang="en">(Apple) (MLS) 027 | New England vs. Miami (Spanish) (2026-11-01 18:25:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102182500 +0000" stop="20261102202500 +0000" channel="AppleMLS027.us">
     <title lang="en">(Apple) (MLS) 027 | New England vs. Miami (Spanish) (2026-11-01 18:25:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -7581,6 +7611,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102182500 +0000" stop="20261102202500 +0000" channel="AppleMLS028.us">
+    <title lang="en">(Apple) (MLS) 028 | LAFC vs. Minnesota (2026-11-01 20:25:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="AppleMLS029.us">
     <title lang="en">LAFC vs. Minnesota (Spanish) (Mon 2 Nov, 01:25)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -7650,6 +7685,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102162500 +0000" stop="20261102182500 +0000" channel="AppleMLS029.us">
+    <title lang="en">(Apple) (MLS) 029 | LAFC vs. Minnesota (Spanish) (2026-11-01 20:25:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102182500 +0000" stop="20261102202500 +0000" channel="AppleMLS029.us">
     <title lang="en">(Apple) (MLS) 029 | LAFC vs. Minnesota (Spanish) (2026-11-01 20:25:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -7883,6 +7923,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102161000 +0000" stop="20261102181000 +0000" channel="AppleMLS032.us">
+    <title lang="en">(Apple) (MLS) 032 | MLS Wrap_Up⁩ (2026-11-02 00:10:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102181000 +0000" stop="20261102201000 +0000" channel="AppleMLS032.us">
     <title lang="en">(Apple) (MLS) 032 | MLS Wrap_Up⁩ (2026-11-02 00:10:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -10376,6 +10421,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="CASOCCERPPV156.ca">
+    <title lang="en">F1 Grand Prix Sunday-Mexico City Grand Prix | all | 01-11-2026 | 19:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 156</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="CASOCCERPPV157.ca">
     <title lang="en">🔴 LIVE: Jets vs. Hurricanes</title>
     <sub-title lang="en">NHL</sub-title>
@@ -10804,6 +10854,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102181200 +0000" stop="20261102201200 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="CASOCCERPPV88.ca">
     <title lang="en">Purdue vs. Penn State (Sun 1 Nov, 21:12)</title>
     <sub-title lang="en">⏭ Coming up Sun 1 Nov</sub-title>
@@ -10869,6 +10924,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102161200 +0000" stop="20261102181200 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102181200 +0000" stop="20261102201200 +0000" channel="CASOCCERPPV88.ca">
     <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -10942,6 +11002,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102181500 +0000" stop="20261102201500 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="CASOCCERPPV90.ca">
     <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions (Sun 1 Nov, 21:30)</title>
     <sub-title lang="en">⏭ Coming up Sun 1 Nov</sub-title>
@@ -11007,6 +11072,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="CASOCCERPPV90.ca">
     <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -15073,6 +15143,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV63.us">
+    <title lang="en">AF Elbasani vs. Laçi | Superliga - Albania | 2026-11-01 | 17:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 63</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101160000 +0000" stop="20261101180000 +0000" channel="DAZNPPV64.gb">
     <title lang="en">🔴 LIVE: CODEA vs. Liberia</title>
     <sub-title lang="en">Segunda División Femenina de Costa Rica - Costa Rica</sub-title>
@@ -15212,6 +15287,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="DAZNPPV64.us">
+    <title lang="en">KF Skënderbeu vs. KF Vllaznia | Superliga - Albania | 2026-11-01 | 17:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 64</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV64.us">
     <title lang="en">KF Skënderbeu vs. KF Vllaznia | Superliga - Albania | 2026-11-01 | 17:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 64</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -15795,6 +15875,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV68.us">
+    <title lang="en">Miranda vs. Barquisimeto | Liga FUTVE 2 - Venezuela | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 68</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101160000 +0000" stop="20261101180000 +0000" channel="DAZNPPV69.gb">
     <title lang="en">🔴 LIVE: MLTT - Week 4: Carolina Gold Rush vs. Chicago Wind</title>
     <sub-title lang="en">Major League Table Tennis</sub-title>
@@ -15935,6 +16020,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="DAZNPPV69.us">
+    <title lang="en">Yaracuyanos vs. Aragua | Liga FUTVE 2 - Venezuela | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 69</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV69.us">
     <title lang="en">Yaracuyanos vs. Aragua | Liga FUTVE 2 - Venezuela | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 69</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -16083,6 +16173,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV70.us">
+    <title lang="en">Zamora B vs. Deportivo Lara | Liga FUTVE 2 - Venezuela | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 70</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101160000 +0000" stop="20261101180000 +0000" channel="DAZNPPV71.gb">
     <title lang="en">🔴 LIVE: Golden Dream FC vs. Freeport FC</title>
     <sub-title lang="en">LFA First Division - Liberia</sub-title>
@@ -16223,6 +16318,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="DAZNPPV71.us">
+    <title lang="en">Inter Wanica vs. Broki | Major League - Suriname | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 71</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV71.us">
     <title lang="en">Inter Wanica vs. Broki | Major League - Suriname | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 71</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -16371,6 +16471,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV72.us">
+    <title lang="en">Ureña vs. Monagas B | Liga FUTVE 2 - Venezuela | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101161500 +0000" stop="20261101181500 +0000" channel="DAZNPPV73.gb">
     <title lang="en">🔴 LIVE: Bhantal FC vs. Bo Rangers</title>
     <sub-title lang="en">Premier League - Sierra Leone</sub-title>
@@ -16511,6 +16616,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="DAZNPPV73.us">
+    <title lang="en">MLTT - Week 4: Atlanta Blazers vs. Texas Smash | Major League Table Tennis | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV73.us">
     <title lang="en">MLTT - Week 4: Atlanta Blazers vs. Texas Smash | Major League Table Tennis | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 73</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -17167,6 +17277,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV78.gb">
+    <title lang="en">AF Elbasani vs. Laçi | Superliga - Albania | 2026-11-01 | 17:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 78</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="DAZNPPV78.us">
     <title lang="en">Scholars International SC vs. East End United (Sun 1 Nov, 22:00)</title>
     <sub-title lang="en">⏭ Coming up: Premier League - Cayman Islands</sub-title>
@@ -17303,6 +17418,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="DAZNPPV79.gb">
+    <title lang="en">KF Skënderbeu vs. KF Vllaznia | Superliga - Albania | 2026-11-01 | 17:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 79</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV79.gb">
     <title lang="en">KF Skënderbeu vs. KF Vllaznia | Superliga - Albania | 2026-11-01 | 17:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 79</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -17665,6 +17785,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV81.us">
+    <title lang="en">Conaree FC vs. Cayon Rockets | Premier League - St. Kitts and Nevis | 2026-11-01 | 23:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 81</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="DAZNPPV82.gb">
     <title lang="en">🔴 LIVE: Dandy Town Hornets vs. Paget Lions FC</title>
     <sub-title lang="en">Premier League - Bermuda</sub-title>
@@ -17948,6 +18073,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV85.gb">
+    <title lang="en">Miranda vs. Barquisimeto | Segunda División - Venezuela | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 85</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101193000 +0000" channel="DAZNPPV86.gb">
     <title lang="en">Yaracuyanos vs. Aragua (Sun 1 Nov, 19:30)</title>
     <sub-title lang="en">⏭ Coming up: Segunda División - Venezuela</sub-title>
@@ -18014,6 +18144,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="DAZNPPV86.gb">
+    <title lang="en">Yaracuyanos vs. Aragua | Segunda División - Venezuela | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 86</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV86.gb">
     <title lang="en">Yaracuyanos vs. Aragua | Segunda División - Venezuela | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 86</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -18088,6 +18223,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV87.gb">
+    <title lang="en">Zamora B vs. Deportivo Lara | Segunda División - Venezuela | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101193000 +0000" channel="DAZNPPV88.gb">
     <title lang="en">Inter Wanica vs. Broki (Sun 1 Nov, 19:30)</title>
     <sub-title lang="en">⏭ Coming up: Major League - Suriname</sub-title>
@@ -18154,6 +18294,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="DAZNPPV88.gb">
+    <title lang="en">Inter Wanica vs. Broki | Major League - Suriname | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV88.gb">
     <title lang="en">Inter Wanica vs. Broki | Major League - Suriname | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 88</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -18228,6 +18373,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV89.gb">
+    <title lang="en">Ureña vs. Monagas B | Segunda División - Venezuela | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101193000 +0000" channel="DAZNPPV90.gb">
     <title lang="en">MLTT - Week 4: Atlanta Blazers vs. Texas Smash (Sun 1 Nov, 19:30)</title>
     <sub-title lang="en">⏭ Coming up: Major League Table Tennis</sub-title>
@@ -18294,6 +18444,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="DAZNPPV90.gb">
+    <title lang="en">MLTT - Week 4: Atlanta Blazers vs. Texas Smash | Major League Table Tennis | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV90.gb">
     <title lang="en">MLTT - Week 4: Atlanta Blazers vs. Texas Smash | Major League Table Tennis | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 90</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -18946,6 +19101,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="DAZNPPV99.gb">
+    <title lang="en">Conaree FC vs. Cayon Rockets | Premier League - St. Kitts and Nevis | 2026-11-01 | 23:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 99</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101151500 +0000" stop="20261101171500 +0000" channel="EXPRESSENPPV52.se">
     <title lang="en">🔴 LIVE: MÖLNDAL - IFK VÄNERSBORG</title>
     <desc lang="en">MÖLNDAL - IFK VÄNERSBORG. Starts Sun 1 Nov, 15:15 UK time.</desc>
@@ -19229,6 +19389,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163500 +0000" stop="20261102183500 +0000" channel="NFL10.uk">
+    <title lang="en">NFL | 10 - 4:05pm Chargers at Rams</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183500 +0000" stop="20261102203500 +0000" channel="NFL10.uk">
     <title lang="en">NFL | 10 - 4:05pm Chargers at Rams</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -26956,28 +27121,6 @@
     <desc lang="en">Coming up: UFC 334: Press Conference em Português. Starts Thu 12 Nov, 23:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101131000 +0000" stop="20261101151000 +0000" channel="Peacock002.us">
-    <title lang="en">🔴 LIVE: Men`s Rugby Pool Play</title>
-    <desc lang="en">Men`s Rugby Pool Play. Starts Sun 1 Nov, 13:10 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101151000 +0000" stop="20261101161000 +0000" channel="Peacock002.us">
-    <title lang="en">🔴 LIVE: Men`s Rugby Pool Play</title>
-    <desc lang="en">Men`s Rugby Pool Play. Starts Sun 1 Nov, 13:10 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101161000 +0000" stop="20261101181000 +0000" channel="Peacock002.us">
-    <title lang="en">US (Peacock 002) | Men`s Rugby Pool Play (2026-11-01 08:10:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101181000 +0000" stop="20261101201000 +0000" channel="Peacock002.us">
-    <title lang="en">US (Peacock 002) | Men`s Rugby Pool Play (2026-11-01 08:10:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261101162000 +0000" stop="20261101182000 +0000" channel="Peacock003.us">
     <title lang="en">🔴 LIVE: Liverpool v. Arsenal</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -28088,26 +28231,82 @@
     <desc lang="en">Coming up: FTL United v. Sun FC. Starts Sat 7 Nov, 00:30 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101131000 +0000" stop="20261101151000 +0000" channel="Peacock021.us">
-    <title lang="en">🔴 LIVE: Men`s Rugby Pool Play</title>
-    <desc lang="en">Men`s Rugby Pool Play. Starts Sun 1 Nov, 13:10 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101151000 +0000" stop="20261101161000 +0000" channel="Peacock021.us">
-    <title lang="en">🔴 LIVE: Men`s Rugby Pool Play</title>
-    <desc lang="en">Men`s Rugby Pool Play. Starts Sun 1 Nov, 13:10 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101161000 +0000" stop="20261101181000 +0000" channel="Peacock021.us">
-    <title lang="en">US (Peacock 021) | Men`s Rugby Pool Play (2026-11-01 08:10:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101181000 +0000" stop="20261101201000 +0000" channel="Peacock021.us">
-    <title lang="en">US (Peacock 021) | Men`s Rugby Pool Play (2026-11-01 08:10:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="Peacock021.us">
+    <title lang="en">Trampoline World Champs: Day 2 (Sat 7 Nov, 06:00)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: Trampoline World Champs: Day 2. Starts Sat 7 Nov, 06:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261101162000 +0000" stop="20261101182000 +0000" channel="Peacock022.us">
@@ -45413,6 +45612,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102181800 +0000" stop="20261102201800 +0000" channel="TSN042.ca">
+    <title lang="en">CA (TSN+ 042) | LaLiga: Elche vs. Valencia (2026-11-01 12:18:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101174800 +0000" stop="20261101194800 +0000" channel="TSN043.ca">
     <title lang="en">🔴 LIVE: 2026 FIFA U_17 Women`s World Cup: Quarterfinal _ China PR vs. Brazil</title>
     <desc lang="en">2026 FIFA U_17 Women`s World Cup: Quarterfinal _ China PR vs. Brazil. Starts Sun 1 Nov, 17:48 UK time.</desc>
@@ -45905,6 +46109,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="TSN049.ca">
+    <title lang="en">CA (TSN+ 049) | Formula 1 On_Board Camera: Kimi Antonelli _ Mexico City Grand Prix (2026-11-01 14:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101193000 +0000" channel="TSN050.ca">
     <title lang="en">Formula 1 On_Board Camera: Max Verstappen _ Mexico City Grand Prix (Sun 1 Nov, 19:30)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -45971,6 +46180,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="TSN050.ca">
+    <title lang="en">CA (TSN+ 050) | Formula 1 On_Board Camera: Max Verstappen _ Mexico City Grand Prix (2026-11-01 14:30:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="TSN050.ca">
     <title lang="en">CA (TSN+ 050) | Formula 1 On_Board Camera: Max Verstappen _ Mexico City Grand Prix (2026-11-01 14:30:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -46045,6 +46259,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="TSN051.ca">
+    <title lang="en">CA (TSN+ 051) | Formula 1 Pit Lane _ Mexico City Grand Prix (2026-11-01 14:30:10)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101193000 +0000" channel="TSN052.ca">
     <title lang="en">Formula 1 Mixed On_Board Camera _ Mexico City Grand Prix (Sun 1 Nov, 19:30)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -46111,6 +46330,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="TSN052.ca">
+    <title lang="en">CA (TSN+ 052) | Formula 1 Mixed On_Board Camera _ Mexico City Grand Prix (2026-11-01 14:30:15)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="TSN052.ca">
     <title lang="en">CA (TSN+ 052) | Formula 1 Mixed On_Board Camera _ Mexico City Grand Prix (2026-11-01 14:30:15)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -46185,6 +46409,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="TSN053.ca">
+    <title lang="en">CA (TSN+ 053) | Formula 1 Timing Channel _ Mexico City Grand Prix (2026-11-01 14:30:20)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101193000 +0000" channel="TSN054.ca">
     <title lang="en">Formula 1 On_Board Camera: Lance Stroll _ Mexico City Grand Prix (Sun 1 Nov, 19:30)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -46255,6 +46484,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="TSN054.ca">
+    <title lang="en">CA (TSN+ 054) | Formula 1 On_Board Camera: Lance Stroll _ Mexico City Grand Prix (2026-11-01 14:30:25)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101180000 +0000" stop="20261101193000 +0000" channel="TSN055.ca">
     <title lang="en">Formula 1 Driver Tracker _ Mexico City Grand Prix (Sun 1 Nov, 19:30)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -46321,6 +46555,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="TSN055.ca">
+    <title lang="en">CA (TSN+ 055) | Formula 1 Driver Tracker _ Mexico City Grand Prix (2026-11-01 14:30:30)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="TSN055.ca">
     <title lang="en">CA (TSN+ 055) | Formula 1 Driver Tracker _ Mexico City Grand Prix (2026-11-01 14:30:30)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -94550,6 +94789,21 @@
   </programme>
   <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="Paramount05.us">
     <title lang="en">US (Paramount 05) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101180000 +0000" stop="20261101200000 +0000" channel="Peacock002.us">
+    <title lang="en">US (Peacock 002) | Man City v. Brighton (2026-10-31 10:50:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="Peacock002.us">
+    <title lang="en">US (Peacock 002) | Man City v. Brighton (2026-10-31 10:50:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="Peacock002.us">
+    <title lang="en">US (Peacock 002) | Man City v. Brighton (2026-10-31 10:50:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
