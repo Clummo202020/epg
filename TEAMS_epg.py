@@ -296,10 +296,10 @@ def build_team(tv, cid, league, games, now, horizon):
         if active:
             end = min(active["ko"] + dur, horizon)
             title = f"🔴 LIVE: {name_of(active['away'])} at {name_of(active['home'])}"
-            desc = (f"{word} was {uk(active['ko'])} UK time. {active['where']}." +
+            desc = (f"{word} {uk(active['ko'])} UK time. {active['where']}." +
                     (f" TV: {', '.join(active['tv'])}." if active["tv"] else "")).replace("..", ".")
             for a, b in pieces(t, end):
-                add(tv, cid, a, b, title, f"Started {active['ko'].astimezone(LONDON):%H:%M} UK time", desc, True)
+                add(tv, cid, a, b, title, f"{word} {active['ko'].astimezone(LONDON):%H:%M} UK time", desc, True)
             t = end
             continue
         nxt = next((g for g in games if not g["completed"] and g["ko"] > t), None)
