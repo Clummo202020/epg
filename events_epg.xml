@@ -4605,7 +4605,7 @@
     <display-name lang="en">AU (STAN 08)</display-name>
   </channel>
   <channel id="STAN09.au">
-    <display-name lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</display-name>
+    <display-name lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</display-name>
     <display-name lang="en">AU (STAN 09)</display-name>
   </channel>
   <channel id="STAN10.au">
@@ -4701,7 +4701,7 @@
     <display-name lang="en">AU (STAN 31)</display-name>
   </channel>
   <channel id="STAN32.au">
-    <display-name lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</display-name>
+    <display-name lang="en">AU (STAN 32) | RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (2026-11-05 06:55:50)</display-name>
     <display-name lang="en">AU (STAN 32)</display-name>
   </channel>
   <channel id="STAN33.au">
@@ -6409,6 +6409,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102212500 +0000" stop="20261102232500 +0000" channel="AppleMLS020.us">
+    <title lang="en">(Apple) (MLS) 020 | Vancouver vs. Seattle (2026-11-01 15:25:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101200000 +0000" stop="20261101202500 +0000" channel="AppleMLS021.us">
     <title lang="en">Vancouver vs. Seattle (Spanish) (Sun 1 Nov, 20:25)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -6480,6 +6485,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102192500 +0000" stop="20261102212500 +0000" channel="AppleMLS021.us">
+    <title lang="en">(Apple) (MLS) 021 | Vancouver vs. Seattle (Spanish) (2026-11-01 15:25:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102212500 +0000" stop="20261102232500 +0000" channel="AppleMLS021.us">
     <title lang="en">(Apple) (MLS) 021 | Vancouver vs. Seattle (Spanish) (2026-11-01 15:25:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -9912,295 +9922,8 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101200000 +0000" stop="20261101211200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA (Sun 1 Nov, 21:12)</title>
-    <sub-title lang="en">⏭ Coming up Sun 1 Nov</sub-title>
-    <desc lang="en">Coming up: Nevada vs. #7 UCLA. Starts Sun 1 Nov, 21:12 UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101211200 +0000" stop="20261101231200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">🔴 LIVE: Nevada vs. #7 UCLA</title>
-    <desc lang="en">Nevada vs. #7 UCLA. Starts Sun 1 Nov, 21:12 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101231200 +0000" stop="20261102001200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">🔴 LIVE: Nevada vs. #7 UCLA</title>
-    <desc lang="en">Nevada vs. #7 UCLA. Starts Sun 1 Nov, 21:12 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102001200 +0000" stop="20261102021200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102021200 +0000" stop="20261102041200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102041200 +0000" stop="20261102061200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102061200 +0000" stop="20261102081200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102081200 +0000" stop="20261102101200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102101200 +0000" stop="20261102121200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102121200 +0000" stop="20261102141200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102141200 +0000" stop="20261102161200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102161200 +0000" stop="20261102181200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102181200 +0000" stop="20261102201200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102201200 +0000" stop="20261102221200 +0000" channel="CASOCCERPPV87.ca">
-    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101200000 +0000" stop="20261101211200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State (Sun 1 Nov, 21:12)</title>
-    <sub-title lang="en">⏭ Coming up Sun 1 Nov</sub-title>
-    <desc lang="en">Coming up: Purdue vs. Penn State. Starts Sun 1 Nov, 21:12 UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101211200 +0000" stop="20261101231200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">🔴 LIVE: Purdue vs. Penn State</title>
-    <desc lang="en">Purdue vs. Penn State. Starts Sun 1 Nov, 21:12 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101231200 +0000" stop="20261102001200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">🔴 LIVE: Purdue vs. Penn State</title>
-    <desc lang="en">Purdue vs. Penn State. Starts Sun 1 Nov, 21:12 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102001200 +0000" stop="20261102021200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102021200 +0000" stop="20261102041200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102041200 +0000" stop="20261102061200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102061200 +0000" stop="20261102081200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102081200 +0000" stop="20261102101200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102101200 +0000" stop="20261102121200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102121200 +0000" stop="20261102141200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102141200 +0000" stop="20261102161200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102161200 +0000" stop="20261102181200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102181200 +0000" stop="20261102201200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102201200 +0000" stop="20261102221200 +0000" channel="CASOCCERPPV88.ca">
-    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101200000 +0000" stop="20261101211500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma (Sun 1 Nov, 21:15)</title>
-    <sub-title lang="en">⏭ Coming up Sun 1 Nov</sub-title>
-    <desc lang="en">Coming up: South Carolina vs. Oklahoma. Starts Sun 1 Nov, 21:15 UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101211500 +0000" stop="20261101231500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">🔴 LIVE: South Carolina vs. Oklahoma</title>
-    <desc lang="en">South Carolina vs. Oklahoma. Starts Sun 1 Nov, 21:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101231500 +0000" stop="20261102001500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">🔴 LIVE: South Carolina vs. Oklahoma</title>
-    <desc lang="en">South Carolina vs. Oklahoma. Starts Sun 1 Nov, 21:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102001500 +0000" stop="20261102021500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102021500 +0000" stop="20261102041500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102041500 +0000" stop="20261102061500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102061500 +0000" stop="20261102081500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102081500 +0000" stop="20261102101500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102101500 +0000" stop="20261102121500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102121500 +0000" stop="20261102141500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102141500 +0000" stop="20261102161500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102161500 +0000" stop="20261102181500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102181500 +0000" stop="20261102201500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102201500 +0000" stop="20261102221500 +0000" channel="CASOCCERPPV89.ca">
-    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101200000 +0000" stop="20261101213000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions (Sun 1 Nov, 21:30)</title>
-    <sub-title lang="en">⏭ Coming up Sun 1 Nov</sub-title>
-    <desc lang="en">Coming up: Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions. Starts Sun 1 Nov, 21:30 UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101213000 +0000" stop="20261101233000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">🔴 LIVE: Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions</title>
-    <desc lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions. Starts Sun 1 Nov, 21:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101233000 +0000" stop="20261102003000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">🔴 LIVE: Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions</title>
-    <desc lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions. Starts Sun 1 Nov, 21:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102003000 +0000" stop="20261102023000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102023000 +0000" stop="20261102043000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102043000 +0000" stop="20261102063000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102063000 +0000" stop="20261102083000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102083000 +0000" stop="20261102103000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102103000 +0000" stop="20261102123000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102123000 +0000" stop="20261102143000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102143000 +0000" stop="20261102163000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102163000 +0000" stop="20261102183000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102183000 +0000" stop="20261102203000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102203000 +0000" stop="20261102223000 +0000" channel="CASOCCERPPV90.ca">
-    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+  <programme start="20261102213000 +0000" stop="20261102233000 +0000" channel="CASOCCERPPV160.ca">
+    <title lang="en">Sur la ligne de départ | all | 01-11-2026 | 20:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 160</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -10276,228 +9999,6 @@
   </programme>
   <programme start="20261102205000 +0000" stop="20261102225000 +0000" channel="CASOCCERPPV93.ca">
     <title lang="en">Formula 1 Bonus On-Board Camera-Lance Stroll: Mexico City Grand Prix, Qualifying | all | 01-11-2026 | 21:50 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 93</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101161500 +0000" stop="20261101181500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">🔴 LIVE: Bai Bureh Warriors FC vs. Bullom Stars FC</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101181500 +0000" stop="20261101191500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">🔴 LIVE: Bai Bureh Warriors FC vs. Bullom Stars FC</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101191500 +0000" stop="20261101211500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101211500 +0000" stop="20261101231500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101231500 +0000" stop="20261102011500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102011500 +0000" stop="20261102031500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102031500 +0000" stop="20261102051500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102051500 +0000" stop="20261102071500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102071500 +0000" stop="20261102091500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102091500 +0000" stop="20261102111500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102111500 +0000" stop="20261102131500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102131500 +0000" stop="20261102151500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102151500 +0000" stop="20261102171500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102171500 +0000" stop="20261102191500 +0000" channel="DAZNPPV58.us">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101161500 +0000" stop="20261101181500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">🔴 LIVE: Bhantal FC vs. Bo Rangers</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Bhantal FC vs. Bo Rangers. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101181500 +0000" stop="20261101191500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">🔴 LIVE: Bhantal FC vs. Bo Rangers</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Bhantal FC vs. Bo Rangers. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101191500 +0000" stop="20261101211500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101211500 +0000" stop="20261101231500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101231500 +0000" stop="20261102011500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102011500 +0000" stop="20261102031500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102031500 +0000" stop="20261102051500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102051500 +0000" stop="20261102071500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102071500 +0000" stop="20261102091500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102091500 +0000" stop="20261102111500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102111500 +0000" stop="20261102131500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102131500 +0000" stop="20261102151500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102151500 +0000" stop="20261102171500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102171500 +0000" stop="20261102191500 +0000" channel="DAZNPPV59.us">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101161500 +0000" stop="20261101181500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">🔴 LIVE: Waterloo FC vs. FC Kallon</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Waterloo FC vs. FC Kallon. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101181500 +0000" stop="20261101191500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">🔴 LIVE: Waterloo FC vs. FC Kallon</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Waterloo FC vs. FC Kallon. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101191500 +0000" stop="20261101211500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101211500 +0000" stop="20261101231500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101231500 +0000" stop="20261102011500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102011500 +0000" stop="20261102031500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102031500 +0000" stop="20261102051500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102051500 +0000" stop="20261102071500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102071500 +0000" stop="20261102091500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102091500 +0000" stop="20261102111500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102111500 +0000" stop="20261102131500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102131500 +0000" stop="20261102151500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102151500 +0000" stop="20261102171500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102171500 +0000" stop="20261102191500 +0000" channel="DAZNPPV60.us">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -11315,80 +10816,6 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101161500 +0000" stop="20261101181500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">🔴 LIVE: Bai Bureh Warriors FC vs. Bullom Stars FC</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101181500 +0000" stop="20261101191500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">🔴 LIVE: Bai Bureh Warriors FC vs. Bullom Stars FC</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101191500 +0000" stop="20261101211500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101211500 +0000" stop="20261101231500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101231500 +0000" stop="20261102011500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102011500 +0000" stop="20261102031500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102031500 +0000" stop="20261102051500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102051500 +0000" stop="20261102071500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102071500 +0000" stop="20261102091500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102091500 +0000" stop="20261102111500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102111500 +0000" stop="20261102131500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102131500 +0000" stop="20261102151500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102151500 +0000" stop="20261102171500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102171500 +0000" stop="20261102191500 +0000" channel="DAZNPPV72.gb">
-    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261101193000 +0000" stop="20261101213000 +0000" channel="DAZNPPV72.us">
     <title lang="en">🔴 LIVE: Ureña vs. Monagas B</title>
     <sub-title lang="en">Liga FUTVE 2 - Venezuela</sub-title>
@@ -11463,80 +10890,6 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101161500 +0000" stop="20261101181500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">🔴 LIVE: Bhantal FC vs. Bo Rangers</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Bhantal FC vs. Bo Rangers. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101181500 +0000" stop="20261101191500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">🔴 LIVE: Bhantal FC vs. Bo Rangers</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Bhantal FC vs. Bo Rangers. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101191500 +0000" stop="20261101211500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101211500 +0000" stop="20261101231500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101231500 +0000" stop="20261102011500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102011500 +0000" stop="20261102031500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102031500 +0000" stop="20261102051500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102051500 +0000" stop="20261102071500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102071500 +0000" stop="20261102091500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102091500 +0000" stop="20261102111500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102111500 +0000" stop="20261102131500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102131500 +0000" stop="20261102151500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102151500 +0000" stop="20261102171500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102171500 +0000" stop="20261102191500 +0000" channel="DAZNPPV73.gb">
-    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261101193000 +0000" stop="20261101213000 +0000" channel="DAZNPPV73.us">
     <title lang="en">🔴 LIVE: MLTT - Week 4: Atlanta Blazers vs. Texas Smash</title>
     <sub-title lang="en">Major League Table Tennis</sub-title>
@@ -11608,80 +10961,6 @@
   </programme>
   <programme start="20261102203000 +0000" stop="20261102223000 +0000" channel="DAZNPPV73.us">
     <title lang="en">MLTT - Week 4: Atlanta Blazers vs. Texas Smash | Major League Table Tennis | 2026-11-01 | 19:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 73</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101161500 +0000" stop="20261101181500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">🔴 LIVE: Waterloo FC vs. FC Kallon</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Waterloo FC vs. FC Kallon. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101181500 +0000" stop="20261101191500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">🔴 LIVE: Waterloo FC vs. FC Kallon</title>
-    <sub-title lang="en">Premier League - Sierra Leone</sub-title>
-    <desc lang="en">Waterloo FC vs. FC Kallon. Premier League - Sierra Leone. Starts Sun 1 Nov, 16:15 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101191500 +0000" stop="20261101211500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101211500 +0000" stop="20261101231500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101231500 +0000" stop="20261102011500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102011500 +0000" stop="20261102031500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102031500 +0000" stop="20261102051500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102051500 +0000" stop="20261102071500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102071500 +0000" stop="20261102091500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102091500 +0000" stop="20261102111500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102111500 +0000" stop="20261102131500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102131500 +0000" stop="20261102151500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102151500 +0000" stop="20261102171500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102171500 +0000" stop="20261102191500 +0000" channel="DAZNPPV74.gb">
-    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -15398,6 +14677,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261102213500 +0000" stop="20261102224500 +0000" channel="Paramount016.us">
+    <title lang="en">🔴 LIVE: Atalanta vs. Parma</title>
+    <sub-title lang="en">Serie A</sub-title>
+    <desc lang="en">Atalanta vs. Parma. Serie A. Starts Mon 2 Nov, 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="Paramount017.us">
     <title lang="en">Galatasaray vs. Stuttgart (Tue 3 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Coming up: UEFA Champions League Matchday 4</sub-title>
@@ -16072,6 +15358,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102193500 +0000" stop="20261102213500 +0000" channel="Paramount026.us">
+    <title lang="en">🔴 LIVE: Atalanta vs. Parma</title>
+    <sub-title lang="en">Serie A</sub-title>
+    <desc lang="en">Atalanta vs. Parma. Serie A. Starts Mon 2 Nov, 19:45 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261102213500 +0000" stop="20261102224500 +0000" channel="Paramount026.us">
     <title lang="en">🔴 LIVE: Atalanta vs. Parma</title>
     <sub-title lang="en">Serie A</sub-title>
     <desc lang="en">Atalanta vs. Parma. Serie A. Starts Mon 2 Nov, 19:45 UK time.</desc>
@@ -32362,80 +31655,6 @@
     <desc lang="en">Coming up: . Starts Wed 31 Dec, 13:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101162000 +0000" stop="20261101182000 +0000" channel="STAN09.au">
-    <title lang="en">🔴 LIVE: Liverpool v Arsenal Premier League Matchweek 9 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Liverpool v Arsenal Premier League Matchweek 9 2026/2027. Starts Sun 1 Nov, 16:20 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101182000 +0000" stop="20261101192000 +0000" channel="STAN09.au">
-    <title lang="en">🔴 LIVE: Liverpool v Arsenal Premier League Matchweek 9 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Liverpool v Arsenal Premier League Matchweek 9 2026/2027. Starts Sun 1 Nov, 16:20 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101192000 +0000" stop="20261101212000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101212000 +0000" stop="20261101232000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101232000 +0000" stop="20261102012000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102012000 +0000" stop="20261102032000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102032000 +0000" stop="20261102052000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102052000 +0000" stop="20261102072000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102072000 +0000" stop="20261102092000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102092000 +0000" stop="20261102112000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102112000 +0000" stop="20261102132000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102132000 +0000" stop="20261102152000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102152000 +0000" stop="20261102172000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102172000 +0000" stop="20261102192000 +0000" channel="STAN09.au">
-    <title lang="en">AU (STAN 09) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261101190000 +0000" stop="20261101210000 +0000" channel="STAN10.au">
     <title lang="en">🔴 LIVE: PL Weekend Wrap: Matchweek 9 Nov 2</title>
     <desc lang="en">PL Weekend Wrap: Matchweek 9 Nov 2. Starts Sun 1 Nov, 19:00 UK time.</desc>
@@ -32959,6 +32178,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102193000 +0000" stop="20261102213000 +0000" channel="STAN15.au">
+    <title lang="en">🔴 LIVE: Newcastle United v Everton Premier League Matchweek 9 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Newcastle United v Everton Premier League Matchweek 9 2026/2027. Starts Mon 2 Nov, 19:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261102213000 +0000" stop="20261102223000 +0000" channel="STAN15.au">
     <title lang="en">🔴 LIVE: Newcastle United v Everton Premier League Matchweek 9 2026/2027</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Newcastle United v Everton Premier League Matchweek 9 2026/2027. Starts Mon 2 Nov, 19:30 UK time.</desc>
@@ -34213,78 +33439,82 @@
     <desc lang="en">Coming up: Slavia Praha v Arsenal UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101162000 +0000" stop="20261101182000 +0000" channel="STAN32.au">
-    <title lang="en">🔴 LIVE: Liverpool v Arsenal Premier League Matchweek 9 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Liverpool v Arsenal Premier League Matchweek 9 2026/2027. Starts Sun 1 Nov, 16:20 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101182000 +0000" stop="20261101192000 +0000" channel="STAN32.au">
-    <title lang="en">🔴 LIVE: Liverpool v Arsenal Premier League Matchweek 9 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Liverpool v Arsenal Premier League Matchweek 9 2026/2027. Starts Sun 1 Nov, 16:20 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101192000 +0000" stop="20261101212000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101212000 +0000" stop="20261101232000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261101232000 +0000" stop="20261102012000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102012000 +0000" stop="20261102032000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102032000 +0000" stop="20261102052000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102052000 +0000" stop="20261102072000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102072000 +0000" stop="20261102092000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102092000 +0000" stop="20261102112000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102112000 +0000" stop="20261102132000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102132000 +0000" stop="20261102152000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102152000 +0000" stop="20261102172000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102172000 +0000" stop="20261102192000 +0000" channel="STAN32.au">
-    <title lang="en">AU (STAN 32) | • Liverpool v Arsenal Premier League Matchweek 9 2026/2027 (2026-11-02 03:20:50)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="STAN32.au">
+    <title lang="en">RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 19:55)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: RB Leipzig v Manchester City UEFA Champions League Matchday 4 2026/2027. Starts Wed 4 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261101190000 +0000" stop="20261101210000 +0000" channel="STAN33.au">
@@ -34732,6 +33962,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102193000 +0000" stop="20261102213000 +0000" channel="STAN38.au">
+    <title lang="en">🔴 LIVE: Newcastle United v Everton Premier League Matchweek 9 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Newcastle United v Everton Premier League Matchweek 9 2026/2027. Starts Mon 2 Nov, 19:30 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261102213000 +0000" stop="20261102223000 +0000" channel="STAN38.au">
     <title lang="en">🔴 LIVE: Newcastle United v Everton Premier League Matchweek 9 2026/2027</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Newcastle United v Everton Premier League Matchweek 9 2026/2027. Starts Mon 2 Nov, 19:30 UK time.</desc>
@@ -39494,80 +38731,6 @@
     <title lang="en">England v Japan Nations Championship Round 5 2026 (Sat 14 Nov, 16:30)</title>
     <sub-title lang="en">⏭ Coming up Sat 14 Nov</sub-title>
     <desc lang="en">Coming up: England v Japan Nations Championship Round 5 2026. Starts Sat 14 Nov, 16:30 UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101163000 +0000" stop="20261101183000 +0000" channel="TSN041.ca">
-    <title lang="en">🔴 LIVE: NFL Fantasy Focus</title>
-    <sub-title lang="en">NFL</sub-title>
-    <desc lang="en">NFL Fantasy Focus. Starts Sun 1 Nov, 16:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101183000 +0000" stop="20261101193000 +0000" channel="TSN041.ca">
-    <title lang="en">🔴 LIVE: NFL Fantasy Focus</title>
-    <sub-title lang="en">NFL</sub-title>
-    <desc lang="en">NFL Fantasy Focus. Starts Sun 1 Nov, 16:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261101193000 +0000" stop="20261101213000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101213000 +0000" stop="20261101233000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261101233000 +0000" stop="20261102013000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102013000 +0000" stop="20261102033000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102033000 +0000" stop="20261102053000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102053000 +0000" stop="20261102073000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102073000 +0000" stop="20261102093000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102093000 +0000" stop="20261102113000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102113000 +0000" stop="20261102133000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102133000 +0000" stop="20261102153000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102153000 +0000" stop="20261102173000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102173000 +0000" stop="20261102193000 +0000" channel="TSN041.ca">
-    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261101171800 +0000" stop="20261101191800 +0000" channel="TSN042.ca">
@@ -61227,6 +60390,201 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="CASOCCERPPV87.ca">
+    <title lang="en">Nevada vs. #7 UCLA | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 87</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="CASOCCERPPV88.ca">
+    <title lang="en">Purdue vs. Penn State | all | 01-11-2026 | 21:12 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 88</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="CASOCCERPPV89.ca">
+    <title lang="en">South Carolina vs. Oklahoma | all | 01-11-2026 | 21:15 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 89</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="CASOCCERPPV9.ca">
     <title lang="en">Guangzhou Open: Day 6 | all | 31-10-2026 | 09:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -61289,6 +60647,71 @@
   </programme>
   <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="CASOCCERPPV9.ca">
     <title lang="en">Guangzhou Open: Day 6 | all | 31-10-2026 | 09:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="CASOCCERPPV90.ca">
+    <title lang="en">Saskatchewan Roughriders Saskatchewan Roughriders vs. BC Lions BC Lions | all | 01-11-2026 | 21:30 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 90</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -68702,6 +68125,71 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="DAZNPPV58.us">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 58</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="DAZNPPV59.gb">
     <title lang="en">AS Sonabel vs. ASF Bobo | Ligue 1 - Burkina Faso | 2026-11-01 | 15:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 59</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -68764,6 +68252,71 @@
   </programme>
   <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="DAZNPPV59.gb">
     <title lang="en">AS Sonabel vs. ASF Bobo | Ligue 1 - Burkina Faso | 2026-11-01 | 15:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="DAZNPPV59.us">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 59</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -68959,6 +68512,71 @@
   </programme>
   <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="DAZNPPV60.gb">
     <title lang="en">ASFA Yennenga vs. AS Douanes | Ligue 1 - Burkina Faso | 2026-11-01 | 15:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="DAZNPPV60.us">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 60</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -69804,6 +69422,201 @@
   </programme>
   <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="DAZNPPV71.gb">
     <title lang="en">Golden Dream FC vs. Freeport FC | LFA First Division - Liberia | 2026-11-01 | 16:00 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 71</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="DAZNPPV72.gb">
+    <title lang="en">Bai Bureh Warriors FC vs. Bullom Stars FC | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 72</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="DAZNPPV73.gb">
+    <title lang="en">Bhantal FC vs. Bo Rangers | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 73</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="DAZNPPV74.gb">
+    <title lang="en">Waterloo FC vs. FC Kallon | Premier League - Sierra Leone | 2026-11-01 | 16:15 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 74</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -95822,6 +95635,71 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Coventry City v Sunderland Premier League Matchweek 9 2026/2027 (2026-11-01 01:50:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="TSN001.ca">
     <title lang="en">CA (TSN+ 001) | LaLiga: Levante vs. Atletico Madrid (2026-10-31 08:48:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -98354,6 +98232,71 @@
   </programme>
   <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="TSN040.ca">
     <title lang="en">CA (TSN+ 040) | NFL Fantasy Focus (2026-11-01 10:00:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101200000 +0000" stop="20261101220000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261101220000 +0000" stop="20261102000000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102000000 +0000" stop="20261102020000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102020000 +0000" stop="20261102040000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102040000 +0000" stop="20261102060000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102060000 +0000" stop="20261102080000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="TSN041.ca">
+    <title lang="en">CA (TSN+ 041) | NFL Fantasy Focus (2026-11-01 11:30:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
