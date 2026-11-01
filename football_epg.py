@@ -204,6 +204,21 @@ def cup_round(comp_name, day):
     return found
 
 
+def uefa_round_line(comp_name, rnd):
+    """Short competition + round for a UEFA match description, e.g.
+    "Champions League Match Day 4, League Phase" or "Europa League Round of 16, 1st Leg".
+    None for other competitions or when the round isn't known."""
+    if comp_name not in UEFA_COMPETITIONS:
+        return None
+    short = comp_name.replace("UEFA ", "")
+    if not rnd:
+        return short
+    m = re.match(r"Matchday (\d+)$", rnd)
+    if m:                                    # league-phase matchdays
+        return f"{short} Match Day {m.group(1)}, League Phase"
+    return f"{short} {rnd}"
+
+
 # Fixtures with these statuses have no reliable kick-off and are skipped.
 SKIP_STATUSES = {"STATUS_POSTPONED", "STATUS_CANCELED", "STATUS_CANCELLED",
                  "STATUS_ABANDONED", "STATUS_FORFEIT"}
@@ -539,6 +554,9 @@ def collect_matches(events_by_comp, match_minutes):
 
             tbc = comp.get("timeValid") is False             # ESPN's time is only a placeholder
             desc = [f"{title}."]    # the competition is in the secondary title
+            uline = uefa_round_line(comp_name, rnd)      # UEFA only: "Champions League Match Day 4, League Phase"
+            if uline:
+                desc.append(f"{uline}.")
             venue = comp.get("venue") or {}
             if venue.get("fullName"):
                 city = (venue.get("address") or {}).get("city")
