@@ -4115,6 +4115,80 @@ def fetch_epgshare(group, days, debug=False):
     return out
 
 
+# Sky Go (NZ) guide (2 Nov 2026). Sky Sport NZ now comes from Sky's own TV-guide service (the request the skygo.co.nz
+# TV guide page makes - no login, no key) instead of epgshare01's NZ1 file: it runs 7+ days ahead (NZ1 gave about
+# 3), follows Sky's live changes to the running order, and has the same descriptions. Checked from the GitHub
+# runner on 2 Nov 2026 (skygo_check.py). It is Sky's private service, so it can change or refuse us without notice:
+# any channel it fills with fewer than SKYGO_MIN_EVENTS programmes simply keeps its epgshare NZ1 listing, and
+# --no-skygo turns it off. Sky's own "live" flag is only trusted when true (it is false for live cricket and
+# A-League), the rest of the live marking is unchanged.
+SKYGO_API = "https://api.skyone.co.nz/exp/graph"
+SKYGO_HEADERS = {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json",
+                 "Origin": "https://www.skygo.co.nz", "Referer": "https://www.skygo.co.nz/"}
+SKYGO_MIN_EVENTS = 10
+SKYGO_QUERY = """query getSlots($from: DateTime!, $to: DateTime!) { channels { __typename
+ ... on LinearChannel { id title number slots(from: $from, to: $to) { id start end live
+  programme { __typename ... on Title { id title synopsis }
+   ... on Movie { synopsis }
+   ... on Episode { id title synopsis show { id title synopsis } } } } } } }"""
+SKYGO_NZ_CHANNELS = {          # Sky Go channel title -> the EPGSHARE["nz"] id parts it fills
+    "sky sport 1": ["SkySport1NZ"], "sky sport 2": ["SkySport2NZ"], "sky sport 3": ["SkySport3NZ"],
+    "sky sport 4": ["SkySport4NZ"], "sky sport 5": ["SkySport5NZ"], "sky sport 6": ["SkySport6NZ"],
+    "sky sport 7": ["SkySport7NZ"], "sky sport 9": ["SkySport9NZ"], "sky sport select": ["SkySportSelectNZ"],
+    "sky sport premier league": ["SkySport8NZ", "SkySportPremierLeagueNZ"],      # Sky Sport 8 IS the Premier League channel
+}
+
+
+def fetch_skygo_nz(days, debug=False):
+    """{id part: [{start, stop, title, sub, live, desc}]} for the Sky Sport NZ channels, same shape as
+    fetch_epgshare (title = the show, sub = the episode title, desc = the synopsis). Only channels with at least
+    SKYGO_MIN_EVENTS programmes are returned, so a failed or thin answer leaves epgshare's listing in place."""
+    tz = ZoneInfo(EPGSHARE["nz"]["tz"])
+    first = datetime(days[0].year, days[0].month, days[0].day, tzinfo=tz).astimezone(timezone.utc)
+    last_day = days[-1] + timedelta(days=1)
+    end = datetime(last_day.year, last_day.month, last_day.day, tzinfo=tz).astimezone(timezone.utc)
+    iso = lambda d: d.strftime("%Y-%m-%dT%H:%M:%S.000Z")
+    params = {"query": SKYGO_QUERY,
+              "variables": json.dumps({"from": iso(first - timedelta(hours=6)), "to": iso(end)})}
+    data = fetch(f"{SKYGO_API}?{urllib.parse.urlencode(params)}", headers=SKYGO_HEADERS, parse="json",
+                 retries=2, label="Sky Go TV guide")
+    if not isinstance(data, dict):
+        return {}
+    if data.get("errors"):
+        print(f"  WARNING: Sky Go answered with errors: {str(data['errors'][0].get('message'))[:200]}", file=sys.stderr)
+    chans = ((data.get("data") or {}).get("channels")) or []
+    clean = lambda t: re.sub(r"\s+", " ", str(t or "")).strip()
+    out = {}
+    for ch in chans:
+        parts = SKYGO_NZ_CHANNELS.get(clean(ch.get("title")).lower()) if isinstance(ch, dict) else None
+        if not parts:
+            continue
+        evs = {}
+        for sl in ch.get("slots") or []:
+            try:
+                start = datetime.fromisoformat(sl["start"].replace("Z", "+00:00")).astimezone(timezone.utc)
+                stop = datetime.fromisoformat(sl["end"].replace("Z", "+00:00")).astimezone(timezone.utc)
+            except (KeyError, ValueError, AttributeError):
+                continue
+            prog = sl.get("programme") or {}
+            show = prog.get("show") or {}
+            ep_title = clean(prog.get("title"))
+            title = clean(show.get("title")) or ep_title
+            if not (title and stop > start and start < end and stop > first):
+                continue
+            sub = ep_title if ep_title != title else ""
+            desc = clean(prog.get("synopsis")) or clean(show.get("synopsis"))
+            evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub, "live": bool(sl.get("live")),
+                          "desc": short_desc(desc) if desc not in (title, sub) else ""}
+        listing = [evs[k] for k in sorted(evs)]
+        if debug:
+            print(f"    {ch.get('title')}: {len(listing)} programmes from Sky Go")
+        if len(listing) >= SKYGO_MIN_EVENTS:
+            for part in parts:
+                out[part] = [dict(e) for e in listing]       # own copies: later steps edit titles in place
+    return out
+
+
 # Time check against the football guide (28 Oct 2026). epgshare01's beIN MENA file (BEIN1) had every
 # programme 2 h late: Carabao Cup ties kicking off 19:45 UK were listed from 21:35, Saturday's 15:00
 # Premier League games from 16:50 (beIN's coverage starts 10 min before kick-off) - probably Qatar
@@ -5793,6 +5867,7 @@ def main():
     ap.add_argument("--now-channels", default=",".join(NOW_CHANNELS),
                     help="Now TV channel numbers, comma separated (e.g. 631,638)")
     ap.add_argument("--no-epgshare", action="store_true", help="leave out everything from epgshare01.online")
+    ap.add_argument("--no-skygo", action="store_true", help="don't read Sky Go's TV guide (Sky Sport NZ stays on epgshare NZ1)")
     ap.add_argument("--epgshare", default=",".join(EPGSHARE),
                     help=f"epgshare01 groups, comma separated (default {','.join(EPGSHARE)})")
     ap.add_argument("--no-desc", action="store_true", help="leave out the sources' own programme descriptions")
@@ -6072,6 +6147,17 @@ def main():
             print(f"  {sum(len(v) for v in got.values())} programmes on {len(got)} channel(s)")
             if got:
                 eps[group] = got
+        if "nz" in [g.strip().lower() for g in args.epgshare.split(",")] and not args.no_skygo:   # 2 Nov 2026
+            nz_days = [datetime.now(ZoneInfo(EPGSHARE["nz"]["tz"])).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+            print(f"New Zealand: reading Sky Go's TV guide {nz_days[0]} to {nz_days[-1]} (Sky Sport NZ) ...")
+            skygo = fetch_skygo_nz(nz_days, args.debug)
+            if skygo:
+                eps.setdefault("nz", {}).update(skygo)       # replaces epgshare's NZ1 listing for these channels
+                left = sorted({part for part in EPGSHARE["nz"]["channels"]} - set(skygo))
+                print(f"  {sum(len(v) for v in skygo.values())} programmes on {len(skygo)} channel(s) from Sky Go"
+                      + (f"; still on epgshare NZ1: {', '.join(left)}" if left else ""))
+            else:
+                print("  Sky Go gave nothing usable - Sky Sport NZ stays on epgshare NZ1")
         if "turkey" in [g.strip().lower() for g in args.epgshare.split(",")]:   # 29 Oct 2026 (late)
             tr_days = [datetime.now(ZoneInfo("Europe/Istanbul")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
             print("Turkey: reading Turkcell TV+ guide (S Sport 1-2, A Spor, TRT Spor - with descriptions) ...")
