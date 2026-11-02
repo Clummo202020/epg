@@ -3297,7 +3297,7 @@
     <display-name lang="en">PDC Event 1</display-name>
   </channel>
   <channel id="PPVEVENT1.us">
-    <display-name lang="en">PPV EVENT 01: National 100 at East Alabama (11.1 10:00 AM ET)</display-name>
+    <display-name lang="en">PPV EVENT 01: WWE Monday Night RAW (11.2 8:00 PM ET)</display-name>
     <display-name lang="en">PPV EVENT 01</display-name>
   </channel>
   <channel id="PPVEVENT10.us">
@@ -3341,7 +3341,7 @@
     <display-name lang="en">PPV EVENT 19</display-name>
   </channel>
   <channel id="PPVEVENT2.us">
-    <display-name lang="en">PPV EVENT 02: Anthony Pettis FC 26 (11.1 7:00 PM ET)</display-name>
+    <display-name lang="en">PPV EVENT 02: Millbridge Speedway (11.2 6:00 PM ET)</display-name>
     <display-name lang="en">PPV EVENT 02</display-name>
   </channel>
   <channel id="PPVEVENT20.us">
@@ -6181,6 +6181,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="ARPPV1.mena">
+    <title lang="en">Portland Trail Blazers Vs Memphis Grizzlies || Arabic | NBA | 8K EXCLUSIVE | MENA: AR PPV 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="ARPPV1.mena">
     <title lang="en">Portland Trail Blazers Vs Memphis Grizzlies || Arabic | NBA | 8K EXCLUSIVE | MENA: AR PPV 1</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -9528,6 +9533,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="CASOCCERPPV10.ca">
+    <title lang="en">Panthers vs. Packers | all | 8K EXCLUSIVE | CA: SOCCER PPV 10</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="CASOCCERPPV37.ca">
     <title lang="en">🔴 LIVE: Tokyo Open: Day 5</title>
     <desc lang="en">Tokyo Open: Day 5. Starts Mon 2 Nov, 12:00 UK time.</desc>
@@ -9665,6 +9675,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="CASOCCERPPV39.ca">
+    <title lang="en">Canucks vs. Sharks | all | 8K EXCLUSIVE | CA: SOCCER PPV 39</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="CASOCCERPPV40.ca">
     <title lang="en">🔴 LIVE: Canucks vs. Sharks</title>
     <desc lang="en">Canucks vs. Sharks. Starts Mon 2 Nov, 12:00 UK time.</desc>
@@ -9728,6 +9743,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="CASOCCERPPV40.ca">
+    <title lang="en">Canucks vs. Sharks | all | 8K EXCLUSIVE | CA: SOCCER PPV 40</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="CASOCCERPPV40.ca">
     <title lang="en">Canucks vs. Sharks | all | 8K EXCLUSIVE | CA: SOCCER PPV 40</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -9799,6 +9819,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="CASOCCERPPV41.ca">
+    <title lang="en">Senators vs. Kings | all | 8K EXCLUSIVE | CA: SOCCER PPV 41</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="CASOCCERPPV42.ca">
     <title lang="en">🔴 LIVE: Sabres vs. Ducks</title>
     <desc lang="en">Sabres vs. Ducks. Starts Mon 2 Nov, 12:00 UK time.</desc>
@@ -9862,6 +9887,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="CASOCCERPPV42.ca">
+    <title lang="en">Sabres vs. Ducks | all | 8K EXCLUSIVE | CA: SOCCER PPV 42</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="CASOCCERPPV42.ca">
     <title lang="en">Sabres vs. Ducks | all | 8K EXCLUSIVE | CA: SOCCER PPV 42</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -9933,6 +9963,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="CASOCCERPPV45.ca">
+    <title lang="en">Hong Kong Sixes 2026 - 3rd Match - Pakistan vs United Arab Emirates | all | 8K EXCLUSIVE | CA: SOCCER PPV 45</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="CASOCCERPPV46.ca">
     <title lang="en">🔴 LIVE: Hong Kong Sixes 2026 - 4th Match - South Africa vs Oman</title>
     <desc lang="en">Hong Kong Sixes 2026 - 4th Match - South Africa vs Oman. Starts Mon 2 Nov, 12:00 UK time.</desc>
@@ -9996,6 +10031,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="CASOCCERPPV46.ca">
+    <title lang="en">Hong Kong Sixes 2026 - 4th Match - South Africa vs Oman | all | 8K EXCLUSIVE | CA: SOCCER PPV 46</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="CASOCCERPPV46.ca">
     <title lang="en">Hong Kong Sixes 2026 - 4th Match - South Africa vs Oman | all | 8K EXCLUSIVE | CA: SOCCER PPV 46</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -10073,6 +10113,172 @@
   </programme>
   <programme start="20261103104500 +0000" stop="20261103124500 +0000" channel="NFL14.uk">
     <title lang="en">NFL | 14 - MNF 8:15pm Bears at Seahawks</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103124500 +0000" stop="20261103144500 +0000" channel="NFL14.uk">
+    <title lang="en">NFL | 14 - MNF 8:15pm Bears at Seahawks</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <sub-title lang="en">⏭ Coming up: WWE</sub-title>
+    <desc lang="en">Coming up: WWE Monday Night RAW. Starts Tue 3 Nov, 01:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <sub-title lang="en">⏭ Coming up: WWE</sub-title>
+    <desc lang="en">Coming up: WWE Monday Night RAW. Starts Tue 3 Nov, 01:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <sub-title lang="en">⏭ Coming up: WWE</sub-title>
+    <desc lang="en">Coming up: WWE Monday Night RAW. Starts Tue 3 Nov, 01:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <sub-title lang="en">⏭ Coming up: WWE</sub-title>
+    <desc lang="en">Coming up: WWE Monday Night RAW. Starts Tue 3 Nov, 01:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <sub-title lang="en">⏭ Coming up: WWE</sub-title>
+    <desc lang="en">Coming up: WWE Monday Night RAW. Starts Tue 3 Nov, 01:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <sub-title lang="en">⏭ Coming up: WWE</sub-title>
+    <desc lang="en">Coming up: WWE Monday Night RAW. Starts Tue 3 Nov, 01:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103010000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <sub-title lang="en">⏭ Coming up: WWE</sub-title>
+    <desc lang="en">Coming up: WWE Monday Night RAW. Starts Tue 3 Nov, 01:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103010000 +0000" stop="20261103030000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">🔴 LIVE: WWE Monday Night RAW</title>
+    <sub-title lang="en">WWE</sub-title>
+    <desc lang="en">WWE Monday Night RAW. Starts Tue 3 Nov, 01:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103030000 +0000" stop="20261103050000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">🔴 LIVE: WWE Monday Night RAW</title>
+    <sub-title lang="en">WWE</sub-title>
+    <desc lang="en">WWE Monday Night RAW. Starts Tue 3 Nov, 01:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103050000 +0000" stop="20261103070000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103070000 +0000" stop="20261103090000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103090000 +0000" stop="20261103110000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: WWE Monday Night RAW (Tue 3 Nov, 01:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Millbridge Speedway. PPV Event. Starts Mon 2 Nov, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Millbridge Speedway. PPV Event. Starts Mon 2 Nov, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Millbridge Speedway. PPV Event. Starts Mon 2 Nov, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Millbridge Speedway. PPV Event. Starts Mon 2 Nov, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Millbridge Speedway. PPV Event. Starts Mon 2 Nov, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102220000 +0000" stop="20261102230000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Millbridge Speedway. PPV Event. Starts Mon 2 Nov, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102230000 +0000" stop="20261103010000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">🔴 LIVE: Millbridge Speedway</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">Millbridge Speedway. PPV Event. Starts Mon 2 Nov, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103010000 +0000" stop="20261103030000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">🔴 LIVE: Millbridge Speedway</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">Millbridge Speedway. PPV Event. Starts Mon 2 Nov, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103030000 +0000" stop="20261103050000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103050000 +0000" stop="20261103070000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103070000 +0000" stop="20261103090000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103090000 +0000" stop="20261103110000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Millbridge Speedway (Mon 2 Nov, 23:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -18050,6 +18256,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103124000 +0000" stop="20261103144000 +0000" channel="Peacock007.us">
+    <title lang="en">US (Peacock 007) | Women`s Rugby Pool Play (2026-11-03 04:40:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="Peacock008.us">
     <title lang="en">Women`s Rugby Finals &amp; More (Tue 3 Nov, 13:05)</title>
     <sub-title lang="en">⏭ Coming up Tue 3 Nov</sub-title>
@@ -18127,6 +18338,12 @@
     <sub-title lang="en">⏭ Coming up Tue 3 Nov</sub-title>
     <desc lang="en">Coming up: Women`s Rugby Finals &amp; More. Starts Tue 3 Nov, 13:05 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103130500 +0000" stop="20261103150500 +0000" channel="Peacock008.us">
+    <title lang="en">🔴 LIVE: Women`s Rugby Finals &amp; More</title>
+    <desc lang="en">Women`s Rugby Finals &amp; More. Starts Tue 3 Nov, 13:05 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="Peacock009.us">
     <title lang="en">Bellarmine vs. Indiana (Thu 5 Nov, 22:30)</title>
@@ -28932,6 +29149,13 @@
     <desc lang="en">Coming up: Manchester United U19 v Roma U19 UEFA Youth League 2026/2027. Starts Tue 3 Nov, 12:55 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103125500 +0000" stop="20261103145500 +0000" channel="STAN02.au">
+    <title lang="en">🔴 LIVE: Manchester United U19 v Roma U19 UEFA Youth League 2026/2027</title>
+    <sub-title lang="en">UEFA Youth League</sub-title>
+    <desc lang="en">Manchester United U19 v Roma U19 UEFA Youth League 2026/2027. Starts Tue 3 Nov, 12:55 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="STAN03.au">
     <title lang="en">Shakhtar Donetsk v Sporting CP UEFA Champions League Matchday 4 2026/2027 (Tue 3 Nov, 17:40)</title>
     <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
@@ -37035,6 +37259,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103104800 +0000" stop="20261103124800 +0000" channel="TSN097.ca">
+    <title lang="en">CA (TSN+ 097) | LaLiga: Deportivo vs. Osasuna (2026-11-02 14:48:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103124800 +0000" stop="20261103144800 +0000" channel="TSN097.ca">
     <title lang="en">CA (TSN+ 097) | LaLiga: Deportivo vs. Osasuna (2026-11-02 14:48:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -88030,71 +88259,6 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: National 100 at East Alabama (Sun 1 Nov, 15:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="PPVEVENT10.us">
     <title lang="en">PPV EVENT 10</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -88743,71 +88907,6 @@
   <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="PPVEVENT19.us">
     <title lang="en">PPV EVENT 19</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Anthony Pettis FC 26 (Mon 2 Nov, 00:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="PPVEVENT20.us">
