@@ -85,6 +85,7 @@ COMPETITIONS = {
     "UEFA Europa League":     ("uefa.europa", "Europa"),
     "UEFA Conference League": ("uefa.europa.conf", "ConfLeague"),
     "La Liga":                ("esp.1", "LaLiga"),
+    "MLS":                    ("usa.1", "MLS"),                # MLS league matches (incl. the MLS Cup playoffs) only - no other competition
     "UEFA Nations League":    ("uefa.nations", "NationsLge"),   # used only by the Sky Sports+ streams channel
 }
 
@@ -95,7 +96,7 @@ ENGLISH_LEAGUES = ["Premier League", "Championship", "League One", "League Two"]
 UEFA_COMPETITIONS = ["UEFA Champions League", "UEFA Europa League", "UEFA Conference League"]
 
 # Foreign leagues in which every club gets a channel (--english-only skips them).
-OTHER_LEAGUES = ["La Liga"]
+OTHER_LEAGUES = ["La Liga", "MLS"]
 
 # Cup rounds / UEFA stages (ESPN doesn't say which round or matchday a match is in). Each entry is the
 # first UK date of a round; a match gets the latest round that started on or before its
@@ -393,6 +394,7 @@ NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. Th
                  "a match is added.")
 CLUB_LEAGUE = {}          # {team_id: competition name}, filled by fetch_english_clubs / fetch_other_league_clubs
 OTHER_CLUBS = {}          # {team_id: name} for the clubs of OTHER_LEAGUES
+MLS_SUFFIX = re.compile(r"\s+(?:FC|SC|CF)$")     # MLS club names: drop the trailing FC / SC / CF
 DUMMY_DAYS = 10          # how far ahead the blocks run
 
 UEFA_CHANNEL_DESC = ("Matches that fall under the UEFA umbrella.\n\n"
@@ -491,7 +493,10 @@ def fetch_other_league_clubs():
         for t in teams:
             team = t.get("team") or {}
             if team.get("id"):
-                clubs[str(team["id"])] = short_name(team.get("displayName") or team.get("name"))
+                nm = short_name(team.get("displayName") or team.get("name"))
+                if comp == "MLS" and nm:                  # "Atlanta Utd FC" -> "Atlanta Utd", "Inter Miami CF" -> "Inter Miami"
+                    nm = MLS_SUFFIX.sub("", nm)
+                clubs[str(team["id"])] = nm
                 CLUB_LEAGUE.setdefault(str(team["id"]), comp)
         print(f"  {len(teams)} clubs")
     return clubs
