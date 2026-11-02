@@ -1329,10 +1329,19 @@ def build(events, now):
             # "Coming up" blocks naming the event - also for events more than MAX_DAYS_AHEAD away
             # (changed 28 Oct 2026: those used to get the generic FILLER_TITLE, so e.g. 97 of the
             # 100 Peacock slots showed "Stream is live at event time only." with no event name).
-            add_programme(tv, sid, t, b, f"{ev['title']} ({when})",       # competition (and round)
-                          f"⏭ Coming up: {ev['comp']}" if ev.get("comp") else   # when known (28 Oct)
-                          f"⏭ Coming up {uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}",
-                          f"Coming up: {desc}")
+            if in_range and b >= stop_at:
+                # The last block before the LIVE one (3 Nov 2026): "Next up: LIVE" with the event and its start time -
+                # the time alone when it starts within 24 h, with the day when later. No ⏭ here.
+                soon = kickoff - now <= timedelta(hours=24)
+                stamp = f"{uk(kickoff):%H:%M}" if soon else when
+                add_programme(tv, sid, t, b, f"Next up: LIVE \u2013 {ev['title']} ({stamp})",
+                              "Next up: LIVE",
+                              f"Next up: LIVE. {ev['title']} starts " + (f"at {stamp}" if soon else stamp) + " UK time.")
+            else:
+                add_programme(tv, sid, t, b, f"{ev['title']} ({when})",       # competition (and round)
+                              f"⏭ Coming up: {ev['comp']}" if ev.get("comp") else   # when known (28 Oct)
+                              f"⏭ Coming up {uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}",
+                              f"Coming up: {desc}")
             count += 1
             t = b
         if in_range:
