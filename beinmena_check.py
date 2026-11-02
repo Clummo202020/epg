@@ -121,9 +121,30 @@ def main():
         rows = [r for r in rows if r.get("endDate") and t(r["endDate"]) > now][:8]
         print(f"\n-- {sports[cid]}: next {len(rows)}")
         for r in rows:
-            data = r.get("data") or {}
-            print(f"   {str(r.get('startDate'))[5:16]} -> {str(r.get('endDate'))[11:16]} | {r.get('title')} | data.title={data.get('title')!r} | "
-                  f"desc={str(r.get('description') or '')[:70]!r} | keys={sorted(k for k in data)[:8]}")
+            print(f"   {str(r.get('startDate'))[5:16]} -> {str(r.get('endDate'))[11:16]} | {r.get('title')}")
+            print(f"       live={r.get('live')!r} replay={r.get('replay')!r} sportType={r.get('sportType')!r} genre={r.get('genre')!r} "
+                  f"category={r.get('category')!r} duration={r.get('duration')!r}")
+            print(f"       description={str(r.get('description') or '')[:90]!r}")
+            print(f"       synopsis   ={str(r.get('synopsis') or '')[:90]!r}")
+    # across ALL channels: how are the flags used?
+    allrows = [r for rows in per.values() for r in rows]
+    uniq = {(r.get("startDate"), r.get("channelId")): r for r in allrows}.values()
+    print(f"\n== flags across all {len(uniq)} programmes ==")
+    for key in ("live", "replay"):
+        cnt = {}
+        for r in uniq:
+            cnt[repr(r.get(key))] = cnt.get(repr(r.get(key)), 0) + 1
+        print(f"  {key}: {cnt}")
+    for key in ("sportType", "genre", "category"):
+        cnt = {}
+        for r in uniq:
+            cnt[str(r.get(key))] = cnt.get(str(r.get(key)), 0) + 1
+        print(f"  {key}: {dict(sorted(cnt.items(), key=lambda kv: -kv[1])[:14])}")
+    liv = [(sports.get(str(r.get('channelId')).upper()) or next((sports[i] for i in sports if i.upper() == str(r.get('channelId')).upper()), '?'), r.get('startDate'), r.get('title'))
+           for r in uniq if r.get("live") is True]
+    print(f"  live=True examples (first 12 of {len(liv)}):")
+    for x in sorted(liv, key=lambda x: str(x[1]))[:12]:
+        print(f"    {x[0]} | {str(x[1])[5:16]} | {str(x[2])[:80]}")
     return 0
 
 
