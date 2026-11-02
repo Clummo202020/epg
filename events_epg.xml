@@ -3512,10 +3512,6 @@
     <display-name lang="en">US (Paramount 004) | Shakhtar Donetsk vs. Sporting CP (2026-11-03 13:00:05)</display-name>
     <display-name lang="en">US (Paramount 004)</display-name>
   </channel>
-  <channel id="Paramount005.us">
-    <display-name lang="en">US (Paramount 005) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</display-name>
-    <display-name lang="en">US (Paramount 005)</display-name>
-  </channel>
   <channel id="Paramount006.us">
     <display-name lang="en">US (Paramount 006) | Man. United vs. Roma (2026-11-03 15:00:05)</display-name>
     <display-name lang="en">US (Paramount 006)</display-name>
@@ -3691,6 +3687,10 @@
   <channel id="Paramount049.us">
     <display-name lang="en">US (Paramount 049) | Benfica vs. Lech Poznań (2026-11-05 15:50:20)</display-name>
     <display-name lang="en">US (Paramount 049)</display-name>
+  </channel>
+  <channel id="Paramount005.us">
+    <display-name lang="en">US (Paramount 05) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</display-name>
+    <display-name lang="en">US (Paramount 05)</display-name>
   </channel>
   <channel id="Paramount050.us">
     <display-name lang="en">US (Paramount 050) | Celta Vigo vs. Union Saint_Gilloise (2026-11-05 15:50:25)</display-name>
@@ -5120,7 +5120,7 @@
     <display-name lang="en">CA (TSN+ 039) | Formula 1 On_Board Camera: George Russell _ Sao Paulo Grand Prix Practice #2 (2026-11-06 13:50:10)</display-name>
     <display-name lang="en">CA (TSN+ 039)</display-name>
   </channel>
-  <channel id="TSN04.ca">
+  <channel id="TSN004.ca">
     <display-name lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</display-name>
     <display-name lang="en">CA (TSN+ 04)</display-name>
   </channel>
@@ -5368,7 +5368,7 @@
     <display-name lang="en">CA (TSN+ 100) | (2098-12-31 08:00:02)</display-name>
     <display-name lang="en">CA (TSN+ 100)</display-name>
   </channel>
-  <channel id="TSN32.ca">
+  <channel id="TSN032.ca">
     <display-name lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</display-name>
     <display-name lang="en">CA (TSN+ 32)</display-name>
   </channel>
@@ -6114,154 +6114,6 @@
     <title lang="en">ABU DHABI: RACE (Sun 6 Dec, 11:50)</title>
     <sub-title lang="en">⏭ Coming up Sun 6 Dec</sub-title>
     <desc lang="en">Coming up: ABU DHABI: RACE. Starts Sun 6 Dec, 11:50 UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102174000 +0000" stop="20261102194000 +0000" channel="ARPPV26.mena">
-    <title lang="en">🔴 LIVE: Denis Shapovalov vs Karen Khachanov</title>
-    <sub-title lang="en">Rolex Paris Masters</sub-title>
-    <desc lang="en">Denis Shapovalov vs Karen Khachanov. Rolex Paris Masters. Arabic commentary. Starts Mon 2 Nov, 17:40 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102194000 +0000" stop="20261102204000 +0000" channel="ARPPV26.mena">
-    <title lang="en">🔴 LIVE: Denis Shapovalov vs Karen Khachanov</title>
-    <sub-title lang="en">Rolex Paris Masters</sub-title>
-    <desc lang="en">Denis Shapovalov vs Karen Khachanov. Rolex Paris Masters. Arabic commentary. Starts Mon 2 Nov, 17:40 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102204000 +0000" stop="20261102224000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102224000 +0000" stop="20261103004000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103004000 +0000" stop="20261103024000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103024000 +0000" stop="20261103044000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103044000 +0000" stop="20261103064000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103064000 +0000" stop="20261103084000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103084000 +0000" stop="20261103104000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103104000 +0000" stop="20261103124000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103124000 +0000" stop="20261103144000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103144000 +0000" stop="20261103164000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103164000 +0000" stop="20261103184000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103184000 +0000" stop="20261103204000 +0000" channel="ARPPV26.mena">
-    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102175500 +0000" stop="20261102195500 +0000" channel="ARPPV28.mena">
-    <title lang="en">🔴 LIVE: Al Ittihad vs Al Ain</title>
-    <sub-title lang="en">AFC Champions League Elite</sub-title>
-    <desc lang="en">Al Ittihad vs Al Ain. AFC Champions League Elite. Arabic commentary. Starts Mon 2 Nov, 17:55 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102195500 +0000" stop="20261102205500 +0000" channel="ARPPV28.mena">
-    <title lang="en">🔴 LIVE: Al Ittihad vs Al Ain</title>
-    <sub-title lang="en">AFC Champions League Elite</sub-title>
-    <desc lang="en">Al Ittihad vs Al Ain. AFC Champions League Elite. Arabic commentary. Starts Mon 2 Nov, 17:55 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102205500 +0000" stop="20261102225500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102225500 +0000" stop="20261103005500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103005500 +0000" stop="20261103025500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103025500 +0000" stop="20261103045500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103045500 +0000" stop="20261103065500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103065500 +0000" stop="20261103085500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103085500 +0000" stop="20261103105500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103105500 +0000" stop="20261103125500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103125500 +0000" stop="20261103145500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103145500 +0000" stop="20261103165500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103165500 +0000" stop="20261103185500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103185500 +0000" stop="20261103205500 +0000" channel="ARPPV28.mena">
-    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102181000 +0000" stop="20261102201000 +0000" channel="ARPPV29.mena">
@@ -10392,6 +10244,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">Day 1: Court Central | all | 8K EXCLUSIVE | CA: SOCCER PPV 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102170000 +0000" stop="20261102190000 +0000" channel="CASOCCERPPV3.ca">
     <title lang="en">🔴 LIVE: Day 1: Court 1</title>
     <desc lang="en">Day 1: Court 1. Starts Mon 2 Nov, 17:00 UK time.</desc>
@@ -10468,6 +10325,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="CASOCCERPPV3.ca">
+    <title lang="en">Day 1: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 3</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="CASOCCERPPV3.ca">
     <title lang="en">Day 1: Court 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 3</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -10552,6 +10414,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="CASOCCERPPV4.ca">
+    <title lang="en">Day 1: Court 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 4</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102170000 +0000" stop="20261102190000 +0000" channel="CASOCCERPPV5.ca">
     <title lang="en">🔴 LIVE: Early Round Coverage, Day 1</title>
     <desc lang="en">Early Round Coverage, Day 1. Starts Mon 2 Nov, 17:00 UK time.</desc>
@@ -10632,6 +10499,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="CASOCCERPPV5.ca">
+    <title lang="en">Early Round Coverage, Day 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="CASOCCERPPV6.ca">
     <title lang="en">Bears vs. Seahawks (Tue 3 Nov, 01:15)</title>
     <sub-title lang="en">⏭ Coming up: NFL</sub-title>
@@ -10705,78 +10577,6 @@
   </programme>
   <programme start="20261103221500 +0000" stop="20261104001500 +0000" channel="CASOCCERPPV6.ca">
     <title lang="en">Bears vs. Seahawks | all | 02-11-2026 | 23:56 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 6</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102175500 +0000" stop="20261102195500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">🔴 LIVE: Wolfsburg vs. Hoffenheim</title>
-    <desc lang="en">Wolfsburg vs. Hoffenheim. Starts Mon 2 Nov, 17:55 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102195500 +0000" stop="20261102205500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">🔴 LIVE: Wolfsburg vs. Hoffenheim</title>
-    <desc lang="en">Wolfsburg vs. Hoffenheim. Starts Mon 2 Nov, 17:55 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102205500 +0000" stop="20261102225500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102225500 +0000" stop="20261103005500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103005500 +0000" stop="20261103025500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103025500 +0000" stop="20261103045500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103045500 +0000" stop="20261103065500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103065500 +0000" stop="20261103085500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103085500 +0000" stop="20261103105500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103105500 +0000" stop="20261103125500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103125500 +0000" stop="20261103145500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103145500 +0000" stop="20261103165500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103165500 +0000" stop="20261103185500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103185500 +0000" stop="20261103205500 +0000" channel="CASOCCERPPV8.ca">
-    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -10925,80 +10725,6 @@
   </programme>
   <programme start="20261103193000 +0000" stop="20261103213000 +0000" channel="DAZNPPV12.gb">
     <title lang="en">Onze Créateurs vs. CS Bamako | Première Division - Mali | 2026-11-02 | 18:30 (GMT) | 8K EXCLUSIVE | GB: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">🔴 LIVE: Chris Vernon Show</title>
-    <sub-title lang="en">NBA</sub-title>
-    <desc lang="en">Chris Vernon Show. NBA. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102200000 +0000" stop="20261102210000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">🔴 LIVE: Chris Vernon Show</title>
-    <sub-title lang="en">NBA</sub-title>
-    <desc lang="en">Chris Vernon Show. NBA. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102210000 +0000" stop="20261102230000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102230000 +0000" stop="20261103010000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103010000 +0000" stop="20261103030000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103030000 +0000" stop="20261103050000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103050000 +0000" stop="20261103070000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103070000 +0000" stop="20261103090000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103090000 +0000" stop="20261103110000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103150000 +0000" stop="20261103170000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103170000 +0000" stop="20261103190000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103190000 +0000" stop="20261103210000 +0000" channel="DAZNPPV12.us">
-    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -11591,294 +11317,6 @@
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="DAZNPPV17.us">
     <title lang="en">Grizz Beat | NBA | 2026-11-02 | 20:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 17</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">🔴 LIVE: LIFE PACIFIC VS. UTAH TECH</title>
-    <desc lang="en">LIFE PACIFIC VS. UTAH TECH. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102200000 +0000" stop="20261102210000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">🔴 LIVE: LIFE PACIFIC VS. UTAH TECH</title>
-    <desc lang="en">LIFE PACIFIC VS. UTAH TECH. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102210000 +0000" stop="20261102230000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102230000 +0000" stop="20261103010000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103010000 +0000" stop="20261103030000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103030000 +0000" stop="20261103050000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103050000 +0000" stop="20261103070000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103070000 +0000" stop="20261103090000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103090000 +0000" stop="20261103110000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103150000 +0000" stop="20261103170000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103170000 +0000" stop="20261103190000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103190000 +0000" stop="20261103210000 +0000" channel="ESPNPPV27.us">
-    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">🔴 LIVE: THE CITADEL VS. EAST TENNESSEE STATE</title>
-    <desc lang="en">THE CITADEL VS. EAST TENNESSEE STATE. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102200000 +0000" stop="20261102210000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">🔴 LIVE: THE CITADEL VS. EAST TENNESSEE STATE</title>
-    <desc lang="en">THE CITADEL VS. EAST TENNESSEE STATE. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102210000 +0000" stop="20261102230000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102230000 +0000" stop="20261103010000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103010000 +0000" stop="20261103030000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103030000 +0000" stop="20261103050000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103050000 +0000" stop="20261103070000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103070000 +0000" stop="20261103090000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103090000 +0000" stop="20261103110000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103150000 +0000" stop="20261103170000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103170000 +0000" stop="20261103190000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103190000 +0000" stop="20261103210000 +0000" channel="ESPNPPV28.us">
-    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">🔴 LIVE: HAMPTON VS. HOUSTON</title>
-    <desc lang="en">HAMPTON VS. HOUSTON. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102200000 +0000" stop="20261102210000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">🔴 LIVE: HAMPTON VS. HOUSTON</title>
-    <desc lang="en">HAMPTON VS. HOUSTON. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102210000 +0000" stop="20261102230000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102230000 +0000" stop="20261103010000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103010000 +0000" stop="20261103030000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103030000 +0000" stop="20261103050000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103050000 +0000" stop="20261103070000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103070000 +0000" stop="20261103090000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103090000 +0000" stop="20261103110000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103150000 +0000" stop="20261103170000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103170000 +0000" stop="20261103190000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103190000 +0000" stop="20261103210000 +0000" channel="ESPNPPV29.us">
-    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">🔴 LIVE: BLACK HILLS STATE VS. MONTANA STATE</title>
-    <desc lang="en">BLACK HILLS STATE VS. MONTANA STATE. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102200000 +0000" stop="20261102210000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">🔴 LIVE: BLACK HILLS STATE VS. MONTANA STATE</title>
-    <desc lang="en">BLACK HILLS STATE VS. MONTANA STATE. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102210000 +0000" stop="20261102230000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102230000 +0000" stop="20261103010000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103010000 +0000" stop="20261103030000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103030000 +0000" stop="20261103050000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103050000 +0000" stop="20261103070000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103070000 +0000" stop="20261103090000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103090000 +0000" stop="20261103110000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103150000 +0000" stop="20261103170000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103170000 +0000" stop="20261103190000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103190000 +0000" stop="20261103210000 +0000" channel="ESPNPPV30.us">
-    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -12885,6 +12323,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="ESPNPPV44.us">
+    <title lang="en">MIT VS. BRYANT | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 44</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ESPNPPV45.us">
     <title lang="en">🔴 LIVE: MON, 11/2 - ESPN FC</title>
     <desc lang="en">MON, 11/2 - ESPN FC. Starts Mon 2 Nov, 22:00 UK time.</desc>
@@ -12948,6 +12391,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="ESPNPPV45.us">
+    <title lang="en">MON, 11/2 - ESPN FC | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 45</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="ESPNPPV45.us">
     <title lang="en">MON, 11/2 - ESPN FC | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 45</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -13019,6 +12467,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="ESPNPPV46.us">
+    <title lang="en">UNIVERSITY OF THE DISTRICT OF COLUMBIA VS. GEORGE WASHINGTON | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 46</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ESPNPPV47.us">
     <title lang="en">🔴 LIVE: NEWPORT NEWS APPRENTICE SCHOOL VS. LONGWOOD</title>
     <desc lang="en">NEWPORT NEWS APPRENTICE SCHOOL VS. LONGWOOD. Starts Mon 2 Nov, 22:00 UK time.</desc>
@@ -13082,6 +12535,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="ESPNPPV47.us">
+    <title lang="en">NEWPORT NEWS APPRENTICE SCHOOL VS. LONGWOOD | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 47</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="ESPNPPV47.us">
     <title lang="en">NEWPORT NEWS APPRENTICE SCHOOL VS. LONGWOOD | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 47</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -13153,6 +12611,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="ESPNPPV48.us">
+    <title lang="en">MONTEVALLO VS. SAMFORD | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 48</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ESPNPPV49.us">
     <title lang="en">🔴 LIVE: TEXAS SOUTHERN VS. TULANE</title>
     <desc lang="en">TEXAS SOUTHERN VS. TULANE. Starts Mon 2 Nov, 22:00 UK time.</desc>
@@ -13216,6 +12679,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="ESPNPPV49.us">
+    <title lang="en">TEXAS SOUTHERN VS. TULANE | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 49</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="ESPNPPV49.us">
     <title lang="en">TEXAS SOUTHERN VS. TULANE | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 49</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -13287,6 +12755,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="ESPNPPV50.us">
+    <title lang="en">FURMAN VS. SOUTH FLORIDA | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 50</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ESPNPPV51.us">
     <title lang="en">🔴 LIVE: ST. FRANCIS (ILL.) VS. UIC</title>
     <desc lang="en">ST. FRANCIS (ILL.) VS. UIC. Starts Mon 2 Nov, 22:00 UK time.</desc>
@@ -13350,6 +12823,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="ESPNPPV51.us">
+    <title lang="en">ST. FRANCIS (ILL.) VS. UIC | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 51</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="ESPNPPV51.us">
     <title lang="en">ST. FRANCIS (ILL.) VS. UIC | Mon 02 Nov 17:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 51</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -13427,78 +12905,6 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">🔴 LIVE: ULTIMATE POOL</title>
-    <desc lang="en">ULTIMATE POOL. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102200000 +0000" stop="20261102210000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">🔴 LIVE: ULTIMATE POOL</title>
-    <desc lang="en">ULTIMATE POOL. Starts Mon 2 Nov, 18:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102210000 +0000" stop="20261102230000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102230000 +0000" stop="20261103010000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103010000 +0000" stop="20261103030000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103030000 +0000" stop="20261103050000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103050000 +0000" stop="20261103070000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103070000 +0000" stop="20261103090000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103090000 +0000" stop="20261103110000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103110000 +0000" stop="20261103130000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103130000 +0000" stop="20261103150000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103150000 +0000" stop="20261103170000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103170000 +0000" stop="20261103190000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103190000 +0000" stop="20261103210000 +0000" channel="MAXPPV9.uk">
-    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="NFL14.uk">
     <title lang="en">Bears at Seahawks (Tue 3 Nov, 01:15)</title>
     <sub-title lang="en">⏭ Coming up: NFL</sub-title>
@@ -13566,6 +12972,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103204500 +0000" stop="20261103224500 +0000" channel="NFL14.uk">
+    <title lang="en">NFL | 14 - MNF 8:15pm Bears at Seahawks</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103224500 +0000" stop="20261104004500 +0000" channel="NFL14.uk">
     <title lang="en">NFL | 14 - MNF 8:15pm Bears at Seahawks</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -13640,6 +13051,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="NHL1.uk">
+    <title lang="en">NHL | 01 - 7pm Golden Knights @ Bruins</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="NHL2.uk">
     <title lang="en">Next up: LIVE – Red Wings @ Panthers (00:00)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -13706,6 +13122,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="NHL2.uk">
+    <title lang="en">NHL | 02 - 7pm Red Wings @ Panthers</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="NHL2.uk">
     <title lang="en">NHL | 02 - 7pm Red Wings @ Panthers</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -13857,6 +13278,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="NHL4.uk">
+    <title lang="en">NHL | 04 - 9pm Flames @ Sharks</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261102230000 +0000" channel="PPVEVENT1.us">
     <title lang="en">Next up: LIVE – WWE Monday Night RAW (23:00)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -13927,6 +13353,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: WWE Monday Night RAW (Mon 2 Nov, 23:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261102230000 +0000" channel="PPVEVENT2.us">
     <title lang="en">Next up: LIVE – Millbridge Speedway (23:00)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -13993,6 +13424,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Millbridge Speedway (Mon 2 Nov, 23:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="PPVEVENT2.us">
     <title lang="en">PPV EVENT 02: Millbridge Speedway (Mon 2 Nov, 23:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -14100,6 +13536,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103224500 +0000" stop="20261104004500 +0000" channel="Paramount003.us">
+    <title lang="en">US (Paramount 003) | Galatasaray vs. Stuttgart (2026-11-03 13:00:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount004.us">
     <title lang="en">Shakhtar Donetsk vs. Sporting CP (Tue 3 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Coming up: UEFA Champions League Matchday 4</sub-title>
@@ -14175,6 +13616,11 @@
     <category lang="en">Live</category>
   </programme>
   <programme start="20261103204500 +0000" stop="20261103224500 +0000" channel="Paramount004.us">
+    <title lang="en">US (Paramount 004) | Shakhtar Donetsk vs. Sporting CP (2026-11-03 13:00:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103224500 +0000" stop="20261104004500 +0000" channel="Paramount004.us">
     <title lang="en">US (Paramount 004) | Shakhtar Donetsk vs. Sporting CP (2026-11-03 13:00:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -14259,6 +13705,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="Paramount006.us">
+    <title lang="en">US (Paramount 006) | Man. United vs. Roma (2026-11-03 15:00:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount007.us">
     <title lang="en">Atlético Madrid vs. Bayern (Tue 3 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Coming up: UEFA Champions League Matchday 4</sub-title>
@@ -14339,6 +13790,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="Paramount007.us">
+    <title lang="en">US (Paramount 007) | Atlético Madrid vs. Bayern (2026-11-03 15:00:10)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount008.us">
     <title lang="en">The Golazo Show (Tue 3 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Coming up Tue 3 Nov</sub-title>
@@ -14416,6 +13872,11 @@
     <desc lang="en">The Golazo Show. Starts Tue 3 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="Paramount008.us">
+    <title lang="en">US (Paramount 008) | The Golazo Show (2026-11-03 15:00:15)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount009.us">
     <title lang="en">Villarreal vs. PSG (Tue 3 Nov, 20:00)</title>
@@ -14495,6 +13956,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="Paramount009.us">
+    <title lang="en">US (Paramount 009) | Villarreal vs. PSG (2026-11-03 15:00:20)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount010.us">
     <title lang="en">Feyenoord vs. Inter (Tue 3 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Coming up Tue 3 Nov</sub-title>
@@ -14572,6 +14038,11 @@
     <desc lang="en">Feyenoord vs. Inter. Starts Tue 3 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="Paramount010.us">
+    <title lang="en">US (Paramount 010) | Feyenoord vs. Inter (2026-11-03 15:00:25)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount011.us">
     <title lang="en">Bodø/Glimt vs. Lille (Tue 3 Nov, 20:00)</title>
@@ -14653,6 +14124,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="Paramount011.us">
+    <title lang="en">US (Paramount 011) | Bodø/Glimt vs. Lille (2026-11-03 15:00:30)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount012.us">
     <title lang="en">LASK vs. Slovan Bratislava (Tue 3 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Coming up: UEFA Champions League Matchday 4</sub-title>
@@ -14732,6 +14208,11 @@
     <desc lang="en">LASK vs. Slovan Bratislava. UEFA Champions League Matchday 4. Starts Tue 3 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="Paramount012.us">
+    <title lang="en">US (Paramount 012) | LASK vs. Slovan Bratislava (2026-11-03 15:00:35)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount013.us">
     <title lang="en">Queens Park Rangers vs. Burnley (Tue 3 Nov, 19:45)</title>
@@ -14813,6 +14294,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103224500 +0000" stop="20261104004500 +0000" channel="Paramount013.us">
+    <title lang="en">US (Paramount 013) | Queens Park Rangers vs. Burnley (2026-11-03 15:35:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount014.us">
     <title lang="en">Birmingham City vs. Millwall (Tue 3 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Coming up: Championship</sub-title>
@@ -14893,6 +14379,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="Paramount014.us">
+    <title lang="en">US (Paramount 014) | Birmingham City vs. Millwall (2026-11-03 15:50:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount015.us">
     <title lang="en">West Bromwich Albion vs. Southampton (Tue 3 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Coming up: Championship</sub-title>
@@ -14972,6 +14463,11 @@
     <desc lang="en">West Bromwich Albion vs. Southampton. Championship. Starts Tue 3 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="Paramount015.us">
+    <title lang="en">US (Paramount 015) | West Bromwich Albion vs. Southampton (2026-11-03 15:50:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount016.us">
     <title lang="en">Rennes vs. Olympiacos (Wed 4 Nov, 16:20)</title>
@@ -29348,6 +28844,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="SN008.ca">
+    <title lang="en">CA (SN+ 008) | Detroit @ Florida (2026-11-02 19:00:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="SN009.ca">
     <title lang="en">Next up: LIVE – Vegas @ Boston (00:00)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -29412,6 +28913,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="SN009.ca">
+    <title lang="en">CA (SN+ 009) | Vegas @ Boston (2026-11-02 19:00:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="SN009.ca">
     <title lang="en">CA (SN+ 009) | Vegas @ Boston (2026-11-02 19:00:05)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -29935,6 +29441,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="SN016.ca">
+    <title lang="en">CA (SN+ 016) | Sportsnet Central: Nov. 2 (2026-11-03 05:00:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="SN017.ca">
     <title lang="en">The JD Bunkis Podcast: Nov. 3 (Tue 3 Nov, 14:00)</title>
     <sub-title lang="en">⏭ Coming up Tue 3 Nov</sub-title>
@@ -30006,6 +29517,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="SN017.ca">
+    <title lang="en">CA (SN+ 017) | The JD Bunkis Podcast: Nov. 3 (2026-11-03 09:00:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="SN017.ca">
     <title lang="en">CA (SN+ 017) | The JD Bunkis Podcast: Nov. 3 (2026-11-03 09:00:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -30082,6 +29598,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103210000 +0000" stop="20261103230000 +0000" channel="SN018.ca">
+    <title lang="en">CA (SN+ 018) | The Raptors Show: Nov. 3 (2026-11-03 11:00:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="SN018.ca">
     <title lang="en">CA (SN+ 018) | The Raptors Show: Nov. 3 (2026-11-03 11:00:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -30411,6 +29932,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104000000 +0000" channel="SN022.ca">
+    <title lang="en">🔴 LIVE: GSOC Masters _ Draw 3</title>
+    <desc lang="en">GSOC Masters _ Draw 3. Starts Tue 3 Nov, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="SN023.ca">
     <title lang="en">Real Kyper &amp; Bourne: Nov. 3 (Tue 3 Nov, 21:00)</title>
     <sub-title lang="en">⏭ Coming up Tue 3 Nov</sub-title>
@@ -30489,6 +30016,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104000000 +0000" channel="SN023.ca">
+    <title lang="en">🔴 LIVE: Real Kyper &amp; Bourne: Nov. 3</title>
+    <desc lang="en">Real Kyper &amp; Bourne: Nov. 3. Starts Tue 3 Nov, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="SN024.ca">
     <title lang="en">The FAN Pregame: Nov. 3 (Tue 3 Nov, 23:00)</title>
     <sub-title lang="en">⏭ Coming up Tue 3 Nov</sub-title>
@@ -30562,10 +30095,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103220000 +0000" stop="20261103230000 +0000" channel="SN024.ca">
-    <title lang="en">Next up: LIVE – The FAN Pregame: Nov. 3 (Tue 3 Nov, 23:00)</title>
+    <title lang="en">Next up: LIVE – The FAN Pregame: Nov. 3 (23:00)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. The FAN Pregame: Nov. 3 starts Tue 3 Nov, 23:00 UK time.</desc>
+    <desc lang="en">Next up: LIVE. The FAN Pregame: Nov. 3 starts at 23:00 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="SN024.ca">
+    <title lang="en">🔴 LIVE: The FAN Pregame: Nov. 3</title>
+    <desc lang="en">The FAN Pregame: Nov. 3. Starts Tue 3 Nov, 23:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="SN025.ca">
     <title lang="en">Colorado @ Columbus (Wed 4 Nov, 00:00)</title>
@@ -34390,6 +33929,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103224000 +0000" stop="20261104004000 +0000" channel="STAN03.au">
+    <title lang="en">AU (STAN 03) | Shakhtar Donetsk v Sporting CP UEFA Champions League Matchday 4 2026/2027 (2026-11-04 04:40:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="STAN04.au">
     <title lang="en">Galatasaray v Stuttgart UEFA Champions League Matchday 4 2026/2027 (Tue 3 Nov, 17:40)</title>
     <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
@@ -34465,6 +34009,11 @@
     <category lang="en">Live</category>
   </programme>
   <programme start="20261103204000 +0000" stop="20261103224000 +0000" channel="STAN04.au">
+    <title lang="en">AU (STAN 04) | Galatasaray v Stuttgart UEFA Champions League Matchday 4 2026/2027 (2026-11-04 04:40:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103224000 +0000" stop="20261104004000 +0000" channel="STAN04.au">
     <title lang="en">AU (STAN 04) | Galatasaray v Stuttgart UEFA Champions League Matchday 4 2026/2027 (2026-11-04 04:40:50)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -34549,6 +34098,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103224000 +0000" stop="20261104004000 +0000" channel="STAN05.au">
+    <title lang="en">AU (STAN 05) | Football Zone: MD4 Wednesday UEFA Champions League 2026/27 (2026-11-04 06:40:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="STAN06.au">
     <title lang="en">Barcelona v Aston Villa UEFA Champions League Matchday 4 2026/2027 (Tue 3 Nov, 19:55)</title>
     <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
@@ -34628,6 +34182,11 @@
     <desc lang="en">Barcelona v Aston Villa UEFA Champions League Matchday 4 2026/2027. Starts Tue 3 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103225500 +0000" stop="20261104005500 +0000" channel="STAN06.au">
+    <title lang="en">AU (STAN 06) | Barcelona v Aston Villa UEFA Champions League Matchday 4 2026/2027 (2026-11-04 06:55:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="STAN07.au">
     <title lang="en">Manchester United v Roma UEFA Champions League Matchday 4 2026/2027 (Tue 3 Nov, 19:55)</title>
@@ -34709,6 +34268,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103225500 +0000" stop="20261104005500 +0000" channel="STAN07.au">
+    <title lang="en">AU (STAN 07) | Manchester United v Roma UEFA Champions League Matchday 4 2026/2027 (2026-11-04 06:55:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="STAN08.au">
     <title lang="en">Atlético de Madrid v Bayern München UEFA Champions League Matchday 4 2026/2027 (Tue 3 Nov, 19:55)</title>
     <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
@@ -34788,6 +34352,11 @@
     <desc lang="en">Atlético de Madrid v Bayern München UEFA Champions League Matchday 4 2026/2027. Starts Tue 3 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103225500 +0000" stop="20261104005500 +0000" channel="STAN08.au">
+    <title lang="en">AU (STAN 08) | Atlético de Madrid v Bayern München UEFA Champions League Matchday 4 2026/2027 (2026-11-04 06:55:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="STAN09.au">
     <title lang="en">Villarreal v Paris SaintGermain UEFA Champions League Matchday 4 2026/2027 (Tue 3 Nov, 19:55)</title>
@@ -34869,6 +34438,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103225500 +0000" stop="20261104005500 +0000" channel="STAN09.au">
+    <title lang="en">AU (STAN 09) | Villarreal v Paris SaintGermain UEFA Champions League Matchday 4 2026/2027 (2026-11-04 06:55:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="STAN10.au">
     <title lang="en">Bodø / Glimt v Lille UEFA Champions League Matchday 4 2026/2027 (Tue 3 Nov, 19:55)</title>
     <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
@@ -34948,6 +34522,11 @@
     <desc lang="en">Bodø / Glimt v Lille UEFA Champions League Matchday 4 2026/2027. Starts Tue 3 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103225500 +0000" stop="20261104005500 +0000" channel="STAN10.au">
+    <title lang="en">AU (STAN 10) | Bodø / Glimt v Lille UEFA Champions League Matchday 4 2026/2027 (2026-11-04 06:55:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="STAN100.au">
     <title lang="en">Liverpool v Manchester United Premier League Matchweek 11 2026/2027 (Sun 22 Nov, 16:20)</title>
@@ -35107,6 +34686,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103225500 +0000" stop="20261104005500 +0000" channel="STAN11.au">
+    <title lang="en">AU (STAN 11) | Feyenoord v Internazionale UEFA Champions League Matchday 4 2026/2027 (2026-11-04 06:55:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="STAN12.au">
     <title lang="en">LASK v Slovan Bratislava UEFA Champions League Matchday 4 2026/2027 (Tue 3 Nov, 19:55)</title>
     <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
@@ -35186,6 +34770,11 @@
     <desc lang="en">LASK v Slovan Bratislava UEFA Champions League Matchday 4 2026/2027. Starts Tue 3 Nov, 19:55 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103225500 +0000" stop="20261104005500 +0000" channel="STAN12.au">
+    <title lang="en">AU (STAN 12) | LASK v Slovan Bratislava UEFA Champions League Matchday 4 2026/2027 (2026-11-04 06:55:50)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="STAN13.au">
     <title lang="en">Fenerbahçe v Liverpool UEFA Champions League Matchday 4 2026/2027 (Wed 4 Nov, 17:40)</title>
@@ -49928,6 +49517,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="UEFA26.uk">
+    <title lang="en">UEFA | 26 - Lille v KÍ Klaksvík 20.00</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="UEFA27.uk">
     <title lang="en">Red Star Belgrade vs Copenhagen (Thu 5 Nov, 17:45)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -53532,6 +53126,71 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="ARPPV26.mena">
+    <title lang="en">Denis Shapovalov vs Karen Khachanov || Arabic | Rolex Paris Masters | 02-11-2026 | 17:40 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 26</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ARPPV27.mena">
     <title lang="en">NO EVENT STREAMING NOW - | 8K EXCLUSIVE | MENA: AR PPV 27</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -53595,6 +53254,71 @@
   <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="ARPPV27.mena">
     <title lang="en">NO EVENT STREAMING NOW - | 8K EXCLUSIVE | MENA: AR PPV 27</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="ARPPV28.mena">
+    <title lang="en">Al Ittihad vs Al Ain || Arabic | AFC Champions League Elite | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | MENA: AR PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ARPPV3.mena">
@@ -65297,6 +65021,71 @@
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="CASOCCERPPV8.ca">
+    <title lang="en">Wolfsburg vs. Hoffenheim | all | 02-11-2026 | 17:55 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 8</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="CASOCCERPPV80.ca">
     <title lang="en">NO EVENT STREAMING NOW - | 8K EXCLUSIVE | CA: SOCCER PPV 80</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -66919,6 +66708,71 @@
   </programme>
   <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="DAZNPPV11.us">
     <title lang="en">KF Teuta vs. FK Partizani | Superliga - Albania | 2026-11-02 | 17:30 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 11</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Chris Vernon Show | NBA | 2026-11-02 | 18:00 (GMT) | 8K EXCLUSIVE | US: DAZN PPV 12</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -83302,6 +83156,201 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="ESPNPPV27.us">
+    <title lang="en">LIFE PACIFIC VS. UTAH TECH | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 27</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="ESPNPPV28.us">
+    <title lang="en">THE CITADEL VS. EAST TENNESSEE STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 28</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="ESPNPPV29.us">
+    <title lang="en">HAMPTON VS. HOUSTON | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 29</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ESPNPPV3.us">
     <title lang="en">REINHARDT VS. MERCER | Mon 02 Nov 11:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 3</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -83364,6 +83413,71 @@
   </programme>
   <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="ESPNPPV3.us">
     <title lang="en">REINHARDT VS. MERCER | Mon 02 Nov 11:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 3</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="ESPNPPV30.us">
+    <title lang="en">BLACK HILLS STATE VS. MONTANA STATE | Mon 02 Nov 13:00 EST (US) | 8K EXCLUSIVE | US: ESPN+ PPV 30</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -92402,6 +92516,71 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="MAXPPV9.uk">
+    <title lang="en">ULTIMATE POOL | Mon 02 Nov 18:00 UTC (UK) | 8K EXCLUSIVE | UK: MAX PPV 9</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="MAXPPV9.us">
     <title lang="en">- NO EVENT STREAMING - | 8K EXCLUSIVE | US: MAX PPV 9</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -99698,17 +99877,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Paramount005.us">
-    <title lang="en">US (Paramount 005) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</title>
+    <title lang="en">US (Paramount 05) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="Paramount005.us">
-    <title lang="en">US (Paramount 005) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</title>
+    <title lang="en">US (Paramount 05) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="Paramount005.us">
-    <title lang="en">US (Paramount 005) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</title>
+    <title lang="en">US (Paramount 05) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -100232,132 +100411,132 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="TSN04.ca">
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="TSN04.ca">
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="TSN04.ca">
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="TSN04.ca">
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="TSN04.ca">
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="TSN04.ca">
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="TSN04.ca">
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="TSN04.ca">
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="TSN04.ca">
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="TSN04.ca">
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="TSN04.ca">
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="TSN04.ca">
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="TSN04.ca">
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="TSN004.ca">
     <title lang="en">CA (TSN+ 04) | Formula 1 Driver Tracker _ Italian Grand Prix Practice #1 (2025-09-05 07:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="TSN32.ca">
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="TSN32.ca">
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="TSN32.ca">
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="TSN32.ca">
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="TSN32.ca">
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="TSN32.ca">
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="TSN32.ca">
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="TSN32.ca">
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="TSN32.ca">
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="TSN32.ca">
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="TSN32.ca">
+  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="TSN32.ca">
+  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="TSN32.ca">
+  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="TSN032.ca">
     <title lang="en">CA (TSN+ 32) | Formula 1 On_Board Camera: Lance Stroll _ Italian Grand Prix Practice #3 (2025-09-06 06:20:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
