@@ -60,6 +60,14 @@ def rows_of(data):
     return (data.get("rows") if isinstance(data, dict) else data if isinstance(data, list) else None) or []
 
 
+def events_one(cid, first_day, last_day, label):
+    """beIN's tv-event only takes ONE channel id per request (several comma-joined ids -> HTTP 400 "must be a UUID",
+    seen 2 Nov 2026 - which is why SPORT_epg.py falls back to one by one). One request covers the whole window."""
+    url = (f"{API}tv-event?&startBefore={last_day + timedelta(days=1):%Y-%m-%d}T00:00:00.000Z"
+           f"&endAfter={first_day:%Y-%m-%d}T00:00:00.000Z&channelIds={cid}")
+    return [r for r in rows_of(get(url, label)) if isinstance(r, dict)]
+
+
 def t(s):
     return datetime.fromisoformat(str(s).replace("Z", "+00:00")).astimezone(timezone.utc)
 
@@ -73,19 +81,12 @@ def main():
         chans = {str(r["id"]): " ".join(str(r.get("name") or "").split()) for r in rows_of(data)
                  if isinstance(r, dict) and r.get("id")}
         print(f"  region {code}: {len(chans)} channel(s): {sorted(set(chans.values()))[:40]}")
-        if chans:
-            vchans = valid(chans)
-            day = now.date()
-            url = (f"{API}tv-event?&startBefore={day + timedelta(days=2):%Y-%m-%d}T00:00:00.000Z&endAfter={day:%Y-%m-%d}T00:00:00.000Z"
-                   f"&channelIds={','.join(sorted(vchans))}")
-            ev = rows_of(get(url, f"2-day survey {code}"))
+        if chans and len(chans) <= 6:                       # small regions: count today + tomorrow per channel
             names = {}
-            for it in ev:
-                if isinstance(it, dict):
-                    n = next((chans[i] for i in chans if i.upper() == str(it.get("channelId") or "").upper()), "?")
-                    names[n] = names.get(n, 0) + 1
-            print(f"  region {code}: {len(ev)} programmes over today+tomorrow on {len(names)} channel(s): "
-                  f"{dict(sorted(names.items())[:12])}")
+            for cid, cname in sorted(valid(chans).items(), key=lambda kv: kv[1]):
+                ev = events_one(cid, now.date(), now.date() + timedelta(days=1), f"survey {code} {cname}")
+                names[cname] = len(ev)
+            print(f"  region {code}: programmes over today+tomorrow: {names}")
         if chans and code in ("en-mena",) and not best:
             best_code, best = code, chans
     if not best:                                  # en-mena gave nothing: use the first region that did
@@ -97,19 +98,11 @@ def main():
     sports = valid({i: n for i, n in best.items() if "sport" in n.lower() or "xtra" in n.lower() or "max" in n.lower()} or best)
     ids = sorted(sports)
     per, sample_row = {i: [] for i in ids}, None
-    for d in range(DAYS):
-        day = (now + timedelta(days=d)).date()
-        nxt = day + timedelta(days=1)
-        url = (f"{API}tv-event?&startBefore={nxt:%Y-%m-%d}T00:00:00.000Z&endAfter={day:%Y-%m-%d}T00:00:00.000Z"
-               f"&channelIds={','.join(ids)}")
-        data = get(url, f"events {day}")
-        for it in rows_of(data):
-            if not isinstance(it, dict):
-                continue
-            sample_row = sample_row or it
-            cid = next((i for i in ids if i.upper() == str(it.get("channelId") or "").upper()), None)
-            if cid:
-                per[cid].append(it)
+    first_day, last_day = now.date(), now.date() + timedelta(days=DAYS - 1)
+    for cid in ids:
+        rows = events_one(cid, first_day, last_day, f"{sports[cid]}")
+        per[cid] = rows
+        sample_row = sample_row or (rows[0] if rows else None)
     if sample_row:
         print(f"\nfields in a programme row: {sorted(sample_row)}")
         print(f"sample row: {json.dumps(sample_row, ensure_ascii=False)[:700]}")
