@@ -5199,7 +5199,8 @@ NZ_SUB_PREFIXES = [("PL", "Premier League"), ("PREM", "Gallagher Premiership"), 
                    ("WBBL", "Women's Big Bash League"), ("BBL", "Big Bash League"),
                    ("RLWC Wheelchair", "Rugby League World Cup Wheelchair"), ("RLWC", "Rugby League World Cup"),
                    ("UCL", "UEFA Champions League"), ("UEL", "UEFA Europa League"), ("NRL", "NRL"),
-                   ("NPC", "Bunnings NPC"), ("ANZ PL Darts", "ANZ Premier League Darts")]
+                   ("NPC", "Bunnings NPC"), ("ANZ PL Darts", "ANZ Premier League Darts"),
+                   ("WST", "World Snooker Tour")]       # 2 Nov 2026: Sky Go has "WST: International Champ D3 Evening"
 
 
 def nz_sub(sub):
