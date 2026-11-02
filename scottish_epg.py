@@ -131,6 +131,19 @@ OUTPUT_NAME = "scottish_epg.xml"   # the file name on GitHub
 # Club match blocks go LIVE this many minutes before kick-off (0 = at kick-off)
 MATCH_EARLY_MINUTES = 10
 FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap)
+
+# Clubs with no match in their own league during the window (3 Nov 2026): every club of the four SPFL divisions always gets a
+# channel for its own league. With no match listed it shows these blocks, so the row never reads "No information" (for
+# example during a cup weekend or an international break). Plain wording - no "Next Match" when there is none.
+NO_MATCH_CHANNELS = True
+NO_MATCH_HOURS = 6        # block length
+NO_MATCH_DAYS = 10        # how far ahead the blocks run (the default --days)
+NO_MATCH_TITLE = "No {comp} match listed in the next {days} days"
+NO_MATCH_SUB = "No match scheduled"
+NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. This could be a cup weekend, an "
+                 "international break or a fixture that has not been announced yet. This channel updates as soon as "
+                 "a match is added.")
+CLUB_LEAGUE = {}          # {team_id: competition name}, filled by fetch_english_clubs
 DOCTYPE = True            # write the standard XMLTV DOCTYPE line
 COUNTDOWN = False         # add "- kick-off in 2d 23h" to each filler block
 FILLER_STYLE = "plain"    # "plain": "Celtic v Rangers (Sat 17 Oct, 12:30)"
@@ -201,6 +214,7 @@ def fetch_english_clubs():
             team = t.get("team") or {}
             if team.get("id"):
                 clubs[str(team["id"])] = short_name(team.get("displayName") or team.get("name"))
+                CLUB_LEAGUE.setdefault(str(team["id"]), comp)
         print(f"  {len(teams)} clubs")
     return clubs
 
@@ -344,8 +358,32 @@ def build_channels(matches, english, suffix, english_only):
         ext = COMPETITIONS[comp][1]
         channels.append((f"{bases[tid]}.{ext}{suffix}", f"{names[tid]} {comp}",
                          logos.get(tid), sorted(ms, key=lambda m: m["start"])))
+    if NO_MATCH_CHANNELS:
+        for tid, comp in CLUB_LEAGUE.items():
+            if (tid, comp) in grouped or tid not in names:
+                continue
+            channels.append(no_match_channel(f"{bases[tid]}.{COMPETITIONS[comp][1]}{suffix}",
+                                             f"{names[tid]} {comp}", logos.get(tid), names[tid], comp))
     channels.sort(key=lambda c: c[1])
     return channels
+
+
+def no_match_channel(chan_id, name, logo, club, comp):
+    """A club's own-league channel when it has no match in the window: back-to-back NO_MATCH_HOURS blocks saying so."""
+    now = datetime.now(LONDON)
+    t = now.replace(minute=0, second=0, microsecond=0)
+    t -= timedelta(hours=t.hour % NO_MATCH_HOURS)
+    end = t + timedelta(days=NO_MATCH_DAYS)
+    fmt = {"club": club, "comp": comp, "days": NO_MATCH_DAYS}
+    shows = []
+    while t < end:
+        stop = t + timedelta(hours=NO_MATCH_HOURS)
+        shows.append({"no_match": True, "comp": comp, "title": NO_MATCH_TITLE.format(**fmt), "sub": NO_MATCH_SUB,
+                      "desc": NO_MATCH_DESC.format(**fmt),
+                      "start": t.astimezone(timezone.utc), "stop": stop.astimezone(timezone.utc),
+                      "when": "", "teams": []})
+        t = stop
+    return (chan_id, name, logo, shows)
 
 
 # --------------------------------------------------------------------------
@@ -404,6 +442,10 @@ def build_xmltv(channels, filler):
     for chan_id, _, _, ms in channels:
         last_stop = None
         for m in ms:
+            if m.get("no_match"):                      # "no match listed" block: not live, no filler logic
+                add_programme(tv, chan_id, m["start"], m["stop"], m["title"], m["sub"], m["desc"], m["comp"])
+                count += 1
+                continue
             start, stop = m["start"], m["stop"]
             if m.get("teams"):                         # club matches go LIVE a little before kick-off
                 start -= timedelta(minutes=MATCH_EARLY_MINUTES)

@@ -379,6 +379,20 @@ DUMMY_CHANNELS = [
        f"No programme guide is available.") for n in (1, 3)],
 ]
 DUMMY_HOURS = 2          # block length
+
+# Clubs with no match in their own league during the window (3 Nov 2026): English clubs (top four tiers) and La Liga clubs
+# always get a channel for their own league. With no match listed it shows these blocks, so the row never reads
+# "No information" (for example League One / Two clubs on an FA Cup weekend). Everything is stated plainly - no "Next
+# Match" when there is none.
+NO_MATCH_CHANNELS = True
+NO_MATCH_HOURS = 6        # block length
+NO_MATCH_TITLE = "No {comp} match listed in the next {days} days"
+NO_MATCH_SUB = "No match scheduled"
+NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. This could be a cup weekend, an "
+                 "international break or a fixture that has not been announced yet. This channel updates as soon as "
+                 "a match is added.")
+CLUB_LEAGUE = {}          # {team_id: competition name}, filled by fetch_english_clubs / fetch_other_league_clubs
+OTHER_CLUBS = {}          # {team_id: name} for the clubs of OTHER_LEAGUES
 DUMMY_DAYS = 10          # how far ahead the blocks run
 
 UEFA_CHANNEL_DESC = ("Matches that fall under the UEFA umbrella.\n\n"
@@ -455,6 +469,30 @@ def fetch_english_clubs():
             team = t.get("team") or {}
             if team.get("id"):
                 clubs[str(team["id"])] = short_name(team.get("displayName") or team.get("name"))
+                CLUB_LEAGUE.setdefault(str(team["id"]), comp)
+        print(f"  {len(teams)} clubs")
+    return clubs
+
+
+def fetch_other_league_clubs():
+    """{team_id: name} for the clubs of OTHER_LEAGUES (La Liga): their own-league channel exists even without a match."""
+    clubs = {}
+    for comp in OTHER_LEAGUES:
+        slug = COMPETITIONS[comp][0]
+        print(f"Fetching clubs: {comp} ...")
+        try:
+            data = get_json(f"{ESPN_BASE}/{slug}/teams", {"limit": 100})
+            teams = data["sports"][0]["leagues"][0]["teams"] if data else []
+        except NoData:
+            print(f"  WARNING: no team list for {slug}")
+            continue
+        except (KeyError, IndexError, TypeError):
+            teams = []
+        for t in teams:
+            team = t.get("team") or {}
+            if team.get("id"):
+                clubs[str(team["id"])] = short_name(team.get("displayName") or team.get("name"))
+                CLUB_LEAGUE.setdefault(str(team["id"]), comp)
         print(f"  {len(teams)} clubs")
     return clubs
 
@@ -1036,6 +1074,26 @@ def dummy_channel(chan_id, name, title, desc):
     return (chan_id, name, None, shows)
 
 
+def no_match_channel(chan_id, name, logo, club, comp):
+    """A club's own-league channel when it has no match in the window: back-to-back NO_MATCH_HOURS blocks saying so."""
+    now = datetime.now(LONDON)
+    t = now.replace(minute=0, second=0, microsecond=0)
+    t -= timedelta(hours=t.hour % NO_MATCH_HOURS)
+    end = t + timedelta(days=DUMMY_DAYS)
+    fmt = {"club": club, "comp": comp, "days": DUMMY_DAYS}
+    shows = []
+    while t < end:
+        stop = t + timedelta(hours=NO_MATCH_HOURS)
+        shows.append({
+            "comp": comp, "title": NO_MATCH_TITLE.format(**fmt), "sub": NO_MATCH_SUB,
+            "desc": NO_MATCH_DESC.format(**fmt),
+            "start": t.astimezone(timezone.utc), "stop": stop.astimezone(timezone.utc),
+            "when": "", "teams": [], "tbc": False, "live_sub": NO_MATCH_SUB, "not_live": True,
+        })
+        t = stop
+    return (chan_id, name, logo, shows)
+
+
 def goal_rush_channel(matches, suffix, now=None):
     """A 'Premier League Goal Rush' channel: one programme for every time slot in
     which at least GOAL_RUSH_MIN Premier League matches kick off together
@@ -1096,6 +1154,9 @@ def goal_rush_channel(matches, suffix, now=None):
 def build_channels(matches, english, suffix, english_only):
     """[(channel_id, display_name, logo, [matches])], sorted by name."""
     names, logos = dict(english), {}
+    if NO_MATCH_CHANNELS and not english_only:
+        for tid, nm in OTHER_CLUBS.items():
+            names.setdefault(tid, nm)
     for m in matches:
         for t in m["teams"]:
             tid = str(t.get("id", ""))
@@ -1126,6 +1187,12 @@ def build_channels(matches, english, suffix, english_only):
         ext = COMPETITIONS[comp][1]
         channels.append((f"{bases[tid]}.{ext}{suffix}", f"{names[tid]} {comp}",
                          logos.get(tid), sorted(ms, key=lambda m: m["start"])))
+    if NO_MATCH_CHANNELS:
+        for tid, comp in CLUB_LEAGUE.items():
+            if (tid, comp) in grouped or tid not in names or (english_only and tid not in english):
+                continue
+            channels.append(no_match_channel(f"{bases[tid]}.{COMPETITIONS[comp][1]}{suffix}",
+                                             f"{names[tid]} {comp}", logos.get(tid), names[tid], comp))
     if UEFA_CHANNEL and not english_only:
         channels.append(uefa_channel(matches, suffix))
     for cid, cname, ctitle, cdesc in DUMMY_CHANNELS:
@@ -1344,6 +1411,8 @@ def main():
     english = fetch_english_clubs()
     if not english:
         sys.exit("No English clubs found - ESPN may be unreachable or changed its API.")
+    if NO_MATCH_CHANNELS and not args.english_only:
+        OTHER_CLUBS.update(fetch_other_league_clubs())
     events = fetch_events(start, end)
     matches = collect_matches(events, args.minutes)
     if not (args.run_ids or args.suffix is not None):
