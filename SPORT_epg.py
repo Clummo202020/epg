@@ -4122,6 +4122,11 @@ def fetch_epgshare(group, days, debug=False):
 # any channel it fills with fewer than SKYGO_MIN_EVENTS programmes simply keeps its epgshare NZ1 listing, and
 # --no-skygo turns it off. Sky's own "live" flag is only trusted when true (it is false for live cricket and
 # A-League), the rest of the live marking is unchanged.
+def gh_warn(title, msg):
+    """GitHub Actions turns this line into a yellow warning on the run's page (it is only text anywhere else)."""
+    print(f"::warning title={title}::{msg}", flush=True)
+
+
 SKYGO_API = "https://api.skyone.co.nz/exp/graph"
 SKYGO_HEADERS = {"User-Agent": HEADERS["User-Agent"], "Accept": "application/json",
                  "Origin": "https://www.skygo.co.nz", "Referer": "https://www.skygo.co.nz/"}
@@ -6299,8 +6304,11 @@ def main():
                 left = sorted({part for part in EPGSHARE["nz"]["channels"]} - set(skygo))
                 print(f"  {sum(len(v) for v in skygo.values())} programmes on {len(skygo)} channel(s) from Sky Go"
                       + (f"; still on epgshare NZ1: {', '.join(left)}" if left else ""))
+                if left:
+                    gh_warn("Sky Go partly fell back", f"these Sky Sport NZ channels are on epgshare NZ1: {', '.join(left)}")
             else:
                 print("  Sky Go gave nothing usable - Sky Sport NZ stays on epgshare NZ1")
+                gh_warn("Sky Go fell back", "Sky Sport NZ is on epgshare NZ1 (Sky Go gave nothing usable)")
         if "mena" in [g.strip().lower() for g in args.epgshare.split(",")] and not args.no_bein_mena:   # 2 Nov 2026
             mena_days = [datetime.now(timezone.utc).date() + timedelta(days=i) for i in range(max(args.days, 1))]
             print(f"Middle East: reading beIN's own TV guide {mena_days[0]} to {mena_days[-1]} (beIN SPORTS MENA) ...")
@@ -6310,8 +6318,12 @@ def main():
                 left = sorted(set(EPGSHARE["mena"]["channels"]) - set(bm))
                 print(f"  {sum(len(v) for v in bm.values())} programmes on {len(bm)} channel(s) from beIN"
                       + (f"; still on epgshare: {', '.join(left)}" if left else ""))
+                unexpected = [x for x in left if x != "beINSPORTSFTA"]      # FTA never comes from beIN
+                if unexpected:
+                    gh_warn("beIN MENA partly fell back", f"these channels are on epgshare BEIN1: {', '.join(unexpected)}")
             else:
                 print("  beIN gave nothing usable - the Middle East channels stay on epgshare BEIN1")
+                gh_warn("beIN MENA fell back", "the Middle East beIN channels are on epgshare BEIN1 (beIN gave nothing usable)")
         if "turkey" in [g.strip().lower() for g in args.epgshare.split(",")]:   # 29 Oct 2026 (late)
             tr_days = [datetime.now(ZoneInfo("Europe/Istanbul")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
             print("Turkey: reading Turkcell TV+ guide (S Sport 1-2, A Spor, TRT Spor - with descriptions) ...")
