@@ -434,6 +434,29 @@ def find_days_ahead(today):
     return ahead
 
 
+# Channels with nothing listed (3 Nov 2026): TV Passport / i.mjh.nz sometimes have no listings for a channel (Billiard TV had
+# 30 programmes one day and none the next). Such a channel gets the same standard "no schedule" blocks as in SPORT_epg.py, so the
+# row never reads "No information". 2-hour blocks for 24 hours only: when listings come back they are not hidden for long.
+EMPTY_SUB = "No schedule available"
+EMPTY_DESC = ("{name}: no programmes are listed for this channel at the moment. The schedule will appear here when the "
+              "broadcaster publishes it (some channels only run during events).")
+EMPTY_BLOCK_HOURS = 2
+EMPTY_HOURS = 24
+
+
+def empty_blocks(name, now=None):
+    now = (now or datetime.now(UK)).replace(minute=0, second=0, microsecond=0)
+    t = now - timedelta(hours=now.hour % EMPTY_BLOCK_HOURS)
+    end = t + timedelta(hours=EMPTY_HOURS)
+    blocks = []
+    while t < end:
+        blocks.append({"start": t, "stop": t + timedelta(hours=EMPTY_BLOCK_HOURS), "title": name, "sub": EMPTY_SUB,
+                       "desc": EMPTY_DESC.format(name=name), "cats": ["Sports"], "year": "", "rating": "",
+                       "live": False, "new": False})
+        t += timedelta(hours=EMPTY_BLOCK_HOURS)
+    return blocks
+
+
 def xmltv_time(dt):
     return dt.astimezone(UK).strftime("%Y%m%d%H%M%S %z")
 
@@ -543,6 +566,11 @@ def main():
         print("ERROR: no programmes at all - TV Passport may be blocking or has changed. "
               "Not writing the file.")
         sys.exit(1)
+    names = {c[0]: c[1] for c in every}
+    for cid in blank:                                # nothing listed: the standard "no schedule" blocks
+        guide[cid] = empty_blocks(names[cid])
+    if blank:
+        print(f"  Standard 'no schedule' blocks added for {len(blank)} channel(s)")
     for path, chans in GUIDES.items():
         n = write(path, chans, guide)
         print(f"Wrote {path}: {len(chans)} channels, {n} programmes")

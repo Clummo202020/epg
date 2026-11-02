@@ -31,6 +31,10 @@ GUIDES = {
     "GENERAL_epg.xml.gz": (30, "dot"),
 }
 BASELINE_HOURS = 20          # compare with the newest version at least this old
+# Tuned after the first report (2 Nov 2026): these come and go naturally, so they are not reported as group changes.
+CHURN_GUIDES = {"events_epg.xml"}                      # PPV / event slots appear and disappear all day
+CUP_GROUPS = {"ChallengeCup", "ScotLgeCup", "ScotCup", "Carabao", "FACup", "NationsLge", "ChampsLge", "Europa", "ConfLeague"}
+MIN_CHANNELS_LOST = 3                                  # a group must lose at least this many channels (and 20%) to be reported
 PLACEHOLDER = re.compile(r"no schedule available|no information|channel is offline|end of transmission|coming up|will be listed", re.I)
 RED = "\U0001F534"
 
@@ -142,19 +146,28 @@ def main():
                     warns.append(f"{path}: lost {-change:.0f}% of its programmes ({b_pr} -> {n_pr})")
             cur_g, old_g = summarize(chans, progs, ctime or now, how), summarize(bch, bpr, btime or now, how)
             for g, o in sorted(old_g.items()):
+                if path in CHURN_GUIDES or g in CUP_GROUPS:
+                    continue
                 c = cur_g.get(g)
                 if not c:
-                    warns.append(f"{path}: group '{g}' has gone ({len(o['channels'])} channels)")
+                    if len(o["channels"]) >= MIN_CHANNELS_LOST:
+                        warns.append(f"{path}: group '{g}' has gone ({len(o['channels'])} channels)")
                     continue
                 gone = o["channels"] - c["channels"]
-                if gone:
+                if len(gone) >= MIN_CHANNELS_LOST and len(gone) >= 0.2 * len(o["channels"]):
                     warns.append(f"{path}: group '{g}' lost {len(gone)} channel(s): {', '.join(sorted(gone)[:6])}")
-                if o["programmes"] >= 30 and c["programmes"] < 0.6 * o["programmes"]:
+                if len(o["channels"]) >= MIN_CHANNELS_LOST and o["programmes"] >= 30 and c["programmes"] < 0.6 * o["programmes"]:
                     warns.append(f"{path}: group '{g}' programmes {o['programmes']} -> {c['programmes']}")
                 if o["reach"] and c["reach"]:
                     ro, rc = sum(o["reach"]) / len(o["reach"]), sum(c["reach"]) / len(c["reach"])
-                    if ro >= 24 and rc < 0.6 * ro:
+                    if ro >= 48 and rc < 0.5 * ro:
                         warns.append(f"{path}: group '{g}' reach {ro:.0f} h -> {rc:.0f} h")
+            # channels that were real yesterday and are now only "no schedule" blocks (the source lost them)
+            if path not in CHURN_GUIDES:
+                for cid, p_ in progs.items():
+                    b_ = bpr.get(cid)
+                    if (b_ and b_["n"] >= 6 and p_["n"] >= 6 and b_["ph"] < 0.5 * b_["n"] and p_["ph"] >= 0.9 * p_["n"]):
+                        warns.append(f"{path}: {cid} now shows only placeholder blocks (its source lost it)")
         # (almost) always-red channels
         for cid, p in progs.items():
             if p["n"] >= 20 and p["red"] >= 0.9 * p["n"]:
