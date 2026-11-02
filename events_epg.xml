@@ -3925,7 +3925,7 @@
     <display-name lang="en">US (Peacock 008)</display-name>
   </channel>
   <channel id="Peacock009.us">
-    <display-name lang="en">US (Peacock 009) | Sunday Night Football Final (2026-11-01 23:30:00)</display-name>
+    <display-name lang="en">US (Peacock 009) | ST World Tour: Montreal 1 (2026-10-31 13:30:00)</display-name>
     <display-name lang="en">US (Peacock 009)</display-name>
   </channel>
   <channel id="Peacock010.us">
@@ -4001,7 +4001,7 @@
     <display-name lang="en">US (Peacock 027)</display-name>
   </channel>
   <channel id="Peacock028.us">
-    <display-name lang="en">US (Peacock 028) | Sunday Night Football Final (2026-11-01 23:30:00)</display-name>
+    <display-name lang="en">US (Peacock 028) | Big Ten Saturday: Week 10 (2026-11-07 18:30:05)</display-name>
     <display-name lang="en">US (Peacock 028)</display-name>
   </channel>
   <channel id="Peacock029.us">
@@ -14301,28 +14301,6 @@
     <desc lang="en">Coming up: UFC 334: Press Conference em Português. Starts Thu 12 Nov, 23:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102043000 +0000" stop="20261102063000 +0000" channel="Peacock009.us">
-    <title lang="en">🔴 LIVE: Sunday Night Football Final</title>
-    <desc lang="en">Sunday Night Football Final. Starts Mon 2 Nov, 04:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102063000 +0000" stop="20261102073000 +0000" channel="Peacock009.us">
-    <title lang="en">🔴 LIVE: Sunday Night Football Final</title>
-    <desc lang="en">Sunday Night Football Final. Starts Mon 2 Nov, 04:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102073000 +0000" stop="20261102093000 +0000" channel="Peacock009.us">
-    <title lang="en">US (Peacock 009) | Sunday Night Football Final (2026-11-01 23:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261102093000 +0000" stop="20261102113000 +0000" channel="Peacock009.us">
-    <title lang="en">US (Peacock 009) | Sunday Night Football Final (2026-11-01 23:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="Peacock010.us">
     <title lang="en">Men`s Rugby Finals &amp; More (Mon 2 Nov, 11:30)</title>
     <sub-title lang="en">⏭ Coming up Mon 2 Nov</sub-title>
@@ -15659,26 +15637,82 @@
     <desc lang="en">Coming up: Miami vs. Notre Dame. Starts Sat 7 Nov, 23:30 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102043000 +0000" stop="20261102063000 +0000" channel="Peacock028.us">
-    <title lang="en">🔴 LIVE: Sunday Night Football Final</title>
-    <desc lang="en">Sunday Night Football Final. Starts Mon 2 Nov, 04:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102063000 +0000" stop="20261102073000 +0000" channel="Peacock028.us">
-    <title lang="en">🔴 LIVE: Sunday Night Football Final</title>
-    <desc lang="en">Sunday Night Football Final. Starts Mon 2 Nov, 04:30 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261102073000 +0000" stop="20261102093000 +0000" channel="Peacock028.us">
-    <title lang="en">US (Peacock 028) | Sunday Night Football Final (2026-11-01 23:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261102093000 +0000" stop="20261102113000 +0000" channel="Peacock028.us">
-    <title lang="en">US (Peacock 028) | Sunday Night Football Final (2026-11-01 23:30:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102140000 +0000" stop="20261102160000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102160000 +0000" stop="20261102180000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102180000 +0000" stop="20261102200000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102200000 +0000" stop="20261102220000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102220000 +0000" stop="20261103000000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103000000 +0000" stop="20261103020000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103020000 +0000" stop="20261103040000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103040000 +0000" stop="20261103060000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103060000 +0000" stop="20261103080000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103080000 +0000" stop="20261103100000 +0000" channel="Peacock028.us">
+    <title lang="en">Big Ten Saturday: Week 10 (Sat 7 Nov, 23:30)</title>
+    <sub-title lang="en">⏭ Coming up: Big Ten</sub-title>
+    <desc lang="en">Coming up: Big Ten Saturday: Week 10. Starts Sat 7 Nov, 23:30 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="Peacock029.us">
@@ -91035,6 +91069,21 @@
   </programme>
   <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="Peacock008.us">
     <title lang="en">US (Peacock 008) | Breeders` Cup Keeneland: Day 2 (2026-10-31 13:00:05)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102080000 +0000" stop="20261102100000 +0000" channel="Peacock009.us">
+    <title lang="en">US (Peacock 009) | ST World Tour: Montreal 1 (2026-10-31 13:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102100000 +0000" stop="20261102120000 +0000" channel="Peacock009.us">
+    <title lang="en">US (Peacock 009) | ST World Tour: Montreal 1 (2026-10-31 13:30:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261102120000 +0000" stop="20261102140000 +0000" channel="Peacock009.us">
+    <title lang="en">US (Peacock 009) | ST World Tour: Montreal 1 (2026-10-31 13:30:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
