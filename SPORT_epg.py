@@ -5644,6 +5644,14 @@ def build_xmltv(records, suffix, minutes):
             sub = carabao_name(sub, title, ev["start"])          # "Carabao Cup 4th Round"
             about = carabao_name(about, title, ev["start"])
             about = fuller_about(title, about)                    # "M4." -> "Coverage of the FIP World Cup Qatar 2026."
+            if not about.strip() and sub and VAGUE_CODE.fullmatch(sub.strip().rstrip(".")):   # no description, only a code
+                alt = fuller_about(title, sub)                 # as the secondary title: "MD 9" + "Highlights from the Ligue 1 2026/27."
+                if alt != sub:
+                    about = alt
+            if cid in PART_TIME_CHANNELS and PART_TIME_FILLER_RE.match(title or ""):    # the standard "no schedule" wording
+                title, sub = name, EMPTY_FILLER_SUB
+                about = EMPTY_FILLER_DESC.format(name=name)
+                ev["no_lead"], ev["never_live"] = True, True
             fixture = None
             if cid.startswith(KICKOFF_LIVE) and stop - start >= timedelta(minutes=90):
                 fixture = find_fixture(title, ev["start"], timedelta(minutes=5), timedelta(minutes=45))
@@ -5741,6 +5749,14 @@ EMPTY_FILLER_HOURS = 24
 EMPTY_FILLER_SUB = "No schedule available"
 EMPTY_FILLER_DESC = ("{name}: no programmes are listed for this channel at the moment. The schedule will appear "
                      "here when the broadcaster publishes it (some channels only run during events).")
+
+
+# Part-time channels (2 Nov 2026): between events these channels' sources send their own filler ("End of Transmission" on
+# beIN SPORTS 4 / 5 Singapore, "Stay tuned for the next broadcast" on beIN SPORTS 4 / 5 Hong Kong, "No information" on beIN SPORTS 3
+# Hong Kong). Those blocks are rewritten to the standard wording above (the channel name as the title, "No schedule available",
+# "...: no programmes are listed for this channel at the moment ...") - never live.
+PART_TIME_CHANNELS = ("SG.beINSPORTS4", "SG.beINSPORTS5", "HK.beINSPORTS3", "HK.beINSPORTS4", "HK.beINSPORTS5")
+PART_TIME_FILLER_RE = re.compile(r"(?i)^\s*(end of transmission|stay tuned for the next broadcast|no information(?: available)?)\W*$")
 
 
 def add_empty_placeholders(tv, listed):
