@@ -1,0 +1,48 @@
+name: Check scripts
+
+on:
+  push:
+    paths:
+      - "*.py"
+      - ".github/workflows/*.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Every .py file must compile (catches typos before the next scheduled run)
+        run: python3 -m py_compile $(git ls-files '*.py')
+
+      - name: No undefined names (a name that would crash a run when that line is reached)
+        run: |
+          pip install pyflakes -q
+          if python3 -m pyflakes $(git ls-files '*.py') | grep -E "undefined name|invalid syntax|SyntaxError"; then
+            echo "Found a problem above"; exit 1
+          fi
+          echo "No undefined names"
+
+      - name: Every workflow file must be valid YAML
+        run: |
+          pip install pyyaml -q
+          python3 - <<'PY'
+          import glob, sys, yaml
+          bad = 0
+          for f in sorted(glob.glob(".github/workflows/*.yml")):
+              try:
+                  yaml.safe_load(open(f, encoding="utf-8"))
+              except Exception as e:
+                  print(f"{f}: {e}"); bad += 1
+          print(f"{bad} bad workflow file(s)")
+          sys.exit(1 if bad else 0)
+          PY
