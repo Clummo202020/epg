@@ -9,6 +9,7 @@ names, then for the best answer: programmes per channel over the next 8 days, ho
 (sport / competition / description), and a sample of beIN SPORTS EN 1 and EN 2 for the next few hours.
 """
 import json
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -20,8 +21,20 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleW
            "Accept": "application/json, */*", "Referer": "https://www.beinsports.com/"}
 # The page's "Edition" dropdown: MENA, France, United States, Australia, New Zealand, Asia (+ English / Arabic switch).
 # Codes are guesses from the ones SPORT_epg.py already uses (en-au, en-my ...); every one that answers is reported.
-REGIONS = ["en-mena", "ar-mena", "en-asia", "asia", "en-nz", "en-us", "es-us", "fr-fr", "en-fr", "fr-mena"]
+# beIN's own error message (2 Nov 2026) lists the valid codes: default, en-mena, ar-mena, fr-fr, en-us, es-us, en-hk, en-ph,
+# en-th, en-id, en-my, en-sg, en-au, en-nz, bein-xtra
+REGIONS = ["en-mena", "ar-mena", "bein-xtra", "default", "en-ph", "en-hk", "en-th", "en-id"]
 DAYS = 8
+UUID = re.compile(r"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}")
+
+
+def valid(chans):
+    """beIN rejects the whole request if ANY channel id is not a UUID (HTTP 400, seen 2 Nov 2026), so ask only for valid ones."""
+    ok = {i: n for i, n in chans.items() if UUID.fullmatch(i)}
+    bad = {i: n for i, n in chans.items() if i not in ok}
+    if bad:
+        print(f"    NOT valid UUIDs, left out of the programme requests: {bad}")
+    return ok
 
 
 def get(url, label):
@@ -61,9 +74,10 @@ def main():
                  if isinstance(r, dict) and r.get("id")}
         print(f"  region {code}: {len(chans)} channel(s): {sorted(set(chans.values()))[:40]}")
         if chans:
+            vchans = valid(chans)
             day = now.date()
             url = (f"{API}tv-event?&startBefore={day + timedelta(days=2):%Y-%m-%d}T00:00:00.000Z&endAfter={day:%Y-%m-%d}T00:00:00.000Z"
-                   f"&channelIds={','.join(sorted(chans))}")
+                   f"&channelIds={','.join(sorted(vchans))}")
             ev = rows_of(get(url, f"2-day survey {code}"))
             names = {}
             for it in ev:
@@ -80,7 +94,7 @@ def main():
         print("\nen-mena gave no channel list - the other regions above are all this check can report.")
         return 0
     print(f"\n== using region {best_code}: {len(best)} channels ==")
-    sports = {i: n for i, n in best.items() if "sport" in n.lower() or "xtra" in n.lower() or "max" in n.lower()} or best
+    sports = valid({i: n for i, n in best.items() if "sport" in n.lower() or "xtra" in n.lower() or "max" in n.lower()} or best)
     ids = sorted(sports)
     per, sample_row = {i: [] for i in ids}, None
     for d in range(DAYS):
