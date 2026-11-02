@@ -4199,6 +4199,9 @@ def fetch_skygo_nz(days, debug=False):
 # "beIN SPORTS" channel have none from beIN); --no-bein-mena turns it off.
 BEIN_MENA_MIN_EVENTS = 5
 BEIN_GENERIC_CATEGORY = {"entertainment", "sports general", "football", "sports news", "other", ""}
+# beIN flags every hour of the XTRA overflow channels as live, but those hours are one filler ("beIN SPORTS XTRA For Live And
+# Exclusive Coverage of Premium Sporting Events - November 2026"): never mark a channel-name filler live (2 Nov 2026).
+BEIN_FILLER = re.compile(r"(?i)^\s*beIN SPORTS (?:XTRA|MAX)\b")
 
 
 def bein_mena_parts(name):
@@ -4263,7 +4266,8 @@ def fetch_bein_mena(days, debug=False):
             title, sub = bein_mena_title(it.get("title"), it.get("category"))
             if not title or stop <= start:
                 continue
-            evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub, "live": bool(it.get("live")),
+            evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub,
+                          "live": bool(it.get("live")) and not BEIN_FILLER.match(title),
                           "desc": pick_desc(it, "description", "synopsis")}
         listing = [evs[k] for k in sorted(evs)]
         if debug:
