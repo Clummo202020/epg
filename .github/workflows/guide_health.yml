@@ -1,0 +1,26 @@
+name: Guide health
+
+on:
+  schedule:
+    - cron: "17 1,7,13,19 * * *"   # four times a day (UTC), a few minutes after the guides normally finish
+  workflow_dispatch:                # also has a "Run workflow" button
+
+permissions:
+  contents: read
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Fetch the last few days of history (to compare with yesterday's guides)
+        run: git fetch --shallow-since="3 days ago" origin main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Guide health report (red cross = a guide is missing, stale, or lost half its programmes)
+        run: python3 -u guide_health.py
