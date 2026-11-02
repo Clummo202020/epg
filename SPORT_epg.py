@@ -4189,6 +4189,91 @@ def fetch_skygo_nz(days, debug=False):
     return out
 
 
+# beIN SPORTS Middle East - beIN's own guide (2 Nov 2026). epgshare's BEIN1 file was patchy for these channels (English 1
+# had 17 programmes and missed the Youth Olympics; MAX channels ran 5 h ahead). beIN's public API for the region
+# "en-mena" (the page beinsports.com/en-mena/tv-guide) has the real schedule 2-6 days ahead, a real "live" flag that matches
+# the LIVE badges on its page, and the competition in the title / category. Checked from the GitHub runner on 2 Nov 2026
+# (beinmena_check.py). Same API as Australia / Malaysia, with two quirks: tv-event takes ONE channel id per request, and
+# answers at most 100 rows per request (a busy channel over a week is cut off) - so a capped window is split in halves.
+# A channel with fewer than BEIN_MENA_MIN_EVENTS programmes keeps epgshare's listing (AFC, 4K HDR, NBA, the plain
+# "beIN SPORTS" channel have none from beIN); --no-bein-mena turns it off.
+BEIN_MENA_MIN_EVENTS = 5
+BEIN_GENERIC_CATEGORY = {"entertainment", "sports general", "football", "sports news", "other", ""}
+
+
+def bein_mena_parts(name):
+    """beIN's channel name -> the EPGSHARE["mena"] id part it fills ([] if we don't carry it)."""
+    n = re.sub(r"\s+", " ", name or "").strip().upper()
+    part = None
+    m = re.fullmatch(r"BEIN SPORTS EN (\d)", n)
+    if m:
+        part = f"beINSPORTSEnglish{m[1]}"
+    elif (m := re.fullmatch(r"BEIN SPORTS FR (\d)", n)):
+        part = f"beINSPORTSFrench{m[1]}"
+    elif (m := re.fullmatch(r"BEIN SPORTS (\d)", n)):
+        part = f"beINSPORTS{m[1]}"
+    elif (m := re.fullmatch(r"BEIN SPORTS (MAX|XTRA) (\d)", n)):
+        part = f"beINSPORTS{m[1]}{m[2]}"
+    elif n == "BEIN SPORTS NEWS":
+        part = "beINSPORTSNews"
+    return [part] if part and part in EPGSHARE["mena"]["channels"] else []
+
+
+def bein_mena_title(raw, category=""):
+    """"Newcastle United vs Everton - English Premier League 2026/2027 - Week 9" ->
+    ("Newcastle United vs Everton", "English Premier League 2026/2027 - Week 9"); "x" between teams becomes "vs"."""
+    segs = [x.strip() for x in re.split(r"\s+-\s+", re.sub(r"\s+", " ", raw or "").strip()) if x.strip()]
+    if not segs:
+        return "", ""
+    head = re.sub(r"\s+x\s+", " vs ", segs[0])
+    rest = " - ".join(segs[1:])
+    if not rest and (category or "").strip().lower() not in BEIN_GENERIC_CATEGORY:
+        rest = category.strip()
+    return head, rest
+
+
+def fetch_bein_mena(days, debug=False):
+    """{id part: [{start, stop, title, sub, live, desc}]} for the beIN SPORTS MENA channels, same shape as fetch_epgshare."""
+    code, chans = bein_region_channels(["en-mena"], debug)
+    if not chans:
+        return {}
+    first, last = days[0], days[-1]
+
+    def rows_window(cid, d0, d1):
+        window = f"startBefore={d1 + timedelta(days=1):%Y-%m-%d}T00:00:00.000Z&endAfter={d0:%Y-%m-%d}T00:00:00.000Z"
+        data = get_json_url(f"{BEIN_API}tv-event?&{window}&channelIds={cid}", BEIN_HEADERS, quiet=True)
+        rows = [r for r in ((data.get("rows") if isinstance(data, dict) else data) or []) if isinstance(r, dict)]
+        if len(rows) >= 100 and d1 > d0:                  # cut off at 100 rows: ask for each half separately
+            mid = d0 + timedelta(days=(d1 - d0).days // 2)
+            return rows_window(cid, d0, mid) + rows_window(cid, mid + timedelta(days=1), d1)
+        return rows
+
+    out = {}
+    for cid, name in sorted(chans.items(), key=lambda kv: kv[1]):
+        parts = bein_mena_parts(name)
+        if not parts:
+            continue
+        evs = {}
+        for it in rows_window(cid, first, last):
+            try:
+                start = datetime.fromisoformat(it["startDate"].replace("Z", "+00:00")).astimezone(timezone.utc)
+                stop = datetime.fromisoformat(it["endDate"].replace("Z", "+00:00")).astimezone(timezone.utc)
+            except (KeyError, TypeError, ValueError, AttributeError):
+                continue
+            title, sub = bein_mena_title(it.get("title"), it.get("category"))
+            if not title or stop <= start:
+                continue
+            evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub, "live": bool(it.get("live")),
+                          "desc": pick_desc(it, "description", "synopsis")}
+        listing = [evs[k] for k in sorted(evs)]
+        if debug:
+            print(f"    {name}: {len(listing)} programmes from beIN")
+        if len(listing) >= BEIN_MENA_MIN_EVENTS:
+            for part in parts:
+                out[part] = [dict(e) for e in listing]
+    return out
+
+
 # Time check against the football guide (28 Oct 2026). epgshare01's beIN MENA file (BEIN1) had every
 # programme 2 h late: Carabao Cup ties kicking off 19:45 UK were listed from 21:35, Saturday's 15:00
 # Premier League games from 16:50 (beIN's coverage starts 10 min before kick-off) - probably Qatar
@@ -5349,6 +5434,38 @@ def event_start_info(title, start):
     return info or f"Coverage from: {start.astimezone(LONDON):%H:%M}."
 
 
+# Vague descriptions (2 Nov 2026). Some epgshare feeds (beIN MENA / HK / MY, Champions TV, Ziggo) give only an
+# episode or match code as the description ("M4.", "E22.", "MD10.", "Eps 10.", "Dag 4."). The code stays as the
+# secondary title; the description becomes a sentence built from the competition name in the title instead:
+#   FIP World Cup Qatar 2026 | M4 | M4.   ->   ... | M4 | Coverage of the FIP World Cup Qatar 2026.
+# Left alone: match titles ("A vs B" - the competition isn't in the title) and junk titles ("Tue").
+VAGUE_CODE = re.compile(r"(?:[A-Za-z]{1,3}\.?\s?\d{1,3}[A-Za-z]?"
+                        r"|(?:Eps?|Episode|Dag|Day|Round|Rnd|MD|Matchday|Match|Game|Part|Pt|Leg)\.?\s?\d{1,3})", re.I)
+COMP_WORDS = re.compile(r"\b(?:Cup|League|Championships?|Open|Tour|Games|Grand Prix|Trophy|Series|Classic|Masters|"
+                        r"Qualifiers?|Euros?|World|Olympics?|Olympic|Slam|Final|Finals|Premiership|Liga|Serie|Bundesliga|"
+                        r"Ligue|Super|Challenge|Nations|Invitational)\b|20\d\d", re.I)
+SHOW_WORDS = re.compile(r"\b(?:Magazine|Stories|Weekly|Review|Film|Show|Fanzone|Preview|Rewind|Round-?up|Reaction|Talk|Special|Documentary)\b", re.I)
+JUNK_TITLE = re.compile(r"(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-z]*\.?", re.I)
+
+
+def fuller_about(title, about):
+    """Replace a code-only description with a sentence from the competition name (see VAGUE_CODE)."""
+    core = (about or "").strip().rstrip(".!").strip()
+    if not core or not VAGUE_CODE.fullmatch(core):
+        return about
+    comp = re.sub(r"^(?:EN|AR|FR|ES)\s+", "", (title or "").strip())
+    comp = re.sub(r"^(?:Eps?\.?|Episode)\s*\d+\s*[:\-\u2013]\s*", "", comp, flags=re.I).strip()
+    if (len(comp) < 5 or JUNK_TITLE.fullmatch(comp) or re.search(r"\s(?:vs?\.?)\s", comp, re.I)
+            or VAGUE_CODE.fullmatch(comp)):
+        return about
+    hl = re.fullmatch(r"(.*?)\s*\bHighlights\b\s*(.*)", comp, re.I)
+    if hl and (hl.group(1) or hl.group(2)):
+        return f"Highlights from the {' '.join(x for x in (hl.group(1), hl.group(2)) if x)}."
+    if SHOW_WORDS.search(comp) or not COMP_WORDS.search(comp):
+        return f"{comp}."                                   # a programme, not a competition
+    return f"Coverage of the {comp}."
+
+
 def live_title(title, cid="", red=False):
     """Title for a live programme: "LIVE: <title>" (without doubling a leading "Live");
     "🔴 LIVE: <title>" for event channels and (red=True) live events."""
@@ -5522,6 +5639,7 @@ def build_xmltv(records, suffix, minutes):
                 title, sub = nz_teams_first(title, sub)         # teams in the title
             sub = carabao_name(sub, title, ev["start"])          # "Carabao Cup 4th Round"
             about = carabao_name(about, title, ev["start"])
+            about = fuller_about(title, about)                    # "M4." -> "Coverage of the FIP World Cup Qatar 2026."
             fixture = None
             if cid.startswith(KICKOFF_LIVE) and stop - start >= timedelta(minutes=90):
                 fixture = find_fixture(title, ev["start"], timedelta(minutes=5), timedelta(minutes=45))
@@ -5868,6 +5986,7 @@ def main():
     ap.add_argument("--now-channels", default=",".join(NOW_CHANNELS),
                     help="Now TV channel numbers, comma separated (e.g. 631,638)")
     ap.add_argument("--no-epgshare", action="store_true", help="leave out everything from epgshare01.online")
+    ap.add_argument("--no-bein-mena", action="store_true", help="don't read beIN's own Middle East guide (stays on epgshare BEIN1)")
     ap.add_argument("--no-skygo", action="store_true", help="don't read Sky Go's TV guide (Sky Sport NZ stays on epgshare NZ1)")
     ap.add_argument("--epgshare", default=",".join(EPGSHARE),
                     help=f"epgshare01 groups, comma separated (default {','.join(EPGSHARE)})")
@@ -6159,6 +6278,17 @@ def main():
                       + (f"; still on epgshare NZ1: {', '.join(left)}" if left else ""))
             else:
                 print("  Sky Go gave nothing usable - Sky Sport NZ stays on epgshare NZ1")
+        if "mena" in [g.strip().lower() for g in args.epgshare.split(",")] and not args.no_bein_mena:   # 2 Nov 2026
+            mena_days = [datetime.now(timezone.utc).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+            print(f"Middle East: reading beIN's own TV guide {mena_days[0]} to {mena_days[-1]} (beIN SPORTS MENA) ...")
+            bm = fetch_bein_mena(mena_days, args.debug)
+            if bm:
+                eps.setdefault("mena", {}).update(bm)       # replaces epgshare's BEIN1 listing for these channels
+                left = sorted(set(EPGSHARE["mena"]["channels"]) - set(bm))
+                print(f"  {sum(len(v) for v in bm.values())} programmes on {len(bm)} channel(s) from beIN"
+                      + (f"; still on epgshare: {', '.join(left)}" if left else ""))
+            else:
+                print("  beIN gave nothing usable - the Middle East channels stay on epgshare BEIN1")
         if "turkey" in [g.strip().lower() for g in args.epgshare.split(",")]:   # 29 Oct 2026 (late)
             tr_days = [datetime.now(ZoneInfo("Europe/Istanbul")).date() + timedelta(days=i) for i in range(max(args.days, 1))]
             print("Turkey: reading Turkcell TV+ guide (S Sport 1-2, A Spor, TRT Spor - with descriptions) ...")
