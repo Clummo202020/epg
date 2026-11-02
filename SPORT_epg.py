@@ -5752,7 +5752,10 @@ def write_xml(tv, path):
 # (own source, backup, carried over) is never touched. EXTRA_EMPTY_CHANNELS: channels with no source at all.
 # Log: "Placeholders for empty channels: N".
 EMPTY_CHANNELS = {}
-EXTRA_EMPTY_CHANNELS = {"TR.beINSPORTS5": "beIN SPORTS 5"}      # Digiturk refuses GitHub - no source
+EXTRA_EMPTY_CHANNELS = {"TR.beINSPORTS5": "beIN SPORTS 5",       # Digiturk refuses GitHub - no source
+                        # Hub Premier 7-11 (3 Nov 2026): StarHub's overflow Premier League channels - no listings of their
+                        # own (the guide has Hub Premier 1-6), so the standard "no schedule" blocks (user request)
+                        **{f"SG.HubPremier{n}": f"Hub Premier {n}" for n in range(7, 12)}}
 EMPTY_FILLER_HOURS = 24
 EMPTY_FILLER_SUB = "No schedule available"
 EMPTY_FILLER_DESC = ("{name}: no programmes are listed for this channel at the moment. The schedule will appear "
@@ -5763,7 +5766,11 @@ EMPTY_FILLER_DESC = ("{name}: no programmes are listed for this channel at the m
 # beIN SPORTS 4 / 5 Singapore, "Stay tuned for the next broadcast" on beIN SPORTS 4 / 5 Hong Kong, "No information" on beIN SPORTS 3
 # Hong Kong). Those blocks are rewritten to the standard wording above (the channel name as the title, "No schedule available",
 # "...: no programmes are listed for this channel at the moment ...") - never live.
-PART_TIME_CHANNELS = ("SG.beINSPORTS4", "SG.beINSPORTS5", "HK.beINSPORTS3", "HK.beINSPORTS4", "HK.beINSPORTS5")
+PART_TIME_CHANNELS = ("SG.beINSPORTS4", "SG.beINSPORTS5", "HK.beINSPORTS3", "HK.beINSPORTS4", "HK.beINSPORTS5",
+                      # StarHub's own "End of Transmission" blocks (3 Nov 2026: user asked for Hub Premier 2 and Hub Sports 8;
+                      # the same blocks are on Hub Premier 2-6 and Hub Sports 3-8, so all of them)
+                      "SG.HubPremier2", "SG.HubPremier3", "SG.HubPremier4", "SG.HubPremier5", "SG.HubPremier6",
+                      "SG.HubSports3", "SG.HubSports4", "SG.HubSports5", "SG.HubSports6", "SG.HubSports7", "SG.HubSports8")
 PART_TIME_FILLER_RE = re.compile(r"(?i)^\s*(end of transmission|stay tuned for the next broadcast|no information(?: available)?)\W*$")
 
 

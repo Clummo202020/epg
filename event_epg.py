@@ -1282,6 +1282,40 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live=False):
         t = b
 
 
+def normalise_slot_ids(tv):
+    """Slot ids with a stray two-digit number in a three-digit group (3 Nov 2026). Slot ids come from the provider's stream names
+    ("US (Paramount 006)"), and the provider sometimes writes one with fewer digits ("US (Paramount 05)", "CA (TSN+ 04)"), which
+    gives Paramount05.us / TSN04.ca while the playlists use Paramount005.us / TSN004.ca - so that slot never got a listing.
+    When at least 90% of a group's ids (same name and country) have three digits, the outliers are padded to three digits.
+    Groups that are naturally mixed (DAZN PPV 1-99, Stan 1-100 ...) are left alone."""
+    groups = {}
+    for ch in tv.findall("channel"):
+        m = re.fullmatch(r"([A-Za-z+]+)(\d+)\.([A-Za-z0-9]+)", ch.get("id", ""))
+        if m:
+            groups.setdefault((m.group(1), m.group(3)), []).append((ch, m.group(2)))
+    taken = {ch.get("id") for ch in tv.findall("channel")}
+    renames = {}
+    for (stem, cc), members in groups.items():
+        three = sum(len(num) == 3 for _, num in members)
+        if len(members) < 10 or three < 0.9 * len(members):
+            continue
+        for ch, num in members:
+            if len(num) < 3:
+                new = f"{stem}{int(num):03d}.{cc}"
+                if new not in taken:
+                    renames[ch.get("id")] = new
+                    taken.add(new)
+    if not renames:
+        return
+    for ch in tv.findall("channel"):
+        if ch.get("id") in renames:
+            ch.set("id", renames[ch.get("id")])
+    for p in tv.findall("programme"):
+        if p.get("channel") in renames:
+            p.set("channel", renames[p.get("channel")])
+    print("  Slot ids padded to three digits: " + ", ".join(f"{o} -> {n}" for o, n in sorted(renames.items())))
+
+
 def build(events, now):
     global _HORIZON
     _HORIZON = now + timedelta(hours=HORIZON_HOURS)
@@ -1380,6 +1414,7 @@ def build(events, now):
             add_programme(tv, sid, t, b, offline_title(ended[sid]), None, desc)
             count += 1
             t = b
+    normalise_slot_ids(tv)
     count = len(tv.findall("programme"))
     return tv, len(by_slot) + len(ended) + len(untimed), count
 
