@@ -4266,9 +4266,12 @@ def fetch_bein_mena(days, debug=False):
             title, sub = bein_mena_title(it.get("title"), it.get("category"))
             if not title or stop <= start:
                 continue
+            filler = bool(BEIN_FILLER.match(title))
             evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub,
-                          "live": bool(it.get("live")) and not BEIN_FILLER.match(title),
+                          "live": bool(it.get("live")) and not filler,
                           "desc": pick_desc(it, "description", "synopsis")}
+            if filler:           # its description says "Live And Exclusive", which would otherwise still turn it red (2 Nov 2026)
+                evs[start]["never_live"] = True
         listing = [evs[k] for k in sorted(evs)]
         if debug:
             print(f"    {name}: {len(listing)} programmes from beIN")
