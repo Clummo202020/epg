@@ -5377,7 +5377,7 @@
     <display-name lang="en">UEFA | 1</display-name>
   </channel>
   <channel id="UEFA10.uk">
-    <display-name lang="en">UEFA | 10 -</display-name>
+    <display-name lang="en">UEFA | 10 - Villareal vs PSG 8:00pm</display-name>
     <display-name lang="en">UEFA | 10</display-name>
   </channel>
   <channel id="UEFA11.uk">
@@ -5477,19 +5477,19 @@
     <display-name lang="en">UEFA | 5</display-name>
   </channel>
   <channel id="UEFA6.uk">
-    <display-name lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</display-name>
+    <display-name lang="en">UEFA | 06 - Bodo/Glimt vs Lille 8:00pm</display-name>
     <display-name lang="en">UEFA | 6</display-name>
   </channel>
   <channel id="UEFA7.uk">
-    <display-name lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</display-name>
+    <display-name lang="en">UEFA | 07 - Feyenoord vs inter Milan 8:00pm</display-name>
     <display-name lang="en">UEFA | 7</display-name>
   </channel>
   <channel id="UEFA8.uk">
-    <display-name lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</display-name>
+    <display-name lang="en">UEFA | 08 - Lask vs Slovan Bratislava 8:00pm</display-name>
     <display-name lang="en">UEFA | 8</display-name>
   </channel>
   <channel id="UEFA9.uk">
-    <display-name lang="en">UEFA | 09 -</display-name>
+    <display-name lang="en">UEFA | 09 - Manchester United vs Roma 8:00pm</display-name>
     <display-name lang="en">UEFA | 9</display-name>
   </channel>
   <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="APPLETVF1PPV1.uk">
@@ -44214,6 +44214,85 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA10.uk">
+    <title lang="en">Villareal vs PSG (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Villareal vs PSG. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="UEFA10.uk">
+    <title lang="en">Villareal vs PSG (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Villareal vs PSG. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="UEFA10.uk">
+    <title lang="en">Villareal vs PSG (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Villareal vs PSG. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="UEFA10.uk">
+    <title lang="en">Villareal vs PSG (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Villareal vs PSG. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103195000 +0000" channel="UEFA10.uk">
+    <title lang="en">Next up: LIVE – Villareal vs PSG (20:00)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Villareal vs PSG starts at 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103195000 +0000" stop="20261103215000 +0000" channel="UEFA10.uk">
+    <title lang="en">🔴 LIVE: Villareal vs PSG</title>
+    <sub-title lang="en">UEFA</sub-title>
+    <desc lang="en">Villareal vs PSG. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103215000 +0000" stop="20261103230000 +0000" channel="UEFA10.uk">
+    <title lang="en">🔴 LIVE: Villareal vs PSG</title>
+    <sub-title lang="en">UEFA</sub-title>
+    <desc lang="en">Villareal vs PSG. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="UEFA10.uk">
+    <title lang="en">UEFA | 10 - Villareal vs PSG 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104010000 +0000" stop="20261104030000 +0000" channel="UEFA10.uk">
+    <title lang="en">UEFA | 10 - Villareal vs PSG 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104030000 +0000" stop="20261104050000 +0000" channel="UEFA10.uk">
+    <title lang="en">UEFA | 10 - Villareal vs PSG 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104050000 +0000" stop="20261104070000 +0000" channel="UEFA10.uk">
+    <title lang="en">UEFA | 10 - Villareal vs PSG 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104070000 +0000" stop="20261104090000 +0000" channel="UEFA10.uk">
+    <title lang="en">UEFA | 10 - Villareal vs PSG 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104090000 +0000" stop="20261104110000 +0000" channel="UEFA10.uk">
+    <title lang="en">UEFA | 10 - Villareal vs PSG 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104110000 +0000" stop="20261104130000 +0000" channel="UEFA10.uk">
+    <title lang="en">UEFA | 10 - Villareal vs PSG 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA11.uk">
     <title lang="en">Celje vs Red Bull Salzburg (Thu 5 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -45307,6 +45386,322 @@
   </programme>
   <programme start="20261104110000 +0000" stop="20261104130000 +0000" channel="UEFA5.uk">
     <title lang="en">UEFA | 05 - Barcelona vs Aston Villa 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA6.uk">
+    <title lang="en">Bodo/Glimt vs Lille (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Bodo/Glimt vs Lille. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="UEFA6.uk">
+    <title lang="en">Bodo/Glimt vs Lille (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Bodo/Glimt vs Lille. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="UEFA6.uk">
+    <title lang="en">Bodo/Glimt vs Lille (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Bodo/Glimt vs Lille. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="UEFA6.uk">
+    <title lang="en">Bodo/Glimt vs Lille (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Bodo/Glimt vs Lille. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103195000 +0000" channel="UEFA6.uk">
+    <title lang="en">Next up: LIVE – Bodo/Glimt vs Lille (20:00)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Bodo/Glimt vs Lille starts at 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103195000 +0000" stop="20261103215000 +0000" channel="UEFA6.uk">
+    <title lang="en">🔴 LIVE: Bodo/Glimt vs Lille</title>
+    <sub-title lang="en">UEFA</sub-title>
+    <desc lang="en">Bodo/Glimt vs Lille. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103215000 +0000" stop="20261103230000 +0000" channel="UEFA6.uk">
+    <title lang="en">🔴 LIVE: Bodo/Glimt vs Lille</title>
+    <sub-title lang="en">UEFA</sub-title>
+    <desc lang="en">Bodo/Glimt vs Lille. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="UEFA6.uk">
+    <title lang="en">UEFA | 06 - Bodo/Glimt vs Lille 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104010000 +0000" stop="20261104030000 +0000" channel="UEFA6.uk">
+    <title lang="en">UEFA | 06 - Bodo/Glimt vs Lille 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104030000 +0000" stop="20261104050000 +0000" channel="UEFA6.uk">
+    <title lang="en">UEFA | 06 - Bodo/Glimt vs Lille 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104050000 +0000" stop="20261104070000 +0000" channel="UEFA6.uk">
+    <title lang="en">UEFA | 06 - Bodo/Glimt vs Lille 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104070000 +0000" stop="20261104090000 +0000" channel="UEFA6.uk">
+    <title lang="en">UEFA | 06 - Bodo/Glimt vs Lille 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104090000 +0000" stop="20261104110000 +0000" channel="UEFA6.uk">
+    <title lang="en">UEFA | 06 - Bodo/Glimt vs Lille 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104110000 +0000" stop="20261104130000 +0000" channel="UEFA6.uk">
+    <title lang="en">UEFA | 06 - Bodo/Glimt vs Lille 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA7.uk">
+    <title lang="en">Feyenoord vs inter Milan (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Feyenoord vs inter Milan. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="UEFA7.uk">
+    <title lang="en">Feyenoord vs inter Milan (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Feyenoord vs inter Milan. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="UEFA7.uk">
+    <title lang="en">Feyenoord vs inter Milan (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Feyenoord vs inter Milan. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="UEFA7.uk">
+    <title lang="en">Feyenoord vs inter Milan (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Feyenoord vs inter Milan. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103195000 +0000" channel="UEFA7.uk">
+    <title lang="en">Next up: LIVE – Feyenoord vs inter Milan (20:00)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Feyenoord vs inter Milan starts at 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103195000 +0000" stop="20261103215000 +0000" channel="UEFA7.uk">
+    <title lang="en">🔴 LIVE: Feyenoord vs inter Milan</title>
+    <sub-title lang="en">UEFA</sub-title>
+    <desc lang="en">Feyenoord vs inter Milan. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103215000 +0000" stop="20261103230000 +0000" channel="UEFA7.uk">
+    <title lang="en">🔴 LIVE: Feyenoord vs inter Milan</title>
+    <sub-title lang="en">UEFA</sub-title>
+    <desc lang="en">Feyenoord vs inter Milan. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="UEFA7.uk">
+    <title lang="en">UEFA | 07 - Feyenoord vs inter Milan 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104010000 +0000" stop="20261104030000 +0000" channel="UEFA7.uk">
+    <title lang="en">UEFA | 07 - Feyenoord vs inter Milan 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104030000 +0000" stop="20261104050000 +0000" channel="UEFA7.uk">
+    <title lang="en">UEFA | 07 - Feyenoord vs inter Milan 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104050000 +0000" stop="20261104070000 +0000" channel="UEFA7.uk">
+    <title lang="en">UEFA | 07 - Feyenoord vs inter Milan 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104070000 +0000" stop="20261104090000 +0000" channel="UEFA7.uk">
+    <title lang="en">UEFA | 07 - Feyenoord vs inter Milan 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104090000 +0000" stop="20261104110000 +0000" channel="UEFA7.uk">
+    <title lang="en">UEFA | 07 - Feyenoord vs inter Milan 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104110000 +0000" stop="20261104130000 +0000" channel="UEFA7.uk">
+    <title lang="en">UEFA | 07 - Feyenoord vs inter Milan 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA8.uk">
+    <title lang="en">Lask vs Slovan Bratislava (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Lask vs Slovan Bratislava. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="UEFA8.uk">
+    <title lang="en">Lask vs Slovan Bratislava (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Lask vs Slovan Bratislava. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="UEFA8.uk">
+    <title lang="en">Lask vs Slovan Bratislava (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Lask vs Slovan Bratislava. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="UEFA8.uk">
+    <title lang="en">Lask vs Slovan Bratislava (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Lask vs Slovan Bratislava. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103195000 +0000" channel="UEFA8.uk">
+    <title lang="en">Next up: LIVE – Lask vs Slovan Bratislava (20:00)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Lask vs Slovan Bratislava starts at 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103195000 +0000" stop="20261103215000 +0000" channel="UEFA8.uk">
+    <title lang="en">🔴 LIVE: Lask vs Slovan Bratislava</title>
+    <sub-title lang="en">UEFA</sub-title>
+    <desc lang="en">Lask vs Slovan Bratislava. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103215000 +0000" stop="20261103230000 +0000" channel="UEFA8.uk">
+    <title lang="en">🔴 LIVE: Lask vs Slovan Bratislava</title>
+    <sub-title lang="en">UEFA</sub-title>
+    <desc lang="en">Lask vs Slovan Bratislava. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="UEFA8.uk">
+    <title lang="en">UEFA | 08 - Lask vs Slovan Bratislava 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104010000 +0000" stop="20261104030000 +0000" channel="UEFA8.uk">
+    <title lang="en">UEFA | 08 - Lask vs Slovan Bratislava 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104030000 +0000" stop="20261104050000 +0000" channel="UEFA8.uk">
+    <title lang="en">UEFA | 08 - Lask vs Slovan Bratislava 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104050000 +0000" stop="20261104070000 +0000" channel="UEFA8.uk">
+    <title lang="en">UEFA | 08 - Lask vs Slovan Bratislava 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104070000 +0000" stop="20261104090000 +0000" channel="UEFA8.uk">
+    <title lang="en">UEFA | 08 - Lask vs Slovan Bratislava 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104090000 +0000" stop="20261104110000 +0000" channel="UEFA8.uk">
+    <title lang="en">UEFA | 08 - Lask vs Slovan Bratislava 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104110000 +0000" stop="20261104130000 +0000" channel="UEFA8.uk">
+    <title lang="en">UEFA | 08 - Lask vs Slovan Bratislava 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA9.uk">
+    <title lang="en">Manchester United vs Roma (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Manchester United vs Roma. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="UEFA9.uk">
+    <title lang="en">Manchester United vs Roma (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Manchester United vs Roma. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="UEFA9.uk">
+    <title lang="en">Manchester United vs Roma (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Manchester United vs Roma. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="UEFA9.uk">
+    <title lang="en">Manchester United vs Roma (Tue 3 Nov, 20:00)</title>
+    <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
+    <desc lang="en">Coming up: Manchester United vs Roma. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103180000 +0000" stop="20261103195000 +0000" channel="UEFA9.uk">
+    <title lang="en">Next up: LIVE – Manchester United vs Roma (20:00)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Manchester United vs Roma starts at 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261103195000 +0000" stop="20261103215000 +0000" channel="UEFA9.uk">
+    <title lang="en">🔴 LIVE: Manchester United vs Roma</title>
+    <sub-title lang="en">UEFA</sub-title>
+    <desc lang="en">Manchester United vs Roma. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103215000 +0000" stop="20261103230000 +0000" channel="UEFA9.uk">
+    <title lang="en">🔴 LIVE: Manchester United vs Roma</title>
+    <sub-title lang="en">UEFA</sub-title>
+    <desc lang="en">Manchester United vs Roma. UEFA. Starts Tue 3 Nov, 20:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261103230000 +0000" stop="20261104010000 +0000" channel="UEFA9.uk">
+    <title lang="en">UEFA | 09 - Manchester United vs Roma 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104010000 +0000" stop="20261104030000 +0000" channel="UEFA9.uk">
+    <title lang="en">UEFA | 09 - Manchester United vs Roma 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104030000 +0000" stop="20261104050000 +0000" channel="UEFA9.uk">
+    <title lang="en">UEFA | 09 - Manchester United vs Roma 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104050000 +0000" stop="20261104070000 +0000" channel="UEFA9.uk">
+    <title lang="en">UEFA | 09 - Manchester United vs Roma 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104070000 +0000" stop="20261104090000 +0000" channel="UEFA9.uk">
+    <title lang="en">UEFA | 09 - Manchester United vs Roma 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104090000 +0000" stop="20261104110000 +0000" channel="UEFA9.uk">
+    <title lang="en">UEFA | 09 - Manchester United vs Roma 8:00pm</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104110000 +0000" stop="20261104130000 +0000" channel="UEFA9.uk">
+    <title lang="en">UEFA | 09 - Manchester United vs Roma 8:00pm</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -99902,71 +100297,6 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104000000 +0000" stop="20261104020000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104020000 +0000" stop="20261104040000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104080000 +0000" stop="20261104100000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104100000 +0000" stop="20261104120000 +0000" channel="UEFA10.uk">
-    <title lang="en">UEFA | 10 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA13.uk">
     <title lang="en">UEFA | 13 - Sheriff Tiraspol vs Servette 20.00</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -100615,266 +100945,6 @@
   <programme start="20261104100000 +0000" stop="20261104120000 +0000" channel="UEFA30.uk">
     <title lang="en">UEFA | 30 - Ajax vs Atalanta 20:00 pm</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104000000 +0000" stop="20261104020000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104020000 +0000" stop="20261104040000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104080000 +0000" stop="20261104100000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104100000 +0000" stop="20261104120000 +0000" channel="UEFA6.uk">
-    <title lang="en">UEFA | 06 - OFI Crete vs Bayer 04 Leverkusen 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104000000 +0000" stop="20261104020000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104020000 +0000" stop="20261104040000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104080000 +0000" stop="20261104100000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104100000 +0000" stop="20261104120000 +0000" channel="UEFA7.uk">
-    <title lang="en">UEFA | 07 - Sturm Graz vs Marseille 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104000000 +0000" stop="20261104020000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104020000 +0000" stop="20261104040000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104080000 +0000" stop="20261104100000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104100000 +0000" stop="20261104120000 +0000" channel="UEFA8.uk">
-    <title lang="en">UEFA | 08 - Union Saint-Gilloise vs Hapoel Be'er Sheva 17:45 pm</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103100000 +0000" stop="20261103120000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103120000 +0000" stop="20261103140000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103140000 +0000" stop="20261103160000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103160000 +0000" stop="20261103180000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103180000 +0000" stop="20261103200000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103200000 +0000" stop="20261103220000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261103220000 +0000" stop="20261104000000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104000000 +0000" stop="20261104020000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104020000 +0000" stop="20261104040000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104080000 +0000" stop="20261104100000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104100000 +0000" stop="20261104120000 +0000" channel="UEFA9.uk">
-    <title lang="en">UEFA | 09 -</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
 </tv>
