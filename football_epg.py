@@ -848,10 +848,12 @@ def skyplus_channel(matches):
                            SKYPLUS_COMPS, SKYPLUS_IDLE, efl_label=True)
 
 
-def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_label=False):
+def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_label=False, ko_words=None, tail=None):
     """(id, name, None, shows) for a shared event-streams channel (Sky Sports+, Setanta), or None.
     One block per kick-off time; kick-offs that overlap share ONE block (so an earlier match doesn't vanish when
-    a later one starts); the time before a block says what's coming up."""
+    a later one starts); the time before a block says what's coming up.
+    ko_words = (one, many) wording for "kick-off(s)"; tail = (one-match, many-matches) closing sentence that follows the
+    matches on the same line (Setanta, 3 Nov 2026). Without them: "kick-off(s)" and the long `idle` text after a blank line."""
     early = timedelta(minutes=MATCH_EARLY_MINUTES)
     groups = []
     for m in sorted(kept, key=lambda m: m["start"]):
@@ -875,13 +877,15 @@ def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_la
                     comps.append(f"{STREAMS_SHORT.get(c, c)}: " + ", ".join(games))
             parts.append((k, ". ".join(comps)))
         n = len(ms)
+        ko_word = (ko_words[0] if n == 1 else ko_words[1]) if ko_words else f"kick-off{'s' if n != 1 else ''}"
+        closing = (" " + (tail[0] if n == 1 else tail[1])) if tail else "\n\n" + idle
         if len(kos) == 1:
-            desc = (f"{ko:%a %d %b}, {ko:%H:%M} kick-off{'s' if n != 1 else ''} on {where} - "
-                    + parts[0][1] + ".\n\n" + idle)
+            desc = (f"{ko:%a %d %b}, {ko:%H:%M} {ko_word} on {where} - "
+                    + parts[0][1] + "." + closing)
         else:
             desc = (f"{ko:%a %d %b} on {where} - "
                     + " ".join(f"{k.astimezone(LONDON):%H:%M}: {txt}." for k, txt in parts)
-                    + "\n\n" + idle)
+                    + closing)
         cs = {m["comp"] for m in ms}
         what = (STREAMS_SHORT.get(ms[0]["comp"], ms[0]["comp"]) if len(cs) == 1
                 else "EFL" if efl_label and cs <= set(SKYPLUS_EFL) else "Football")
@@ -910,13 +914,17 @@ SETANTA_COMPS = ["Premier League", "UEFA Champions League"]
 SETANTA_IDLE = ("Setanta Sports event streams carry Premier League and UEFA Champions League football, plus "
                 "other European football, UFC, NBA, NHL, tennis and motorsport. Each event is on its own stream - "
                 "scroll the Setanta channels to find it.")
+# Closing sentence of every Setanta match description (Premier League and European matchdays alike):
+# "Tue 03 Nov, 20:00 KO's on the Setanta Sports streams - Champions League: A v B, C v D. Each match is on its own stream - ..."
+SETANTA_TAIL = ("This match is on its own stream - scroll the Setanta Event channels to find it.",
+                "Each match is on its own stream - scroll the Setanta Event channels to find it.")
 
 
 def setanta_channel(matches):
     """(id, name, None, shows) for the Setanta Sports streams, or None when no matches."""
     kept = [m for m in matches if m["comp"] in SETANTA_COMPS and not m.get("tbc")]
     return streams_channel(kept, SETANTA_ID, SETANTA_NAME, "Setanta", "the Setanta Sports streams",
-                           SETANTA_COMPS, SETANTA_IDLE)
+                           SETANTA_COMPS, SETANTA_IDLE, ko_words=("KO", "KO's"), tail=SETANTA_TAIL)
 
 
 # Premier League+ (31 Oct 2026): ONE guide channel for the "Premier League+ 1-10" streams (both playlists), built like
