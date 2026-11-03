@@ -437,7 +437,7 @@ def find_days_ahead(today):
 # Channels with nothing listed (3 Nov 2026): TV Passport / i.mjh.nz sometimes have no listings for a channel (Billiard TV had
 # 30 programmes one day and none the next). Such a channel gets the same standard "no schedule" blocks as in SPORT_epg.py, so the
 # row never reads "No information". 2-hour blocks for 24 hours only: when listings come back they are not hidden for long.
-EMPTY_SUB = "No schedule available"
+EMPTY_SUB = "No schedule available at this time."
 EMPTY_DESC = ("{name}: no programmes are listed for this channel at the moment. The schedule will appear here when the "
               "broadcaster publishes it (some channels only run during events).")
 EMPTY_BLOCK_HOURS = 2

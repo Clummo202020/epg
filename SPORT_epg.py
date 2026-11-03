@@ -5780,14 +5780,15 @@ EXTRA_EMPTY_CHANNELS = {"TR.beINSPORTS5": "beIN SPORTS 5",       # Digiturk refu
                         # own (the guide has Hub Premier 1-6), so the standard "no schedule" blocks (user request)
                         **{f"SG.HubPremier{n}": f"Hub Premier {n}" for n in range(7, 12)}}
 EMPTY_FILLER_HOURS = 24
-EMPTY_FILLER_SUB = "No schedule available"
+EMPTY_FILLER_SUB = "No schedule available at this time."
+OLD_EMPTY_FILLER_SUBS = ("No schedule available",)       # the wording used until 3 Nov 2026 (so old placeholders in the previous guide are still recognised)
 EMPTY_FILLER_DESC = ("{name}: no programmes are listed for this channel at the moment. The schedule will appear "
                      "here when the broadcaster publishes it (some channels only run during events).")
 
 
 # Part-time channels (2 Nov 2026): between events these channels' sources send their own filler ("End of Transmission" on
 # beIN SPORTS 4 / 5 Singapore, "Stay tuned for the next broadcast" on beIN SPORTS 4 / 5 Hong Kong, "No information" on beIN SPORTS 3
-# Hong Kong). Those blocks are rewritten to the standard wording above (the channel name as the title, "No schedule available",
+# Hong Kong). Those blocks are rewritten to the standard wording above (the channel name as the title, "No schedule available at this time.",
 # "...: no programmes are listed for this channel at the moment ...") - never live.
 PART_TIME_CHANNELS = ("SG.beINSPORTS4", "SG.beINSPORTS5", "HK.beINSPORTS3", "HK.beINSPORTS4", "HK.beINSPORTS5",
                       # StarHub's own "End of Transmission" blocks (3 Nov 2026: user asked for Hub Premier 2 and Hub Sports 8;
@@ -5851,7 +5852,7 @@ def carry_over(tv, listed, prev_path):
         cid = p.get("channel")
         if cid in have or (cid or "").startswith(CARRY_SKIP):
             continue
-        if p.findtext("sub-title") == EMPTY_FILLER_SUB:      # last run's "No schedule available" placeholder - regenerate, don't carry
+        if p.findtext("sub-title") in (EMPTY_FILLER_SUB,) + OLD_EMPTY_FILLER_SUBS:      # last run's "No schedule available at this time." placeholder (old wording too) - regenerate, don't carry
             continue
         try:
             stop = datetime.strptime(p.get("stop"), "%Y%m%d%H%M%S %z")

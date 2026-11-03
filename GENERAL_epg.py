@@ -40,7 +40,7 @@ UA = "Mozilla/5.0 (GENERAL_epg.py)"
 KEEP_PAST = timedelta(hours=3)        # programmes that ended longer ago than this are dropped
 DAYS_AHEAD = 8                        # nothing further ahead than this (epgshare lists about 4 days anyway)
 PLACEHOLDER_HOURS = 24                # like the events guide: PlaylistLabs keeps what it loads, so keep it short
-PLACEHOLDER_SUB = "No schedule available"
+PLACEHOLDER_SUB = "No schedule available at this time."
 PLACEHOLDER_DESC = ("{name}: no programmes are listed for this channel at the moment. The schedule will appear here "
                     "when a source for it is added.")
 MAX_DESC = 350
