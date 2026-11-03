@@ -1131,8 +1131,8 @@ def goal_rush_channel(matches, suffix, now=None):
             "start": live_start,
             "stop": max(m["stop"] for m in ms),
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
-            "filler_prefix": f"Coming up {ko:%A}",      # "Coming up Saturday: Goal Rush. ..."
-            "filler_sub": f"⏭ Goal Rush {ko:%a} {ko.day} {ko:%b}",
+            "filler_head": f"Next Up: Goal Rush, {ko:%A}.",   # description starts "Next Up: Goal Rush, Saturday. Live action from ..."
+            "filler_sub": f"Next Up: Goal Rush {ko:%a} {ko.day} {ko:%b}",
             "live_sub": GOAL_RUSH_COMP,                  # secondary title: Premier League
             "live_title": "🔴 LIVE: Goal Rush",         # title of the show itself
         }
@@ -1321,13 +1321,16 @@ def build_xmltv(channels, filler):
                         f_desc = f"Coming up: {d}"
                     else:
                         f_title = f"{m['title']} ({m['when']})"
-                        f_desc = f"{m.get('filler_prefix', 'Next Match')}: {d}"   # Goal Rush: "Coming up"
+                        if "filler_head" in m:       # Goal Rush: "Next Up: Goal Rush, Saturday. Live action ..."
+                            f_desc = m["filler_head"] + (d[len("Goal Rush."):] if d.startswith("Goal Rush.") else " " + d)
+                        else:
+                            f_desc = f"Next Up: {d}"
                     if "fixed_title" in m:        # UEFA.id: same title/description throughout
                         f_title, f_desc = m["fixed_title"], m["fixed_desc"]
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
                         f_title += f" - kick-off in {countdown(start - a)}"
                     add_programme(tv, chan_id, a, b, f_title,
-                                  m.get("filler_sub", f"⏭ Next Match: {m['sub']}"), f_desc, m["comp"])
+                                  m.get("filler_sub", f"Next Up: {m['sub']}"), f_desc, m["comp"])
                     count += 1
             if m.get("filler_only"):                  # Goal Rush before matchday: no show yet
                 last_stop = start

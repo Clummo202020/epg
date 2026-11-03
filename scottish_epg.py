@@ -134,7 +134,7 @@ FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap
 
 # Clubs with no match in their own league during the window (3 Nov 2026): every club of the four SPFL divisions always gets a
 # channel for its own league. With no match listed it shows these blocks, so the row never reads "No information" (for
-# example during a cup weekend or an international break). Plain wording - no "Next Match" when there is none.
+# example during a cup weekend or an international break). Plain wording - no "Next Up" when there is none.
 NO_MATCH_CHANNELS = True
 NO_MATCH_HOURS = 6        # block length
 NO_MATCH_DAYS = 10        # how far ahead the blocks run (the default --days)
@@ -460,10 +460,10 @@ def build_xmltv(channels, filler):
                         f_desc = f"Coming up: {m['desc']}"
                     else:
                         f_title = f"{m['title']} ({m['when']})"
-                        f_desc = f"Next Match: {m['desc']}"
+                        f_desc = f"Next Up: {m['desc']}"
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
                         f_title += f" - kick-off in {countdown(start - a)}"
-                    add_programme(tv, chan_id, a, b, f_title, f"⏭ Next Match: {m['sub']}", f_desc, m["comp"])
+                    add_programme(tv, chan_id, a, b, f_title, f"Next Up: {m['sub']}", f_desc, m["comp"])
                     count += 1
             # the match itself: title "🔴 LIVE: A v B", secondary title the competition
             add_programme(tv, chan_id, start, stop, f"🔴 LIVE: {m['title']}", m["sub"], m["desc"],

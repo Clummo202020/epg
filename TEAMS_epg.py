@@ -5,9 +5,9 @@ PlaylistLabs' built-in "USA Sports Teams" source, with every time in LONDON time
 
 Team channel ids are NFL-ArizonaCardinals.uk, NBA-LAClippers.uk ... (31 Oct 2026: '.uk' instead of the playlist's '.us', so they can NOT clash with
 PlaylistLabs' built-in "USA Sports Teams" ids, which won over ours and showed EST times with no red ball). Each channel shows:
-    "Next game: Arizona Cardinals at Dallas Cowboys (Sun 1 Nov, 18:00 UK)"   sub-title "Sun 1 Nov, 18:00 UK time"
+    "Next Up: Arizona Cardinals at Dallas Cowboys (Sun 1 Nov, 18:00 UK)"   sub-title "Sun 1 Nov, 18:00 UK time"
     description: kick-off in UK time, venue and city, TV channel(s), and the last result when the team played in the last 4 days
-    "🔴 LIVE: ..." while the game is being played (estimated length per sport), then the next "Next game" block.
+    "🔴 LIVE: ..." while the game is being played (estimated length per sport), then the next "Next Up" block.
 No game in range: "No game scheduled" (the MLB winter, a bye week beyond the range).
 
 Source: ESPN's public scoreboard, one request per day and league (the same endpoint event_epg.py uses), 4 days back and 21
@@ -307,7 +307,7 @@ def build_team(tv, cid, league, games, now, horizon):
         if end <= t:
             end = min(t + timedelta(hours=1), horizon)
         if nxt:
-            title = f"Next game: {name_of(nxt['away'])} at {name_of(nxt['home'])} ({uk(nxt['ko'])} UK)"
+            title = f"Next Up: {name_of(nxt['away'])} at {name_of(nxt['home'])} ({uk(nxt['ko'])} UK)"
             sub = uk(nxt["ko"]) + " UK time"
             desc = f"{word} {uk(nxt['ko'])} UK time." + (f" {nxt['where']}." if nxt["where"] else "") + \
                    (f" TV: {', '.join(nxt['tv'])}." if nxt["tv"] else "") + (f" {last}" if last else "")

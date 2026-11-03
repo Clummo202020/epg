@@ -428,7 +428,7 @@ def load_fixtures():
             continue
         cats = [c.text or "" for c in p.findall("category")]
         comp = cats[2] if len(cats) > 2 else ""          # Sports, Football, <competition>
-        nxt = re.match(r"^⏭\s*Next Match:\s*(.+)$", p.findtext("sub-title") or "")
+        nxt = re.match(r"^(?:⏭\s*)?Next (?:Match|Up):\s*(.+)$", p.findtext("sub-title") or "")
         if nxt and nxt[1].lower().startswith(comp.lower()):
             comp = nxt[1].strip()                        # with the round: "Carabao Cup 4th Round"
         out.add((_team_key(m[1]), _team_key(m[2]), m[1].strip(), m[2].strip(), ko, comp))
