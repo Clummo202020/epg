@@ -403,6 +403,13 @@ UEFA_CHANNEL_DESC = ("Matches that fall under the UEFA umbrella.\n\n"
 FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap)
 DOCTYPE = True            # write the standard XMLTV DOCTYPE line
 COUNTDOWN = False         # add "- kick-off in 2d 23h" to each filler block
+# "This match has now ended" (3 Nov 2026): a club channel whose LAST listed match finishes soon (or already has) gets
+# these blocks after the final whistle, so a match id such as Manchester.Utd.ChampsLge doesn't go blank ("outdated" in
+# PlaylistLabs) the moment the match ends. The next run drops the finished match, so this only has to last until then.
+ENDED_FILLER = True
+ENDED_TEXT = "This match has now ended"
+ENDED_HOURS = 12                  # how long the blocks run after the final whistle
+ENDED_LOOKAHEAD_HOURS = 36        # only for a last match that ends within this many hours from now (or already has)
 FILLER_STYLE = "plain"    # "plain": "Brentford v Liverpool (Sat 17 Oct, 15:00)"
                           # "next":  "Next: Brentford v Liverpool - Sat 17 Oct, 15:00"
 
@@ -1351,6 +1358,14 @@ def build_xmltv(channels, filler):
                           m["comp"], live=not m.get("not_live"))
             count += 1
             last_stop = stop
+        if (filler and ENDED_FILLER and ms and last_stop and ms[-1].get("teams") and not ms[-1].get("filler_only")
+                and last_stop <= now + timedelta(hours=ENDED_LOOKAHEAD_HOURS)
+                and last_stop + timedelta(hours=ENDED_HOURS) > now):
+            m = ms[-1]       # the channel's last match: say it has ended instead of going blank
+            for a, b in filler_blocks(max(last_stop, now), last_stop + timedelta(hours=ENDED_HOURS)):
+                add_programme(tv, chan_id, a, b, f"{m['title']} ({m.get('when', '')})".replace(" ()", ""),
+                              ENDED_TEXT, ENDED_TEXT + ".", m["comp"])
+                count += 1
     return tv, count
 
 
