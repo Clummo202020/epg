@@ -428,6 +428,25 @@ BEIN_COUNTRIES = {       # code -> (place, time zone, region codes to try, fallb
     "id": ("Indonesia", "Asia/Jakarta", ["en-id", "id-id"], {}),
 }
 BEIN_DEFAULT = "my,sg"  # hk, th, id: beIN lists the channels but publishes no programmes (checked Oct 2026)
+BARE_WEEKDAY = re.compile(r"(Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-z]*\.?", re.I)
+WEEKDAY_FULL = {"mon": "Monday", "tue": "Tuesday", "wed": "Wednesday", "thu": "Thursday",
+                "fri": "Friday", "sat": "Saturday", "sun": "Sunday"}
+
+
+def bein_show_fix(title, show, desc):
+    """beIN sometimes sends only the episode name as the title ("Tue", "Wed") and puts the programme's real name in
+    its 'category' field ("The UCL Preview Show 2026/27"), with a round code like "MD4" as the description.
+    Returns (title, sub-title, description) with the show name as the title, or None when this does not apply."""
+    show = re.sub(r"\s+", " ", str(show or "")).strip()
+    m = BARE_WEEKDAY.fullmatch((title or "").strip())
+    if not m or not show or BARE_WEEKDAY.fullmatch(show):
+        return None
+    day = WEEKDAY_FULL[m.group(1).lower()]
+    r = re.fullmatch(r"\s*(?:MD|Match\s*Day)\s*\.?\s*(\d+)\s*\.?\s*", desc or "", re.I)
+    if r:
+        rnd = f"Match Day {r.group(1)}"
+        return show, f"{day} - {rnd}", f"{show}: {rnd} ({day})."
+    return show, day, f"{show}: {day}."
 STOCKHOLM, OSLO, COPENHAGEN = ZoneInfo("Europe/Stockholm"), ZoneInfo("Europe/Oslo"), ZoneInfo("Europe/Copenhagen")
 HELSINKI = ZoneInfo("Europe/Helsinki")
 ALLENTE_GUIDE = "https://www.allente.{tld}/api/epg/refetch-epg-data?Start={day:%Y-%m-%d}"
@@ -2335,9 +2354,13 @@ def bein_events(ids, days, debug=False):
             live = bool(re.match(r"\s*\(?" + rx, title, re.I) or re.search(r"[(\-:]\s*" + rx + r"\s*\)?\s*$", title, re.I))
             title = re.sub(r"^\s*\(?" + rx + r"\)?\s*[:\-]?\s*|\s*[(\-:]\s*" + rx + r"\s*\)?\s*$", "", title,
                            flags=re.I).strip() or title
+            sub = comp if comp and comp.lower() != title.lower() else ""
+            desc = pick_desc(it, "description", "synopsis")
+            fixed = bein_show_fix(title, it.get("category") or (it.get("data") or {}).get("categoryName"), desc)
+            if fixed:                                    # "Tue" + category "The UCL Preview Show 2026/27"
+                title, sub, desc = fixed
             per[cid][start] = {"start": start, "stop": stop, "title": title,
-                               "sub": comp if comp and comp.lower() != title.lower() else "", "live": live,
-                               "desc": pick_desc(it, "description", "synopsis")}
+                               "sub": sub, "live": live, "desc": desc}
             n += 1
         return n
 
