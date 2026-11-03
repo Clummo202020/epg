@@ -1,0 +1,21 @@
+name: beIN check
+
+on:
+  workflow_dispatch:         # run it from the Actions page, then paste the log
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: What does beIN send for the "Tue" / "Wed" blocks?
+        run: python3 -u bein_check.py
