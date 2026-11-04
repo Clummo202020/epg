@@ -180,6 +180,12 @@ AUSTRALIA - Fox Sports and ESPN AU come from YourTV's Foxtel guide (4 Nov 2026; 
   --no-yourtv turns it off. Channels: AU.FoxCricket, AU.FoxLeague, AU.FoxSports503, AU.FoxFooty, AU.FoxSports505,
   AU.FoxSports506, AU.FoxSports507, AU.FoxSportsNews, AU.ESPN, AU.ESPN2.
 
+MALAYSIA - Astro Premier League 1-5, Football, Grandstand, Cricket, Arena 1 + 2, Sports UHD and Sports Plus: epgshare01's
+  MY1 file is the main source (with descriptions, about 1-2 days ahead); since 5 Nov 2026 Astro's own TV guide (the call
+  astro.com.my makes, no login, 7 days, titles and times only, live programmes start \"(L) \") adds the programmes after
+  epgshare's last one, and is the only source for a channel epgshare has nothing for (Premier League 3 / 4). A channel whose
+  Astro times don't match epgshare stays on epgshare. --no-astro turns it off.
+
 SINGAPORE - StarHub TV+'s guide API (JSON, no login; added 29 Oct 2026), per channel and day:
     https://waf-starhub-metadata-api-p001.sh-ifs.com/v3.1/epg/schedules?...&in_channel_id=<id>
   Hub Sports 1-8, found by name in StarHub's channel list (known ids as fallback). Live =
@@ -4420,6 +4426,140 @@ def fetch_yourtv_au(days, debug=False):
     return out
 
 
+# Astro Malaysia's own guide (5 Nov 2026, user request): the call astro.com.my's TV schedule page makes - open, no login, no key,
+# works from the GitHub runner (astro_check.py, two rounds). One request per day (scheduleDate=YYYY-MM-DD, Malaysia time) returns
+# all 166 channels with titles and times (eventStartMyt / eventEndMyt, +08:00) - NO descriptions - for 7 days (5 Nov .. 11 Nov on
+# 5 Nov). A live programme's title starts with "(L) ". Its UHD times and titles are identical to epgshare MY1's, which is why the
+# two can be joined by start time. epgshare MY1 keeps the descriptions but runs only about 1-2 days ahead, so:
+#   * a channel epgshare has listings for keeps them; Astro's programmes that START AFTER epgshare's last one are added (title +
+#     time only) and epgshare's last block is cut where Astro's next one begins. Checked first: at least half of the epgshare
+#     programmes in the overlap must start within 2 minutes of an Astro one - otherwise that channel is left on epgshare;
+#   * a channel epgshare has nothing for (Premier League 3 / 4, and 5 / Cricket if Astro ever lists them) comes from Astro alone.
+# ASTRO_MY_CHANNELS: our id part -> (Astro's channel number "stbNumber", regex its title must match, or "" for none). Only the
+# channels the user named (Premier League 1-5, Grandstand, Football, Cricket, Arena 1 + 2, UHD, Sports Plus). On 5 Nov the feed had
+# no Premier League 5 (CH 809) and no "Astro Cricket" (only a different channel, CricBuzz 832) - they are picked up if they appear.
+# Astro Golf, Tennis, Badminton etc. are not touched. A failed / empty read changes nothing (epgshare as before); --no-astro turns it off.
+ASTRO_MY_URL = "https://contenthub-api.eco.astro.com.my/api/v2/search-linear"
+ASTRO_MY_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Safari/605.1.15",
+                    "Accept": "application/json, text/plain, */*", "Origin": "https://www.astro.com.my",
+                    "Referer": "https://www.astro.com.my/"}
+ASTRO_MY_MAX_DAYS = 7
+ASTRO_MY_CHANNELS = {
+    "AstroArena": ("801", r"(?i)^astro arena$"),
+    "AstroArena2": ("802", ""),                  # CH 802 is titled \"Stadium Astro\" - the time check below confirms the match
+    "AstroFootball": ("814", r"(?i)astro football"),
+    "AstroPremierLeague": ("811", r"(?i)^astro premier league$"),
+    "AstroPremierLeague2": ("812", r"(?i)premier league 2$"),
+    "AstroPremierLeague3": ("813", r"(?i)premier league 3$"),
+    "AstroPremierLeague4": ("808", r"(?i)premier league 4$"),
+    "AstroPremierLeague5": ("809", r"(?i)premier league 5$"),
+    "AstroGrandstand": ("810", r"(?i)astro grandstand"),
+    "AstroCricket": ("", r"(?i)^astro cricket$"),  # matched by title only (CH 832 CricBuzz is another channel)
+    "AstroSportsPlus": ("817", r"(?i)sports plus"),
+    "AstroSportsUHD": ("805", r"(?i)sports uhd"),
+}
+ASTRO_MY_MATCH_SECONDS = 120
+
+
+def astro_my_clean(title):
+    """(title without the \"(L) \" flag, live)"""
+    t = re.sub(r"\s+", " ", str(title or "")).strip()
+    live = bool(re.match(r"^\(L\)\s*", t))
+    return (re.sub(r"^\(L\)\s*", "", t).strip() or t), live
+
+
+def fetch_astro_my(days, debug=False):
+    """{our id part: [{start, stop, title, sub, live, desc}]} for ASTRO_MY_CHANNELS, same shape as fetch_epgshare
+    (titles and times only). {} when Astro gave nothing usable."""
+    tz = ZoneInfo(EPGSHARE["my"]["tz"])
+    first = datetime(days[0].year, days[0].month, days[0].day, tzinfo=tz).astimezone(timezone.utc)
+    last_day = days[-1] + timedelta(days=1)
+    end = datetime(last_day.year, last_day.month, last_day.day, tzinfo=tz).astimezone(timezone.utc)
+    per = {}                                                   # our part -> {start: event}
+    got_days = 0
+    for i in range(min(len(days), ASTRO_MY_MAX_DAYS)):
+        day = days[0] + timedelta(days=i)
+        query = urllib.parse.urlencode({"channelGuide": "true", "platform": "acm", "channelOrderBy": "stbNumber,asc",
+                                        "scheduleDate": day.isoformat(), "channelLimit": 200, "channelPage": 1}, safe=",")
+        data = fetch(f"{ASTRO_MY_URL}?{query}", headers=ASTRO_MY_HEADERS, parse="json", retries=2, label=f"Astro guide ({day})")
+        chans = (data or {}).get("response") if isinstance(data, dict) else None
+        if isinstance(chans, dict):
+            chans = next((v for v in chans.values() if isinstance(v, list)), None)
+        if not isinstance(chans, list) or not chans:
+            continue
+        n_day = 0
+        for ch in chans:
+            if not isinstance(ch, dict):
+                continue
+            stb, name = str(ch.get("stbNumber") or "").strip(), str(ch.get("title") or "")
+            for part, (want_stb, rx) in ASTRO_MY_CHANNELS.items():
+                if want_stb and stb != want_stb:
+                    continue
+                if rx and not re.search(rx, name):
+                    continue
+                if not want_stb and not rx:
+                    continue
+                for pr in ch.get("schedule") or []:
+                    try:
+                        st = datetime.fromisoformat(str(pr["eventStartMyt"])).astimezone(timezone.utc)
+                        sp = datetime.fromisoformat(str(pr["eventEndMyt"])).astimezone(timezone.utc)
+                    except (KeyError, ValueError):
+                        continue
+                    title, live = astro_my_clean(pr.get("title"))
+                    if not title or sp <= st or st >= end or sp <= first:
+                        continue
+                    old = per.setdefault(part, {}).get(st)
+                    if old is None or sp > old["stop"]:
+                        per[part][st] = {"start": st, "stop": sp, "title": title, "sub": "", "live": live, "desc": ""}
+                    n_day += 1
+        if n_day:
+            got_days += 1
+        if debug:
+            print(f"    Astro {day}: {n_day} programmes on the channels we carry")
+    out = {part: [slot[k] for k in sorted(slot)] for part, slot in per.items() if slot}
+    if out:
+        print(f"  Astro: {got_days} day(s) read; {sum(len(v) for v in out.values())} programmes on {len(out)} channel(s)")
+    return out
+
+
+def merge_astro_my(my_eps, astro):
+    """Join Astro's listing into epgshare's (my_eps, changed in place) as described above. Returns log lines."""
+    lines = []
+    tol = timedelta(seconds=ASTRO_MY_MATCH_SECONDS)
+    for part in ASTRO_MY_CHANNELS:
+        ast = astro.get(part)
+        if not ast:
+            continue
+        base = my_eps.get(part) or []
+        name = EPGSHARE["my"]["channels"][part][0]
+        if not base:
+            my_eps[part] = ast
+            lines.append(f"{name}: no epgshare listing - {len(ast)} programmes from Astro "
+                         f"(to {ast[-1]['stop'].strftime('%a %d %b %H:%M')} UTC)")
+            continue
+        starts = [a["start"] for a in ast]
+        overlap = [b for b in base if starts[0] - tol <= b["start"] <= ast[-1]["stop"]]
+        hits = sum(1 for b in overlap if any(abs(b["start"] - s) <= tol for s in starts))
+        if len(overlap) < 3 or hits < len(overlap) * 0.5:
+            lines.append(f"{name}: Astro's times don't match epgshare ({hits} of {len(overlap)}) - left on epgshare")
+            continue
+        base.sort(key=lambda e: e["start"])
+        last = base[-1]
+        same = next((a for a in ast if abs(a["start"] - last["start"]) <= tol), None)
+        later = [a for a in ast if a["start"] > last["start"] + tol]
+        if same and same["stop"] < last["stop"]:
+            last["stop"] = same["stop"]                       # epgshare stretched its last block; Astro has the real end
+        if later and later[0]["start"] < last["stop"]:
+            last["stop"] = later[0]["start"]
+        if later:
+            my_eps[part] = base + later
+            lines.append(f"{name}: epgshare kept ({len(base)}), {len(later)} programmes added from Astro "
+                         f"(to {later[-1]['stop'].strftime('%a %d %b %H:%M')} UTC)")
+        else:
+            lines.append(f"{name}: epgshare already as far as Astro - nothing added")
+    return lines
+
+
 # beIN SPORTS Middle East - beIN's own guide (2 Nov 2026). epgshare's BEIN1 file was patchy for these channels (English 1
 # had 17 programmes and missed the Youth Olympics; MAX channels ran 5 h ahead). beIN's public API for the region
 # "en-mena" (the page beinsports.com/en-mena/tv-guide) has the real schedule 2-6 days ahead, a real "live" flag that matches
@@ -5831,6 +5971,47 @@ def astro_matchday(records):
         print(f"  Astro {rec['id']}: {a} vs {b} -> {uk:%a %d %b %H:%M} UK")
 
 
+# Astro Premier League 3 / 4 / 5 idle listing (5 Nov 2026, user request): these pop-up channels only have programmes on match days
+# (Astro lists nothing in between and sends no filler), so the empty time reads \"no information\" in the player. astro_idle_fill()
+# fills every gap with 2-hour blocks titled with the channel name, secondary title ASTRO_IDLE_SUB and description
+# ASTRO_IDLE_DESC - from now to the last listed match; after the last match (or with no match at all) for EMPTY_FILLER_HOURS (24 h)
+# only, because PlaylistLabs only appends after the last programme it holds, so a longer filler would hide a match Astro lists
+# later. A match Astro adds LATER INSIDE a gap that was already filled is hidden for the same reason (rare: Astro lists the
+# week ahead). Channels: ASTRO_IDLE_CHANNELS. Runs after astro_matchday().
+ASTRO_IDLE_CHANNELS = {"MY.AstroPremierLeague3": "Astro Premier League 3", "MY.AstroPremierLeague4": "Astro Premier League 4",
+                       "MY.AstroPremierLeague5": "Astro Premier League 5"}
+ASTRO_IDLE_SUB = "No live match scheduled at this time."
+ASTRO_IDLE_DESC = "{name}: no live match scheduled at this time. Check back later."
+
+
+def astro_idle_fill(records):
+    now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
+    for cid, name in ASTRO_IDLE_CHANNELS.items():
+        rec = next((r for r in records if r.get("id") == cid), None)
+        if rec is None:
+            rec = {"id": cid, "name": name, "tz": ZoneInfo(EPGSHARE["my"]["tz"]), "place": "Malaysia",
+                   "filler": False, "back_to_back": True, "events": []}
+            records.append(rec)
+        real = sorted((e for e in rec["events"] if e.get("stop") and e["stop"] > now), key=lambda e: e["start"])
+        cursor, added, matches = now, [], 0
+        for ev in real:
+            matches += 1
+            if ev["start"] > cursor:
+                added.append((cursor, ev["start"]))
+            cursor = max(cursor, ev["stop"])
+        horizon = now + timedelta(hours=EMPTY_FILLER_HOURS)
+        if cursor < horizon:
+            added.append((cursor, horizon))
+        n = 0
+        for a, b in added:
+            for x, y in filler_blocks(a, b):
+                rec["events"].append({"start": x, "stop": y, "title": name, "sub": ASTRO_IDLE_SUB, "live": False,
+                                      "never_live": True, "no_lead": True, "desc": ASTRO_IDLE_DESC.format(name=name)})
+                n += 1
+        rec["events"].sort(key=lambda e: e["start"])
+        print(f"  Astro idle listing {cid}: {matches} match programme(s), {n} idle block(s)")
+
+
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
@@ -5985,7 +6166,10 @@ EMPTY_CHANNELS = {}
 EXTRA_EMPTY_CHANNELS = {"TR.beINSPORTS5": "beIN SPORTS 5",       # Digiturk refuses GitHub - no source
                         # Hub Premier 7-11 (3 Nov 2026): StarHub's overflow Premier League channels - no listings of their
                         # own (the guide has Hub Premier 1-6), so the standard "no schedule" blocks (user request)
-                        **{f"SG.HubPremier{n}": f"Hub Premier {n}" for n in range(7, 12)}}
+                        **{f"SG.HubPremier{n}": f"Hub Premier {n}" for n in range(7, 12)},
+                        # Astro's pop-up channels (5 Nov 2026): when neither epgshare nor Astro lists anything
+                        # (Premier League 3 / 4 / 5 have their own idle wording - astro_idle_fill)
+                        "MY.AstroCricket": "Astro Cricket"}
 EMPTY_FILLER_HOURS = 24
 EMPTY_FILLER_SUB = "No schedule available at this time."
 OLD_EMPTY_FILLER_SUBS = ("No schedule available",)       # the wording used until 3 Nov 2026 (so old placeholders in the previous guide are still recognised)
@@ -6257,6 +6441,7 @@ def main():
     ap.add_argument("--no-bein-mena", action="store_true", help="don't read beIN's own Middle East guide (stays on epgshare BEIN1)")
     ap.add_argument("--no-skygo", action="store_true", help="don't read Sky Go's TV guide (Sky Sport NZ stays on epgshare NZ1)")
     ap.add_argument("--no-yourtv", action="store_true", help="don't read YourTV's Foxtel guide (Fox Sports + ESPN AU stay on epgshare AU1)")
+    ap.add_argument("--no-astro", action="store_true", help="don't read Astro's own TV guide (the Astro channels stay on epgshare MY1)")
     ap.add_argument("--epgshare", default=",".join(EPGSHARE),
                     help=f"epgshare01 groups, comma separated (default {','.join(EPGSHARE)})")
     ap.add_argument("--no-desc", action="store_true", help="leave out the sources' own programme descriptions")
@@ -6568,6 +6753,16 @@ def main():
             else:
                 print("  YourTV gave nothing usable - the Australian channels stay on epgshare AU1")
                 gh_warn("YourTV fell back", "Fox Sports + ESPN AU are on epgshare AU1 (YourTV gave nothing usable)")
+        if "my" in [g.strip().lower() for g in args.epgshare.split(",")] and not args.no_astro:   # 5 Nov 2026
+            my_days = [datetime.now(ZoneInfo(EPGSHARE["my"]["tz"])).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+            print(f"Malaysia: reading Astro's own TV guide {my_days[0]} to {my_days[-1]} (Premier League 1-5, Football, Grandstand, Arena, UHD, Sports Plus ...) ...")
+            ast = fetch_astro_my(my_days, args.debug)
+            if ast:
+                for line in merge_astro_my(eps.setdefault("my", {}), ast):
+                    print("  Astro " + line)
+            else:
+                print("  Astro gave nothing usable - the Astro channels stay on epgshare MY1")
+                gh_warn("Astro fell back", "the Astro channels are on epgshare MY1 (Astro's guide gave nothing usable)")
         if "mena" in [g.strip().lower() for g in args.epgshare.split(",")] and not args.no_bein_mena:   # 2 Nov 2026
             mena_days = [datetime.now(timezone.utc).date() + timedelta(days=i) for i in range(max(args.days, 1))]
             print(f"Middle East: reading beIN's own TV guide {mena_days[0]} to {mena_days[-1]} (beIN SPORTS MENA) ...")
@@ -6826,6 +7021,7 @@ def main():
                                 if ev.get("desc") and ev["desc"] not in TRANSLATIONS
                                 and rec["place"] not in ENGLISH_PLACES)
     astro_matchday(records)                         # Astro pop-up PL channels (28 Oct 2026)
+    astro_idle_fill(records)                        # PL 3 / 4: "No live match scheduled" between matches (5 Nov 2026)
     tv, count, listed = build_xmltv(records, suffix, args.minutes)
     if F1_REPLAYS:
         print(f"F1 repeats no longer marked live (OpenF1 session times): {len(F1_REPLAYS)}")
