@@ -3897,7 +3897,7 @@
     <display-name lang="en">US (Paramount 100)</display-name>
   </channel>
   <channel id="Peacock002.us">
-    <display-name lang="en">US (Peacock 002) | Men`s Street Prelims (2026-11-04 07:45:00)</display-name>
+    <display-name lang="en">US (Peacock 002) | Women`s Rugby Final &amp; More (2026-11-03 08:05:00)</display-name>
     <display-name lang="en">US (Peacock 002)</display-name>
   </channel>
   <channel id="Peacock003.us">
@@ -3905,7 +3905,7 @@
     <display-name lang="en">US (Peacock 003)</display-name>
   </channel>
   <channel id="Peacock004.us">
-    <display-name lang="en">US (Peacock 004) | Men`s Street Prelims (2026-11-04 07:45:00)</display-name>
+    <display-name lang="en">US (Peacock 004) | Men`s Street Final (2026-11-04 11:00:00)</display-name>
     <display-name lang="en">US (Peacock 004)</display-name>
   </channel>
   <channel id="Peacock005.us">
@@ -10246,6 +10246,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261105175700 +0000" stop="20261105195700 +0000" channel="CASOCCERPPV10.ca">
+    <title lang="en">HYPE Italy: Covington vs. Rosas | all | 04-11-2026 | 18:57 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 10</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="CASOCCERPPV19.ca">
     <title lang="en">Masters, Draw 3 (Wed 4 Nov, 23:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 4 Nov</sub-title>
@@ -10780,6 +10785,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105155200 +0000" stop="20261105175200 +0000" channel="CASOCCERPPV39.ca">
+    <title lang="en">Bristol City vs. Wolves | all | 04-11-2026 | 20:52 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 39</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105175200 +0000" stop="20261105195200 +0000" channel="CASOCCERPPV39.ca">
     <title lang="en">Bristol City vs. Wolves | all | 04-11-2026 | 20:52 (GMT) | 8K EXCLUSIVE | CA: SOCCER PPV 39</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -17481,8 +17491,8 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount011.us">
     <title lang="en">Viking vs. Sabah (Wed 4 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Viking vs. Sabah. UEFA Champions League Matchday 4. Starts Wed 4 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: Viking vs. Sabah. UEFA Champions League. Starts Wed 4 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104195000 +0000" channel="Paramount011.us">
@@ -17493,15 +17503,15 @@
   </programme>
   <programme start="20261104195000 +0000" stop="20261104215000 +0000" channel="Paramount011.us">
     <title lang="en">🔴 LIVE: Viking vs. Sabah</title>
-    <sub-title lang="en">UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Viking vs. Sabah. UEFA Champions League Matchday 4. Starts Wed 4 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Viking vs. Sabah. UEFA Champions League. Starts Wed 4 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261104215000 +0000" stop="20261104230000 +0000" channel="Paramount011.us">
     <title lang="en">🔴 LIVE: Viking vs. Sabah</title>
-    <sub-title lang="en">UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Viking vs. Sabah. UEFA Champions League Matchday 4. Starts Wed 4 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Viking vs. Sabah. UEFA Champions League. Starts Wed 4 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17713,8 +17723,8 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount018.us">
     <title lang="en">Slavia Praha vs. Arsenal (Wed 4 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Slavia Praha vs. Arsenal. UEFA Champions League Matchday 4. Starts Wed 4 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: Slavia Praha vs. Arsenal. UEFA Champions League. Starts Wed 4 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104195000 +0000" channel="Paramount018.us">
@@ -17725,15 +17735,15 @@
   </programme>
   <programme start="20261104195000 +0000" stop="20261104215000 +0000" channel="Paramount018.us">
     <title lang="en">🔴 LIVE: Slavia Praha vs. Arsenal</title>
-    <sub-title lang="en">UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Slavia Praha vs. Arsenal. UEFA Champions League Matchday 4. Starts Wed 4 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Slavia Praha vs. Arsenal. UEFA Champions League. Starts Wed 4 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261104215000 +0000" stop="20261104230000 +0000" channel="Paramount018.us">
     <title lang="en">🔴 LIVE: Slavia Praha vs. Arsenal</title>
-    <sub-title lang="en">UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Slavia Praha vs. Arsenal. UEFA Champions League Matchday 4. Starts Wed 4 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Slavia Praha vs. Arsenal. UEFA Champions League. Starts Wed 4 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17925,8 +17935,8 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount024.us">
     <title lang="en">Viking vs. Sabah (Wed 4 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Viking vs. Sabah. UEFA Champions League Matchday 4. Starts Wed 4 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Champions League</sub-title>
+    <desc lang="en">Coming up: Viking vs. Sabah. UEFA Champions League. Starts Wed 4 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104195000 +0000" channel="Paramount024.us">
@@ -17937,15 +17947,15 @@
   </programme>
   <programme start="20261104195000 +0000" stop="20261104215000 +0000" channel="Paramount024.us">
     <title lang="en">🔴 LIVE: Viking vs. Sabah</title>
-    <sub-title lang="en">UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Viking vs. Sabah. UEFA Champions League Matchday 4. Starts Wed 4 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Viking vs. Sabah. UEFA Champions League. Starts Wed 4 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261104215000 +0000" stop="20261104230000 +0000" channel="Paramount024.us">
     <title lang="en">🔴 LIVE: Viking vs. Sabah</title>
-    <sub-title lang="en">UEFA Champions League Matchday 4</sub-title>
-    <desc lang="en">Viking vs. Sabah. UEFA Champions League Matchday 4. Starts Wed 4 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Champions League</sub-title>
+    <desc lang="en">Viking vs. Sabah. UEFA Champions League. Starts Wed 4 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17961,86 +17971,86 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount025.us">
     <title lang="en">Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount025.us">
-    <title lang="en">Next up: LIVE – Milan vs. Ferencváros (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Milan vs. Ferencváros (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Milan vs. Ferencváros starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Milan vs. Ferencváros starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount025.us">
     <title lang="en">🔴 LIVE: Milan vs. Ferencváros</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Milan vs. Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Milan vs. Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -18117,9 +18127,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount026.us">
-    <title lang="en">Next up: LIVE – Real Sociedad vs. Lyon (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Real Sociedad vs. Lyon (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Real Sociedad vs. Lyon starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Real Sociedad vs. Lyon starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount026.us">
@@ -18131,86 +18141,86 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount027.us">
     <title lang="en">Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount027.us">
-    <title lang="en">Next up: LIVE – Crystal Palace vs. Hoffenheim (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Crystal Palace vs. Hoffenheim (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Crystal Palace vs. Hoffenheim starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Crystal Palace vs. Hoffenheim starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount027.us">
     <title lang="en">🔴 LIVE: Crystal Palace vs. Hoffenheim</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Crystal Palace vs. Hoffenheim. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Crystal Palace vs. Hoffenheim. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -18287,9 +18297,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount028.us">
-    <title lang="en">Next up: LIVE – FC Thun vs. Heart of Midlothian (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – FC Thun vs. Heart of Midlothian (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. FC Thun vs. Heart of Midlothian starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. FC Thun vs. Heart of Midlothian starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount028.us">
@@ -18372,9 +18382,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount029.us">
-    <title lang="en">Next up: LIVE – Anderlecht vs. RB Salzburg (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Anderlecht vs. RB Salzburg (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Anderlecht vs. RB Salzburg starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Anderlecht vs. RB Salzburg starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount029.us">
@@ -18386,511 +18396,511 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount030.us">
     <title lang="en">Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount030.us">
-    <title lang="en">Next up: LIVE – Lillestrøm vs. Viktoria Plzeň (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Lillestrøm vs. Viktoria Plzeň (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Lillestrøm vs. Viktoria Plzeň starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Lillestrøm vs. Viktoria Plzeň starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount030.us">
     <title lang="en">🔴 LIVE: Lillestrøm vs. Viktoria Plzeň</title>
-    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Lillestrøm vs. Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Lillestrøm vs. Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount031.us">
     <title lang="en">Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount031.us">
-    <title lang="en">Next up: LIVE – Levski Sofia vs. Jagiellonia Białystok (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Levski Sofia vs. Jagiellonia Białystok (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Levski Sofia vs. Jagiellonia Białystok starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Levski Sofia vs. Jagiellonia Białystok starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount031.us">
     <title lang="en">🔴 LIVE: Levski Sofia vs. Jagiellonia Białystok</title>
-    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Levski Sofia vs. Jagiellonia Białystok. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount032.us">
     <title lang="en">NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount032.us">
-    <title lang="en">Next up: LIVE – NEC Nijmegen vs. Omonia (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – NEC Nijmegen vs. Omonia (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NEC Nijmegen vs. Omonia starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. NEC Nijmegen vs. Omonia starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount032.us">
     <title lang="en">🔴 LIVE: NEC Nijmegen vs. Omonia</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">NEC Nijmegen vs. Omonia. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">NEC Nijmegen vs. Omonia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount033.us">
     <title lang="en">Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount033.us">
-    <title lang="en">Next up: LIVE – Sparta Praha vs. AFC Bournemouth (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Sparta Praha vs. AFC Bournemouth (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Sparta Praha vs. AFC Bournemouth starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Sparta Praha vs. AFC Bournemouth starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount033.us">
     <title lang="en">🔴 LIVE: Sparta Praha vs. AFC Bournemouth</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Sparta Praha vs. AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Sparta Praha vs. AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount034.us">
     <title lang="en">Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount034.us">
-    <title lang="en">Next up: LIVE – Atalanta vs. Kairat Almaty (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Atalanta vs. Kairat Almaty (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Atalanta vs. Kairat Almaty starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Atalanta vs. Kairat Almaty starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount034.us">
     <title lang="en">🔴 LIVE: Atalanta vs. Kairat Almaty</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Atalanta vs. Kairat Almaty. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Atalanta vs. Kairat Almaty. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount035.us">
     <title lang="en">Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount035.us">
-    <title lang="en">Next up: LIVE – Trabzonspor vs. Freiburg (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Trabzonspor vs. Freiburg (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Trabzonspor vs. Freiburg starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Trabzonspor vs. Freiburg starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount035.us">
     <title lang="en">🔴 LIVE: Trabzonspor vs. Freiburg</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Trabzonspor vs. Freiburg. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Trabzonspor vs. Freiburg. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -18967,9 +18977,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount036.us">
-    <title lang="en">Next up: LIVE – FC Midtjylland vs. Ajax (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – FC Midtjylland vs. Ajax (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. FC Midtjylland vs. Ajax starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. FC Midtjylland vs. Ajax starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount036.us">
@@ -19052,9 +19062,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount037.us">
-    <title lang="en">Next up: LIVE – AGF Aarhus vs. Braga (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – AGF Aarhus vs. Braga (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. AGF Aarhus vs. Braga starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. AGF Aarhus vs. Braga starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount037.us">
@@ -19137,9 +19147,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount038.us">
-    <title lang="en">Next up: LIVE – FC Thun vs. Heart of Midlothian (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – FC Thun vs. Heart of Midlothian (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. FC Thun vs. Heart of Midlothian starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. FC Thun vs. Heart of Midlothian starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount038.us">
@@ -19229,86 +19239,86 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount040.us">
     <title lang="en">KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount040.us">
-    <title lang="en">Next up: LIVE – KuPS Kuopio vs. KAA Gent (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – KuPS Kuopio vs. KAA Gent (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. KuPS Kuopio vs. KAA Gent starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. KuPS Kuopio vs. KAA Gent starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount040.us">
     <title lang="en">🔴 LIVE: KuPS Kuopio vs. KAA Gent</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">KuPS Kuopio vs. KAA Gent. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">KuPS Kuopio vs. KAA Gent. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -19463,9 +19473,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="Paramount042.us">
-    <title lang="en">Next up: LIVE – Mjällby vs. FK Borac (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Mjällby vs. FK Borac (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Mjällby vs. FK Borac starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Mjällby vs. FK Borac starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount042.us">
@@ -19555,158 +19565,158 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="Paramount044.us">
     <title lang="en">Sunderland vs. Dinamo Zagreb (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Sunderland vs. Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="Paramount045.us">
     <title lang="en">AZ Alkmaar vs. Juventus (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: AZ Alkmaar vs. Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount046.us">
@@ -19789,80 +19799,80 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="Paramount047.us">
     <title lang="en">Benfica vs. Lech Poznań (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
-    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Coming up: Benfica vs. Lech Poznań. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount048.us">
@@ -20101,80 +20111,80 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="Paramount051.us">
     <title lang="en">Sturm Graz vs. Celje (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Europa League</sub-title>
+    <desc lang="en">Coming up: Sturm Graz vs. Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount052.us">
@@ -20257,80 +20267,80 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="Paramount053.us">
     <title lang="en">Monaco vs. FC Nordsjælland (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Monaco vs. FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount054.us">
@@ -20413,158 +20423,158 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="Paramount055.us">
     <title lang="en">FC Lugano vs. Kauno Žalgiris (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Lugano vs. Kauno Žalgiris. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="Paramount056.us">
     <title lang="en">FC Twente vs. Pafos (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: FC Twente vs. Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount057.us">
@@ -20725,80 +20735,80 @@
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104220000 +0000" stop="20261105000000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105000000 +0000" stop="20261105020000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105020000 +0000" stop="20261105040000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105040000 +0000" stop="20261105060000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105060000 +0000" stop="20261105080000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105080000 +0000" stop="20261105100000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105120000 +0000" stop="20261105140000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105140000 +0000" stop="20261105160000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="Paramount059.us">
     <title lang="en">Riga FC vs. Jablonec (Thu 5 Nov, 20:00)</title>
-    <sub-title lang="en">⏭ Coming up: UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: UEFA Conference League</sub-title>
+    <desc lang="en">Coming up: Riga FC vs. Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Paramount060.us">
@@ -23999,28 +24009,6 @@
     <desc lang="en">Coming up: Como vs. AEK Athens. Starts Tue 24 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261104124500 +0000" stop="20261104144500 +0000" channel="Peacock002.us">
-    <title lang="en">🔴 LIVE: Men`s Street Prelims</title>
-    <desc lang="en">Men`s Street Prelims. Starts Wed 4 Nov, 12:45 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261104144500 +0000" stop="20261104154500 +0000" channel="Peacock002.us">
-    <title lang="en">🔴 LIVE: Men`s Street Prelims</title>
-    <desc lang="en">Men`s Street Prelims. Starts Wed 4 Nov, 12:45 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261104154500 +0000" stop="20261104174500 +0000" channel="Peacock002.us">
-    <title lang="en">US (Peacock 002) | Men`s Street Prelims (2026-11-04 07:45:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261104174500 +0000" stop="20261104194500 +0000" channel="Peacock002.us">
-    <title lang="en">US (Peacock 002) | Men`s Street Prelims (2026-11-04 07:45:00)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261104135500 +0000" stop="20261104155500 +0000" channel="Peacock003.us">
     <title lang="en">🔴 LIVE: M &amp; W Gold Matches</title>
     <desc lang="en">M &amp; W Gold Matches. Starts Wed 4 Nov, 13:55 UK time.</desc>
@@ -24043,25 +24031,25 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261104124500 +0000" stop="20261104144500 +0000" channel="Peacock004.us">
-    <title lang="en">🔴 LIVE: Men`s Street Prelims</title>
-    <desc lang="en">Men`s Street Prelims. Starts Wed 4 Nov, 12:45 UK time.</desc>
+  <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Peacock004.us">
+    <title lang="en">🔴 LIVE: Men`s Street Final</title>
+    <desc lang="en">Men`s Street Final. Starts Wed 4 Nov, 16:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104144500 +0000" stop="20261104154500 +0000" channel="Peacock004.us">
-    <title lang="en">🔴 LIVE: Men`s Street Prelims</title>
-    <desc lang="en">Men`s Street Prelims. Starts Wed 4 Nov, 12:45 UK time.</desc>
+  <programme start="20261104180000 +0000" stop="20261104190000 +0000" channel="Peacock004.us">
+    <title lang="en">🔴 LIVE: Men`s Street Final</title>
+    <desc lang="en">Men`s Street Final. Starts Wed 4 Nov, 16:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104154500 +0000" stop="20261104174500 +0000" channel="Peacock004.us">
-    <title lang="en">US (Peacock 004) | Men`s Street Prelims (2026-11-04 07:45:00)</title>
+  <programme start="20261104190000 +0000" stop="20261104210000 +0000" channel="Peacock004.us">
+    <title lang="en">US (Peacock 004) | Men`s Street Final (2026-11-04 11:00:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261104174500 +0000" stop="20261104194500 +0000" channel="Peacock004.us">
-    <title lang="en">US (Peacock 004) | Men`s Street Prelims (2026-11-04 07:45:00)</title>
+  <programme start="20261104210000 +0000" stop="20261104230000 +0000" channel="Peacock004.us">
+    <title lang="en">US (Peacock 004) | Men`s Street Final (2026-11-04 11:00:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -36836,10 +36824,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN22.au">
-    <title lang="en">Next up: LIVE – Lillestrøm v Viktoria Plzeň UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Lillestrøm v Viktoria Plzeň UEFA Europa League Matchday 4 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Lillestrøm v Viktoria Plzeň UEFA Europa League Matchday 4 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Lillestrøm v Viktoria Plzeň UEFA Europa League Matchday 4 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN22.au">
+    <title lang="en">🔴 LIVE: Lillestrøm v Viktoria Plzeň UEFA Europa League Matchday 4 2026/2027</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Lillestrøm v Viktoria Plzeň UEFA Europa League Matchday 4 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN23.au">
     <title lang="en">Milan v Ferencváros UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -36914,10 +36909,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN23.au">
-    <title lang="en">Next up: LIVE – Milan v Ferencváros UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Milan v Ferencváros UEFA Europa League Matchday 4 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Milan v Ferencváros UEFA Europa League Matchday 4 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Milan v Ferencváros UEFA Europa League Matchday 4 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN23.au">
+    <title lang="en">🔴 LIVE: Milan v Ferencváros UEFA Europa League Matchday 4 2026/2027</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Milan v Ferencváros UEFA Europa League Matchday 4 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN24.au">
     <title lang="en">Anderlecht v Salzburg UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -36992,10 +36994,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN24.au">
-    <title lang="en">Next up: LIVE – Anderlecht v Salzburg UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Anderlecht v Salzburg UEFA Europa League Matchday 4 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Anderlecht v Salzburg UEFA Europa League Matchday 4 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Anderlecht v Salzburg UEFA Europa League Matchday 4 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN24.au">
+    <title lang="en">🔴 LIVE: Anderlecht v Salzburg UEFA Europa League Matchday 4 2026/2027</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Anderlecht v Salzburg UEFA Europa League Matchday 4 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN25.au">
     <title lang="en">Sparta Praha v Bournemouth UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -37070,10 +37079,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN25.au">
-    <title lang="en">Next up: LIVE – Sparta Praha v Bournemouth UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Sparta Praha v Bournemouth UEFA Europa League Matchday 4 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Sparta Praha v Bournemouth UEFA Europa League Matchday 4 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Sparta Praha v Bournemouth UEFA Europa League Matchday 4 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN25.au">
+    <title lang="en">🔴 LIVE: Sparta Praha v Bournemouth UEFA Europa League Matchday 4 2026/2027</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Sparta Praha v Bournemouth UEFA Europa League Matchday 4 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN26.au">
     <title lang="en">Real Sociedad v Olympique Lyonnais UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -37148,10 +37164,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN26.au">
-    <title lang="en">Next up: LIVE – Real Sociedad v Olympique Lyonnais UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Real Sociedad v Olympique Lyonnais UEFA Europa League Matchday 4 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Real Sociedad v Olympique Lyonnais UEFA Europa League Matchday 4 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Real Sociedad v Olympique Lyonnais UEFA Europa League Matchday 4 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN26.au">
+    <title lang="en">🔴 LIVE: Real Sociedad v Olympique Lyonnais UEFA Europa League Matchday 4 2026/2027</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Real Sociedad v Olympique Lyonnais UEFA Europa League Matchday 4 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN27.au">
     <title lang="en">Crystal Palace v Hoffenheim UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -37226,10 +37249,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN27.au">
-    <title lang="en">Next up: LIVE – Crystal Palace v Hoffenheim UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Crystal Palace v Hoffenheim UEFA Europa League Matchday 4 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Crystal Palace v Hoffenheim UEFA Europa League Matchday 4 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Crystal Palace v Hoffenheim UEFA Europa League Matchday 4 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN27.au">
+    <title lang="en">🔴 LIVE: Crystal Palace v Hoffenheim UEFA Europa League Matchday 4 2026/2027</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Crystal Palace v Hoffenheim UEFA Europa League Matchday 4 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN28.au">
     <title lang="en">Levski Sofia v Jagiellonia Białystok UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -37304,10 +37334,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN28.au">
-    <title lang="en">Next up: LIVE – Levski Sofia v Jagiellonia Białystok UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Levski Sofia v Jagiellonia Białystok UEFA Europa League Matchday 4 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Levski Sofia v Jagiellonia Białystok UEFA Europa League Matchday 4 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Levski Sofia v Jagiellonia Białystok UEFA Europa League Matchday 4 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN28.au">
+    <title lang="en">🔴 LIVE: Levski Sofia v Jagiellonia Białystok UEFA Europa League Matchday 4 2026/2027</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Levski Sofia v Jagiellonia Białystok UEFA Europa League Matchday 4 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN29.au">
     <title lang="en">Rennes v Olympiakos Piraeus UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -37382,10 +37419,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN29.au">
-    <title lang="en">Next up: LIVE – Rennes v Olympiakos Piraeus UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Rennes v Olympiakos Piraeus UEFA Europa League Matchday 4 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Rennes v Olympiakos Piraeus UEFA Europa League Matchday 4 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Rennes v Olympiakos Piraeus UEFA Europa League Matchday 4 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN29.au">
+    <title lang="en">🔴 LIVE: Rennes v Olympiakos Piraeus UEFA Europa League Matchday 4 2026/2027</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Rennes v Olympiakos Piraeus UEFA Europa League Matchday 4 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN30.au">
     <title lang="en">NEC v Omonia Nicosia UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -37460,10 +37504,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN30.au">
-    <title lang="en">Next up: LIVE – NEC v Omonia Nicosia UEFA Europa League Matchday 4 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – NEC v Omonia Nicosia UEFA Europa League Matchday 4 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NEC v Omonia Nicosia UEFA Europa League Matchday 4 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. NEC v Omonia Nicosia UEFA Europa League Matchday 4 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN30.au">
+    <title lang="en">🔴 LIVE: NEC v Omonia Nicosia UEFA Europa League Matchday 4 2026/2027</title>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">NEC v Omonia Nicosia UEFA Europa League Matchday 4 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN31.au">
     <title lang="en">Lincoln Red Imps v Hajduk Split UEFA Conference League Matchday 3 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -37538,10 +37589,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN31.au">
-    <title lang="en">Next up: LIVE – Lincoln Red Imps v Hajduk Split UEFA Conference League Matchday 3 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Lincoln Red Imps v Hajduk Split UEFA Conference League Matchday 3 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Lincoln Red Imps v Hajduk Split UEFA Conference League Matchday 3 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Lincoln Red Imps v Hajduk Split UEFA Conference League Matchday 3 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN31.au">
+    <title lang="en">🔴 LIVE: Lincoln Red Imps v Hajduk Split UEFA Conference League Matchday 3 2026/2027</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Lincoln Red Imps v Hajduk Split UEFA Conference League Matchday 3 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN32.au">
     <title lang="en">Midtjylland v Ajax UEFA Conference League Matchday 3 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -37616,10 +37674,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN32.au">
-    <title lang="en">Next up: LIVE – Midtjylland v Ajax UEFA Conference League Matchday 3 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Midtjylland v Ajax UEFA Conference League Matchday 3 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Midtjylland v Ajax UEFA Conference League Matchday 3 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Midtjylland v Ajax UEFA Conference League Matchday 3 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN32.au">
+    <title lang="en">🔴 LIVE: Midtjylland v Ajax UEFA Conference League Matchday 3 2026/2027</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Midtjylland v Ajax UEFA Conference League Matchday 3 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN33.au">
     <title lang="en">Crvena zvezda v Inter Club d`Escaldes UEFA Conference League Matchday 3 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -37694,10 +37759,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN33.au">
-    <title lang="en">Next up: LIVE – Crvena zvezda v Inter Club d`Escaldes UEFA Conference League Matchday 3 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – Crvena zvezda v Inter Club d`Escaldes UEFA Conference League Matchday 3 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Crvena zvezda v Inter Club d`Escaldes UEFA Conference League Matchday 3 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Crvena zvezda v Inter Club d`Escaldes UEFA Conference League Matchday 3 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN33.au">
+    <title lang="en">🔴 LIVE: Crvena zvezda v Inter Club d`Escaldes UEFA Conference League Matchday 3 2026/2027</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">Crvena zvezda v Inter Club d`Escaldes UEFA Conference League Matchday 3 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN34.au">
     <title lang="en">KuPS v Gent UEFA Conference League Matchday 3 2026/2027 (Thu 5 Nov, 17:40)</title>
@@ -37772,10 +37844,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105174000 +0000" channel="STAN34.au">
-    <title lang="en">Next up: LIVE – KuPS v Gent UEFA Conference League Matchday 3 2026/2027 (Thu 5 Nov, 17:40)</title>
+    <title lang="en">Next up: LIVE – KuPS v Gent UEFA Conference League Matchday 3 2026/2027 (17:40)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. KuPS v Gent UEFA Conference League Matchday 3 2026/2027 starts Thu 5 Nov, 17:40 UK time.</desc>
+    <desc lang="en">Next up: LIVE. KuPS v Gent UEFA Conference League Matchday 3 2026/2027 starts at 17:40 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105174000 +0000" stop="20261105194000 +0000" channel="STAN34.au">
+    <title lang="en">🔴 LIVE: KuPS v Gent UEFA Conference League Matchday 3 2026/2027</title>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">KuPS v Gent UEFA Conference League Matchday 3 2026/2027. Starts Thu 5 Nov, 17:40 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="STAN35.au">
     <title lang="en">Romania v Tonga Nations Cup Round 4 2026 (Fri 6 Nov, 16:20)</title>
@@ -50476,9 +50555,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="UEFA18.uk">
-    <title lang="en">Next up: LIVE – KAA Gent vs Breidablik (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – KAA Gent vs Breidablik (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. KAA Gent vs Breidablik starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. KAA Gent vs Breidablik starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="UEFA18.uk">
@@ -50714,9 +50793,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="UEFA21.uk">
-    <title lang="en">Next up: LIVE – Iberia 1999 vs Mjällby (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Iberia 1999 vs Mjällby (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Iberia 1999 vs Mjällby starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Iberia 1999 vs Mjällby starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="UEFA21.uk">
@@ -50799,9 +50878,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="UEFA27.uk">
-    <title lang="en">Next up: LIVE – Red Star Belgrade vs Copenhagen (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Red Star Belgrade vs Copenhagen (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Red Star Belgrade vs Copenhagen starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Red Star Belgrade vs Copenhagen starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="UEFA27.uk">
@@ -50884,9 +50963,9 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105160000 +0000" stop="20261105173500 +0000" channel="UEFA28.uk">
-    <title lang="en">Next up: LIVE – Trabzonspor vs Heart of Midlothian (Thu 5 Nov, 17:45)</title>
+    <title lang="en">Next up: LIVE – Trabzonspor vs Heart of Midlothian (17:45)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Trabzonspor vs Heart of Midlothian starts Thu 5 Nov, 17:45 UK time.</desc>
+    <desc lang="en">Next up: LIVE. Trabzonspor vs Heart of Midlothian starts at 17:45 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="UEFA28.uk">
@@ -98360,6 +98439,21 @@
   </programme>
   <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Paramount005.us">
     <title lang="en">US (Paramount 05) | Washington Spirit vs. Vancouver Rise FC Academy (2025-09-03 17:50:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104160000 +0000" stop="20261104180000 +0000" channel="Peacock002.us">
+    <title lang="en">US (Peacock 002) | Women`s Rugby Final &amp; More (2026-11-03 08:05:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104180000 +0000" stop="20261104200000 +0000" channel="Peacock002.us">
+    <title lang="en">US (Peacock 002) | Women`s Rugby Final &amp; More (2026-11-03 08:05:00)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261104200000 +0000" stop="20261104220000 +0000" channel="Peacock002.us">
+    <title lang="en">US (Peacock 002) | Women`s Rugby Final &amp; More (2026-11-03 08:05:00)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
