@@ -1,118 +1,138 @@
 #!/usr/bin/env python3
-"""One-off check (5 Nov 2026): does Astro's own guide carry the "(L)" live flag,
-how far ahead does it go, and which request parameters does it want?
+"""One-off check (5 Nov 2026), round 2: Astro's own guide (the call astro.com.my makes).
+Reports: structure, the "(L)" live flag, reach in days, Astro Sports UHD (CH 805) and the other
+sport channels, and how UHD's times compare with our SPORT guide.
 Delete this file and astro_check.yml afterwards."""
-import json, re, sys, urllib.request, urllib.parse
+import gzip, json, re, urllib.parse, urllib.request
 from datetime import datetime, timedelta, timezone
 
 BASE = "https://contenthub-api.eco.astro.com.my/api/v2/search-linear"
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Safari/605.1.15",
-      "Accept": "application/json, text/html, */*"}
+      "Accept": "application/json, text/plain, */*", "Origin": "https://www.astro.com.my",
+      "Referer": "https://www.astro.com.my/"}
+SPORT_RE = re.compile(r"(?i)sport|arena|premier league|football|golf|grandstand|badminton|cricket|uhd")
 
 
-def get(url, timeout=40, limit=4_000_000):
+def get(url, timeout=60):
     req = urllib.request.Request(url, headers=UA)
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.status, r.read(limit)
+            return r.status, r.read()
     except urllib.error.HTTPError as e:
-        return e.code, b""
+        return e.code, e.read()[:300]
     except Exception as e:
         return 0, str(e).encode()
 
 
-def walk(o, path=""):
-    """yield (path, list) for every list of dicts"""
-    if isinstance(o, list):
-        if o and isinstance(o[0], dict):
-            yield path, o
-        for i, x in enumerate(o[:3]):
-            yield from walk(x, f"{path}[{i}]")
-    elif isinstance(o, dict):
-        for k, v in o.items():
-            yield from walk(v, f"{path}.{k}")
+def keyl(d, part):
+    return [k for k in d if part in k.lower()]
 
 
-def strings(o):
-    if isinstance(o, str):
-        yield o
+def find_channels(o):
+    """dicts that carry a stbNumber key"""
+    out = []
+    if isinstance(o, dict):
+        if keyl(o, "stbnumber"):
+            out.append(o)
+        else:
+            for v in o.values():
+                out += find_channels(v)
     elif isinstance(o, list):
         for x in o:
-            yield from strings(x)
-    elif isinstance(o, dict):
+            out += find_channels(x)
+    return out
+
+
+def find_progs(o):
+    """dicts that look like a programme: a title plus a start/time key"""
+    out = []
+    if isinstance(o, dict):
+        if keyl(o, "title") and (keyl(o, "start") or keyl(o, "time")) and not keyl(o, "stbnumber"):
+            out.append(o)
         for v in o.values():
-            yield from strings(v)
+            out += find_progs(v)
+    elif isinstance(o, list):
+        for x in o:
+            out += find_progs(x)
+    return out
 
 
-def analyse(label, raw):
-    try:
-        data = json.loads(raw)
-    except Exception:
-        print(f"  [{label}] not JSON: {raw[:150]!r}")
-        return False
-    lists = sorted(walk(data), key=lambda t: -len(t[1]))[:4]
-    print(f"  [{label}] JSON {len(raw):,} bytes; top-level: "
-          f"{list(data)[:10] if isinstance(data, dict) else type(data).__name__}")
-    for p, l in lists:
-        print(f"    list {p or '<root>'}: {len(l)} items; keys {list(l[0])[:14]}")
-    if lists:
-        print("    sample item:", json.dumps(lists[0][1][0], ensure_ascii=False)[:900])
-    L = [s for s in strings(data) if "(L)" in s]
-    print(f"    strings containing '(L)': {len(L)}; first 8: {L[:8]}")
-    U = [s for s in strings(data) if re.search(r"(?i)sports uhd", s)]
-    print(f"    strings mentioning 'Sports UHD': {len(U)}; first 4: {U[:4]}")
-    return True
+def ptitle(p):
+    k = keyl(p, "title")
+    return str(p[k[0]]) if k else ""
+
+
+def pwhen(p):
+    ks = [k for k in p if re.search(r"(?i)start|end|time|date", k) and not isinstance(p[k], (dict, list))]
+    return {k: p[k] for k in ks[:4]}
+
+
+def cname(c):
+    for k in ("title", "name", "channelTitle", "channelName"):
+        if k in c:
+            return str(c[k])
+    return "?"
+
+
+def stb(c):
+    k = keyl(c, "stbnumber")
+    return str(c[k[0]]) if k else "?"
 
 
 def main():
     myt = datetime.now(timezone.utc) + timedelta(hours=8)
     print("Now (MYT):", myt.strftime("%a %d %b %H:%M"))
-    print("\n=== 1. Parameter probe on", BASE)
-    days = [myt.date(), (myt + timedelta(days=4)).date(), (myt + timedelta(days=6)).date()]
-    for d in days:
-        D = d.isoformat()
-        variants = {
-            "none": {},
-            "date": {"date": D},
-            "day": {"day": D},
-            "startDate/endDate": {"startDate": D, "endDate": D},
-            "start/end": {"start": D, "end": D},
-            "startTime/endTime": {"startTime": D + "T00:00:00+08:00", "endTime": D + "T23:59:59+08:00"},
-            "from/to": {"from": D + "T00:00:00+08:00", "to": D + "T23:59:59+08:00"},
-        }
-        print(f"\n--- day {D}")
-        for name, extra in variants.items():
-            q = {"channelLimit": 200, **extra}
-            url = BASE + "?" + urllib.parse.urlencode(q)
-            st, raw = get(url)
-            print(f"* {name}: HTTP {st}, {len(raw):,} bytes   {url}")
-            if st == 200 and raw[:1] in (b"{", b"["):
-                analyse(name, raw)
-                if name != "none":
-                    break          # first working variant per day is enough
-
-    print("\n=== 2. How the astro.com.my site calls it (script bundles)")
-    st, html = get("https://www.astro.com.my/channels")
-    print("page HTTP", st, len(html))
-    text = html.decode("utf-8", "replace")
-    srcs = re.findall(r'src="([^"]+\.js[^"]*)"', text) + re.findall(r'href="([^"]+\.js[^"]*)"', text)
-    srcs = [urllib.parse.urljoin("https://www.astro.com.my/channels", s) for s in dict.fromkeys(srcs)]
-    print(len(srcs), "script files")
-    shown = 0
-    for s in srcs[:60]:
-        st, js = get(s, limit=6_000_000)
+    first = None
+    summary = []
+    for off in range(0, 10):
+        d = (myt + timedelta(days=off)).date().isoformat()
+        q = {"channelGuide": "true", "platform": "acm", "channelOrderBy": "stbNumber,asc",
+             "scheduleDate": d, "channelLimit": 200, "channelPage": 1}
+        st, raw = get(BASE + "?" + urllib.parse.urlencode(q, safe=","))
         if st != 200:
+            print(f"\n=== {d}: HTTP {st} {raw[:200]!r}")
+            summary.append((d, st, 0, 0, 0))
             continue
-        t = js.decode("utf-8", "replace")
-        for m in re.finditer(r"search-linear", t):
-            print("  in", s.split("/")[-1][:60], "::", t[max(0, m.start() - 250): m.end() + 350].replace("\n", " "))
-            shown += 1
-            if shown >= 4:
-                break
-        if shown >= 4:
-            break
-    if not shown:
-        print("  no 'search-linear' text found in the first 60 scripts")
+        data = json.loads(raw)
+        chans = find_channels(data)
+        nprog = nL = nsport = 0
+        for c in chans:
+            ps = find_progs(c)
+            nprog += len(ps)
+            nL += sum(1 for p in ps if ptitle(p).startswith("(L)"))
+        summary.append((d, st, len(chans), nprog, nL))
+        print(f"\n=== {d}: HTTP 200, {len(raw):,} bytes, {len(chans)} channels, {nprog} programmes, {nL} marked (L)")
+        if first is None:
+            first = data
+            print("top-level keys:", list(data)[:12] if isinstance(data, dict) else type(data).__name__)
+            if chans:
+                c0 = chans[0]
+                print("channel keys:", list(c0)[:25])
+                print("channel sample:", json.dumps(c0, ensure_ascii=False)[:1200])
+        for c in chans:
+            n, t = stb(c), cname(c)
+            if n.startswith("8") or SPORT_RE.search(t):
+                ps = find_progs(c)
+                Ls = [p for p in ps if ptitle(p).startswith("(L)")]
+                print(f"  CH {n:>4} {t[:34]:34} {len(ps):3} prog, {len(Ls):2} (L)")
+                if "uhd" in t.lower() or n == "805":
+                    for p in ps[:14]:
+                        print("      ", ptitle(p)[:60], pwhen(p))
+                    if ps:
+                        print("      raw sample:", json.dumps(ps[0], ensure_ascii=False)[:700])
+    print("\n=== Reach summary (date, HTTP, channels, programmes, (L))")
+    for row in summary:
+        print("  ", row)
+
+    # compare with our SPORT guide (Astro Sports UHD)
+    print("\n=== Our SPORT guide, MY.AstroSportsUHD")
+    st, gz = get("https://raw.githubusercontent.com/Clummo202020/epg/main/SPORT_epg.xml.gz")
+    if st == 200:
+        x = gzip.decompress(gz).decode("utf-8", "replace")
+        for m in re.findall(r'<programme start="(\d{14}) \+0000" stop="(\d{14}) \+0000" channel="MY\.AstroSportsUHD">\s*<title[^>]*>([^<]*)', x):
+            print("   ", m[0], m[1], m[2])
+    else:
+        print("  could not read:", st)
     print("\nDone.")
 
 
