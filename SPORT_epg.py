@@ -3273,6 +3273,36 @@ def fetch_cyprus(days, keywords, details=True, debug=False):
     return out
 
 
+# Cyta writes fixtures as "Shakhtar Donetsk - Sporting Lisbon 3/11/26" (the date is the match date, so it also shows a replay);
+# 3 Nov 2026: shown as "Shakhtar Donetsk vs Sporting Lisbon 3/11/26". Only for a fixture: a trailing d/m/yy date, or a live
+# block, and no digits / "Round", "Ep.", "Day" ... in the names (so "Jet Ski World Series 2025 - Round 3" stays as it is).
+CY_FIXTURE = re.compile(r"^(?P<a>.+?) - (?P<b>.+?)(?P<tail>(?: \([^()]*\))?(?: \d{1,2}/\d{1,2}/\d{2,4})?)$")
+CY_NOT_TEAMS = re.compile(r"(?i)\d|\b(round|day|ep\.?|episode|session|stage|heat|race|practice|qualifying|film|special|highlights|"
+                          r"preview|review|show|week|time for ball)\b")
+
+
+def cy_versus(title, live=False):
+    m = CY_FIXTURE.match(title or "")
+    if not m or CY_NOT_TEAMS.search(m.group("a") + " " + m.group("b")):
+        return title
+    if not (re.search(r"\d{1,2}/\d{1,2}/\d{2,4}$", m.group("tail")) or live):
+        return title
+    return f"{m.group('a')} vs {m.group('b')}{m.group('tail')}"
+
+
+# Portuguese-style "Juventus x Napoli - Serie A" (Brazil, Portugal, and the AD Sports / Starzplay / Champions TV channels that
+# copy it): shown as "Juventus vs Napoli - Serie A" (3 Nov 2026). Only these regions, and only a lone " x " between two words:
+# MUTV's "Kobbie Mainoo x Academy" and Motorvision's "FIM X -- Trial ..." are not fixtures and are left alone.
+X_VS_REGIONS = ("BR.", "PT.", "AE.", "ID.")
+X_BETWEEN = re.compile(r"(?<=[^\s-]) [xX\u00d7] (?=[^\s-])")
+
+
+def x_versus(title):
+    if len(X_BETWEEN.findall(title or "")) != 1:
+        return title
+    return X_BETWEEN.sub(" vs ", title, count=1)
+
+
 # ALL CAPS -> normal case (Cyta writes most titles in capitals), from cyta_epg.py
 KEEP_CAPS = set("""
 UFC NBA NFL NHL MLB MLS WNBA NCAA UEFA FIFA FA EFL EPL WWE AEW ATP WTA PGA LPGA LIV DP
@@ -5662,6 +5692,10 @@ def build_xmltv(records, suffix, minutes):
             sub = en(ev.get("sub") or "") or None
             if rec.get("fix_caps"):
                 title, sub = fix_caps(title), fix_caps(sub) or None
+            if cid.startswith("CY."):
+                title = cy_versus(title, bool(ev.get("live")))   # "A - B 3/11/26" -> "A vs B 3/11/26"
+            elif cid.startswith(X_VS_REGIONS):
+                title = x_versus(title)                          # "A x B - Serie A" -> "A vs B - Serie A"
             loc = ev["start"].astimezone(rec["tz"])
             uk = ev["start"].astimezone(LONDON)
             when = f"{uk:%a %d %b, %H:%M}"
