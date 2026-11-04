@@ -101,10 +101,11 @@ BRAZIL - Claro's public TV guide (programacao.claro.com.br, JSON search service)
 ALBANIA / KOSOVO - IPKO's public web guide (Kosovo, JSON), one request per channel and day:
     POST https://stargate.ipko.tv/api/titan.tv.WebEpg/GetWebEpgData
          {"ch_ext_id": "supersport-1", "from": <unix>, "to": <unix>}
-  SuperSport 1-7 (Digitalb's channels for Albania and Kosovo). Start and end times
+  SuperSport 1-7 (Digitalb's channels for Albania and Kosovo) and Tring Sport 1-7 (added 4 Nov 2026; IPKO carries
+  them as tring-sport-1 ... - one IPKO doesn't list is skipped and named in the log). Start and end times
   are given. Channels chosen with --al-channels (IPKO's channel names; default
-  supersport-1 ... supersport-7). Albanian titles are translated.
-  Channels: AL.SuperSport1 ... AL.SuperSport7
+  supersport-1 ... supersport-7, tring-sport-1 ... tring-sport-7). Albanian titles are translated.
+  Channels: AL.SuperSport1 ... AL.SuperSport7, AL.TringSport1 ... AL.TringSport7
 
 CZECHIA - mujtvprogram.cz's public service (XML), one request per channel and day:
     https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php
@@ -173,7 +174,7 @@ HONG KONG - Now TV's public guide (JSON), one request per day for all channels (
   Channels: HK.NowSports1, HK.NowSportsPL1, HK.beINSPORTS1, HK.MUTV ...
 
 AUSTRALIA - Fox Sports and ESPN AU come from YourTV's Foxtel guide (4 Nov 2026; Nine's public TV guide, pay region
-  168 = Foxtel, no login): today + the next six days, with descriptions for the next 48 hours. epgshare01's AU1 file
+  168 = Foxtel, no login): today + the next six days, with descriptions for the next 72 hours. epgshare01's AU1 file
   (group "au") is the fallback per channel and fills the part of today before YourTV's first programme. (Foxtel's own
   pages refuse GitHub's servers with HTTP 403, 29 Oct 2026; AU1 had stalled at about one day ahead.)
   --no-yourtv turns it off. Channels: AU.FoxCricket, AU.FoxLeague, AU.FoxSports503, AU.FoxFooty, AU.FoxSports505,
@@ -667,7 +668,7 @@ NEO_CHANNELS = {         # NEO channel slug -> (id part, channel name); IDs SI.<
     "sport-tv-1": ("SportTV1", "Šport TV 1"), "sport-tv-2": ("SportTV2", "Šport TV 2"),
     "sport-tv-3": ("SportTV3", "Šport TV 3"),
 }
-AL_DEFAULT = ",".join(f"supersport-{i}" for i in range(1, 8))
+AL_DEFAULT = ",".join([f"supersport-{i}" for i in range(1, 8)] + [f"tring-sport-{i}" for i in range(1, 8)])   # Tring Sport added 4 Nov 2026
 CLARO_BASE = "https://programacao.claro.com.br/gatekeeper/"
 CLARO_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
                                "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
@@ -2775,6 +2776,7 @@ def al_name(slug):
 def fetch_albania(days, slugs, debug=False):
     """{channel_name: [{start, stop, title, sub, live}]}"""
     out = {}
+    missing = []
     for slug in [x.strip() for x in slugs.split(",") if x.strip()]:
         evs = {}
         for day in days:
@@ -2804,6 +2806,10 @@ def fetch_albania(days, slugs, debug=False):
                               "desc": pick_desc(sh, "description", "desc", "synopsis", "show_desc")}
         if evs:
             out[al_name(slug)] = [evs[k] for k in sorted(evs)]
+        else:
+            missing.append(slug)
+    if missing:                                            # 4 Nov 2026: Tring Sport 1-7 are tried, IPKO may not list them all
+        print(f"  IPKO has no guide for: {', '.join(missing)}")
     return out
 
 
@@ -4257,14 +4263,14 @@ def fetch_skygo_nz(days, debug=False):
 # 16:30 Sydney time when checked), every other day is the full 00:00-24:00, and the weekdays reach 6 days ahead.
 # The grid has titles + start times + block widths (% of 24 h = duration); /api/airings/<id> adds the synopsis, the
 # episode title and a live flag (trusted only when true, like Sky Go's). Descriptions are only fetched for programmes
-# in the next YOURTV_DETAIL_HOURS (about 500 requests), the rest keep a title. It is Nine's site, so it can change or
+# in the next YOURTV_DETAIL_HOURS (about 720 requests), the rest keep a title. It is Nine's site, so it can change or
 # refuse us without notice: a channel with fewer than YOURTV_MIN_EVENTS programmes keeps its AU1 listing, if YourTV
 # fails everything stays on AU1, and if the airing start times disagree with the grid's (wrong day mapping) the whole
 # YourTV reading is dropped. --no-yourtv turns it off.
 YOURTV_BASE = "https://www.yourtv.com.au"
 YOURTV_PAY_REGION = 168            # Foxtel (the page's pay list: 168 Foxtel, 371 Foxtel Now, 192 Optus TV, 284 Fetch)
 YOURTV_MIN_EVENTS = 5
-YOURTV_DETAIL_HOURS = 48
+YOURTV_DETAIL_HOURS = 72           # raised from 48 on 4 Nov 2026 (user)
 YOURTV_MAX_DAYS = 7                # today + the next six weekdays (a weekday slug is only unambiguous for those)
 YOURTV_HEADERS = {"User-Agent": HEADERS["User-Agent"], "Accept": "text/html, */*; q=0.01",
                   "Accept-Language": "en-AU,en;q=0.9", "Referer": YOURTV_BASE + "/guide/",
@@ -6219,9 +6225,9 @@ def main():
     ap.add_argument("--no-czechia", action="store_true", help="leave out the Czech channels")
     ap.add_argument("--cz-channels", default=",".join(CZ_CHANNELS),
                     help="mujtvprogram.cz channel numbers, comma separated (e.g. 18,17,466)")
-    ap.add_argument("--no-albania", action="store_true", help="leave out the SuperSport channels")
+    ap.add_argument("--no-albania", action="store_true", help="leave out the SuperSport and Tring Sport channels")
     ap.add_argument("--al-channels", default=AL_DEFAULT,
-                    help="IPKO channel names, comma separated (default supersport-1 ... supersport-7)")
+                    help="IPKO channel names, comma separated (default supersport-1 ... supersport-7, tring-sport-1 ... tring-sport-7)")
     ap.add_argument("--no-brazil", action="store_true", help="leave out the Brazilian channels")
     ap.add_argument("--br-channels", default=BR_DEFAULT,
                     help=f"which Claro channels to include, by name (default: '{BR_DEFAULT}')")
