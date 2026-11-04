@@ -172,9 +172,11 @@ HONG KONG - Now TV's public guide (JSON), one request per day for all channels (
   --no-nowtv to leave out. Start and end times are given. epgshare01's HK file is the backup.
   Channels: HK.NowSports1, HK.NowSportsPL1, HK.beINSPORTS1, HK.NBATV ...
 
-AUSTRALIA - Fox Sports and ESPN AU come from epgshare01's AU1 file (group "au"; 29 Oct 2026 - Foxtel's own
-  pages refuse GitHub's servers with HTTP 403, so that reader was removed). AU1 has descriptions, stop times and
-  live flags. Channels: AU.FoxCricket, AU.FoxLeague, AU.FoxSports503, AU.FoxFooty, AU.FoxSports505,
+AUSTRALIA - Fox Sports and ESPN AU come from YourTV's Foxtel guide (4 Nov 2026; Nine's public TV guide, pay region
+  168 = Foxtel, no login): today + the next six days, with descriptions for the next 48 hours. epgshare01's AU1 file
+  (group "au") is the fallback per channel and fills the part of today before YourTV's first programme. (Foxtel's own
+  pages refuse GitHub's servers with HTTP 403, 29 Oct 2026; AU1 had stalled at about one day ahead.)
+  --no-yourtv turns it off. Channels: AU.FoxCricket, AU.FoxLeague, AU.FoxSports503, AU.FoxFooty, AU.FoxSports505,
   AU.FoxSports506, AU.FoxSports507, AU.FoxSportsNews, AU.ESPN, AU.ESPN2.
 
 SINGAPORE - StarHub TV+'s guide API (JSON, no login; added 29 Oct 2026), per channel and day:
@@ -3929,8 +3931,9 @@ EPGSHARE.update({
     "au": {"file": "AU1", "prefix": "AU", "place": "Australia", "tz": "Australia/Sydney", "english": True,
            "backup": True, "channels": {
                # (beIN SPORTS 1-3 + XTRA AU removed 31 Oct 2026 - the streams are unreliable)
-               # Fox Sports + ESPN AU: AU1 is their ONLY source since 29 Oct 2026 (Foxtel's pages
-               # refuse GitHub with HTTP 403); listed in "main" so an empty one is reported in the log
+               # Fox Sports + ESPN AU: since 4 Nov 2026 the main source is YourTV's Foxtel guide (fetch_yourtv_au);
+               # AU1 is the per-channel fallback (and fills today before YourTV's first programme). Listed in "main"
+               # so an empty one is reported in the log
                "FoxCricket": ("Fox Cricket", ["FoxCricket.au", "Fox.Cricket.au"]),
                "FoxLeague": ("Fox League", ["FoxLeague.au", "Fox.League.au"]),
                "FoxSports503": ("Fox Sports 503", ["FoxSports503.au", "Fox.Sports.503.au"]),
@@ -4244,6 +4247,171 @@ def fetch_skygo_nz(days, debug=False):
         if len(listing) >= SKYGO_MIN_EVENTS:
             for part in parts:
                 out[part] = [dict(e) for e in listing]       # own copies: later steps edit titles in place
+    return out
+
+
+# YourTV / Foxtel (4 Nov 2026). epgshare01's AU1 file had stalled at about one day ahead, so Fox Sports + ESPN AU now come
+# from YourTV (Nine's public TV guide, yourtv.com.au - the requests its own page makes, no login, no key). Checked from the
+# GitHub runner on 4 Nov 2026 (au_sources_check.py, rounds 1-6): the guide call GET /api/guide/?day=<slug>&timezone=
+# Australia/Sydney&format=html&region=168 (168 = the page's "Foxtel" pay-TV choice) answers an HTML grid for all Foxtel
+# channels - the day must be a SLUG (today, thu, fri ... ; ISO dates are a 404). Today is partial (it starts around
+# 16:30 Sydney time when checked), every other day is the full 00:00-24:00, and the weekdays reach 6 days ahead.
+# The grid has titles + start times + block widths (% of 24 h = duration); /api/airings/<id> adds the synopsis, the
+# episode title and a live flag (trusted only when true, like Sky Go's). Descriptions are only fetched for programmes
+# in the next YOURTV_DETAIL_HOURS (about 500 requests), the rest keep a title. It is Nine's site, so it can change or
+# refuse us without notice: a channel with fewer than YOURTV_MIN_EVENTS programmes keeps its AU1 listing, if YourTV
+# fails everything stays on AU1, and if the airing start times disagree with the grid's (wrong day mapping) the whole
+# YourTV reading is dropped. --no-yourtv turns it off.
+YOURTV_BASE = "https://www.yourtv.com.au"
+YOURTV_PAY_REGION = 168            # Foxtel (the page's pay list: 168 Foxtel, 371 Foxtel Now, 192 Optus TV, 284 Fetch)
+YOURTV_MIN_EVENTS = 5
+YOURTV_DETAIL_HOURS = 48
+YOURTV_MAX_DAYS = 7                # today + the next six weekdays (a weekday slug is only unambiguous for those)
+YOURTV_HEADERS = {"User-Agent": HEADERS["User-Agent"], "Accept": "text/html, */*; q=0.01",
+                  "Accept-Language": "en-AU,en;q=0.9", "Referer": YOURTV_BASE + "/guide/",
+                  "X-Requested-With": "XMLHttpRequest"}
+YOURTV_JSON_HEADERS = {**YOURTV_HEADERS, "Accept": "application/json, text/javascript, */*; q=0.01"}
+YOURTV_CHANNELS = {                # YourTV channel name (lower case) -> EPGSHARE["au"] channel key
+    "fox cricket hd": "FoxCricket", "fox league hd": "FoxLeague", "fox sports 503 hd": "FoxSports503",
+    "fox footy hd": "FoxFooty", "fox sports 505 hd": "FoxSports505", "fox sports 506 hd": "FoxSports506",
+    "fox sports 507 hd": "FoxSports507", "fox sports news hd": "FoxSportsNews", "espn hd": "ESPN", "espn2hd": "ESPN2",
+}
+YOURTV_WEEKDAYS = ("mon", "tue", "wed", "thu", "fri", "sat", "sun")
+
+
+def yourtv_minutes(text):
+    """'5:00 PM' -> minutes after midnight (None when it isn't a time)."""
+    m = re.match(r"\s*(\d{1,2}):(\d{2})\s*([AaPp])[Mm]", str(text or ""))
+    if not m:
+        return None
+    return (int(m.group(1)) % 12 + (12 if m.group(3).lower() == "p" else 0)) * 60 + int(m.group(2))
+
+
+def parse_yourtv_day(body, day, tz):
+    """{channel key: [{id, title, start, stop}]} for one day's HTML grid (only the wanted channels).
+    Block widths are % of 24 h (4.1666% = 60 min); only the first block carries margin-left (its offset from 00:00). A
+    first block that began the evening before shows its true start time but is clipped at 00:00, so its end is
+    00:00 + its width; a block running past midnight is clipped at 24:00 (the next day's page has its true end)."""
+    out = {}
+    local = lambda mins: datetime(day.year, day.month, day.day, tzinfo=tz) + timedelta(minutes=mins)
+    for chunk in re.split(r'(?=data-channel-id=")', body)[1:]:
+        nm = re.search(r'data-channel-name="([^"]*)"', chunk)
+        key = YOURTV_CHANNELS.get(re.sub(r"\s+", " ", html.unescape(nm.group(1))).strip().lower()) if nm else None
+        if not key:
+            continue
+        prev = None
+        for i, seg in enumerate(chunk.split('<div class="guide__row__block')[1:]):
+            link = re.search(r'<a class="show-link"[^>]*data-event-id="(\d+)"[^>]*>\s*<h4>(.*?)</h4>\s*<p>(.*?)</p>', seg, re.S)
+            if not link:
+                continue
+            style = seg[:seg.find(">")]
+            width = re.search(r"width:\s*([\d.]+)%", style)
+            margin = re.search(r"margin-left:\s*(-?[\d.]+)%", style)
+            mins = yourtv_minutes(link.group(3))
+            title = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", link.group(2)))).strip()
+            if mins is None or not width or not title:
+                continue
+            dur = float(width.group(1)) * 14.4
+            if prev is None:                                  # the first block of the row
+                at = float(margin.group(1)) * 14.4 if margin else 0.0
+                if mins > at + 30:                             # began yesterday: clipped on the left
+                    start, stop = mins - 1440, at + dur
+                else:
+                    start, stop = mins, mins + dur
+            else:
+                while mins < prev:
+                    mins += 1440
+                start, stop = mins, mins + dur
+            prev = start
+            if stop - start < 1:
+                continue
+            out.setdefault(key, []).append({"id": link.group(1), "title": title,
+                                            "start": local(start).astimezone(timezone.utc),
+                                            "stop": local(round(stop)).astimezone(timezone.utc)})
+    return out
+
+
+def yourtv_airing(eid):
+    """The /api/airings/<id> JSON of one programme (None if it can't be read)."""
+    d = fetch(f"{YOURTV_BASE}/api/airings/{eid}", headers=YOURTV_JSON_HEADERS, parse="json", retries=2, quiet=True,
+              label="YourTV airing")
+    return d if isinstance(d, dict) else None
+
+
+def fetch_yourtv_au(days, debug=False):
+    """{channel key: [{start, stop, title, sub, live, desc}]} for the Fox Sports + ESPN AU channels, same shape as
+    fetch_epgshare. A channel with fewer than YOURTV_MIN_EVENTS programmes is left out (it keeps its AU1 listing)."""
+    tz = ZoneInfo(EPGSHARE["au"]["tz"])
+    first = datetime(days[0].year, days[0].month, days[0].day, tzinfo=tz).astimezone(timezone.utc)
+    last_day = days[-1] + timedelta(days=1)
+    end = datetime(last_day.year, last_day.month, last_day.day, tzinfo=tz).astimezone(timezone.utc)
+    per = {}                                                  # channel key -> {start: event}
+    pages = 0
+    for i in range(min(len(days), YOURTV_MAX_DAYS)):
+        day = days[0] + timedelta(days=i)
+        slug = "today" if i == 0 else YOURTV_WEEKDAYS[day.weekday()]
+        query = urllib.parse.urlencode({"day": slug, "timezone": EPGSHARE["au"]["tz"], "format": "html",
+                                        "region": YOURTV_PAY_REGION})
+        body = fetch(f"{YOURTV_BASE}/api/guide/?{query}", headers=YOURTV_HEADERS, retries=2, label=f"YourTV guide ({slug})")
+        if not body or "data-channel-id" not in body:
+            continue
+        pages += 1
+        got = parse_yourtv_day(body, day, tz)
+        if debug:
+            print(f"    YourTV {slug} ({day}): {sum(len(v) for v in got.values())} programmes on {len(got)} channel(s)")
+        for key, evs in got.items():
+            slot = per.setdefault(key, {})
+            for ev in evs:
+                old = slot.get(ev["start"])
+                if old is None or ev["stop"] > old["stop"]:   # the next day's page has the true end of a late programme
+                    slot[ev["start"]] = {**ev, "sub": "", "desc": "", "live": False}
+    if not pages:
+        return {}
+    # descriptions: the next YOURTV_DETAIL_HOURS only (one request per programme)
+    now = datetime.now(timezone.utc)
+    horizon = now + timedelta(hours=YOURTV_DETAIL_HOURS)
+    todo = [ev for slot in per.values() for ev in slot.values() if ev["stop"] > now and ev["start"] < horizon]
+    checked = differ = with_desc = 0
+    if todo:
+        from concurrent.futures import ThreadPoolExecutor
+        print(f"  YourTV: fetching details for {len(todo)} programme(s) in the next {YOURTV_DETAIL_HOURS} h ...")
+        with ThreadPoolExecutor(max_workers=4) as pool:
+            found = list(pool.map(lambda ev: yourtv_airing(ev["id"]), todo))
+        for ev, a in zip(todo, found):
+            if not a:
+                continue
+            try:
+                air = datetime.fromisoformat(str(a["date"]).replace("Z", "+00:00")).astimezone(timezone.utc)
+            except (KeyError, ValueError):
+                continue
+            checked += 1
+            if abs((air - ev["start"]).total_seconds()) > 300:
+                differ += 1
+                continue
+            sq = lambda t: re.sub(r"\s+", " ", str(t or "")).strip()
+            sub, desc = sq(a.get("episodeTitle")), sq(a.get("synopsis"))
+            ev["sub"] = sub if sub.lower() != ev["title"].lower() else ""
+            ev["desc"] = short_desc(desc) if desc and desc.lower() not in (ev["title"].lower(), sub.lower()) else ""
+            ev["live"] = a.get("live") is True               # only trusted when true
+            with_desc += bool(ev["desc"])
+        print(f"  YourTV: {checked} details read, {with_desc} with a description; start times differing from the grid: {differ}")
+        if checked >= 8 and differ > checked * 0.25:
+            print("  WARNING: YourTV's start times don't match its own grid (day mapping wrong?) - not used", file=sys.stderr)
+            return {}
+    out = {}
+    for key, slot in per.items():
+        listing = [slot[k] for k in sorted(slot) if slot[k]["start"] < end and slot[k]["stop"] > first]
+        for ev in listing:
+            ev.pop("id", None)
+        if debug:
+            print(f"    {EPGSHARE['au']['channels'][key][0]}: {len(listing)} programmes from YourTV")
+        if len(listing) >= YOURTV_MIN_EVENTS:
+            out[key] = listing
+    if out:
+        lasts = sorted(v[-1]["stop"] for v in out.values())
+        starts = sorted(v[0]["start"] for v in out.values())
+        fmt = lambda d: d.astimezone(tz).strftime("%a %d %b %H:%M")
+        print(f"  YourTV: first programme {fmt(starts[0])} .. {fmt(starts[-1])}, last ends {fmt(lasts[0])} .. {fmt(lasts[-1])} (Sydney)")
     return out
 
 
@@ -6081,6 +6249,7 @@ def main():
     ap.add_argument("--no-epgshare", action="store_true", help="leave out everything from epgshare01.online")
     ap.add_argument("--no-bein-mena", action="store_true", help="don't read beIN's own Middle East guide (stays on epgshare BEIN1)")
     ap.add_argument("--no-skygo", action="store_true", help="don't read Sky Go's TV guide (Sky Sport NZ stays on epgshare NZ1)")
+    ap.add_argument("--no-yourtv", action="store_true", help="don't read YourTV's Foxtel guide (Fox Sports + ESPN AU stay on epgshare AU1)")
     ap.add_argument("--epgshare", default=",".join(EPGSHARE),
                     help=f"epgshare01 groups, comma separated (default {','.join(EPGSHARE)})")
     ap.add_argument("--no-desc", action="store_true", help="leave out the sources' own programme descriptions")
@@ -6374,6 +6543,24 @@ def main():
             else:
                 print("  Sky Go gave nothing usable - Sky Sport NZ stays on epgshare NZ1")
                 gh_warn("Sky Go fell back", "Sky Sport NZ is on epgshare NZ1 (Sky Go gave nothing usable)")
+        if "au" in [g.strip().lower() for g in args.epgshare.split(",")] and not args.no_yourtv:   # 4 Nov 2026
+            au_days = [datetime.now(ZoneInfo(EPGSHARE["au"]["tz"])).date() + timedelta(days=i) for i in range(max(args.days, 1))]
+            print(f"Australia: reading YourTV's Foxtel guide {au_days[0]} to {au_days[-1]} (Fox Sports, ESPN) ...")
+            yt = fetch_yourtv_au(au_days, args.debug)
+            if yt:
+                au_eps = eps.setdefault("au", {})
+                for part, evs in yt.items():       # replaces AU1's listing; AU1 only fills the time before YourTV's first programme
+                    yt_first = evs[0]["start"]
+                    before = [{**e, "stop": min(e["stop"], yt_first)} for e in au_eps.get(part, []) if e["start"] < yt_first]
+                    au_eps[part] = before + evs
+                left = sorted(set(EPGSHARE["au"]["channels"]) - set(yt))
+                print(f"  {sum(len(v) for v in yt.values())} programmes on {len(yt)} channel(s) from YourTV"
+                      + (f"; still on epgshare AU1: {', '.join(left)}" if left else ""))
+                if left:
+                    gh_warn("YourTV partly fell back", f"these AU channels are on epgshare AU1: {', '.join(left)}")
+            else:
+                print("  YourTV gave nothing usable - the Australian channels stay on epgshare AU1")
+                gh_warn("YourTV fell back", "Fox Sports + ESPN AU are on epgshare AU1 (YourTV gave nothing usable)")
         if "mena" in [g.strip().lower() for g in args.epgshare.split(",")] and not args.no_bein_mena:   # 2 Nov 2026
             mena_days = [datetime.now(timezone.utc).date() + timedelta(days=i) for i in range(max(args.days, 1))]
             print(f"Middle East: reading beIN's own TV guide {mena_days[0]} to {mena_days[-1]} (beIN SPORTS MENA) ...")
