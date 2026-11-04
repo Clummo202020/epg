@@ -914,6 +914,101 @@ def empty_slot(name):
     return None
 
 
+# ALL CAPS event names -> normal case (4 Nov 2026, user). ESPN+ and MAX write most titles in capitals ("KENT STATE VS.
+# APP STATE (QUARTERFINALS)", "AARON HILL - ZHAO XINTONG"). Only a title that is (almost) all capitals is touched;
+# acronyms (KEEP_CAPS), roman numerals, single letters, words touching digits (F1, U19) and 1-3 letter state codes
+# in brackets ("XAVIER (LA)") stay as they are. Add a word to KEEP_CAPS if a name comes out as "Ucf" / "Xyz";
+# CAPS_SPECIAL gives a word its own spelling.
+KEEP_CAPS = set("""
+UFC NBA NFL NHL MLB MLS WNBA NCAA UEFA FIFA FA EFL EPL WWE AEW ATP WTA PGA LPGA LIV DP IPL ICC ODI GP MMA PFL BKFC
+DAZN ESPN BBC CNN BT TNT TV HD UHD PPV VAR USA UK UAE EU UCL XTRA RB PSV LASK SSC RCD SL KAA KV FK SK BK FC SC AC AS CF
+CD AEK AEL APOEL PAOK OFI ENP AEP PAEEK GR II III IV VI VII VIII IX XI XII
+UCF UNC LSU BYU TCU UAB VCU RPI IU UMBC NJIT UTSA UMASS SIU UC UT UL USC UCLA SMU UNLV UTEP UIC FIU FAU LIU CSU CCSU
+UTRGV UTSA SUNY MIT NYU LMU UMES MTSU ETSU WKU UNCW SFA SEMO UNI USF UMKC SDSU TCNJ RIT NIU
+SE VMI FDU NCCU ECU FGCU UNCG UCSB CSUN CSUB UNF UTM CP US NZ AUS RSA USMNT USWNT NASCAR IMSA
+WBC WBA IBF WBO NRL AFL NRLW AFLW BBL WBBL BWF UCI FIM FIA WRC WEC PBR PLL NLL AHL ECHL OHL WHL QMJHL CFL XFL UFL USFL
+NWSL USL CPL AFC CAF CONCACAF CONMEBOL OFC AFCON ACC SEC NCAAB NCAAF NIT HBCU
+""".split())
+CAPS_SPECIAL = {"VFB": "VfB", "UALBANY": "UAlbany", "LALIGA": "LaLiga", "UMASS": "UMass", "DEPAUL": "DePaul"}
+CAPS_SMALL = {"a", "an", "and", "at", "by", "for", "in", "of", "on", "or", "the", "to", "with", "v", "vs", "del", "de"}
+CAPS_WORD = re.compile(r"[^\W\d_]+(?:['\u2019][^\W\d_]+)*")
+CAPS_ROMAN = re.compile(r"^M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$")
+
+
+def mostly_caps(text):
+    letters = [c for c in (text or "") if c.isalpha()]
+    return len(letters) >= 5 and sum(c.isupper() for c in letters) / len(letters) >= 0.85
+
+
+def tidy_caps(text):
+    """ALL CAPS title -> normal case (see above); other titles are returned unchanged."""
+    if not mostly_caps(text):
+        return text
+
+    def repl(m):
+        w = m.group(0)
+        if not w.isupper():
+            return w
+        if w in CAPS_SPECIAL:
+            return CAPS_SPECIAL[w]
+        if w == "V" and m.start() > 0 and text[m.start() - 1] == " ":
+            return "v"
+        if len(w) < 2 or w in KEEP_CAPS or (len(w) <= 4 and CAPS_ROMAN.match(w)):
+            return w
+        before = text[m.start() - 1] if m.start() > 0 else ""
+        after = text[m.end()] if m.end() < len(text) else ""
+        if before.isdigit() or after.isdigit():
+            return w
+        if len(w) <= 3 and before == "(" and after == ")":          # "XAVIER (LA)", "WESTMINSTER (UT)"
+            return w
+        low = w.lower()
+        lead = text[:m.start()].rstrip()
+        if low in CAPS_SMALL and lead and lead[-1] not in "-\u2013\u2014:|/(\"'.!?,":
+            return low
+        out = low.capitalize()
+        if low.startswith("mc") and len(w) > 3:                      # McAfee, McNeese
+            out = "Mc" + low[2:].capitalize()
+        if len(w) > 2 and w[1] in "'\u2019" and w[0] in "DLO":      # D'Italia, O'Brien
+            out = w[0] + w[1] + w[2:].lower().capitalize()
+        return out
+    return CAPS_WORD.sub(repl, text)
+
+
+
+# "A - B" fixtures -> "A vs B" (4 Nov 2026, user). MAX UK writes every match as "RB LEIPZIG - MANCHESTER CITY (19:00)".
+# Only a title with exactly ONE spaced hyphen and no "vs"/"v" already, whose two sides look like names, is changed;
+# dates ("TUE, 11/3 - ESPN FC"), places ("Medicine Hat, AB - Day 2, Draw 6"), suffixes ("Brazil vs Germany - Women's M1")
+# and round/day/episode labels stay as they are.
+VS_SIDE_SKIP = re.compile(r"(?i)^(?:day|round|rd|week|wk|episode|ep\.?|match|game|session|part|heat|draw|race|stage|"
+                          r"leg|lap|women'?s|men'?s|highlights?|preview|review)\b")
+VS_DATE_SIDE = re.compile(r"(?i)^(?:mon|tue|wed|thu|fri|sat|sun)\w*,?\s*\d{1,2}[/.]\d{1,2}$")
+
+
+def fixture_vs(title):
+    t = title or ""
+    if t.count(" - ") != 1 or re.search(r"(?i)\s(?:vs?\.?|@|at)\s", t):
+        return t
+    left, right = t.split(" - ", 1)
+    core = re.sub(r"\s*\([^)]*\)\s*$", "", right).strip()
+    left = left.strip()
+    for side in (left, core):
+        if not side or re.search(r"[:,]", side) or VS_SIDE_SKIP.match(side) or VS_DATE_SIDE.match(side) \
+                or len(side.split()) > 6 or not side[0].isalpha():
+            return t
+    return f"{left} vs {right.strip()}"
+
+
+
+# One style for fixtures: "v", "v.", "vs", "vs." between two names -> "vs" (4 Nov 2026, user: "make them all vs").
+# Only the events guide; the football / Scottish guides keep their "A v B" on purpose.
+VS_WORD = re.compile(r"(?<=\S)\s+(?:v|vs|Vs|VS)\.?\s+(?=\S)")      # a lone capital "V" (Super Bowl V, Henry V) stays
+
+
+def normalise_vs(title):
+    return VS_WORD.sub(" vs ", title or "")
+
+
+
 def parse_name(name):
     """{slot_id, slot_name, title, extra, start (UTC)} for an event name, else None."""
     name = re.sub(r"\s+", " ", name or "").strip()
@@ -926,7 +1021,9 @@ def parse_name(name):
             and ev.get("start") and ev["start"].year > 2090:   # "CA (SN+ 026) | (2098-12-31 08:00:01)": the provider's
         return _empty_slot(name, ev["slot_id"], ev["slot_name"])   # placeholder date = an EMPTY slot, not an event
     if ev and ev.get("title"):       # "• Chelsea v Tottenham" (Stan's second feed) -> no bullet
-        ev["title"] = re.sub(r"^[\s•·*\-–]+", "", ev["title"]).strip()
+        ev["title"] = normalise_vs(fixture_vs(tidy_caps(re.sub(r"^[\s•·*\-–]+", "", ev["title"]).strip())))
+        if ev.get("comp"):
+            ev["comp"] = tidy_caps(ev["comp"])
     return ev
 
 
