@@ -167,10 +167,10 @@ CYPRUS - Cyta's own TV guide (epg.cyta.com.cy, JSON), as in cyta_epg.py:
 
 HONG KONG - Now TV's public guide (JSON), one request per day for all channels (cookie LANG=en):
     https://nowplayer.now.com/tvguide/epglist?channelIdList[]=631&channelIdList[]=638&day=1
-  Channels chosen with --now-channels (Now TV channel numbers; default: its 40 sports
+  Channels chosen with --now-channels (Now TV channel numbers; default: its 36 sports
   channels - Now Sports, Premier League 1-9, beIN SPORTS 1-6, NBA TV, MUTV, golf ...);
   --no-nowtv to leave out. Start and end times are given. epgshare01's HK file is the backup.
-  Channels: HK.NowSports1, HK.NowSportsPL1, HK.beINSPORTS1, HK.NBATV ...
+  Channels: HK.NowSports1, HK.NowSportsPL1, HK.beINSPORTS1, HK.MUTV ...
 
 AUSTRALIA - Fox Sports and ESPN AU come from YourTV's Foxtel guide (4 Nov 2026; Nine's public TV guide, pay region
   168 = Foxtel, no login): today + the next six days, with descriptions for the next 48 hours. epgshare01's AU1 file
@@ -192,7 +192,7 @@ EPGSHARE01 - ready-made XMLTV files from https://epgshare01.online/epgshare01/ (
     https://epgshare01.online/epgshare01/epg_ripper_TR1.xml.gz   (also LV1, HK1, ID1, BEIN1)
   Groups chosen with --epgshare (default turkey,latvia,hk,id,mena,france,golfplus,sg,my,au,italy);
   --no-epgshare for none. france/golfplus/italy are backups for channels SFR and Sky Italia
-  list but send nothing for (Eurosport 1-2 FR, DAZN 1 FR, Golf+, Sky Sport 253-259,
+  list but send nothing for (Eurosport 1-2 FR, DAZN 1 FR, Golf+, Sky Sport 253-258,
   Sky Sport NBA, DAZN 4): same IDs, used only when your own source has nothing. france also
   adds beIN SPORTS MAX 4-10 FR. sg/my/au back up beIN's own site under the same IDs
   (SG.beINSPORTS1 ...), and sg adds beIN SPORTS 4-5 and RUGBY SG. brazil backs up Claro
@@ -3384,10 +3384,10 @@ NOW_CHANNELS = {         # Now TV channel number -> (id part, name); same IDs as
     "638": ("beINSPORTS1", "beIN SPORTS 1 HK"), "639": ("beINSPORTS2", "beIN SPORTS 2 HK"),
     "643": ("beINSPORTS3", "beIN SPORTS 3 HK"), "644": ("beINSPORTS4", "beIN SPORTS 4 HK"),
     "645": ("beINSPORTS5", "beIN SPORTS 5 HK"), "646": ("beINSPORTS6", "beIN SPORTS 6 HK"),
-    "640": ("MUTV", "MUTV"), "642": ("NBATV", "NBA TV HK"),
-    **{n: (f"NowSports{n}", f"Now Sports {n}") for n in ("641", "647", "650", "651", "652")},
-    "668": ("Now668", "Now668"), "674": ("Cricbuzz", "Cricbuzz"), "679": ("PremierSports", "Premier Sports HK"),
-    "680": ("NowSportsPlus", "Now Sports Plus"), "683": ("NowGolf2", "Now Golf 2"), "684": ("NowGolf3", "Now Golf 3"),
+    "640": ("MUTV", "MUTV"),            # (642 NBATV, 647, 668, 680 Now Sports Plus removed 4 Nov 2026 - user: not important)
+    **{n: (f"NowSports{n}", f"Now Sports {n}") for n in ("641", "650", "651", "652")},
+    "674": ("Cricbuzz", "Cricbuzz"), "679": ("PremierSports", "Premier Sports HK"),
+    "683": ("NowGolf2", "Now Golf 2"), "684": ("NowGolf3", "Now Golf 3"),
 }
 
 
@@ -3834,7 +3834,6 @@ EPGSHARE = {   # group -> file, id prefix, place, time zone, English?, {id part:
                **{f"beINSPORTS{n}": (f"beIN SPORTS {n} HK", [f"beIN.SPORTS.{n}.hk"]) for n in range(1, 7)},
                **{f"NowSports{n}": (f"Now Sports {n}", [f"Now.Sports.{n}.hk"]) for n in range(1, 8)},
                "NowSportsPrime": ("Now Sports Prime", ["Now.Sports.Prime.hk"]),
-               "NowSportsPlus": ("Now Sports Plus", ["Now.Sports.Plus.hk"]),
                **{f"NowSportsPL{n}": (f"Now Sports Premier League {n}", [f"Now.Sports.Premier.League.{n}.hk"])
                   for n in range(1, 8)},
                "NowSportsPLTV": ("Now Sports Premier League TV", ["Now.Sports.Premier.League.TV.hk"]),
@@ -4056,7 +4055,7 @@ EPGSHARE.update({
                }},
     "italy": {"file": "IT1", "prefix": "IT", "place": "Italy", "tz": "Europe/Rome", "english": False,
               "backup": True, "channels": {
-                  **{f"SkySport{n}": (f"Sky Sport {n}", [f"Sky.Sport..{n}.it"]) for n in range(253, 260)},
+                  **{f"SkySport{n}": (f"Sky Sport {n}", [f"Sky.Sport..{n}.it"]) for n in range(253, 259)},   # Sky Sport 259 removed 4 Nov 2026
                   "SkySportNBA": ("Sky Sport NBA", ["Sky.Sport.NBA.it"]),
                   "DAZN4": ("DAZN 4", ["DAZN4.it"]),
               }},
@@ -6032,7 +6031,9 @@ CARRY_SKIP = ("AU.beINSPORTS",
               # dropped 1 Nov 2026 (user): Alkass 1-8 - epgshare's BEIN1 data ran out (ended 31 Oct), AE1 looked like filler
               "MENA.Alkass",
               # dropped 31 Oct 2026 (user): sources removed/never matched, only old listings were being carried
-              "DK.ViasatSportUltra", "SE.ATGLive", "HK.NowGolf3", "HK.PremierSports")
+              "DK.ViasatSportUltra", "SE.ATGLive", "HK.NowGolf3", "HK.PremierSports",
+              # dropped 4 Nov 2026 (user: not important; the playlists lose them too) - only 1-2 old programmes were being carried
+              "HK.NBATV", "HK.Now668", "HK.NowSports647", "HK.NowSportsPlus", "IT.SkySport259")
 
 
 def carry_over(tv, listed, prev_path):
