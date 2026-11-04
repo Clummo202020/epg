@@ -83,10 +83,12 @@ FILLER_DESC = "The next event on this stream will be listed nearer the time."
 # Shown on a slot whose event is over (or that is empty) until its stream name changes to a new event;
 # the new event's real titles/descriptions then replace it automatically.
 OFFLINE_TITLE = "Channel is offline"   # only used if a stream has no name at all
-# 4 Nov 2026 (user): an EMPTY TOD slot (ids ARPPV<n>.mena, stream name "NO EVENT STREAMING NOW - | 8K EXCLUSIVE |
-# MENA: AR PPV 1") gets this title instead of its long stream name. The channel display-name is unchanged, so
-# PlaylistLabs linking is not affected; finished TOD events and every other group still use the stream's own name.
-TOD_EMPTY_TITLE = "No event streaming now"
+# 4 Nov 2026 (user): an EMPTY slot whose stream name is provider-style ("NO EVENT STREAMING NOW - | 8K EXCLUSIVE |
+# CA: SOCCER PPV 100", "- NO EVENT STREAMING - | 8K EXCLUSIVE | US: MAX PPV 1" ...: TOD, DAZN, MAX, ESPN+, Canada
+# Soccer, Apple TV F1) gets this title instead of its long stream name; a FINISHED event of those groups shows just its
+# own name (offline_title). The channel display-name is unchanged, so PlaylistLabs linking is not affected. Slots with
+# short raw names (PPV EVENT 10, MLB 10 :, NFL | 01 -, UEFA | 08 -) and the other groups' finished names are unchanged.
+NO_EVENT_TITLE = "No event streaming now"
 # Finished/empty slots are titled with the stream's own name (25 Oct 2026), e.g.
 # "US (Paramount 009) | Motherwell vs. Heart of Midlothian (2026-10-25 09:00:00)".
 
@@ -95,8 +97,10 @@ def offline_title(ev):
     """Title for the blocks of a finished or empty slot: the actual stream name, without a
     leading provider status word ("LIVE | Saint Peter's vs. Marist | ..." -> "Saint Peter's vs.
     Marist | ..."), so a finished slot doesn't look live in the guide (changed 28 Oct 2026)."""
-    if not (ev.get("title") or "").strip() and re.fullmatch(r"ARPPV\d+\.mena", ev.get("slot_id") or "", re.I):
-        return TOD_EMPTY_TITLE                       # an EMPTY TOD slot (4 Nov 2026, user): a clean title
+    if "8K EXCLUSIVE" in (ev.get("name") or "").upper():          # 4 Nov 2026 (user): provider-style names
+        # ("... | 8K EXCLUSIVE | US: MAX PPV 1") are not shown as they are: an empty slot gets a clean title,
+        # a finished event just its name, without the date / "8K EXCLUSIVE" / slot-label tail
+        return (ev.get("title") or "").strip() or NO_EVENT_TITLE
     name = (ev.get("offline_name") or ev.get("name") or "").strip()
     head, sep, rest = name.partition("|")
     if sep and head.strip().lower() in STATUS_WORDS and rest.strip():
