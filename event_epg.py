@@ -250,6 +250,16 @@ NBA_AT = re.compile(
     r"^\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
     r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*:\s*NBA\s*(?P<num>\d+)\s*$", re.I)
 NBA_TZ = "America/New_York"
+# Paramount+ streams in the provider's other layout (4 Nov 2026, user): "UEFA Champions League: Slavia Praha vs Arsenal
+# @ Nov 4 2:00 PM :Paramount+  05" -> Paramount005.us (the same ids as "US (Paramount 005) | ... (date time)"). These names
+# were ignored, so a row with that name had no listing of its own and was linked by hand to the other layout's id - whose
+# name for slot 5 was a stale September 2025 match. The time in them is US Central (2:00 PM = 15:00 ET = 20:00 UK, one
+# hour before the other layout's Eastern time); a match is moved to its real kick-off by real_start() as for the other
+# layout. If both layouts name the same slot, the event still to be played wins over a finished one (build()).
+PARAMOUNT_AT = re.compile(
+    r"^\s*(?:(?P<comp>[^:@]+?)\s*:\s*)?(?P<title>[^@]+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
+    r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*:\s*Paramount\+?\s*(?P<num>\d+)\s*$", re.I)
+PARAMOUNT_AT_TZ = "America/Chicago"
 NBA_ESPN = "basketball/nba"
 NBA_EVENT_HOURS = 3
 # MLB streams, two styles:
@@ -1054,6 +1064,25 @@ def _parse_name(name):
         return {"name": name, "slot_id": f"MLB{num}.uk", "slot_name": f"MLB {num}",
                 "title": title, "extra": "", "comp": "MLB", "hours": MLB_EVENT_HOURS,
                 "early": MLB_EARLY_MINUTES, "start": start}
+    pm = PARAMOUNT_AT.match(name)                    # Comp: A vs B @ Nov 4 2:00 PM :Paramount+  05 (US Central)
+    if pm:
+        title = re.sub(r"\s+", " ", pm["title"]).strip()
+        approx = month_day_time(pm["mon"], pm["day"], pm["h"], pm["m"], pm["ap"], ZoneInfo(PARAMOUNT_AT_TZ))
+        if approx is None or not title:
+            return None
+        num = int(pm["num"])
+        is_match = bool(re.search(r"(?i)\s(?:vs?\.?|at|@)\s", title))
+        ev = {"name": name, "slot_id": f"Paramount{num:03d}.us", "slot_name": f"US (Paramount {num:03d})",   # 3 digits, like the playlists
+              "title": title, "extra": "", "comp": (pm["comp"] or "").strip() if is_match else "",
+              "start": approx.astimezone(timezone.utc)}
+        rs = real_start(ev["title"], ev["start"])          # stream time -> real kick-off (as for the other layout)
+        if rs:
+            if abs(rs[0] - ev["start"]) >= timedelta(minutes=1):
+                print(f"  US (Paramount {num:03d}) kick-off: {ev['title']}: stream {ev['start']:%d %b %H:%M} UTC, "
+                      f"{rs[2] or '?'} {rs[0]:%d %b %H:%M} UTC")
+            ev["start"], ev["early"] = rs[0], rs[1]
+            ev["comp"] = rs[2] or ev["comp"]
+        return ev
     b = NBA_AT.match(name)                           # A vs B @ Oct 24 6:00 PM :NBA 01 (US Eastern)
     if b:
         title = re.sub(r"\s+", " ", b["title"]).strip()
@@ -1404,7 +1433,7 @@ def normalise_slot_ids(tv):
         if m:
             groups.setdefault((m.group(1), m.group(3)), []).append((ch, m.group(2)))
     taken = {ch.get("id") for ch in tv.findall("channel")}
-    renames = {}
+    renames, strays = {}, set()
     for (stem, cc), members in groups.items():
         three = sum(len(num) == 3 for _, num in members)
         if len(members) < 10 or three < 0.9 * len(members):
@@ -1415,6 +1444,16 @@ def normalise_slot_ids(tv):
                 if new not in taken:
                     renames[ch.get("id")] = new
                     taken.add(new)
+                else:                                  # the three-digit id exists already (4 Nov 2026: Paramount05 next to
+                    strays.add(ch.get("id"))           # Paramount005 from the other layout's name) - the stray one goes
+    for ch in list(tv.findall("channel")):
+        if ch.get("id") in strays:
+            tv.remove(ch)
+    for pr in list(tv.findall("programme")):
+        if pr.get("channel") in strays:
+            tv.remove(pr)
+    if strays:
+        print("  Stray slot ids dropped (the three-digit id exists): " + ", ".join(sorted(strays)))
     if not renames:
         return
     for ch in tv.findall("channel"):
