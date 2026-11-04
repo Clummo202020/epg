@@ -143,14 +143,6 @@
   <channel id="Stranraer.ScotLge2">
     <display-name lang="en">Stranraer Scottish League Two</display-name>
   </channel>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Aberdeen.ScotPrem">
-    <title lang="en">Aberdeen v Hibernian (Sat 07 Nov, 17:45)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: Aberdeen v Hibernian. Pittodrie Stadium, Aberdeen. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Aberdeen.ScotPrem">
     <title lang="en">Aberdeen v Hibernian (Sat 07 Nov, 17:45)</title>
     <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
@@ -496,14 +488,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Alloa.Athletic.ScotLge1">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Alloa Athletic have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Alloa.Athletic.ScotLge1">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
@@ -816,13 +800,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Annan.Athletic.ScotLge2">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Alloa.Athletic.ScotLge1">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Annan Athletic have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Alloa Athletic have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Annan.Athletic.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -1136,13 +1120,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Arbroath.ScotChamp">
-    <title lang="en">Arbroath v Ayr Utd (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Championship</sub-title>
-    <desc lang="en">Next Up: Arbroath v Ayr Utd. Gayfield Park, Arbroath. Kick-off: 15:00.</desc>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Annan.Athletic.ScotLge2">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Annan Athletic have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
+    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Arbroath.ScotChamp">
     <title lang="en">Arbroath v Ayr Utd (Sat 07 Nov, 15:00)</title>
@@ -1481,14 +1465,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Ayr.Utd.ScotChamp">
-    <title lang="en">Arbroath v Ayr Utd (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Championship</sub-title>
-    <desc lang="en">Next Up: Arbroath v Ayr Utd. Gayfield Park, Arbroath. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Ayr.Utd.ScotChamp">
     <title lang="en">Arbroath v Ayr Utd (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">Next Up: Scottish Championship</sub-title>
@@ -1825,14 +1801,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Celtic.ScotPrem">
-    <title lang="en">Celtic v Kilmarnock (Sun 08 Nov, 16:00)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: Celtic v Kilmarnock. Celtic Park, Glasgow. Kick-off: 16:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Celtic.ScotPrem">
     <title lang="en">Celtic v Kilmarnock (Sun 08 Nov, 16:00)</title>
@@ -2267,14 +2235,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Clyde.ScotLge2">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Clyde have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Clyde.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
@@ -2587,13 +2547,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Cove.Rangers.ScotLge1">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Clyde.ScotLge2">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Cove Rangers have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Clyde have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
+    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Cove.Rangers.ScotLge1">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
@@ -2907,13 +2867,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Dumbarton.ScotLge2">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Cove.Rangers.ScotLge1">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Dumbarton have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Cove Rangers have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Dumbarton.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -3227,13 +3187,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Dundee.ScotPrem">
-    <title lang="en">St Johnstone v Dundee (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: St Johnstone v Dundee. McDiarmid Park, Perth. Kick-off: 15:00.</desc>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Dumbarton.ScotLge2">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Dumbarton have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Dundee.ScotPrem">
     <title lang="en">St Johnstone v Dundee (Sat 07 Nov, 15:00)</title>
@@ -3572,14 +3532,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Dundee.Utd.ScotPrem">
-    <title lang="en">Dundee Utd v Motherwell (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: Dundee Utd v Motherwell. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Dundee.Utd.ScotPrem">
     <title lang="en">Dundee Utd v Motherwell (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
@@ -3917,14 +3869,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Dunfermline.Athletic.ScotChamp">
-    <title lang="en">Raith Rovers v Dunfermline Athletic (Fri 06 Nov, 19:30)</title>
-    <sub-title lang="en">Next Up: Scottish Championship</sub-title>
-    <desc lang="en">Next Up: Raith Rovers v Dunfermline Athletic. Stark's Park, Fife. Kick-off: 19:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Dunfermline.Athletic.ScotChamp">
     <title lang="en">Raith Rovers v Dunfermline Athletic (Fri 06 Nov, 19:30)</title>
     <sub-title lang="en">Next Up: Scottish Championship</sub-title>
@@ -4181,14 +4125,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="East.Fife.ScotLge1">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">East Fife have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="East.Fife.ScotLge1">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
@@ -4502,13 +4438,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="East.Kilbride.ScotLge2">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="East.Fife.ScotLge1">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">East Kilbride have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">East Fife have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="East.Kilbride.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -4822,10 +4758,10 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Edinburgh.City.ScotLge2">
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="East.Kilbride.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Edinburgh City have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">East Kilbride have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
@@ -5142,10 +5078,10 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Elgin.City.ScotLge2">
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Edinburgh.City.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Elgin City have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Edinburgh City have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
@@ -5462,13 +5398,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Falkirk.ScotPrem">
-    <title lang="en">Hearts v Falkirk (Sun 08 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: Hearts v Falkirk. Tynecastle Park, Edinburgh. Kick-off: 15:00.</desc>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Elgin.City.ScotLge2">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Elgin City have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Falkirk.ScotPrem">
     <title lang="en">Hearts v Falkirk (Sun 08 Nov, 15:00)</title>
@@ -5903,14 +5839,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Forfar.Athletic.ScotLge2">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Forfar Athletic have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Forfar.Athletic.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
@@ -6223,13 +6151,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Greenock.Morton.ScotChamp">
-    <title lang="en">Greenock Morton v Stenhousemuir (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Championship</sub-title>
-    <desc lang="en">Next Up: Greenock Morton v Stenhousemuir. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Forfar.Athletic.ScotLge2">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Forfar Athletic have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
+    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Greenock.Morton.ScotChamp">
     <title lang="en">Greenock Morton v Stenhousemuir (Sat 07 Nov, 15:00)</title>
@@ -6568,14 +6496,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Hamilton.Academical.ScotLge1">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Hamilton Academical have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Hamilton.Academical.ScotLge1">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
@@ -6888,13 +6808,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Hearts.ScotPrem">
-    <title lang="en">Hearts v Falkirk (Sun 08 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: Hearts v Falkirk. Tynecastle Park, Edinburgh. Kick-off: 15:00.</desc>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Hamilton.Academical.ScotLge1">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Hamilton Academical have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Hearts.ScotPrem">
     <title lang="en">Hearts v Falkirk (Sun 08 Nov, 15:00)</title>
@@ -7329,14 +7249,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Hibernian.ScotPrem">
-    <title lang="en">Aberdeen v Hibernian (Sat 07 Nov, 17:45)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: Aberdeen v Hibernian. Pittodrie Stadium, Aberdeen. Kick-off: 17:45.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Hibernian.ScotPrem">
     <title lang="en">Aberdeen v Hibernian (Sat 07 Nov, 17:45)</title>
     <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
@@ -7682,14 +7594,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Inverness.CT.ScotChamp">
-    <title lang="en">Inverness CT v Livingston (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Championship</sub-title>
-    <desc lang="en">Next Up: Inverness CT v Livingston. Caledonian Stadium, Inverness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Inverness.CT.ScotChamp">
     <title lang="en">Inverness CT v Livingston (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">Next Up: Scottish Championship</sub-title>
@@ -8027,14 +7931,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Kelty.Hearts.ScotLge1">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Kelty Hearts have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Kelty.Hearts.ScotLge1">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
@@ -8347,13 +8243,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Kilmarnock.ScotPrem">
-    <title lang="en">Celtic v Kilmarnock (Sun 08 Nov, 16:00)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: Celtic v Kilmarnock. Celtic Park, Glasgow. Kick-off: 16:00.</desc>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Kelty.Hearts.ScotLge1">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Kelty Hearts have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Kilmarnock.ScotPrem">
     <title lang="en">Celtic v Kilmarnock (Sun 08 Nov, 16:00)</title>
@@ -8788,14 +8684,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Livingston.ScotChamp">
-    <title lang="en">Inverness CT v Livingston (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Championship</sub-title>
-    <desc lang="en">Next Up: Inverness CT v Livingston. Caledonian Stadium, Inverness. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Livingston.ScotChamp">
     <title lang="en">Inverness CT v Livingston (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">Next Up: Scottish Championship</sub-title>
@@ -9133,14 +9021,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Montrose.ScotLge1">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Montrose have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Montrose.ScotLge1">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
@@ -9453,13 +9333,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Motherwell.ScotPrem">
-    <title lang="en">Dundee Utd v Motherwell (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: Dundee Utd v Motherwell. Tannadice Park, Dundee. Kick-off: 15:00.</desc>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Montrose.ScotLge1">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Montrose have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Motherwell.ScotPrem">
     <title lang="en">Dundee Utd v Motherwell (Sat 07 Nov, 15:00)</title>
@@ -9798,14 +9678,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Partick.Thistle.ScotChamp">
-    <title lang="en">Queen's Park v Partick Thistle (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Championship</sub-title>
-    <desc lang="en">Next Up: Queen's Park v Partick Thistle. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Partick.Thistle.ScotChamp">
     <title lang="en">Queen's Park v Partick Thistle (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">Next Up: Scottish Championship</sub-title>
@@ -10143,14 +10015,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Peterhead.ScotLge1">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Peterhead have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Peterhead.ScotLge1">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
@@ -10463,10 +10327,10 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Queen.of.the.South.ScotLge1">
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Peterhead.ScotLge1">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Queen of the South have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Peterhead have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
@@ -10783,13 +10647,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Queen.s.Park.ScotChamp">
-    <title lang="en">Queen's Park v Partick Thistle (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Championship</sub-title>
-    <desc lang="en">Next Up: Queen's Park v Partick Thistle. The City Stadium, Glasgow. Kick-off: 15:00.</desc>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Queen.of.the.South.ScotLge1">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Queen of the South have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
+    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Queen.s.Park.ScotChamp">
     <title lang="en">Queen's Park v Partick Thistle (Sat 07 Nov, 15:00)</title>
@@ -11128,14 +10992,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Raith.Rovers.ScotChamp">
-    <title lang="en">Raith Rovers v Dunfermline Athletic (Fri 06 Nov, 19:30)</title>
-    <sub-title lang="en">Next Up: Scottish Championship</sub-title>
-    <desc lang="en">Next Up: Raith Rovers v Dunfermline Athletic. Stark's Park, Fife. Kick-off: 19:30.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Raith.Rovers.ScotChamp">
     <title lang="en">Raith Rovers v Dunfermline Athletic (Fri 06 Nov, 19:30)</title>
     <sub-title lang="en">Next Up: Scottish Championship</sub-title>
@@ -11392,14 +11248,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Rangers.ScotPrem">
-    <title lang="en">St Mirren v Rangers (Sat 07 Nov, 20:00)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: St Mirren v Rangers. The SMISA Stadium, Paisley. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Rangers.ScotPrem">
     <title lang="en">St Mirren v Rangers (Sat 07 Nov, 20:00)</title>
@@ -11754,14 +11602,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Spartans.FC.ScotLge2">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Spartans FC have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Spartans.FC.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
@@ -12074,13 +11914,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="St.Johnstone.ScotPrem">
-    <title lang="en">St Johnstone v Dundee (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: St Johnstone v Dundee. McDiarmid Park, Perth. Kick-off: 15:00.</desc>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Spartans.FC.ScotLge2">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Spartans FC have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="St.Johnstone.ScotPrem">
     <title lang="en">St Johnstone v Dundee (Sat 07 Nov, 15:00)</title>
@@ -12418,14 +12258,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="St.Mirren.ScotPrem">
-    <title lang="en">St Mirren v Rangers (Sat 07 Nov, 20:00)</title>
-    <sub-title lang="en">Next Up: Scottish Premiership</sub-title>
-    <desc lang="en">Next Up: St Mirren v Rangers. The SMISA Stadium, Paisley. Kick-off: 20:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="St.Mirren.ScotPrem">
     <title lang="en">St Mirren v Rangers (Sat 07 Nov, 20:00)</title>
@@ -12780,14 +12612,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104040000 +0000" stop="20261104060000 +0000" channel="Stenhousemuir.ScotChamp">
-    <title lang="en">Greenock Morton v Stenhousemuir (Sat 07 Nov, 15:00)</title>
-    <sub-title lang="en">Next Up: Scottish Championship</sub-title>
-    <desc lang="en">Next Up: Greenock Morton v Stenhousemuir. Cappielow Park, Greenock. Kick-off: 15:00.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104080000 +0000" channel="Stenhousemuir.ScotChamp">
     <title lang="en">Greenock Morton v Stenhousemuir (Sat 07 Nov, 15:00)</title>
     <sub-title lang="en">Next Up: Scottish Championship</sub-title>
@@ -13125,14 +12949,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Stirling.Albion.ScotLge2">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Stirling Albion have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
-  </programme>
   <programme start="20261104060000 +0000" stop="20261104120000 +0000" channel="Stirling.Albion.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
@@ -13445,10 +13261,10 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261104000000 +0000" stop="20261104060000 +0000" channel="Stranraer.ScotLge2">
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Stirling.Albion.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Stranraer have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Stirling Albion have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
@@ -13758,6 +13574,14 @@
     <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261113180000 +0000" stop="20261114000000 +0000" channel="Stranraer.ScotLge2">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Stranraer have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League Two</category>
+  </programme>
+  <programme start="20261114000000 +0000" stop="20261114060000 +0000" channel="Stranraer.ScotLge2">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stranraer have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
