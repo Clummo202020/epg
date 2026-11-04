@@ -83,11 +83,10 @@ FILLER_DESC = "The next event on this stream will be listed nearer the time."
 # Shown on a slot whose event is over (or that is empty) until its stream name changes to a new event;
 # the new event's real titles/descriptions then replace it automatically.
 OFFLINE_TITLE = "Channel is offline"   # only used if a stream has no name at all
-# 4 Nov 2026 (user): an EMPTY slot whose stream name is provider-style ("NO EVENT STREAMING NOW - | 8K EXCLUSIVE |
-# CA: SOCCER PPV 100", "- NO EVENT STREAMING - | 8K EXCLUSIVE | US: MAX PPV 1" ...: TOD, DAZN, MAX, ESPN+, Canada
-# Soccer, Apple TV F1) gets this title instead of its long stream name; a FINISHED event of those groups shows just its
-# own name (offline_title). The channel display-name is unchanged, so PlaylistLabs linking is not affected. Slots with
-# short raw names (PPV EVENT 10, MLB 10 :, NFL | 01 -, UEFA | 08 -) and the other groups' finished names are unchanged.
+# 4 Nov 2026 (user): every EMPTY slot - whatever the provider calls it ("NO EVENT STREAMING NOW - | 8K EXCLUSIVE |
+# CA: SOCCER PPV 100", "US (Peacock 099)", "AU (STAN 40) | No event streaming", "MLB 10 :", "UEFA | 08 -" ...) - gets
+# this title, and a FINISHED event shows just its own name (see offline_title). The channel display-name is
+# unchanged, so PlaylistLabs linking is not affected.
 NO_EVENT_TITLE = "No event streaming now"
 # Finished/empty slots are titled with the stream's own name (25 Oct 2026), e.g.
 # "US (Paramount 009) | Motherwell vs. Heart of Midlothian (2026-10-25 09:00:00)".
@@ -97,9 +96,10 @@ def offline_title(ev):
     """Title for the blocks of a finished or empty slot: the actual stream name, without a
     leading provider status word ("LIVE | Saint Peter's vs. Marist | ..." -> "Saint Peter's vs.
     Marist | ..."), so a finished slot doesn't look live in the guide (changed 28 Oct 2026)."""
-    if "8K EXCLUSIVE" in (ev.get("name") or "").upper():          # 4 Nov 2026 (user): provider-style names
-        # ("... | 8K EXCLUSIVE | US: MAX PPV 1") are not shown as they are: an empty slot gets a clean title,
-        # a finished event just its name, without the date / "8K EXCLUSIVE" / slot-label tail
+    if not ev.get("offline_name"):             # 4 Nov 2026 (user): never the provider's raw stream name -
+        # an empty slot gets NO_EVENT_TITLE, a finished event just its own name (no "US (Peacock 002) |" /
+        # "| 8K EXCLUSIVE | US: MAX PPV 1" / "(2026-11-03 08:05:00)" around it). PPV EVENT slots (offline_name,
+        # with the UK time) keep their format.
         return (ev.get("title") or "").strip() or NO_EVENT_TITLE
     name = (ev.get("offline_name") or ev.get("name") or "").strip()
     head, sep, rest = name.partition("|")
@@ -922,6 +922,9 @@ def parse_name(name):
         return empty_slot(name)
     if ev.get("title") and NO_EVENT.match(ev["title"]):    # "No Event (2026-10-24 20:00)" etc.
         return _empty_slot(name, ev["slot_id"], ev["slot_name"])
+    if ev and not ev.get("untimed") and not (ev.get("title") or "").strip() \
+            and ev.get("start") and ev["start"].year > 2090:   # "CA (SN+ 026) | (2098-12-31 08:00:01)": the provider's
+        return _empty_slot(name, ev["slot_id"], ev["slot_name"])   # placeholder date = an EMPTY slot, not an event
     if ev and ev.get("title"):       # "• Chelsea v Tottenham" (Stan's second feed) -> no bullet
         ev["title"] = re.sub(r"^[\s•·*\-–]+", "", ev["title"]).strip()
     return ev
