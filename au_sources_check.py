@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-One-off check, round 4 (4 Nov 2026) - NOT part of the guides. Run once from the GitHub runner, read the log, delete.
+One-off check, round 5 (4 Nov 2026) - NOT part of the guides. Run once from the GitHub runner, read the log, delete.
 
-Round 3 result: YourTV's Foxtel channel list (pay region 168) HAS every channel we need (Fox Sports 503/505/506/507,
-Fox Footy, Fox Cricket, Fox League, Fox Sports News, ESPN, ESPN2). Its guide call is GET /api/guide/ with the
-parameters day, timezone, format="html" and region - my first three guesses (no format / format=json) were 404.
-Round 4 calls it the way the page's own JavaScript does and prints: what comes back, how many days ahead it goes,
-the programmes of the Fox / ESPN channels for one day, and what /api/airings/<id> adds (description, end time).
-Read-only, about 30 small GET requests to YourTV. Nothing is written to the repo.
+Round 4: all 7 variants of GET /api/guide/ returned YourTV's 404 page (the channel-list call worked, so the runner is
+not blocked). The page's JavaScript names its days with slugs (today / tomorrow / mon ...), so the guide call may only
+accept those, not YYYY-MM-DD. Round 5 tries slugs, and also asks the normal /guide/ page for the Foxtel channels
+(the page has a hidden form with 'region' and 'payRegion' fields), and prints how the JavaScript's ajax helper builds
+its requests. Read-only, about 30 small GET requests to YourTV. Nothing is written to the repo.
 """
 import json
 import re
@@ -53,25 +52,53 @@ def qs(**kw):
 
 
 def try_forms(day):
-    head("1. the guide call, exactly as the page's JavaScript builds it")
-    forms = [
-        ("bundle form, Foxtel 168, Accept html", "/api/guide/" + qs(day=day, timezone="Australia/Sydney", format="html", region=168), HTML_ACCEPT),
-        ("bundle form, Foxtel 168, Accept json", "/api/guide/" + qs(day=day, timezone="Australia/Sydney", format="html", region=168), JSON_ACCEPT),
-        ("bundle form, Sydney FTA 73, Accept html", "/api/guide/" + qs(day=day, timezone="Australia/Sydney", format="html", region=73), HTML_ACCEPT),
-        ("no format, Foxtel 168", "/api/guide/" + qs(day=day, timezone="Australia/Sydney", region=168), HTML_ACCEPT),
-        ("format=json, Foxtel 168", "/api/guide/" + qs(day=day, timezone="Australia/Sydney", format="json", region=168), JSON_ACCEPT),
-        ("trailing path /168/", "/api/guide/168/" + qs(day=day, timezone="Australia/Sydney", format="html"), HTML_ACCEPT),
-        ("region path /api/regions/168/guide", "/api/regions/168/guide/" + qs(day=day, timezone="Australia/Sydney", format="html"), HTML_ACCEPT),
-    ]
+    head("1. the guide call with day slugs and other region ids")
     good = None
-    for label, path, acc in forms:
-        st, ct, body = get(path, acc)
-        print("%-42s HTTP %s %s, %d bytes" % (label, st, ct, len(body)))
-        print("    %s" % path)
-        print("    start: %r" % squash(body[:260]))
-        if st == 200 and good is None and len(body) > 2000:
-            good = (path, body)
+    slugs = ["today", "tomorrow", "yesterday", day]
+    n = 0
+    for slug in slugs:
+        for region in (168, 73):
+            for fmt in ("html", None):
+                kw = dict(day=slug, timezone="Australia/Sydney", region=region)
+                if fmt:
+                    kw["format"] = fmt
+                path = "/api/guide/" + qs(**kw)
+                st, ct, body = get(path, HTML_ACCEPT)
+                n += 1
+                print("%-92s HTTP %s %6d bytes %s" % (path[:92], st, len(body), "" if st == 200 else "(404 page)" if st == 404 else repr(body[:80])))
+                if st == 200 and good is None and len(body) > 2000:
+                    good = (path, body)
+        if good:
+            break
     return good
+
+
+def page_probes():
+    head("2. the normal /guide/ page with a pay region")
+    for path in ("/guide/?payRegion=168", "/guide/?region=73&payRegion=168", "/guide/sydney/?payRegion=168",
+                 "/guide/today/?payRegion=168&region=73"):
+        st, ct, body = get(path, "text/html")
+        fox = len(re.findall(r"(?i)fox sports|fox footy|espn", body))
+        chans = len(re.findall(r'data-channel-id="', body))
+        print("%-45s HTTP %s %7d bytes, channels in page: %d, Fox/ESPN mentions: %d" % (path, st, len(body), chans, fox))
+    head("3. how the JavaScript's ajax helper builds a request")
+    st, ct, page = get("/guide/", "text/html")
+    m = re.search(r'src="(/js/bundle-[^"]+\.js)"', page)
+    if not m:
+        return
+    st2, ct2, js = get(m.group(1), "*/*")
+    for label, pat in [("xhr open / fetch", r'\.open\(|XMLHttpRequest\(\)|fetch\('),
+                       ("custom headers", r'setRequestHeader|withCredentials'),
+                       ("api base / prefix", r'["\'](?:/api|api/)["\']|apiBase|API_BASE|baseUrl'),
+                       ("guide html consumer", r'format:\s*"html"|\.guide\b|getGuide')]:
+        hits = []
+        for mm in re.finditer(pat, js):
+            hits.append(squash(js[max(0, mm.start() - 160):mm.end() + 220]))
+            if len(hits) >= 4:
+                break
+        print("-- %s (%d shown) --" % (label, len(hits)))
+        for h in hits:
+            print("  " + h[:420])
 
 
 def parse_html(body):
@@ -112,8 +139,9 @@ def main():
     print("Python %s" % sys.version.split()[0])
     day = date.today().isoformat()
     good = try_forms(day)
+    page_probes()
     if not good:
-        print("\nNo form returned a guide - stop here and tell Claude.")
+        print("\nNo /api/guide/ form returned a guide - tell Claude (sections 2 and 3 above show what else to try).")
         return
     path, body = good
     head("2. one day of the Foxtel guide: Fox / ESPN channels")
