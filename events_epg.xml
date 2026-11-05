@@ -3897,7 +3897,7 @@
     <display-name lang="en">US (Paramount 100)</display-name>
   </channel>
   <channel id="Peacock002.us">
-    <display-name lang="en">US (Peacock 002) | Women`s Street Final (2026-11-05 11:00:00)</display-name>
+    <display-name lang="en">US (Peacock 002) | Men`s Street Prelims (2026-11-04 07:45:00)</display-name>
     <display-name lang="en">US (Peacock 002)</display-name>
   </channel>
   <channel id="Peacock003.us">
@@ -8969,6 +8969,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="CASOCCERPPV46.ca">
+    <title lang="en">Masters, Draw 11</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105100000 +0000" stop="20261105120000 +0000" channel="CASOCCERPPV57.ca">
     <title lang="en">🔴 LIVE: Hong Kong Open : Day 4</title>
     <desc lang="en">Hong Kong Open : Day 4. Starts Thu 5 Nov, 10:00 UK time.</desc>
@@ -9131,75 +9136,6 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">🔴 LIVE: Alkmaar vs Juventus</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Alkmaar vs Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105215000 +0000" stop="20261105230000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">🔴 LIVE: Alkmaar vs Juventus</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Alkmaar vs Juventus. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105230000 +0000" stop="20261106010000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106010000 +0000" stop="20261106030000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106030000 +0000" stop="20261106050000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106050000 +0000" stop="20261106070000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106070000 +0000" stop="20261106090000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106090000 +0000" stop="20261106110000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106110000 +0000" stop="20261106130000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106130000 +0000" stop="20261106150000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106150000 +0000" stop="20261106170000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106170000 +0000" stop="20261106190000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="CASOCCERPPV60.ca">
-    <title lang="en">Alkmaar vs Juventus</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261105200000 +0000" stop="20261105213000 +0000" channel="CASOCCERPPV61.ca">
     <title lang="en">Next up: LIVE – USA Seniors Cricket NPL 2026 - 5th Match - Chicago Cavaliers vs Houston Saints (21:30)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -9270,75 +9206,6 @@
   </programme>
   <programme start="20261106203000 +0000" stop="20261106223000 +0000" channel="CASOCCERPPV61.ca">
     <title lang="en">USA Seniors Cricket NPL 2026 - 5th Match - Chicago Cavaliers vs Houston Saints</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">🔴 LIVE: Sturm Graz vs Celje</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Sturm Graz vs Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105215000 +0000" stop="20261105230000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">🔴 LIVE: Sturm Graz vs Celje</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Sturm Graz vs Celje. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105230000 +0000" stop="20261106010000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106010000 +0000" stop="20261106030000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106030000 +0000" stop="20261106050000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106050000 +0000" stop="20261106070000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106070000 +0000" stop="20261106090000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106090000 +0000" stop="20261106110000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106110000 +0000" stop="20261106130000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106130000 +0000" stop="20261106150000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106150000 +0000" stop="20261106170000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106170000 +0000" stop="20261106190000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="CASOCCERPPV62.ca">
-    <title lang="en">Sturm Graz vs Celje</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -9741,6 +9608,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="DAZNPPV10.us">
+    <title lang="en">Sunderland vs Dinamo Zagreb (en Español)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="DAZNPPV11.gb">
     <title lang="en">Bellarmine @ Indiana (Thu 5 Nov, 23:00)</title>
     <sub-title lang="en">⏭ Coming up: NCAA Men's Basketball</sub-title>
@@ -9886,6 +9758,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="DAZNPPV11.us">
+    <title lang="en">AZ vs Juventus (en Español)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="DAZNPPV12.us">
     <title lang="en">🔴 LIVE: Celta Vigo vs Union Saint-Gilloise (en Español)</title>
     <sub-title lang="en">UEFA Europa League</sub-title>
@@ -9955,6 +9832,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="DAZNPPV12.us">
+    <title lang="en">Celta Vigo vs Union Saint-Gilloise (en Español)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="DAZNPPV13.us">
     <title lang="en">🔴 LIVE: Media Fight Night 2026</title>
     <sub-title lang="en">Media Fight Night</sub-title>
@@ -10020,6 +9902,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="DAZNPPV13.us">
+    <title lang="en">Media Fight Night 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="DAZNPPV13.us">
     <title lang="en">Media Fight Night 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -10095,80 +9982,6 @@
   </programme>
   <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="DAZNPPV5.gb">
     <title lang="en">EFC 139: Mkhwanazi vs Hinda</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">🔴 LIVE: Gary Parrish Show</title>
-    <sub-title lang="en">NBA</sub-title>
-    <desc lang="en">Gary Parrish Show. NBA. Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105180000 +0000" stop="20261105190000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">🔴 LIVE: Gary Parrish Show</title>
-    <sub-title lang="en">NBA</sub-title>
-    <desc lang="en">Gary Parrish Show. NBA. Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105190000 +0000" stop="20261105210000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105210000 +0000" stop="20261105230000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105230000 +0000" stop="20261106010000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106010000 +0000" stop="20261106030000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106030000 +0000" stop="20261106050000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106050000 +0000" stop="20261106070000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106070000 +0000" stop="20261106090000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106090000 +0000" stop="20261106110000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106110000 +0000" stop="20261106130000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106130000 +0000" stop="20261106150000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106150000 +0000" stop="20261106170000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106170000 +0000" stop="20261106190000 +0000" channel="DAZNPPV5.us">
-    <title lang="en">Gary Parrish Show</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -10248,6 +10061,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="DAZNPPV6.gb">
+    <title lang="en">Medicine Hat, AB - Day 3, Draw 10</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="DAZNPPV6.gb">
     <title lang="en">Medicine Hat, AB - Day 3, Draw 10</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -10543,6 +10361,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="DAZNPPV8.gb">
+    <title lang="en">Media Fight Night 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105180000 +0000" stop="20261105200000 +0000" channel="DAZNPPV8.us">
     <title lang="en">🔴 LIVE: Inside The Ring vs Nov 5</title>
     <sub-title lang="en">Inside The Ring</sub-title>
@@ -10693,6 +10516,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="DAZNPPV9.gb">
+    <title lang="en">Medicine Hat, AB - Day 3, Draw 11</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="DAZNPPV9.us">
     <title lang="en">🔴 LIVE: Benfica vs Lech Poznań (en Español)</title>
     <sub-title lang="en">UEFA Europa League</sub-title>
@@ -10758,6 +10586,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="DAZNPPV9.us">
+    <title lang="en">Benfica vs Lech Poznań (en Español)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="DAZNPPV9.us">
     <title lang="en">Benfica vs Lech Poznań (en Español)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -10829,6 +10662,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV100.us">
+    <title lang="en">Utah Tech vs Southern Utah</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV101.us">
     <title lang="en">🔴 LIVE: Calhoun Street: Episode 2</title>
     <desc lang="en">Calhoun Street: Episode 2. Starts Thu 5 Nov, 20:00 UK time.</desc>
@@ -10892,6 +10730,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="ESPNPPV101.us">
+    <title lang="en">Calhoun Street: Episode 2</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV101.us">
     <title lang="en">Calhoun Street: Episode 2</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -10963,6 +10806,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV102.us">
+    <title lang="en">Hawai'i vs San Francisco</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV103.us">
     <title lang="en">🔴 LIVE: Portland State vs Montana</title>
     <desc lang="en">Portland State vs Montana. Starts Thu 5 Nov, 20:00 UK time.</desc>
@@ -11026,6 +10874,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="ESPNPPV103.us">
+    <title lang="en">Portland State vs Montana</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV103.us">
     <title lang="en">Portland State vs Montana</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -11097,6 +10950,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV104.us">
+    <title lang="en">Idaho State vs Weber State</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV105.us">
     <title lang="en">🔴 LIVE: UMBC vs Vermont (First Round)</title>
     <desc lang="en">UMBC vs Vermont (First Round). Starts Thu 5 Nov, 20:00 UK time.</desc>
@@ -11160,6 +11018,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="ESPNPPV105.us">
+    <title lang="en">UMBC vs Vermont (First Round)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV105.us">
     <title lang="en">UMBC vs Vermont (First Round)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -11231,6 +11094,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV106.us">
+    <title lang="en">Northern Arizona vs Northern Colorado</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV107.us">
     <title lang="en">🔴 LIVE: Devils vs Warriors</title>
     <desc lang="en">Devils vs Warriors. Starts Thu 5 Nov, 20:00 UK time.</desc>
@@ -11294,6 +11162,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="ESPNPPV107.us">
+    <title lang="en">Devils vs Warriors</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV107.us">
     <title lang="en">Devils vs Warriors</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -11365,6 +11238,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV108.us">
+    <title lang="en">Idaho vs Eastern Washington</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV109.us">
     <title lang="en">🔴 LIVE: Boston University vs American University (Semifinal)</title>
     <desc lang="en">Boston University vs American University (Semifinal). Starts Thu 5 Nov, 20:00 UK time.</desc>
@@ -11432,6 +11310,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV109.us">
+    <title lang="en">Boston University vs American University (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV110.us">
     <title lang="en">🔴 LIVE: Liberty vs East Tennessee State (Quarterfinal)</title>
     <desc lang="en">Liberty vs East Tennessee State (Quarterfinal). Starts Thu 5 Nov, 20:00 UK time.</desc>
@@ -11495,6 +11378,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="ESPNPPV110.us">
+    <title lang="en">Liberty vs East Tennessee State (Quarterfinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV110.us">
     <title lang="en">Liberty vs East Tennessee State (Quarterfinal)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -11640,6 +11528,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV112.us">
+    <title lang="en">VMI vs UNC Greensboro (Quarterfinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV113.us">
     <title lang="en">Next up: LIVE – Inside Osu Athletics (22:00)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -11704,6 +11597,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="ESPNPPV113.us">
+    <title lang="en">Inside Osu Athletics</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV113.us">
     <title lang="en">Inside Osu Athletics</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -11776,6 +11674,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV114.us">
+    <title lang="en">Thu, 11/5 - ESPN FC</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV115.us">
     <title lang="en">Next up: LIVE – McNeese vs North Texas (22:00)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -11844,6 +11747,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV115.us">
+    <title lang="en">McNeese vs North Texas</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV116.us">
     <title lang="en">Next up: LIVE – The Point (22:00)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -11908,6 +11816,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="ESPNPPV116.us">
+    <title lang="en">The Point</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="ESPNPPV116.us">
     <title lang="en">The Point</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -12203,222 +12116,6 @@
   </programme>
   <programme start="20261106203000 +0000" stop="20261106223000 +0000" channel="ESPNPPV120.us">
     <title lang="en">James Madison vs #11 Miami (OH) (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">🔴 LIVE: Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">Davidson vs Saint Joseph's (Semifinal). Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105180000 +0000" stop="20261105190000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">🔴 LIVE: Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">Davidson vs Saint Joseph's (Semifinal). Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105190000 +0000" stop="20261105210000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105210000 +0000" stop="20261105230000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105230000 +0000" stop="20261106010000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106010000 +0000" stop="20261106030000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106030000 +0000" stop="20261106050000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106050000 +0000" stop="20261106070000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106070000 +0000" stop="20261106090000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106090000 +0000" stop="20261106110000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106110000 +0000" stop="20261106130000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106130000 +0000" stop="20261106150000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106150000 +0000" stop="20261106170000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106170000 +0000" stop="20261106190000 +0000" channel="ESPNPPV74.us">
-    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">🔴 LIVE: Hawk Talk with Lance Leipold</title>
-    <desc lang="en">Hawk Talk with Lance Leipold. Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105180000 +0000" stop="20261105190000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">🔴 LIVE: Hawk Talk with Lance Leipold</title>
-    <desc lang="en">Hawk Talk with Lance Leipold. Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105190000 +0000" stop="20261105210000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105210000 +0000" stop="20261105230000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105230000 +0000" stop="20261106010000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106010000 +0000" stop="20261106030000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106030000 +0000" stop="20261106050000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106050000 +0000" stop="20261106070000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106070000 +0000" stop="20261106090000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106090000 +0000" stop="20261106110000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106110000 +0000" stop="20261106130000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106130000 +0000" stop="20261106150000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106150000 +0000" stop="20261106170000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106170000 +0000" stop="20261106190000 +0000" channel="ESPNPPV75.us">
-    <title lang="en">Hawk Talk with Lance Leipold</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">🔴 LIVE: Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">Rider vs Wagner (Semifinal). Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105180000 +0000" stop="20261105190000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">🔴 LIVE: Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">Rider vs Wagner (Semifinal). Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105190000 +0000" stop="20261105210000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105210000 +0000" stop="20261105230000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105230000 +0000" stop="20261106010000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106010000 +0000" stop="20261106030000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106030000 +0000" stop="20261106050000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106050000 +0000" stop="20261106070000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106070000 +0000" stop="20261106090000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106090000 +0000" stop="20261106110000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106110000 +0000" stop="20261106130000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106130000 +0000" stop="20261106150000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106150000 +0000" stop="20261106170000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106170000 +0000" stop="20261106190000 +0000" channel="ESPNPPV76.us">
-    <title lang="en">Rider vs Wagner (Semifinal)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -15591,6 +15288,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106204500 +0000" stop="20261106224500 +0000" channel="MAXPPV49.uk">
+    <title lang="en">Sunderland vs Dinamo Zagreb</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="NFL1.uk">
     <title lang="en">Jaguars at Ravens (Fri 6 Nov, 01:15)</title>
     <sub-title lang="en">⏭ Coming up: NFL</sub-title>
@@ -15659,6 +15361,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106184500 +0000" stop="20261106204500 +0000" channel="NFL1.uk">
+    <title lang="en">Jaguars at Ravens</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106204500 +0000" stop="20261106224500 +0000" channel="NFL1.uk">
     <title lang="en">Jaguars at Ravens</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -16831,15 +16538,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount001.us">
     <title lang="en">🔴 LIVE: Milan vs Ferencváros</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Milan vs Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Milan vs Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount001.us">
     <title lang="en">🔴 LIVE: Milan vs Ferencváros</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Milan vs Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Milan vs Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -16925,15 +16632,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount005.us">
     <title lang="en">🔴 LIVE: Anderlecht vs RB Salzburg</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Anderlecht vs RB Salzburg. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Anderlecht vs RB Salzburg. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount005.us">
     <title lang="en">🔴 LIVE: Anderlecht vs RB Salzburg</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Anderlecht vs RB Salzburg. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Anderlecht vs RB Salzburg. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -16949,15 +16656,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount006.us">
     <title lang="en">🔴 LIVE: Lillestrøm vs Viktoria Plzeň</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Lillestrøm vs Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Lillestrøm vs Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount006.us">
     <title lang="en">🔴 LIVE: Lillestrøm vs Viktoria Plzeň</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Lillestrøm vs Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Lillestrøm vs Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17021,15 +16728,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount009.us">
     <title lang="en">🔴 LIVE: Sparta Praha vs AFC Bournemouth</title>
-    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Sparta Praha vs AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Sparta Praha vs AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount009.us">
     <title lang="en">🔴 LIVE: Sparta Praha vs AFC Bournemouth</title>
-    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Sparta Praha vs AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Sparta Praha vs AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17093,15 +16800,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount012.us">
     <title lang="en">🔴 LIVE: FC Midtjylland vs Ajax</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">FC Midtjylland vs Ajax. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">FC Midtjylland vs Ajax. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount012.us">
     <title lang="en">🔴 LIVE: FC Midtjylland vs Ajax</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">FC Midtjylland vs Ajax. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">FC Midtjylland vs Ajax. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17141,15 +16848,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount014.us">
     <title lang="en">🔴 LIVE: FC Thun vs Heart of Midlothian</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">FC Thun vs Heart of Midlothian. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">FC Thun vs Heart of Midlothian. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount014.us">
     <title lang="en">🔴 LIVE: FC Thun vs Heart of Midlothian</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">FC Thun vs Heart of Midlothian. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">FC Thun vs Heart of Midlothian. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17165,15 +16872,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount015.us">
     <title lang="en">🔴 LIVE: Milan vs Ferencváros</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Milan vs Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Milan vs Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount015.us">
     <title lang="en">🔴 LIVE: Milan vs Ferencváros</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Milan vs Ferencváros. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Milan vs Ferencváros. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17261,15 +16968,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount019.us">
     <title lang="en">🔴 LIVE: Anderlecht vs RB Salzburg</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Anderlecht vs RB Salzburg. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Anderlecht vs RB Salzburg. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount019.us">
     <title lang="en">🔴 LIVE: Anderlecht vs RB Salzburg</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Anderlecht vs RB Salzburg. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Anderlecht vs RB Salzburg. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17285,15 +16992,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount020.us">
     <title lang="en">🔴 LIVE: Lillestrøm vs Viktoria Plzeň</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Lillestrøm vs Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Lillestrøm vs Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount020.us">
     <title lang="en">🔴 LIVE: Lillestrøm vs Viktoria Plzeň</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Lillestrøm vs Viktoria Plzeň. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Lillestrøm vs Viktoria Plzeň. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17357,15 +17064,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount023.us">
     <title lang="en">🔴 LIVE: Sparta Praha vs AFC Bournemouth</title>
-    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Sparta Praha vs AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Sparta Praha vs AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount023.us">
     <title lang="en">🔴 LIVE: Sparta Praha vs AFC Bournemouth</title>
-    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
-    <desc lang="en">Sparta Praha vs AFC Bournemouth. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League</sub-title>
+    <desc lang="en">Sparta Praha vs AFC Bournemouth. UEFA Europa League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17429,15 +17136,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount026.us">
     <title lang="en">🔴 LIVE: FC Midtjylland vs Ajax</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">FC Midtjylland vs Ajax. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">FC Midtjylland vs Ajax. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount026.us">
     <title lang="en">🔴 LIVE: FC Midtjylland vs Ajax</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">FC Midtjylland vs Ajax. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">FC Midtjylland vs Ajax. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17477,15 +17184,15 @@
   </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="Paramount028.us">
     <title lang="en">🔴 LIVE: FC Thun vs Heart of Midlothian</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">FC Thun vs Heart of Midlothian. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">FC Thun vs Heart of Midlothian. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105193500 +0000" stop="20261105204500 +0000" channel="Paramount028.us">
     <title lang="en">🔴 LIVE: FC Thun vs Heart of Midlothian</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">FC Thun vs Heart of Midlothian. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 17:45 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">FC Thun vs Heart of Midlothian. UEFA Conference League. Starts Thu 5 Nov, 17:45 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17593,15 +17300,15 @@
   </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="Paramount033.us">
     <title lang="en">🔴 LIVE: Bayer Leverkusen vs Marseille</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Bayer Leverkusen vs Marseille. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Bayer Leverkusen vs Marseille. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105215000 +0000" stop="20261105230000 +0000" channel="Paramount033.us">
     <title lang="en">🔴 LIVE: Bayer Leverkusen vs Marseille</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Bayer Leverkusen vs Marseille. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Bayer Leverkusen vs Marseille. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17617,15 +17324,15 @@
   </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="Paramount034.us">
     <title lang="en">🔴 LIVE: Sunderland vs Dinamo Zagreb</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Sunderland vs Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Sunderland vs Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105215000 +0000" stop="20261105230000 +0000" channel="Paramount034.us">
     <title lang="en">🔴 LIVE: Sunderland vs Dinamo Zagreb</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Sunderland vs Dinamo Zagreb. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Sunderland vs Dinamo Zagreb. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17713,15 +17420,15 @@
   </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="Paramount038.us">
     <title lang="en">🔴 LIVE: Celta Vigo vs Union Saint_Gilloise</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Celta Vigo vs Union Saint_Gilloise. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Celta Vigo vs Union Saint_Gilloise. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105215000 +0000" stop="20261105230000 +0000" channel="Paramount038.us">
     <title lang="en">🔴 LIVE: Celta Vigo vs Union Saint_Gilloise</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Celta Vigo vs Union Saint_Gilloise. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Celta Vigo vs Union Saint_Gilloise. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17761,15 +17468,15 @@
   </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="Paramount040.us">
     <title lang="en">🔴 LIVE: Torreense vs Ararat_Armenia</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Torreense vs Ararat_Armenia. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Torreense vs Ararat_Armenia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105215000 +0000" stop="20261105230000 +0000" channel="Paramount040.us">
     <title lang="en">🔴 LIVE: Torreense vs Ararat_Armenia</title>
-    <sub-title lang="en">UEFA Europa League</sub-title>
-    <desc lang="en">Torreense vs Ararat_Armenia. UEFA Europa League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Europa League Matchday 4</sub-title>
+    <desc lang="en">Torreense vs Ararat_Armenia. UEFA Europa League Matchday 4. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17833,15 +17540,15 @@
   </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="Paramount043.us">
     <title lang="en">🔴 LIVE: Monaco vs FC Nordsjælland</title>
-    <sub-title lang="en">UEFA Conference League</sub-title>
-    <desc lang="en">Monaco vs FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
+    <desc lang="en">Monaco vs FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105215000 +0000" stop="20261105230000 +0000" channel="Paramount043.us">
     <title lang="en">🔴 LIVE: Monaco vs FC Nordsjælland</title>
-    <sub-title lang="en">UEFA Conference League</sub-title>
-    <desc lang="en">Monaco vs FC Nordsjælland. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
+    <desc lang="en">Monaco vs FC Nordsjælland. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17909,15 +17616,15 @@
   </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="Paramount046.us">
     <title lang="en">🔴 LIVE: FC Twente vs Pafos</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">FC Twente vs Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">FC Twente vs Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105215000 +0000" stop="20261105230000 +0000" channel="Paramount046.us">
     <title lang="en">🔴 LIVE: FC Twente vs Pafos</title>
-    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
-    <desc lang="en">FC Twente vs Pafos. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League</sub-title>
+    <desc lang="en">FC Twente vs Pafos. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17933,15 +17640,15 @@
   </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="Paramount047.us">
     <title lang="en">🔴 LIVE: K. Sint_Truidense vs Brann</title>
-    <sub-title lang="en">UEFA Conference League</sub-title>
-    <desc lang="en">K. Sint_Truidense vs Brann. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
+    <desc lang="en">K. Sint_Truidense vs Brann. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105215000 +0000" stop="20261105230000 +0000" channel="Paramount047.us">
     <title lang="en">🔴 LIVE: K. Sint_Truidense vs Brann</title>
-    <sub-title lang="en">UEFA Conference League</sub-title>
-    <desc lang="en">K. Sint_Truidense vs Brann. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
+    <desc lang="en">K. Sint_Truidense vs Brann. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -17981,15 +17688,15 @@
   </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="Paramount049.us">
     <title lang="en">🔴 LIVE: Riga FC vs Jablonec</title>
-    <sub-title lang="en">UEFA Conference League</sub-title>
-    <desc lang="en">Riga FC vs Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
+    <desc lang="en">Riga FC vs Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261105215000 +0000" stop="20261105230000 +0000" channel="Paramount049.us">
     <title lang="en">🔴 LIVE: Riga FC vs Jablonec</title>
-    <sub-title lang="en">UEFA Conference League</sub-title>
-    <desc lang="en">Riga FC vs Jablonec. UEFA Conference League. Starts Thu 5 Nov, 20:00 UK time.</desc>
+    <sub-title lang="en">UEFA Conference League Matchday 3</sub-title>
+    <desc lang="en">Riga FC vs Jablonec. UEFA Conference League Matchday 3. Starts Thu 5 Nov, 20:00 UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -21930,28 +21637,6 @@
     <title lang="en">Shakhtar Donetsk vs Fenerbahçe (Wed 25 Nov, 20:00)</title>
     <sub-title lang="en">⏭ Coming up Wed 25 Nov</sub-title>
     <desc lang="en">Coming up: Shakhtar Donetsk vs Fenerbahçe. Starts Wed 25 Nov, 20:00 UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="Peacock002.us">
-    <title lang="en">🔴 LIVE: Women`s Street Final</title>
-    <desc lang="en">Women`s Street Final. Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105180000 +0000" stop="20261105190000 +0000" channel="Peacock002.us">
-    <title lang="en">🔴 LIVE: Women`s Street Final</title>
-    <desc lang="en">Women`s Street Final. Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105190000 +0000" stop="20261105210000 +0000" channel="Peacock002.us">
-    <title lang="en">Women`s Street Final</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105210000 +0000" stop="20261105230000 +0000" channel="Peacock002.us">
-    <title lang="en">Women`s Street Final</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="Peacock003.us">
@@ -29389,78 +29074,6 @@
     <desc lang="en">Coming up: Big Ten Football Night: Week 13. Starts Sat 28 Nov, 00:00 UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261105160000 +0000" stop="20261105180000 +0000" channel="SN019.ca">
-    <title lang="en">🔴 LIVE: The Raptors Show: Nov. 5</title>
-    <desc lang="en">The Raptors Show: Nov. 5. Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105180000 +0000" stop="20261105190000 +0000" channel="SN019.ca">
-    <title lang="en">🔴 LIVE: The Raptors Show: Nov. 5</title>
-    <desc lang="en">The Raptors Show: Nov. 5. Starts Thu 5 Nov, 16:00 UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261105190000 +0000" stop="20261105210000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105210000 +0000" stop="20261105230000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261105230000 +0000" stop="20261106010000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106010000 +0000" stop="20261106030000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106030000 +0000" stop="20261106050000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106050000 +0000" stop="20261106070000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106070000 +0000" stop="20261106090000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106090000 +0000" stop="20261106110000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106110000 +0000" stop="20261106130000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106130000 +0000" stop="20261106150000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106150000 +0000" stop="20261106170000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106170000 +0000" stop="20261106190000 +0000" channel="SN019.ca">
-    <title lang="en">The Raptors Show: Nov. 5</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261105170000 +0000" stop="20261105190000 +0000" channel="SN020.ca">
     <title lang="en">🔴 LIVE: GSOC Masters _ Draw 10 _ Gim vs Hasselborg</title>
     <desc lang="en">GSOC Masters _ Draw 10 _ Gim vs Hasselborg. Starts Thu 5 Nov, 17:00 UK time.</desc>
@@ -32116,6 +31729,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106205500 +0000" stop="20261106225500 +0000" channel="STAN29.au">
+    <title lang="en">Sturm Graz vs Celje UEFA Europa League Matchday 4 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105195500 +0000" stop="20261105215500 +0000" channel="STAN30.au">
     <title lang="en">🔴 LIVE: Bayer 04 Leverkusen vs Olympique Marseille UEFA Europa League Matchday 4 2026/2027</title>
     <sub-title lang="en">UEFA Europa League</sub-title>
@@ -32181,6 +31799,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106185500 +0000" stop="20261106205500 +0000" channel="STAN30.au">
+    <title lang="en">Bayer 04 Leverkusen vs Olympique Marseille UEFA Europa League Matchday 4 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106205500 +0000" stop="20261106225500 +0000" channel="STAN30.au">
     <title lang="en">Bayer 04 Leverkusen vs Olympique Marseille UEFA Europa League Matchday 4 2026/2027</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -32254,6 +31877,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106205500 +0000" stop="20261106225500 +0000" channel="STAN31.au">
+    <title lang="en">Universitatea Craiova vs Egnatia Rrogozhinë UEFA Conference League Matchday 3 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105195500 +0000" stop="20261105215500 +0000" channel="STAN32.au">
     <title lang="en">🔴 LIVE: Lugano vs Kauno Žalgiris UEFA Conference League Matchday 3 2026/2027</title>
     <sub-title lang="en">UEFA Conference League</sub-title>
@@ -32323,6 +31951,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106205500 +0000" stop="20261106225500 +0000" channel="STAN32.au">
+    <title lang="en">Lugano vs Kauno Žalgiris UEFA Conference League Matchday 3 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105195500 +0000" stop="20261105215500 +0000" channel="STAN33.au">
     <title lang="en">🔴 LIVE: Riga vs Jablonec UEFA Conference League Matchday 3 2026/2027</title>
     <sub-title lang="en">UEFA Conference League</sub-title>
@@ -32388,6 +32021,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106185500 +0000" stop="20261106205500 +0000" channel="STAN33.au">
+    <title lang="en">Riga vs Jablonec UEFA Conference League Matchday 3 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106205500 +0000" stop="20261106225500 +0000" channel="STAN33.au">
     <title lang="en">Riga vs Jablonec UEFA Conference League Matchday 3 2026/2027</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -38868,6 +38506,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261106205000 +0000" stop="20261106215000 +0000" channel="TSN027.ca">
+    <title lang="en">🔴 LIVE: Formula 1 On_Board Camera: Lance Stroll _ Sao Paulo Grand Prix Practice #2</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 On_Board Camera: Lance Stroll _ Sao Paulo Grand Prix Practice #2. Starts Fri 6 Nov, 18:50 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="TSN028.ca">
     <title lang="en">Formula 1 On_Board Camera: Charles Leclerc _ Sao Paulo Grand Prix Practice #2 (Fri 6 Nov, 18:50)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -38941,6 +38586,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106185000 +0000" stop="20261106205000 +0000" channel="TSN028.ca">
+    <title lang="en">🔴 LIVE: Formula 1 On_Board Camera: Charles Leclerc _ Sao Paulo Grand Prix Practice #2</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 On_Board Camera: Charles Leclerc _ Sao Paulo Grand Prix Practice #2. Starts Fri 6 Nov, 18:50 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261106205000 +0000" stop="20261106215000 +0000" channel="TSN028.ca">
     <title lang="en">🔴 LIVE: Formula 1 On_Board Camera: Charles Leclerc _ Sao Paulo Grand Prix Practice #2</title>
     <sub-title lang="en">Formula 1</sub-title>
     <desc lang="en">Formula 1 On_Board Camera: Charles Leclerc _ Sao Paulo Grand Prix Practice #2. Starts Fri 6 Nov, 18:50 UK time.</desc>
@@ -39026,6 +38678,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261106205000 +0000" stop="20261106215000 +0000" channel="TSN029.ca">
+    <title lang="en">🔴 LIVE: Formula 1 Driver Tracker _ Sao Paulo Grand Prix Practice #2</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 Driver Tracker _ Sao Paulo Grand Prix Practice #2. Starts Fri 6 Nov, 18:50 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="TSN030.ca">
     <title lang="en">Formula 1 Pit Lane _ Sao Paulo Grand Prix Practice #2 (Fri 6 Nov, 18:50)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -39099,6 +38758,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106185000 +0000" stop="20261106205000 +0000" channel="TSN030.ca">
+    <title lang="en">🔴 LIVE: Formula 1 Pit Lane _ Sao Paulo Grand Prix Practice #2</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 Pit Lane _ Sao Paulo Grand Prix Practice #2. Starts Fri 6 Nov, 18:50 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261106205000 +0000" stop="20261106215000 +0000" channel="TSN030.ca">
     <title lang="en">🔴 LIVE: Formula 1 Pit Lane _ Sao Paulo Grand Prix Practice #2</title>
     <sub-title lang="en">Formula 1</sub-title>
     <desc lang="en">Formula 1 Pit Lane _ Sao Paulo Grand Prix Practice #2. Starts Fri 6 Nov, 18:50 UK time.</desc>
@@ -39184,6 +38850,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261106205000 +0000" stop="20261106215000 +0000" channel="TSN031.ca">
+    <title lang="en">🔴 LIVE: Formula 1 Mixed On_Board Camera _ Sao Paulo Grand Prix Practice #2</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 Mixed On_Board Camera _ Sao Paulo Grand Prix Practice #2. Starts Fri 6 Nov, 18:50 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="TSN033.ca">
     <title lang="en">Formula 1 On_Board Camera: George Russell _ Sao Paulo Grand Prix Practice #2 (Fri 6 Nov, 18:50)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -39257,6 +38930,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106185000 +0000" stop="20261106205000 +0000" channel="TSN033.ca">
+    <title lang="en">🔴 LIVE: Formula 1 On_Board Camera: George Russell _ Sao Paulo Grand Prix Practice #2</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 On_Board Camera: George Russell _ Sao Paulo Grand Prix Practice #2. Starts Fri 6 Nov, 18:50 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261106205000 +0000" stop="20261106215000 +0000" channel="TSN033.ca">
     <title lang="en">🔴 LIVE: Formula 1 On_Board Camera: George Russell _ Sao Paulo Grand Prix Practice #2</title>
     <sub-title lang="en">Formula 1</sub-title>
     <desc lang="en">Formula 1 On_Board Camera: George Russell _ Sao Paulo Grand Prix Practice #2. Starts Fri 6 Nov, 18:50 UK time.</desc>
@@ -39415,10 +39095,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106200000 +0000" stop="20261106210000 +0000" channel="TSN035.ca">
-    <title lang="en">Next up: LIVE – 2026 NASCAR ORAP Series Practice: Championship (Fri 6 Nov, 21:00)</title>
+    <title lang="en">Next up: LIVE – 2026 NASCAR ORAP Series Practice: Championship (21:00)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. 2026 NASCAR ORAP Series Practice: Championship starts Fri 6 Nov, 21:00 UK time.</desc>
+    <desc lang="en">Next up: LIVE. 2026 NASCAR ORAP Series Practice: Championship starts at 21:00 UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="TSN035.ca">
+    <title lang="en">🔴 LIVE: 2026 NASCAR ORAP Series Practice: Championship</title>
+    <sub-title lang="en">NASCAR</sub-title>
+    <desc lang="en">2026 NASCAR ORAP Series Practice: Championship. Starts Fri 6 Nov, 21:00 UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="TSN036.ca">
     <title lang="en">NASCAR Cup Series Practice: Championship Race (Fri 6 Nov, 22:30)</title>
@@ -44633,6 +44320,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="UEFA11.uk">
+    <title lang="en">Benfica vs Lech Poznan</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="UEFA12.uk">
     <title lang="en">🔴 LIVE: Celtic vs Celta Vigo</title>
     <sub-title lang="en">UEFA</sub-title>
@@ -44698,6 +44390,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="UEFA12.uk">
+    <title lang="en">Celtic vs Celta Vigo</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="UEFA12.uk">
     <title lang="en">Celtic vs Celta Vigo</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -44771,6 +44468,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="UEFA13.uk">
+    <title lang="en">Celtic vs Beşiktaş</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="UEFA14.uk">
     <title lang="en">🔴 LIVE: Hapoel Be'er Sheva vs OFI Crete</title>
     <sub-title lang="en">UEFA</sub-title>
@@ -44836,6 +44538,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="UEFA14.uk">
+    <title lang="en">Hapoel Be'er Sheva vs OFI Crete</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="UEFA14.uk">
     <title lang="en">Hapoel Be'er Sheva vs OFI Crete</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -44909,6 +44616,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="UEFA15.uk">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="UEFA16.uk">
     <title lang="en">🔴 LIVE: Sunderland vs Dinamo Zagreb</title>
     <sub-title lang="en">UEFA</sub-title>
@@ -44978,6 +44690,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="UEFA16.uk">
+    <title lang="en">Sunderland vs Dinamo Zagreb</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105195000 +0000" stop="20261105215000 +0000" channel="UEFA17.uk">
     <title lang="en">🔴 LIVE: Omonia Nicosia vs Benfica</title>
     <sub-title lang="en">UEFA</sub-title>
@@ -45043,6 +44760,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="UEFA17.uk">
+    <title lang="en">Omonia Nicosia vs Benfica</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="UEFA17.uk">
     <title lang="en">Omonia Nicosia vs Benfica</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -46004,6 +45726,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="UEFA29.uk">
+    <title lang="en">AGF vs Egnatia Rrogozhinë</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105173500 +0000" stop="20261105193500 +0000" channel="UEFA3.uk">
     <title lang="en">🔴 LIVE: Crystal Palace vs Hoffenheim</title>
     <sub-title lang="en">UEFA</sub-title>
@@ -46143,6 +45870,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="UEFA30.uk">
+    <title lang="en">Monaco vs Nordsjælland</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="UEFA30.uk">
     <title lang="en">Monaco vs Nordsjælland</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -46582,6 +46314,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106190000 +0000" stop="20261106210000 +0000" channel="UEFA9.uk">
+    <title lang="en">AZ Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106210000 +0000" stop="20261106230000 +0000" channel="UEFA9.uk">
     <title lang="en">AZ Alkmaar vs Juventus</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -61536,6 +61273,136 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106020000 +0000" stop="20261106040000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106040000 +0000" stop="20261106060000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106060000 +0000" stop="20261106080000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106080000 +0000" stop="20261106100000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106100000 +0000" stop="20261106120000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="CASOCCERPPV60.ca">
+    <title lang="en">Alkmaar vs Juventus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106020000 +0000" stop="20261106040000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106040000 +0000" stop="20261106060000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106060000 +0000" stop="20261106080000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106080000 +0000" stop="20261106100000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106100000 +0000" stop="20261106120000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="CASOCCERPPV62.ca">
+    <title lang="en">Sturm Graz vs Celje</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="CASOCCERPPV63.ca">
     <title lang="en">Midtjylland vs Ajax</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -69204,6 +69071,71 @@
   <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="DAZNPPV49.us">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106020000 +0000" stop="20261106040000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106040000 +0000" stop="20261106060000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106060000 +0000" stop="20261106080000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106080000 +0000" stop="20261106100000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106100000 +0000" stop="20261106120000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="DAZNPPV5.us">
+    <title lang="en">Gary Parrish Show</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="DAZNPPV50.gb">
@@ -82271,6 +82203,201 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106020000 +0000" stop="20261106040000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106040000 +0000" stop="20261106060000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106060000 +0000" stop="20261106080000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106080000 +0000" stop="20261106100000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106100000 +0000" stop="20261106120000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="ESPNPPV74.us">
+    <title lang="en">Davidson vs Saint Joseph's (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106020000 +0000" stop="20261106040000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106040000 +0000" stop="20261106060000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106060000 +0000" stop="20261106080000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106080000 +0000" stop="20261106100000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106100000 +0000" stop="20261106120000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="ESPNPPV75.us">
+    <title lang="en">Hawk Talk with Lance Leipold</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106020000 +0000" stop="20261106040000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106040000 +0000" stop="20261106060000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106060000 +0000" stop="20261106080000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106080000 +0000" stop="20261106100000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106100000 +0000" stop="20261106120000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="ESPNPPV76.us">
+    <title lang="en">Rider vs Wagner (Semifinal)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="ESPNPPV8.us">
     <title lang="en">Wed, 11/4 - The Rich Eisen Show</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -93451,6 +93578,21 @@
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="Peacock002.us">
+    <title lang="en">Men`s Street Prelims</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="Peacock002.us">
+    <title lang="en">Men`s Street Prelims</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="Peacock002.us">
+    <title lang="en">Men`s Street Prelims</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="SN001.ca">
     <title lang="en">Sportsnet Central: Nov. 3</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -94618,6 +94760,71 @@
   </programme>
   <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="SN018.ca">
     <title lang="en">The JD Bunkis Podcast: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105200000 +0000" stop="20261105220000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261105220000 +0000" stop="20261106000000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106000000 +0000" stop="20261106020000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106020000 +0000" stop="20261106040000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106040000 +0000" stop="20261106060000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106060000 +0000" stop="20261106080000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106080000 +0000" stop="20261106100000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106100000 +0000" stop="20261106120000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="SN019.ca">
+    <title lang="en">The Raptors Show: Nov. 5</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
