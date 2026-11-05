@@ -2034,6 +2034,12 @@ def sky_it_channels(pattern):
     return {cid: it_name(name, num) for cid, (num, name) in found.items() if name and rx.search(name.strip())}
 
 
+IT_POPUP_RE = re.compile(r"(?i)^sky sport 25[1-8]$")
+IT_TEAMS_RE = re.compile(r"^[^:/()]+?\s+[-\u2013]\s+[^:/()]+$")                  # "Venezia - Udinese" (no colon, slash or brackets)
+IT_NOT_LIVE_RE = re.compile(r"(?i)\b(replica|differita|highlights?|sintesi|magazine|speciale|studio|post ?partita|pre ?partita|"
+                            r"gol|goal|diretta gol)\b")
+
+
 def fetch_italy(days, pattern, debug=False):
     """{channel_name: [{start, stop, title, sub, live}]}"""
     names = sky_it_channels(pattern)
@@ -2066,8 +2072,17 @@ def fetch_italy(days, pattern, debug=False):
                 live = bool(re.match(r"\s*" + rx, title, re.I) or re.search(r"[(-]\s*" + rx + r"\s*\)?\s*$", title, re.I))
                 title = re.sub(r"^\s*" + rx + r"\s*[:\-]?\s*|\s*[(-]\s*" + rx + r"\s*\)?\s*$", "", title,
                                flags=re.I).strip() or title
-                evs[start] = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
-                              "desc": pick_desc(it, "eventSynopsis", "epgEventSynopsis")}
+                ev = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
+                      "desc": pick_desc(it, "eventSynopsis", "epgEventSynopsis")}
+                if IT_POPUP_RE.match(names[cid]):
+                    # Sky Sport 251-258 are the pop-up match channels (5 Nov 2026): Sky flags only some of their matches
+                    # "Diretta", but every match on them is live (unless the title says replay / highlights), and a title
+                    # \"Team A - Team B\" holds team names - Google turned Como into \"How\", Vado into \"I go\", Roma into
+                    # \"Rome\" - so it is NOT translated (en() skips it).
+                    if IT_TEAMS_RE.match(title) and not IT_NOT_LIVE_RE.search(title):
+                        ev["no_translate"] = True
+                        ev["live"] = True
+                evs[start] = ev
     out = {}
     for cid, evs in events.items():
         if not evs:
@@ -6060,7 +6075,7 @@ def build_xmltv(records, suffix, minutes):
                     stop = nxt
             if stop <= start:
                 continue
-            title = en(ev["title"])
+            title = ev["title"] if ev.get("no_translate") else en(ev["title"])
             sub = en(ev.get("sub") or "") or None
             if rec.get("fix_caps"):
                 title, sub = fix_caps(title), fix_caps(sub) or None
@@ -6835,7 +6850,7 @@ def main():
         force += [e["title"] for evs in al.values() for e in evs]
         force += [e["title"] for evs in cz.values() for e in evs]
         force += [e["title"] for evs in svk.values() for e in evs]
-        force += [e["title"] for evs in it.values() for e in evs]
+        force += [e["title"] for evs in it.values() for e in evs if not e.get("no_translate")]
         force += [t for evs in de.values() for e in evs for t in (e["title"], e["sub"])]
         force += [e["title"] for evs in swi.values() for e in evs]
         force += [t for evs in fra.values() for e in evs for t in (e["title"], e["sub"])]
@@ -6944,8 +6959,9 @@ def main():
                         "filler": False, "back_to_back": True, "events": evs})
     for chname, evs in it.items():
         part = re.sub(r"[^A-Za-z0-9]+", "", chname) or "Channel"
+        popup = bool(IT_POPUP_RE.match(chname))              # Sky Sport 251-258: "Coming up" blocks between matches (5 Nov 2026)
         records.append({"id": f"IT.{part}", "name": chname, "tz": ROME, "place": "Italy",
-                        "filler": False, "back_to_back": True, "events": evs})
+                        "filler": popup and not args.no_filler, "back_to_back": not popup, "events": evs})
     for slug, evs in pl.items():
         part, chname = PL_CHANNELS.get(slug, (re.sub(r"[^A-Za-z0-9]+", "", slug.title()) or "Channel",
                                               slug.replace("-", " ").title()))
