@@ -6045,6 +6045,37 @@ def astro_idle_fill(records):
         print(f"  Astro idle listing {cid}: {matches} match programme(s), {n} idle block(s)")
 
 
+# Country dividers (5 Nov 2026, user request): the "### FRANCE ###" rows in the user's Continuum playlist are not channels; each needs a
+# programme named after its country. One placeholder channel per divider, id DIV.<NAME WITHOUT SPACES/SYMBOLS> (e.g. DIV.FRANCE,
+# DIV.UKIRELAND), display name "### FRANCE ###" (the row's own name, so searching "###" in PlaylistLabs' EPG-id search lists them
+# all), programmes titled with just the country in capitals ("FRANCE"), no secondary title, no description, 6-hour blocks on a fixed
+# UTC grid for DIVIDER_DAYS days from now (nothing changes between runs, so PlaylistLabs' append-only import is no problem).
+# The user relinks each divider row to its DIV id; the list below is the 35 dividers of the Continuum playlist (5 Nov 2026).
+DIVIDERS = ["UK & IRELAND", "USA", "CANADA", "INDIA", "AUSTRALIA", "JAMAICA", "MIDDLE EAST", "NETHERLANDS", "GERMANY", "FRANCE",
+            "SPAIN", "SWITZERLAND", "POLAND", "ITALY", "LATVIA", "GREECE", "ALBANIA", "BULGARIA", "ROMANIA", "BOSNIA", "SERBIA",
+            "CROATIA", "SLOVENIA", "TURKEY", "BRAZIL", "CYPRUS", "PORTUGAL", "BELGIUM", "FINLAND", "SWEDEN", "DENMARK", "NORWAY",
+            "CZECHIA", "ISRAEL", "TANZANIA"]
+DIVIDER_DAYS = 7
+DIVIDER_BLOCK_HOURS = 6
+
+
+def divider_records():
+    now = datetime.now(timezone.utc)
+    step = timedelta(hours=DIVIDER_BLOCK_HOURS)
+    first = now.replace(hour=(now.hour // DIVIDER_BLOCK_HOURS) * DIVIDER_BLOCK_HOURS, minute=0, second=0, microsecond=0) - step
+    end = now + timedelta(days=DIVIDER_DAYS)
+    out = []
+    for name in DIVIDERS:
+        evs, t = [], first
+        while t < end:
+            evs.append({"start": t, "stop": t + step, "title": name, "sub": "", "desc": "", "live": False, "never_live": True,
+                        "no_lead": True, "no_translate": True})
+            t += step
+        out.append({"id": "DIV." + re.sub(r"[^A-Za-z0-9]+", "", name), "name": f"### {name} ###", "tz": timezone.utc,
+                    "place": "", "filler": False, "back_to_back": True, "events": evs})
+    return out
+
+
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
@@ -7055,7 +7086,8 @@ def main():
                                 if ev.get("desc") and ev["desc"] not in TRANSLATIONS
                                 and rec["place"] not in ENGLISH_PLACES)
     astro_matchday(records)                         # Astro pop-up PL channels (28 Oct 2026)
-    astro_idle_fill(records)                        # PL 3 / 4: "No live match scheduled" between matches (5 Nov 2026)
+    astro_idle_fill(records)                        # PL 3 / 4 / 5: 'No live match scheduled' between matches (5 Nov 2026)
+    records.extend(divider_records())               # country dividers '### FRANCE ###' -> DIV.FRANCE (5 Nov 2026)
     tv, count, listed = build_xmltv(records, suffix, args.minutes)
     if F1_REPLAYS:
         print(f"F1 repeats no longer marked live (OpenF1 session times): {len(F1_REPLAYS)}")
