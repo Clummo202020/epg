@@ -4468,6 +4468,22 @@ def astro_my_clean(title):
     return (re.sub(r"^\(L\)\s*", "", t).strip() or t), live
 
 
+def astro_my_channel_dicts(o):
+    """every dict in Astro's answer that is a channel (has a stbNumber and a schedule list), wherever it sits"""
+    out = []
+    if isinstance(o, dict):
+        if "stbNumber" in o and isinstance(o.get("schedule"), list):
+            out.append(o)
+        else:
+            for v in o.values():
+                if isinstance(v, (dict, list)):
+                    out += astro_my_channel_dicts(v)
+    elif isinstance(o, list):
+        for x in o:
+            out += astro_my_channel_dicts(x)
+    return out
+
+
 def fetch_astro_my(days, debug=False):
     """{our id part: [{start, stop, title, sub, live, desc}]} for ASTRO_MY_CHANNELS, same shape as fetch_epgshare
     (titles and times only). {} when Astro gave nothing usable."""
@@ -4482,10 +4498,12 @@ def fetch_astro_my(days, debug=False):
         query = urllib.parse.urlencode({"channelGuide": "true", "platform": "acm", "channelOrderBy": "stbNumber,asc",
                                         "scheduleDate": day.isoformat(), "channelLimit": 200, "channelPage": 1}, safe=",")
         data = fetch(f"{ASTRO_MY_URL}?{query}", headers=ASTRO_MY_HEADERS, parse="json", retries=2, label=f"Astro guide ({day})")
-        chans = (data or {}).get("response") if isinstance(data, dict) else None
-        if isinstance(chans, dict):
-            chans = next((v for v in chans.values() if isinstance(v, list)), None)
-        if not isinstance(chans, list) or not chans:
+        chans = astro_my_channel_dicts(data)
+        if not chans:
+            resp = data.get("response") if isinstance(data, dict) else None
+            print(f"  Astro {day}: no channels found (answer: {type(data).__name__} "
+                  f"{list(data)[:6] if isinstance(data, dict) else ''}; response: {type(resp).__name__}"
+                  f"{(' ' + str(list(resp)[:6])) if isinstance(resp, dict) else ''})")
             continue
         n_day = 0
         for ch in chans:
