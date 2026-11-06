@@ -263,7 +263,34 @@ def result_line(g):
     return f"Last game: {name_of(a)} {sa} - {sh} {name_of(h)} (final)."
 
 
+# 12-hour clock with AM / PM in every title, secondary title and description (6 Nov 2026, user request: "across the board"; the same
+# code is in SPORT_epg.py, football_epg.py, scottish_epg.py, event_epg.py, USA_epg.py, TEAMS_epg.py and GENERAL_epg.py). Applied LAST,
+# where each programme is written, so nothing that parses the 24-hour text earlier is affected. Every time these scripts put into
+# text is UK time (Europe/London) already - see the audit in the handover.
+def _clock_part(h, m):
+    return f"{(h % 12) or 12}:{m:02d} {'AM' if h < 12 else 'PM'}"
+
+
+CLOCK_24H = re.compile(r"(?<![\d:.])([01]?\d|2[0-3]):([0-5]\d)(?![\d:])(?!\s?[AaPp]\.?[Mm])(?!\.\d)")
+CLOCK_SHORT = re.compile(r"(?<![\w:.])(\d{1,2})(?:[:.]([0-5]\d))?\s?([AaPp])(?:\.[Mm]\.|[Mm])(?!\w)")
+
+
+def clock12(text):
+    """EVERY clock time in a title / secondary title / description -> 12-hour with AM / PM (6 Nov 2026, user request, whole Sport
+    guide; applied last, in add_programme, so nothing that parses the 24-hour text is affected): "19:00" -> "7:00 PM", "00:15" ->
+    "12:15 AM", "9pm" / "3.30pm" style -> "9:00 PM". Skipped: lap times ("1:23.456"), h:mm:ss, anything already "7:45 PM"."""
+    t = CLOCK_24H.sub(lambda m: _clock_part(int(m.group(1)), int(m.group(2))), text or "")
+
+    def short(m):
+        h = int(m.group(1))
+        if not 1 <= h <= 12:
+            return m.group(0)
+        return f"{h}:{m.group(2) or '00'} {'AM' if m.group(3).lower() == 'a' else 'PM'}"
+    return CLOCK_SHORT.sub(short, t)
+
+
 def add(tv, cid, start, stop, title, sub, desc, live=False):
+    title, sub, desc = clock12(title), clock12(sub), clock12(desc)   # 12-hour clock (6 Nov 2026)
     fmt = lambda d: d.astimezone(timezone.utc).strftime("%Y%m%d%H%M%S +0000")
     p = ET.SubElement(tv, "programme", {"start": fmt(start), "stop": fmt(stop), "channel": cid})
     ET.SubElement(p, "title", {"lang": "en"}).text = title
