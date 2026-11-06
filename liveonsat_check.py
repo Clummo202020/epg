@@ -114,14 +114,20 @@ def main():
     except Exception as e:
         print("  could not read events_epg.xml:", e)
         return
-    seen = set()
-    rows = re.findall(r'<programme start="(\d{14}) \+0000" stop="\d+ \+0000" channel="((?:STAN|Peacock|Paramount)\d+\.[a-z]+)">\s*<title[^>]*>([^<]*)</title>', xml)
+    cands = {}
+    rows = re.findall(r'<programme start="(\d{14}) \+0000" stop="\d+ \+0000" channel="((?:STAN|Peacock|Paramount|TSN|SN|DAZN|ESPN|NFL|NBA|HBO|TOD|PPV)[A-Za-z]*\d+\.[a-z]+)">\s*<title[^>]*>([^<]*)</title>', xml)
     for start, ch, title in rows:
-        t = html.unescape(re.sub(r"^🔴 LIVE: ", "", title))
-        if " vs " not in t or (ch, t) in seen:
+        t = html.unescape(re.sub(r"^🔴 LIVE: |^Next up: LIVE . ", "", title))
+        t = re.sub(r"\s*\([^)]*\)\s*$", "", t).strip()
+        if " vs " in t or " v " in t:
+            cands.setdefault((ch, t), start)          # first block of each stream = its listed start
+    print(f"  {len(cands)} stream titles with two sides to compare; sample:", [f"{c}: {t[:30]}" for (c, t) in list(cands)[:5]])
+    hits = 0
+    for (ch, t), start in cands.items():
+        parts = re.split(r"\s+vs?\.?\s+", t, maxsplit=1)
+        if len(parts) != 2:
             continue
-        seen.add((ch, t))
-        a, b = [x.strip().lower() for x in t.split(" vs ", 1)]
+        a, b = parts[0].lower(), parts[1].lower()
         words_a, words_b = set(re.findall(r"\w{4,}", a)), set(re.findall(r"\w{4,}", b))
         ours = datetime.strptime(start, "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
         for name, (zc, fx) in results.items():
@@ -132,12 +138,12 @@ def main():
                 tz = timezone.utc
             for f in fx:
                 fa, fb = set(re.findall(r"\w{4,}", f["a"].lower())), set(re.findall(r"\w{4,}", f["b"].lower()))
-                if (words_a & fa and words_b & fb) or (words_a & fb and words_b & fa):
+                if f["a"] and ((words_a & fa and words_b & fb) or (words_a & fb and words_b & fa)):
                     ko = datetime(*f["date"], f["time"][0], f["time"][1], tzinfo=tz).astimezone(timezone.utc)
-                    print(f"  {ch:14} {t[:44]:44} ours {ours:%a %d %H:%M} UTC | LiveOnSat ST {ko:%a %d %H:%M} UTC (page zone {zname}) "
-                          f"[{name}] {'stan listed' if any('Stan Sport' in c for c in f['ch']) else ''}")
-        if len(seen) >= 40:
-            break
+                    hits += 1
+                    print(f"  {ch:14} {t[:44]:44} ours {ours:%a %d %H:%M} UTC | LiveOnSat {ko:%a %d %H:%M} UTC [{name}] "
+                          f"{'stan listed' if any('Stan Sport' in c for c in f['ch']) else ''}")
+    print(f"  {hits} stream(s) matched a LiveOnSat fixture")
     print("\nDone.")
 
 
