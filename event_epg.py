@@ -457,23 +457,36 @@ def load_fixtures():
         # the football / Scottish guides write the time as "15:00" (until 6 Nov 2026), "3:00 PM" (12-hour, 6 Nov) or "3pm" / "3:30pm" (the
         # current style: lower case, no space, minutes dropped on the hour): all three are read
         m = re.match(r"^(?:🔴 LIVE: )?(.+?) v (.+?) \((?:\w{3}) (\d{1,2}) (\w{3}), ([^()]+)\)$", t)
-        if not m:
-            continue
-        hm = parse_clock(m[5])
-        if hm is None:
-            continue
-        year = int((p.get("start") or "2000")[:4])
-        try:
-            ko = datetime.strptime(f"{m[3]} {m[4]} {year} {hm[0]:02d}:{hm[1]:02d}", "%d %b %Y %H:%M") \
-                .replace(tzinfo=LONDON)
-        except ValueError:
-            continue
+        if m:
+            hm = parse_clock(m[5])
+            if hm is None:
+                continue
+            year = int((p.get("start") or "2000")[:4])
+            try:
+                ko = datetime.strptime(f"{m[3]} {m[4]} {year} {hm[0]:02d}:{hm[1]:02d}", "%d %b %Y %H:%M") \
+                    .replace(tzinfo=LONDON)
+            except ValueError:
+                continue
+            home, away = m[1], m[2]
+        else:
+            # Once a match has kicked off its blocks are "🔴 LIVE: A v B" with no date and time in the title, so the fixture used to
+            # vanish from this list and the events guide fell back to the stream-name time (Paramount+ Raith Rovers v Dunfermline,
+            # 6 Nov 2026: real 19:30, name 20:25, and the LIVE start flipped from run to run). The LIVE block starts AT the kick-off
+            # (football / Scottish MATCH_EARLY_MINUTES = 0), so its start is the kick-off.
+            m = re.match(r"^🔴 LIVE: (.+?) v (.+)$", t)
+            if not m or "(" in t:
+                continue
+            try:
+                ko = datetime.strptime(p.get("start") or "", "%Y%m%d%H%M%S %z").astimezone(LONDON)
+            except ValueError:
+                continue
+            home, away = m[1], m[2]
         cats = [c.text or "" for c in p.findall("category")]
         comp = cats[2] if len(cats) > 2 else ""          # Sports, Football, <competition>
         nxt = re.match(r"^(?:⏭\s*)?Next (?:Match|Up):\s*(.+)$", p.findtext("sub-title") or "")
         if nxt and nxt[1].lower().startswith(comp.lower()):
             comp = nxt[1].strip()                        # with the round: "Carabao Cup 4th Round"
-        out.add((_team_key(m[1]), _team_key(m[2]), m[1].strip(), m[2].strip(), ko, comp))
+        out.add((_team_key(home), _team_key(away), home.strip(), away.strip(), ko, comp))
     _FIXTURES = sorted(out, key=lambda r: r[4])
     return _FIXTURES or None
 
