@@ -9772,6 +9772,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT3.us">
     <title lang="en">GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
     <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
@@ -9993,6 +9998,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">PPV EVENT 05: Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT6.us">
     <title lang="en">LUX 064 (Sat 7 Nov, 3:00 AM)</title>
     <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
@@ -10065,6 +10075,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107130000 +0000" stop="20261107150000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">PPV EVENT 06: LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="PPVEVENT6.us">
     <title lang="en">PPV EVENT 06: LUX 064 (Sat 7 Nov, 3:00 AM)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -10142,6 +10157,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107130000 +0000" stop="20261107150000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">PPV EVENT 07: ONE Fight Night 49 Gabriel vs. Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="PPVEVENT7.us">
     <title lang="en">PPV EVENT 07: ONE Fight Night 49 Gabriel vs. Rasulov (Sat 7 Nov, 2:00 AM)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -10945,10 +10965,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="Paramount013.us">
-    <title lang="en">Next up: LIVE – Georgia vs Canada (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Georgia vs Canada (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Georgia vs Canada starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Georgia vs Canada starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="Paramount013.us">
+    <title lang="en">🔴 LIVE: Georgia vs Canada</title>
+    <desc lang="en">Georgia vs Canada. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="Paramount014.us">
     <title lang="en">Cagliari vs Frosinone (Sat 7 Nov, 2:00 PM)</title>
@@ -18549,6 +18575,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="Peacock018.us">
+    <title lang="en">Men`s Qualification: Part 1</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="Peacock019.us">
     <title lang="en">Pairs Free Skate (Sat 7 Nov, 10:40 AM)</title>
     <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
@@ -18783,10 +18814,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="Peacock021.us">
-    <title lang="en">Next up: LIVE – Arsenal vs Hull City (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Arsenal vs Hull City (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Arsenal vs Hull City starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Arsenal vs Hull City starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="Peacock021.us">
+    <title lang="en">🔴 LIVE: Arsenal vs Hull City</title>
+    <desc lang="en">Arsenal vs Hull City. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="Peacock022.us">
     <title lang="en">Nott`m Forest vs Man City (Sat 7 Nov, 5:30 PM)</title>
@@ -25428,6 +25465,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="STAN06.au">
+    <title lang="en">Ireland vs Argentina Nations Championship Round 4 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN07.au">
     <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026 (Sat 7 Nov, 3:00 AM)</title>
     <sub-title lang="en">⏭ Coming up: NWSL</sub-title>
@@ -25660,6 +25702,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107125500 +0000" stop="20261107145500 +0000" channel="STAN09.au">
+    <title lang="en">FC Tokyo vs Kashima Antlers J.League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145500 +0000" stop="20261107165500 +0000" channel="STAN09.au">
     <title lang="en">FC Tokyo vs Kashima Antlers J.League 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -26807,10 +26854,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="STAN22.au">
-    <title lang="en">Next up: LIVE – Arsenal vs Hull City Premier League Matchweek 10 2026/2027 (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Arsenal vs Hull City Premier League Matchweek 10 2026/2027 (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Arsenal vs Hull City Premier League Matchweek 10 2026/2027 starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Arsenal vs Hull City Premier League Matchweek 10 2026/2027 starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="STAN22.au">
+    <title lang="en">🔴 LIVE: Arsenal vs Hull City Premier League Matchweek 10 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Arsenal vs Hull City Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN23.au">
     <title lang="en">Fulham vs Newcastle United Premier League Matchweek 10 2026/2027 (Sat 7 Nov, 2:50 PM)</title>
@@ -26885,10 +26939,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="STAN23.au">
-    <title lang="en">Next up: LIVE – Fulham vs Newcastle United Premier League Matchweek 10 2026/2027 (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Fulham vs Newcastle United Premier League Matchweek 10 2026/2027 (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Fulham vs Newcastle United Premier League Matchweek 10 2026/2027 starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Fulham vs Newcastle United Premier League Matchweek 10 2026/2027 starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="STAN23.au">
+    <title lang="en">🔴 LIVE: Fulham vs Newcastle United Premier League Matchweek 10 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Fulham vs Newcastle United Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN24.au">
     <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
@@ -26963,10 +27024,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="STAN24.au">
-    <title lang="en">Next up: LIVE – Zimbabwe vs Samoa Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Zimbabwe vs Samoa Nations Cup Round 4 2026 (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Zimbabwe vs Samoa Nations Cup Round 4 2026 starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Zimbabwe vs Samoa Nations Cup Round 4 2026 starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="STAN24.au">
+    <title lang="en">🔴 LIVE: Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
+    <desc lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN25.au">
     <title lang="en">Portugal vs Chile Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
@@ -27041,10 +27108,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="STAN25.au">
-    <title lang="en">Next up: LIVE – Portugal vs Chile Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Portugal vs Chile Nations Cup Round 4 2026 (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Portugal vs Chile Nations Cup Round 4 2026 starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Portugal vs Chile Nations Cup Round 4 2026 starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="STAN25.au">
+    <title lang="en">🔴 LIVE: Portugal vs Chile Nations Cup Round 4 2026</title>
+    <desc lang="en">Portugal vs Chile Nations Cup Round 4 2026. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN26.au">
     <title lang="en">Spain vs Uruguay Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
@@ -27119,10 +27192,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="STAN26.au">
-    <title lang="en">Next up: LIVE – Spain vs Uruguay Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Spain vs Uruguay Nations Cup Round 4 2026 (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Spain vs Uruguay Nations Cup Round 4 2026 starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Spain vs Uruguay Nations Cup Round 4 2026 starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="STAN26.au">
+    <title lang="en">🔴 LIVE: Spain vs Uruguay Nations Cup Round 4 2026</title>
+    <desc lang="en">Spain vs Uruguay Nations Cup Round 4 2026. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN27.au">
     <title lang="en">Wales vs Japan Nations Championship Round 4 2026 (Sat 7 Nov, 4:25 PM)</title>
@@ -27890,6 +27969,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="STAN36.au">
+    <title lang="en">Ireland vs Argentina Nations Championship Round 4 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN37.au">
     <title lang="en">Free Practice 3: 6 Hours of Monza WEC 2026 (Sat 7 Nov, 9:20 AM)</title>
     <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
@@ -28533,10 +28617,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="STAN44.au">
-    <title lang="en">Next up: LIVE – Arsenal vs Hull City Premier League Matchweek 10 2026/2027 (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Arsenal vs Hull City Premier League Matchweek 10 2026/2027 (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Arsenal vs Hull City Premier League Matchweek 10 2026/2027 starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Arsenal vs Hull City Premier League Matchweek 10 2026/2027 starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="STAN44.au">
+    <title lang="en">🔴 LIVE: Arsenal vs Hull City Premier League Matchweek 10 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Arsenal vs Hull City Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN45.au">
     <title lang="en">Fulham vs Newcastle United Premier League Matchweek 10 2026/2027 (Sat 7 Nov, 2:50 PM)</title>
@@ -28611,10 +28702,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="STAN45.au">
-    <title lang="en">Next up: LIVE – Fulham vs Newcastle United Premier League Matchweek 10 2026/2027 (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Fulham vs Newcastle United Premier League Matchweek 10 2026/2027 (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Fulham vs Newcastle United Premier League Matchweek 10 2026/2027 starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Fulham vs Newcastle United Premier League Matchweek 10 2026/2027 starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="STAN45.au">
+    <title lang="en">🔴 LIVE: Fulham vs Newcastle United Premier League Matchweek 10 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Fulham vs Newcastle United Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN46.au">
     <title lang="en">Spain vs Uruguay Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
@@ -28689,10 +28787,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="STAN46.au">
-    <title lang="en">Next up: LIVE – Spain vs Uruguay Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Spain vs Uruguay Nations Cup Round 4 2026 (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Spain vs Uruguay Nations Cup Round 4 2026 starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Spain vs Uruguay Nations Cup Round 4 2026 starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="STAN46.au">
+    <title lang="en">🔴 LIVE: Spain vs Uruguay Nations Cup Round 4 2026</title>
+    <desc lang="en">Spain vs Uruguay Nations Cup Round 4 2026. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN47.au">
     <title lang="en">Portugal vs Chile Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
@@ -28767,10 +28871,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="STAN47.au">
-    <title lang="en">Next up: LIVE – Portugal vs Chile Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Portugal vs Chile Nations Cup Round 4 2026 (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Portugal vs Chile Nations Cup Round 4 2026 starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Portugal vs Chile Nations Cup Round 4 2026 starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="STAN47.au">
+    <title lang="en">🔴 LIVE: Portugal vs Chile Nations Cup Round 4 2026</title>
+    <desc lang="en">Portugal vs Chile Nations Cup Round 4 2026. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN48.au">
     <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
@@ -28845,10 +28955,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107145000 +0000" channel="STAN48.au">
-    <title lang="en">Next up: LIVE – Zimbabwe vs Samoa Nations Cup Round 4 2026 (Sat 7 Nov, 2:50 PM)</title>
+    <title lang="en">Next up: LIVE – Zimbabwe vs Samoa Nations Cup Round 4 2026 (2:50 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Zimbabwe vs Samoa Nations Cup Round 4 2026 starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Zimbabwe vs Samoa Nations Cup Round 4 2026 starts at 2:50 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107145000 +0000" stop="20261107165000 +0000" channel="STAN48.au">
+    <title lang="en">🔴 LIVE: Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
+    <desc lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026. Starts Sat 7 Nov, 2:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="STAN49.au">
     <title lang="en">Wales vs Japan Nations Championship Round 4 2026 (Sat 7 Nov, 4:30 PM)</title>
@@ -34035,6 +34151,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107144800 +0000" stop="20261107164800 +0000" channel="TSN034.ca">
+    <title lang="en">LaLiga: Sevilla vs Alaves</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="TSN035.ca">
     <title lang="en">2026 NASCAR ORAP Series Practice: Championship (Fri 6 Nov, 9:00 PM)</title>
     <sub-title lang="en">⏭ Coming up: NASCAR</sub-title>
@@ -34510,6 +34631,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124800 +0000" stop="20261107144800 +0000" channel="TSN040.ca">
+    <title lang="en">🔴 LIVE: LaLiga: Malaga vs Racing Santander</title>
+    <sub-title lang="en">LaLiga</sub-title>
+    <desc lang="en">LaLiga: Malaga vs Racing Santander. Starts Sat 7 Nov, 12:48 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107144800 +0000" stop="20261107154800 +0000" channel="TSN040.ca">
     <title lang="en">🔴 LIVE: LaLiga: Malaga vs Racing Santander</title>
     <sub-title lang="en">LaLiga</sub-title>
     <desc lang="en">LaLiga: Malaga vs Racing Santander. Starts Sat 7 Nov, 12:48 PM UK time.</desc>
@@ -35184,10 +35312,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107144800 +0000" channel="TSN048.ca">
-    <title lang="en">Next up: LIVE – 2026 FIFA U_17 Women`s World Cup: Third Place Match _ TBD vs TBD (Sat 7 Nov, 2:48 PM)</title>
+    <title lang="en">Next up: LIVE – 2026 FIFA U_17 Women`s World Cup: Third Place Match _ TBD vs TBD (2:48 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. 2026 FIFA U_17 Women`s World Cup: Third Place Match _ TBD vs TBD starts Sat 7 Nov, 2:48 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. 2026 FIFA U_17 Women`s World Cup: Third Place Match _ TBD vs TBD starts at 2:48 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144800 +0000" stop="20261107164800 +0000" channel="TSN048.ca">
+    <title lang="en">🔴 LIVE: 2026 FIFA U_17 Women`s World Cup: Third Place Match _ TBD vs TBD</title>
+    <desc lang="en">2026 FIFA U_17 Women`s World Cup: Third Place Match _ TBD vs TBD. Starts Sat 7 Nov, 2:48 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="TSN049.ca">
     <title lang="en">LaLiga: Espanyol vs Deportivo (Sat 7 Nov, 3:03 PM)</title>
@@ -35262,10 +35396,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107150300 +0000" channel="TSN049.ca">
-    <title lang="en">Next up: LIVE – LaLiga: Espanyol vs Deportivo (Sat 7 Nov, 3:03 PM)</title>
+    <title lang="en">Next up: LIVE – LaLiga: Espanyol vs Deportivo (3:03 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. LaLiga: Espanyol vs Deportivo starts Sat 7 Nov, 3:03 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. LaLiga: Espanyol vs Deportivo starts at 3:03 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107150300 +0000" stop="20261107170300 +0000" channel="TSN049.ca">
+    <title lang="en">🔴 LIVE: LaLiga: Espanyol vs Deportivo</title>
+    <sub-title lang="en">LaLiga</sub-title>
+    <desc lang="en">LaLiga: Espanyol vs Deportivo. Starts Sat 7 Nov, 3:03 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="TSN050.ca">
     <title lang="en">NCAA Football: BYU vs Utah (Sat 7 Nov, 5:00 PM)</title>
@@ -39316,6 +39457,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA1.uk">
+    <title lang="en">AEK Athens vs Real Madrid</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA10.uk">
     <title lang="en">Viking vs Sabah FK (Fri 6 Nov, 8:00 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -39384,6 +39530,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107130000 +0000" stop="20261107150000 +0000" channel="UEFA10.uk">
+    <title lang="en">Viking vs Sabah FK</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="UEFA10.uk">
     <title lang="en">Viking vs Sabah FK</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -39535,6 +39686,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="UEFA12.uk">
+    <title lang="en">Celtic vs Celta Vigo</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA13.uk">
     <title lang="en">Sheriff Tiraspol vs Servette (Fri 6 Nov, 8:00 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -39607,6 +39763,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="UEFA13.uk">
+    <title lang="en">Sheriff Tiraspol vs Servette</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA14.uk">
     <title lang="en">Molde vs Häcken (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -39674,6 +39835,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA14.uk">
+    <title lang="en">Molde vs Häcken</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA14.uk">
     <title lang="en">Molde vs Häcken</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -39750,6 +39916,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="UEFA15.uk">
+    <title lang="en">Lillestrøm vs Real Sociedad</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA16.uk">
     <title lang="en">Olympiakos vs Sparta Prague (Fri 6 Nov, 8:00 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -39818,6 +39989,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107130000 +0000" stop="20261107150000 +0000" channel="UEFA16.uk">
+    <title lang="en">Olympiakos vs Sparta Prague</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="UEFA16.uk">
     <title lang="en">Olympiakos vs Sparta Prague</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -39894,6 +40070,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="UEFA17.uk">
+    <title lang="en">Omonia Nicosia vs Benfica</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA18.uk">
     <title lang="en">KAA Gent vs Breidablik (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -39961,6 +40142,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA18.uk">
+    <title lang="en">KAA Gent vs Breidablik</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA18.uk">
     <title lang="en">KAA Gent vs Breidablik</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -40110,6 +40296,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA2.uk">
+    <title lang="en">Fenerbahce vs Liverpool</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA20.uk">
     <title lang="en">Getafe vs Lugano (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -40177,6 +40368,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA20.uk">
+    <title lang="en">Getafe vs Lugano</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA20.uk">
     <title lang="en">Getafe vs Lugano</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -40252,6 +40448,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA21.uk">
+    <title lang="en">Iberia 1999 vs Mjällby</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA22.uk">
     <title lang="en">Midtjylland vs Ajax (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -40319,6 +40520,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA22.uk">
+    <title lang="en">Midtjylland vs Ajax</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA22.uk">
     <title lang="en">Midtjylland vs Ajax</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -40394,6 +40600,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA23.uk">
+    <title lang="en">Mjällby vs Borac Banja Luka</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA24.uk">
     <title lang="en">Kauno Žalgiris vs Brann (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -40461,6 +40672,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA24.uk">
+    <title lang="en">Kauno Žalgiris vs Brann</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA24.uk">
     <title lang="en">Kauno Žalgiris vs Brann</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -40536,6 +40752,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA25.uk">
+    <title lang="en">Nordsjælland vs CSKA Sofia</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA26.uk">
     <title lang="en">Pafos vs Riga (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -40603,6 +40824,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA26.uk">
+    <title lang="en">Pafos vs Riga</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA26.uk">
     <title lang="en">Pafos vs Riga</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -40678,6 +40904,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA27.uk">
+    <title lang="en">Red Star Belgrade vs Copenhagen</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA28.uk">
     <title lang="en">Trabzonspor vs Heart of Midlothian (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -40745,6 +40976,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA28.uk">
+    <title lang="en">Trabzonspor vs Heart of Midlothian</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA28.uk">
     <title lang="en">Trabzonspor vs Heart of Midlothian</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -40821,6 +41057,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="UEFA29.uk">
+    <title lang="en">AGF vs Egnatia Rrogozhinë</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA3.uk">
     <title lang="en">Crystal Palace vs Hoffenheim (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -40888,6 +41129,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA3.uk">
+    <title lang="en">Crystal Palace vs Hoffenheim</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA3.uk">
     <title lang="en">Crystal Palace vs Hoffenheim</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -40964,6 +41210,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="UEFA30.uk">
+    <title lang="en">Ajax vs Atalanta</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA4.uk">
     <title lang="en">Levski Sofia vs Jagiellonia Białystok (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -41031,6 +41282,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA4.uk">
+    <title lang="en">Levski Sofia vs Jagiellonia Białystok</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA4.uk">
     <title lang="en">Levski Sofia vs Jagiellonia Białystok</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -41106,6 +41362,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA5.uk">
+    <title lang="en">Lillestrøm vs Viktoria Plzeň</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA6.uk">
     <title lang="en">NEC Nijmegen vs Omonia Nicosia (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -41173,6 +41434,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA6.uk">
+    <title lang="en">NEC Nijmegen vs Omonia Nicosia</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA6.uk">
     <title lang="en">NEC Nijmegen vs Omonia Nicosia</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -41248,6 +41514,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA7.uk">
+    <title lang="en">Real Sociedad vs Olympique Lyonnais</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="UEFA8.uk">
     <title lang="en">Sparta Prague vs Bournemouth (Fri 6 Nov, 5:45 PM)</title>
     <sub-title lang="en">⏭ Coming up: UEFA</sub-title>
@@ -41315,6 +41586,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107124500 +0000" stop="20261107144500 +0000" channel="UEFA8.uk">
+    <title lang="en">Sparta Prague vs Bournemouth</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="UEFA8.uk">
     <title lang="en">Sparta Prague vs Bournemouth</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -41387,6 +41663,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107130000 +0000" stop="20261107150000 +0000" channel="UEFA9.uk">
+    <title lang="en">Slavia Prague vs Arsenal</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="UEFA9.uk">
     <title lang="en">Slavia Prague vs Arsenal</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
