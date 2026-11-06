@@ -2035,7 +2035,8 @@ def sky_it_channels(pattern):
 
 
 def _it_12h(h, m):
-    return f"{(h % 12) or 12}:{m:02d} {'AM' if h < 12 else 'PM'}"
+    """12-hour clock, lower case, no space, minutes dropped on the hour: 12:30am, 3pm, 5:45pm (6 Nov 2026, user's style)"""
+    return f"{(h % 12) or 12}{(':%02d' % m) if m else ''}{'am' if h < 12 else 'pm'}"
 
 
 CLOCK_24H = re.compile(r"(?<![\d:.])([01]?\d|2[0-3]):([0-5]\d)(?![\d:])(?!\s?[AaPp]\.?[Mm])(?!\.\d)")
@@ -2044,15 +2045,16 @@ CLOCK_SHORT = re.compile(r"(?<![\w:.])(\d{1,2})(?:[:.]([0-5]\d))?\s?([AaPp])(?:\
 
 def clock12(text):
     """EVERY clock time in a title / secondary title / description -> 12-hour with AM / PM (6 Nov 2026, user request, whole Sport
-    guide; applied last, in add_programme, so nothing that parses the 24-hour text is affected): "19:00" -> "7:00 PM", "00:15" ->
-    "12:15 AM", "9pm" / "3.30pm" style -> "9:00 PM". Skipped: lap times ("1:23.456"), h:mm:ss, anything already "7:45 PM"."""
+    guide; applied last, in add_programme, so nothing that parses the 24-hour text is affected): "19:00" -> "7pm", "00:15" ->
+    "12:15am", "9:00 PM" / "3.30pm" style -> "9pm" / "3:30pm". Skipped: lap times ("1:23.456"), h:mm:ss, anything already "7:45 PM"."""
     t = CLOCK_24H.sub(lambda m: _it_12h(int(m.group(1)), int(m.group(2))), text or "")
 
     def short(m):
         h = int(m.group(1))
         if not 1 <= h <= 12:
             return m.group(0)
-        return f"{h}:{m.group(2) or '00'} {'AM' if m.group(3).lower() == 'a' else 'PM'}"
+        mm = m.group(2)
+        return f"{h}{(':' + mm) if mm and mm != '00' else ''}{'am' if m.group(3).lower() == 'a' else 'pm'}"
     return CLOCK_SHORT.sub(short, t)
 
 
@@ -5509,15 +5511,17 @@ def load_kickoffs():
     seen = set()
     for m in re.finditer(r'<programme start="(\d{14}) ([+-]\d{4})"[^>]*>\s*<title[^>]*>🔴 LIVE: ([^<]*)</title>'
                          r'(?:\s*<sub-title[^>]*>([^<]*)</sub-title>)?\s*<desc[^>]*>([^<]*)', text):
-        ko = re.search(r"Kick-off: (\d{1,2}):(\d{2})(?:\s?([AaPp])[Mm])?", m.group(5))   # "20:00" or "8:00 PM" (12-hour since 6 Nov 2026)
+        ko = re.search(r"Kick-off: (\d{1,2})(?::(\d{2}))?\s?([AaPp][Mm])?", m.group(5))   # "20:00", "8:00 PM", "8pm", "8:30pm" (12-hour since 6 Nov 2026)
+        if ko and not (ko.group(2) or ko.group(3)):
+            ko = None
         sides = re.split(r"\s+(?:v|vs\.?)\s+", html.unescape(m.group(3)), maxsplit=1)
         if not ko or len(sides) != 2:
             continue
         start = datetime.strptime(m.group(1) + m.group(2), "%Y%m%d%H%M%S%z").astimezone(LONDON)
         ko_hour = int(ko.group(1))
         if ko.group(3):
-            ko_hour = ko_hour % 12 + (12 if ko.group(3).lower() == "p" else 0)
-        when = start.replace(hour=ko_hour, minute=int(ko.group(2)), second=0)
+            ko_hour = ko_hour % 12 + (12 if ko.group(3)[0].lower() == "p" else 0)
+        when = start.replace(hour=ko_hour, minute=int(ko.group(2) or 0), second=0)
         if when < start - timedelta(hours=1):
             when += timedelta(days=1)
         key = (when, m.group(3))
