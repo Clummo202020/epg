@@ -1590,6 +1590,7 @@ def build(events, now):
     tv = ET.Element("tv", {"generator-info-name": "event_epg.py"})
     by_slot, ended = {}, {}
     untimed = {}
+    cands = {}
     for ev in events:                       # one event per slot: the next one still to finish
         if ev.get("untimed"):
             untimed.setdefault(ev["slot_id"], ev)
@@ -1598,9 +1599,20 @@ def build(events, now):
         if end + timedelta(hours=PAST_EVENT_HOURS) < now:
             ended.setdefault(ev["slot_id"], ev)
             continue
-        cur = by_slot.get(ev["slot_id"])
-        if cur is None or ev["start"] < cur["start"]:
-            by_slot[ev["slot_id"]] = ev
+        cands.setdefault(ev["slot_id"], []).append(ev)
+    for sid, evs in cands.items():
+        # The next event still to finish - but when several names for ONE slot name different matches in the same window (6 Nov 2026:
+        # Main IPTV's "US (Paramount 003)" said Venezia v Udinese while both naming patterns of the other playlist said Raith Rovers v
+        # Dunfermline, and the earlier start won), the title most names agree on wins; a tie goes to the earlier start.
+        first = min(evs, key=lambda e: e["start"])
+        window = [e for e in evs if e["start"] < first["start"] + timedelta(hours=event_hours(first))]
+        votes = {}
+        for e in window:
+            votes[_norm(e["title"])] = votes.get(_norm(e["title"]), 0) + 1
+        best = max(window, key=lambda e: (votes[_norm(e["title"])], -e["start"].timestamp()))
+        if len(votes) > 1:
+            print(f"  Slot {sid}: names disagree - {sorted(votes.items(), key=lambda kv: -kv[1])} - using \"{best['title']}\"")
+        by_slot[sid] = best
     untimed = {sid: ev for sid, ev in untimed.items() if sid not in by_slot}
     ended = {sid: ev for sid, ev in ended.items() if sid not in by_slot and sid not in untimed}
     for sid in sorted(untimed):
