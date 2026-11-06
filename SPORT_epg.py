@@ -5509,12 +5509,15 @@ def load_kickoffs():
     seen = set()
     for m in re.finditer(r'<programme start="(\d{14}) ([+-]\d{4})"[^>]*>\s*<title[^>]*>🔴 LIVE: ([^<]*)</title>'
                          r'(?:\s*<sub-title[^>]*>([^<]*)</sub-title>)?\s*<desc[^>]*>([^<]*)', text):
-        ko = re.search(r"Kick-off: (\d{1,2}):(\d{2})", m.group(5))
+        ko = re.search(r"Kick-off: (\d{1,2}):(\d{2})(?:\s?([AaPp])[Mm])?", m.group(5))   # "20:00" or "8:00 PM" (12-hour since 6 Nov 2026)
         sides = re.split(r"\s+(?:v|vs\.?)\s+", html.unescape(m.group(3)), maxsplit=1)
         if not ko or len(sides) != 2:
             continue
         start = datetime.strptime(m.group(1) + m.group(2), "%Y%m%d%H%M%S%z").astimezone(LONDON)
-        when = start.replace(hour=int(ko.group(1)), minute=int(ko.group(2)), second=0)
+        ko_hour = int(ko.group(1))
+        if ko.group(3):
+            ko_hour = ko_hour % 12 + (12 if ko.group(3).lower() == "p" else 0)
+        when = start.replace(hour=ko_hour, minute=int(ko.group(2)), second=0)
         if when < start - timedelta(hours=1):
             when += timedelta(days=1)
         key = (when, m.group(3))

@@ -437,12 +437,16 @@ def load_fixtures():
     out = set()
     for p in (p for root in roots for p in root.iter("programme")):
         t = (p.findtext("title") or "")
-        m = re.match(r"^(?:🔴 LIVE: )?(.+?) v (.+?) \((?:\w{3}) (\d{1,2}) (\w{3}), (\d{1,2}):(\d{2})\)$", t)
+        # the football / Scottish guides write the time as "15:00" (until 6 Nov 2026) or "3:00 PM" (12-hour clock since then): both read
+        m = re.match(r"^(?:🔴 LIVE: )?(.+?) v (.+?) \((?:\w{3}) (\d{1,2}) (\w{3}), (\d{1,2}):(\d{2})(?: ([AaPp])[Mm])?\)$", t)
         if not m:
             continue
         year = int((p.get("start") or "2000")[:4])
+        hour = int(m[5])
+        if m[7]:
+            hour = hour % 12 + (12 if m[7].lower() == "p" else 0)
         try:
-            ko = datetime.strptime(f"{m[3]} {m[4]} {year} {m[5]}:{m[6]}", "%d %b %Y %H:%M") \
+            ko = datetime.strptime(f"{m[3]} {m[4]} {year} {hour:02d}:{m[6]}", "%d %b %Y %H:%M") \
                 .replace(tzinfo=LONDON)
         except ValueError:
             continue
