@@ -128,8 +128,8 @@ def save_last_run(n):
         print(f"WARNING: could not save run number to {RUN_STATE_FILE}: {e}")
 OUTPUT_NAME = "scottish_epg.xml"   # the file name on GitHub
 
-# Club match blocks go LIVE this many minutes before kick-off (0 = at kick-off)
-MATCH_EARLY_MINUTES = 10
+# Club match blocks go LIVE this many minutes before kick-off (0 = at kick-off; 10 until 6 Nov 2026 - the user: not live before the kick-off)
+MATCH_EARLY_MINUTES = 0
 FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap)
 
 # Clubs with no match in their own league during the window (3 Nov 2026): every club of the four SPFL divisions always gets a

@@ -167,7 +167,12 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 # "UEFA | 28 - Universitatea Craiova vs Getafe 20:00 pm" - kick-off time (UK) only, no date
 KICKOFF_ONLY = re.compile(r"^\s*(?P<label>[A-Za-z][A-Za-z0-9+ ]*?)\s*\|\s*(?P<num>\d+)\s*-\s*(?P<title>.+?)"
                           r"\s+(?P<h>\d{1,2})[:.](?P<m>\d{2})\s*(?P<ap>[ap]\.?m\.?)?\s*$", re.I)
-KICKOFF_EARLY_MINUTES = 10     # these streams go LIVE this many minutes before kick-off
+KICKOFF_EARLY_MINUTES = 0      # these streams go LIVE this many minutes before kick-off (10 until 6 Nov 2026; the user: streams are not live before the kick-off)
+# Paramount+ and Peacock (6 Nov 2026, user): their streams are NOT live until about the kick-off - there is no pre-roll; the provider can only
+# link what is playing to the listed match once it is playing. So the LIVE block of these two groups starts AT the real kick-off (the
+# stream time in the name is only when the stream opens), and the "Next up: LIVE" block runs up to it. 0 = at the kick-off; a negative number
+# (e.g. -2) would start it that many minutes AFTER the kick-off.
+PROVIDER_EARLY_MINUTES = 0
 # "UEFA | 08 -" - a slot with nothing on it yet (shows filler)
 EMPTY_SLOT = re.compile(r"^\s*(?P<label>[A-Za-z][A-Za-z0-9+ ]*?)\s*\|\s*(?P<num>\d+)\s*-?\s*$")
 # Names like "UEFA | 01 - Como vs Manchester United 17:45 pm" carry no date, so the date is
@@ -279,7 +284,7 @@ MLB_START_TZ = "UTC"           # "start:" times look like UTC (01:00 = 9 pm ET);
 MLB_AT_TZ = "America/New_York"
 MLB_ESPN = "baseball/mlb"
 MLB_EVENT_HOURS = 3.5          # allows for extra innings
-MLB_EARLY_MINUTES = 10         # LIVE this long before first pitch
+MLB_EARLY_MINUTES = 0          # LIVE this long before first pitch (10 until 6 Nov 2026)
 MLB_MATCH_HOURS = 18
 # PDC darts streams (the Boxing group was removed from the playlist and from this script):
 #   "PDC Board 02 : Title | Day 3 - Evening Session Watch live ... start:2026-10-18 18:00:00
@@ -1097,7 +1102,7 @@ def _parse_name(name):
             if abs(rs[0] - ev["start"]) >= timedelta(minutes=1):
                 print(f"  US (Paramount {num:03d}) kick-off: {ev['title']}: stream {ev['start']:%d %b %H:%M} UTC, "
                       f"{rs[2] or '?'} {rs[0]:%d %b %H:%M} UTC")
-            ev["start"], ev["early"] = rs[0], rs[1]
+            ev["start"], ev["early"] = rs[0], PROVIDER_EARLY_MINUTES      # Paramount+: LIVE at the kick-off (6 Nov 2026)
             ev["comp"] = rs[2] or ev["comp"]
         return ev
     b = NBA_AT.match(name)                           # A vs B @ Oct 24 6:00 PM :NBA 01 (US Eastern)
@@ -1204,7 +1209,7 @@ def _parse_name(name):
                 if abs(rs[0] - ev["start"]) >= timedelta(minutes=1):
                     print(f"  {m['cc']} ({m['slot']}) kick-off: {ev['title']}: stream "
                           f"{ev['start']:%d %b %H:%M} UTC, {rs[2] or '?'} {rs[0]:%d %b %H:%M} UTC")
-                ev["start"], ev["early"] = rs[0], rs[1]
+                ev["start"], ev["early"] = rs[0], PROVIDER_EARLY_MINUTES      # Peacock / Paramount+: LIVE at the kick-off (6 Nov 2026)
                 ev["comp"] = rs[2] or ev["comp"]
         return ev
 

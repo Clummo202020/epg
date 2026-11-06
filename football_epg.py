@@ -253,8 +253,8 @@ def save_last_run(n):
         print(f"WARNING: could not save run number to {RUN_STATE_FILE}: {e}")
 OUTPUT_NAME = "football_epg.xml"   # the file name on GitHub
 
-# Club match blocks go LIVE this many minutes before kick-off (0 = at kick-off)
-MATCH_EARLY_MINUTES = 10
+# Club match blocks go LIVE this many minutes before kick-off (0 = at kick-off; 10 until 6 Nov 2026 - the user: not live before the kick-off)
+MATCH_EARLY_MINUTES = 0
 
 # Premier League Goal Rush channel: one programme for every slot where at least
 # GOAL_RUSH_MIN Premier League matches kick off at the same time (e.g. Sat 15:00).
