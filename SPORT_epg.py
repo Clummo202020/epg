@@ -2074,14 +2074,15 @@ def fetch_italy(days, pattern, debug=False):
                                flags=re.I).strip() or title
                 ev = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
                       "desc": pick_desc(it, "eventSynopsis", "epgEventSynopsis")}
-                if IT_POPUP_RE.match(names[cid]):
-                    # Sky Sport 251-258 are the pop-up match channels (5 Nov 2026): Sky flags only some of their matches
-                    # "Diretta", but every match on them is live (unless the title says replay / highlights), and a title
-                    # \"Team A - Team B\" holds team names - Google turned Como into \"How\", Vado into \"I go\", Roma into
-                    # \"Rome\" - so it is NOT translated (en() skips it).
-                    if IT_TEAMS_RE.match(title) and not IT_NOT_LIVE_RE.search(title):
-                        ev["no_translate"] = True
-                        ev["live"] = True
+                # Every Italian channel (5 Nov 2026): a title "Team A - Team B" holds team names, which Google damaged (Como -> "How",
+                # Vado -> "I go", Roma -> "Rome", Savoia - Potenza -> "Savoy - Power"), so it is NOT translated (en() skips it).
+                teams = bool(IT_TEAMS_RE.match(title)) and not IT_NOT_LIVE_RE.search(title)
+                if teams:
+                    ev["no_translate"] = True
+                if IT_POPUP_RE.match(names[cid]) and teams:
+                    # Sky Sport 251-258 are the pop-up match channels: Sky flags only some of their matches "Diretta",
+                    # but every match on them is live (unless the title says replay / highlights).
+                    ev["live"] = True
                 evs[start] = ev
     out = {}
     for cid, evs in events.items():
@@ -3330,6 +3331,86 @@ def x_versus(title):
     if len(X_BETWEEN.findall(title or "")) != 1:
         return title
     return X_BETWEEN.sub(" vs ", title, count=1)
+
+
+# "Team A - Team B" / "Team A x Team B" / "Team A X Team B" -> "Team A vs Team B" on EVERY channel of the Sport guide (5 Nov 2026,
+# user request: "ideally applied everywhere", incl. the Portuguese-style "x", short replays and names with digits: "if it looks like a
+# matchup between two teams, people or countries"). A title is a candidate when the WHOLE title is exactly two names with ONE separator
+# (a dash " - " / en dash, or a lone " x " / " X " / " \u00d7 "), optionally after "Next match: ", with a trailing date or ", finale G5"
+# style tail kept; no colon / slash / bar / existing v or vs; each name 1-5 words with a capital letter, no bracket, no word from
+# MATCH_NOT_TEAMS (competitions, studio / magazine / highlights / round / ep. / stories / legends ...), no episode / round / year code
+# (E8, MD4, R16, 2003, '26) and not starting or ending with of / the / and / a / in ... Then:
+#   STRONG - the block is live, dated, or at least 75 minutes long: converted (digits in names are fine: "Philadelphia 76ers",
+#            "Mainz 05", "TSG 1899 Hoffenheim");
+#   WEAK   - a short undated, non-live block (a 15-45 minute replay / highlights): converted only when the SAME two names also
+#            appear as a STRONG fixture somewhere in the guide this run (MATCH_PAIRS, filled by collect_match_pairs() before the
+#            build), so "Feyenoord - Inter" (30 min) follows the 120-minute live one, while shows like "PL Stories - Fabricio
+#            Coloccini", "Chloe x Halle" or "Strictly - It Takes Two" (no strong twin) keep their dash / x.
+# cy_versus() and x_versus() above still run first for their regions.
+MATCH_NOT_TEAMS = re.compile(
+    r"(?i)\b(round|day|days|ep\.?|episode|episodes|session|stage|heat|race|practice|qualifying|film|special|speciale|highlights?|"
+    r"preview|review|show|shows|week|studio|magazine|news|update|replay|classic|classics|history|documentary|interview|talk|report|"
+    r"results?|league|liga|ligue|serie|cup|copa|coupe|championships?|bundesliga|premier|nba|nfl|nhl|mlb|formula|grand prix|sports?|"
+    r"clubs|tonight|live|matchday|friendly|friendlies|tour|open|masters|world|series|games|zone|time|goals?|gol|top|best|moments|"
+    r"inside|extra|pre|post|play-?offs?|final|finals|semi-?finals?|quarter-?finals?|group|play|fixtures|schedule|programme|program|"
+    r"announcement|stories|story|legends?|unpacked|build-?up|pregled|vt|atp|wta|itf|challenger|tv|unplugged|meeting|sign up|"
+    r"takes two|loco|garage|fan|fans)\b")
+MATCH_CODE = re.compile(r"(?i)^(?:E|EP|MD|MW|R|P|T|S|Q|FP|GR|GP|H|SF|QF|J|W|D)\d{1,3}$|^(?:19|20)\d\d$|^'\d\d$|^\d+(?:st|nd|rd|th)$")
+MATCH_EDGE = re.compile(r"(?i)^(of|the|and|a|an|in|on|at|for|to|with|by)\s|\s(of|the|and|a|an|in|on|at|for|to|with|by)$")
+MATCH_TAIL = r"(?: \(?\s*\d{1,2}[./]\d{1,2}[./]\d{2,4}\s*\)?)?(?:, [^,()]{1,24})?"
+MATCH_SHAPE = re.compile(r"^(?P<pre>(?:Next match: )?)(?P<a>\S.*?) (?P<sep>[-\u2013xX\u00d7]) (?P<b>\S.*?)(?P<tail>" + MATCH_TAIL + r")$")
+MATCH_PAIRS = set()                       # (a, b) names of every STRONG fixture seen this run (see collect_match_pairs)
+
+
+def _match_parts(title, live, minutes):
+    """(pre, a, b, tail, strong) when `title` is a candidate matchup, else None"""
+    t = (title or "").strip()
+    pre = ""
+    if t.startswith("Next match: "):
+        pre, t = "Next match: ", t[len("Next match: "):]
+    core = re.sub(MATCH_TAIL + "$", "", t)
+    if not t or re.search(r"(?i)\bvs?\.?(?=\s)|[:|/]", core):
+        return None
+    m = MATCH_SHAPE.match(t)
+    if not m or len(re.findall(r" [-\u2013xX\u00d7] ", t)) != 1:
+        return None
+    a, b, tail = m.group("a"), m.group("b"), m.group("tail")
+    for name in (a, b):
+        words = name.split()
+        if not (1 <= len(words) <= 5) or MATCH_NOT_TEAMS.search(name) or MATCH_EDGE.search(name) or re.search(r"[()]", name):
+            return None
+        if any(MATCH_CODE.match(w) for w in words) or not any(ch.isupper() for ch in name):
+            return None
+    dated = bool(re.search(r"\d{1,2}[./]\d{1,2}[./]\d{2,4}", tail))
+    return pre, a, b, tail, bool(live or dated or minutes >= 75)
+
+
+def _pair_key(a, b):
+    return tuple(re.sub(r"\W+", " ", n).casefold().strip() for n in (a, b))
+
+
+def match_versus(title, live=False, minutes=0):
+    parts = _match_parts(title, live, minutes)
+    if not parts:
+        return title
+    pre, a, b, tail, strong = parts
+    if not strong and _pair_key(a, b) not in MATCH_PAIRS:
+        return title
+    return f"{pre}{a} vs {b}{tail}"
+
+
+def collect_match_pairs(records):
+    """fill MATCH_PAIRS with the names of every strong fixture in all records (before the guide is built)"""
+    MATCH_PAIRS.clear()
+    for rec in records:
+        for ev in rec.get("events") or []:
+            try:
+                minutes = (ev["stop"] - ev["start"]).total_seconds() / 60
+            except (KeyError, TypeError):
+                continue
+            parts = _match_parts(ev.get("title"), ev.get("live"), minutes)
+            if parts and parts[4]:
+                MATCH_PAIRS.add(_pair_key(parts[1], parts[2]))
 
 
 # ALL CAPS -> normal case (Cyta writes most titles in capitals), from cyta_epg.py
@@ -6114,6 +6195,7 @@ def build_xmltv(records, suffix, minutes):
                 title = cy_versus(title, bool(ev.get("live")))   # "A - B 3/11/26" -> "A vs B 3/11/26"
             elif cid.startswith(X_VS_REGIONS):
                 title = x_versus(title)                          # "A x B - Serie A" -> "A vs B - Serie A"
+            title = match_versus(title, bool(ev.get("live")), (stop - start).total_seconds() / 60)   # every channel (5 Nov 2026)
             loc = ev["start"].astimezone(rec["tz"])
             uk = ev["start"].astimezone(LONDON)
             when = f"{uk:%a %d %b, %H:%M}"
@@ -7088,6 +7170,7 @@ def main():
     astro_matchday(records)                         # Astro pop-up PL channels (28 Oct 2026)
     astro_idle_fill(records)                        # PL 3 / 4 / 5: 'No live match scheduled' between matches (5 Nov 2026)
     records.extend(divider_records())               # country dividers '### FRANCE ###' -> DIV.FRANCE (5 Nov 2026)
+    collect_match_pairs(records)                    # strong fixtures -> short replays of the same match get 'vs' too (5 Nov 2026)
     tv, count, listed = build_xmltv(records, suffix, args.minutes)
     if F1_REPLAYS:
         print(f"F1 repeats no longer marked live (OpenF1 session times): {len(F1_REPLAYS)}")
