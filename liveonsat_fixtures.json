@@ -1,0 +1,563 @@
+{
+ "fetched": "2026-11-06T23:13:10Z",
+ "pages": {
+  "Rugby Union": {
+   "status": 200,
+   "zone": "America/Chicago",
+   "count": 64
+  },
+  "Rugby League": {
+   "status": 200,
+   "zone": "America/Chicago",
+   "count": 2
+  },
+  "Aussie Rules": {
+   "status": 200,
+   "zone": "America/Chicago",
+   "count": 0
+  },
+  "Boxing / Fighting": {
+   "status": 200,
+   "zone": "America/Chicago",
+   "count": 1
+  }
+ },
+ "fixtures": [
+  {
+   "comp": "WR Nations Cup",
+   "a": "Romania",
+   "b": "Tonga",
+   "start": "2026-11-06T16:30:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French PRO D2 - Round 10",
+   "a": "Brive",
+   "b": "Dax",
+   "start": "2026-11-06T18:10:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French PRO D2 - Round 10",
+   "a": "Valence Romans",
+   "b": "Nevers",
+   "start": "2026-11-06T18:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French PRO D2 - Round 10",
+   "a": "Narbonne",
+   "b": "Stade Niçois",
+   "start": "2026-11-06T18:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French PRO D2 - Round 10",
+   "a": "Colomiers",
+   "b": "Béziers",
+   "start": "2026-11-06T18:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French PRO D2 - Round 10",
+   "a": "Aurillac",
+   "b": "Montauban",
+   "start": "2026-11-06T18:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "English Premiership Rugby Cup - Group Stage: Round 3",
+   "a": "Northampton Saints",
+   "b": "Leicester Tigers",
+   "start": "2026-11-06T19:45:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Rugby Union Friendly",
+   "a": "England \"A\"",
+   "b": "Argentina \"A\"",
+   "start": "2026-11-06T19:45:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French PRO D2 - Round 10",
+   "a": "Soyaux-Angoulême",
+   "b": "Grenoble",
+   "start": "2026-11-06T20:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French PRO D2 - Round 10",
+   "a": "Provence Rugby",
+   "b": "Oyonnax",
+   "start": "2026-11-06T20:05:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 4",
+   "a": "Ireland",
+   "b": "Argentina",
+   "start": "2026-11-06T20:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Rugby League World Cup 2026 - Semi Final",
+   "a": "New Zealand",
+   "b": "Tonga",
+   "start": "2026-11-07T09:05:00Z",
+   "stan": false,
+   "sport": "Rugby League"
+  },
+  {
+   "comp": "Nations Championship - Round 4",
+   "a": "Italy",
+   "b": "South Africa",
+   "start": "2026-11-07T11:40:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French TOP 14 - Round 9",
+   "a": "Toulouse",
+   "b": "Clermont Auvergne",
+   "start": "2026-11-07T13:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "WR Nations Cup",
+   "a": "Georgia",
+   "b": "Canada",
+   "start": "2026-11-07T14:00:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 4",
+   "a": "Scotland",
+   "b": "New Zealand",
+   "start": "2026-11-07T14:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "WR Nations Cup",
+   "a": "Portugal",
+   "b": "Chile",
+   "start": "2026-11-07T15:00:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "WR Nations Cup",
+   "a": "Spain",
+   "b": "Uruguay",
+   "start": "2026-11-07T15:00:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "WR Nations Cup",
+   "a": "Zimbabwe",
+   "b": "Samoa",
+   "start": "2026-11-07T15:00:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "English Premiership Rugby Cup - Group Stage: Round 3",
+   "a": "Exeter Chiefs",
+   "b": "Bath",
+   "start": "2026-11-07T15:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French TOP 14 - Round 9",
+   "a": "Toulon",
+   "b": "Stade Français",
+   "start": "2026-11-07T15:35:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French TOP 14 - Round 9",
+   "a": "Pau",
+   "b": "Perpignan",
+   "start": "2026-11-07T15:35:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French TOP 14 - Round 9",
+   "a": "Montpellier",
+   "b": "Lyon",
+   "start": "2026-11-07T15:35:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French TOP 14 - Round 9",
+   "a": "Castres",
+   "b": "Racing 92",
+   "start": "2026-11-07T15:35:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 4",
+   "a": "Wales",
+   "b": "Japan",
+   "start": "2026-11-07T16:40:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 4",
+   "a": "France",
+   "b": "Fiji",
+   "start": "2026-11-07T20:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Rugby League World Cup 2026 - Semi Final",
+   "a": "Australia",
+   "b": "Samoa",
+   "start": "2026-11-08T09:05:00Z",
+   "stan": false,
+   "sport": "Rugby League"
+  },
+  {
+   "comp": "French TOP 14 - Round 9",
+   "a": "Vannes",
+   "b": "Bordeaux Bègles",
+   "start": "2026-11-08T14:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "WR Nations Cup",
+   "a": "Hong Kong",
+   "b": "United States",
+   "start": "2026-11-08T14:45:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 4",
+   "a": "England",
+   "b": "Australia",
+   "start": "2026-11-08T15:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "French TOP 14 - Round 9",
+   "a": "La Rochelle",
+   "b": "Bayonne",
+   "start": "2026-11-08T20:05:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 5",
+   "a": "France",
+   "b": "South Africa",
+   "start": "2026-11-13T20:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 5",
+   "a": "Italy",
+   "b": "Argentina",
+   "start": "2026-11-14T11:40:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 5",
+   "a": "Wales",
+   "b": "New Zealand",
+   "start": "2026-11-14T14:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 5",
+   "a": "England",
+   "b": "Japan",
+   "start": "2026-11-14T16:40:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 5",
+   "a": "Ireland",
+   "b": "Fiji",
+   "start": "2026-11-14T20:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 5",
+   "a": "Scotland",
+   "b": "Australia",
+   "start": "2026-11-15T15:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Super Rygbi Cymru Trophy",
+   "a": "Cardiff Rugby",
+   "b": "Llandovery",
+   "start": "2026-11-20T19:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 6",
+   "a": "England",
+   "b": "New Zealand",
+   "start": "2026-11-21T14:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 6",
+   "a": "Scotland",
+   "b": "Japan",
+   "start": "2026-11-21T14:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 6",
+   "a": "Ireland",
+   "b": "South Africa",
+   "start": "2026-11-21T16:40:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 6",
+   "a": "Italy",
+   "b": "Fiji",
+   "start": "2026-11-21T16:40:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 6",
+   "a": "France",
+   "b": "Argentina",
+   "start": "2026-11-21T20:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Nations Championship - Round 6",
+   "a": "Wales",
+   "b": "Australia",
+   "start": "2026-11-21T20:10:00Z",
+   "stan": true,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Super Rygbi Cymru Trophy",
+   "a": "Pontypool",
+   "b": "Cardiff Rugby",
+   "start": "2026-11-26T19:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Stade Français",
+   "b": "Northampton Saints",
+   "start": "2026-12-11T20:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Glasgow Warriors",
+   "b": "Pau",
+   "start": "2026-12-11T20:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "Professional Boxing - 12 Rounds Heavyweight Bout",
+   "a": "Tyson Fury",
+   "b": "Anthony Joshua",
+   "start": "2026-12-11T23:00:00Z",
+   "stan": false,
+   "sport": "Boxing / Fighting"
+  },
+  {
+   "comp": "European Challenge Cup - Round 2",
+   "a": "Ulster",
+   "b": "Bayonne",
+   "start": "2026-12-12T13:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Challenge Cup - Round 2",
+   "a": "Ospreys",
+   "b": "Harlequins",
+   "start": "2026-12-12T13:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Lions",
+   "b": "Toulouse",
+   "start": "2026-12-12T13:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Montpellier",
+   "b": "Bulls",
+   "start": "2026-12-12T15:15:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Leicester Tigers",
+   "b": "Clermont Auvergne",
+   "start": "2026-12-12T15:15:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Challenge Cup - Round 2",
+   "a": "Sharks",
+   "b": "Scarlets",
+   "start": "2026-12-12T17:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Challenge Cup - Round 2",
+   "a": "Benetton Rugby",
+   "b": "Lyon",
+   "start": "2026-12-12T17:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Saracens",
+   "b": "La Rochelle",
+   "start": "2026-12-12T17:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Leinster",
+   "b": "Sale Sharks",
+   "start": "2026-12-12T17:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Challenge Cup - Round 2",
+   "a": "Toulon",
+   "b": "Black Lion",
+   "start": "2026-12-12T20:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Challenge Cup - Round 2",
+   "a": "Newcastle Red Bulls",
+   "b": "Castres",
+   "start": "2026-12-12T20:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Bristol Bears",
+   "b": "Munster",
+   "start": "2026-12-12T20:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Cardiff Rugby",
+   "b": "Bath",
+   "start": "2026-12-12T20:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Challenge Cup - Round 2",
+   "a": "Vannes",
+   "b": "Edinburgh",
+   "start": "2026-12-13T13:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Challenge Cup - Round 2",
+   "a": "Cheetahs",
+   "b": "Dragons",
+   "start": "2026-12-13T13:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Exeter Chiefs",
+   "b": "Connacht",
+   "start": "2026-12-13T13:00:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Challenge Cup - Round 2",
+   "a": "Perpignan",
+   "b": "Zebre",
+   "start": "2026-12-13T15:15:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Bordeaux Bègles",
+   "b": "Stormers",
+   "start": "2026-12-13T15:15:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  },
+  {
+   "comp": "European Champions Cup - Round 2",
+   "a": "Racing 92",
+   "b": "Gloucester",
+   "start": "2026-12-13T17:30:00Z",
+   "stan": false,
+   "sport": "Rugby Union"
+  }
+ ]
+}
