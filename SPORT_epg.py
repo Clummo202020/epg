@@ -2034,6 +2034,61 @@ def sky_it_channels(pattern):
     return {cid: it_name(name, num) for cid, (num, name) in found.items() if name and rx.search(name.strip())}
 
 
+def _it_12h(h, m):
+    return f"{(h % 12) or 12}:{m:02d} {'AM' if h < 12 else 'PM'}"
+
+
+CLOCK_24H = re.compile(r"(?<![\d:.])([01]?\d|2[0-3]):([0-5]\d)(?![\d:])(?!\s?[AaPp]\.?[Mm])(?!\.\d)")
+CLOCK_SHORT = re.compile(r"(?<![\w:.])(\d{1,2})(?:[:.]([0-5]\d))?\s?([AaPp])(?:\.[Mm]\.|[Mm])(?!\w)")
+
+
+def clock12(text):
+    """EVERY clock time in a title / secondary title / description -> 12-hour with AM / PM (6 Nov 2026, user request, whole Sport
+    guide; applied last, in add_programme, so nothing that parses the 24-hour text is affected): "19:00" -> "7:00 PM", "00:15" ->
+    "12:15 AM", "9pm" / "3.30pm" style -> "9:00 PM". Skipped: lap times ("1:23.456"), h:mm:ss, anything already "7:45 PM"."""
+    t = CLOCK_24H.sub(lambda m: _it_12h(int(m.group(1)), int(m.group(2))), text or "")
+
+    def short(m):
+        h = int(m.group(1))
+        if not 1 <= h <= 12:
+            return m.group(0)
+        return f"{h}:{m.group(2) or '00'} {'AM' if m.group(3).lower() == 'a' else 'PM'}"
+    return CLOCK_SHORT.sub(short, t)
+
+
+it_12h = clock12                                       # (the Italian-only name used earlier on 6 Nov)
+
+
+def it_desc_en(desc, start=None):
+    """Sky Italia's fixed match-description wording, rewritten to English WITHOUT Google (6 Nov 2026): the translator returned it
+    half done (46 of 298 cached ones). User's wording: no code number, 12-hour clock with AM / PM, "Matchday 11".
+    "Cod. 418446 - Serie A - 11a giornata. Calcio d'inizio ore 20:45." -> "Serie A - Matchday 11. Kick-off at 7:45 PM." The kick-off
+    (and any other clock time) in Sky's text is ITALIAN time; it is converted to UK time for the event's own date, because the
+    guide's blocks and its \"Coverage from\" line are UK time. Other text is left alone (the normal translation handles it)."""
+    t = desc or ""
+    if not t:
+        return t
+
+    def uk(h, m):
+        if start is None:
+            return _it_12h(h, m)
+        day = start.astimezone(ROME).date()
+        local = datetime(day.year, day.month, day.day, h, m, tzinfo=ROME)
+        if local < start.astimezone(ROME) - timedelta(hours=6):       # a kick-off just after midnight belongs to the next day
+            local += timedelta(days=1)
+        uk_dt = local.astimezone(LONDON)
+        return _it_12h(uk_dt.hour, uk_dt.minute)
+
+    t = re.sub(r"\bCod\.?\s*\d{3,9}\s*(?:[-\u2013]\s*)?", "", t)                         # "Cod. 418446 - " (any position)
+    t = re.sub(r"\b(\d{1,2})\s*[ao]\s+giornata\b", r"Matchday \1", t)
+    t = re.sub(r"(?i)\bCalcio d['\u2019]inizio(?:\s+alle)?(?:\s+ore)?\s*(\d{1,2})[:.](\d{2})",
+               lambda m: "Kick-off at " + uk(int(m.group(1)), int(m.group(2))), t)
+    t = re.sub(r"(?i)\bCalcio d['\u2019]inizio(?:\s+alle)?(?:\s+ore)?\s*(\d{1,2})\b(?![:.\d])",
+               lambda m: "Kick-off at " + uk(int(m.group(1)), 0), t)
+    t = re.sub(r"\b([01]?\d|2[0-3]):([0-5]\d)\b(?!\s?[AaPp][Mm])", lambda m: uk(int(m.group(1)), int(m.group(2))), t)   # "Dalle 18:45"
+    return re.sub(r"\s{2,}", " ", t).strip()
+
+
 IT_POPUP_RE = re.compile(r"(?i)^sky sport 25[1-8]$")
 IT_TEAMS_RE = re.compile(r"^[^:/()]+?\s+[-\u2013]\s+[^:/()]+$")                  # "Venezia - Udinese" (no colon, slash or brackets)
 IT_NOT_LIVE_RE = re.compile(r"(?i)\b(replica|differita|highlights?|sintesi|magazine|speciale|studio|post ?partita|pre ?partita|"
@@ -2073,7 +2128,7 @@ def fetch_italy(days, pattern, debug=False):
                 title = re.sub(r"^\s*" + rx + r"\s*[:\-]?\s*|\s*[(-]\s*" + rx + r"\s*\)?\s*$", "", title,
                                flags=re.I).strip() or title
                 ev = {"start": start, "stop": stop, "title": title, "sub": "", "live": live,
-                      "desc": pick_desc(it, "eventSynopsis", "epgEventSynopsis")}
+                      "desc": it_desc_en(pick_desc(it, "eventSynopsis", "epgEventSynopsis"), start)}
                 # Every Italian channel (5 Nov 2026): a title "Team A - Team B" holds team names, which Google damaged (Como -> "How",
                 # Vado -> "I go", Roma -> "Rome", Savoia - Potenza -> "Savoy - Power"), so it is NOT translated (en() skips it).
                 teams = bool(IT_TEAMS_RE.match(title)) and not IT_NOT_LIVE_RE.search(title)
@@ -3354,11 +3409,12 @@ MATCH_NOT_TEAMS = re.compile(
     r"clubs|tonight|live|matchday|friendly|friendlies|tour|open|masters|world|series|games|zone|time|goals?|gol|top|best|moments|"
     r"inside|extra|pre|post|play-?offs?|final|finals|semi-?finals?|quarter-?finals?|group|play|fixtures|schedule|programme|program|"
     r"announcement|stories|story|legends?|unpacked|build-?up|pregled|vt|atp|wta|itf|challenger|tv|unplugged|meeting|sign up|"
-    r"takes two|loco|garage|fan|fans)\b")
+    r"takes two|loco|garage|fan|fans|nascar|euronascar)\b")
 MATCH_CODE = re.compile(r"(?i)^(?:E|EP|MD|MW|R|P|T|S|Q|FP|GR|GP|H|SF|QF|J|W|D)\d{1,3}$|^(?:19|20)\d\d$|^'\d\d$|^\d+(?:st|nd|rd|th)$")
 MATCH_EDGE = re.compile(r"(?i)^(of|the|and|a|an|in|on|at|for|to|with|by)\s|\s(of|the|and|a|an|in|on|at|for|to|with|by)$")
 MATCH_TAIL = r"(?: \(?\s*\d{1,2}[./]\d{1,2}[./]\d{2,4}\s*\)?)?(?:, [^,()]{1,24})?"
 MATCH_SHAPE = re.compile(r"^(?P<pre>(?:Next match: )?)(?P<a>\S.*?) (?P<sep>[-\u2013xX\u00d7]) (?P<b>\S.*?)(?P<tail>" + MATCH_TAIL + r")$")
+MATCH_CONNECTORS = {"de", "del", "della", "di", "da", "das", "do", "dos", "du", "des", "la", "las", "le", "les", "los", "el", "al", "van", "von", "der", "den", "bin", "ben", "ibn", "y", "e", "af", "av"}
 MATCH_PAIRS = set()                       # (a, b) names of every STRONG fixture seen this run (see collect_match_pairs)
 
 
@@ -3380,6 +3436,10 @@ def _match_parts(title, live, minutes):
         if not (1 <= len(words) <= 5) or MATCH_NOT_TEAMS.search(name) or MATCH_EDGE.search(name) or re.search(r"[()]", name):
             return None
         if any(MATCH_CODE.match(w) for w in words) or not any(ch.isupper() for ch in name):
+            return None
+        # a team / person / country is written with capitals: "Basketball rules - Aleksa Avramovic" is a show (6 Nov), while
+        # "Alianza de Lima", "Bayer 04 Leverkusen", "Van Gerwen" keep their small connecting words
+        if any(w[:1].islower() and w.lower() not in MATCH_CONNECTORS for w in words[1:]):
             return None
     dated = bool(re.search(r"\d{1,2}[./]\d{1,2}[./]\d{2,4}", tail))
     return pre, a, b, tail, bool(live or dated or minutes >= 75)
@@ -5996,6 +6056,7 @@ def fix_names(text):
 
 def add_programme(tv, cid, start, stop, title, sub, desc, live):
     title, sub, desc = fix_names(title), fix_names(sub), fix_names(desc)
+    title, sub, desc = clock12(title), clock12(sub), clock12(desc)   # 12-hour clock with AM / PM everywhere (6 Nov 2026)
     p = ET.SubElement(tv, "programme", {
         "start": xmltv_time(start), "stop": xmltv_time(stop), "channel": cid})
     ET.SubElement(p, "title", {"lang": "en"}).text = title
