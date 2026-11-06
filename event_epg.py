@@ -188,7 +188,7 @@ SCOTTISH_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/sc
 # 19:45/20:00 kick-off). For these, real_start() looks up the real kick-off and the competition with
 # its round, like the Soccer PPV slots. Peacock added 28 Oct 2026 (its Premier League streams open
 # ~10 min early: "Hull City v. Ipswich Town (10:50 ET)" for a 15:00 UK kick-off).
-REAL_START_GROUPS = ("paramount", "peacock")
+REAL_START_GROUPS = ("paramount", "peacock", "stan")   # "stan" added 6 Nov 2026: Stan's stream time is ~30 min before kick-off (user: "Stan 04 times are out")
 TEAM_SHORT_NAMES = [(r"(?i)^\s*spurs\s*$", "Tottenham Hotspur"), (r"(?i)^\s*wolves\s*$", "Wolverhampton"),
                     (r"(?i)\bnott'?m\.?\s+forest\b", "Nottingham Forest"),
                     (r"(?i)^\s*forest\s*$", "Nottingham Forest"), (r"(?i)^\s*palace\s*$", "Crystal Palace"),
@@ -697,6 +697,57 @@ ESPN_FOOTBALL = {
 }
 
 
+# LiveOnSat fixtures (6 Nov 2026): rugby union / league, Aussie rules, boxing and fighting - sports the football guide and ESPN don't give us.
+# liveonsat_fixtures.py (own workflow, every 6 hours) writes liveonsat_fixtures.json with UTC start times; Stan's stream-name times were
+# 10-55 minutes before the real start (Ireland v Argentina: name 20:00, kick-off 20:10; Scotland v New Zealand: 13:15 vs 14:10).
+LIVEONSAT_FILE = "liveonsat_fixtures.json"
+LIVEONSAT_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/liveonsat_fixtures.json"
+_LOS = None
+
+
+def load_liveonsat():
+    """[(home key, away key, start UTC, competition)] from liveonsat_fixtures.json, or [] (never raises)."""
+    global _LOS
+    if _LOS is not None:
+        return _LOS
+    _LOS = []
+    local = os.path.join(os.path.dirname(os.path.abspath(__file__)), LIVEONSAT_FILE)
+    try:
+        if os.path.exists(local):
+            with open(local, "rb") as f:
+                raw = f.read()
+        else:
+            with urllib.request.urlopen(urllib.request.Request(LIVEONSAT_URL, headers=HEADERS), timeout=30) as r:
+                raw = r.read()
+        data = json.loads(raw.decode("utf-8"))
+        fetched = datetime.strptime(data.get("fetched", ""), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+        if datetime.now(timezone.utc) - fetched > timedelta(hours=48):
+            print(f"  WARNING: LiveOnSat fixtures are {fetched:%d %b %H:%M} UTC - older than 48 h (its workflow may have stopped)")
+        for f in data.get("fixtures", []):
+            start = datetime.strptime(f["start"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            comp = re.sub(r"\s*-\s*(?:Round|Group|Week|Pool|Match|Game)\b.*$", "", f.get("comp") or "").strip()
+            _LOS.append((_norm(f["a"]), _norm(f["b"]), start, comp))
+    except Exception as e:
+        print(f"  LiveOnSat fixtures not available ({e}) - stream times are used as they are")
+        _LOS = []
+    return _LOS
+
+
+def liveonsat_start(sides, approx):
+    """(start UTC, competition) of the LiveOnSat fixture whose two teams are the two `sides` (the second side may carry
+    trailing competition words) within REAL_START_HOURS of `approx`, else None."""
+    def has(side, team):
+        return bool(team) and f" {team} " in f" {_norm(side)} "
+    best = None
+    for a, b, ko, comp in load_liveonsat():
+        if abs(ko - approx) > timedelta(hours=REAL_START_HOURS):
+            continue
+        if (has(sides[0], a) and has(sides[1], b)) or (has(sides[0], b) and has(sides[1], a)):
+            if best is None or abs(ko - approx) < abs(best[0] - approx):
+                best = (ko, comp)
+    return best
+
+
 def real_start(title, approx):
     """(start UTC, early minutes, competition) of the match in `title` near `approx`, else None."""
     sides = re.split(r"\s+(?:vs?\.?|at|@|x|-)\s+", title, maxsplit=1, flags=re.I)
@@ -742,6 +793,10 @@ def real_start(title, approx):
                 and abs(ko - approx) <= timedelta(hours=REAL_START_HOURS)]
         if hits:
             return min(hits, key=lambda k: abs(k - approx)), 0, label
+    los = liveonsat_start(sides, approx)                      # rugby, Aussie rules, boxing ... (6 Nov 2026)
+    if los:
+        print(f"  Start from LiveOnSat: {title}: name {approx:%d %b %H:%M} UTC, {los[1] or '?'} {los[0]:%d %b %H:%M} UTC")
+        return los[0], PROVIDER_EARLY_MINUTES, los[1]
     return None
 
 
