@@ -6136,6 +6136,9 @@ DIVIDERS = ["UK & IRELAND", "USA", "CANADA", "INDIA", "AUSTRALIA", "JAMAICA", "M
             "SPAIN", "SWITZERLAND", "POLAND", "ITALY", "LATVIA", "GREECE", "ALBANIA", "BULGARIA", "ROMANIA", "BOSNIA", "SERBIA",
             "CROATIA", "SLOVENIA", "TURKEY", "BRAZIL", "CYPRUS", "PORTUGAL", "BELGIUM", "FINLAND", "SWEDEN", "DENMARK", "NORWAY",
             "CZECHIA", "ISRAEL", "TANZANIA"]
+# 6 Nov 2026: PlaylistLabs kept showing "EPG data ... not available" for DIV.UKIRELAND and DIV.CANADA (identical to the 33 that worked, even
+# after re-linking), so those two got fresh ids; the old ones are no longer written.
+DIVIDER_ID_OVERRIDES = {"UK & IRELAND": "UKANDIRELAND", "CANADA": "CANADA1"}
 DIVIDER_DAYS = 7
 DIVIDER_BLOCK_HOURS = 6
 
@@ -6152,7 +6155,7 @@ def divider_records():
             evs.append({"start": t, "stop": t + step, "title": name, "sub": "", "desc": "", "live": False, "never_live": True,
                         "no_lead": True, "no_translate": True})
             t += step
-        out.append({"id": "DIV." + re.sub(r"[^A-Za-z0-9]+", "", name), "name": f"### {name} ###", "tz": timezone.utc,
+        out.append({"id": "DIV." + DIVIDER_ID_OVERRIDES.get(name, re.sub(r"[^A-Za-z0-9]+", "", name)), "name": f"### {name} ###", "tz": timezone.utc,
                     "place": "", "filler": False, "back_to_back": True, "events": evs})
     return out
 
