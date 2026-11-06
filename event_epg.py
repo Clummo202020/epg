@@ -410,6 +410,18 @@ def _team_key(name):
     return words[0] if words else ""
 
 
+def parse_clock(text):
+    """(hour, minute) from "15:00", "3:00 PM", "3pm" or "3:30pm" (6 Nov 2026: the guides changed to a 12-hour clock), else None"""
+    t = (text or "").strip()
+    m = re.match(r"^(\d{1,2}):(\d{2})$", t)
+    if m:
+        return int(m[1]), int(m[2])
+    m = re.match(r"^(\d{1,2})(?::(\d{2}))?\s?([AaPp])[Mm]$", t)
+    if m:
+        return int(m[1]) % 12 + (12 if m[3].lower() == "p" else 0), int(m[2] or 0)
+    return None
+
+
 def load_fixtures():
     """[(home_key, away_key, home, away, kick-off datetime UK, competition)] from the
     football guide, or None."""
@@ -437,16 +449,17 @@ def load_fixtures():
     out = set()
     for p in (p for root in roots for p in root.iter("programme")):
         t = (p.findtext("title") or "")
-        # the football / Scottish guides write the time as "15:00" (until 6 Nov 2026) or "3:00 PM" (12-hour clock since then): both read
-        m = re.match(r"^(?:🔴 LIVE: )?(.+?) v (.+?) \((?:\w{3}) (\d{1,2}) (\w{3}), (\d{1,2}):(\d{2})(?: ([AaPp])[Mm])?\)$", t)
+        # the football / Scottish guides write the time as "15:00" (until 6 Nov 2026), "3:00 PM" (12-hour, 6 Nov) or "3pm" / "3:30pm" (the
+        # current style: lower case, no space, minutes dropped on the hour): all three are read
+        m = re.match(r"^(?:🔴 LIVE: )?(.+?) v (.+?) \((?:\w{3}) (\d{1,2}) (\w{3}), ([^()]+)\)$", t)
         if not m:
             continue
+        hm = parse_clock(m[5])
+        if hm is None:
+            continue
         year = int((p.get("start") or "2000")[:4])
-        hour = int(m[5])
-        if m[7]:
-            hour = hour % 12 + (12 if m[7].lower() == "p" else 0)
         try:
-            ko = datetime.strptime(f"{m[3]} {m[4]} {year} {hour:02d}:{m[6]}", "%d %b %Y %H:%M") \
+            ko = datetime.strptime(f"{m[3]} {m[4]} {year} {hm[0]:02d}:{hm[1]:02d}", "%d %b %Y %H:%M") \
                 .replace(tzinfo=LONDON)
         except ValueError:
             continue
@@ -1402,12 +1415,13 @@ def xmltv_time(dt):
 _HORIZON = None    # set by build(): nothing is written that starts after this
 
 
-# 12-hour clock with AM / PM in every title, secondary title and description (6 Nov 2026, user request: "across the board"; the same
+# 12-hour clock (lower case, no space, minutes dropped on the hour: 12:30am, 3pm, 5:45pm) in every title, secondary title and description (6 Nov 2026, user request: "across the board"; the same
 # code is in SPORT_epg.py, football_epg.py, scottish_epg.py, event_epg.py, USA_epg.py, TEAMS_epg.py and GENERAL_epg.py). Applied LAST,
 # where each programme is written, so nothing that parses the 24-hour text earlier is affected. Every time these scripts put into
 # text is UK time (Europe/London) already - see the audit in the handover.
 def _clock_part(h, m):
-    return f"{(h % 12) or 12}:{m:02d} {'AM' if h < 12 else 'PM'}"
+    """12-hour clock, lower case, no space, minutes dropped on the hour: 12:30am, 3pm, 5:45pm"""
+    return f"{(h % 12) or 12}{(':%02d' % m) if m else ''}{'am' if h < 12 else 'pm'}"
 
 
 CLOCK_24H = re.compile(r"(?<![\d:.])([01]?\d|2[0-3]):([0-5]\d)(?![\d:])(?!\s?[AaPp]\.?[Mm])(?!\.\d)")
@@ -1416,15 +1430,16 @@ CLOCK_SHORT = re.compile(r"(?<![\w:.])(\d{1,2})(?:[:.]([0-5]\d))?\s?([AaPp])(?:\
 
 def clock12(text):
     """EVERY clock time in a title / secondary title / description -> 12-hour with AM / PM (6 Nov 2026, user request, whole Sport
-    guide; applied last, in add_programme, so nothing that parses the 24-hour text is affected): "19:00" -> "7:00 PM", "00:15" ->
-    "12:15 AM", "9pm" / "3.30pm" style -> "9:00 PM". Skipped: lap times ("1:23.456"), h:mm:ss, anything already "7:45 PM"."""
+    guide; applied last, in add_programme, so nothing that parses the 24-hour text is affected): "19:00" -> "7pm", "00:15" ->
+    "12:15am", "9:00 PM" / "3.30pm" style -> "9pm" / "3:30pm". Skipped: lap times ("1:23.456"), h:mm:ss, anything already "7:45 PM"."""
     t = CLOCK_24H.sub(lambda m: _clock_part(int(m.group(1)), int(m.group(2))), text or "")
 
     def short(m):
         h = int(m.group(1))
         if not 1 <= h <= 12:
             return m.group(0)
-        return f"{h}:{m.group(2) or '00'} {'AM' if m.group(3).lower() == 'a' else 'PM'}"
+        mm = m.group(2)
+        return f"{h}{(':' + mm) if mm and mm != '00' else ''}{'am' if m.group(3).lower() == 'a' else 'pm'}"
     return CLOCK_SHORT.sub(short, t)
 
 
