@@ -3297,7 +3297,7 @@
     <display-name lang="en">PDC Event 1</display-name>
   </channel>
   <channel id="PPVEVENT1.us">
-    <display-name lang="en">PPV EVENT 01: The Dirt Track at Charlotte (11.5 1:15 PM ET)</display-name>
+    <display-name lang="en">PPV EVENT 01: The Dirt Track at Charlotte (11.6 2:30 PM ET)</display-name>
     <display-name lang="en">PPV EVENT 01</display-name>
   </channel>
   <channel id="PPVEVENT10.us">
@@ -3341,7 +3341,7 @@
     <display-name lang="en">PPV EVENT 19</display-name>
   </channel>
   <channel id="PPVEVENT2.us">
-    <display-name lang="en">PPV EVENT 02: Gold Rush Nationals (11.5 6:00 PM ET)</display-name>
+    <display-name lang="en">PPV EVENT 02: Gold Rush Nationals (11.6 6:00 PM ET)</display-name>
     <display-name lang="en">PPV EVENT 02</display-name>
   </channel>
   <channel id="PPVEVENT20.us">
@@ -3385,7 +3385,7 @@
     <display-name lang="en">PPV EVENT 29</display-name>
   </channel>
   <channel id="PPVEVENT3.us">
-    <display-name lang="en">PPV EVENT 03</display-name>
+    <display-name lang="en">PPV EVENT 03: GCW Dead on Arrival (11.6 9:00 PM ET)</display-name>
     <display-name lang="en">PPV EVENT 03</display-name>
   </channel>
   <channel id="PPVEVENT30.us">
@@ -3429,7 +3429,7 @@
     <display-name lang="en">PPV EVENT 39</display-name>
   </channel>
   <channel id="PPVEVENT4.us">
-    <display-name lang="en">PPV EVENT 04</display-name>
+    <display-name lang="en">PPV EVENT 04: APFC IFL 5 (11.6 11:00 AM ET)</display-name>
     <display-name lang="en">PPV EVENT 04</display-name>
   </channel>
   <channel id="PPVEVENT40.us">
@@ -3473,7 +3473,7 @@
     <display-name lang="en">PPV EVENT 49</display-name>
   </channel>
   <channel id="PPVEVENT5.us">
-    <display-name lang="en">PPV EVENT 05</display-name>
+    <display-name lang="en">PPV EVENT 05: Samourai MMA 22 (11.6 7:00 PM ET)</display-name>
     <display-name lang="en">PPV EVENT 05</display-name>
   </channel>
   <channel id="PPVEVENT50.us">
@@ -3481,11 +3481,11 @@
     <display-name lang="en">PPV EVENT 50</display-name>
   </channel>
   <channel id="PPVEVENT6.us">
-    <display-name lang="en">PPV EVENT 06</display-name>
+    <display-name lang="en">PPV EVENT 06: LUX 064 (11.6 10:00 PM ET)</display-name>
     <display-name lang="en">PPV EVENT 06</display-name>
   </channel>
   <channel id="PPVEVENT7.us">
-    <display-name lang="en">PPV EVENT 07</display-name>
+    <display-name lang="en">PPV EVENT 07: ONE Fight Night 49 Gabriel vs. Rasulov (11.6 9:00 PM ET)</display-name>
     <display-name lang="en">PPV EVENT 07</display-name>
   </channel>
   <channel id="PPVEVENT8.us">
@@ -3513,7 +3513,7 @@
     <display-name lang="en">US (Paramount 004)</display-name>
   </channel>
   <channel id="Paramount005.us">
-    <display-name lang="en">UEFA Champions League: Slavia Praha vs Arsenal @ Nov 4 2:00 PM :Paramount+ 05</display-name>
+    <display-name lang="en">English Football League: Derby County vs Bolton Wanderers @ Nov 6 2:50 PM :Paramount+ 05</display-name>
     <display-name lang="en">US (Paramount 005)</display-name>
   </channel>
   <channel id="Paramount006.us">
@@ -3921,7 +3921,7 @@
     <display-name lang="en">US (Peacock 007)</display-name>
   </channel>
   <channel id="Peacock008.us">
-    <display-name lang="en">US (Peacock 008) | Women`s Short Program (2026-11-06 03:25:00)</display-name>
+    <display-name lang="en">US (Peacock 008) | St. Thomas vs. Minnesota (2026-11-06 20:00:00)</display-name>
     <display-name lang="en">US (Peacock 008)</display-name>
   </channel>
   <channel id="Peacock009.us">
@@ -9626,6 +9626,558 @@
     <desc lang="en">Coming up: Broncos at Panthers. NFL. Starts Sun 8 Nov, 6:00 PM UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: The Dirt Track at Charlotte. PPV Event. Starts Fri 6 Nov, 7:30 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: The Dirt Track at Charlotte. PPV Event. Starts Fri 6 Nov, 7:30 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: The Dirt Track at Charlotte. PPV Event. Starts Fri 6 Nov, 7:30 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106193000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">Next up: LIVE – The Dirt Track at Charlotte (7:30 PM)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. The Dirt Track at Charlotte starts at 7:30 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106193000 +0000" stop="20261106213000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">🔴 LIVE: The Dirt Track at Charlotte</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">The Dirt Track at Charlotte. PPV Event. Starts Fri 6 Nov, 7:30 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261106213000 +0000" stop="20261106233000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">🔴 LIVE: The Dirt Track at Charlotte</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">The Dirt Track at Charlotte. PPV Event. Starts Fri 6 Nov, 7:30 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261106233000 +0000" stop="20261107013000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107013000 +0000" stop="20261107033000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107033000 +0000" stop="20261107053000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107053000 +0000" stop="20261107073000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107073000 +0000" stop="20261107093000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107093000 +0000" stop="20261107113000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107113000 +0000" stop="20261107133000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107133000 +0000" stop="20261107153000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Fri 6 Nov, 7:30 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Gold Rush Nationals. PPV Event. Starts Fri 6 Nov, 11:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Gold Rush Nationals. PPV Event. Starts Fri 6 Nov, 11:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Gold Rush Nationals. PPV Event. Starts Fri 6 Nov, 11:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Gold Rush Nationals. PPV Event. Starts Fri 6 Nov, 11:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Gold Rush Nationals. PPV Event. Starts Fri 6 Nov, 11:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106220000 +0000" stop="20261106230000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">Next up: LIVE – Gold Rush Nationals (11:00 PM)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Gold Rush Nationals starts at 11:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106230000 +0000" stop="20261107010000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">🔴 LIVE: Gold Rush Nationals</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">Gold Rush Nationals. PPV Event. Starts Fri 6 Nov, 11:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107010000 +0000" stop="20261107030000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">🔴 LIVE: Gold Rush Nationals</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">Gold Rush Nationals. PPV Event. Starts Fri 6 Nov, 11:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107030000 +0000" stop="20261107050000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107050000 +0000" stop="20261107070000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107070000 +0000" stop="20261107090000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107090000 +0000" stop="20261107110000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107110000 +0000" stop="20261107130000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107130000 +0000" stop="20261107150000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Fri 6 Nov, 11:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: GCW Dead on Arrival. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: GCW Dead on Arrival. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: GCW Dead on Arrival. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: GCW Dead on Arrival. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: GCW Dead on Arrival. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: GCW Dead on Arrival. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">Next up: LIVE – GCW Dead on Arrival (2:00 AM)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. GCW Dead on Arrival starts at 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">🔴 LIVE: GCW Dead on Arrival</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">GCW Dead on Arrival. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">🔴 LIVE: GCW Dead on Arrival</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">GCW Dead on Arrival. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">PPV EVENT 03: GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">PPV EVENT 03: GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">PPV EVENT 03: GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">PPV EVENT 03: GCW Dead on Arrival (Sat 7 Nov, 2:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">Apfc Ifl 5 (Fri 6 Nov, 4:00 PM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Apfc Ifl 5. PPV Event. Starts Fri 6 Nov, 4:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">Next up: LIVE – Apfc Ifl 5 (4:00 PM)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Apfc Ifl 5 starts at 4:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">🔴 LIVE: Apfc Ifl 5</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">Apfc Ifl 5. PPV Event. Starts Fri 6 Nov, 4:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">🔴 LIVE: Apfc Ifl 5</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">Apfc Ifl 5. PPV Event. Starts Fri 6 Nov, 4:00 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">PPV EVENT 04: APFC IFL 5 (Fri 6 Nov, 4:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">PPV EVENT 04: APFC IFL 5 (Fri 6 Nov, 4:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">PPV EVENT 04: APFC IFL 5 (Fri 6 Nov, 4:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">PPV EVENT 04: APFC IFL 5 (Fri 6 Nov, 4:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">PPV EVENT 04: APFC IFL 5 (Fri 6 Nov, 4:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">PPV EVENT 04: APFC IFL 5 (Fri 6 Nov, 4:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">PPV EVENT 04: APFC IFL 5 (Fri 6 Nov, 4:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">PPV EVENT 04: APFC IFL 5 (Fri 6 Nov, 4:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT4.us">
+    <title lang="en">PPV EVENT 04: APFC IFL 5 (Fri 6 Nov, 4:00 PM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Samourai MMA 22. PPV Event. Starts Sat 7 Nov, 12:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Samourai MMA 22. PPV Event. Starts Sat 7 Nov, 12:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Samourai MMA 22. PPV Event. Starts Sat 7 Nov, 12:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Samourai MMA 22. PPV Event. Starts Sat 7 Nov, 12:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: Samourai MMA 22. PPV Event. Starts Sat 7 Nov, 12:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">Next up: LIVE – Samourai MMA 22 (12:00 AM)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Samourai MMA 22 starts at 12:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">🔴 LIVE: Samourai MMA 22</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">Samourai MMA 22. PPV Event. Starts Sat 7 Nov, 12:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">🔴 LIVE: Samourai MMA 22</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">Samourai MMA 22. PPV Event. Starts Sat 7 Nov, 12:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107040000 +0000" stop="20261107050000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">🔴 LIVE: Samourai MMA 22</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">Samourai MMA 22. PPV Event. Starts Sat 7 Nov, 12:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107050000 +0000" stop="20261107070000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">PPV EVENT 05: Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107070000 +0000" stop="20261107090000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">PPV EVENT 05: Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107090000 +0000" stop="20261107110000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">PPV EVENT 05: Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107110000 +0000" stop="20261107130000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">PPV EVENT 05: Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107130000 +0000" stop="20261107150000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">PPV EVENT 05: Samourai MMA 22 (Sat 7 Nov, 12:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: LUX 064. PPV Event. Starts Sat 7 Nov, 3:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: LUX 064. PPV Event. Starts Sat 7 Nov, 3:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: LUX 064. PPV Event. Starts Sat 7 Nov, 3:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: LUX 064. PPV Event. Starts Sat 7 Nov, 3:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: LUX 064. PPV Event. Starts Sat 7 Nov, 3:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: LUX 064. PPV Event. Starts Sat 7 Nov, 3:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: LUX 064. PPV Event. Starts Sat 7 Nov, 3:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107020000 +0000" stop="20261107030000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">Next up: LIVE – LUX 064 (3:00 AM)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. LUX 064 starts at 3:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107030000 +0000" stop="20261107050000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">🔴 LIVE: LUX 064</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">LUX 064. PPV Event. Starts Sat 7 Nov, 3:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107050000 +0000" stop="20261107070000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">🔴 LIVE: LUX 064</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">LUX 064. PPV Event. Starts Sat 7 Nov, 3:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107070000 +0000" stop="20261107090000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">PPV EVENT 06: LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107090000 +0000" stop="20261107110000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">PPV EVENT 06: LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107110000 +0000" stop="20261107130000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">PPV EVENT 06: LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107130000 +0000" stop="20261107150000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">PPV EVENT 06: LUX 064 (Sat 7 Nov, 3:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">ONE Fight Night 49 Gabriel vs Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: ONE Fight Night 49 Gabriel vs Rasulov. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">ONE Fight Night 49 Gabriel vs Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: ONE Fight Night 49 Gabriel vs Rasulov. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">ONE Fight Night 49 Gabriel vs Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: ONE Fight Night 49 Gabriel vs Rasulov. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">ONE Fight Night 49 Gabriel vs Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: ONE Fight Night 49 Gabriel vs Rasulov. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">ONE Fight Night 49 Gabriel vs Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: ONE Fight Night 49 Gabriel vs Rasulov. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">ONE Fight Night 49 Gabriel vs Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
+    <desc lang="en">Coming up: ONE Fight Night 49 Gabriel vs Rasulov. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">Next up: LIVE – ONE Fight Night 49 Gabriel vs Rasulov (2:00 AM)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. ONE Fight Night 49 Gabriel vs Rasulov starts at 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">🔴 LIVE: ONE Fight Night 49 Gabriel vs Rasulov</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">ONE Fight Night 49 Gabriel vs Rasulov. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">🔴 LIVE: ONE Fight Night 49 Gabriel vs Rasulov</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">ONE Fight Night 49 Gabriel vs Rasulov. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107060000 +0000" stop="20261107070000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">🔴 LIVE: ONE Fight Night 49 Gabriel vs Rasulov</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">ONE Fight Night 49 Gabriel vs Rasulov. PPV Event. Starts Sat 7 Nov, 2:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107070000 +0000" stop="20261107090000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">PPV EVENT 07: ONE Fight Night 49 Gabriel vs. Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107090000 +0000" stop="20261107110000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">PPV EVENT 07: ONE Fight Night 49 Gabriel vs. Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107110000 +0000" stop="20261107130000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">PPV EVENT 07: ONE Fight Night 49 Gabriel vs. Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107130000 +0000" stop="20261107150000 +0000" channel="PPVEVENT7.us">
+    <title lang="en">PPV EVENT 07: ONE Fight Night 49 Gabriel vs. Rasulov (Sat 7 Nov, 2:00 AM)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="Paramount001.us">
     <title lang="en">Romania vs Tonga (Fri 6 Nov, 5:20 PM)</title>
     <sub-title lang="en">⏭ Coming up Fri 6 Nov</sub-title>
@@ -9811,6 +10363,60 @@
   </programme>
   <programme start="20261107004500 +0000" stop="20261107024500 +0000" channel="Paramount004.us">
     <title lang="en">Venezia vs Udinese</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="Paramount005.us">
+    <title lang="en">Derby County vs Bolton Wanderers (Fri 6 Nov, 8:50 PM)</title>
+    <sub-title lang="en">⏭ Coming up: English Football League</sub-title>
+    <desc lang="en">Coming up: Derby County vs Bolton Wanderers. English Football League. Starts Fri 6 Nov, 8:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="Paramount005.us">
+    <title lang="en">Derby County vs Bolton Wanderers (Fri 6 Nov, 8:50 PM)</title>
+    <sub-title lang="en">⏭ Coming up: English Football League</sub-title>
+    <desc lang="en">Coming up: Derby County vs Bolton Wanderers. English Football League. Starts Fri 6 Nov, 8:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="Paramount005.us">
+    <title lang="en">Derby County vs Bolton Wanderers (Fri 6 Nov, 8:50 PM)</title>
+    <sub-title lang="en">⏭ Coming up: English Football League</sub-title>
+    <desc lang="en">Coming up: Derby County vs Bolton Wanderers. English Football League. Starts Fri 6 Nov, 8:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="Paramount005.us">
+    <title lang="en">Derby County vs Bolton Wanderers (Fri 6 Nov, 8:50 PM)</title>
+    <sub-title lang="en">⏭ Coming up: English Football League</sub-title>
+    <desc lang="en">Coming up: Derby County vs Bolton Wanderers. English Football League. Starts Fri 6 Nov, 8:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106205000 +0000" channel="Paramount005.us">
+    <title lang="en">Next up: LIVE – Derby County vs Bolton Wanderers (8:50 PM)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Derby County vs Bolton Wanderers starts at 8:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106205000 +0000" stop="20261106225000 +0000" channel="Paramount005.us">
+    <title lang="en">🔴 LIVE: Derby County vs Bolton Wanderers</title>
+    <sub-title lang="en">English Football League</sub-title>
+    <desc lang="en">Derby County vs Bolton Wanderers. English Football League. Starts Fri 6 Nov, 8:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261106225000 +0000" stop="20261106235000 +0000" channel="Paramount005.us">
+    <title lang="en">🔴 LIVE: Derby County vs Bolton Wanderers</title>
+    <sub-title lang="en">English Football League</sub-title>
+    <desc lang="en">Derby County vs Bolton Wanderers. English Football League. Starts Fri 6 Nov, 8:50 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261106235000 +0000" stop="20261107015000 +0000" channel="Paramount005.us">
+    <title lang="en">Derby County vs Bolton Wanderers</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107015000 +0000" stop="20261107035000 +0000" channel="Paramount005.us">
+    <title lang="en">Derby County vs Bolton Wanderers</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -10023,10 +10629,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107132000 +0000" channel="Paramount008.us">
-    <title lang="en">Next up: LIVE – Wrexham vs Wolves (Sat 7 Nov, 1:20 PM)</title>
+    <title lang="en">Next up: LIVE – Wrexham vs Wolves (1:20 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Wrexham vs Wolves starts Sat 7 Nov, 1:20 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Wrexham vs Wolves starts at 1:20 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107132000 +0000" stop="20261107152000 +0000" channel="Paramount008.us">
+    <title lang="en">🔴 LIVE: Wrexham vs Wolves</title>
+    <desc lang="en">Wrexham vs Wolves. Starts Sat 7 Nov, 1:20 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="Paramount009.us">
     <title lang="en">Bristol City vs Norwich City (Sat 7 Nov, 1:20 PM)</title>
@@ -10101,10 +10713,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107132000 +0000" channel="Paramount009.us">
-    <title lang="en">Next up: LIVE – Bristol City vs Norwich City (Sat 7 Nov, 1:20 PM)</title>
+    <title lang="en">Next up: LIVE – Bristol City vs Norwich City (1:20 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Bristol City vs Norwich City starts Sat 7 Nov, 1:20 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Bristol City vs Norwich City starts at 1:20 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107132000 +0000" stop="20261107152000 +0000" channel="Paramount009.us">
+    <title lang="en">🔴 LIVE: Bristol City vs Norwich City</title>
+    <desc lang="en">Bristol City vs Norwich City. Starts Sat 7 Nov, 1:20 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="Paramount010.us">
     <title lang="en">Portsmouth vs Stoke City (Sat 7 Nov, 1:20 PM)</title>
@@ -10179,10 +10797,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107132000 +0000" channel="Paramount010.us">
-    <title lang="en">Next up: LIVE – Portsmouth vs Stoke City (Sat 7 Nov, 1:20 PM)</title>
+    <title lang="en">Next up: LIVE – Portsmouth vs Stoke City (1:20 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Portsmouth vs Stoke City starts Sat 7 Nov, 1:20 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Portsmouth vs Stoke City starts at 1:20 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107132000 +0000" stop="20261107152000 +0000" channel="Paramount010.us">
+    <title lang="en">🔴 LIVE: Portsmouth vs Stoke City</title>
+    <desc lang="en">Portsmouth vs Stoke City. Starts Sat 7 Nov, 1:20 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="Paramount011.us">
     <title lang="en">Chelsea vs Everton (Sat 7 Nov, 1:35 PM)</title>
@@ -10257,10 +10881,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107133500 +0000" channel="Paramount011.us">
-    <title lang="en">Next up: LIVE – Chelsea vs Everton (Sat 7 Nov, 1:35 PM)</title>
+    <title lang="en">Next up: LIVE – Chelsea vs Everton (1:35 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Chelsea vs Everton starts Sat 7 Nov, 1:35 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Chelsea vs Everton starts at 1:35 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107133500 +0000" stop="20261107153500 +0000" channel="Paramount011.us">
+    <title lang="en">🔴 LIVE: Chelsea vs Everton</title>
+    <desc lang="en">Chelsea vs Everton. Starts Sat 7 Nov, 1:35 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="Paramount012.us">
     <title lang="en">Man. City vs West Ham United (Sat 7 Nov, 1:35 PM)</title>
@@ -10335,10 +10965,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107133500 +0000" channel="Paramount012.us">
-    <title lang="en">Next up: LIVE – Man. City vs West Ham United (Sat 7 Nov, 1:35 PM)</title>
+    <title lang="en">Next up: LIVE – Man. City vs West Ham United (1:35 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Man. City vs West Ham United starts Sat 7 Nov, 1:35 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Man. City vs West Ham United starts at 1:35 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107133500 +0000" stop="20261107153500 +0000" channel="Paramount012.us">
+    <title lang="en">🔴 LIVE: Man. City vs West Ham United</title>
+    <desc lang="en">Man. City vs West Ham United. Starts Sat 7 Nov, 1:35 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="Paramount013.us">
     <title lang="en">Georgia vs Canada (Sat 7 Nov, 2:50 PM)</title>
@@ -17426,25 +18062,67 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261106082500 +0000" stop="20261106102500 +0000" channel="Peacock008.us">
-    <title lang="en">🔴 LIVE: Women`s Short Program</title>
-    <desc lang="en">Women`s Short Program. Starts Fri 6 Nov, 8:25 AM UK time.</desc>
+  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="Peacock008.us">
+    <title lang="en">St. Thomas vs Minnesota (Sat 7 Nov, 1:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: St. Thomas vs Minnesota. Starts Sat 7 Nov, 1:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="Peacock008.us">
+    <title lang="en">St. Thomas vs Minnesota (Sat 7 Nov, 1:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: St. Thomas vs Minnesota. Starts Sat 7 Nov, 1:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="Peacock008.us">
+    <title lang="en">St. Thomas vs Minnesota (Sat 7 Nov, 1:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: St. Thomas vs Minnesota. Starts Sat 7 Nov, 1:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="Peacock008.us">
+    <title lang="en">St. Thomas vs Minnesota (Sat 7 Nov, 1:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: St. Thomas vs Minnesota. Starts Sat 7 Nov, 1:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="Peacock008.us">
+    <title lang="en">St. Thomas vs Minnesota (Sat 7 Nov, 1:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: St. Thomas vs Minnesota. Starts Sat 7 Nov, 1:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="Peacock008.us">
+    <title lang="en">St. Thomas vs Minnesota (Sat 7 Nov, 1:00 AM)</title>
+    <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
+    <desc lang="en">Coming up: St. Thomas vs Minnesota. Starts Sat 7 Nov, 1:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107000000 +0000" stop="20261107010000 +0000" channel="Peacock008.us">
+    <title lang="en">Next up: LIVE – St. Thomas vs Minnesota (1:00 AM)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. St. Thomas vs Minnesota starts at 1:00 AM UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107010000 +0000" stop="20261107030000 +0000" channel="Peacock008.us">
+    <title lang="en">🔴 LIVE: St. Thomas vs Minnesota</title>
+    <desc lang="en">St. Thomas vs Minnesota. Starts Sat 7 Nov, 1:00 AM UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261106102500 +0000" stop="20261106112500 +0000" channel="Peacock008.us">
-    <title lang="en">🔴 LIVE: Women`s Short Program</title>
-    <desc lang="en">Women`s Short Program. Starts Fri 6 Nov, 8:25 AM UK time.</desc>
+  <programme start="20261107030000 +0000" stop="20261107040000 +0000" channel="Peacock008.us">
+    <title lang="en">🔴 LIVE: St. Thomas vs Minnesota</title>
+    <desc lang="en">St. Thomas vs Minnesota. Starts Sat 7 Nov, 1:00 AM UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261106112500 +0000" stop="20261106132500 +0000" channel="Peacock008.us">
-    <title lang="en">Women`s Short Program</title>
+  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="Peacock008.us">
+    <title lang="en">St. Thomas vs Minnesota</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261106132500 +0000" stop="20261106152500 +0000" channel="Peacock008.us">
-    <title lang="en">Women`s Short Program</title>
+  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="Peacock008.us">
+    <title lang="en">St. Thomas vs Minnesota</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -17963,6 +18641,11 @@
     <category lang="en">Live</category>
   </programme>
   <programme start="20261107113000 +0000" stop="20261107133000 +0000" channel="Peacock017.us">
+    <title lang="en">Women`s Free Skate</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107133000 +0000" stop="20261107153000 +0000" channel="Peacock017.us">
     <title lang="en">Women`s Free Skate</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -24622,6 +25305,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107133100 +0000" stop="20261107153100 +0000" channel="STAN02.au">
+    <title lang="en">Chennai: Day 5 WTA 250</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="STAN03.au">
     <title lang="en">Romania vs Tonga Nations Cup Round 4 2026 (Fri 6 Nov, 4:20 PM)</title>
     <sub-title lang="en">⏭ Coming up Fri 6 Nov</sub-title>
@@ -24693,6 +25381,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107112000 +0000" stop="20261107132000 +0000" channel="STAN03.au">
+    <title lang="en">Romania vs Tonga Nations Cup Round 4 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107132000 +0000" stop="20261107152000 +0000" channel="STAN03.au">
     <title lang="en">Romania vs Tonga Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -25576,6 +26269,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261107133000 +0000" stop="20261107143000 +0000" channel="STAN13.au">
+    <title lang="en">🔴 LIVE: Italy vs South Africa Nations Championship Round 4 2026</title>
+    <desc lang="en">Italy vs South Africa Nations Championship Round 4 2026. Starts Sat 7 Nov, 11:30 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="STAN14.au">
     <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027 (Sat 7 Nov, 11:30 AM)</title>
     <sub-title lang="en">⏭ Coming up: Premier League</sub-title>
@@ -25649,6 +26348,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107113000 +0000" stop="20261107133000 +0000" channel="STAN14.au">
+    <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 11:30 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107133000 +0000" stop="20261107143000 +0000" channel="STAN14.au">
     <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 11:30 AM UK time.</desc>
@@ -26068,10 +26774,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107131000 +0000" channel="STAN19.au">
-    <title lang="en">Next up: LIVE – Qualifying: 6 Hours of Monza WEC 2026 (Sat 7 Nov, 1:10 PM)</title>
+    <title lang="en">Next up: LIVE – Qualifying: 6 Hours of Monza WEC 2026 (1:10 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Qualifying: 6 Hours of Monza WEC 2026 starts Sat 7 Nov, 1:10 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Qualifying: 6 Hours of Monza WEC 2026 starts at 1:10 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107131000 +0000" stop="20261107151000 +0000" channel="STAN19.au">
+    <title lang="en">🔴 LIVE: Qualifying: 6 Hours of Monza WEC 2026</title>
+    <desc lang="en">Qualifying: 6 Hours of Monza WEC 2026. Starts Sat 7 Nov, 1:10 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="STAN20.au">
     <title lang="en">Scotland vs New Zealand Nations Championship Round 4 2026 (Sat 7 Nov, 1:15 PM)</title>
@@ -26146,10 +26858,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107131500 +0000" channel="STAN20.au">
-    <title lang="en">Next up: LIVE – Scotland vs New Zealand Nations Championship Round 4 2026 (Sat 7 Nov, 1:15 PM)</title>
+    <title lang="en">Next up: LIVE – Scotland vs New Zealand Nations Championship Round 4 2026 (1:15 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Scotland vs New Zealand Nations Championship Round 4 2026 starts Sat 7 Nov, 1:15 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Scotland vs New Zealand Nations Championship Round 4 2026 starts at 1:15 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107131500 +0000" stop="20261107151500 +0000" channel="STAN20.au">
+    <title lang="en">🔴 LIVE: Scotland vs New Zealand Nations Championship Round 4 2026</title>
+    <desc lang="en">Scotland vs New Zealand Nations Championship Round 4 2026. Starts Sat 7 Nov, 1:15 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="STAN21.au">
     <title lang="en">Georgia vs Canada Nations Cup Round 4 2026 (Sat 7 Nov, 1:50 PM)</title>
@@ -27162,6 +27880,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107132000 +0000" stop="20261107152000 +0000" channel="STAN33.au">
+    <title lang="en">Romania vs Tonga Nations Cup Round 4 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="STAN34.au">
     <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027 (Fri 6 Nov, 7:30 PM)</title>
     <sub-title lang="en">⏭ Coming up: Premier League</sub-title>
@@ -27555,6 +28278,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261107133000 +0000" stop="20261107143000 +0000" channel="STAN38.au">
+    <title lang="en">🔴 LIVE: Italy vs South Africa Nations Championship Round 4 2026</title>
+    <desc lang="en">Italy vs South Africa Nations Championship Round 4 2026. Starts Sat 7 Nov, 11:30 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="STAN39.au">
     <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027 (Sat 7 Nov, 11:30 AM)</title>
     <sub-title lang="en">⏭ Coming up: Premier League</sub-title>
@@ -27628,6 +28357,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107113000 +0000" stop="20261107133000 +0000" channel="STAN39.au">
+    <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 11:30 AM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107133000 +0000" stop="20261107143000 +0000" channel="STAN39.au">
     <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 11:30 AM UK time.</desc>
@@ -27792,10 +28528,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107131000 +0000" channel="STAN41.au">
-    <title lang="en">Next up: LIVE – Qualifying: 6 Hours of Monza WEC 2026 (Sat 7 Nov, 1:10 PM)</title>
+    <title lang="en">Next up: LIVE – Qualifying: 6 Hours of Monza WEC 2026 (1:10 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Qualifying: 6 Hours of Monza WEC 2026 starts Sat 7 Nov, 1:10 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Qualifying: 6 Hours of Monza WEC 2026 starts at 1:10 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107131000 +0000" stop="20261107151000 +0000" channel="STAN41.au">
+    <title lang="en">🔴 LIVE: Qualifying: 6 Hours of Monza WEC 2026</title>
+    <desc lang="en">Qualifying: 6 Hours of Monza WEC 2026. Starts Sat 7 Nov, 1:10 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="STAN42.au">
     <title lang="en">Scotland vs New Zealand Nations Championship Round 4 2026 (Sat 7 Nov, 1:15 PM)</title>
@@ -27870,10 +28612,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107131500 +0000" channel="STAN42.au">
-    <title lang="en">Next up: LIVE – Scotland vs New Zealand Nations Championship Round 4 2026 (Sat 7 Nov, 1:15 PM)</title>
+    <title lang="en">Next up: LIVE – Scotland vs New Zealand Nations Championship Round 4 2026 (1:15 PM)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Scotland vs New Zealand Nations Championship Round 4 2026 starts Sat 7 Nov, 1:15 PM UK time.</desc>
+    <desc lang="en">Next up: LIVE. Scotland vs New Zealand Nations Championship Round 4 2026 starts at 1:15 PM UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107131500 +0000" stop="20261107151500 +0000" channel="STAN42.au">
+    <title lang="en">🔴 LIVE: Scotland vs New Zealand Nations Championship Round 4 2026</title>
+    <desc lang="en">Scotland vs New Zealand Nations Championship Round 4 2026. Starts Sat 7 Nov, 1:15 PM UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="STAN43.au">
     <title lang="en">Georgia vs Canada Nations Cup Round 4 2026 (Sat 7 Nov, 1:50 PM)</title>
@@ -33708,6 +34456,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107133000 +0000" stop="20261107153000 +0000" channel="TSN036.ca">
+    <title lang="en">NASCAR Cup Series Practice: Championship Race</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="TSN037.ca">
     <title lang="en">NCAA Football: South Florida vs East Carolina (Sat 7 Nov, 12:30 AM)</title>
     <sub-title lang="en">⏭ Coming up: NCAA</sub-title>
@@ -33789,6 +34542,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107133000 +0000" stop="20261107153000 +0000" channel="TSN037.ca">
+    <title lang="en">NCAA Football: South Florida vs East Carolina</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="TSN038.ca">
     <title lang="en">2026 NASCAR CRAFTSMAN Truck Series Playoffs: Championship (Sat 7 Nov, 12:30 AM)</title>
     <sub-title lang="en">⏭ Coming up: NASCAR</sub-title>
@@ -33866,6 +34624,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107113000 +0000" stop="20261107133000 +0000" channel="TSN038.ca">
+    <title lang="en">2026 NASCAR CRAFTSMAN Truck Series Playoffs: Championship</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107133000 +0000" stop="20261107153000 +0000" channel="TSN038.ca">
     <title lang="en">2026 NASCAR CRAFTSMAN Truck Series Playoffs: Championship</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -91152,71 +91915,6 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Thu 5 Nov, 6:15 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT10.us">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -91867,71 +92565,6 @@
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">PPV EVENT 02: Gold Rush Nationals (Thu 5 Nov, 11:00 PM)</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT20.us">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -92578,71 +93211,6 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT29.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="PPVEVENT3.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT3.us">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -93297,71 +93865,6 @@
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT4.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT40.us">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -94012,71 +94515,6 @@
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT5.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT50.us">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -94138,136 +94576,6 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT50.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT6.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106180000 +0000" stop="20261106200000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106200000 +0000" stop="20261106220000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106220000 +0000" stop="20261107000000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107000000 +0000" stop="20261107020000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107020000 +0000" stop="20261107040000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107040000 +0000" stop="20261107060000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107060000 +0000" stop="20261107080000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="PPVEVENT7.us">
-    <title lang="en">No event streaming now</title>
-    <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT7.us">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -94400,21 +94708,6 @@
   <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="PPVEVENT9.us">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="Paramount005.us">
-    <title lang="en">Slavia Praha vs Arsenal</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106140000 +0000" stop="20261106160000 +0000" channel="Paramount005.us">
-    <title lang="en">Slavia Praha vs Arsenal</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261106160000 +0000" stop="20261106180000 +0000" channel="Paramount005.us">
-    <title lang="en">Slavia Praha vs Arsenal</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261106120000 +0000" stop="20261106140000 +0000" channel="SN001.ca">
