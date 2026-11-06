@@ -23,21 +23,22 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Read LiveOnSat's rugby / fighting pages
+      - name: Read LiveOnSat's pages (rugby / fighting for the events guide, football for fixtures.html)
         run: python3 -u liveonsat_fixtures.py
 
       - name: Commit if anything changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ ! -f liveonsat_fixtures.json ]; then echo "No file written"; exit 0; fi
-          mkdir -p /tmp/out && cp liveonsat_fixtures.json /tmp/out/
+          mkdir -p /tmp/out
+          for f in liveonsat_fixtures.json liveonsat_football.json; do [ -f "$f" ] && cp "$f" /tmp/out/; done
+          if [ -z "$(ls /tmp/out)" ]; then echo "No file written"; exit 0; fi
           ok=""
           for i in 1 2 3 4 5; do
             git fetch origin main
             git reset --hard origin/main
-            cp /tmp/out/liveonsat_fixtures.json .
-            git add liveonsat_fixtures.json
+            cp /tmp/out/*.json .
+            git add liveonsat_fixtures.json liveonsat_football.json 2>/dev/null || true
             if git diff --cached --quiet; then echo "No changes"; ok=1; break; fi
             git commit -m "Update LiveOnSat fixtures"
             if git push origin HEAD:main; then ok=1; break; fi
