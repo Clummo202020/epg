@@ -17,6 +17,7 @@ import re
 import subprocess
 import sys
 import xml.etree.ElementTree as ET
+from zoneinfo import ZoneInfo
 from collections import defaultdict
 from datetime import datetime, timedelta, timezone
 
@@ -166,6 +167,100 @@ def timing_section(lines, warns):
         if not v.get("applied") and v.get("n", 0) >= 5 and abs(v.get("median", 0)) >= 8:
             warns.append(f"events: {g} stream times are {abs(v['median'])} min {'early' if v['median'] < 0 else 'late'} "
                          f"(median of {v['n']} matches) - consider moving this group to the real start")
+    chk = t.get("check")
+    if chk is not None:
+        lines.append(f"\nKick-off cross-check (our football guide / ESPN against LiveOnSat): {chk.get('compared', 0)} matches known to both, "
+                     f"{chk.get('differ', 0)} differ by 5 min or more.")
+        for ex in chk.get("examples", [])[:6]:
+            lines.append(f"- {ex.get('match')}: {ex.get('source')} {ex.get('ours')} vs LiveOnSat {ex.get('liveonsat')}")
+        if chk.get("differ", 0) >= 3:
+            warns.append(f"events: {chk['differ']} kick-off times differ between our football sources and LiveOnSat "
+                         f"(e.g. {chk['examples'][0]['match']}: {chk['examples'][0]['ours']} vs {chk['examples'][0]['liveonsat']})")
+
+
+_STOP = {"the", "club", "and", "fc", "cf", "sc", "ac", "afc", "bsc", "fk", "sk", "bk", "if", "cd", "ca", "sd", "ud", "rc"}
+_TITLE = re.compile(r"^(?:\U0001F534 LIVE: )?(.+?) v (.+?) \((?:\w{3}) (\d{1,2}) (\w{3}), ([^()]+)\)$")
+_MON = {m: i for i, m in enumerate(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
+
+
+def _words(text):
+    t = re.sub(r"[^a-z0-9 ]", " ", re.sub(r"[\u0300-\u036f]", "", __import__("unicodedata").normalize("NFKD", text.lower())))
+    return frozenset(w for w in t.split() if len(w) >= 3 and w not in _STOP)
+
+
+def _clock(text):
+    """\"3pm\" / \"5:45pm\" / \"3:00 PM\" / \"15:00\" -> (hour, minute)"""
+    m = re.match(r"^\s*(\d{1,2})(?::(\d{2}))?\s*([ap])?\.?m?\.?\s*$", text.strip(), re.I)
+    if not m:
+        return None
+    h, mi, ap = int(m.group(1)), int(m.group(2) or 0), (m.group(3) or "").lower()
+    if ap == "p" and h < 12:
+        h += 12
+    if ap == "a" and h == 12:
+        h = 0
+    return (h, mi) if h < 24 and mi < 60 else None
+
+
+def football_check_section(now, lines, warns):
+    """every kick-off in our football and Scottish guides that LiveOnSat also lists - do the times agree? (7 Nov 2026, user: LiveOnSat
+    is for CHECKING kick-off times)"""
+    lines.append("\n## Football kick-offs against LiveOnSat")
+    try:
+        with open("liveonsat_fixtures.json", encoding="utf-8") as fh:
+            d = json.load(fh)
+        los = []
+        for f in list(d.get("fixtures", [])) + list((d.get("football") or {}).get("fixtures", [])):
+            a, b = _words(f["a"]), _words(f["b"])
+            if a and b:
+                los.append((a, b, datetime.strptime(f["start"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc), f["a"], f["b"], f.get("comp", "")))
+    except Exception as e:
+        lines.append(f"(LiveOnSat file not readable: {e})")
+        return
+    london = ZoneInfo("Europe/London")
+    ours = {}
+    for path in ("football_epg.xml", "scottish_epg.xml"):
+        if not os.path.exists(path):
+            continue
+        for _, el in ET.iterparse(path, events=("end",)):
+            if el.tag != "programme":
+                continue
+            t = (el.findtext("title") or "")
+            m = _TITLE.match(t)
+            if m and m.group(4) in _MON and _clock(m.group(5)):
+                year = int((el.get("start") or "2000")[:4])
+                h, mi = _clock(m.group(5))
+                try:
+                    ko = datetime(year, _MON[m.group(4)], int(m.group(3)), h, mi, tzinfo=london).astimezone(timezone.utc)
+                except ValueError:
+                    ko = None
+                if ko and ko > now:
+                    ours.setdefault((m.group(1), m.group(2), ko), path)
+            el.clear()
+    seen_pairs, known, differ = set(), 0, []
+    for (a, b, ko), path in sorted(ours.items(), key=lambda kv: kv[0][2]):
+        wa, wb = _words(a), _words(b)
+        if not wa or not wb:
+            continue
+        best = None
+        for la, lb, lko, na, nb, comp in los:
+            if abs(lko - ko) > timedelta(hours=12):
+                continue
+            if ((wa <= la or la <= wa) and (wb <= lb or lb <= wb)) or ((wa <= lb or lb <= wa) and (wb <= la or la <= wb)):
+                if best is None or abs(lko - ko) < abs(best[0] - ko):
+                    best = (lko, na, nb, comp)
+        if best is None or (a, b) in seen_pairs:
+            continue
+        seen_pairs.add((a, b))
+        known += 1
+        if abs(best[0] - ko) >= timedelta(minutes=5):
+            differ.append((ko, a, b, best[0], best[3]))
+    lines.append(f"{len(ours)} upcoming kick-offs in the football and Scottish guides; {known} also on LiveOnSat; "
+                 f"{len(differ)} differ by 5 min or more.")
+    for ko, a, b, lko, comp in differ[:10]:
+        lines.append(f"- {a} v {b}: ours {ko:%a %d %b %H:%M} UTC, LiveOnSat {lko:%a %d %b %H:%M} UTC ({comp[:30]})")
+    if len(differ) >= 3:
+        warns.append(f"football: {len(differ)} kick-off times differ from LiveOnSat (e.g. {differ[0][1]} v {differ[0][2]}: ours {differ[0][0]:%d %b %H:%M} UTC, "
+                     f"LiveOnSat {differ[0][3]:%d %b %H:%M} UTC)")
 
 
 def main():
@@ -246,6 +341,7 @@ def main():
         details.append((path, sg))
     extra = []
     liveonsat_section(now, extra, warns, fails)
+    football_check_section(now, extra, warns)
     timing_section(extra, warns)
     lines.append("")
     lines.append(f"## FAIL ({len(fails)})" if fails else "## FAIL (0) - none")

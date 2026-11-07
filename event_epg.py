@@ -718,8 +718,17 @@ LIVEONSAT_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/liveons
 _LOS = None
 
 
+_LOS_STOP = {"the", "club", "and", "fc", "cf", "sc", "ac", "afc", "bsc", "fk", "sk", "bk", "if", "cd", "ca", "sd", "ud", "rc"}
+
+
+def _words(text):
+    """the meaningful words of a team name (lower case, no accents, no FC / CF ...), for matching the two sources"""
+    return frozenset(w for w in _norm(text).split() if len(w) >= 3 and w not in _LOS_STOP)
+
+
 def load_liveonsat():
-    """[(home key, away key, start UTC, competition)] from liveonsat_fixtures.json, or [] (never raises)."""
+    """[(home words, away words, start UTC, competition)] from liveonsat_fixtures.json - the rugby / fighting list AND the football list
+    (7 Nov 2026) - or [] (never raises)."""
     global _LOS
     if _LOS is not None:
         return _LOS
@@ -736,10 +745,12 @@ def load_liveonsat():
         fetched = datetime.strptime(data.get("fetched", ""), "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
         if datetime.now(timezone.utc) - fetched > timedelta(hours=48):
             print(f"  WARNING: LiveOnSat fixtures are {fetched:%d %b %H:%M} UTC - older than 48 h (its workflow may have stopped)")
-        for f in data.get("fixtures", []):
+        for f in list(data.get("fixtures", [])) + list((data.get("football") or {}).get("fixtures", [])):
             start = datetime.strptime(f["start"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
-            comp = re.sub(r"\s*-\s*(?:Round|Group|Week|Pool|Match|Game)\b.*$", "", f.get("comp") or "").strip()
-            _LOS.append((_norm(f["a"]), _norm(f["b"]), start, comp))
+            comp = re.sub(r"\s+-\s+.*$", "", f.get("comp") or "").strip()
+            a, b = _words(f["a"]), _words(f["b"])
+            if a and b:
+                _LOS.append((a, b, start, comp))
     except Exception as e:
         print(f"  LiveOnSat fixtures not available ({e}) - stream times are used as they are")
         _LOS = []
@@ -747,22 +758,39 @@ def load_liveonsat():
 
 
 def liveonsat_start(sides, approx):
-    """(start UTC, competition) of the LiveOnSat fixture whose two teams are the two `sides` (the second side may carry
-    trailing competition words) within REAL_START_HOURS of `approx`, else None."""
-    def has(side, team):
-        return bool(team) and f" {team} " in f" {_norm(side)} "
+    """(start UTC, competition) of the LiveOnSat fixture whose two teams are the two `sides` (the second side may carry trailing
+    competition words) within REAL_START_HOURS of `approx`, else None. A side matches a team when its words are all in the team's name
+    or the team's words are all in the side (\"Dallas\" = \"FC Dallas\", \"Minnesota\" = \"Minnesota United\")."""
+    def match(side, team):
+        w = _words(side)
+        return bool(w) and (w <= team or team <= w)
     best = None
     for a, b, ko, comp in load_liveonsat():
         if abs(ko - approx) > timedelta(hours=REAL_START_HOURS):
             continue
-        if (has(sides[0], a) and has(sides[1], b)) or (has(sides[0], b) and has(sides[1], a)):
+        if (match(sides[0], a) and match(sides[1], b)) or (match(sides[0], b) and match(sides[1], a)):
             if best is None or abs(ko - approx) < abs(best[0] - approx):
                 best = (ko, comp)
     return best
 
 
-def real_start(title, approx, quiet=False):
-    """(start UTC, early minutes, competition) of the match in `title` near `approx`, else None."""
+# Kick-off cross-check (7 Nov 2026, user: LiveOnSat was to be used for CHECKING kick-off times): when our own sources (football guide /
+# ESPN) and LiveOnSat both know a match, differences of 5 min or more are logged and counted; summary in events_seen.json "_timing".check
+_CHECK = {"compared": 0, "differ": {}}
+
+
+def _note_check(title, ours, theirs, label):
+    key = _norm(title)
+    if key in _CHECK.get("seen", set()):
+        return
+    _CHECK.setdefault("seen", set()).add(key)
+    _CHECK["compared"] += 1
+    if abs(ours - theirs) >= timedelta(minutes=5):
+        _CHECK["differ"][key] = {"match": title, "ours": ours.strftime("%Y-%m-%dT%H:%MZ"), "liveonsat": theirs.strftime("%Y-%m-%dT%H:%MZ"), "source": label}
+        print(f"  Kick-off check: {title}: {label} {ours:%d %b %H:%M} UTC but LiveOnSat {theirs:%d %b %H:%M} UTC")
+
+
+def _title_sides(title):
     sides = re.split(r"\s+(?:vs?\.?|at|@|x|-)\s+", title, maxsplit=1, flags=re.I)
     if len(sides) != 2:
         return None
@@ -770,6 +798,30 @@ def real_start(title, approx, quiet=False):
     sides = [re.sub(r"(?i)\bman\.?\s+(?=(city|united|utd)\b)", "Manchester ", x) for x in sides]
     for pat, full in TEAM_SHORT_NAMES:
         sides = [re.sub(pat, full, x) for x in sides]
+    return sides
+
+
+def real_start(title, approx, quiet=False):
+    """(start UTC, early minutes, competition) of the match in `title` near `approx`, else None: our football guide / ESPN first, then
+    LiveOnSat (rugby, Aussie rules, boxing and - since 7 Nov - football from every country); LiveOnSat also cross-checks the first two."""
+    sides = _title_sides(title)
+    if sides is None:
+        return None
+    res = _real_start_ours(title, sides, approx, quiet)
+    los = liveonsat_start(sides, res[0] if res else approx)
+    if res:
+        if los:
+            _note_check(title, res[0], los[0], res[2] or "our guide")
+        return res
+    if los:
+        if not quiet:
+            print(f"  Start from LiveOnSat: {title}: name {approx:%d %b %H:%M} UTC, {los[1] or '?'} {los[0]:%d %b %H:%M} UTC")
+        return los[0], PROVIDER_EARLY_MINUTES, los[1]
+    return None
+
+
+def _real_start_ours(title, sides, approx, quiet=False):
+    """the football guide, ESPN football, then NFL / NBA / NHL / MLB (the part of real_start that needs no LiveOnSat)"""
     fx = load_fixtures() or []
     best = None
     for fh, fa, fhn, fan, ko, comp in fx:
@@ -806,11 +858,6 @@ def real_start(title, approx, quiet=False):
                 and abs(ko - approx) <= timedelta(hours=REAL_START_HOURS)]
         if hits:
             return min(hits, key=lambda k: abs(k - approx)), 0, label
-    los = liveonsat_start(sides, approx)                      # rugby, Aussie rules, boxing ... (6 Nov 2026)
-    if los:
-        if not quiet:
-            print(f"  Start from LiveOnSat: {title}: name {approx:%d %b %H:%M} UTC, {los[1] or '?'} {los[0]:%d %b %H:%M} UTC")
-        return los[0], PROVIDER_EARLY_MINUTES, los[1]
     return None
 
 
@@ -888,7 +935,8 @@ def timing_summary(now):
         out[g] = {"n": len(d), "missed": v["missed"], "applied": v["applied"]}
         if d:
             out[g].update({"median": round(statistics.median(d)), "min": min(d), "max": max(d)})
-    return {"updated": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "groups": out}
+    chk = {"compared": _CHECK["compared"], "differ": len(_CHECK["differ"]), "examples": list(_CHECK["differ"].values())[:8]}
+    return {"updated": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "groups": out, "check": chk}
 
 
 def save_seen(now=None):
@@ -1304,11 +1352,23 @@ def _parse_name(name):
         local = datetime.strptime(f"{a['date']} {a['time']}", "%Y-%m-%d %H:%M") \
             .replace(tzinfo=ZoneInfo(MLS_TZ))
         label = a["label"].strip()
-        return {"name": name, "slot_id": f"{slug(a['prov'] + label)}{a['num']}.us",
-                "slot_name": f"({a['prov'].strip()}) ({label}) {a['num']}",
-                "title": a["title"].strip(), "extra": "",
-                "comp": competition(a["title"], label) or label,
-                "start": local.astimezone(timezone.utc)}
+        ev = {"name": name, "slot_id": f"{slug(a['prov'] + label)}{a['num']}.us",
+              "slot_name": f"({a['prov'].strip()}) ({label}) {a['num']}",
+              "title": a["title"].strip(), "extra": "",
+              "comp": competition(a["title"], label) or label,
+              "start": local.astimezone(timezone.utc)}
+        # Apple MLS stream times are 5 min (up to ~95 min on some days) before the kick-off (7 Nov 2026, user: Dallas vs Colorado name
+        # 18:55 Eastern, kick-off 00:00 UTC) - moved to the real kick-off like Peacock / Paramount+ / Stan (MLS is in the football guide / ESPN)
+        rs = real_start(ev["title"], ev["start"])
+        note_timing(ev["slot_id"], ev["title"], ev["start"], rs[0] if rs else None, True)
+        ev["_timed"] = True
+        if rs:
+            if abs(rs[0] - ev["start"]) >= timedelta(minutes=1):
+                print(f"  ({a['prov'].strip()}) ({label}) {a['num']} kick-off: {ev['title']}: stream {ev['start']:%d %b %H:%M} UTC, "
+                      f"{rs[2] or '?'} {rs[0]:%d %b %H:%M} UTC")
+            ev["start"], ev["early"] = rs[0], PROVIDER_EARLY_MINUTES
+            ev["comp"] = rs[2] or ev["comp"]
+        return ev
 
     m = SLOT_FIRST.match(name)                       # US (Peacock 003) | ... (date time)
     if m:
