@@ -17,6 +17,7 @@ real kick-off (Stan, Peacock, Paramount+, Soccer PPV streams carry the time the 
     python3 liveonsat_fixtures.py            # -> liveonsat_fixtures.json (fixed name)
 """
 import html, json, re, sys, time, urllib.request, urllib.error
+from html.parser import HTMLParser
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
@@ -99,6 +100,89 @@ _JUNK = re.compile(
 POSTPONED = re.compile(r"(?i)p-?o-?s-?t-?p-?o-?n-?e-?d|\bcancel+ed\b|\babandoned\b")
 
 
+class PageParser(HTMLParser):
+    """liveonsat.com's own markup (seen in the raw HTML on 7 Nov 2026):
+      <span class=comp_head>English Premier League - Week 10</span>
+      <div class=fLeft style="width:270px..">Arsenal v Hull City</div>
+      <div class="fLeft_time_live dynamic-time" data-timestamp="1794063600"> ST: 09:00 </div>     (UNIX time, UTC - no zone guessing)
+      <a class=chan_live_not_free onmouseover="return overlib('<table>..satellite details..</table>',CAPTION,'..')">Arena M1 HD </a>
+    The satellite table sits inside the link's onmouseover ATTRIBUTE, so a text-only reading mistook it for channels; this reads the
+    link text. Channels are kept only for the group whose ST is the match's first start (delayed / repeat groups are ignored)."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.fixtures, self.comp, self.cur = [], "", None
+        self.cap, self.buf, self.ts, self.group_ts = None, "", None, None
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        cls = (a.get("class") or "").split()
+        style = a.get("style") or ""
+        if tag == "span" and "comp_head" in cls:
+            self.cap, self.buf = "comp", ""
+        elif tag == "div" and "fLeft" in cls and "width:270px" in style.replace(" ", ""):
+            self.cap, self.buf = "teams", ""
+        elif tag == "div" and "dynamic-time" in cls:
+            self.cap, self.buf, self.ts = "st", "", a.get("data-timestamp")
+        elif tag == "a" and any(c.startswith("chan_") for c in cls):
+            self.cap, self.buf = "chan", ""
+
+    def handle_data(self, data):
+        if self.cap:
+            self.buf += data
+        if self.cur is not None:
+            self.cur["_text"] += " " + data
+
+    def handle_endtag(self, tag):
+        want = {"comp": "span", "teams": "div", "st": "div", "chan": "a"}.get(self.cap)
+        if not want or tag != want:
+            return
+        text = re.sub(r"\s+", " ", self.buf).strip()
+        cap, self.cap = self.cap, None
+        if cap == "comp":
+            self.comp = text
+        elif cap == "teams":
+            m = re.match(r"^(.+?)\s+v\s+(.+)$", text)
+            if m:
+                self.cur = {"comp": self.comp, "a": m.group(1).strip(), "b": m.group(2).strip(), "start": None, "stan": False,
+                            "ch": [], "_ts": None, "_text": ""}
+                self.fixtures.append(self.cur)
+            else:
+                self.cur = None
+        elif cap == "st":
+            self.group_ts = None
+            if self.cur is not None and text.startswith("ST:") and (self.ts or "").isdigit():
+                self.group_ts = int(self.ts)
+                if self.cur["_ts"] is None:
+                    self.cur["_ts"] = self.group_ts
+                    self.cur["start"] = datetime.fromtimestamp(self.group_ts, timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        elif cap == "chan" and self.cur is not None and self.group_ts is not None and self.group_ts == self.cur["_ts"]:
+            name = clean_channel(text)
+            if name and "Stan Sport" in name:
+                self.cur["stan"] = True
+            if name and name not in self.cur["ch"]:
+                self.cur["ch"].append(name)
+
+
+def parse_html(page, with_channels):
+    """fixtures from the page's own markup; [] if it isn't in that shape"""
+    pp = PageParser()
+    try:
+        pp.feed(page)
+        pp.close()
+    except Exception as e:                                    # a malformed page must not stop the run
+        print(f"  HTML parse problem: {e}")
+    out = []
+    for f in pp.fixtures:
+        if not f["start"] or POSTPONED.search(f["_text"]):
+            continue
+        g = {"comp": f["comp"], "a": f["a"], "b": f["b"], "start": f["start"], "stan": f["stan"]}
+        if with_channels:
+            g["ch"] = f["ch"]
+        out.append(g)
+    return out
+
+
 def parse(page, tz, now, with_channels=False):
     toks = tokens(page)
     date, out, cur = None, [], None
@@ -158,31 +242,25 @@ def read_pages(pages, old_fixtures, with_channels, now):
     for sport, path in pages.items():
         status, body = fetch(BASE + path)
         tz, zname = zone_of(body) if status == 200 else (None, None)
-        got = parse(body, tz, now, with_channels) if tz else []
+        got = parse_html(body, with_channels) if status == 200 else []
+        how = "timestamps"
+        if not got and tz:                                    # the old text reading, only if the page's markup ever changes
+            got, how = parse(body, tz, now, with_channels), f"text, zone {zname}"
         for f in got:
             f["sport"] = sport
         prev = old_by_sport.get(sport, [])
-        if with_channels and got and not globals().get("_DEBUG_SHOWN"):
-            # diagnostic: the raw HTML around a match that has no (or too few) channels - so the real layout can be seen in the log
-            weak = [g for g in got if len(g.get("ch", [])) <= 1]
-            for g in ([x for x in got if "Arsenal" in x["a"] + x["b"]][:1] + weak[:1]):
-                idx = body.find(g["a"])
-                if idx >= 0:
-                    globals()["_DEBUG_SHOWN"] = True
-                    chunk = re.sub(r"\s+", " ", body[max(0, idx - 700): idx + 2600])
-                    print(f"  RAW HTML around {g['a']} v {g['b']} ({len(g.get('ch', []))} channels parsed): {chunk}")
-        if status != 200 or not tz or (not got and len(prev) > 5):
-            why = f"HTTP {status}" if status != 200 else ("no time zone marker" if not tz else "found nothing (had data) - parser change?")
+        if status != 200 or (not got and len(prev) > 5):
+            why = f"HTTP {status}" if status != 200 else "found nothing (had data) - parser change?"
             print(f"  {sport}: {why} - keeping {len(prev)} earlier fixture(s)")
             fixtures += prev
             info[sport] = {"status": status, "kept": len(prev)}
         else:
             extra = "" if with_channels else f" ({sum(1 for g in got if g['stan'])} on Stan Sport)"
-            print(f"  {sport}: HTTP 200, zone {zname}, {len(got)} fixtures{extra}")
+            print(f"  {sport}: HTTP 200, {how}, {len(got)} fixtures{extra}")
             if not got and body:
                 print("    no fixtures parsed - first text pieces:", [t for t in tokens(body) if len(t) < 90][:40])
             fixtures += got
-            info[sport] = {"status": 200, "zone": zname, "count": len(got)}
+            info[sport] = {"status": 200, "read": how, "count": len(got)}
         time.sleep(4)
     cutoff = (now - timedelta(hours=12)).strftime("%Y-%m-%dT%H:%M:%SZ")
     fixtures = [f for f in fixtures if f["start"] >= cutoff]
