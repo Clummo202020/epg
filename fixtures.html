@@ -62,11 +62,23 @@
     border-radius: 999px; padding: 0.35rem 0.85rem; cursor: pointer;
   }
   .chipbtn[aria-pressed="true"] { background: var(--ink); color: var(--chalk); border-color: var(--ink); }
+  .panel { margin: 1rem 0 0; padding: 0.9rem 1rem 1rem; border: 1px solid var(--line); border-radius: 0.7rem; background: var(--field); }
+  .panel[hidden] { display: none; }
+  .panel .row { display: flex; flex-wrap: wrap; gap: 0.5rem 1.1rem; align-items: center; margin: 0 0 0.7rem; }
+  .panel label { cursor: pointer; }
+  .panel input[type="checkbox"] { width: 1.05rem; height: 1.05rem; accent-color: var(--floodlight); vertical-align: -0.15rem; margin-right: 0.35rem; }
+  .panel .find { width: 100%; font: 500 1rem var(--body); color: var(--ink); background: var(--chalk); border: 1px solid var(--line); border-radius: 0.5rem; padding: 0.5rem 0.7rem; margin: 0 0 0.6rem; }
+  .list { max-height: 24rem; overflow-y: auto; border-top: 1px solid var(--line); }
+  .list details { border-bottom: 1px solid var(--line); padding: 0.45rem 0; }
+  .list summary { cursor: pointer; display: flex; gap: 0.5rem; align-items: center; font-weight: 600; list-style-position: inside; }
+  .list summary .cnt, .list .comp .cnt { color: var(--muted); font-weight: 400; font-size: 0.9rem; }
+  .list .comp { display: block; padding: 0.25rem 0 0.25rem 1.6rem; font-size: 0.95rem; }
+  .hint2 { color: var(--muted); font-size: 0.9rem; margin: 0.6rem 0 0; }
   .status { margin: 1.25rem 0 0; color: var(--muted); font-size: 0.95rem; min-height: 1.5em; }
   .status.error { color: var(--ink); border-left: 4px solid var(--floodlight); padding-left: 0.75rem; }
   .day { font: 600 1.05rem/1.2 var(--body); color: var(--muted); margin: 2.25rem 0 0.25rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--line); }
-  .match { display: grid; grid-template-columns: 4.75rem 1fr; gap: 0 1rem; padding: 1.05rem 0; border-bottom: 1px solid var(--line); }
-  .kickoff { font: 700 1.9rem/1 var(--board); font-variant-numeric: tabular-nums; padding-top: 0.1rem; }
+  .match { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 0 1rem; padding: 1.05rem 0; border-bottom: 1px solid var(--line); }
+  .kickoff { font: 700 1.75rem/1 var(--board); font-variant-numeric: tabular-nums; padding-top: 0.15rem; white-space: nowrap; }
   .title { font: 600 1.45rem/1.15 var(--board); margin: 0; overflow-wrap: anywhere; }
   .sub { color: var(--muted); font-size: 0.95rem; margin: 0.2rem 0 0; }
   .now { color: var(--now); font-weight: 600; margin-left: 0.4rem; }
@@ -79,8 +91,8 @@
   footer { margin-top: 3rem; color: var(--muted); font-size: 0.85rem; }
   @media (max-width: 30rem) {
     main { padding-top: 1.75rem; }
-    .match { grid-template-columns: 3.9rem 1fr; gap: 0 0.75rem; }
-    .kickoff { font-size: 1.6rem; }
+    .match { grid-template-columns: 5.4rem minmax(0, 1fr); gap: 0 0.6rem; }
+    .kickoff { font-size: 1.45rem; }
     .title { font-size: 1.3rem; }
   }
 </style>
@@ -99,7 +111,23 @@
     <select id="comp" disabled><option value="">All competitions</option></select>
     <span id="days" role="group" aria-label="Day"></span>
     <button type="button" class="chipbtn" id="uk" aria-pressed="false">UK &amp; Ireland</button>
+    <button type="button" class="chipbtn" id="filterbtn" aria-expanded="false" aria-controls="panel">Filters</button>
   </div>
+  <section class="panel" id="panel" aria-label="Choose which countries and leagues to show" hidden>
+    <div class="row">
+      <label><input type="checkbox" id="noWomen"> Hide women’s football</label>
+      <label><input type="checkbox" id="noYouth"> Hide youth and reserve teams</label>
+    </div>
+    <div class="row">
+      <button type="button" class="chipbtn" data-act="all">Show everything</button>
+      <button type="button" class="chipbtn" data-act="uk">Only UK &amp; Ireland</button>
+      <button type="button" class="chipbtn" data-act="none">Hide everything</button>
+    </div>
+    <label class="vh" for="find" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Find a country or league</label>
+    <input class="find" id="find" type="search" autocomplete="off" spellcheck="false" placeholder="Find a country or league…">
+    <div class="list" id="list"></div>
+    <p class="hint2">Untick a country or a league to hide it. Your choices are remembered on this device.</p>
+  </section>
   <p class="status" id="status" aria-live="polite">Reading the fixtures…</p>
   <div id="results"></div>
   <footer id="footer"></footer>
@@ -119,13 +147,62 @@
 
   const $ = (id) => document.getElementById(id);
   const q = $("q"), compSel = $("comp"), statusEl = $("status"), results = $("results"), daysEl = $("days");
+  const filterBtn = $("filterbtn"), panel = $("panel"), listEl = $("list"), findBox = $("find"), noWomen = $("noWomen"), noYouth = $("noYouth");
   let fixtures = [];
   let fetched = null;
   let dayChoice = "all";
   let ukOnly = false;
   // competitions that are British or Irish (the "UK & Ireland" button), and channels to list first
   const UK_COMP = /^(English|Scottish|Welsh|Irish|Northern Ireland|Northern Irish)\b|\b(FA Cup|FA Trophy|Carabao|EFL)\b/i;
-  const UK_CHAN = /\b(UK|Sky Sports?|Sky Go UK|TNT Sports|BBC|ITV|STV|S4C|Premier Sports|Prime Video UK|Ireland|Great Britain|Virgin Media|RTE|TG4|Premier League\+|Amazon)\b/i;
+  // channels to list first: Sky Sports (plural) is the UK one - Sky Sport (singular) is Austria, Italy, Germany, NZ; "UK" / "Ireland" / "GB" in the name
+  const UK_CHAN = /\b(UK|Ireland|Great Britain|GB Player|Sky Sports|TNT Sports|BBC|ITV|UTV|STV|S4C|Virgin Media|RT[EÉ]|TG4|BT Sport|Eir Sport|LOI TV)\b/i;
+
+  // ---- which country / league each competition belongs to, and what the user has hidden (kept on this device) ----
+  const STORE_KEY = "football-on-tv:filters:v1";
+  const UK_COUNTRIES = ["England", "Scotland", "Wales", "Ireland", "Northern Ireland"];
+  const COUNTRY_FIRST = UK_COUNTRIES.concat(["UEFA (Europe)", "International"]);
+  const PREFIXES = [   // [what the competition name starts with, country] - longest / most specific first
+    [/^(UEFA|Europa League|Champions League|Conference League)/i, "UEFA (Europe)"],
+    [/^(CAF|African|Africa Cup)/i, "Africa (CAF)"], [/^(AFC|Asian)/i, "Asia (AFC)"],
+    [/^concacaf/i, "North and Central America (Concacaf)"], [/^(conmebol|Copa Libertadores|Copa Sudamericana)/i, "South America (Conmebol)"],
+    [/^(FIFA|World Cup|International|Friendl|Nations League|European Championship|Under-?Age)/i, "International"],
+    [/^(National League|League Trophy|EFL)/i, "England"], [/^(Major League Soccer|MLS|NWSL|National Womens Soccer|USL)/i, "USA"],
+    [/^(Liga MX)/i, "Mexico"], [/^(K[- ]?League)/i, "South Korea"], [/^(Northern Ireland|Northern Irish)/i, "Northern Ireland"],
+    [/^South Korean/i, "South Korea"], [/^South African/i, "South Africa"], [/^North Macedonian/i, "North Macedonia"], [/^New Zealand/i, "New Zealand"],
+    [/^Bosnia/i, "Bosnia-Herzegovina"], [/^T[uü]rkiye|^Turkish/i, "Turkey"],
+  ];
+  const ADJECTIVES = { English: "England", Scottish: "Scotland", Welsh: "Wales", Irish: "Ireland", Italian: "Italy", Spanish: "Spain",
+    German: "Germany", French: "France", Dutch: "Netherlands", Portuguese: "Portugal", Belgian: "Belgium", Greek: "Greece",
+    Swiss: "Switzerland", Austrian: "Austria", Danish: "Denmark", Swedish: "Sweden", Norwegian: "Norway", Finnish: "Finland",
+    Icelandic: "Iceland", Polish: "Poland", Czech: "Czechia", Slovak: "Slovakia", Slovenian: "Slovenia", Hungarian: "Hungary",
+    Romanian: "Romania", Bulgarian: "Bulgaria", Serbian: "Serbia", Croatian: "Croatia", Montenegrin: "Montenegro", Albanian: "Albania",
+    Kosovo: "Kosovo", Ukrainian: "Ukraine", Russian: "Russia", Israeli: "Israel", Azerbaijan: "Azerbaijan", Georgian: "Georgia",
+    Armenian: "Armenia", Kazakh: "Kazakhstan", Cypriot: "Cyprus", Maltese: "Malta", Brazilian: "Brazil", Argentinean: "Argentina",
+    Argentine: "Argentina", Chilean: "Chile", Colombian: "Colombia", Uruguayan: "Uruguay", Paraguayan: "Paraguay", Peruvian: "Peru",
+    Ecuadorian: "Ecuador", Bolivian: "Bolivia", Venezuelan: "Venezuela", Mexican: "Mexico", Canadian: "Canada", Japanese: "Japan",
+    Chinese: "China", Indian: "India", Australian: "Australia", Saudi: "Saudi Arabia", UAE: "UAE", Qatari: "Qatar", Iranian: "Iran",
+    Egyptian: "Egypt", Moroccan: "Morocco", Algerian: "Algeria", Tunisian: "Tunisia", Nigerian: "Nigeria", Ghanaian: "Ghana",
+    Kenyan: "Kenya", Ugandan: "Uganda", Tanzanian: "Tanzania", Zambian: "Zambia", Zimbabwean: "Zimbabwe", Thai: "Thailand" };
+  const WOMEN = /\b(Womens?|Women's|Femenino|Feminina|Feminine|Féminine|Frauen|Damallsvenskan|Toppserien|NWSL|W-League|WE League|Liga F|Damer|Donne)\b|\(W\)/i;
+  const YOUTH = /\bU-?\d{2}\b|\bYouth\b|\bReserves?\b|\bII\b|Under-?Age/i;
+  function countryOf(comp) {
+    for (const [re, name] of PREFIXES) if (re.test(comp)) return name;
+    const first = comp.split(/[\s-]+/)[0];
+    if (ADJECTIVES[first]) return ADJECTIVES[first];
+    return first ? first.charAt(0).toUpperCase() + first.slice(1) : "Other";
+  }
+  const prefs = { hidden: new Set(), women: false, youth: false };
+  function loadPrefs() {
+    try {
+      const p = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
+      if (p) { prefs.hidden = new Set(p.hidden || []); prefs.women = !!p.women; prefs.youth = !!p.youth; }
+    } catch (e) { /* private mode etc. - the choices just aren't remembered */ }
+  }
+  function savePrefs() {
+    try { localStorage.setItem(STORE_KEY, JSON.stringify({ hidden: [...prefs.hidden], women: prefs.women, youth: prefs.youth })); } catch (e) { /* ignore */ }
+  }
+  let groups = [];                     // [{country, total, comps: [{name, count}]}]
+  const shown = (f) => !prefs.hidden.has(f.comp) && !(prefs.women && f.women) && !(prefs.youth && f.youth);
 
   const ukParts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", hour: "numeric", minute: "2-digit", hourCycle: "h23" });
   const ukDay = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "long" });
@@ -171,19 +248,75 @@
         const start = new Date(f.start);
         const ch0 = Array.isArray(f.ch) ? f.ch : [];
         const ch = ch0.filter((c) => UK_CHAN.test(c)).concat(ch0.filter((c) => !UK_CHAN.test(c)));   // British channels first
-        const comp = String(f.comp || "").replace(/\s*-\s*(Round|Group|Week|Matchday|Leg|Game)\b.*$/i, "").trim() || "Football";
+        // the league / cup itself: everything before the first " - " (that part is the week, round, stage or group); Serie C's girone letters go too
+        const comp = String(f.comp || "").split(/\s+-\s+/)[0].replace(/\s+Girone\s+[A-C]$/i, "").trim() || "Football";
         return { start, a: f.a, b: f.b, compFull: f.comp || "", comp, ch, uk: UK_COMP.test(f.comp || ""),
+                 country: countryOf(comp), women: WOMEN.test(f.comp || ""), youth: YOUTH.test([f.comp, f.a, f.b].join(" ")),
                  hay: fold([f.a, f.b, f.comp, ch.join(" ")].join(" ")), dayKey: ukDayKey.format(start) };
       })
       .filter((f) => !isNaN(f.start) && f.start.getTime() >= cutoff)
       .sort((x, y) => x.start - y.start);
-    const counts = {};
-    for (const f of fixtures) counts[f.comp] = (counts[f.comp] || 0) + 1;
+    const by = new Map();
+    for (const f of fixtures) {
+      if (!by.has(f.country)) by.set(f.country, new Map());
+      const m = by.get(f.country);
+      m.set(f.comp, (m.get(f.comp) || 0) + 1);
+    }
+    groups = [...by.entries()].map(([country, m]) => ({
+      country, total: [...m.values()].reduce((x, y) => x + y, 0),
+      comps: [...m.entries()].map(([name, count]) => ({ name, count })).sort((x, y) => y.count - x.count || x.name.localeCompare(y.name)),
+    })).sort((x, y) => {
+      const ix = COUNTRY_FIRST.indexOf(x.country), iy = COUNTRY_FIRST.indexOf(y.country);
+      return ix >= 0 || iy >= 0 ? (ix < 0 ? 99 : ix) - (iy < 0 ? 99 : iy) : x.country.localeCompare(y.country);
+    });
+    q.disabled = false;
+  }
+
+  function buildCompSelect() {         // the single-league dropdown lists only what the filters leave visible
+    const keep = compSel.value, counts = {};
+    for (const f of fixtures) if (shown(f)) counts[f.comp] = (counts[f.comp] || 0) + 1;
     const comps = Object.keys(counts).sort((x, y) => counts[y] - counts[x] || x.localeCompare(y));
     compSel.innerHTML = `<option value="">All competitions</option>` +
       comps.map((c) => `<option value="${esc(c)}">${esc(c)} (${counts[c]})</option>`).join("");
+    compSel.value = comps.includes(keep) ? keep : "";
     compSel.disabled = false;
-    q.disabled = false;
+  }
+
+  function renderPanel() {             // the country / league list (rebuilt only when the search text changes)
+    const find = fold(findBox.value).trim();
+    let out = "";
+    for (const g of groups) {
+      const countryHit = find && fold(g.country).includes(find);
+      const comps = g.comps.filter((c) => !find || countryHit || fold(c.name).includes(find));
+      if (find && !comps.length) continue;
+      out += `<details${find ? " open" : ""}><summary><label><input type="checkbox" data-country="${esc(g.country)}"> ${esc(g.country)}</label>` +
+             `<span class="cnt">${g.total} ${g.total === 1 ? "match" : "matches"}</span></summary>` +
+             comps.map((c) => `<label class="comp"><input type="checkbox" data-comp="${esc(c.name)}"> ${esc(c.name)} <span class="cnt">(${c.count})</span></label>`).join("") +
+             `</details>`;
+    }
+    listEl.innerHTML = out || `<p class="hint2">No country or league matches “${esc(findBox.value)}”.</p>`;
+    syncPanel();
+  }
+
+  function syncPanel() {               // tick / untick / half-tick the boxes to match what is hidden
+    for (const box of listEl.querySelectorAll("input[data-comp]")) box.checked = !prefs.hidden.has(box.dataset.comp);
+    for (const box of listEl.querySelectorAll("input[data-country]")) {
+      const g = groups.find((x) => x.country === box.dataset.country);
+      const visible = g ? g.comps.filter((c) => !prefs.hidden.has(c.name)).length : 0;
+      box.checked = !!g && visible === g.comps.length;
+      box.indeterminate = !!g && visible > 0 && visible < g.comps.length;
+    }
+    noWomen.checked = prefs.women;
+    noYouth.checked = prefs.youth;
+    const n = prefs.hidden.size + (prefs.women ? 1 : 0) + (prefs.youth ? 1 : 0);
+    filterBtn.textContent = n ? `Filters (${n} hidden)` : "Filters";
+  }
+
+  function filtersChanged() {
+    savePrefs();
+    buildCompSelect();
+    syncPanel();
+    render();
   }
 
   function buildDayChips() {
@@ -202,7 +335,7 @@
     else if (dayChoice === "tomorrow") allowed = dayKeys([1]);
     else if (dayChoice === "three") allowed = dayKeys([0, 1, 2]);
     return fixtures.filter((f) =>
-      (!comp || f.comp === comp) && (!ukOnly || f.uk) && (!allowed || allowed.has(f.dayKey)) && words.every((w) => f.hay.includes(w)));
+      shown(f) && (!comp || f.comp === comp) && (!ukOnly || f.uk) && (!allowed || allowed.has(f.dayKey)) && words.every((w) => f.hay.includes(w)));
   }
 
   function dayLabel(key, sample) {
@@ -238,7 +371,7 @@
           <p class="title">${esc(f.a)} v ${esc(f.b)}</p>
           <p class="sub">${esc(f.compFull || f.comp)}${underway ? '<span class="now">Under way</span>' : ""}</p>
           ${f.ch.length ? `<ul class="chans">${shown.map((c) => `<li>${esc(c)}</li>`).join("")}${
-            rest.length ? `<li hidden data-rest="${idx}">${rest.map(esc).join('</li><li data-rest="' + idx + '">')}</li>` : ""}</ul>
+            rest.map((c) => `<li hidden data-rest="${idx}">${esc(c)}</li>`).join("")}</ul>
           ${rest.length ? `<button type="button" class="more" data-more="${idx}">Show all ${f.ch.length} channels</button>` : ""}` :
             `<p class="sub">No channels listed yet.</p>`}
         </div>
@@ -265,9 +398,35 @@
     $("footer").textContent = "Start times and channel lists come from LiveOnSat; broadcasters can change schedules without notice. Not an EPG.";
     const initial = new URL(location.href).searchParams.get("q");
     if (initial) q.value = initial;
+    loadPrefs();
+    buildCompSelect();
+    renderPanel();
+    filterBtn.addEventListener("click", () => { panel.hidden = !panel.hidden; filterBtn.setAttribute("aria-expanded", String(!panel.hidden)); });
+    findBox.addEventListener("input", renderPanel);
+    panel.addEventListener("change", (e) => {
+      const t = e.target, d = t.dataset || {};
+      if (t.id === "noWomen") prefs.women = t.checked;
+      else if (t.id === "noYouth") prefs.youth = t.checked;
+      else if (d.country !== undefined) {
+        const g = groups.find((x) => x.country === d.country);
+        if (g) for (const c of g.comps) { if (t.checked) prefs.hidden.delete(c.name); else prefs.hidden.add(c.name); }
+      } else if (d.comp !== undefined) { if (t.checked) prefs.hidden.delete(d.comp); else prefs.hidden.add(d.comp); }
+      else return;
+      filtersChanged();
+    });
+    panel.addEventListener("click", (e) => {
+      const act = e.target.dataset && e.target.dataset.act;
+      if (!act) return;
+      prefs.hidden = new Set();
+      if (act === "none") for (const g of groups) for (const c of g.comps) prefs.hidden.add(c.name);
+      if (act === "uk") for (const g of groups) if (!UK_COUNTRIES.includes(g.country)) for (const c of g.comps) prefs.hidden.add(c.name);
+      if (act === "all") { prefs.women = false; prefs.youth = false; }
+      filtersChanged();
+    });
     q.addEventListener("input", render);
     $("uk").addEventListener("click", () => { ukOnly = !ukOnly; $("uk").setAttribute("aria-pressed", String(ukOnly)); render(); });
     compSel.addEventListener("change", render);
+    syncPanel();
     render();
   }
   init();
