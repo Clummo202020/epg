@@ -4425,11 +4425,11 @@
     <display-name lang="en">AU (STAN 03)</display-name>
   </channel>
   <channel id="STAN04.au">
-    <display-name lang="en">AU (STAN 04) | Leeds United v Tottenham Hotspur Premier League Matchweek 10 2026/2027 (2026-11-07 22:30:50)</display-name>
+    <display-name lang="en">AU (STAN 04) | Everton v Coventry City Premier League Matchweek 10 2026/2027 (2026-11-07 06:30:50)</display-name>
     <display-name lang="en">AU (STAN 04)</display-name>
   </channel>
   <channel id="STAN05.au">
-    <display-name lang="en">AU (STAN 05) | • Leeds United v Tottenham Hotspur Premier League Matchweek 10 2026/2027 (2026-11-07 23:20:50)</display-name>
+    <display-name lang="en">AU (STAN 05) | Oxford City v Leicester City FA Cup 2026/2027 (2026-11-07 06:35:50)</display-name>
     <display-name lang="en">AU (STAN 05)</display-name>
   </channel>
   <channel id="STAN06.au">
@@ -4437,11 +4437,11 @@
     <display-name lang="en">AU (STAN 06)</display-name>
   </channel>
   <channel id="STAN07.au">
-    <display-name lang="en">AU (STAN 07) | Manchester City v West Ham United WSL 2026/27 (2026-11-07 23:35:50)</display-name>
+    <display-name lang="en">AU (STAN 07) | San Diego Wave FC v Utah Royals NWSL 2026 (2026-11-07 14:00:50)</display-name>
     <display-name lang="en">AU (STAN 07)</display-name>
   </channel>
   <channel id="STAN08.au">
-    <display-name lang="en">AU (STAN 08) | Chelsea v Everton WSL 2026/27 (2026-11-07 23:35:50)</display-name>
+    <display-name lang="en">AU (STAN 08) | Jeju v Gwangju K League 2026 (2026-11-07 15:55:50)</display-name>
     <display-name lang="en">AU (STAN 08)</display-name>
   </channel>
   <channel id="STAN09.au">
@@ -4469,11 +4469,11 @@
     <display-name lang="en">AU (STAN 13)</display-name>
   </channel>
   <channel id="STAN14.au">
-    <display-name lang="en">AU (STAN 14) | Leeds United v Tottenham Hotspur Premier League Matchweek 10 2026/2027 (2026-11-07 22:30:50)</display-name>
+    <display-name lang="en">AU (STAN 14) | Zimbabwe v Samoa Nations Cup Round 4 2026 (2026-11-08 01:50:50)</display-name>
     <display-name lang="en">AU (STAN 14)</display-name>
   </channel>
   <channel id="STAN15.au">
-    <display-name lang="en">AU (STAN 15) | • Leeds United v Tottenham Hotspur Premier League Matchweek 10 2026/2027 (2026-11-07 23:20:50)</display-name>
+    <display-name lang="en">AU (STAN 15) | Portugal v Chile Nations Cup Round 4 2026 (2026-11-08 01:50:50)</display-name>
     <display-name lang="en">AU (STAN 15)</display-name>
   </channel>
   <channel id="STAN16.au">
@@ -4481,11 +4481,11 @@
     <display-name lang="en">AU (STAN 16)</display-name>
   </channel>
   <channel id="STAN17.au">
-    <display-name lang="en">AU (STAN 17) | Manchester City v West Ham United WSL 2026/27 (2026-11-07 23:35:50)</display-name>
+    <display-name lang="en">AU (STAN 17) | Wales v Japan Nations Championship Round 4 2026 (2026-11-08 03:25:50)</display-name>
     <display-name lang="en">AU (STAN 17)</display-name>
   </channel>
   <channel id="STAN18.au">
-    <display-name lang="en">AU (STAN 18) | Chelsea v Everton WSL 2026/27 (2026-11-07 23:35:50)</display-name>
+    <display-name lang="en">AU (STAN 18) | Kansas City Current v Angel City FC NWSL 2026 (2026-11-08 04:00:50)</display-name>
     <display-name lang="en">AU (STAN 18)</display-name>
   </channel>
   <channel id="STAN19.au">
@@ -8649,6 +8649,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108172500 +0000" stop="20261108192500 +0000" channel="AppleMLS035.us">
+    <title lang="en">MLS Wrap_Up⁩</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="AppleMLS036.us">
     <title lang="en">MLS El Resumen⁩ (Spanish) (Sun 8 Nov, 2:25am)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -8725,6 +8730,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108152500 +0000" stop="20261108172500 +0000" channel="AppleMLS036.us">
+    <title lang="en">MLS El Resumen⁩ (Spanish)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108172500 +0000" stop="20261108192500 +0000" channel="AppleMLS036.us">
     <title lang="en">MLS El Resumen⁩ (Spanish)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -18047,6 +18057,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="ESPNPPV80.us">
+    <title lang="en">Williams College vs George Mason</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="ESPNPPV81.us">
     <title lang="en">Lindenwood vs Gardner-Webb (Sat 7 Nov, 6:30pm)</title>
     <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
@@ -18117,6 +18132,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108153000 +0000" stop="20261108173000 +0000" channel="ESPNPPV81.us">
+    <title lang="en">Lindenwood vs Gardner-Webb</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="ESPNPPV81.us">
     <title lang="en">Lindenwood vs Gardner-Webb</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -20556,6 +20576,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="NBA2.uk">
+    <title lang="en">Atlanta Hawks vs Brooklyn Nets</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="NBA3.uk">
     <title lang="en">Cleveland Cavaliers vs New York Knicks (Sun 8 Nov, 1am)</title>
     <sub-title lang="en">⏭ Coming up: NBA</sub-title>
@@ -22282,6 +22307,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">PPV EVENT 01: The Dirt Track at Charlotte (Sat 7 Nov, 7:30pm)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="PPVEVENT10.us">
     <title lang="en">UFC FN Acosta vs Walker (Sun 8 Nov, 1am)</title>
     <sub-title lang="en">⏭ Coming up: UFC</sub-title>
@@ -23750,6 +23780,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">PPV EVENT 06: USAC Avanti Western States Midgets at Ventura (Sat 7 Nov, 11:30pm)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="PPVEVENT7.us">
     <title lang="en">AMA EnduroCross at Salt Lake City (Sun 8 Nov, 2am)</title>
     <sub-title lang="en">⏭ Coming up: PPV Event</sub-title>
@@ -23987,54 +24022,6 @@
   </programme>
   <programme start="20261107182000 +0000" stop="20261107202000 +0000" channel="Paramount001.us">
     <title lang="en">Wrexham vs Wolves</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107123000 +0000" stop="20261107143000 +0000" channel="Paramount002.us">
-    <title lang="en">🔴 LIVE: Bristol City vs Norwich City</title>
-    <sub-title lang="en">Championship</sub-title>
-    <desc lang="en">Bristol City vs Norwich City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107143000 +0000" stop="20261107153000 +0000" channel="Paramount002.us">
-    <title lang="en">🔴 LIVE: Bristol City vs Norwich City</title>
-    <sub-title lang="en">Championship</sub-title>
-    <desc lang="en">Bristol City vs Norwich City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107153000 +0000" stop="20261107173000 +0000" channel="Paramount002.us">
-    <title lang="en">Bristol City vs Norwich City</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107173000 +0000" stop="20261107193000 +0000" channel="Paramount002.us">
-    <title lang="en">Bristol City vs Norwich City</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107123000 +0000" stop="20261107143000 +0000" channel="Paramount003.us">
-    <title lang="en">🔴 LIVE: Portsmouth vs Stoke City</title>
-    <sub-title lang="en">Championship</sub-title>
-    <desc lang="en">Portsmouth vs Stoke City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107143000 +0000" stop="20261107153000 +0000" channel="Paramount003.us">
-    <title lang="en">🔴 LIVE: Portsmouth vs Stoke City</title>
-    <sub-title lang="en">Championship</sub-title>
-    <desc lang="en">Portsmouth vs Stoke City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107153000 +0000" stop="20261107173000 +0000" channel="Paramount003.us">
-    <title lang="en">Portsmouth vs Stoke City</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107173000 +0000" stop="20261107193000 +0000" channel="Paramount003.us">
-    <title lang="en">Portsmouth vs Stoke City</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -31591,6 +31578,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261108171500 +0000" stop="20261108181500 +0000" channel="Peacock021.us">
+    <title lang="en">🔴 LIVE: Women`s Qualification: Part 2</title>
+    <desc lang="en">Women`s Qualification: Part 2. Starts Sun 8 Nov, 3:15pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="Peacock022.us">
     <title lang="en">Iona vs St. John`s (Sun 8 Nov, 5pm)</title>
     <sub-title lang="en">⏭ Coming up Sun 8 Nov</sub-title>
@@ -37759,150 +37752,6 @@
     <desc lang="en">Coming up: Performance View: LAL vs HOU. Starts Tue 1 Dec, 12am UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107123500 +0000" stop="20261107143500 +0000" channel="SN002.ca">
-    <title lang="en">🔴 LIVE: Chelsea vs Everton</title>
-    <desc lang="en">Chelsea vs Everton. Starts Sat 7 Nov, 12:35pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107143500 +0000" stop="20261107153500 +0000" channel="SN002.ca">
-    <title lang="en">🔴 LIVE: Chelsea vs Everton</title>
-    <desc lang="en">Chelsea vs Everton. Starts Sat 7 Nov, 12:35pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107153500 +0000" stop="20261107173500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107173500 +0000" stop="20261107193500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107193500 +0000" stop="20261107213500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107213500 +0000" stop="20261107233500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107233500 +0000" stop="20261108013500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108013500 +0000" stop="20261108033500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108033500 +0000" stop="20261108053500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108053500 +0000" stop="20261108073500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108073500 +0000" stop="20261108093500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108093500 +0000" stop="20261108113500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108113500 +0000" stop="20261108133500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108133500 +0000" stop="20261108153500 +0000" channel="SN002.ca">
-    <title lang="en">Chelsea vs Everton</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107123500 +0000" stop="20261107143500 +0000" channel="SN003.ca">
-    <title lang="en">🔴 LIVE: Manchester City vs West Ham United</title>
-    <desc lang="en">Manchester City vs West Ham United. Starts Sat 7 Nov, 12:35pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107143500 +0000" stop="20261107153500 +0000" channel="SN003.ca">
-    <title lang="en">🔴 LIVE: Manchester City vs West Ham United</title>
-    <desc lang="en">Manchester City vs West Ham United. Starts Sat 7 Nov, 12:35pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107153500 +0000" stop="20261107173500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107173500 +0000" stop="20261107193500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107193500 +0000" stop="20261107213500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107213500 +0000" stop="20261107233500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107233500 +0000" stop="20261108013500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108013500 +0000" stop="20261108033500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108033500 +0000" stop="20261108053500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108053500 +0000" stop="20261108073500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108073500 +0000" stop="20261108093500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108093500 +0000" stop="20261108113500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108113500 +0000" stop="20261108133500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108133500 +0000" stop="20261108153500 +0000" channel="SN003.ca">
-    <title lang="en">Manchester City vs West Ham United</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261107144500 +0000" stop="20261107164500 +0000" channel="SN004.ca">
     <title lang="en">🔴 LIVE: Goals Show</title>
     <desc lang="en">Goals Show. Starts Sat 7 Nov, 2:45pm UK time.</desc>
@@ -39658,154 +39507,6 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107123000 +0000" stop="20261107143000 +0000" channel="STAN04.au">
-    <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 12:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107143000 +0000" stop="20261107153000 +0000" channel="STAN04.au">
-    <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 12:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107153000 +0000" stop="20261107173000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107173000 +0000" stop="20261107193000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107193000 +0000" stop="20261107213000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107213000 +0000" stop="20261107233000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107233000 +0000" stop="20261108013000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108013000 +0000" stop="20261108033000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108033000 +0000" stop="20261108053000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108053000 +0000" stop="20261108073000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108073000 +0000" stop="20261108093000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108093000 +0000" stop="20261108113000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108113000 +0000" stop="20261108133000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108133000 +0000" stop="20261108153000 +0000" channel="STAN04.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107123000 +0000" stop="20261107143000 +0000" channel="STAN05.au">
-    <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 12:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107143000 +0000" stop="20261107153000 +0000" channel="STAN05.au">
-    <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 12:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107153000 +0000" stop="20261107173000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107173000 +0000" stop="20261107193000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107193000 +0000" stop="20261107213000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107213000 +0000" stop="20261107233000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107233000 +0000" stop="20261108013000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108013000 +0000" stop="20261108033000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108033000 +0000" stop="20261108053000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108053000 +0000" stop="20261108073000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108073000 +0000" stop="20261108093000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108093000 +0000" stop="20261108113000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108113000 +0000" stop="20261108133000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108133000 +0000" stop="20261108153000 +0000" channel="STAN05.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261107123000 +0000" stop="20261107143000 +0000" channel="STAN06.au">
     <title lang="en">🔴 LIVE: Chennai: Day 6 WTA 250</title>
     <sub-title lang="en">WTA</sub-title>
@@ -39888,154 +39589,6 @@
   </programme>
   <programme start="20261108163000 +0000" stop="20261108183000 +0000" channel="STAN06.au">
     <title lang="en">Chennai: Day 6 WTA 250</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107123500 +0000" stop="20261107143500 +0000" channel="STAN07.au">
-    <title lang="en">🔴 LIVE: Manchester City vs West Ham United WSL 2026/27</title>
-    <sub-title lang="en">WSL</sub-title>
-    <desc lang="en">Manchester City vs West Ham United WSL 2026/27. Starts Sat 7 Nov, 12:35pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107143500 +0000" stop="20261107153500 +0000" channel="STAN07.au">
-    <title lang="en">🔴 LIVE: Manchester City vs West Ham United WSL 2026/27</title>
-    <sub-title lang="en">WSL</sub-title>
-    <desc lang="en">Manchester City vs West Ham United WSL 2026/27. Starts Sat 7 Nov, 12:35pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107153500 +0000" stop="20261107173500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107173500 +0000" stop="20261107193500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107193500 +0000" stop="20261107213500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107213500 +0000" stop="20261107233500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107233500 +0000" stop="20261108013500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108013500 +0000" stop="20261108033500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108033500 +0000" stop="20261108053500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108053500 +0000" stop="20261108073500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108073500 +0000" stop="20261108093500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108093500 +0000" stop="20261108113500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108113500 +0000" stop="20261108133500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108133500 +0000" stop="20261108153500 +0000" channel="STAN07.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107123500 +0000" stop="20261107143500 +0000" channel="STAN08.au">
-    <title lang="en">🔴 LIVE: Chelsea vs Everton WSL 2026/27</title>
-    <sub-title lang="en">WSL</sub-title>
-    <desc lang="en">Chelsea vs Everton WSL 2026/27. Starts Sat 7 Nov, 12:35pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107143500 +0000" stop="20261107153500 +0000" channel="STAN08.au">
-    <title lang="en">🔴 LIVE: Chelsea vs Everton WSL 2026/27</title>
-    <sub-title lang="en">WSL</sub-title>
-    <desc lang="en">Chelsea vs Everton WSL 2026/27. Starts Sat 7 Nov, 12:35pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261107153500 +0000" stop="20261107173500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107173500 +0000" stop="20261107193500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107193500 +0000" stop="20261107213500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107213500 +0000" stop="20261107233500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107233500 +0000" stop="20261108013500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108013500 +0000" stop="20261108033500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108033500 +0000" stop="20261108053500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108053500 +0000" stop="20261108073500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108073500 +0000" stop="20261108093500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108093500 +0000" stop="20261108113500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108113500 +0000" stop="20261108133500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108133500 +0000" stop="20261108153500 +0000" channel="STAN08.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -40506,151 +40059,151 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107123000 +0000" stop="20261107143000 +0000" channel="STAN14.au">
-    <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="STAN14.au">
+    <title lang="en">🔴 LIVE: Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
+    <sub-title lang="en">WR Nations Cup</sub-title>
+    <desc lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026. WR Nations Cup. Starts Sat 7 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261107143000 +0000" stop="20261107153000 +0000" channel="STAN14.au">
-    <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+  <programme start="20261107170000 +0000" stop="20261107180000 +0000" channel="STAN14.au">
+    <title lang="en">🔴 LIVE: Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
+    <sub-title lang="en">WR Nations Cup</sub-title>
+    <desc lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026. WR Nations Cup. Starts Sat 7 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261107153000 +0000" stop="20261107173000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107173000 +0000" stop="20261107193000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107193000 +0000" stop="20261107213000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107213000 +0000" stop="20261107233000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107233000 +0000" stop="20261108013000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108013000 +0000" stop="20261108033000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108033000 +0000" stop="20261108053000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108053000 +0000" stop="20261108073000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108073000 +0000" stop="20261108093000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108093000 +0000" stop="20261108113000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108113000 +0000" stop="20261108133000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108133000 +0000" stop="20261108153000 +0000" channel="STAN14.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="STAN14.au">
+    <title lang="en">Zimbabwe vs Samoa Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107123000 +0000" stop="20261107143000 +0000" channel="STAN15.au">
-    <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+  <programme start="20261107150000 +0000" stop="20261107170000 +0000" channel="STAN15.au">
+    <title lang="en">🔴 LIVE: Portugal vs Chile Nations Cup Round 4 2026</title>
+    <sub-title lang="en">WR Nations Cup</sub-title>
+    <desc lang="en">Portugal vs Chile Nations Cup Round 4 2026. WR Nations Cup. Starts Sat 7 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261107143000 +0000" stop="20261107153000 +0000" channel="STAN15.au">
-    <title lang="en">🔴 LIVE: Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+  <programme start="20261107170000 +0000" stop="20261107180000 +0000" channel="STAN15.au">
+    <title lang="en">🔴 LIVE: Portugal vs Chile Nations Cup Round 4 2026</title>
+    <sub-title lang="en">WR Nations Cup</sub-title>
+    <desc lang="en">Portugal vs Chile Nations Cup Round 4 2026. WR Nations Cup. Starts Sat 7 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261107153000 +0000" stop="20261107173000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107173000 +0000" stop="20261107193000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107193000 +0000" stop="20261107213000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107213000 +0000" stop="20261107233000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107233000 +0000" stop="20261108013000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108013000 +0000" stop="20261108033000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108033000 +0000" stop="20261108053000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108053000 +0000" stop="20261108073000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108073000 +0000" stop="20261108093000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108093000 +0000" stop="20261108113000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108113000 +0000" stop="20261108133000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108133000 +0000" stop="20261108153000 +0000" channel="STAN15.au">
-    <title lang="en">Leeds United vs Tottenham Hotspur Premier League Matchweek 10 2026/2027</title>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="STAN15.au">
+    <title lang="en">Portugal vs Chile Nations Cup Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -40739,151 +40292,153 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107123500 +0000" stop="20261107143500 +0000" channel="STAN17.au">
-    <title lang="en">🔴 LIVE: Manchester City vs West Ham United WSL 2026/27</title>
-    <sub-title lang="en">WSL</sub-title>
-    <desc lang="en">Manchester City vs West Ham United WSL 2026/27. Starts Sat 7 Nov, 12:35pm UK time.</desc>
+  <programme start="20261107160000 +0000" stop="20261107164000 +0000" channel="STAN17.au">
+    <title lang="en">Next up: LIVE – Wales vs Japan Nations Championship Round 4 2026 (4:40pm)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Wales vs Japan Nations Championship Round 4 2026 starts at 4:40pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107164000 +0000" stop="20261107184000 +0000" channel="STAN17.au">
+    <title lang="en">🔴 LIVE: Wales vs Japan Nations Championship Round 4 2026</title>
+    <sub-title lang="en">Nations Championship</sub-title>
+    <desc lang="en">Wales vs Japan Nations Championship Round 4 2026. Starts Sat 7 Nov, 4:40pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261107143500 +0000" stop="20261107153500 +0000" channel="STAN17.au">
-    <title lang="en">🔴 LIVE: Manchester City vs West Ham United WSL 2026/27</title>
-    <sub-title lang="en">WSL</sub-title>
-    <desc lang="en">Manchester City vs West Ham United WSL 2026/27. Starts Sat 7 Nov, 12:35pm UK time.</desc>
+  <programme start="20261107184000 +0000" stop="20261107194000 +0000" channel="STAN17.au">
+    <title lang="en">🔴 LIVE: Wales vs Japan Nations Championship Round 4 2026</title>
+    <sub-title lang="en">Nations Championship</sub-title>
+    <desc lang="en">Wales vs Japan Nations Championship Round 4 2026. Starts Sat 7 Nov, 4:40pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261107153500 +0000" stop="20261107173500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261107194000 +0000" stop="20261107214000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107173500 +0000" stop="20261107193500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261107214000 +0000" stop="20261107234000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107193500 +0000" stop="20261107213500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261107234000 +0000" stop="20261108014000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107213500 +0000" stop="20261107233500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261108014000 +0000" stop="20261108034000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107233500 +0000" stop="20261108013500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261108034000 +0000" stop="20261108054000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108013500 +0000" stop="20261108033500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261108054000 +0000" stop="20261108074000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108033500 +0000" stop="20261108053500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261108074000 +0000" stop="20261108094000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108053500 +0000" stop="20261108073500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261108094000 +0000" stop="20261108114000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108073500 +0000" stop="20261108093500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261108114000 +0000" stop="20261108134000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108093500 +0000" stop="20261108113500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261108134000 +0000" stop="20261108154000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108113500 +0000" stop="20261108133500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
+  <programme start="20261108154000 +0000" stop="20261108174000 +0000" channel="STAN17.au">
+    <title lang="en">Wales vs Japan Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108133500 +0000" stop="20261108153500 +0000" channel="STAN17.au">
-    <title lang="en">Manchester City vs West Ham United WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+  <programme start="20261107160000 +0000" stop="20261107170000 +0000" channel="STAN18.au">
+    <title lang="en">Next up: LIVE – Kansas City Current vs Angel City FC NWSL 2026 (5pm)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Kansas City Current vs Angel City FC NWSL 2026 starts at 5pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107123500 +0000" stop="20261107143500 +0000" channel="STAN18.au">
-    <title lang="en">🔴 LIVE: Chelsea vs Everton WSL 2026/27</title>
-    <sub-title lang="en">WSL</sub-title>
-    <desc lang="en">Chelsea vs Everton WSL 2026/27. Starts Sat 7 Nov, 12:35pm UK time.</desc>
+  <programme start="20261107170000 +0000" stop="20261107190000 +0000" channel="STAN18.au">
+    <title lang="en">🔴 LIVE: Kansas City Current vs Angel City FC NWSL 2026</title>
+    <sub-title lang="en">NWSL</sub-title>
+    <desc lang="en">Kansas City Current vs Angel City FC NWSL 2026. Starts Sat 7 Nov, 5pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261107143500 +0000" stop="20261107153500 +0000" channel="STAN18.au">
-    <title lang="en">🔴 LIVE: Chelsea vs Everton WSL 2026/27</title>
-    <sub-title lang="en">WSL</sub-title>
-    <desc lang="en">Chelsea vs Everton WSL 2026/27. Starts Sat 7 Nov, 12:35pm UK time.</desc>
+  <programme start="20261107190000 +0000" stop="20261107200000 +0000" channel="STAN18.au">
+    <title lang="en">🔴 LIVE: Kansas City Current vs Angel City FC NWSL 2026</title>
+    <sub-title lang="en">NWSL</sub-title>
+    <desc lang="en">Kansas City Current vs Angel City FC NWSL 2026. Starts Sat 7 Nov, 5pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261107153500 +0000" stop="20261107173500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107173500 +0000" stop="20261107193500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107193500 +0000" stop="20261107213500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107213500 +0000" stop="20261107233500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261107233500 +0000" stop="20261108013500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108013500 +0000" stop="20261108033500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108033500 +0000" stop="20261108053500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108053500 +0000" stop="20261108073500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108073500 +0000" stop="20261108093500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108093500 +0000" stop="20261108113500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261108113500 +0000" stop="20261108133500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261108133500 +0000" stop="20261108153500 +0000" channel="STAN18.au">
-    <title lang="en">Chelsea vs Everton WSL 2026/27</title>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="STAN18.au">
+    <title lang="en">Kansas City Current vs Angel City FC NWSL 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -41710,15 +41265,15 @@
   </programme>
   <programme start="20261107173000 +0000" stop="20261107193000 +0000" channel="STAN30.au">
     <title lang="en">🔴 LIVE: Altrincham vs Notts County FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup 1st Round</sub-title>
-    <desc lang="en">Altrincham vs Notts County FA Cup 2026/2027. FA Cup 1st Round. Starts Sat 7 Nov, 5:30pm UK time.</desc>
+    <sub-title lang="en">FA Cup</sub-title>
+    <desc lang="en">Altrincham vs Notts County FA Cup 2026/2027. Starts Sat 7 Nov, 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261107193000 +0000" stop="20261107203000 +0000" channel="STAN30.au">
     <title lang="en">🔴 LIVE: Altrincham vs Notts County FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup 1st Round</sub-title>
-    <desc lang="en">Altrincham vs Notts County FA Cup 2026/2027. FA Cup 1st Round. Starts Sat 7 Nov, 5:30pm UK time.</desc>
+    <sub-title lang="en">FA Cup</sub-title>
+    <desc lang="en">Altrincham vs Notts County FA Cup 2026/2027. Starts Sat 7 Nov, 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -42001,6 +41556,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108151000 +0000" stop="20261108171000 +0000" channel="STAN33.au">
+    <title lang="en">France vs Fiji Nations Championship Round 4 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108171000 +0000" stop="20261108191000 +0000" channel="STAN33.au">
     <title lang="en">France vs Fiji Nations Championship Round 4 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -42726,6 +42286,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261108171500 +0000" stop="20261108191500 +0000" channel="STAN42.au">
+    <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN43.au">
     <title lang="en">Liverpool vs Arsenal WSL 2026/27 (Sun 8 Nov, 11:50am)</title>
     <sub-title lang="en">⏭ Coming up: WSL</sub-title>
@@ -43406,6 +42971,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261108171500 +0000" stop="20261108191500 +0000" channel="STAN50.au">
+    <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN51.au">
     <title lang="en">England vs Australia Nations Championship Round 4 2026 (Sun 8 Nov, 3:10pm)</title>
     <sub-title lang="en">⏭ Coming up: Nations Championship</sub-title>
@@ -43479,6 +43049,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108151000 +0000" stop="20261108171000 +0000" channel="STAN51.au">
+    <title lang="en">🔴 LIVE: England vs Australia Nations Championship Round 4 2026</title>
+    <sub-title lang="en">Nations Championship</sub-title>
+    <desc lang="en">England vs Australia Nations Championship Round 4 2026. Starts Sun 8 Nov, 3:10pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261108171000 +0000" stop="20261108181000 +0000" channel="STAN51.au">
     <title lang="en">🔴 LIVE: England vs Australia Nations Championship Round 4 2026</title>
     <sub-title lang="en">Nations Championship</sub-title>
     <desc lang="en">England vs Australia Nations Championship Round 4 2026. Starts Sun 8 Nov, 3:10pm UK time.</desc>
@@ -43568,6 +43145,11 @@
     <desc lang="en">Hong Kong China vs USA Nations Cup Round 4 2026. Starts Sun 8 Nov, 2:35pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261108173500 +0000" stop="20261108193500 +0000" channel="STAN52.au">
+    <title lang="en">Hong Kong China vs USA Nations Cup Round 4 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN53.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
@@ -43827,81 +43409,88 @@
   </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108160000 +0000" stop="20261108171500 +0000" channel="STAN56.au">
-    <title lang="en">Next up: LIVE – Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
+    <title lang="en">Next up: LIVE – Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (5:15pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 starts at 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108171500 +0000" stop="20261108191500 +0000" channel="STAN56.au">
+    <title lang="en">🔴 LIVE: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027</title>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN57.au">
     <title lang="en">Second Round Draw FA Cup 2026/27 (Mon 9 Nov, 6:30pm)</title>
@@ -49118,6 +48707,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108171800 +0000" stop="20261108191800 +0000" channel="TSN027.ca">
+    <title lang="en">2026 FIFA U_17 Women`s World Cup: Final _ Japan vs Nigeria</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="TSN028.ca">
     <title lang="en">LaLiga: Valencia vs Real Madrid (Sat 7 Nov, 7:30pm)</title>
     <sub-title lang="en">⏭ Coming up: LaLiga</sub-title>
@@ -49495,6 +49089,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108153000 +0000" stop="20261108173000 +0000" channel="TSN033.ca">
+    <title lang="en">NCAA Football: Alabama vs LSU</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="TSN033.ca">
     <title lang="en">NCAA Football: Alabama vs LSU</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -49965,6 +49564,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="TSN039.ca">
+    <title lang="en">NCAA Football: Georgia vs Ole Miss</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="TSN040.ca">
     <title lang="en">NCAA Football: Colorado vs Arizona State (Sun 8 Nov, 12:30am)</title>
     <sub-title lang="en">⏭ Coming up: NCAA</sub-title>
@@ -50040,6 +49644,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108153000 +0000" stop="20261108173000 +0000" channel="TSN040.ca">
+    <title lang="en">NCAA Football: Colorado vs Arizona State</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="TSN040.ca">
     <title lang="en">NCAA Football: Colorado vs Arizona State</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -50278,6 +49887,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108153000 +0000" stop="20261108173000 +0000" channel="TSN043.ca">
+    <title lang="en">NCAA Football: West Virginia vs Texas Tech</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="TSN043.ca">
     <title lang="en">NCAA Football: West Virginia vs Texas Tech</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -50621,6 +50235,11 @@
     <desc lang="en">NFL International Series: Bengals vs Falcons. Starts Sun 8 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="TSN047.ca">
+    <title lang="en">NFL International Series: Bengals vs Falcons</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="TSN048.ca">
     <title lang="en">NFL Fantasy Focus (Sun 8 Nov, 3pm)</title>
@@ -51548,10 +51167,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108160000 +0000" stop="20261108171800 +0000" channel="TSN058.ca">
-    <title lang="en">Next up: LIVE – LaLiga: Celta vs Levante (Sun 8 Nov, 5:18pm)</title>
+    <title lang="en">Next up: LIVE – LaLiga: Celta vs Levante (5:18pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. LaLiga: Celta vs Levante starts Sun 8 Nov, 5:18pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. LaLiga: Celta vs Levante starts at 5:18pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108171800 +0000" stop="20261108191800 +0000" channel="TSN058.ca">
+    <title lang="en">🔴 LIVE: LaLiga: Celta vs Levante</title>
+    <sub-title lang="en">LaLiga</sub-title>
+    <desc lang="en">LaLiga: Celta vs Levante. Starts Sun 8 Nov, 5:18pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="TSN059.ca">
     <title lang="en">LaLiga: Villarreal vs Getafe (Sun 8 Nov, 5:18pm)</title>
@@ -51626,10 +51252,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108160000 +0000" stop="20261108171800 +0000" channel="TSN059.ca">
-    <title lang="en">Next up: LIVE – LaLiga: Villarreal vs Getafe (Sun 8 Nov, 5:18pm)</title>
+    <title lang="en">Next up: LIVE – LaLiga: Villarreal vs Getafe (5:18pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. LaLiga: Villarreal vs Getafe starts Sun 8 Nov, 5:18pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. LaLiga: Villarreal vs Getafe starts at 5:18pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108171800 +0000" stop="20261108191800 +0000" channel="TSN059.ca">
+    <title lang="en">🔴 LIVE: LaLiga: Villarreal vs Getafe</title>
+    <sub-title lang="en">LaLiga</sub-title>
+    <desc lang="en">LaLiga: Villarreal vs Getafe. Starts Sun 8 Nov, 5:18pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="TSN060.ca">
     <title lang="en">NWSL on TSN: Quarterfinal _ Gotham FC vs Seattle (Sun 8 Nov, 5:30pm)</title>
@@ -51704,10 +51337,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108160000 +0000" stop="20261108173000 +0000" channel="TSN060.ca">
-    <title lang="en">Next up: LIVE – NWSL on TSN: Quarterfinal _ Gotham FC vs Seattle (Sun 8 Nov, 5:30pm)</title>
+    <title lang="en">Next up: LIVE – NWSL on TSN: Quarterfinal _ Gotham FC vs Seattle (5:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NWSL on TSN: Quarterfinal _ Gotham FC vs Seattle starts Sun 8 Nov, 5:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. NWSL on TSN: Quarterfinal _ Gotham FC vs Seattle starts at 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108173000 +0000" stop="20261108193000 +0000" channel="TSN060.ca">
+    <title lang="en">🔴 LIVE: NWSL on TSN: Quarterfinal _ Gotham FC vs Seattle</title>
+    <sub-title lang="en">NWSL</sub-title>
+    <desc lang="en">NWSL on TSN: Quarterfinal _ Gotham FC vs Seattle. Starts Sun 8 Nov, 5:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="TSN061.ca">
     <title lang="en">NFL RedZone (Sun 8 Nov, 6pm)</title>
@@ -92854,6 +92494,36 @@
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="Paramount002.us">
+    <title lang="en">Bristol City vs Norwich City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="Paramount002.us">
+    <title lang="en">Bristol City vs Norwich City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="Paramount002.us">
+    <title lang="en">Bristol City vs Norwich City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="Paramount003.us">
+    <title lang="en">Portsmouth vs Stoke City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="Paramount003.us">
+    <title lang="en">Portsmouth vs Stoke City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="Paramount003.us">
+    <title lang="en">Portsmouth vs Stoke City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="Peacock002.us">
     <title lang="en">Women`s Free Skate</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
@@ -92961,6 +92631,136 @@
   </programme>
   <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="SN001.ca">
     <title lang="en">Sportsnet Central: Nov. 6</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="SN002.ca">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="SN003.ca">
+    <title lang="en">Manchester City vs West Ham United</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -96016,6 +95816,266 @@
   </programme>
   <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="STAN03.au">
     <title lang="en">Romania vs Tonga Nations Cup Round 4 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="STAN04.au">
+    <title lang="en">Everton vs Coventry City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="STAN05.au">
+    <title lang="en">Oxford City vs Leicester City FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="STAN07.au">
+    <title lang="en">San Diego Wave FC vs Utah Royals NWSL 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="STAN08.au">
+    <title lang="en">Jeju vs Gwangju K League 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
