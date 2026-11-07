@@ -3337,23 +3337,23 @@
     <display-name lang="en">PPV EVENT 09</display-name>
   </channel>
   <channel id="Paramount001.us">
-    <display-name lang="en">US (Paramount 001) | Romania vs. Tonga (2026-11-06 12:20:00)</display-name>
+    <display-name lang="en">English Football League: Wrexham vs Wolves @ Nov 7 7:20 AM :Paramount+ 01</display-name>
     <display-name lang="en">US (Paramount 001)</display-name>
   </channel>
   <channel id="Paramount002.us">
-    <display-name lang="en">US (Paramount 002) | Zuffa Boxing 12 Ceremonial Weigh_In (2026-11-06 14:00:00)</display-name>
+    <display-name lang="en">English Football League: Bristol City vs Norwich City @ Nov 7 7:20 AM :Paramount+ 02</display-name>
     <display-name lang="en">US (Paramount 002)</display-name>
   </channel>
   <channel id="Paramount003.us">
-    <display-name lang="en">US (Paramount 003) | Raith Rovers vs. Dunfermline Athletic (2026-11-06 15:25:00)</display-name>
+    <display-name lang="en">English Football League: Portsmouth vs Stoke City @ Nov 7 7:20 AM :Paramount+ 03</display-name>
     <display-name lang="en">US (Paramount 003)</display-name>
   </channel>
   <channel id="Paramount004.us">
-    <display-name lang="en">US (Paramount 004) | Venezia vs. Udinese (2026-11-06 15:35:00)</display-name>
+    <display-name lang="en">Barclays Women's Super League: Chelsea vs Everton @ Nov 7 7:35 AM :Paramount+ 04</display-name>
     <display-name lang="en">US (Paramount 004)</display-name>
   </channel>
   <channel id="Paramount005.us">
-    <display-name lang="en">English Football League: Derby County vs Bolton Wanderers @ Nov 6 2:50 PM :Paramount+ 05</display-name>
+    <display-name lang="en">Barclays Women's Super League: Man City vs West Ham United @ Nov 7 7:35 AM :Paramount+ 05</display-name>
     <display-name lang="en">US (Paramount 005)</display-name>
   </channel>
   <channel id="Paramount006.us">
@@ -6031,6 +6031,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS001.us">
+    <title lang="en">Miami vs Charlotte</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="AppleMLS002.us">
     <title lang="en">Cincinnati vs Nashville (Sat 7 Nov, 7:25pm)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -6102,6 +6107,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062500 +0000" stop="20261108082500 +0000" channel="AppleMLS002.us">
+    <title lang="en">Cincinnati vs Nashville</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS002.us">
     <title lang="en">Cincinnati vs Nashville</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -6181,6 +6191,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS003.us">
+    <title lang="en">Miami vs Charlotte (Spanish)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="AppleMLS004.us">
     <title lang="en">Cincinnati vs Nashville (Spanish) (Sat 7 Nov, 7:25pm)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -6252,6 +6267,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062500 +0000" stop="20261108082500 +0000" channel="AppleMLS004.us">
+    <title lang="en">Cincinnati vs Nashville (Spanish)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS004.us">
     <title lang="en">Cincinnati vs Nashville (Spanish)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -6331,6 +6351,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS005.us">
+    <title lang="en">MLS Countdown</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="AppleMLS006.us">
     <title lang="en">Orlando vs New England (Sat 7 Nov, 7:25pm)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -6402,6 +6427,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062500 +0000" stop="20261108082500 +0000" channel="AppleMLS006.us">
+    <title lang="en">Orlando vs New England</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS006.us">
     <title lang="en">Orlando vs New England</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -6481,6 +6511,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS007.us">
+    <title lang="en">Orlando vs New England (Spanish)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="AppleMLS008.us">
     <title lang="en">Chicago vs Columbus (Sat 7 Nov, 7:25pm)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -6552,6 +6587,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062500 +0000" stop="20261108082500 +0000" channel="AppleMLS008.us">
+    <title lang="en">Chicago vs Columbus</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS008.us">
     <title lang="en">Chicago vs Columbus</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -6631,6 +6671,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS009.us">
+    <title lang="en">Chicago vs Columbus (Spanish)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="AppleMLS010.us">
     <title lang="en">Philadelphia vs Toronto (Sat 7 Nov, 7:25pm)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -6702,6 +6747,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062500 +0000" stop="20261108082500 +0000" channel="AppleMLS010.us">
+    <title lang="en">Philadelphia vs Toronto</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS010.us">
     <title lang="en">Philadelphia vs Toronto</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -6781,6 +6831,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS011.us">
+    <title lang="en">Philadelphia vs Toronto (Spanish)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="AppleMLS012.us">
     <title lang="en">Montréal vs Vancouver (Sat 7 Nov, 7:25pm)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -6852,6 +6907,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062500 +0000" stop="20261108082500 +0000" channel="AppleMLS012.us">
+    <title lang="en">Montréal vs Vancouver</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS012.us">
     <title lang="en">Montréal vs Vancouver</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -6931,6 +6991,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS013.us">
+    <title lang="en">Montréal vs Vancouver (French)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="AppleMLS014.us">
     <title lang="en">Montréal vs Vancouver (Spanish) (Sat 7 Nov, 7:25pm)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -7002,6 +7067,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062500 +0000" stop="20261108082500 +0000" channel="AppleMLS014.us">
+    <title lang="en">Montréal vs Vancouver (Spanish)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS014.us">
     <title lang="en">Montréal vs Vancouver (Spanish)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -7081,6 +7151,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="AppleMLS015.us">
+    <title lang="en">New_York vs Atlanta</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="AppleMLS016.us">
     <title lang="en">New_York vs Atlanta (Spanish) (Sat 7 Nov, 7:26pm)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -7152,6 +7227,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062600 +0000" stop="20261108082600 +0000" channel="AppleMLS016.us">
+    <title lang="en">New_York vs Atlanta (Spanish)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082600 +0000" stop="20261108102600 +0000" channel="AppleMLS016.us">
     <title lang="en">New_York vs Atlanta (Spanish)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -7231,6 +7311,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108082600 +0000" stop="20261108102600 +0000" channel="AppleMLS017.us">
+    <title lang="en">D.C. vs New_York_City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="AppleMLS018.us">
     <title lang="en">D.C. vs New_York_City (Spanish) (Sat 7 Nov, 7:26pm)</title>
     <sub-title lang="en">⏭ Coming up: MLS</sub-title>
@@ -7302,6 +7387,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062600 +0000" stop="20261108082600 +0000" channel="AppleMLS018.us">
+    <title lang="en">D.C. vs New_York_City (Spanish)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082600 +0000" stop="20261108102600 +0000" channel="AppleMLS018.us">
     <title lang="en">D.C. vs New_York_City (Spanish)</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -9883,6 +9973,216 @@
   </programme>
   <programme start="20261108050000 +0000" stop="20261108070000 +0000" channel="PPVEVENT7.us">
     <title lang="en">PPV EVENT 07: ONE Fight Night 49 Gabriel vs. Rasulov (Sat 7 Nov, 2am)</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Paramount001.us">
+    <title lang="en">Wrexham vs Wolves (Sat 7 Nov, 1:20pm)</title>
+    <sub-title lang="en">⏭ Coming up: English Football League</sub-title>
+    <desc lang="en">Coming up: Wrexham vs Wolves. English Football League. Starts Sat 7 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="Paramount001.us">
+    <title lang="en">Wrexham vs Wolves (Sat 7 Nov, 1:20pm)</title>
+    <sub-title lang="en">⏭ Coming up: English Football League</sub-title>
+    <desc lang="en">Coming up: Wrexham vs Wolves. English Football League. Starts Sat 7 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107120000 +0000" stop="20261107132000 +0000" channel="Paramount001.us">
+    <title lang="en">Next up: LIVE – Wrexham vs Wolves (1:20pm)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Wrexham vs Wolves starts at 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107132000 +0000" stop="20261107152000 +0000" channel="Paramount001.us">
+    <title lang="en">🔴 LIVE: Wrexham vs Wolves</title>
+    <sub-title lang="en">English Football League</sub-title>
+    <desc lang="en">Wrexham vs Wolves. English Football League. Starts Sat 7 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107152000 +0000" stop="20261107162000 +0000" channel="Paramount001.us">
+    <title lang="en">🔴 LIVE: Wrexham vs Wolves</title>
+    <sub-title lang="en">English Football League</sub-title>
+    <desc lang="en">Wrexham vs Wolves. English Football League. Starts Sat 7 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107162000 +0000" stop="20261107182000 +0000" channel="Paramount001.us">
+    <title lang="en">Wrexham vs Wolves</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107182000 +0000" stop="20261107202000 +0000" channel="Paramount001.us">
+    <title lang="en">Wrexham vs Wolves</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Paramount002.us">
+    <title lang="en">Bristol City vs Norwich City (Sat 7 Nov, 12:30pm)</title>
+    <sub-title lang="en">⏭ Coming up: Championship</sub-title>
+    <desc lang="en">Coming up: Bristol City vs Norwich City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="Paramount002.us">
+    <title lang="en">Bristol City vs Norwich City (Sat 7 Nov, 12:30pm)</title>
+    <sub-title lang="en">⏭ Coming up: Championship</sub-title>
+    <desc lang="en">Coming up: Bristol City vs Norwich City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107120000 +0000" stop="20261107123000 +0000" channel="Paramount002.us">
+    <title lang="en">Next up: LIVE – Bristol City vs Norwich City (12:30pm)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Bristol City vs Norwich City starts at 12:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107123000 +0000" stop="20261107143000 +0000" channel="Paramount002.us">
+    <title lang="en">🔴 LIVE: Bristol City vs Norwich City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Bristol City vs Norwich City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107143000 +0000" stop="20261107153000 +0000" channel="Paramount002.us">
+    <title lang="en">🔴 LIVE: Bristol City vs Norwich City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Bristol City vs Norwich City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107153000 +0000" stop="20261107173000 +0000" channel="Paramount002.us">
+    <title lang="en">Bristol City vs Norwich City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107173000 +0000" stop="20261107193000 +0000" channel="Paramount002.us">
+    <title lang="en">Bristol City vs Norwich City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Paramount003.us">
+    <title lang="en">Portsmouth vs Stoke City (Sat 7 Nov, 12:30pm)</title>
+    <sub-title lang="en">⏭ Coming up: Championship</sub-title>
+    <desc lang="en">Coming up: Portsmouth vs Stoke City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="Paramount003.us">
+    <title lang="en">Portsmouth vs Stoke City (Sat 7 Nov, 12:30pm)</title>
+    <sub-title lang="en">⏭ Coming up: Championship</sub-title>
+    <desc lang="en">Coming up: Portsmouth vs Stoke City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107120000 +0000" stop="20261107123000 +0000" channel="Paramount003.us">
+    <title lang="en">Next up: LIVE – Portsmouth vs Stoke City (12:30pm)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Portsmouth vs Stoke City starts at 12:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107123000 +0000" stop="20261107143000 +0000" channel="Paramount003.us">
+    <title lang="en">🔴 LIVE: Portsmouth vs Stoke City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Portsmouth vs Stoke City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107143000 +0000" stop="20261107153000 +0000" channel="Paramount003.us">
+    <title lang="en">🔴 LIVE: Portsmouth vs Stoke City</title>
+    <sub-title lang="en">Championship</sub-title>
+    <desc lang="en">Portsmouth vs Stoke City. Championship. Starts Sat 7 Nov, 12:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107153000 +0000" stop="20261107173000 +0000" channel="Paramount003.us">
+    <title lang="en">Portsmouth vs Stoke City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107173000 +0000" stop="20261107193000 +0000" channel="Paramount003.us">
+    <title lang="en">Portsmouth vs Stoke City</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Paramount004.us">
+    <title lang="en">Chelsea vs Everton (Sat 7 Nov, 1:35pm)</title>
+    <sub-title lang="en">⏭ Coming up: Barclays Women's Super League</sub-title>
+    <desc lang="en">Coming up: Chelsea vs Everton. Barclays Women's Super League. Starts Sat 7 Nov, 1:35pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="Paramount004.us">
+    <title lang="en">Chelsea vs Everton (Sat 7 Nov, 1:35pm)</title>
+    <sub-title lang="en">⏭ Coming up: Barclays Women's Super League</sub-title>
+    <desc lang="en">Coming up: Chelsea vs Everton. Barclays Women's Super League. Starts Sat 7 Nov, 1:35pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107120000 +0000" stop="20261107133500 +0000" channel="Paramount004.us">
+    <title lang="en">Next up: LIVE – Chelsea vs Everton (1:35pm)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Chelsea vs Everton starts at 1:35pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107133500 +0000" stop="20261107153500 +0000" channel="Paramount004.us">
+    <title lang="en">🔴 LIVE: Chelsea vs Everton</title>
+    <sub-title lang="en">Barclays Women's Super League</sub-title>
+    <desc lang="en">Chelsea vs Everton. Barclays Women's Super League. Starts Sat 7 Nov, 1:35pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107153500 +0000" stop="20261107163500 +0000" channel="Paramount004.us">
+    <title lang="en">🔴 LIVE: Chelsea vs Everton</title>
+    <sub-title lang="en">Barclays Women's Super League</sub-title>
+    <desc lang="en">Chelsea vs Everton. Barclays Women's Super League. Starts Sat 7 Nov, 1:35pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107163500 +0000" stop="20261107183500 +0000" channel="Paramount004.us">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107183500 +0000" stop="20261107203500 +0000" channel="Paramount004.us">
+    <title lang="en">Chelsea vs Everton</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Paramount005.us">
+    <title lang="en">Man City vs West Ham United (Sat 7 Nov, 1:35pm)</title>
+    <sub-title lang="en">⏭ Coming up: Barclays Women's Super League</sub-title>
+    <desc lang="en">Coming up: Man City vs West Ham United. Barclays Women's Super League. Starts Sat 7 Nov, 1:35pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="Paramount005.us">
+    <title lang="en">Man City vs West Ham United (Sat 7 Nov, 1:35pm)</title>
+    <sub-title lang="en">⏭ Coming up: Barclays Women's Super League</sub-title>
+    <desc lang="en">Coming up: Man City vs West Ham United. Barclays Women's Super League. Starts Sat 7 Nov, 1:35pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107120000 +0000" stop="20261107133500 +0000" channel="Paramount005.us">
+    <title lang="en">Next up: LIVE – Man City vs West Ham United (1:35pm)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Man City vs West Ham United starts at 1:35pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107133500 +0000" stop="20261107153500 +0000" channel="Paramount005.us">
+    <title lang="en">🔴 LIVE: Man City vs West Ham United</title>
+    <sub-title lang="en">Barclays Women's Super League</sub-title>
+    <desc lang="en">Man City vs West Ham United. Barclays Women's Super League. Starts Sat 7 Nov, 1:35pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107153500 +0000" stop="20261107163500 +0000" channel="Paramount005.us">
+    <title lang="en">🔴 LIVE: Man City vs West Ham United</title>
+    <sub-title lang="en">Barclays Women's Super League</sub-title>
+    <desc lang="en">Man City vs West Ham United. Barclays Women's Super League. Starts Sat 7 Nov, 1:35pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261107163500 +0000" stop="20261107183500 +0000" channel="Paramount005.us">
+    <title lang="en">Man City vs West Ham United</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107183500 +0000" stop="20261107203500 +0000" channel="Paramount005.us">
+    <title lang="en">Man City vs West Ham United</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -23834,6 +24134,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="SN019.ca">
+    <title lang="en">Tissot Sprint _ Grand Prix of Qatar</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="SN020.ca">
     <title lang="en">Altrincham vs Notts County (Sat 7 Nov, 5:20pm)</title>
     <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
@@ -23902,6 +24207,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062000 +0000" stop="20261108082000 +0000" channel="SN020.ca">
+    <title lang="en">Altrincham vs Notts County</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082000 +0000" stop="20261108102000 +0000" channel="SN020.ca">
     <title lang="en">Altrincham vs Notts County</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -23978,6 +24288,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="SN021.ca">
+    <title lang="en">Florida @ Washington</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="SN022.ca">
     <title lang="en">GSOC Masters _ Men`s Quarterfinals (Sat 7 Nov, 5:30pm)</title>
     <sub-title lang="en">⏭ Coming up Sat 7 Nov</sub-title>
@@ -24046,6 +24361,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108063000 +0000" stop="20261108083000 +0000" channel="SN022.ca">
+    <title lang="en">GSOC Masters _ Men`s Quarterfinals</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="SN022.ca">
     <title lang="en">GSOC Masters _ Men`s Quarterfinals</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -24643,6 +24963,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108082500 +0000" stop="20261108102500 +0000" channel="STAN11.au">
+    <title lang="en">Gimcheon vs Anyang K League 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107092000 +0000" channel="STAN12.au">
     <title lang="en">Next up: LIVE – Free Practice 3: 6 Hours of Monza WEC 2026 (9:20am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -24707,6 +25032,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108062000 +0000" stop="20261108082000 +0000" channel="STAN12.au">
+    <title lang="en">Free Practice 3: 6 Hours of Monza WEC 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108082000 +0000" stop="20261108102000 +0000" channel="STAN12.au">
     <title lang="en">Free Practice 3: 6 Hours of Monza WEC 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -25014,6 +25344,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="STAN16.au">
+    <title lang="en">Chennai: Day 6 WTA 250</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="STAN17.au">
     <title lang="en">Manchester City vs West Ham United WSL 2026/27 (Sat 7 Nov, 12:35pm)</title>
     <sub-title lang="en">⏭ Coming up: WSL</sub-title>
@@ -25234,6 +25569,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108061000 +0000" stop="20261108081000 +0000" channel="STAN19.au">
+    <title lang="en">Qualifying: 6 Hours of Monza WEC 2026</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108081000 +0000" stop="20261108101000 +0000" channel="STAN19.au">
     <title lang="en">Qualifying: 6 Hours of Monza WEC 2026</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -26010,28 +26350,33 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="STAN29.au">
+    <title lang="en">Nottingham Forest vs Manchester City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="STAN30.au">
     <title lang="en">Altrincham vs Notts County FA Cup 2026/2027 (Sat 7 Nov, 5:30pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Altrincham vs Notts County FA Cup 2026/2027. FA Cup 1st Round. Starts Sat 7 Nov, 5:30pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Altrincham vs Notts County FA Cup 2026/2027. Starts Sat 7 Nov, 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="STAN30.au">
     <title lang="en">Altrincham vs Notts County FA Cup 2026/2027 (Sat 7 Nov, 5:30pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Altrincham vs Notts County FA Cup 2026/2027. FA Cup 1st Round. Starts Sat 7 Nov, 5:30pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Altrincham vs Notts County FA Cup 2026/2027. Starts Sat 7 Nov, 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="STAN30.au">
     <title lang="en">Altrincham vs Notts County FA Cup 2026/2027 (Sat 7 Nov, 5:30pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Altrincham vs Notts County FA Cup 2026/2027. FA Cup 1st Round. Starts Sat 7 Nov, 5:30pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Altrincham vs Notts County FA Cup 2026/2027. Starts Sat 7 Nov, 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107160000 +0000" channel="STAN30.au">
     <title lang="en">Altrincham vs Notts County FA Cup 2026/2027 (Sat 7 Nov, 5:30pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Altrincham vs Notts County FA Cup 2026/2027. FA Cup 1st Round. Starts Sat 7 Nov, 5:30pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Altrincham vs Notts County FA Cup 2026/2027. Starts Sat 7 Nov, 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107160000 +0000" stop="20261107173000 +0000" channel="STAN30.au">
@@ -26042,15 +26387,15 @@
   </programme>
   <programme start="20261107173000 +0000" stop="20261107193000 +0000" channel="STAN30.au">
     <title lang="en">🔴 LIVE: Altrincham vs Notts County FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup 1st Round</sub-title>
-    <desc lang="en">Altrincham vs Notts County FA Cup 2026/2027. FA Cup 1st Round. Starts Sat 7 Nov, 5:30pm UK time.</desc>
+    <sub-title lang="en">FA Cup</sub-title>
+    <desc lang="en">Altrincham vs Notts County FA Cup 2026/2027. Starts Sat 7 Nov, 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261107193000 +0000" stop="20261107203000 +0000" channel="STAN30.au">
     <title lang="en">🔴 LIVE: Altrincham vs Notts County FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup 1st Round</sub-title>
-    <desc lang="en">Altrincham vs Notts County FA Cup 2026/2027. FA Cup 1st Round. Starts Sat 7 Nov, 5:30pm UK time.</desc>
+    <sub-title lang="en">FA Cup</sub-title>
+    <desc lang="en">Altrincham vs Notts County FA Cup 2026/2027. Starts Sat 7 Nov, 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -26080,6 +26425,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108063000 +0000" stop="20261108083000 +0000" channel="STAN30.au">
+    <title lang="en">Altrincham vs Notts County FA Cup 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="STAN30.au">
     <title lang="en">Altrincham vs Notts County FA Cup 2026/2027</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -26154,6 +26504,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108063000 +0000" stop="20261108083000 +0000" channel="STAN31.au">
+    <title lang="en">Nottingham Forest vs Manchester City Premier League Matchweek 10 2026/2027</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="STAN31.au">
     <title lang="en">Nottingham Forest vs Manchester City Premier League Matchweek 10 2026/2027</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -27574,80 +27929,80 @@
   </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107160000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="STAN51.au">
@@ -28042,80 +28397,80 @@
   </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107140000 +0000" stop="20261107160000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107160000 +0000" stop="20261107180000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107180000 +0000" stop="20261107200000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107200000 +0000" stop="20261107220000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="STAN57.au">
@@ -32637,6 +32992,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108081800 +0000" stop="20261108101800 +0000" channel="TSN039.ca">
+    <title lang="en">LaLiga: Osasuna vs Athletic Club</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="TSN040.ca">
     <title lang="en">NCAA Football: Arkansas vs Auburn (Sat 7 Nov, 5:45pm)</title>
     <sub-title lang="en">⏭ Coming up: NCAA</sub-title>
@@ -33528,6 +33888,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="TSN051.ca">
+    <title lang="en">LaLiga: Valencia vs Real Madrid</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="TSN052.ca">
     <title lang="en">NASCAR Cup Series Qualifying: Championship Race (Sat 7 Nov, 7:30pm)</title>
     <sub-title lang="en">⏭ Coming up: NASCAR</sub-title>
@@ -33599,6 +33964,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108063000 +0000" stop="20261108083000 +0000" channel="TSN052.ca">
+    <title lang="en">NASCAR Cup Series Qualifying: Championship Race</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="TSN052.ca">
     <title lang="en">NASCAR Cup Series Qualifying: Championship Race</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -34072,6 +34442,11 @@
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108081500 +0000" stop="20261108101500 +0000" channel="TSN058.ca">
+    <title lang="en">NCAA Football: Vanderbilt vs Mississippi State</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="TSN059.ca">
     <title lang="en">2026 NASCAR O`Reilly Auto Parts Series Playoffs: Championship (Sat 7 Nov, 9:30pm)</title>
     <sub-title lang="en">⏭ Coming up: NASCAR</sub-title>
@@ -34144,6 +34519,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108063000 +0000" stop="20261108083000 +0000" channel="TSN059.ca">
+    <title lang="en">2026 NASCAR O`Reilly Auto Parts Series Playoffs: Championship</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="TSN059.ca">
     <title lang="en">2026 NASCAR O`Reilly Auto Parts Series Playoffs: Championship</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -34221,6 +34601,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108061500 +0000" stop="20261108081500 +0000" channel="TSN060.ca">
+    <title lang="en">NCAA Football: Kentucky vs Tennessee</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108081500 +0000" stop="20261108101500 +0000" channel="TSN060.ca">
     <title lang="en">NCAA Football: Kentucky vs Tennessee</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -34625,6 +35010,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108063000 +0000" stop="20261108083000 +0000" channel="TSN065.ca">
+    <title lang="en">NBA on TSN: Magic vs Warriors</title>
+    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108083000 +0000" stop="20261108103000 +0000" channel="TSN065.ca">
     <title lang="en">NBA on TSN: Magic vs Warriors</title>
     <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -87738,81 +88128,6 @@
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="PPVEVENT9.us">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Paramount001.us">
-    <title lang="en">Romania vs Tonga</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="Paramount001.us">
-    <title lang="en">Romania vs Tonga</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="Paramount001.us">
-    <title lang="en">Romania vs Tonga</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Paramount002.us">
-    <title lang="en">Zuffa Boxing 12 Ceremonial Weigh_In</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="Paramount002.us">
-    <title lang="en">Zuffa Boxing 12 Ceremonial Weigh_In</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="Paramount002.us">
-    <title lang="en">Zuffa Boxing 12 Ceremonial Weigh_In</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Paramount003.us">
-    <title lang="en">Raith Rovers vs Dunfermline Athletic</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="Paramount003.us">
-    <title lang="en">Raith Rovers vs Dunfermline Athletic</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="Paramount003.us">
-    <title lang="en">Raith Rovers vs Dunfermline Athletic</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Paramount004.us">
-    <title lang="en">Venezia vs Udinese</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="Paramount004.us">
-    <title lang="en">Venezia vs Udinese</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="Paramount004.us">
-    <title lang="en">Venezia vs Udinese</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Paramount005.us">
-    <title lang="en">Derby County vs Bolton Wanderers</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107100000 +0000" stop="20261107120000 +0000" channel="Paramount005.us">
-    <title lang="en">Derby County vs Bolton Wanderers</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261107120000 +0000" stop="20261107140000 +0000" channel="Paramount005.us">
-    <title lang="en">Derby County vs Bolton Wanderers</title>
-    <desc lang="en">This event has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107080000 +0000" stop="20261107100000 +0000" channel="Peacock002.us">
