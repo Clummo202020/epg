@@ -790,6 +790,9 @@ def _note_check(title, ours, theirs, label):
         print(f"  Kick-off check: {title}: {label} {ours:%d %b %H:%M} UTC but LiveOnSat {theirs:%d %b %H:%M} UTC")
 
 
+WOMENS_TITLE = re.compile(r"\b(WSL|NWSL|Women|Womens|Women's|Feminin\w*|Femenino|Frauen|Liga F|Damallsvenskan|Toppserien)\b|\(W\)", re.I)
+
+
 def _title_sides(title):
     sides = re.split(r"\s+(?:vs?\.?|at|@|x|-)\s+", title, maxsplit=1, flags=re.I)
     if len(sides) != 2:
@@ -807,7 +810,11 @@ def real_start(title, approx, quiet=False):
     sides = _title_sides(title)
     if sides is None:
         return None
-    res = _real_start_ours(title, sides, approx, quiet)
+    # A women's match (\"Aston Villa v Manchester United WSL 2026/27\") must not be matched to the same two clubs' MEN's fixture later that
+    # day (7 Nov 2026: Stan 42 got the 16:30 Premier League kick-off instead of the 12:00 WSL one) - our guides and ESPN only hold the men's
+    # games, so for these only LiveOnSat is asked.
+    women = bool(WOMENS_TITLE.search(title))
+    res = None if women else _real_start_ours(title, sides, approx, quiet)
     los = liveonsat_start(sides, res[0] if res else approx)
     if res:
         if los:
@@ -1715,12 +1722,14 @@ def build(events, now):
         # Dunfermline, and the earlier start won), the title most names agree on wins; a tie goes to the earlier start.
         first = min(evs, key=lambda e: e["start"])
         window = [e for e in evs if e["start"] < first["start"] + timedelta(hours=event_hours(first))]
+        lo = min(e.get("pl", 0) for e in window)              # the FIRST playlist (PLAYLIST_URL = Continuum) wins a disagreement:
+        window = [e for e in window if e.get("pl", 0) == lo]   # 7 Nov 2026 - the two playlists number some Stan / Paramount slots differently
         votes = {}
         for e in window:
             votes[_norm(e["title"])] = votes.get(_norm(e["title"]), 0) + 1
         best = max(window, key=lambda e: (votes[_norm(e["title"])], -e["start"].timestamp()))
-        if len(votes) > 1:
-            print(f"  Slot {sid}: names disagree - {sorted(votes.items(), key=lambda kv: -kv[1])} - using \"{best['title']}\"")
+        if len(set(_norm(e["title"]) for e in evs if e["start"] < first["start"] + timedelta(hours=event_hours(first)))) > 1:
+            print(f"  Slot {sid}: names disagree ({len(evs)} streams, playlist {lo + 1} used) - using \"{best['title']}\"")
         by_slot[sid] = best
     untimed = {sid: ev for sid, ev in untimed.items() if sid not in by_slot}
     ended = {sid: ev for sid, ev in ended.items() if sid not in by_slot and sid not in untimed}
@@ -1808,20 +1817,56 @@ def build(events, now):
     return tv, len(by_slot) + len(ended) + len(untimed), count
 
 
+SEPARATE_IDS = re.compile(r"^(?P<g>Peacock|STAN|Paramount)(?P<num>\d+)\.(?P<cc>[a-z]+)$")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     ap.add_argument("--m3u", nargs="+", help="read these playlist files instead of PLAYLIST_URL / PLAYLIST_URL_2")
     ap.add_argument("--out", default=OUTPUT_NAME)
     args = ap.parse_args()
     now = datetime.now(timezone.utc)
-    names, seen = [], set()
-    for label, text in read_playlist(args):
+    names, seen, name_pl, later = [], set(), {}, []
+    for idx, (label, text) in enumerate(read_playlist(args)):
         mine = list(stream_names(text))
+        if idx > 0:
+            later.append((idx, list(dict.fromkeys(mine))))      # ALL of this playlist's names (for its own ids, see SEPARATE_IDS)
         new = [n for n in dict.fromkeys(mine) if n not in seen]
         seen.update(new)
         names.extend(new)
+        name_pl.update({n: idx for n in new})
         print(f"{label}: {len(mine)} streams, {len(new)} names not already read")
-    events = [e for e in (parse_name(n) for n in names) if e]
+    events, parsed = [], {}
+
+    def parse_once(n):                                # every name is parsed (and counted in the statistics) once
+        if n not in parsed:
+            parsed[n] = parse_name(n)
+        return parsed[n]
+    for n in names:
+        e = parse_once(n)
+        if not e:
+            continue
+        if name_pl.get(n, 0) > 0 and SEPARATE_IDS.match(e["slot_id"]):
+            continue                                  # a Main IPTV-only name in a separate-id group: only its own M id (below)
+        e["pl"] = name_pl.get(n, 0)                   # which playlist this name came from (0 = the first)
+        events.append(e)
+    # Stan, Paramount+ and Peacock: the second playlist (Main IPTV) numbers its slots differently from the first (Continuum) and not always
+    # the same ones (user, 7 Nov 2026), so ALL of its names in those groups get their own ids - STAN42.au (Continuum) / MSTAN42.au (Main IPTV, the same id with an M in FRONT)
+    # - and each source always shows its own events. Every other group is Continuum only; a clash there is won by the first playlist.
+    separate = 0
+    for idx, mine in later:
+        for n in mine:
+            e = parse_once(n)
+            m = SEPARATE_IDS.match(e["slot_id"]) if e else None
+            if m:
+                e2 = dict(e)
+                e2["slot_id"] = f"M{m['g']}{m['num']}.{m['cc']}"
+                e2["slot_name"] = f"{e['slot_name']} [Main IPTV]"
+                e2["pl"] = idx
+                events.append(e2)
+                separate += 1
+    if separate:
+        print(f"  Main IPTV: {separate} Stan / Paramount+ / Peacock streams have their own ids (M…)")
     try:
         measure_unapplied(events)                    # timing statistics for the groups that are not moved (see note_timing)
     except Exception as e:                           # statistics must never stop the guide
