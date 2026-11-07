@@ -109,6 +109,14 @@ def offline_title(ev):
 OFFLINE_DESC = "This channel is offline. The next event will be listed when the stream is updated."
 # Description used instead when the slot's last event has finished (an empty slot keeps OFFLINE_DESC)
 FINISHED_DESC = "This event has now finished. The next event will be listed when the stream is updated."
+# 7 Nov 2026 (user): the blocks of a FINISHED event no longer repeat the event's name (\"Hong Kong: Day 6 WTA 250\" kept showing in the grid until
+# the stream changed): the TITLE says it has finished, the name moves to the description. An empty slot is unchanged (\"No event streaming now\").
+FINISHED_TITLE = "This event has now finished"
+
+
+def finished_desc(ev):
+    name = offline_title(ev).rstrip(" .")
+    return f"{name} has now finished. The next event will be listed when the stream is updated." if name else FINISHED_DESC
 
 # Time zone of the times in names that start with a country code, e.g. "US (Peacock 003) | ..."
 COUNTRY_TZ = {
@@ -1787,7 +1795,7 @@ def build(events, now):
             fill = timedelta(hours=ended_filler_hours(sid))
             while t < end + fill:
                 b = min(t + timedelta(hours=BLOCK_HOURS), end + fill)
-                add_programme(tv, sid, t, b, offline_title(ev), None, FINISHED_DESC)
+                add_programme(tv, sid, t, b, FINISHED_TITLE, None, finished_desc(ev))
                 count += 1
                 t = b
     t0 = now.replace(minute=0, second=0, microsecond=0)
@@ -1805,11 +1813,12 @@ def build(events, now):
             t = b
     for sid in sorted(ended):    # kept short, so the slot's next event can follow it
         # a finished event says so; an empty slot ("UEFA | 08 -", no title) just says offline
-        desc = FINISHED_DESC if ended[sid]["title"] else OFFLINE_DESC
+        finished = bool(ended[sid]["title"])
+        desc = finished_desc(ended[sid]) if finished else OFFLINE_DESC
         t = t0
         while t < now + timedelta(hours=ended_filler_hours(sid)):
             b = t + timedelta(hours=BLOCK_HOURS)
-            add_programme(tv, sid, t, b, offline_title(ended[sid]), None, desc)
+            add_programme(tv, sid, t, b, FINISHED_TITLE if finished else offline_title(ended[sid]), None, desc)
             count += 1
             t = b
     normalise_slot_ids(tv)
