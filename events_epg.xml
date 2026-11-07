@@ -4272,6 +4272,18 @@
     <display-name lang="en">NFL | 09 - 1pm Broncos at Panthers</display-name>
     <display-name lang="en">NFL | 9</display-name>
   </channel>
+  <channel id="NHL1.uk">
+    <display-name lang="en">NHL 01: 7pm Mammoth @ Canadiens</display-name>
+    <display-name lang="en">NHL | 1</display-name>
+  </channel>
+  <channel id="NHL10.uk">
+    <display-name lang="en">NHL 10: 8pm Ducks @ Oilers</display-name>
+    <display-name lang="en">NHL | 10</display-name>
+  </channel>
+  <channel id="NHL11.uk">
+    <display-name lang="en">NHL 11: 9:30pm Predators @ Avalanche</display-name>
+    <display-name lang="en">NHL | 11</display-name>
+  </channel>
   <channel id="NHL12.uk">
     <display-name lang="en">NHL | 12 - 10pm Canucks @ Oilers</display-name>
     <display-name lang="en">NHL | 12</display-name>
@@ -4288,9 +4300,37 @@
     <display-name lang="en">NHL | 15 -</display-name>
     <display-name lang="en">NHL | 15</display-name>
   </channel>
+  <channel id="NHL2.uk">
+    <display-name lang="en">NHL 02: 7pm Golden Knights @ Red Wings</display-name>
+    <display-name lang="en">NHL | 2</display-name>
+  </channel>
+  <channel id="NHL3.uk">
+    <display-name lang="en">NHL 03: 7pm Blackhawks @ Lightning</display-name>
+    <display-name lang="en">NHL | 3</display-name>
+  </channel>
+  <channel id="NHL4.uk">
+    <display-name lang="en">NHL 04: 7pm Blues @ Devils</display-name>
+    <display-name lang="en">NHL | 4</display-name>
+  </channel>
+  <channel id="NHL5.uk">
+    <display-name lang="en">NHL 05: 7pm Hurricanes @ Islanders</display-name>
+    <display-name lang="en">NHL | 5</display-name>
+  </channel>
+  <channel id="NHL6.uk">
+    <display-name lang="en">NHL 06: 7pm Flyers @ Rangers</display-name>
+    <display-name lang="en">NHL | 6</display-name>
+  </channel>
+  <channel id="NHL7.uk">
+    <display-name lang="en">NHL 07: 7pm Bruins @ Penguins</display-name>
+    <display-name lang="en">NHL | 7</display-name>
+  </channel>
   <channel id="NHL8.uk">
     <display-name lang="en">NHL | 08 - 8pm Sharks @ Stars</display-name>
     <display-name lang="en">NHL | 8</display-name>
+  </channel>
+  <channel id="NHL9.uk">
+    <display-name lang="en">NHL 09: 7pm Canucks @ Jets</display-name>
+    <display-name lang="en">NHL | 9</display-name>
   </channel>
   <channel id="NHLLIVE17.uk">
     <display-name lang="en">NHL LIVE| 17 -</display-name>
@@ -28998,6 +29038,11 @@
     <desc lang="en">Seoul vs Ulsan K League 2026 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108235500 +0000" stop="20261109015500 +0000" channel="MSTAN25.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Seoul vs Ulsan K League 2026 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="MSTAN26.au">
     <title lang="en">Machida Zelvia vs Sanfrecce Hiroshima J.League 2026 (Sun 8 Nov, 5am)</title>
     <sub-title lang="en">⏭ Coming up: Japanese J1 League</sub-title>
@@ -29469,38 +29514,38 @@
   </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="MSTAN32.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="MSTAN32.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="MSTAN32.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="MSTAN32.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="MSTAN32.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="MSTAN32.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="MSTAN32.au">
@@ -29511,15 +29556,15 @@
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="MSTAN32.au">
     <title lang="en">🔴 LIVE: Stafford Rangers vs Grimsby Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108150000 +0000" channel="MSTAN32.au">
     <title lang="en">🔴 LIVE: Stafford Rangers vs Grimsby Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -30286,50 +30331,50 @@
   </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="MSTAN42.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="MSTAN42.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="MSTAN42.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="MSTAN42.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="MSTAN42.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="MSTAN42.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="MSTAN42.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="MSTAN42.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108141500 +0000" channel="MSTAN42.au">
@@ -30340,15 +30385,15 @@
   </programme>
   <programme start="20261108141500 +0000" stop="20261108161500 +0000" channel="MSTAN42.au">
     <title lang="en">🔴 LIVE: Cray Wanderers vs Stockport County FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261108161500 +0000" stop="20261108171500 +0000" channel="MSTAN42.au">
     <title lang="en">🔴 LIVE: Cray Wanderers vs Stockport County FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -52922,6 +52967,11 @@
     <desc lang="en">Seoul vs Ulsan K League 2026 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108235500 +0000" stop="20261109015500 +0000" channel="STAN37.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Seoul vs Ulsan K League 2026 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN38.au">
     <title lang="en">Gamba Osaka vs Cerezo Osaka J.League 2026 (Sun 8 Nov, 6am)</title>
     <sub-title lang="en">⏭ Coming up: Japanese J1 League</sub-title>
@@ -53157,38 +53207,38 @@
   </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN41.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN41.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN41.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN41.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN41.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN41.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN41.au">
@@ -53199,15 +53249,15 @@
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN41.au">
     <title lang="en">🔴 LIVE: Stafford Rangers vs Grimsby Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108150000 +0000" channel="STAN41.au">
     <title lang="en">🔴 LIVE: Stafford Rangers vs Grimsby Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -53892,50 +53942,50 @@
   </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN50.au">
     <title lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 (Sun 8 Nov, 2:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108141500 +0000" channel="STAN50.au">
@@ -53946,15 +53996,15 @@
   </programme>
   <programme start="20261108141500 +0000" stop="20261108161500 +0000" channel="STAN50.au">
     <title lang="en">🔴 LIVE: Cray Wanderers vs Stockport County FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261108161500 +0000" stop="20261108171500 +0000" channel="STAN50.au">
     <title lang="en">🔴 LIVE: Cray Wanderers vs Stockport County FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027. Starts Sun 8 Nov, 2:15pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 2:15pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -58826,6 +58876,11 @@
     <desc lang="en">NCAA Football: Oklahoma vs Florida has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108234500 +0000" stop="20261109014500 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">NCAA Football: Oklahoma vs Florida has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="TSN042.ca">
     <title lang="en">NBA on TSN: Magic vs Warriors (Sun 8 Nov, 1:30am)</title>
     <sub-title lang="en">⏭ Coming up: NBA</sub-title>
@@ -59147,6 +59202,11 @@
     <desc lang="en">LaLiga: Elche vs Real Betis has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261108234800 +0000" stop="20261109014800 +0000" channel="TSN045.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">LaLiga: Elche vs Real Betis has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="TSN046.ca">
     <title lang="en">LaLiga 2: Andorra vs Mallorca (Sun 8 Nov, 12:48pm)</title>
     <sub-title lang="en">⏭ Coming up: LaLiga</sub-title>
@@ -59225,6 +59285,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108214800 +0000" stop="20261108234800 +0000" channel="TSN046.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">LaLiga 2: Andorra vs Mallorca has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108234800 +0000" stop="20261109014800 +0000" channel="TSN046.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">LaLiga 2: Andorra vs Mallorca has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -107716,6 +107781,201 @@
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108180000 +0000" stop="20261108200000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108200000 +0000" stop="20261108220000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Mammoth @ Canadiens has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108180000 +0000" stop="20261108200000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108200000 +0000" stop="20261108220000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Ducks @ Oilers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108180000 +0000" stop="20261108200000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108200000 +0000" stop="20261108220000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Predators @ Avalanche has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL13.uk">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
@@ -107909,6 +108169,461 @@
   <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL15.uk">
     <title lang="en">No event streaming now</title>
     <desc lang="en">This channel is offline. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108180000 +0000" stop="20261108200000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108200000 +0000" stop="20261108220000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Golden Knights @ Red Wings has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108180000 +0000" stop="20261108200000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108200000 +0000" stop="20261108220000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blackhawks @ Lightning has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108180000 +0000" stop="20261108200000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108200000 +0000" stop="20261108220000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Blues @ Devils has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108180000 +0000" stop="20261108200000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108200000 +0000" stop="20261108220000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hurricanes @ Islanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108180000 +0000" stop="20261108200000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108200000 +0000" stop="20261108220000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Flyers @ Rangers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108180000 +0000" stop="20261108200000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108200000 +0000" stop="20261108220000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Bruins @ Penguins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108000000 +0000" stop="20261108020000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108160000 +0000" stop="20261108180000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108180000 +0000" stop="20261108200000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108200000 +0000" stop="20261108220000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261108220000 +0000" stop="20261109000000 +0000" channel="NHL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Canucks @ Jets has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261107220000 +0000" stop="20261108000000 +0000" channel="NHLLIVE17.uk">
