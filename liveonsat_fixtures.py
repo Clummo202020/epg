@@ -3,7 +3,7 @@
 
 Reads a few of liveonsat.com's sport pages (rugby union, rugby league, Aussie rules, boxing / fighting) a few times a day and writes
 liveonsat_fixtures.json: [{sport, comp, a, b, start (UTC), stan}].
-A second set of pages - football (UK / Ireland, UEFA, the big leagues, MLS, women's, international) - goes into the SAME file under the key
+A second set of pages - ALL football, one request per day of liveonsat.com's "2day.php" - goes into the SAME file under the key
 "football": {fetched, pages, fixtures} with each match's list of channels, for the reference page fixtures.html (6 Nov 2026). It travels in
 liveonsat_fixtures.json so the existing workflow commits it; event_epg.py reads only "fixtures" and ignores "football". event_epg.py reads that file as the last place to look for a match's
 real kick-off (Stan, Peacock, Paramount+, Soccer PPV streams carry the time the STREAM opens, which is 10-55 minutes before it).
@@ -24,16 +24,21 @@ OUT = "liveonsat_fixtures.json"
 BASE = "https://liveonsat.com/"
 PAGES = {"Rugby Union": "x-rugby-union.php", "Rugby League": "x-rugby-league.php", "Aussie Rules": "x-aussie-rules.php",
          "Boxing / Fighting": "x-boxing-mma.php"}
-FOOTBALL_PAGES = {
-    "English Premier League": "uk-england-premier-league.php", "English ex-Premier League": "uk-england-ex-premiership.php",
-    "UK cup competitions": "uk-cup-competitions-all.php", "Scotland": "uk-scotland-premiership.php",
-    "Ireland / Wales": "uk-wales-ireland-all-football.php",
-    "UEFA Champions League": "club-uefa-champions-league.php", "UEFA Europa League": "club-uefa-europa-league.php",
-    "UEFA Conference League": "club-uefa-europa-conference-league.php",
-    "Germany Bundesliga": "europe-germany-bundesliga1.php", "Italy Serie A": "europe-italy-serie-a.php",
-    "Spain La Liga": "europe-spain-laliga.php", "France": "europe-france-all-football.php",
-    "International": "international-all-football.php", "MLS": "americas-mls.php", "Women's football": "womens-televised-football.php",
-}
+FOOTBALL_DAYS_BACK, FOOTBALL_DAYS_AHEAD = 1, 6      # football reference: one request per day of liveonsat.com's all-football "2day.php"
+
+
+def football_pages(now):
+    """{label: path}: 2day.php for each day from yesterday to 6 days ahead (the page's own time zone cuts the days a few hours
+    from UK ones, so one day either side is covered). All football - every competition - with clean channel lists."""
+    base = now.astimezone(ZoneInfo("America/Chicago")).date()
+    out = {}
+    for n in range(-FOOTBALL_DAYS_BACK, FOOTBALL_DAYS_AHEAD + 1):
+        d = base + timedelta(days=n)
+        out[f"Football {d.isoformat()}"] = (f"2day.php?start_dd={d:%d}&start_mm={d:%m}&start_yyyy={d:%Y}"
+                                            f"&end_dd={d:%d}&end_mm={d:%m}&end_yyyy={d:%Y}")
+    return out
+
+
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Safari/605.1.15 Version/17.0 Safari/605.1.15",
       "Accept": "text/html,application/xhtml+xml", "Accept-Language": "en-GB,en;q=0.9"}
 DAY = re.compile(r"^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday), (\d{1,2})(?:st|nd|rd|th) (\w+)$")
@@ -84,6 +89,15 @@ def clean_channel(t):
     return re.sub(r"\s+", " ", t).strip(" |")
 
 
+_JUNK = re.compile(
+    r"^(?:encryption|freq|pos|satellite|symbol|LiveOnSat\.com|Download APP|0|0\.000|0\.0°|-|\d+(?:\.\d+)?\s?[HV]|\d+(?:\.\d+)?°-?[ew]?|"
+    r"\d{4,5}\s*-\s*\d/\d+|\d+(?:\.\d+)?\s*-)$|^\*|"
+    r"(?i:\b(?:Astra|Eutelsat|Hotbird|Intelsat|Hispasat|Hellas Sat|Turksat|Measat|Koreasat|KazSat|Eshail|AzerSpace|Telstar|Thor [567]|"
+    r"MonacoSat|Express AMU|Dror 1|VideoGuard|Irdeto|Conax|NagraVision|Nagra|Viaccess|Cryptoworks|Mediaguard|Verimatrix|Biss|"
+    r"TrophyAccess|Tongfang|MPEG-4|Free To Air|FTA)\b)")
+POSTPONED = re.compile(r"(?i)p-?o-?s-?t-?p-?o-?n-?e-?d|\bcancel+ed\b|\babandoned\b")
+
+
 def parse(page, tz, now, with_channels=False):
     toks = tokens(page)
     date, out, cur = None, [], None
@@ -124,10 +138,14 @@ def parse(page, tz, now, with_channels=False):
             if FIXTURE.match(t) or FIXTURE.match(nxt):
                 cur = None
                 continue
+            if POSTPONED.search(t):
+                cur["postponed"] = True
+                continue
             name = clean_channel(t)
-            if name and len(name) < 60 and name not in cur["ch"] and not name.startswith("(GMT") and name not in ("|", "---"):
+            if (name and 2 < len(name) < 60 and name not in cur["ch"] and not name.startswith("(GMT")
+                    and name not in ("|", "---") and not _JUNK.search(name) and not DAY.match(name)):
                 cur["ch"].append(name)
-    return [f for f in out if f["a"] and f["b"]]
+    return [f for f in out if f["a"] and f["b"] and not f.get("postponed")]
 
 
 def read_pages(pages, old_fixtures, with_channels, now):
@@ -185,7 +203,7 @@ def main():
     except (OSError, ValueError):
         pass
     fixtures, pages = read_pages(PAGES, old.get("fixtures", []), False, now)
-    football, fpages = read_pages(FOOTBALL_PAGES, (old.get("football") or {}).get("fixtures", []), True, now)
+    football, fpages = read_pages(football_pages(now), (old.get("football") or {}).get("fixtures", []), True, now)
     if not fixtures and not football and not old:
         print("  nothing found - file not written")
         return 0

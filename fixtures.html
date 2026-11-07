@@ -98,6 +98,7 @@
     <label class="vh" for="comp">Competition</label>
     <select id="comp" disabled><option value="">All competitions</option></select>
     <span id="days" role="group" aria-label="Day"></span>
+    <button type="button" class="chipbtn" id="uk" aria-pressed="false">UK &amp; Ireland</button>
   </div>
   <p class="status" id="status" aria-live="polite">Reading the fixtures…</p>
   <div id="results"></div>
@@ -121,6 +122,10 @@
   let fixtures = [];
   let fetched = null;
   let dayChoice = "all";
+  let ukOnly = false;
+  // competitions that are British or Irish (the "UK & Ireland" button), and channels to list first
+  const UK_COMP = /^(English|Scottish|Welsh|Irish|Northern Ireland|Northern Irish)\b|\b(FA Cup|FA Trophy|Carabao|EFL)\b/i;
+  const UK_CHAN = /\b(UK|Sky Sports?|Sky Go UK|TNT Sports|BBC|ITV|STV|S4C|Premier Sports|Prime Video UK|Ireland|Great Britain|Virgin Media|RTE|TG4|Premier League\+|Amazon)\b/i;
 
   const ukParts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", hour: "numeric", minute: "2-digit", hourCycle: "h23" });
   const ukDay = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "long" });
@@ -164,9 +169,10 @@
     fixtures = data.fixtures
       .map((f) => {
         const start = new Date(f.start);
-        const ch = Array.isArray(f.ch) ? f.ch : [];
+        const ch0 = Array.isArray(f.ch) ? f.ch : [];
+        const ch = ch0.filter((c) => UK_CHAN.test(c)).concat(ch0.filter((c) => !UK_CHAN.test(c)));   // British channels first
         const comp = String(f.comp || "").replace(/\s*-\s*(Round|Group|Week|Matchday|Leg|Game)\b.*$/i, "").trim() || "Football";
-        return { start, a: f.a, b: f.b, compFull: f.comp || "", comp, ch,
+        return { start, a: f.a, b: f.b, compFull: f.comp || "", comp, ch, uk: UK_COMP.test(f.comp || ""),
                  hay: fold([f.a, f.b, f.comp, ch.join(" ")].join(" ")), dayKey: ukDayKey.format(start) };
       })
       .filter((f) => !isNaN(f.start) && f.start.getTime() >= cutoff)
@@ -196,7 +202,7 @@
     else if (dayChoice === "tomorrow") allowed = dayKeys([1]);
     else if (dayChoice === "three") allowed = dayKeys([0, 1, 2]);
     return fixtures.filter((f) =>
-      (!comp || f.comp === comp) && (!allowed || allowed.has(f.dayKey)) && words.every((w) => f.hay.includes(w)));
+      (!comp || f.comp === comp) && (!ukOnly || f.uk) && (!allowed || allowed.has(f.dayKey)) && words.every((w) => f.hay.includes(w)));
   }
 
   function dayLabel(key, sample) {
@@ -216,7 +222,7 @@
     if (!list.length) {
       statusEl.textContent = "";
       results.innerHTML = `<div class="empty"><p>No matches${query ? ` for “${esc(query)}”` : ""} with these filters.</p>
-        <p class="hint">Try a shorter name, another day, or “All competitions”.</p></div>`;
+        <p class="hint">Try a shorter name, another day, “All competitions”, or turn off “UK &amp; Ireland”.</p></div>`;
       return;
     }
     statusEl.textContent = `${list.length} ${list.length === 1 ? "match" : "matches"}.${updated}${stale ? " This list is more than 18 hours old." : ""}`;
@@ -260,6 +266,7 @@
     const initial = new URL(location.href).searchParams.get("q");
     if (initial) q.value = initial;
     q.addEventListener("input", render);
+    $("uk").addEventListener("click", () => { ukOnly = !ukOnly; $("uk").setAttribute("aria-pressed", String(ukOnly)); render(); });
     compSel.addEventListener("change", render);
     render();
   }
