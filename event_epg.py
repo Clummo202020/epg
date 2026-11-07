@@ -246,6 +246,9 @@ MLS_TZ = "America/New_York"
 # both NFL2.uk; "NHL LIVE| 17 -" is NHLLIVE17.uk.
 NFL_SLOT = re.compile(r"^\s*(?P<label>NFL|NHL(?:\s*LIVE)?)\s*\|\s*(?P<num>\d+)\s*-\s*(?P<rest>\S.*?)\s*$", re.I)
 # label word -> (ESPN schedule, LIVE block hours)
+# 7 Nov 2026: the provider also names NHL slots "NHL 01: 7pm Mammoth @ Canadiens" (colon, no dash, "@") - 10 of tonight's 12 slots had no channel
+# ("EPG data not available" in PlaylistLabs); same ids (NHL1.uk ...). Same fields as NFL_SLOT.
+NFL_SLOT_COLON = re.compile(r"^\s*(?P<label>NFL|NHL(?:\s*LIVE)?)\s*(?P<num>\d+)\s*:\s*(?P<rest>\S.*?)\s*$", re.I)
 US_LEAGUES = {"NFL": ("football/nfl", 3.5), "NHL": ("hockey/nhl", 3)}
 NFL_TIME = re.compile(r"\b(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\b\.?", re.I)
 NFL_TZ = "America/New_York"
@@ -1307,7 +1310,7 @@ def _parse_name(name):
                 "slot_name": f"{label} | {int(e['num'])}", "title": "", "extra": "", "comp": "",
                 "start": datetime.now(timezone.utc) - timedelta(days=1)}   # -> filler only
 
-    n = NFL_SLOT.match(name)                         # NFL | 02 - 9:30am Steelers at Saints (ET)
+    n = NFL_SLOT.match(name) or NFL_SLOT_COLON.match(name)   # NFL | 02 - 9:30am Steelers at Saints (ET)  /  NHL 01: 7pm Mammoth @ Canadiens
     if n:                                            # (and NHL | 04 - 7pm Rangers at Senators)
         rest = n["rest"]
         show = next((w for w in NFL_SHOWS if re.search(rf"\b{w}\b", rest)), "")
