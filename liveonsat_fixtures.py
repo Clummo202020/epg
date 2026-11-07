@@ -24,12 +24,12 @@ OUT = "liveonsat_fixtures.json"
 BASE = "https://liveonsat.com/"
 PAGES = {"Rugby Union": "x-rugby-union.php", "Rugby League": "x-rugby-league.php", "Aussie Rules": "x-aussie-rules.php",
          "Boxing / Fighting": "x-boxing-mma.php"}
-FOOTBALL_DAYS_BACK, FOOTBALL_DAYS_AHEAD = 1, 6      # football reference: one request per day of liveonsat.com's all-football "2day.php"
+FOOTBALL_DAYS_BACK, FOOTBALL_DAYS_AHEAD = 0, 6      # football reference: one request per day of liveonsat.com's all-football "2day.php"
 
 
 def football_pages(now):
     """{label: path}: 2day.php for each day from yesterday to 6 days ahead (the page's own time zone cuts the days a few hours
-    from UK ones, so one day either side is covered). All football - every competition - with clean channel lists."""
+    from UK ones; yesterday's page comes back empty, so it starts with today). All football - every competition."""
     base = now.astimezone(ZoneInfo("America/Chicago")).date()
     out = {}
     for n in range(-FOOTBALL_DAYS_BACK, FOOTBALL_DAYS_AHEAD + 1):
@@ -91,8 +91,9 @@ def clean_channel(t):
 
 _JUNK = re.compile(
     r"^(?:encryption|freq|pos|satellite|symbol|LiveOnSat\.com|Download APP|0|0\.000|0\.0°|-|\d+(?:\.\d+)?\s?[HV]|\d+(?:\.\d+)?°-?[ew]?|"
-    r"\d{4,5}\s*-\s*\d/\d+|\d+(?:\.\d+)?\s*-)$|^\*|"
+    r"\d{4,5}\s*-?\s*\d/\d+|\d+(?:\.\d+)?\s*[LR]|\d+(?:\.\d+)?\s*-|Satellite Feeds)$|^\*|"
     r"(?i:\b(?:Astra|Eutelsat|Hotbird|Intelsat|Hispasat|Hellas Sat|Turksat|Measat|Koreasat|KazSat|Eshail|AzerSpace|Telstar|Thor [567]|"
+    r"Express (?:AMU|AT|AM)\d*|ABS \d+[A-Z]?|BulgariaSat|Exset|Bulcrypt|Seca|Nilesat|Yamal|Arabsat|Badr|Thaicom|AsiaSat|Optus|Insat|Amos|"
     r"MonacoSat|Express AMU|Dror 1|VideoGuard|Irdeto|Conax|NagraVision|Nagra|Viaccess|Cryptoworks|Mediaguard|Verimatrix|Biss|"
     r"TrophyAccess|Tongfang|MPEG-4|Free To Air|FTA)\b)")
 POSTPONED = re.compile(r"(?i)p-?o-?s-?t-?p-?o-?n-?e-?d|\bcancel+ed\b|\babandoned\b")
@@ -161,6 +162,15 @@ def read_pages(pages, old_fixtures, with_channels, now):
         for f in got:
             f["sport"] = sport
         prev = old_by_sport.get(sport, [])
+        if with_channels and got and not globals().get("_DEBUG_SHOWN"):
+            # diagnostic: the raw HTML around a match that has no (or too few) channels - so the real layout can be seen in the log
+            weak = [g for g in got if len(g.get("ch", [])) <= 1]
+            for g in ([x for x in got if "Arsenal" in x["a"] + x["b"]][:1] + weak[:1]):
+                idx = body.find(g["a"])
+                if idx >= 0:
+                    globals()["_DEBUG_SHOWN"] = True
+                    chunk = re.sub(r"\s+", " ", body[max(0, idx - 700): idx + 2600])
+                    print(f"  RAW HTML around {g['a']} v {g['b']} ({len(g.get('ch', []))} channels parsed): {chunk}")
         if status != 200 or not tz or (not got and len(prev) > 5):
             why = f"HTTP {status}" if status != 200 else ("no time zone marker" if not tz else "found nothing (had data) - parser change?")
             print(f"  {sport}: {why} - keeping {len(prev)} earlier fixture(s)")
