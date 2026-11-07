@@ -32,7 +32,7 @@
   "seen": "2026-11-06T21:27:42+00:00"
  },
  "_timing": {
-  "updated": "2026-11-07T19:37:18Z",
+  "updated": "2026-11-07T20:04:43Z",
   "groups": {
    "AppleMLS": {
     "n": 26,
@@ -126,7 +126,7 @@
     "missed": 52,
     "applied": true,
     "median": -10,
-    "min": -280,
+    "min": -60,
     "max": 0
    },
    "TSN": {
@@ -144,7 +144,7 @@
    }
   },
   "check": {
-   "compared": 69,
+   "compared": 68,
    "differ": 0,
    "examples": []
   }
