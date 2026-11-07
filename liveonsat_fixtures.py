@@ -3,8 +3,9 @@
 
 Reads a few of liveonsat.com's sport pages (rugby union, rugby league, Aussie rules, boxing / fighting) a few times a day and writes
 liveonsat_fixtures.json: [{sport, comp, a, b, start (UTC), stan}].
-A second set of pages - football (UK / Ireland, UEFA, the big leagues, MLS, women's, international) - goes to liveonsat_football.json,
-with each match's list of channels, for the reference page fixtures.html (6 Nov 2026). That file is NOT read by event_epg.py. event_epg.py reads that file as the last place to look for a match's
+A second set of pages - football (UK / Ireland, UEFA, the big leagues, MLS, women's, international) - goes into the SAME file under the key
+"football": {fetched, pages, fixtures} with each match's list of channels, for the reference page fixtures.html (6 Nov 2026). It travels in
+liveonsat_fixtures.json so the existing workflow commits it; event_epg.py reads only "fixtures" and ignores "football". event_epg.py reads that file as the last place to look for a match's
 real kick-off (Stan, Peacock, Paramount+, Soccer PPV streams carry the time the STREAM opens, which is 10-55 minutes before it).
 
 * The page shows its times in a time zone of its own choosing (the runner got America/Chicago; a browser in New York got New York) and
@@ -13,14 +14,13 @@ real kick-off (Stan, Peacock, Paramount+, Soccer PPV streams carry the time the 
 * A page that fails (or suddenly yields nothing where it had data) keeps its previous fixtures. Nothing found at all = the file is not touched.
 * Fixtures older than 12 hours are dropped.
 
-    python3 liveonsat_fixtures.py            # -> liveonsat_fixtures.json + liveonsat_football.json (fixed names)
+    python3 liveonsat_fixtures.py            # -> liveonsat_fixtures.json (fixed name)
 """
 import html, json, re, sys, time, urllib.request, urllib.error
 from datetime import datetime, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 OUT = "liveonsat_fixtures.json"
-OUT_FOOTBALL = "liveonsat_football.json"
 BASE = "https://liveonsat.com/"
 PAGES = {"Rugby Union": "x-rugby-union.php", "Rugby League": "x-rugby-league.php", "Aussie Rules": "x-aussie-rules.php",
          "Boxing / Fighting": "x-boxing-mma.php"}
@@ -130,16 +130,10 @@ def parse(page, tz, now, with_channels=False):
     return [f for f in out if f["a"] and f["b"]]
 
 
-def read_pages(pages, out_path, with_channels, now):
-    """fetch `pages` once each (4 s apart), keep a failing page's earlier fixtures, write out_path. Returns the fixture count."""
-    old = {}
-    try:
-        with open(out_path, encoding="utf-8") as fh:
-            old = json.load(fh)
-    except (OSError, ValueError):
-        pass
+def read_pages(pages, old_fixtures, with_channels, now):
+    """fetch `pages` once each (4 s apart); a failing page keeps its earlier fixtures (old_fixtures). Returns (fixtures, info)."""
     old_by_sport = {}
-    for f in old.get("fixtures", []):
+    for f in old_fixtures:
         old_by_sport.setdefault(f["sport"], []).append(f)
     info, fixtures = {}, []
     for sport, path in pages.items():
@@ -178,20 +172,28 @@ def read_pages(pages, out_path, with_channels, now):
         for f in fixtures:
             f["ch"].sort(key=str.lower)
     fixtures.sort(key=lambda f: f["start"])
-    if not fixtures and not old.get("fixtures"):
-        print(f"  nothing found - {out_path} not written")
-        return 0
-    data = {"fetched": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "pages": info, "fixtures": fixtures}
-    with open(out_path, "w", encoding="utf-8") as fh:
-        json.dump(data, fh, ensure_ascii=False, indent=None if with_channels else 1, separators=(",", ":") if with_channels else None)
-    print(f"  wrote {out_path}: {len(fixtures)} fixtures")
-    return len(fixtures)
+    return fixtures, info
 
 
 def main():
     now = datetime.now(timezone.utc)
-    read_pages(PAGES, OUT, False, now)
-    read_pages(FOOTBALL_PAGES, OUT_FOOTBALL, True, now)
+    stamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
+    old = {}
+    try:
+        with open(OUT, encoding="utf-8") as fh:
+            old = json.load(fh)
+    except (OSError, ValueError):
+        pass
+    fixtures, pages = read_pages(PAGES, old.get("fixtures", []), False, now)
+    football, fpages = read_pages(FOOTBALL_PAGES, (old.get("football") or {}).get("fixtures", []), True, now)
+    if not fixtures and not football and not old:
+        print("  nothing found - file not written")
+        return 0
+    data = {"fetched": stamp, "pages": pages, "fixtures": fixtures,
+            "football": {"fetched": stamp, "pages": fpages, "fixtures": football}}
+    with open(OUT, "w", encoding="utf-8") as fh:
+        json.dump(data, fh, ensure_ascii=False, separators=(",", ":"))
+    print(f"  wrote {OUT}: {len(fixtures)} rugby / fighting fixtures and {len(football)} football fixtures")
     return 0
 
 

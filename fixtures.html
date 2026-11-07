@@ -109,8 +109,8 @@
   "use strict";
   // The fixtures live next to this page first, then in the GitHub copy.
   const SOURCES = [
-    "liveonsat_football.json",
-    "https://raw.githubusercontent.com/Clummo202020/epg/main/liveonsat_football.json",
+    "liveonsat_fixtures.json",
+    "https://raw.githubusercontent.com/Clummo202020/epg/main/liveonsat_fixtures.json",
   ];
   const SHOW_CHANNELS = 14;            // channels shown before "Show all"
   const UNDER_WAY_MINUTES = 110;       // a match this long after kick-off is "under way"
@@ -149,8 +149,8 @@
         const res = await fetch(url, { cache: "no-cache" });
         if (!res.ok) { failures.push(`${url}: HTTP ${res.status}`); continue; }
         const data = await res.json();
-        if (!data || !Array.isArray(data.fixtures)) { failures.push(`${url}: not a fixtures file`); continue; }
-        return data;
+        if (!data || !data.football || !Array.isArray(data.football.fixtures)) { failures.push(`${url}: no football fixtures in it (yet)`); continue; }
+        return data.football;
       } catch (e) {
         failures.push(`${url}: ${e.message || e}`);
       }
