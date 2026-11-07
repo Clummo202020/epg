@@ -84,6 +84,8 @@
   .now { color: var(--now); font-weight: 600; margin-left: 0.4rem; }
   .chans { list-style: none; display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.65rem 0 0; padding: 0; }
   .chans li { background: var(--chip); border-radius: 0.4rem; padding: 0.15rem 0.55rem; font-size: 0.92rem; }
+  .ukline { margin: 0.55rem 0 0; font-weight: 600; font-size: 0.98rem; border-left: 3px solid var(--floodlight); padding-left: 0.6rem; overflow-wrap: anywhere; }
+  .ukline.none { color: var(--muted); font-weight: 400; border-left-color: var(--line); }
   .more { margin-top: 0.5rem; padding: 0; border: 0; background: none; color: var(--ink); font: 500 0.95rem var(--body); text-decoration: underline; cursor: pointer; }
   .empty { margin-top: 2rem; }
   .empty p { margin: 0 0 0.4rem; }
@@ -154,8 +156,13 @@
   let ukOnly = false;
   // competitions that are British or Irish (the "UK & Ireland" button), and channels to list first
   const UK_COMP = /^(English|Scottish|Welsh|Irish|Northern Ireland|Northern Irish)\b|\b(FA Cup|FA Trophy|Carabao|EFL)\b/i;
-  // channels to list first: Sky Sports (plural) is the UK one - Sky Sport (singular) is Austria, Italy, Germany, NZ; "UK" / "Ireland" / "GB" in the name
-  const UK_CHAN = /\b(UK|Ireland|Great Britain|GB Player|Sky Sports|TNT Sports|BBC|ITV|UTV|STV|S4C|Virgin Media|RT[EÉ]|TG4|BT Sport|Eir Sport|LOI TV)\b/i;
+  // British and Irish channels are listed first, and kept APART: Premier Sports Ireland, Sky Sports Ireland, Virgin Media etc. have their own
+  // schedules, so they are never shown as "UK TV". Sky Sports (plural) is the UK one - Sky Sport (singular) is Austria, Italy, Germany, NZ.
+  // ("Northern Ireland" is British: BBC One Northern Ireland, UTV.)
+  const UK_CHAN = /\b(UK|Great Britain|GB Player|Sky Sports|TNT Sports|BBC|ITV|UTV|STV|S4C|BT Sport)\b/i;
+  const IE_CHAN = /\b(Ireland|Irish|Virgin Media|RT[EÉ]|TG4|Eir Sport|LOI TV)\b/i;
+  const isIrish = (c) => IE_CHAN.test(c.replace(/Northern Ireland/gi, ""));
+  const isBritish = (c) => !isIrish(c) && UK_CHAN.test(c);
 
   // ---- which country / league each competition belongs to, and what the user has hidden (kept on this device) ----
   const STORE_KEY = "football-on-tv:filters:v1";
@@ -246,12 +253,13 @@
     fixtures = data.fixtures
       .map((f) => {
         const start = new Date(f.start);
-        const ch0 = Array.isArray(f.ch) ? f.ch : [];
-        const ch = ch0.filter((c) => UK_CHAN.test(c)).concat(ch0.filter((c) => !UK_CHAN.test(c)));   // British channels first
+        // LiveOnSat's small flags in brackets - "($/ww)", "(geo/R)" - are not part of a channel's name ("(uk only)" is kept)
+        const ch0 = [...new Set((Array.isArray(f.ch) ? f.ch : []).map((c) => c.replace(/\s*\((?=[^)]*[$\/])[$\/\w]{1,12}\)/g, "").trim()).filter(Boolean))];
+        const ch = ch0.filter(isBritish).concat(ch0.filter(isIrish), ch0.filter((c) => !isBritish(c) && !isIrish(c)));   // British, then Irish, then the rest
         // the league / cup itself: everything before the first " - " (that part is the week, round, stage or group); Serie C's girone letters go too
         const comp = String(f.comp || "").split(/\s+-\s+/)[0].replace(/\s+Girone\s+[A-C]$/i, "").trim() || "Football";
         return { start, a: f.a, b: f.b, compFull: f.comp || "", comp, ch, uk: UK_COMP.test(f.comp || ""),
-                 country: countryOf(comp), women: WOMEN.test(f.comp || ""), youth: YOUTH.test([f.comp, f.a, f.b].join(" ")),
+                 ukch: ch.filter(isBritish), iech: ch.filter(isIrish), country: countryOf(comp), women: WOMEN.test(f.comp || ""), youth: YOUTH.test([f.comp, f.a, f.b].join(" ")),
                  hay: fold([f.a, f.b, f.comp, ch.join(" ")].join(" ")), dayKey: ukDayKey.format(start) };
       })
       .filter((f) => !isNaN(f.start) && f.start.getTime() >= cutoff)
@@ -338,6 +346,10 @@
       shown(f) && (!comp || f.comp === comp) && (!ukOnly || f.uk) && (!allowed || allowed.has(f.dayKey)) && words.every((w) => f.hay.includes(w)));
   }
 
+  function chanLine(label, list) {
+    return list.length ? `<p class="ukline">${label}: ${list.slice(0, 6).map(esc).join(" · ")}${list.length > 6 ? ` · +${list.length - 6} more` : ""}</p>` : "";
+  }
+
   function dayLabel(key, sample) {
     const today = ukDayKey.format(new Date()), tomorrow = ukDayKey.format(new Date(Date.now() + 86400000));
     const base = ukDay.format(sample);
@@ -370,6 +382,8 @@
         <div>
           <p class="title">${esc(f.a)} v ${esc(f.b)}</p>
           <p class="sub">${esc(f.compFull || f.comp)}${underway ? '<span class="now">Under way</span>' : ""}</p>
+          ${chanLine("On UK TV", f.ukch)}${chanLine("On Irish TV", f.iech)}${!f.ukch.length && !f.iech.length && f.uk
+            ? `<p class="ukline none">No ${f.country === "Ireland" ? "Irish" : "UK"} channel listed yet</p>` : ""}
           ${f.ch.length ? `<ul class="chans">${shown.map((c) => `<li>${esc(c)}</li>`).join("")}${
             rest.map((c) => `<li hidden data-rest="${idx}">${esc(c)}</li>`).join("")}</ul>
           ${rest.length ? `<button type="button" class="more" data-more="${idx}">Show all ${f.ch.length} channels</button>` : ""}` :

@@ -761,7 +761,7 @@ def liveonsat_start(sides, approx):
     return best
 
 
-def real_start(title, approx):
+def real_start(title, approx, quiet=False):
     """(start UTC, early minutes, competition) of the match in `title` near `approx`, else None."""
     sides = re.split(r"\s+(?:vs?\.?|at|@|x|-)\s+", title, maxsplit=1, flags=re.I)
     if len(sides) != 2:
@@ -808,7 +808,8 @@ def real_start(title, approx):
             return min(hits, key=lambda k: abs(k - approx)), 0, label
     los = liveonsat_start(sides, approx)                      # rugby, Aussie rules, boxing ... (6 Nov 2026)
     if los:
-        print(f"  Start from LiveOnSat: {title}: name {approx:%d %b %H:%M} UTC, {los[1] or '?'} {los[0]:%d %b %H:%M} UTC")
+        if not quiet:
+            print(f"  Start from LiveOnSat: {title}: name {approx:%d %b %H:%M} UTC, {los[1] or '?'} {los[0]:%d %b %H:%M} UTC")
         return los[0], PROVIDER_EARLY_MINUTES, los[1]
     return None
 
@@ -850,9 +851,51 @@ def first_seen(slot_id, name):
     return seen
 
 
-def save_seen():
+# Timing statistics (7 Nov 2026): for every stream whose title is "A v B", how far the time in the stream NAME is from the real start
+# (name time minus real start, minutes: negative = the stream opens EARLY, positive = late). Taken per provider group from the slot id
+# (STAN, Peacock, Paramount, TSN, DAZNPPV ...). Groups in REAL_START_GROUPS / the Soccer PPV layouts have their start moved ("applied");
+# the others are only MEASURED (real_start called quietly, nothing changed) - so guide_health can say which group is out and by how much.
+# Saved under "_timing" in events_seen.json (this run's streams only: ~24 h ahead).
+_TIMING = {}
+
+
+def note_timing(slot_id, title, approx, real, applied):
+    if not re.search(r"\s(?:vs?\.?|at|@)\s", title or "", flags=re.I):
+        return                                        # not a two-sided match: nothing to compare
+    m = re.match(r"[A-Za-z+]+", slot_id or "")
+    g = _TIMING.setdefault(m.group(0) if m else "?", {"d": [], "missed": 0, "applied": False})
+    g["applied"] = g["applied"] or applied
+    if real is None:
+        g["missed"] += 1
+    else:
+        g["d"].append(round((approx - real).total_seconds() / 60))
+
+
+def measure_unapplied(events):
+    """real_start() for every two-sided stream that was not looked up already - measured only, the event is not changed"""
+    for ev in events:
+        if ev.get("_timed"):
+            continue
+        rs = real_start(ev["title"], ev["start"], quiet=True)
+        note_timing(ev["slot_id"], ev["title"], ev["start"], rs[0] if rs else None, False)
+
+
+def timing_summary(now):
+    import statistics
+    out = {}
+    for g, v in sorted(_TIMING.items()):
+        d = v["d"]
+        out[g] = {"n": len(d), "missed": v["missed"], "applied": v["applied"]}
+        if d:
+            out[g].update({"median": round(statistics.median(d)), "min": min(d), "max": max(d)})
+    return {"updated": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "groups": out}
+
+
+def save_seen(now=None):
+    data = dict(sorted(_SEEN_USED.items()))
+    data["_timing"] = timing_summary(now or datetime.now(timezone.utc))
     with open(SEEN_FILE, "w", encoding="utf-8") as f:
-        json.dump(dict(sorted(_SEEN_USED.items())), f, indent=1, ensure_ascii=False)
+        json.dump(data, f, indent=1, ensure_ascii=False)
 
 
 def _nice_title(t):
@@ -916,6 +959,8 @@ def parse_tod(name, any_region=False):
         ev["start"] = named
         if any_region:                               # Soccer PPV: the name's time isn't the kick-off
             rs = real_start(title, ev["start"])
+            note_timing(ev["slot_id"], title, ev["start"], rs[0] if rs else None, True)
+            ev["_timed"] = True
             if rs:
                 ev["start"], ev["early"] = rs[0], rs[1]
                 if not ev["comp"] and rs[2]:
@@ -1166,6 +1211,8 @@ def _parse_name(name):
               "title": title, "extra": "", "comp": (pm["comp"] or "").strip() if is_match else "",
               "start": approx.astimezone(timezone.utc)}
         rs = real_start(ev["title"], ev["start"])          # stream time -> real kick-off (as for the other layout)
+        note_timing(ev["slot_id"], ev["title"], ev["start"], rs[0] if rs else None, True)
+        ev["_timed"] = True
         if rs:
             if abs(rs[0] - ev["start"]) >= timedelta(minutes=1):
                 print(f"  US (Paramount {num:03d}) kick-off: {ev['title']}: stream {ev['start']:%d %b %H:%M} UTC, "
@@ -1273,6 +1320,8 @@ def _parse_name(name):
               "start": local.astimezone(timezone.utc)}
         if m["slot"].lower().startswith(REAL_START_GROUPS):   # stream time -> real kick-off
             rs = real_start(ev["title"], ev["start"])
+            note_timing(ev["slot_id"], ev["title"], ev["start"], rs[0] if rs else None, True)
+            ev["_timed"] = True
             if rs:
                 if abs(rs[0] - ev["start"]) >= timedelta(minutes=1):
                     print(f"  {m['cc']} ({m['slot']}) kick-off: {ev['title']}: stream "
@@ -1713,10 +1762,14 @@ def main():
         names.extend(new)
         print(f"{label}: {len(mine)} streams, {len(new)} names not already read")
     events = [e for e in (parse_name(n) for n in names) if e]
+    try:
+        measure_unapplied(events)                    # timing statistics for the groups that are not moved (see note_timing)
+    except Exception as e:                           # statistics must never stop the guide
+        print(f"  timing statistics skipped: {e}")
     apply_overrides(events, now)
     print(f"{len(names)} streams in the playlist(s), {len(events)} with an event time")
     tv, chans, progs = build(events, now)
-    save_seen()
+    save_seen(now)
     ET.indent(tv, space="  ")
     ET.ElementTree(tv).write(args.out, encoding="utf-8", xml_declaration=True)
     print(f"Wrote {args.out}: {chans} channels, {progs} programmes")

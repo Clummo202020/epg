@@ -11,6 +11,7 @@ Run from Actions ("Guide health" -> Run workflow), or on its schedule. Needs a c
 """
 import gzip
 import io
+import json
 import os
 import re
 import subprocess
@@ -34,6 +35,8 @@ BASELINE_HOURS = 20          # compare with the newest version at least this old
 # Tuned after the first report (2 Nov 2026): these come and go naturally, so they are not reported as group changes.
 CHURN_GUIDES = {"events_epg.xml"}                      # PPV / event slots appear and disappear all day
 CUP_GROUPS = {"ChallengeCup", "ScotLgeCup", "ScotCup", "Carabao", "FACup", "NationsLge", "ChampsLge", "Europa", "ConfLeague"}
+MATCH_DRIVEN = {"football_epg.xml", "scottish_epg.xml"}    # a club's blocks end at its next match, so programmes and reach swing with the
+                                                          # fixture list (every weekend) - only lost channels / placeholders count there (7 Nov 2026)
 MIN_CHANNELS_LOST = 3                                  # a group must lose at least this many channels (and 20%) to be reported
 PLACEHOLDER = re.compile(r"no schedule available|no information|channel is offline|end of transmission|coming up|will be listed", re.I)
 RED = "\U0001F534"
@@ -102,6 +105,69 @@ def summarize(chans, progs, ref, how):
     return groups
 
 
+def liveonsat_section(now, lines, warns, fails):
+    """liveonsat_fixtures.json: how old, how many fixtures, which page failed (7 Nov 2026)"""
+    path = "liveonsat_fixtures.json"
+    lines.append("\n## LiveOnSat fixtures")
+    try:
+        with open(path, encoding="utf-8") as fh:
+            d = json.load(fh)
+        fetched = datetime.strptime(d["fetched"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+    except Exception as e:
+        warns.append(f"{path}: missing or unreadable ({e}) - event start times fall back to the stream-name time")
+        lines.append("(file missing or unreadable)")
+        return
+    age = (now - fetched).total_seconds() / 3600
+    rugby, fb = d.get("fixtures", []), (d.get("football") or {})
+    lines.append(f"fetched {fetched:%d %b %H:%M} UTC ({age:.0f} h ago); rugby / fighting {len(rugby)} fixtures "
+                 f"({sum(1 for f in rugby if f.get('stan'))} on Stan Sport); football {len(fb.get('fixtures', []))} fixtures.")
+    if age > 48:
+        fails.append(f"{path}: not refreshed for {age:.0f} h (its workflow runs every 6 h)")
+    elif age > 14:
+        warns.append(f"{path}: last refreshed {age:.0f} h ago (its workflow runs every 6 h)")
+    pages = dict(d.get("pages", {}))
+    pages.update({f"football {k}": v for k, v in (fb.get("pages") or {}).items()})
+    bad = []
+    for name, info in pages.items():
+        if info.get("status") != 200 or "kept" in info:
+            bad.append(f"{name}: HTTP {info.get('status')}, kept {info.get('kept', 0)} earlier fixture(s)")
+        elif str(info.get("read", "")).startswith("text") and info.get("count", 0) > 0:
+            bad.append(f"{name}: read by the text fallback - the page's markup may have changed")
+    for b in bad:
+        warns.append(f"LiveOnSat {b}")
+    if (d.get("pages", {}).get("Rugby Union") or {}).get("count") == 0:
+        warns.append("LiveOnSat Rugby Union page returned 0 fixtures")
+    if fb and len(fb.get("fixtures", [])) < 100:
+        warns.append(f"LiveOnSat football has only {len(fb.get('fixtures', []))} fixtures (normally 500+)")
+    lines.append("pages: " + ", ".join(f"{n} {i.get('count', 'kept ' + str(i.get('kept', 0)))}" for n, i in pages.items() if not n.startswith("football ")) +
+                 f"; football days {sum(1 for n in pages if n.startswith('football '))}")
+
+
+def timing_section(lines, warns):
+    """events_seen.json -> _timing: per provider group, the stream-name time minus the real start (event_epg.py, 7 Nov 2026)"""
+    try:
+        with open("events_seen.json", encoding="utf-8") as fh:
+            t = json.load(fh).get("_timing")
+    except Exception:
+        t = None
+    lines.append("\n## Stream times vs real start (events guide)")
+    if not t or not t.get("groups"):
+        lines.append("(no statistics in events_seen.json yet - they appear after the next events run)")
+        return
+    lines.append(f"Time in the stream name minus the real start, in minutes (negative = the stream opens EARLY); this run's streams, "
+                 f"updated {t.get('updated', '?')}. \"moved\" = the guide already uses the real start for that group.\n")
+    lines.append("| group | timed | not found | median | range | moved |\n|---|---|---|---|---|---|")
+    for g, v in sorted(t["groups"].items(), key=lambda kv: -(kv[1].get("n", 0) + kv[1].get("missed", 0))):
+        if v.get("n", 0) + v.get("missed", 0) == 0:
+            continue
+        med = f"{v['median']:+d}" if "median" in v else "-"
+        rng = f"{v['min']:+d} .. {v['max']:+d}" if "min" in v else "-"
+        lines.append(f"| {g} | {v.get('n', 0)} | {v.get('missed', 0)} | {med} | {rng} | {'yes' if v.get('applied') else 'no'} |")
+        if not v.get("applied") and v.get("n", 0) >= 5 and abs(v.get("median", 0)) >= 8:
+            warns.append(f"events: {g} stream times are {abs(v['median'])} min {'early' if v['median'] < 0 else 'late'} "
+                         f"(median of {v['n']} matches) - consider moving this group to the real start")
+
+
 def main():
     now = datetime.now(timezone.utc)
     fails, warns, lines = [], [], []
@@ -156,6 +222,8 @@ def main():
                 gone = o["channels"] - c["channels"]
                 if len(gone) >= MIN_CHANNELS_LOST and len(gone) >= 0.2 * len(o["channels"]):
                     warns.append(f"{path}: group '{g}' lost {len(gone)} channel(s): {', '.join(sorted(gone)[:6])}")
+                if path in MATCH_DRIVEN:
+                    continue
                 if len(o["channels"]) >= MIN_CHANNELS_LOST and o["programmes"] >= 30 and c["programmes"] < 0.6 * o["programmes"]:
                     warns.append(f"{path}: group '{g}' programmes {o['programmes']} -> {c['programmes']}")
                 if o["reach"] and c["reach"]:
@@ -176,6 +244,9 @@ def main():
                      if ctime else f"| {path} | {n_ch} | {n_pr} | unknown | {verdict} |")
         sg = sorted(summarize(chans, progs, ctime or now, how).items(), key=lambda kv: -kv[1]["programmes"])
         details.append((path, sg))
+    extra = []
+    liveonsat_section(now, extra, warns, fails)
+    timing_section(extra, warns)
     lines.append("")
     lines.append(f"## FAIL ({len(fails)})" if fails else "## FAIL (0) - none")
     lines += [f"- {x}" for x in fails]
@@ -188,6 +259,7 @@ def main():
         lines.append(f"\n**{path}**: " + ", ".join(
             f"{g} {len(v['channels'])}/{v['programmes']}/{(sum(v['reach']) / len(v['reach'])):.0f}h" if v["reach"] else f"{g} {len(v['channels'])}/{v['programmes']}/-"
             for g, v in sg[:25]))
+    lines += extra
     report = "\n".join(lines)
     print(report)
     summary = os.environ.get("GITHUB_STEP_SUMMARY")
