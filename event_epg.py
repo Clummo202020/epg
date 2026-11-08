@@ -1711,6 +1711,15 @@ def normalise_slot_ids(tv):
     print("  Slot ids padded to three digits: " + ", ".join(f"{o} -> {n}" for o, n in sorted(renames.items())))
 
 
+def next_label(title):
+    """"Next Game" for a US-style "A @ B" / "A at B", "Next Match" for "A vs B", "Next Event" for anything else (a race, a card, a tournament day)."""
+    if re.search(r"\s(?:@|at)\s", title):
+        return "Next Game"
+    if re.search(r"\s(?:vs?\.?|x)\s", title, re.I):
+        return "Next Match"
+    return "Next Event"
+
+
 def build(events, now):
     global _HORIZON
     _HORIZON = now + timedelta(hours=HORIZON_HOURS)
@@ -1781,10 +1790,13 @@ def build(events, now):
                               "Next up: LIVE",
                               f"Next up: LIVE. {ev['title']} starts " + (f"at {stamp}" if soon else stamp) + " UK time.")
             else:
+                # 8 Nov 2026 (user): the same wording as the club guides - "Next Match" (US games "Next Game", other events "Next Event")
+                # on every block before the event; only the LAST block before LIVE says "Next up: LIVE" (above). No ⏭.
+                lab = next_label(ev["title"])
                 add_programme(tv, sid, t, b, f"{ev['title']} ({when})",       # competition (and round)
-                              f"⏭ Coming up: {ev['comp']}" if ev.get("comp") else   # when known (28 Oct)
-                              f"⏭ Coming up {uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}",
-                              f"Coming up: {desc}")
+                              f"{lab}: {ev['comp']}" if ev.get("comp") else   # when known (28 Oct)
+                              f"{lab}: {uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}",
+                              f"{lab}: {desc}")
             count += 1
             t = b
         if in_range:
