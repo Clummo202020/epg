@@ -279,13 +279,13 @@ PARAMOUNT_AT_TZ = "America/Chicago"
 NBA_ESPN = "basketball/nba"
 NBA_EVENT_HOURS = 3
 # MLB streams, two styles:
-#   "MLB 01 : Rays x Guardians start:2026-10-18 22:08:00 stop:2026-10-19 05:21:20"  (MLB_START_TZ)
+#   "MLB 01 : Rays x Guardians start:2026-10-18 22:08:00 stop:2026-10-19 05:21:20"  (MLB_START_TZ; "|" instead of ":" also accepted, 8 Nov 2026)
 #   "MLB 13 | Baltimore vs Tampa Bay @ Aug 14 7:00 PM"                              (US Eastern)
 # Both give slot IDs MLB1.uk, MLB13.uk ... When ESPN's MLB schedule has the same two teams
 # within MLB_MATCH_HOURS of the name's time, ESPN's first-pitch time is used instead (this also
 # corrects the time if MLB_START_TZ is wrong - the log prints a check line for each).
 MLB_START = re.compile(
-    r"^\s*MLB\s*(?P<num>\d+)\s*:\s*(?P<title>.+?)\s+start:\s*(?P<date>\d{4}-\d{2}-\d{2})[ T]"
+    r"^\s*MLB\s*(?P<num>\d+)\s*[:|]\s*(?P<title>.+?)\s+start:\s*(?P<date>\d{4}-\d{2}-\d{2})[ T]"
     r"(?P<time>\d{1,2}:\d{2})(?::\d{2})?(?:\s+stop:\s*\S+(?:\s+\d{1,2}:\d{2}(?::\d{2})?)?)?\s*$", re.I)
 MLB_AT = re.compile(
     r"^\s*MLB\s*(?P<num>\d+)\s*\|\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})"
