@@ -483,16 +483,19 @@ def build_xmltv(channels, filler):
                 if stop <= start:
                     continue
             if filler:
-                for a, b in filler_blocks(last_stop or now, start):
+                pieces = list(filler_blocks(last_stop or now, start))
+                for idx, (a, b) in enumerate(pieces):
+                    # 8 Nov 2026 (user): "Next Match" before the match, "Next Up" only on the LAST block before the LIVE block
+                    lab = "Next Up" if idx == len(pieces) - 1 else "Next Match"
                     if FILLER_STYLE == "next":
                         f_title = f"Next: {m['title']} - {m['when']}"
                         f_desc = f"Coming up: {m['desc']}"
                     else:
                         f_title = f"{m['title']} ({m['when']})"
-                        f_desc = f"Next Up: {m['desc']}"
+                        f_desc = f"{lab}: {m['desc']}"
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
                         f_title += f" - kick-off in {countdown(start - a)}"
-                    add_programme(tv, chan_id, a, b, f_title, f"Next Up: {m['sub']}", f_desc, m["comp"])
+                    add_programme(tv, chan_id, a, b, f_title, f"{lab}: {m['sub']}", f_desc, m["comp"])
                     count += 1
             # the match itself: title "🔴 LIVE: A v B", secondary title the competition
             add_programme(tv, chan_id, start, stop, f"🔴 LIVE: {m['title']}", m["sub"], m["desc"],

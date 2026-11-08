@@ -6,6 +6,7 @@ PlaylistLabs' built-in "USA Sports Teams" source, with every time in LONDON time
 Team channel ids are NFL-ArizonaCardinals.uk, NBA-LAClippers.uk ... (31 Oct 2026: '.uk' instead of the playlist's '.us', so they can NOT clash with
 PlaylistLabs' built-in "USA Sports Teams" ids, which won over ours and showed EST times with no red ball). Each channel shows:
     "Next Up: Arizona Cardinals at Dallas Cowboys (Sun 1 Nov, 18:00 UK)"   sub-title "Sun 1 Nov, 18:00 UK time"
+    (8 Nov 2026: "Next Game: ..." on every block before the game, "Next Up: ..." only on the last block before the LIVE block)
     description: kick-off in UK time, venue and city, TV channel(s), and the last result when the team played in the last 4 days
     "🔴 LIVE: ..." while the game is being played (estimated length per sport), then the next "Next Up" block.
 No game in range: "No game scheduled" (the MLB winter, a bye week beyond the range).
@@ -343,8 +344,12 @@ def build_team(tv, cid, league, games, now, horizon):
             title, sub = "No game scheduled", f"None in the next {LEAGUES[league][3]} days"
             desc = (f"No {league} game is listed for this team in the next {LEAGUES[league][3]} days." +
                     (f" {last}" if last else ""))
-        for a, b in pieces(t, end):
-            add(tv, cid, a, b, title, sub, desc)
+        ps = list(pieces(t, end))
+        for i, (a, b) in enumerate(ps):
+            # 8 Nov 2026 (user): "Next Game" on every block before the game; only the LAST block, right before the red-ball LIVE block, says
+            # "Next Up" (blocks that stop at the guide's horizon, not at the puck drop / kick-off, are all "Next Game")
+            last_before_live = bool(nxt) and end == nxt["ko"] and i == len(ps) - 1
+            add(tv, cid, a, b, title if (not nxt or last_before_live) else title.replace("Next Up:", "Next Game:", 1), sub, desc)
         t = end
 
 
