@@ -325,8 +325,8 @@ def build_team(tv, cid, league, games, now, horizon):
         if active:
             end = min(active["ko"] + dur, horizon)
             title = f"🔴 LIVE: {name_of(active['away'])} at {name_of(active['home'])}"
-            desc = (f"{word} {uk(active['ko'])} UK time. {active['where']}." +
-                    (f" TV: {', '.join(active['tv'])}." if active["tv"] else "")).replace("..", ".")
+            # the channels a game is on are NOT listed (8 Nov 2026, user) - time and venue only
+            desc = f"{word} {uk(active['ko'])} UK time. {active['where']}.".replace("..", ".")
             for a, b in pieces(t, end):
                 add(tv, cid, a, b, title, f"{word} {active['ko'].astimezone(LONDON):%H:%M} UK time", desc, True)
             t = end
@@ -338,8 +338,7 @@ def build_team(tv, cid, league, games, now, horizon):
         if nxt:
             title = f"Next Up: {name_of(nxt['away'])} at {name_of(nxt['home'])} ({uk(nxt['ko'])} UK)"
             sub = uk(nxt["ko"]) + " UK time"
-            desc = f"{word} {uk(nxt['ko'])} UK time." + (f" {nxt['where']}." if nxt["where"] else "") + \
-                   (f" TV: {', '.join(nxt['tv'])}." if nxt["tv"] else "") + (f" {last}" if last else "")
+            desc = f"{word} {uk(nxt['ko'])} UK time." + (f" {nxt['where']}." if nxt["where"] else "") + (f" {last}" if last else "")
         else:
             title, sub = "No game scheduled", f"None in the next {LEAGUES[league][3]} days"
             desc = (f"No {league} game is listed for this team in the next {LEAGUES[league][3]} days." +
