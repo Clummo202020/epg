@@ -2138,6 +2138,41 @@ def _it_dedupe(t):
 
 IT_POPUP_RE = re.compile(r"(?i)^sky sport 25[1-8]$")
 IT_TEAMS_RE = re.compile(r"^[^:/()]+?\s+[-\u2013]\s+[^:/()]+$")                  # "Venezia - Udinese" (no colon, slash or brackets)
+# Italian names of foreign clubs and countries -> the English names (8 Nov 2026, user: "Mainz vs FC Bayern Monaco" should be "Bayern Munich").
+# Team titles are not translated (Google damaged them), so these are swapped by a list; Italian clubs (Roma, Inter, Napoli ...) keep their names.
+IT_TEAM_NAMES = {
+    # Germany
+    "FC Bayern Monaco": "Bayern Munich", "Bayern Monaco": "Bayern Munich", "Lipsia": "Leipzig", "Stoccarda": "Stuttgart", "Colonia": "Cologne",
+    "Francoforte": "Frankfurt", "Amburgo": "Hamburg", "Norimberga": "Nuremberg", "Brema": "Bremen", "Friburgo": "Freiburg", "Magonza": "Mainz",
+    "Herta Berlino": "Hertha Berlin", "Hertha Berlino": "Hertha Berlin", "Union Berlino": "Union Berlin", "Berlino": "Berlin",
+    # Spain / Portugal
+    "Siviglia": "Sevilla", "Valenza": "Valencia", "Saragozza": "Zaragoza", "Maiorca": "Mallorca", "Lisbona": "Lisbon",
+    # France / Belgium / Netherlands / Switzerland / Austria
+    "Marsiglia": "Marseille", "Lione": "Lyon", "Nizza": "Nice", "Tolosa": "Toulouse", "Lilla": "Lille", "Strasburgo": "Strasbourg",
+    "Bruges": "Brugge", "Anversa": "Antwerp", "Gand": "Gent", "Liegi": "Liege", "Basilea": "Basel", "Zurigo": "Zurich", "Ginevra": "Geneva",
+    "Berna": "Bern", "Salisburgo": "Salzburg",
+    # elsewhere in Europe
+    "Copenaghen": "Copenhagen", "Atene": "Athens", "Praga": "Prague", "Mosca": "Moscow", "Dinamo Kiev": "Dynamo Kyiv", "Kiev": "Kyiv",
+    "Zagabria": "Zagreb", "Belgrado": "Belgrade", "Stella Rossa": "Red Star Belgrade", "Bucarest": "Bucharest", "Varsavia": "Warsaw",
+    "Lubiana": "Ljubljana", "San Pietroburgo": "St Petersburg", "Edimburgo": "Edinburgh", "Cracovia": "Krakow",
+    # national teams
+    "Repubblica Ceca": "Czech Republic", "Spagna": "Spain", "Germania": "Germany", "Francia": "France", "Inghilterra": "England",
+    "Scozia": "Scotland", "Galles": "Wales", "Irlanda del Nord": "Northern Ireland", "Irlanda": "Ireland", "Paesi Bassi": "Netherlands",
+    "Olanda": "Netherlands", "Belgio": "Belgium", "Portogallo": "Portugal", "Svizzera": "Switzerland", "Croazia": "Croatia",
+    "Polonia": "Poland", "Ucraina": "Ukraine", "Turchia": "Turkey", "Grecia": "Greece", "Danimarca": "Denmark", "Svezia": "Sweden",
+    "Norvegia": "Norway", "Finlandia": "Finland", "Islanda": "Iceland", "Ungheria": "Hungary", "Slovacchia": "Slovakia",
+    "Macedonia del Nord": "North Macedonia", "Israele": "Israel", "Lettonia": "Latvia", "Lituania": "Lithuania", "Lussemburgo": "Luxembourg",
+    "Cipro": "Cyprus", "Moldavia": "Moldova", "Bielorussia": "Belarus", "Isole Faer Oer": "Faroe Islands", "Gibilterra": "Gibraltar",
+    "Azerbaigian": "Azerbaijan", "Kazakistan": "Kazakhstan", "Stati Uniti": "United States", "Messico": "Mexico", "Giappone": "Japan",
+    "Corea del Sud": "South Korea", "Marocco": "Morocco", "Egitto": "Egypt", "Brasile": "Brazil", "Cile": "Chile", "Per\u00f9": "Peru",
+}
+_IT_TEAM_RE = re.compile(r"(?<![\w])(" + "|".join(re.escape(k) for k in sorted(IT_TEAM_NAMES, key=len, reverse=True)) + r")(?![\w])", re.I)
+_IT_TEAM_LOWER = {k.lower(): v for k, v in IT_TEAM_NAMES.items()}
+
+
+def it_teams_en(title):
+    """English names for the foreign clubs / countries in an Italian "A - B" title (not for other titles)."""
+    return _IT_TEAM_RE.sub(lambda m: _IT_TEAM_LOWER.get(m.group(1).lower(), m.group(1)), title) if title else title
 IT_NOT_LIVE_RE = re.compile(r"(?i)\b(replica|differita|highlights?|sintesi|magazine|speciale|studio|post ?partita|pre ?partita|"
                             r"gol|goal|diretta gol)\b")
 
@@ -2181,6 +2216,7 @@ def fetch_italy(days, pattern, debug=False):
                 teams = bool(IT_TEAMS_RE.match(title)) and not IT_NOT_LIVE_RE.search(title)
                 if teams:
                     ev["no_translate"] = True
+                    ev["title"] = it_teams_en(title)                    # "Mainz - FC Bayern Monaco" -> "Mainz - Bayern Munich"
                 if IT_POPUP_RE.match(names[cid]) and teams:
                     # Sky Sport 251-258 are the pop-up match channels: Sky flags only some of their matches "Diretta",
                     # but every match on them is live (unless the title says replay / highlights).
@@ -5004,13 +5040,26 @@ def untranslated(src, out):
     return looks_foreign(src) and (same or looks_foreign(out))
 
 
+# Italian descriptions that an earlier run translated badly (language guessed as "auto"): left untranslated, or half Italian
+# ("Riviviamo tutti i gol and the principal azioni ...", "Dalla Mewa Arena di Magonza, Germania.") - 8 Nov 2026. They are dropped from the
+# cache on load and translated again, now as Italian (see translate_descriptions).
+IT_FUNC_RE = re.compile(r"(?i)\b(il|lo|la|le|gli|di|del|della|dello|dei|degli|delle|con|per|che|dopo|dalla|dalle|dal|nel|nella|nelle|sono|viene|"
+                        r"restano|punti|alla|allo|agli|alle|ai|dai|sul|sulla|hanno|pi\u00f9|anche|tutti|tutte|ancora)\b")
+IT_LEFT_RE = re.compile(r"\b(della|dello|degli|delle|dalla|dalle|nella|nelle|sulla|riviviamo|principali|azioni|giornata|stasera|squadra|partita|"
+                        r"viene|restano|sono i|tutti i|le principali|dal vivo|gli|Dal|Dalla|Il [A-Z])\b")
+
+
+def it_poor(src, out):
+    return len(src) >= 25 and len(IT_FUNC_RE.findall(src)) >= 2 and (out == src or bool(IT_LEFT_RE.search(out)))
+
+
 def load_cache():
     path = CACHE_FILE if os.path.exists(CACHE_FILE) else OLD_CACHE_FILE
     try:
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
         good = {k: v for k, v in data.items() if isinstance(v, str)}
-        bad = [k for k, v in good.items() if k != "__desc_used__" and untranslated(k, v)]
+        bad = [k for k, v in good.items() if k != "__desc_used__" and (untranslated(k, v) or it_poor(k, v))]
         for k in bad:                                  # retranslated this run (29 Oct 2026 fix)
             good.pop(k)
         if bad:
@@ -6330,6 +6379,8 @@ def build_xmltv(records, suffix, minutes):
             if stop <= start:
                 continue
             title = ev["title"] if ev.get("no_translate") else en(ev["title"])
+            if ev.get("no_translate") and rec["place"] == "Italy":
+                title = it_teams_en(title)
             sub = en(ev.get("sub") or "") or None
             if rec.get("fix_caps"):
                 title, sub = fix_caps(title), fix_caps(sub) or None
