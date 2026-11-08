@@ -1,38 +1,22 @@
 {
- "CASOCCERPPV13.ca": {
-  "name": "Live | USA Seniors Cricket NPL 2026 - 5th Match - Chicago Cavaliers vs Houston Saints | all | 8K EXCLUSIVE | CA: SOCCER PPV 13",
-  "seen": "2026-11-06T21:27:42+00:00"
+ "CASOCCERPPV10.ca": {
+  "name": "Live | Abu Dhabi T10 League 2026 - 4th Match - Yas Lions vs Emirates Eagles | all | 8K EXCLUSIVE | CA: SOCCER PPV 10",
+  "seen": "2026-11-08T15:07:30+00:00"
  },
- "CASOCCERPPV14.ca": {
-  "name": "Live | Masters, Draw 11 | all | 8K EXCLUSIVE | CA: SOCCER PPV 14",
-  "seen": "2026-11-06T21:27:42+00:00"
+ "CASOCCERPPV2.ca": {
+  "name": "Live | ACC Mens U19 Asia Cup 2026 - 8th Match - India U19 vs Pakistan U19 | all | 8K EXCLUSIVE | CA: SOCCER PPV 2",
+  "seen": "2026-11-08T15:07:30+00:00"
  },
- "CASOCCERPPV32.ca": {
-  "name": "Live | Getafe vs. Brighton | all | 8K EXCLUSIVE | CA: SOCCER PPV 32",
-  "seen": "2026-11-06T21:27:42+00:00"
+ "CASOCCERPPV3.ca": {
+  "name": "Live | ACC Mens U19 Asia Cup 2026 - 7th Match - United Arab Emirates U19 vs Nepal U19 | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
+  "seen": "2026-11-08T15:07:30+00:00"
  },
- "CASOCCERPPV33.ca": {
-  "name": "Live | Monaco vs. Nordsjælland | all | 8K EXCLUSIVE | CA: SOCCER PPV 33",
-  "seen": "2026-11-06T21:27:42+00:00"
- },
- "CASOCCERPPV36.ca": {
-  "name": "Live | Media Fight Night 2026 | all | 8K EXCLUSIVE | CA: SOCCER PPV 36",
-  "seen": "2026-11-06T21:27:42+00:00"
- },
- "CASOCCERPPV44.ca": {
-  "name": "Live | Budget 2026 | all | 8K EXCLUSIVE | CA: SOCCER PPV 44",
-  "seen": "2026-11-06T21:27:42+00:00"
- },
- "CASOCCERPPV8.ca": {
-  "name": "Live | Round of 16 | all | 8K EXCLUSIVE | CA: SOCCER PPV 8",
-  "seen": "2026-11-06T21:27:42+00:00"
- },
- "CASOCCERPPV9.ca": {
-  "name": "Live | Round of 16: Court Central | all | 8K EXCLUSIVE | CA: SOCCER PPV 9",
-  "seen": "2026-11-06T21:27:42+00:00"
+ "CASOCCERPPV4.ca": {
+  "name": "Live | Afghanistan vs Zimbabwe in UAE 2026 - 1st Test - Afghanistan vs Zimbabwe | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
+  "seen": "2026-11-08T15:07:30+00:00"
  },
  "_timing": {
-  "updated": "2026-11-08T14:37:18Z",
+  "updated": "2026-11-08T15:07:22Z",
   "groups": {
    "AppleMLS": {
     "n": 5,
@@ -43,27 +27,36 @@
     "max": -4
    },
    "CASOCCERPPV": {
-    "n": 0,
-    "missed": 34,
-    "applied": true
+    "n": 18,
+    "missed": 14,
+    "applied": true,
+    "median": 48,
+    "min": 45,
+    "max": 56
    },
    "DAZNPPV": {
-    "n": 0,
-    "missed": 2,
-    "applied": false
+    "n": 14,
+    "missed": 114,
+    "applied": false,
+    "median": 0,
+    "min": 0,
+    "max": 330
    },
    "ESPNPPV": {
-    "n": 1,
-    "missed": 142,
+    "n": 25,
+    "missed": 117,
     "applied": false,
-    "median": -30,
+    "median": -5,
     "min": -30,
-    "max": -30
+    "max": 60
    },
    "MAXPPV": {
-    "n": 0,
-    "missed": 13,
-    "applied": false
+    "n": 9,
+    "missed": 2,
+    "applied": false,
+    "median": -15,
+    "min": -45,
+    "max": 0
    },
    "MLB": {
     "n": 0,
@@ -87,7 +80,7 @@
     "max": 0
    },
    "NHL": {
-    "n": 12,
+    "n": 7,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -100,32 +93,32 @@
     "applied": false
    },
    "Paramount": {
-    "n": 37,
-    "missed": 144,
+    "n": 27,
+    "missed": 66,
     "applied": true,
-    "median": 50,
+    "median": 45,
     "min": -220,
     "max": 50
    },
    "Peacock": {
-    "n": 20,
-    "missed": 109,
+    "n": 10,
+    "missed": 56,
     "applied": true,
     "median": -20,
     "min": -80,
     "max": 30
    },
    "SN": {
-    "n": 12,
-    "missed": 7,
+    "n": 21,
+    "missed": 0,
     "applied": false,
-    "median": 0,
-    "min": 0,
+    "median": -10,
+    "min": -280,
     "max": 0
    },
    "STAN": {
-    "n": 69,
-    "missed": 88,
+    "n": 37,
+    "missed": 40,
     "applied": true,
     "median": -10,
     "min": -60,
@@ -133,7 +126,7 @@
    },
    "TSN": {
     "n": 4,
-    "missed": 51,
+    "missed": 32,
     "applied": false,
     "median": -12,
     "min": -12,
@@ -146,7 +139,7 @@
    }
   },
   "check": {
-   "compared": 27,
+   "compared": 55,
    "differ": 0,
    "examples": []
   }
