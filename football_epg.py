@@ -1358,7 +1358,10 @@ def build_xmltv(channels, filler):
                 cuts.append(start)
                 pieces = [blk for i in range(len(cuts) - 1)
                           for blk in filler_blocks(cuts[i], cuts[i + 1])]
-                for a, b in pieces:
+                for idx, (a, b) in enumerate(pieces):
+                    # 8 Nov 2026 (user): every block before the match says "Next Match" - only the LAST block, right before the red-ball
+                    # LIVE block, says "Next Up" (Goal Rush and the fixed UEFA texts keep their own wording)
+                    lab = "Next Up" if idx == len(pieces) - 1 else "Next Match"
                     d = m["generic_desc"] if rv and a < rv else m["desc"]
                     if FILLER_STYLE == "next":
                         f_title = f"Next: {m['title']} - {m['when']}"
@@ -1368,13 +1371,13 @@ def build_xmltv(channels, filler):
                         if "filler_head" in m:       # Goal Rush: "Next Up: Goal Rush, Saturday. Live action ..."
                             f_desc = m["filler_head"] + (d[len("Goal Rush."):] if d.startswith("Goal Rush.") else " " + d)
                         else:
-                            f_desc = f"Next Up: {d}"
+                            f_desc = f"{lab}: {d}"
                     if "fixed_title" in m:        # UEFA.id: same title/description throughout
                         f_title, f_desc = m["fixed_title"], m["fixed_desc"]
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
                         f_title += f" - kick-off in {countdown(start - a)}"
                     add_programme(tv, chan_id, a, b, f_title,
-                                  m.get("filler_sub", f"Next Up: {m['sub']}"), f_desc, m["comp"])
+                                  m.get("filler_sub", f"{lab}: {m['sub']}"), f_desc, m["comp"])
                     count += 1
             if m.get("filler_only"):                  # Goal Rush before matchday: no show yet
                 last_stop = start
