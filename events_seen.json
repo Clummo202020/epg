@@ -32,7 +32,7 @@
   "seen": "2026-11-06T21:27:42+00:00"
  },
  "_timing": {
-  "updated": "2026-11-07T23:58:44Z",
+  "updated": "2026-11-08T00:04:42Z",
   "groups": {
    "AppleMLS": {
     "n": 26,
@@ -67,6 +67,11 @@
     "median": -30,
     "min": -90,
     "max": 150
+   },
+   "MLB": {
+    "n": 0,
+    "missed": 1,
+    "applied": false
    },
    "NBA": {
     "n": 7,
