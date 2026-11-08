@@ -2088,7 +2088,52 @@ def it_desc_en(desc, start=None):
     t = re.sub(r"(?i)\bCalcio d['\u2019]inizio(?:\s+alle)?(?:\s+ore)?\s*(\d{1,2})\b(?![:.\d])",
                lambda m: "Kick-off at " + uk(int(m.group(1)), 0), t)
     t = re.sub(r"\b([01]?\d|2[0-3]):([0-5]\d)\b(?!\s?[AaPp][Mm])", lambda m: uk(int(m.group(1)), int(m.group(2))), t)   # "Dalle 18:45"
+    t = it_shorthand(_it_dedupe(t))
     return re.sub(r"\s{2,}", " ", t).strip()
+
+
+IT_FOOTBALL_RE = re.compile(r"(?i)\b(calcio|serie [abc]|champions|europa league|conference|campionato|giornata|giallorossi|rossoneri|nerazzurri|"
+                            r"bianconeri|biancocelesti|punti|pari|gare|partita|stadio|olimpico|derby|squadra|panchina|trasferta)\b")
+IT_NOT_FOOTBALL_RE = re.compile(r"(?i)\b(pugil\w*|round|ring|pesi?|mondiale|wbc|wba|ibf|wbo|ufc|mma)\b")
+
+
+def it_shorthand(t):
+    """Sky Italia's football shorthand that Google mistranslates (8 Nov 2026, Roma - Sassuolo: \"4 ko di fila\" came out as \"4 kb of film\",
+    \"12 gare\" as \"12 station\", \"5 pari\" as \"5 bet\", \"TC:\" stayed): spelled out in plain Italian first. \"N ko\" means defeats ONLY in a
+    football text (in boxing it is knockouts), so it needs football words in the text and no boxing words."""
+    if not t:
+        return t
+    t = re.sub(r"\bTC:", "Telecronaca:", t)
+    if IT_FOOTBALL_RE.search(t) and not IT_NOT_FOOTBALL_RE.search(t):
+        t = re.sub(r"\b(\d+)\s*(?:ko|k\.o\.)(?![\w'])", r"\1 sconfitte", t, flags=re.I)
+        t = re.sub(r"\bsconfitte consecutivi\b", "sconfitte consecutive", t)
+        t = re.sub(r"\b(\d+)\s*pari\b", r"\1 pareggi", t, flags=re.I)
+        t = re.sub(r"\bun pari\b", "un pareggio", t, flags=re.I)
+        t = re.sub(r"\b(\d+)\s*gare\b", r"\1 partite", t, flags=re.I)
+    return t
+
+
+def _it_dedupe(t):
+    """Sky's description is often the same fragment 3-4 times, each cut short with \"... \" (\"... Ep.4 06/11/2026 Europa & Conference
+    League Remix. - ... Ep.4 ... - ... Ep.4 ... - Europa & Conference League Remix\"): said once. Only text that has those \"... \" fragments is
+    touched, and a fragment is dropped only when it repeats (or sits inside) one already kept."""
+    if not t or not re.search(r"(?:^|\s-\s)\.\.\.\s", t):
+        return t
+    keep, parts_n, dropped = [], 0, False             # keep: [(normalised, text)]
+    for part in re.split(r"\s+-\s+", t):
+        q = re.sub(r"^\.{3}\s*", "", part.strip()).strip()
+        n = re.sub(r"\W+", " ", q).lower().strip()
+        if not n:
+            continue
+        parts_n += 1
+        if any(n == k or (len(n) >= 20 and n in k) for k, _ in keep):
+            dropped = True
+            continue
+        if any(len(k) >= 20 and k in n for k, _ in keep):
+            dropped = True
+        keep = [(k, x) for k, x in keep if not (len(k) >= 20 and k in n)] + [(n, q)]
+    # nothing repeated: the text is left exactly as it was (its cached translation stays valid)
+    return " - ".join(x for _, x in keep) if dropped else t
 
 
 IT_POPUP_RE = re.compile(r"(?i)^sky sport 25[1-8]$")
@@ -4971,12 +5016,12 @@ def save_cache():
         print(f"WARNING: could not save translations: {e}", file=sys.stderr)
 
 
-def google_translate(text, short=True):
+def google_translate(text, short=True, sl="auto"):
     """One text through the first translator that still answers (None if none can)."""
     for name, fn in TRANSLATORS:
         if name in TRANSLATOR_DOWN or (name == "MyMemory" and not short):
             continue
-        out = fn([text])
+        out = fn([text], sl)
         if out and out[0] and not untranslated(text, out[0]):
             return out[0]                              # (the source handed back: try the next translator)
     return None
@@ -5034,9 +5079,10 @@ def _translator_get(name, url):
     return None
 
 
-def _gtx(texts):
-    """Google's free translator; several texts joined by new lines."""
-    params = {"client": "gtx", "sl": "auto", "tl": "en", "dt": "t", "q": "\n".join(texts)}
+def _gtx(texts, sl="auto"):
+    """Google's free translator; several texts joined by new lines. sl = the source language when it is known (\"it\" for the Italian
+    channels, 8 Nov 2026: with \"auto\" short Italian sentences were guessed wrongly and came back half translated)."""
+    params = {"client": "gtx", "sl": sl, "tl": "en", "dt": "t", "q": "\n".join(texts)}
     data = _translator_get("Google", "https://translate.googleapis.com/translate_a/single?"
                            + urllib.parse.urlencode(params))
     try:
@@ -5046,9 +5092,9 @@ def _gtx(texts):
     return lines if len(lines) == len(texts) and all(lines) else None
 
 
-def _chrome(texts):
+def _chrome(texts, sl="auto"):
     """Google's second free address (used by Chrome's translate); one 'q' per text."""
-    url = ("https://clients5.google.com/translate_a/t?client=dict-chrome-ex&sl=auto&tl=en&"
+    url = (f"https://clients5.google.com/translate_a/t?client=dict-chrome-ex&sl={sl}&tl=en&"
            + urllib.parse.urlencode([("q", t) for t in texts]))
     data = _translator_get("Google (Chrome)", url)
     if isinstance(data, dict):                         # older answer shape, one text
@@ -5066,13 +5112,13 @@ def _chrome(texts):
 MYMEMORY_BUDGET = [4500]                               # its free daily allowance is about 5000 characters
 
 
-def _mymemory(texts):
+def _mymemory(texts, sl="auto"):
     """MyMemory's free service (no key): short texts only, one at a time."""
     if len(texts) != 1 or len(texts[0]) > 300 or MYMEMORY_BUDGET[0] < len(texts[0]):
         return None
     MYMEMORY_BUDGET[0] -= len(texts[0])
     data = _translator_get("MyMemory", "https://api.mymemory.translated.net/get?"
-                           + urllib.parse.urlencode({"q": texts[0], "langpair": "Autodetect|en"}))
+                           + urllib.parse.urlencode({"q": texts[0], "langpair": (sl if sl != "auto" else "Autodetect") + "|en"}))
     if not isinstance(data, dict):
         return None
     text = str((data.get("responseData") or {}).get("translatedText") or "").strip()
@@ -5098,11 +5144,11 @@ def translator_report():
     return "; ".join(f"{n}: {w}" for n, w in TRANSLATOR_WHY.items())
 
 
-def google_translate_batch(texts):
+def google_translate_batch(texts, sl="auto"):
     """Several texts in one request, from the first translator that can; None if none could."""
     for name, fn in TRANSLATORS[:2]:
         if name not in TRANSLATOR_DOWN:
-            out = fn(texts)
+            out = fn(texts, sl)
             if out:
                 return out
     return None
@@ -5113,12 +5159,15 @@ def translate_descriptions(records, limit):
     about ten per request. Ones not translated yet go into DESC_PENDING and are left out."""
     today = date.today().isoformat()
     need = {}                                          # text -> earliest start
+    lang = {}                                          # text -> source language when the channel's country tells us
     for rec in records:
         english = rec["place"] in ENGLISH_PLACES
         for ev in rec["events"]:
             d = ev.get("desc")
             if d and not (english and not FOREIGN.search(d)):
                 need[d] = min(need.get(d, ev["start"]), ev["start"])
+                if rec["place"] == "Italy":
+                    lang.setdefault(d, "it")
     for d in need:
         if d in TRANSLATIONS:
             DESC_USED[d] = today
@@ -5128,18 +5177,19 @@ def translate_descriptions(records, limit):
     done, i = 0, 0
     while i < len(todo) and translators_left(short=False):
         batch = []
-        while i < len(todo) and len(batch) < 10 and \
+        sl = lang.get(todo[i], "auto")
+        while i < len(todo) and len(batch) < 10 and lang.get(todo[i], "auto") == sl and \
                 len(urllib.parse.quote("\n".join(batch + [todo[i]]))) <= 6000:
             batch.append(todo[i])
             i += 1
         if not batch:                                  # one very long text: on its own
             batch, i = [todo[i]], i + 1
-        out = google_translate_batch(batch) if len(batch) > 1 else None
+        out = google_translate_batch(batch, sl) if len(batch) > 1 else None
         if out is None:                                # the batch didn't split cleanly: one by one
-            out = [google_translate(t, short=False) for t in batch]
+            out = [google_translate(t, short=False, sl=sl) for t in batch]
         for t, tr_ in zip(batch, out):
             if tr_ and untranslated(t, tr_):           # came back untranslated: once more on its own
-                tr_ = google_translate(t, short=False)
+                tr_ = google_translate(t, short=False, sl=sl)
             if tr_:
                 TRANSLATIONS[t] = tr_
                 DESC_USED[t] = today
