@@ -1295,7 +1295,7 @@ def _parse_name(name):
         start = espn_start(NBA_ESPN, "NBA", title, approx.astimezone(timezone.utc))
         num = int(b["num"])
         return {"name": name, "slot_id": f"NBA{num}.uk", "slot_name": f"NBA {num}",
-                "title": title, "extra": "", "comp": "NBA", "hours": NBA_EVENT_HOURS,
+                "title": nba_away_at_home(title), "extra": "", "comp": "NBA", "hours": NBA_EVENT_HOURS,
                 "start": start}
     me = MLB_EMPTY.match(name)                       # "MLB 05" with nothing on it
     if me:
@@ -1711,9 +1711,21 @@ def normalise_slot_ids(tv):
     print("  Slot ids padded to three digits: " + ", ".join(f"{o} -> {n}" for o, n in sorted(renames.items())))
 
 
-def next_label(title):
-    """"Next Game" for a US-style "A @ B" / "A at B", "Next Match" for "A vs B", "Next Event" for anything else (a race, a card, a tournament day)."""
-    if re.search(r"\s(?:@|at)\s", title):
+US_GAME_COMPS = {"NFL", "NBA", "NHL", "MLB", "WNBA", "NCAAF", "NCAAB", "NCAAM", "NCAAW", "CFB"}
+
+
+def nba_away_at_home(title):
+    """The NBA streams are named "HOME vs AWAY" (8 Nov 2026, checked against ESPN's schedule for all 7 games: "Chicago Bulls vs Philadelphia
+    76ers" is Philadelphia AT Chicago). The user wants the US style - "AWAY @ HOME", as the NFL / NHL slots and the Teams guide - so the sides
+    are swapped: "Philadelphia 76ers @ Chicago Bulls"."""
+    m = re.match(r"^(.+?)\s+vs?\.?\s+(.+)$", title, re.I)
+    return f"{m.group(2).strip()} @ {m.group(1).strip()}" if m else title
+
+
+def next_label(title, comp="", sid=""):
+    """"Next Game" for a US-style "A @ B" / "A at B" and for the NFL / NBA / NHL / MLB (like the Teams guide), "Next Match" for "A vs B",
+    "Next Event" for anything else (a race, a card, a tournament day)."""
+    if re.search(r"\s(?:@|at)\s", title) or re.match(r"(?:NFL|NBA|NHL|MLB)\d", sid or "") or (comp or "").upper() in US_GAME_COMPS:
         return "Next Game"
     if re.search(r"\s(?:vs?\.?|x)\s", title, re.I):
         return "Next Match"
@@ -1792,7 +1804,7 @@ def build(events, now):
             else:
                 # 8 Nov 2026 (user): the same wording as the club guides - "Next Match" (US games "Next Game", other events "Next Event")
                 # on every block before the event; only the LAST block before LIVE says "Next up: LIVE" (above). No ⏭.
-                lab = next_label(ev["title"])
+                lab = next_label(ev["title"], ev.get("comp"), sid)
                 add_programme(tv, sid, t, b, f"{ev['title']} ({when})",       # competition (and round)
                               f"{lab}: {ev['comp']}" if ev.get("comp") else   # when known (28 Oct)
                               f"{lab}: {uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}",
