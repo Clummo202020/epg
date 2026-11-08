@@ -8309,6 +8309,11 @@
     <desc lang="en">MLS Wrap_Up⁩ has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109032500 +0000" stop="20261109052500 +0000" channel="AppleMLS035.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">MLS Wrap_Up⁩ has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108022500 +0000" channel="AppleMLS036.us">
     <title lang="en">Next up: LIVE – MLS El Resumen⁩ (Spanish) (2:25am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -8380,6 +8385,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261109012500 +0000" stop="20261109032500 +0000" channel="AppleMLS036.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">MLS El Resumen⁩ (Spanish) has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109032500 +0000" stop="20261109052500 +0000" channel="AppleMLS036.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">MLS El Resumen⁩ (Spanish) has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -15698,6 +15708,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261109032000 +0000" stop="20261109042000 +0000" channel="MPeacock024.us">
+    <title lang="en">🔴 LIVE: Buccaneers vs Bears</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">Buccaneers vs Bears. NFL. Starts Mon 9 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="MPeacock025.us">
     <title lang="en">Sunday Night Football Final (Mon 9 Nov, 4:30am)</title>
     <sub-title lang="en">⏭ Coming up Mon 9 Nov</sub-title>
@@ -22237,26 +22254,26 @@
   </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="MSTAN32.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="MSTAN32.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="MSTAN32.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="MSTAN32.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="MSTAN32.au">
@@ -22267,15 +22284,15 @@
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="MSTAN32.au">
     <title lang="en">🔴 LIVE: Stafford Rangers vs Grimsby Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup 1st Round</sub-title>
-    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">FA Cup</sub-title>
+    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108150000 +0000" channel="MSTAN32.au">
     <title lang="en">🔴 LIVE: Stafford Rangers vs Grimsby Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup 1st Round</sub-title>
-    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">FA Cup</sub-title>
+    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -23113,6 +23130,11 @@
     <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109031500 +0000" stop="20261109051500 +0000" channel="MSTAN42.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="MSTAN43.au">
     <title lang="en">London City Lionesses vs Birmingham City WSL 2026/27 (Sun 8 Nov, 2:30pm)</title>
     <sub-title lang="en">⏭ Coming up: English Womens Super League</sub-title>
@@ -23190,6 +23212,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261109013000 +0000" stop="20261109033000 +0000" channel="MSTAN43.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">London City Lionesses vs Birmingham City WSL 2026/27 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="MSTAN43.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">London City Lionesses vs Birmingham City WSL 2026/27 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -23354,40 +23381,45 @@
     <desc lang="en">Hong Kong China vs USA Nations Cup Round 4 2026 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033500 +0000" stop="20261109053500 +0000" channel="MSTAN45.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hong Kong China vs USA Nations Cup Round 4 2026 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="MSTAN46.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="MSTAN46.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="MSTAN46.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="MSTAN46.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="MSTAN46.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="MSTAN46.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108150000 +0000" channel="MSTAN46.au">
@@ -23398,15 +23430,15 @@
   </programme>
   <programme start="20261108150000 +0000" stop="20261108170000 +0000" channel="MSTAN46.au">
     <title lang="en">🔴 LIVE: Wimborne Town vs Crawley Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261108170000 +0000" stop="20261108180000 +0000" channel="MSTAN46.au">
     <title lang="en">🔴 LIVE: Wimborne Town vs Crawley Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -23517,6 +23549,11 @@
     <desc lang="en">Manchester United vs Aston Villa Premier League Matchweek 10 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="MSTAN47.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Manchester United vs Aston Villa Premier League Matchweek 10 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="MSTAN48.au">
     <title lang="en">Manchester United vs Aston Villa Premier League Matchweek 10 2026/2027 (Sun 8 Nov, 4:30pm)</title>
     <sub-title lang="en">⏭ Coming up: Premier League</sub-title>
@@ -23599,46 +23636,51 @@
     <desc lang="en">Manchester United vs Aston Villa Premier League Matchweek 10 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="MSTAN48.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Manchester United vs Aston Villa Premier League Matchweek 10 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="MSTAN49.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="MSTAN49.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="MSTAN49.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="MSTAN49.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="MSTAN49.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="MSTAN49.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="MSTAN49.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108160000 +0000" stop="20261108171500 +0000" channel="MSTAN49.au">
@@ -23649,15 +23691,15 @@
   </programme>
   <programme start="20261108171500 +0000" stop="20261108191500 +0000" channel="MSTAN49.au">
     <title lang="en">🔴 LIVE: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261108191500 +0000" stop="20261108201500 +0000" channel="MSTAN49.au">
     <title lang="en">🔴 LIVE: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -28441,6 +28483,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261109032000 +0000" stop="20261109045000 +0000" channel="NFL14.uk">
+    <title lang="en">🔴 LIVE: Buccaneers at Bears</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">Buccaneers at Bears. NFL. Sunday Night Football. Starts Mon 9 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NFL15.uk">
     <title lang="en">Bills at Vikings (Tue 10 Nov, 1:15am)</title>
     <sub-title lang="en">⏭ Coming up: NFL</sub-title>
@@ -28677,6 +28726,11 @@
     <desc lang="en">Cowboys at Colts has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="NFL3.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Cowboys at Colts has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NFL4.uk">
     <title lang="en">Jets at Chiefs (Sun 8 Nov, 6pm)</title>
     <sub-title lang="en">⏭ Coming up: NFL</sub-title>
@@ -28750,6 +28804,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261109013000 +0000" stop="20261109033000 +0000" channel="NFL4.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Jets at Chiefs has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="NFL4.uk">
     <title lang="en">This event has now finished</title>
     <desc lang="en">Jets at Chiefs has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -28831,6 +28890,11 @@
     <desc lang="en">Lions at Dolphins has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="NFL5.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Lions at Dolphins has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NFL6.uk">
     <title lang="en">Browns at Saints (Sun 8 Nov, 6pm)</title>
     <sub-title lang="en">⏭ Coming up: NFL</sub-title>
@@ -28904,6 +28968,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261109013000 +0000" stop="20261109033000 +0000" channel="NFL6.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Browns at Saints has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="NFL6.uk">
     <title lang="en">This event has now finished</title>
     <desc lang="en">Browns at Saints has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -28985,6 +29054,11 @@
     <desc lang="en">Giants at Eagles has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="NFL7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Giants at Eagles has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NFL8.uk">
     <title lang="en">Rams at Commanders (Sun 8 Nov, 6pm)</title>
     <sub-title lang="en">⏭ Coming up: NFL</sub-title>
@@ -29062,6 +29136,11 @@
     <desc lang="en">Rams at Commanders has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="NFL8.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Rams at Commanders has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="NFL9.uk">
     <title lang="en">Broncos at Panthers (Sun 8 Nov, 6pm)</title>
     <sub-title lang="en">⏭ Coming up: NFL</sub-title>
@@ -29135,6 +29214,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261109013000 +0000" stop="20261109033000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Broncos at Panthers has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="NFL9.uk">
     <title lang="en">This event has now finished</title>
     <desc lang="en">Broncos at Panthers has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -36981,6 +37065,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261109032000 +0000" stop="20261109042000 +0000" channel="Peacock024.us">
+    <title lang="en">🔴 LIVE: Buccaneers vs Bears</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">Buccaneers vs Bears. NFL. Starts Mon 9 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="Peacock025.us">
     <title lang="en">Sunday Night Football Final (Mon 9 Nov, 4:30am)</title>
     <sub-title lang="en">⏭ Coming up Mon 9 Nov</sub-title>
@@ -44312,26 +44403,26 @@
   </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN41.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN41.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN41.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN41.au">
     <title lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027 (Sun 8 Nov, 12pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
-    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
+    <desc lang="en">Coming up: Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN41.au">
@@ -44342,15 +44433,15 @@
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN41.au">
     <title lang="en">🔴 LIVE: Stafford Rangers vs Grimsby Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup 1st Round</sub-title>
-    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">FA Cup</sub-title>
+    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108150000 +0000" channel="STAN41.au">
     <title lang="en">🔴 LIVE: Stafford Rangers vs Grimsby Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup 1st Round</sub-title>
-    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 12pm UK time.</desc>
+    <sub-title lang="en">FA Cup</sub-title>
+    <desc lang="en">Stafford Rangers vs Grimsby Town FA Cup 2026/2027. Starts Sun 8 Nov, 12pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -45108,6 +45199,11 @@
     <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109031500 +0000" stop="20261109051500 +0000" channel="STAN50.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Cray Wanderers vs Stockport County FA Cup 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN51.au">
     <title lang="en">England vs Australia Nations Championship Round 4 2026 (Sun 8 Nov, 3:10pm)</title>
     <sub-title lang="en">⏭ Coming up: Nations Championship</sub-title>
@@ -45268,40 +45364,45 @@
     <desc lang="en">Hong Kong China vs USA Nations Cup Round 4 2026 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033500 +0000" stop="20261109053500 +0000" channel="STAN52.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Hong Kong China vs USA Nations Cup Round 4 2026 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN53.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN53.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN53.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN53.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN53.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN53.au">
     <title lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027 (Sun 8 Nov, 3pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108150000 +0000" channel="STAN53.au">
@@ -45312,15 +45413,15 @@
   </programme>
   <programme start="20261108150000 +0000" stop="20261108170000 +0000" channel="STAN53.au">
     <title lang="en">🔴 LIVE: Wimborne Town vs Crawley Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261108170000 +0000" stop="20261108180000 +0000" channel="STAN53.au">
     <title lang="en">🔴 LIVE: Wimborne Town vs Crawley Town FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027. Starts Sun 8 Nov, 3pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Wimborne Town vs Crawley Town FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 3pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -45431,6 +45532,11 @@
     <desc lang="en">Manchester United vs Aston Villa Premier League Matchweek 10 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="STAN54.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Manchester United vs Aston Villa Premier League Matchweek 10 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN55.au">
     <title lang="en">Manchester United vs Aston Villa Premier League Matchweek 10 2026/2027 (Sun 8 Nov, 4:30pm)</title>
     <sub-title lang="en">⏭ Coming up: Premier League</sub-title>
@@ -45513,46 +45619,51 @@
     <desc lang="en">Manchester United vs Aston Villa Premier League Matchweek 10 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="STAN55.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Manchester United vs Aston Villa Premier League Matchweek 10 2026/2027 has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108040000 +0000" stop="20261108060000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108060000 +0000" stop="20261108080000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108080000 +0000" stop="20261108100000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108100000 +0000" stop="20261108120000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108120000 +0000" stop="20261108140000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108140000 +0000" stop="20261108160000 +0000" channel="STAN56.au">
     <title lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027 (Sun 8 Nov, 5:15pm)</title>
-    <sub-title lang="en">⏭ Coming up: FA Cup</sub-title>
-    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">⏭ Coming up: FA Cup 1st Round</sub-title>
+    <desc lang="en">Coming up: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261108160000 +0000" stop="20261108171500 +0000" channel="STAN56.au">
@@ -45563,15 +45674,15 @@
   </programme>
   <programme start="20261108171500 +0000" stop="20261108191500 +0000" channel="STAN56.au">
     <title lang="en">🔴 LIVE: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
   <programme start="20261108191500 +0000" stop="20261108201500 +0000" channel="STAN56.au">
     <title lang="en">🔴 LIVE: Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027</title>
-    <sub-title lang="en">FA Cup</sub-title>
-    <desc lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. Starts Sun 8 Nov, 5:15pm UK time.</desc>
+    <sub-title lang="en">FA Cup 1st Round</sub-title>
+    <desc lang="en">Oldham Athletic vs Sheffield Wednesday FA Cup 2026/2027. FA Cup 1st Round. Starts Sun 8 Nov, 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
@@ -49468,6 +49579,11 @@
     <desc lang="en">NCAA Football: West Virginia vs Texas Tech has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN043.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">NCAA Football: West Virginia vs Texas Tech has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="TSN044.ca">
     <title lang="en">ATP 1000 Tennis: Paris _ Doubles Final (Sun 8 Nov, 11:30am)</title>
     <sub-title lang="en">⏭ Coming up: ATP</sub-title>
@@ -49784,6 +49900,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261109013000 +0000" stop="20261109033000 +0000" channel="TSN047.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">NFL International Series: Bengals vs Falcons has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN047.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">NFL International Series: Bengals vs Falcons has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -50119,6 +50240,11 @@
     <desc lang="en">Formula 1 On_Board Camera: Lance Stroll _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN051.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Formula 1 On_Board Camera: Lance Stroll _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="TSN052.ca">
     <title lang="en">Formula 1 On_Board Camera: Charles Leclerc _ Sao Paulo Grand Prix (Sun 8 Nov, 4:30pm)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -50197,6 +50323,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261109013000 +0000" stop="20261109033000 +0000" channel="TSN052.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Formula 1 On_Board Camera: Charles Leclerc _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN052.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">Formula 1 On_Board Camera: Charles Leclerc _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -50283,6 +50414,11 @@
     <desc lang="en">Formula 1 On_Board Camera: George Russell _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN053.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Formula 1 On_Board Camera: George Russell _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="TSN054.ca">
     <title lang="en">Formula 1 Driver Tracker _ Sao Paulo Grand Prix (Sun 8 Nov, 4:30pm)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -50361,6 +50497,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261109013000 +0000" stop="20261109033000 +0000" channel="TSN054.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Formula 1 Driver Tracker _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN054.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">Formula 1 Driver Tracker _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -50447,6 +50588,11 @@
     <desc lang="en">Formula 1 Pit Lane _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN055.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Formula 1 Pit Lane _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="TSN056.ca">
     <title lang="en">Formula 1 Mixed On_Board Camera _ Sao Paulo Grand Prix (Sun 8 Nov, 4:30pm)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -50529,6 +50675,11 @@
     <desc lang="en">Formula 1 Mixed On_Board Camera _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN056.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Formula 1 Mixed On_Board Camera _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="TSN057.ca">
     <title lang="en">Formula 1 Timing Channel _ Sao Paulo Grand Prix (Sun 8 Nov, 4:30pm)</title>
     <sub-title lang="en">⏭ Coming up: Formula 1</sub-title>
@@ -50607,6 +50758,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261109013000 +0000" stop="20261109033000 +0000" channel="TSN057.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">Formula 1 Timing Channel _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN057.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">Formula 1 Timing Channel _ Sao Paulo Grand Prix has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
@@ -51764,6 +51920,11 @@
     <desc lang="en">NBA on TSN: 76ers vs Bulls has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN071.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">NBA on TSN: 76ers vs Bulls has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261108020000 +0000" stop="20261108040000 +0000" channel="TSN072.ca">
     <title lang="en">NCAA Women`s Basketball: South Carolina vs North Carolina (Sun 8 Nov, 10:30pm)</title>
     <sub-title lang="en">⏭ Coming up: NCAA</sub-title>
@@ -51845,6 +52006,11 @@
     <category lang="en">Live</category>
   </programme>
   <programme start="20261109013000 +0000" stop="20261109033000 +0000" channel="TSN072.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">NCAA Women`s Basketball: South Carolina vs North Carolina has now finished. The next event will be listed when the stream is updated.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="TSN072.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">NCAA Women`s Basketball: South Carolina vs North Carolina has now finished. The next event will be listed when the stream is updated.</desc>
     <category lang="en">Sports</category>
