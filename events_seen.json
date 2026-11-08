@@ -32,11 +32,11 @@
   "seen": "2026-11-06T21:27:42+00:00"
  },
  "_timing": {
-  "updated": "2026-11-08T04:37:20Z",
+  "updated": "2026-11-08T05:07:19Z",
   "groups": {
    "AppleMLS": {
-    "n": 26,
-    "missed": 5,
+    "n": 15,
+    "missed": 16,
     "applied": true,
     "median": -95,
     "min": -95,
@@ -111,8 +111,8 @@
     "max": 55
    },
    "Peacock": {
-    "n": 12,
-    "missed": 51,
+    "n": 11,
+    "missed": 52,
     "applied": true,
     "median": -10,
     "min": -80,
@@ -149,7 +149,7 @@
    }
   },
   "check": {
-   "compared": 68,
+   "compared": 23,
    "differ": 0,
    "examples": []
   }
