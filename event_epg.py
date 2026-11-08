@@ -82,12 +82,16 @@ FILLER_TITLE = "Stream is live at event time only."
 FILLER_DESC = "The next event on this stream will be listed nearer the time."
 # Shown on a slot whose event is over (or that is empty) until its stream name changes to a new event;
 # the new event's real titles/descriptions then replace it automatically.
-OFFLINE_TITLE = "Channel is offline"   # only used if a stream has no name at all
+# 8 Nov 2026 (user): everything that has ended - a finished event or an empty slot - reads the same generic listing; the
+# stream's own name in the playlist already shows the event, so the description no longer repeats it.
+GENERIC_TITLE = "No streams available at this time"
+GENERIC_DESC = "No streams available at this time. Check back later."
+OFFLINE_TITLE = GENERIC_TITLE          # only used if a stream has no name at all
 # 4 Nov 2026 (user): every EMPTY slot - whatever the provider calls it ("NO EVENT STREAMING NOW - | 8K EXCLUSIVE |
 # CA: SOCCER PPV 100", "US (Peacock 099)", "AU (STAN 40) | No event streaming", "MLB 10 :", "UEFA | 08 -" ...) - gets
 # this title, and a FINISHED event shows just its own name (see offline_title). The channel display-name is
 # unchanged, so PlaylistLabs linking is not affected.
-NO_EVENT_TITLE = "No event streaming now"
+NO_EVENT_TITLE = GENERIC_TITLE         # was "No event streaming now" until 8 Nov 2026
 # Finished/empty slots are titled with the stream's own name (25 Oct 2026), e.g.
 # "US (Paramount 009) | Motherwell vs. Heart of Midlothian (2026-10-25 09:00:00)".
 
@@ -106,17 +110,16 @@ def offline_title(ev):
     if sep and head.strip().lower() in STATUS_WORDS and rest.strip():
         name = rest.strip()
     return name or OFFLINE_TITLE
-OFFLINE_DESC = "This channel is offline. The next event will be listed when the stream is updated."
+OFFLINE_DESC = GENERIC_DESC            # was "This channel is offline. The next event will be listed when the stream is updated."
 # Description used instead when the slot's last event has finished (an empty slot keeps OFFLINE_DESC)
-FINISHED_DESC = "This event has now finished. The next event will be listed when the stream is updated."
+FINISHED_DESC = GENERIC_DESC           # was "This event has now finished. The next event ..." until 8 Nov 2026
 # 7 Nov 2026 (user): the blocks of a FINISHED event no longer repeat the event's name (\"Hong Kong: Day 6 WTA 250\" kept showing in the grid until
 # the stream changed): the TITLE says it has finished, the name moves to the description. An empty slot is unchanged (\"No event streaming now\").
-FINISHED_TITLE = "This event has now finished"
+FINISHED_TITLE = GENERIC_TITLE         # was "This event has now finished" until 8 Nov 2026
 
 
 def finished_desc(ev):
-    name = offline_title(ev).rstrip(" .")
-    return f"{name} has now finished. The next event will be listed when the stream is updated." if name else FINISHED_DESC
+    return FINISHED_DESC       # 8 Nov 2026 (user): the generic text only - the event's name is already in the stream's name
 
 # Time zone of the times in names that start with a country code, e.g. "US (Peacock 003) | ..."
 COUNTRY_TZ = {
@@ -225,7 +228,10 @@ ENDED_FILLER_HOURS = HORIZON_HOURS   # a finished/empty slot shows "Channel is o
 # Leeds until 04:00 the next day for Liverpool v. Arsenal). Trade-off: these rows go blank this long
 # after the last refresh. Slots are matched by id prefix, like REAL_START_GROUPS.
 SHORT_ENDED_GROUPS = ("paramount", "peacock")
-SHORT_ENDED_HOURS = 4
+SHORT_ENDED_HOURS = HORIZON_HOURS   # 8 Nov 2026 (user: Peacock / Paramount+ rows "No information available"): was 4 h, so
+                               # the rows went blank 4 h after PlaylistLabs' last fetch. Since 7-8 Nov a refresh REPLACES
+                               # the blocks that are in the new file, so the old "stuck behind finished blocks" worry is
+                               # gone. Set 4 to go back.
 def ended_filler_hours(slot_id):
     return SHORT_ENDED_HOURS if slot_id.lower().startswith(SHORT_ENDED_GROUPS) else ENDED_FILLER_HOURS
 # Name sections that are labels, not event information ("8K EXCLUSIVE", "4K", "HD" ...)

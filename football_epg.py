@@ -410,6 +410,30 @@ ENDED_FILLER = True
 ENDED_TEXT = "This match has now ended"
 ENDED_HOURS = 12                  # how long the blocks run after the final whistle
 ENDED_LOOKAHEAD_HOURS = 36        # only for a last match that ends within this many hours from now (or already has)
+# Idle tail (8 Nov 2026, user: F1, Setanta, Goal Rush, Scottish clubs "missing" = "No information available"): a channel
+# used to END at its last listed match / session, and PlaylistLabs keeps the file it fetched until the next refresh, so
+# every channel whose last block had finished went blank for hours. Now every such channel runs on to the end of the
+# window (TAIL_DAYS) in TAIL_HOURS blocks with plain wording (a club: "No further ... match listed"; a stream channel:
+# its own idle text). A show dict can carry "tail": (title, sub, desc, comp); club channels get one automatically.
+TAIL_DAYS = DUMMY_DAYS
+TAIL_HOURS = 24
+TAIL_TITLE = "No further {comp} match listed in the next {days} days"
+TAIL_SUB = "No match scheduled"
+TAIL_DESC = ("{club}: no further {comp} match is listed in the next {days} days. This channel updates as soon as a "
+             "match is added.")
+# 8 Nov 2026 (user): stream / pop-up channels with nothing on (F1, Setanta, Sky Sports+, Goal Rush) use the same generic
+# listing as the events guide's finished and empty slots.
+# Cup / European club channels (8 Nov 2026, user: Carabao Cup, UEFA competitions "missing"): a club's FA Cup / Carabao Cup /
+# Champions / Europa / Conference League channel only exists while it has a match in the window, so between rounds the id
+# vanished and every row linked to it read "No information available". football_cup_channels.json lists every such id the
+# guide has held; one with no match now gets plain "no match listed" blocks (cup_idle_channels).
+CUP_CHANNELS_FILE = "football_cup_channels.json"
+CUP_IDLE_DESC = ("{club}: no {comp} match is listed in the next {days} days. This channel updates as soon as a match is "
+                 "added.")
+GENERIC_TITLE = "No streams available at this time"
+GENERIC_DESC = "No streams available at this time. Check back later."
+GOAL_RUSH_IDLE_TITLE = GENERIC_TITLE
+GOAL_RUSH_IDLE_DESC = GENERIC_DESC
 FILLER_STYLE = "plain"    # "plain": "Brentford v Liverpool (Sat 17 Oct, 15:00)"
                           # "next":  "Next: Brentford v Liverpool - Sat 17 Oct, 15:00"
 
@@ -762,6 +786,10 @@ def uefa_channel(matches, suffix):
                         live_title=f"🔴 LIVE – {UEFA_CHANNEL_TITLE}",
                         early_minutes=MATCH_EARLY_MINUTES)
     if chan[3]:
+        if not chan[3][-1].get("filler_only"):      # after the last UEFA kick-off of the window: say so, to the end
+            chan[3][-1]["tail"] = (f"No further UEFA match listed in the next {TAIL_DAYS} days", NO_MATCH_SUB,
+                                   f"No further UEFA club competition match is listed in the next {TAIL_DAYS} days. "
+                                   "This channel updates as soon as a match is added.", UEFA_CHANNEL_NAME)
         return chan
     # No UEFA kick-offs in range: UEFA_IDLE_HOURS of plain blocks so the channel isn't empty
     now = datetime.now(LONDON)
@@ -907,6 +935,8 @@ def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_la
             "fixed_desc": desc, "filler_sub": "", "live_sub": "",
             "live_title": f"🔴 LIVE - {label}: {what} ({count})",
         })
+    if shows:                                  # after the last block: the idle text to the end of the window
+        shows[-1]["tail"] = (GENERIC_TITLE, "", GENERIC_DESC, "Sports")
     return (chan_id, name, None, shows) if shows else None
 
 
@@ -1070,6 +1100,8 @@ def f1_channels(days):
                 "fixed_desc": desc, "filler_sub": "", "live_sub": "",
                 "live_title": f"🔴 LIVE - F1 {r['gp']}: {r['name']}",
             })
+        if shows:        # after the last session of the window: the plain wording, so the channel never goes blank
+            shows[-1]["tail"] = (GENERIC_TITLE, "", GENERIC_DESC, "Sports")
         out.append((cid, cname, None, shows))
     print(f"  F1: {len(rows)} sessions from {src}")
     return out
@@ -1092,6 +1124,36 @@ def dummy_channel(chan_id, name, title, desc):
         })
         t = stop
     return (chan_id, name, None, shows)
+
+
+def cup_idle_channels(have, suffix):
+    """Channels listed in CUP_CHANNELS_FILE that have no match in the window (not in `have`): TAIL_HOURS blocks saying so."""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), CUP_CHANNELS_FILE)
+    try:
+        with open(path, encoding="utf-8") as f:
+            entries = json.load(f).get("channels", [])
+    except (OSError, ValueError) as e:
+        print(f"  NOTE: {CUP_CHANNELS_FILE} not read ({e}) - cup channels without a match are left out")
+        return []
+    now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
+    end = now + timedelta(days=TAIL_DAYS)
+    out = []
+    for e in entries:
+        cid, name, comp = f"{e['id']}{suffix}", e["name"], e["comp"]
+        if cid in have:
+            continue
+        club = name[:-len(comp)].strip() if name.endswith(comp) else name
+        fmt = {"club": club, "comp": comp, "days": TAIL_DAYS}
+        shows, t = [], now
+        while t < end:
+            b = min(t + timedelta(hours=TAIL_HOURS), end)
+            shows.append({"comp": comp, "title": NO_MATCH_TITLE.format(**fmt), "sub": NO_MATCH_SUB,
+                          "desc": CUP_IDLE_DESC.format(**fmt), "start": t, "stop": b, "when": "", "teams": [],
+                          "tbc": False, "live_sub": NO_MATCH_SUB, "not_live": True})
+            t = b
+        out.append((cid, name, None, shows))
+    print(f"  Cup channels without a match in the window: {len(out)} of {len(entries)} listed")
+    return out
 
 
 def no_match_channel(chan_id, name, logo, club, comp):
@@ -1168,7 +1230,12 @@ def goal_rush_channel(matches, suffix, now=None):
         else:
             print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game not listed - generic description")
         shows.append(show)
-    return (f"{GOAL_RUSH_ID}{suffix}", "Goal Rush", None, shows)   # kept even if empty
+    if not shows:               # no Premier League matchday in the window: plain blocks, never an empty channel
+        return dummy_channel(f"{GOAL_RUSH_ID}{suffix}", "Goal Rush", GOAL_RUSH_IDLE_TITLE,
+                             GOAL_RUSH_IDLE_DESC)
+    if not shows[-1].get("filler_only"):      # (a pre-matchday filler stays open for the main-game blocks)
+        shows[-1]["tail"] = (GOAL_RUSH_IDLE_TITLE, "", GOAL_RUSH_IDLE_DESC, "Sports")
+    return (f"{GOAL_RUSH_ID}{suffix}", "Goal Rush", None, shows)
 
 
 def build_channels(matches, english, suffix, english_only):
@@ -1222,36 +1289,32 @@ def build_channels(matches, english, suffix, english_only):
         channels.append((f"{cid}{suffix}", cname, logo, shows))
     if not f1:                                         # OpenF1 down: the old placeholder blocks, same ids
         for fid in ("Formula1.live", "f1.uk"):
-            channels.append(dummy_channel(f"{fid}{suffix}", "Formula 1", "Stream is live at event time only.",
-                                          "Live F1 Grand Prix events and races."))
+            channels.append(dummy_channel(f"{fid}{suffix}", "Formula 1", GENERIC_TITLE, GENERIC_DESC))
         for fid in ("F1Drivers.live", "f1drivers.uk"):
-            channels.append(dummy_channel(f"{fid}{suffix}", "F1 Drivers", "Stream is live at event time only.",
-                                          "Formula 1 driver onboard cameras, live during race weekends."))
+            channels.append(dummy_channel(f"{fid}{suffix}", "F1 Drivers", GENERIC_TITLE, GENERIC_DESC))
     if SKYPLUS_CHANNEL:
         sp = skyplus_channel(matches)
         if sp:
             channels.append((f"{sp[0]}{suffix}",) + sp[1:])
         else:                                          # no EFL in range: plain blocks, same id
-            channels.append(dummy_channel(f"{SKYPLUS_ID}{suffix}", SKYPLUS_NAME,
-                                          "Live at event time only.", SKYPLUS_IDLE))
+            channels.append(dummy_channel(f"{SKYPLUS_ID}{suffix}", SKYPLUS_NAME, GENERIC_TITLE, GENERIC_DESC))
     if SETANTA_CHANNEL:
         st = setanta_channel(matches)
         if st:
             channels.append((f"{st[0]}{suffix}",) + st[1:])
         else:                                          # no matches in range: plain blocks, same id
-            channels.append(dummy_channel(f"{SETANTA_ID}{suffix}", SETANTA_NAME,
-                                          "Live at event time only.", SETANTA_IDLE))
+            channels.append(dummy_channel(f"{SETANTA_ID}{suffix}", SETANTA_NAME, GENERIC_TITLE, GENERIC_DESC))
     if PLPLUS_CHANNEL:
         pl = plplus_channel(matches)
         if pl:
             channels.append((f"{pl[0]}{suffix}",) + pl[1:])
         else:                                          # no matches in range: plain blocks, same id
-            channels.append(dummy_channel(f"{PLPLUS_ID}{suffix}", PLPLUS_NAME,
-                                          "Live at event time only.", PLPLUS_IDLE))
+            channels.append(dummy_channel(f"{PLPLUS_ID}{suffix}", PLPLUS_NAME, GENERIC_TITLE, GENERIC_DESC))
     if GOAL_RUSH:
         gr = goal_rush_channel(matches, suffix)
         if gr:
             channels.append(gr)
+    channels.extend(cup_idle_channels({c[0] for c in channels}, suffix))
     channels.sort(key=lambda c: c[1])
     return channels
 
@@ -1340,7 +1403,7 @@ def build_xmltv(channels, filler):
 
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     count = 0
-    for chan_id, _, _, ms in channels:
+    for chan_id, cname, _, ms in channels:
         last_stop = None
         for m in ms:
             start, stop = m["start"], m["stop"]
@@ -1390,14 +1453,31 @@ def build_xmltv(channels, filler):
                           m["comp"], live=not m.get("not_live"))
             count += 1
             last_stop = stop
+        ended_to = last_stop
         if (filler and ENDED_FILLER and ms and last_stop and ms[-1].get("teams") and not ms[-1].get("filler_only")
                 and last_stop <= now + timedelta(hours=ENDED_LOOKAHEAD_HOURS)
                 and last_stop + timedelta(hours=ENDED_HOURS) > now):
             m = ms[-1]       # the channel's last match: say it has ended instead of going blank
-            for a, b in filler_blocks(max(last_stop, now), last_stop + timedelta(hours=ENDED_HOURS)):
+            ended_to = last_stop + timedelta(hours=ENDED_HOURS)
+            for a, b in filler_blocks(max(last_stop, now), ended_to):
                 add_programme(tv, chan_id, a, b, f"{m['title']} ({m.get('when', '')})".replace(" ()", ""),
                               ENDED_TEXT, ENDED_TEXT + ".", m["comp"])
                 count += 1
+        if filler and ms and last_stop and not ms[-1].get("filler_only"):
+            # idle tail (8 Nov 2026): carry on to the end of the window instead of ending at the last block
+            tail = ms[-1].get("tail")
+            if tail is None and ms[-1].get("teams"):                  # a club channel: no further match
+                comp = ms[-1]["comp"]
+                club = cname[:-len(comp)].strip() if comp and cname.endswith(comp) else cname
+                tail = (TAIL_TITLE.format(comp=comp, days=TAIL_DAYS), TAIL_SUB,
+                        TAIL_DESC.format(club=club, comp=comp, days=TAIL_DAYS), comp)
+            if tail:
+                t, end = max(ended_to, now), now + timedelta(days=TAIL_DAYS)
+                while t < end:
+                    b = min(t + timedelta(hours=TAIL_HOURS), end)
+                    add_programme(tv, chan_id, t, b, tail[0], tail[1], tail[2], tail[3])
+                    count += 1
+                    t = b
     return tv, count
 
 

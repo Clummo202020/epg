@@ -1,0 +1,865 @@
+{
+ "_note": "Channels that exist only while their club has a match in the window (cups, European competitions). Each id listed here that has no match gets plain 'no match listed' blocks instead of vanishing, so a PlaylistLabs row never reads 'No information available'. Seeded 8 Nov 2026 from every such id the guide held in Oct-Nov 2026. To add one: a line {id, name, comp}.",
+ "channels": [
+  {
+   "id": "Arsenal.Carabao",
+   "name": "Arsenal Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Aston.Villa.Carabao",
+   "name": "Aston Villa Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Bournemouth.Carabao",
+   "name": "Bournemouth Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Bradford.City.Carabao",
+   "name": "Bradford City Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Brentford.Carabao",
+   "name": "Brentford Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Brighton.Hove.Albion.Carabao",
+   "name": "Brighton &amp; Hove Albion Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Chelsea.Carabao",
+   "name": "Chelsea Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Crystal.Palace.Carabao",
+   "name": "Crystal Palace Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Everton.Carabao",
+   "name": "Everton Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Fleetwood.Town.Carabao",
+   "name": "Fleetwood Town Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Fulham.Carabao",
+   "name": "Fulham Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Liverpool.Carabao",
+   "name": "Liverpool Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Manchester.City.Carabao",
+   "name": "Manchester City Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Newcastle.Utd.Carabao",
+   "name": "Newcastle Utd Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Peterborough.Utd.Carabao",
+   "name": "Peterborough Utd Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "Sunderland.Carabao",
+   "name": "Sunderland Carabao Cup",
+   "comp": "Carabao Cup"
+  },
+  {
+   "id": "AEK.Athens.ChampsLge",
+   "name": "AEK Athens UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "AS.Roma.ChampsLge",
+   "name": "AS Roma UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Arsenal.ChampsLge",
+   "name": "Arsenal UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Aston.Villa.ChampsLge",
+   "name": "Aston Villa UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Atletico.Madrid.ChampsLge",
+   "name": "Atlético Madrid UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Barcelona.ChampsLge",
+   "name": "Barcelona UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Bayern.Munich.ChampsLge",
+   "name": "Bayern Munich UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Bodo.Glimt.ChampsLge",
+   "name": "Bodo/Glimt UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Borussia.Dortmund.ChampsLge",
+   "name": "Borussia Dortmund UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Club.Brugge.ChampsLge",
+   "name": "Club Brugge UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Como.ChampsLge",
+   "name": "Como UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "FC.Porto.ChampsLge",
+   "name": "FC Porto UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Fenerbahce.ChampsLge",
+   "name": "Fenerbahce UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Feyenoord.ChampsLge",
+   "name": "Feyenoord UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Galatasaray.ChampsLge",
+   "name": "Galatasaray UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Internazionale.ChampsLge",
+   "name": "Internazionale UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "LASK.Linz.ChampsLge",
+   "name": "LASK Linz UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Lens.ChampsLge",
+   "name": "Lens UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Lille.ChampsLge",
+   "name": "Lille UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Liverpool.ChampsLge",
+   "name": "Liverpool UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Manchester.City.ChampsLge",
+   "name": "Manchester City UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Manchester.Utd.ChampsLge",
+   "name": "Manchester Utd UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Napoli.ChampsLge",
+   "name": "Napoli UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "PSV.Eindhoven.ChampsLge",
+   "name": "PSV Eindhoven UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Paris.Saint.Germain.ChampsLge",
+   "name": "Paris Saint-Germain UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "RB.Leipzig.ChampsLge",
+   "name": "RB Leipzig UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Real.Betis.ChampsLge",
+   "name": "Real Betis UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Real.Madrid.ChampsLge",
+   "name": "Real Madrid UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Sabah.FK.ChampsLge",
+   "name": "Sabah FK UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Shakhtar.Donetsk.ChampsLge",
+   "name": "Shakhtar Donetsk UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Slavia.Prague.ChampsLge",
+   "name": "Slavia Prague UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Slovan.Bratislava.ChampsLge",
+   "name": "Slovan Bratislava UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Sporting.CP.ChampsLge",
+   "name": "Sporting CP UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "VfB.Stuttgart.ChampsLge",
+   "name": "VfB Stuttgart UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Viking.FK.ChampsLge",
+   "name": "Viking FK UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "Villarreal.ChampsLge",
+   "name": "Villarreal UEFA Champions League",
+   "comp": "UEFA Champions League"
+  },
+  {
+   "id": "AGF.ConfLeague",
+   "name": "AGF UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "AS.Monaco.ConfLeague",
+   "name": "AS Monaco UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Ajax.Amsterdam.ConfLeague",
+   "name": "Ajax Amsterdam UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Atalanta.ConfLeague",
+   "name": "Atalanta UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Borac.Banja.Luka.ConfLeague",
+   "name": "Borac Banja Luka UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Braga.ConfLeague",
+   "name": "Braga UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Brighton.Hove.Albion.ConfLeague",
+   "name": "Brighton &amp; Hove Albion UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "CSKA.Sofia.ConfLeague",
+   "name": "CSKA Sofia UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "CSU.Craiova.ConfLeague",
+   "name": "CSU Craiova UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Egnatia.ConfLeague",
+   "name": "Egnatia UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "F.C.Kbenhavn.ConfLeague",
+   "name": "F.C. København UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "FC.Lugano.ConfLeague",
+   "name": "FC Lugano UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "FC.Midtjylland.ConfLeague",
+   "name": "FC Midtjylland UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "FC.Nordsjlland.ConfLeague",
+   "name": "FC Nordsjælland UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "FC.Thun.ConfLeague",
+   "name": "FC Thun UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "FC.Twente.ConfLeague",
+   "name": "FC Twente UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Getafe.ConfLeague",
+   "name": "Getafe UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Hajduk.Split.ConfLeague",
+   "name": "Hajduk Split UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Heart.of.Midlothian.ConfLeague",
+   "name": "Heart of Midlothian UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Iberia.1999.ConfLeague",
+   "name": "Iberia 1999 UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Inter.D.Escaldes.ConfLeague",
+   "name": "Inter D'Escaldes UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Jablonec.ConfLeague",
+   "name": "Jablonec UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "KAA.Gent.ConfLeague",
+   "name": "KAA Gent UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Kairat.Almaty.ConfLeague",
+   "name": "Kairat Almaty UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Kauno.Zalgiris.ConfLeague",
+   "name": "Kauno Zalgiris UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "KuPS.Kuopio.ConfLeague",
+   "name": "KuPS Kuopio UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Lincoln.Red.Imps.ConfLeague",
+   "name": "Lincoln Red Imps UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Mjallby.AIF.ConfLeague",
+   "name": "Mjällby AIF UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Pafos.ConfLeague",
+   "name": "Pafos UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Panathinaikos.ConfLeague",
+   "name": "Panathinaikos UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Red.Star.Belgrade.ConfLeague",
+   "name": "Red Star Belgrade UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Riga.FC.ConfLeague",
+   "name": "Riga FC UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "SC.Freiburg.ConfLeague",
+   "name": "SC Freiburg UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "SK.Brann.ConfLeague",
+   "name": "SK Brann UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Sint.Truidense.ConfLeague",
+   "name": "Sint-Truidense UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "Trabzonspor.ConfLeague",
+   "name": "Trabzonspor UEFA Conference League",
+   "comp": "UEFA Conference League"
+  },
+  {
+   "id": "AC.Milan.Europa",
+   "name": "AC Milan UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "AZ.Alkmaar.Europa",
+   "name": "AZ Alkmaar UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Anderlecht.Europa",
+   "name": "Anderlecht UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Ararat.Armenia.Europa",
+   "name": "Ararat-Armenia UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Bayer.Leverkusen.Europa",
+   "name": "Bayer Leverkusen UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Benfica.Europa",
+   "name": "Benfica UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Besiktas.Europa",
+   "name": "Besiktas UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Bournemouth.Europa",
+   "name": "Bournemouth UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Celta.Vigo.Europa",
+   "name": "Celta Vigo UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Celtic.Europa",
+   "name": "Celtic UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Crystal.Palace.Europa",
+   "name": "Crystal Palace UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Dinamo.Zagreb.Europa",
+   "name": "Dinamo Zagreb UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Ferencvaros.Europa",
+   "name": "Ferencvaros UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Hapoel.Be.er.Europa",
+   "name": "Hapoel Be'er UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Jagiellonia.Bialystok.Europa",
+   "name": "Jagiellonia Bialystok UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Juventus.Europa",
+   "name": "Juventus UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Lech.Poznan.Europa",
+   "name": "Lech Poznan UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Levski.Sofia.Europa",
+   "name": "Levski Sofia UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Lillestrom.Europa",
+   "name": "Lillestrom UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Lyon.Europa",
+   "name": "Lyon UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Marseille.Europa",
+   "name": "Marseille UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "NEC.Nijmegen.Europa",
+   "name": "NEC Nijmegen UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "NK.Celje.Europa",
+   "name": "NK Celje UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "OFI.Crete.Europa",
+   "name": "OFI Crete UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Olympiacos.Europa",
+   "name": "Olympiacos UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Omonia.Nicosia.Europa",
+   "name": "Omonia Nicosia UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "RB.Salzburg.Europa",
+   "name": "RB Salzburg UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Real.Sociedad.Europa",
+   "name": "Real Sociedad UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "SK.Sturm.Graz.Europa",
+   "name": "SK Sturm Graz UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Sparta.Prague.Europa",
+   "name": "Sparta Prague UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Stade.Rennais.Europa",
+   "name": "Stade Rennais UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Sunderland.Europa",
+   "name": "Sunderland UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "TSG.Hoffenheim.Europa",
+   "name": "TSG Hoffenheim UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Torreense.Europa",
+   "name": "Torreense UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Union.St.Gilloise.Europa",
+   "name": "Union St.-Gilloise UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "Viktoria.Plzen.Europa",
+   "name": "Viktoria Plzen UEFA Europa League",
+   "comp": "UEFA Europa League"
+  },
+  {
+   "id": "AFC.Wimbledon.FACup",
+   "name": "AFC Wimbledon FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Accrington.Stanley.FACup",
+   "name": "Accrington Stanley FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Barnet.FACup",
+   "name": "Barnet FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Barnsley.FACup",
+   "name": "Barnsley FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Blackpool.FACup",
+   "name": "Blackpool FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Bradford.City.FACup",
+   "name": "Bradford City FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Bristol.Rovers.FACup",
+   "name": "Bristol Rovers FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Bromley.FACup",
+   "name": "Bromley FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Burton.Albion.FACup",
+   "name": "Burton Albion FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Cambridge.Utd.FACup",
+   "name": "Cambridge Utd FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Cheltenham.Town.FACup",
+   "name": "Cheltenham Town FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Chesterfield.FACup",
+   "name": "Chesterfield FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Colchester.Utd.FACup",
+   "name": "Colchester Utd FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Crawley.Town.FACup",
+   "name": "Crawley Town FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Crewe.Alexandra.FACup",
+   "name": "Crewe Alexandra FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Doncaster.Rovers.FACup",
+   "name": "Doncaster Rovers FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Exeter.City.FACup",
+   "name": "Exeter City FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Fleetwood.Town.FACup",
+   "name": "Fleetwood Town FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Gillingham.FACup",
+   "name": "Gillingham FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Grimsby.Town.FACup",
+   "name": "Grimsby Town FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Huddersfield.Town.FACup",
+   "name": "Huddersfield Town FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Leicester.City.FACup",
+   "name": "Leicester City FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Leyton.Orient.FACup",
+   "name": "Leyton Orient FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Luton.Town.FACup",
+   "name": "Luton Town FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "MK.Dons.FACup",
+   "name": "MK Dons FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Mansfield.Town.FACup",
+   "name": "Mansfield Town FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Newport.County.FACup",
+   "name": "Newport County FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Northampton.Town.FACup",
+   "name": "Northampton Town FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Notts.County.FACup",
+   "name": "Notts County FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Oldham.Athletic.FACup",
+   "name": "Oldham Athletic FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Oxford.Utd.FACup",
+   "name": "Oxford Utd FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Peterborough.Utd.FACup",
+   "name": "Peterborough Utd FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Plymouth.Argyle.FACup",
+   "name": "Plymouth Argyle FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Port.Vale.FACup",
+   "name": "Port Vale FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Reading.FACup",
+   "name": "Reading FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Rochdale.FACup",
+   "name": "Rochdale FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Rotherham.Utd.FACup",
+   "name": "Rotherham Utd FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Salford.City.FACup",
+   "name": "Salford City FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Sheffield.Wednesday.FACup",
+   "name": "Sheffield Wednesday FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Shrewsbury.Town.FACup",
+   "name": "Shrewsbury Town FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Stevenage.FACup",
+   "name": "Stevenage FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Stockport.County.FACup",
+   "name": "Stockport County FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Swindon.Town.FACup",
+   "name": "Swindon Town FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Tranmere.Rovers.FACup",
+   "name": "Tranmere Rovers FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Walsall.FACup",
+   "name": "Walsall FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Wigan.Athletic.FACup",
+   "name": "Wigan Athletic FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "Wycombe.Wanderers.FACup",
+   "name": "Wycombe Wanderers FA Cup",
+   "comp": "FA Cup"
+  },
+  {
+   "id": "York.City.FACup",
+   "name": "York City FA Cup",
+   "comp": "FA Cup"
+  }
+ ]
+}

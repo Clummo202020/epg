@@ -143,6 +143,23 @@ NO_MATCH_SUB = "No match scheduled"
 NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. This could be a cup weekend, an "
                  "international break or a fixture that has not been announced yet. This channel updates as soon as "
                  "a match is added.")
+# "This match has now ended" and the idle tail (8 Nov 2026, user: Celtic, Hearts, Falkirk, Kilmarnock "missing"): a club
+# channel used to END at the final whistle of its last match, so it went blank until the next run reached PlaylistLabs.
+# Now it says the match has ended for ENDED_HOURS, then "No further ... match listed" to the end of the window.
+# Cup channels (8 Nov 2026): a club's Scottish Cup / League Cup / Challenge Cup channel only exists while it has a match in the
+# window, so between rounds the id vanished (23 Challenge Cup channels on 4 Nov). scottish_cup_channels.json lists every
+# such id the guide has held; one with no match now gets plain "no match listed" blocks (cup_idle_channels).
+CUP_CHANNELS_FILE = "scottish_cup_channels.json"
+CUP_IDLE_DESC = ("{club}: no {comp} match is listed in the next {days} days. This channel updates as soon as a match is "
+                 "added.")
+ENDED_TEXT = "This match has now ended"
+ENDED_HOURS = 12
+ENDED_LOOKAHEAD_HOURS = 36
+TAIL_DAYS = NO_MATCH_DAYS
+TAIL_HOURS = 24
+TAIL_TITLE = "No further {comp} match listed in the next {days} days"
+TAIL_DESC = ("{club}: no further {comp} match is listed in the next {days} days. This channel updates as soon as a "
+             "match is added.")
 CLUB_LEAGUE = {}          # {team_id: competition name}, filled by fetch_english_clubs
 DOCTYPE = True            # write the standard XMLTV DOCTYPE line
 COUNTDOWN = False         # add "- kick-off in 2d 23h" to each filler block
@@ -364,8 +381,38 @@ def build_channels(matches, english, suffix, english_only):
                 continue
             channels.append(no_match_channel(f"{bases[tid]}.{COMPETITIONS[comp][1]}{suffix}",
                                              f"{names[tid]} {comp}", logos.get(tid), names[tid], comp))
+    channels.extend(cup_idle_channels({c[0] for c in channels}, suffix))
     channels.sort(key=lambda c: c[1])
     return channels
+
+
+def cup_idle_channels(have, suffix):
+    """Channels listed in CUP_CHANNELS_FILE that have no match in the window (not in `have`): TAIL_HOURS blocks saying so."""
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), CUP_CHANNELS_FILE)
+    try:
+        with open(path, encoding="utf-8") as f:
+            entries = json.load(f).get("channels", [])
+    except (OSError, ValueError) as e:
+        print(f"  NOTE: {CUP_CHANNELS_FILE} not read ({e}) - cup channels without a match are left out")
+        return []
+    now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
+    end = now + timedelta(days=TAIL_DAYS)
+    out = []
+    for e in entries:
+        cid, name, comp = f"{e['id']}{suffix}", e["name"], e["comp"]
+        if cid in have:
+            continue
+        club = name[:-len(comp)].strip() if name.endswith(comp) else name
+        fmt = {"club": club, "comp": comp, "days": TAIL_DAYS}
+        shows, t = [], now
+        while t < end:
+            b = min(t + timedelta(hours=TAIL_HOURS), end)
+            shows.append({"no_match": True, "comp": comp, "title": NO_MATCH_TITLE.format(**fmt), "sub": NO_MATCH_SUB,
+                          "desc": CUP_IDLE_DESC.format(**fmt), "start": t, "stop": b, "when": "", "teams": []})
+            t = b
+        out.append((cid, name, None, shows))
+    print(f"  Cup channels without a match in the window: {len(out)} of {len(entries)} listed")
+    return out
 
 
 def no_match_channel(chan_id, name, logo, club, comp):
@@ -468,7 +515,7 @@ def build_xmltv(channels, filler):
 
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     count = 0
-    for chan_id, _, _, ms in channels:
+    for chan_id, cname, _, ms in channels:
         last_stop = None
         for m in ms:
             if m.get("no_match"):                      # "no match listed" block: not live, no filler logic
@@ -502,6 +549,25 @@ def build_xmltv(channels, filler):
                           m["comp"], live=True)
             count += 1
             last_stop = stop
+        if filler and ms and last_stop and ms[-1].get("teams") and not ms[-1].get("no_match"):
+            m = ms[-1]
+            comp = m["comp"]
+            club = cname[:-len(comp)].strip() if comp and cname.endswith(comp) else cname
+            ended_to = last_stop
+            if (last_stop <= now + timedelta(hours=ENDED_LOOKAHEAD_HOURS)
+                    and last_stop + timedelta(hours=ENDED_HOURS) > now):
+                ended_to = last_stop + timedelta(hours=ENDED_HOURS)
+                for a, b in filler_blocks(max(last_stop, now), ended_to):
+                    add_programme(tv, chan_id, a, b, f"{m['title']} ({m.get('when', '')})".replace(" ()", ""),
+                                  ENDED_TEXT, ENDED_TEXT + ".", comp)
+                    count += 1
+            t, end = max(ended_to, now), now + timedelta(days=TAIL_DAYS)
+            while t < end:                                # carry on to the end of the window
+                b = min(t + timedelta(hours=TAIL_HOURS), end)
+                add_programme(tv, chan_id, t, b, TAIL_TITLE.format(comp=comp, days=TAIL_DAYS), NO_MATCH_SUB,
+                              TAIL_DESC.format(club=club, comp=comp, days=TAIL_DAYS), comp)
+                count += 1
+                t = b
     return tv, count
 
 

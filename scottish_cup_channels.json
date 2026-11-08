@@ -1,0 +1,190 @@
+{
+ "_note": "Channels that exist only while their club has a match in the window (cups, European competitions). Each id listed here that has no match gets plain 'no match listed' blocks instead of vanishing, so a PlaylistLabs row never reads 'No information available'. Seeded 8 Nov 2026 from every such id the guide held in Oct-Nov 2026. To add one: a line {id, name, comp}.",
+ "channels": [
+  {
+   "id": "Alloa.Athletic.ChallengeCup",
+   "name": "Alloa Athletic Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Annan.Athletic.ChallengeCup",
+   "name": "Annan Athletic Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Arbroath.ChallengeCup",
+   "name": "Arbroath Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Ayr.Utd.ChallengeCup",
+   "name": "Ayr Utd Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Cove.Rangers.ChallengeCup",
+   "name": "Cove Rangers Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Dunfermline.Athletic.ChallengeCup",
+   "name": "Dunfermline Athletic Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "East.Kilbride.ChallengeCup",
+   "name": "East Kilbride Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Edinburgh.City.ChallengeCup",
+   "name": "Edinburgh City Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Elgin.City.ChallengeCup",
+   "name": "Elgin City Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Greenock.Morton.ChallengeCup",
+   "name": "Greenock Morton Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Hamilton.Academical.ChallengeCup",
+   "name": "Hamilton Academical Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Inverness.CT.ChallengeCup",
+   "name": "Inverness CT Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Kelty.Hearts.ChallengeCup",
+   "name": "Kelty Hearts Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Livingston.ChallengeCup",
+   "name": "Livingston Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Montrose.ChallengeCup",
+   "name": "Montrose Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Partick.Thistle.ChallengeCup",
+   "name": "Partick Thistle Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Peterhead.ChallengeCup",
+   "name": "Peterhead Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Queen.of.the.South.ChallengeCup",
+   "name": "Queen of the South Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Queen.s.Park.ChallengeCup",
+   "name": "Queen's Park Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Raith.Rovers.ChallengeCup",
+   "name": "Raith Rovers Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Spartans.FC.ChallengeCup",
+   "name": "Spartans FC Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Stenhousemuir.ChallengeCup",
+   "name": "Stenhousemuir Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Stirling.Albion.ChallengeCup",
+   "name": "Stirling Albion Scottish Challenge Cup",
+   "comp": "Scottish Challenge Cup"
+  },
+  {
+   "id": "Annan.Athletic.ScotCup",
+   "name": "Annan Athletic Scottish Cup",
+   "comp": "Scottish Cup"
+  },
+  {
+   "id": "Clyde.ScotCup",
+   "name": "Clyde Scottish Cup",
+   "comp": "Scottish Cup"
+  },
+  {
+   "id": "Dumbarton.ScotCup",
+   "name": "Dumbarton Scottish Cup",
+   "comp": "Scottish Cup"
+  },
+  {
+   "id": "Edinburgh.City.ScotCup",
+   "name": "Edinburgh City Scottish Cup",
+   "comp": "Scottish Cup"
+  },
+  {
+   "id": "Elgin.City.ScotCup",
+   "name": "Elgin City Scottish Cup",
+   "comp": "Scottish Cup"
+  },
+  {
+   "id": "Forfar.Athletic.ScotCup",
+   "name": "Forfar Athletic Scottish Cup",
+   "comp": "Scottish Cup"
+  },
+  {
+   "id": "Kelty.Hearts.ScotCup",
+   "name": "Kelty Hearts Scottish Cup",
+   "comp": "Scottish Cup"
+  },
+  {
+   "id": "Spartans.FC.ScotCup",
+   "name": "Spartans FC Scottish Cup",
+   "comp": "Scottish Cup"
+  },
+  {
+   "id": "Stirling.Albion.ScotCup",
+   "name": "Stirling Albion Scottish Cup",
+   "comp": "Scottish Cup"
+  },
+  {
+   "id": "Stranraer.ScotCup",
+   "name": "Stranraer Scottish Cup",
+   "comp": "Scottish Cup"
+  },
+  {
+   "id": "Aberdeen.ScotLgeCup",
+   "name": "Aberdeen Scottish League Cup",
+   "comp": "Scottish League Cup"
+  },
+  {
+   "id": "Hearts.ScotLgeCup",
+   "name": "Hearts Scottish League Cup",
+   "comp": "Scottish League Cup"
+  },
+  {
+   "id": "Hibernian.ScotLgeCup",
+   "name": "Hibernian Scottish League Cup",
+   "comp": "Scottish League Cup"
+  },
+  {
+   "id": "Rangers.ScotLgeCup",
+   "name": "Rangers Scottish League Cup",
+   "comp": "Scottish League Cup"
+  }
+ ]
+}
