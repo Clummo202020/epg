@@ -3555,6 +3555,27 @@ def fix_caps(text):
     return CAPS_WORD.sub(repl, text)
 
 
+# "and" written as a lone capital letter (8 Nov 2026, user: "Europa E Conference League Remix" -> "Europa & Conference League Remix"). fix_caps
+# leaves single letters alone, so the Italian / Portuguese "E" and Spanish "Y" of an ALL CAPS title stayed capitals. Not touched after a
+# label word ("Group E", "Pool B"), because there the letter is a name.
+AND_LABEL_WORDS = {"group", "pool", "class", "series", "division", "zone", "category", "tier", "level", "type", "section", "part",
+                   "grade", "vitamin", "plan", "option", "team", "squad", "league", "cup", "tour", "round", "heat", "court", "lane", "stage"}
+AND_LETTER_RE = re.compile(r"([^\W\d_][\w'\u2019.-]*) ([EY]) (?=[^\W\d_a-z])")
+
+
+def conj_and(text):
+    """Italian / Portuguese "E" and Spanish "Y" (a lone capital between two words) -> "&"."""
+    if not text or " E " not in text and " Y " not in text:
+        return text
+    return AND_LETTER_RE.sub(lambda m: m.group(0) if m.group(1).lower().strip(".-") in AND_LABEL_WORDS
+                             else f"{m.group(1)} & ", text)
+
+
+def it_and(text):
+    """On the Italian channels a lower-case "e" between two capitalised words is "and" too: "Europa e Conference League" -> "Europa &"."""
+    return re.sub(r"(?<=[^\W\d_]) e (?=[A-Z])", " & ", text) if text else text
+
+
 # --------------------------------------------------------------------------
 # Hong Kong: Now TV's public guide (nowplayer.now.com), sports channels
 # --------------------------------------------------------------------------
@@ -6312,6 +6333,9 @@ def build_xmltv(records, suffix, minutes):
             sub = en(ev.get("sub") or "") or None
             if rec.get("fix_caps"):
                 title, sub = fix_caps(title), fix_caps(sub) or None
+            title, sub = conj_and(title), (conj_and(sub) if sub else sub)          # "Europa E Conference" -> "Europa & Conference"
+            if rec["place"] == "Italy" and not ev.get("no_translate"):
+                title, sub = it_and(title), (it_and(sub) if sub else sub)          # (not a "Team A - Team B" match title)
             if cid.startswith("CY."):
                 title = cy_versus(title, bool(ev.get("live")))   # "A - B 3/11/26" -> "A vs B 3/11/26"
             elif cid.startswith(X_VS_REGIONS):
