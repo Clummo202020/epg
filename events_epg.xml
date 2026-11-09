@@ -4377,7 +4377,7 @@
     <display-name lang="en">PDC Board 8</display-name>
   </channel>
   <channel id="PPVEVENT1.us">
-    <display-name lang="en">PPV EVENT 01: PRELIMS MVPW 07 Turhan vs Baumgardner (11.8 5:15 PM ET)</display-name>
+    <display-name lang="en">PPV EVENT 01: WWE Monday Night RAW (11.9 8:00 PM ET)</display-name>
     <display-name lang="en">PPV EVENT 01</display-name>
   </channel>
   <channel id="PPVEVENT10.us">
@@ -4421,7 +4421,7 @@
     <display-name lang="en">PPV EVENT 19</display-name>
   </channel>
   <channel id="PPVEVENT2.us">
-    <display-name lang="en">PPV EVENT 02: MVPW 07 Turhan vs Baumgardner (11.8 8:30 PM ET)</display-name>
+    <display-name lang="en">PPV EVENT 02</display-name>
     <display-name lang="en">PPV EVENT 02</display-name>
   </channel>
   <channel id="PPVEVENT20.us">
@@ -4465,7 +4465,7 @@
     <display-name lang="en">PPV EVENT 29</display-name>
   </channel>
   <channel id="PPVEVENT3.us">
-    <display-name lang="en">PPV EVENT 03: Fury Challenger Series 17 (11.8 5:30 PM ET)</display-name>
+    <display-name lang="en">PPV EVENT 03</display-name>
     <display-name lang="en">PPV EVENT 03</display-name>
   </channel>
   <channel id="PPVEVENT30.us">
@@ -4509,7 +4509,7 @@
     <display-name lang="en">PPV EVENT 39</display-name>
   </channel>
   <channel id="PPVEVENT4.us">
-    <display-name lang="en">PPV EVENT 04: Shooto Brazil 141 (11.8 7:00 PM ET)</display-name>
+    <display-name lang="en">PPV EVENT 04</display-name>
     <display-name lang="en">PPV EVENT 04</display-name>
   </channel>
   <channel id="PPVEVENT40.us">
@@ -4553,7 +4553,7 @@
     <display-name lang="en">PPV EVENT 49</display-name>
   </channel>
   <channel id="PPVEVENT5.us">
-    <display-name lang="en">PPV EVENT 05: Grand National Cross Country Buckwheat 100 (11.8 9:30 AM ET)</display-name>
+    <display-name lang="en">PPV EVENT 05</display-name>
     <display-name lang="en">PPV EVENT 05</display-name>
   </channel>
   <channel id="PPVEVENT50.us">
@@ -4561,11 +4561,11 @@
     <display-name lang="en">PPV EVENT 50</display-name>
   </channel>
   <channel id="PPVEVENT6.us">
-    <display-name lang="en">PPV EVENT 06: Veterans Race of Remembrance at Virginia international (11.8 8:30 AM ET)</display-name>
+    <display-name lang="en">PPV EVENT 06</display-name>
     <display-name lang="en">PPV EVENT 06</display-name>
   </channel>
   <channel id="PPVEVENT7.us">
-    <display-name lang="en">PPV EVENT 07: World of Outlaws Awards Celebration (11.8 7:00 PM ET)</display-name>
+    <display-name lang="en">PPV EVENT 07</display-name>
     <display-name lang="en">PPV EVENT 07</display-name>
   </channel>
   <channel id="PPVEVENT8.us">
@@ -14986,6 +14986,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261110110000 +0000" stop="20261110130000 +0000" channel="MPeacock004.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110130000 +0000" stop="20261110150000 +0000" channel="MPeacock004.us">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -30355,97 +30360,88 @@
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261109013000 +0000" stop="20261109033000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">🔴 LIVE: MVPW 07 Turhan vs Baumgardner</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">MVPW 07 Turhan vs Baumgardner. PPV Event. Starts Mon 9 Nov, 1:30am UK time.</desc>
+  <programme start="20261110124500 +0000" stop="20261110144500 +0000" channel="NFL15.uk">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109120000 +0000" stop="20261109140000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 10 Nov, 1am)</title>
+    <sub-title lang="en">Next Event: WWE</sub-title>
+    <desc lang="en">Next Event: WWE Monday Night RAW. Starts Tue 10 Nov, 1am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109140000 +0000" stop="20261109160000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 10 Nov, 1am)</title>
+    <sub-title lang="en">Next Event: WWE</sub-title>
+    <desc lang="en">Next Event: WWE Monday Night RAW. Starts Tue 10 Nov, 1am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109160000 +0000" stop="20261109180000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 10 Nov, 1am)</title>
+    <sub-title lang="en">Next Event: WWE</sub-title>
+    <desc lang="en">Next Event: WWE Monday Night RAW. Starts Tue 10 Nov, 1am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109180000 +0000" stop="20261109200000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 10 Nov, 1am)</title>
+    <sub-title lang="en">Next Event: WWE</sub-title>
+    <desc lang="en">Next Event: WWE Monday Night RAW. Starts Tue 10 Nov, 1am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109200000 +0000" stop="20261109220000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 10 Nov, 1am)</title>
+    <sub-title lang="en">Next Event: WWE</sub-title>
+    <desc lang="en">Next Event: WWE Monday Night RAW. Starts Tue 10 Nov, 1am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109220000 +0000" stop="20261110000000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">WWE Monday Night RAW (Tue 10 Nov, 1am)</title>
+    <sub-title lang="en">Next Event: WWE</sub-title>
+    <desc lang="en">Next Event: WWE Monday Night RAW. Starts Tue 10 Nov, 1am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110000000 +0000" stop="20261110010000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">Next up: LIVE – WWE Monday Night RAW (1am)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. WWE Monday Night RAW starts at 1am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110010000 +0000" stop="20261110030000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">🔴 LIVE: WWE Monday Night RAW</title>
+    <sub-title lang="en">WWE</sub-title>
+    <desc lang="en">WWE Monday Night RAW. Starts Tue 10 Nov, 1am UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261109033000 +0000" stop="20261109053000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">🔴 LIVE: MVPW 07 Turhan vs Baumgardner</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">MVPW 07 Turhan vs Baumgardner. PPV Event. Starts Mon 9 Nov, 1:30am UK time.</desc>
+  <programme start="20261110030000 +0000" stop="20261110050000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">🔴 LIVE: WWE Monday Night RAW</title>
+    <sub-title lang="en">WWE</sub-title>
+    <desc lang="en">WWE Monday Night RAW. Starts Tue 10 Nov, 1am UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261109053000 +0000" stop="20261109073000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">🔴 LIVE: MVPW 07 Turhan vs Baumgardner</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">MVPW 07 Turhan vs Baumgardner. PPV Event. Starts Mon 9 Nov, 1:30am UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261109073000 +0000" stop="20261109093000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">🔴 LIVE: MVPW 07 Turhan vs Baumgardner</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">MVPW 07 Turhan vs Baumgardner. PPV Event. Starts Mon 9 Nov, 1:30am UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261109093000 +0000" stop="20261109113000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">🔴 LIVE: MVPW 07 Turhan vs Baumgardner</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">MVPW 07 Turhan vs Baumgardner. PPV Event. Starts Mon 9 Nov, 1:30am UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261109113000 +0000" stop="20261109133000 +0000" channel="PPVEVENT2.us">
+  <programme start="20261110050000 +0000" stop="20261110070000 +0000" channel="PPVEVENT1.us">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261109133000 +0000" stop="20261109153000 +0000" channel="PPVEVENT2.us">
+  <programme start="20261110070000 +0000" stop="20261110090000 +0000" channel="PPVEVENT1.us">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261109153000 +0000" stop="20261109173000 +0000" channel="PPVEVENT2.us">
+  <programme start="20261110090000 +0000" stop="20261110110000 +0000" channel="PPVEVENT1.us">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261109173000 +0000" stop="20261109193000 +0000" channel="PPVEVENT2.us">
+  <programme start="20261110110000 +0000" stop="20261110130000 +0000" channel="PPVEVENT1.us">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261109193000 +0000" stop="20261109213000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261109213000 +0000" stop="20261109233000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261109233000 +0000" stop="20261110013000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110013000 +0000" stop="20261110033000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110033000 +0000" stop="20261110053000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110053000 +0000" stop="20261110073000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110073000 +0000" stop="20261110093000 +0000" channel="PPVEVENT2.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110093000 +0000" stop="20261110113000 +0000" channel="PPVEVENT2.us">
+  <programme start="20261110130000 +0000" stop="20261110150000 +0000" channel="PPVEVENT1.us">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -37688,6 +37684,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261110110000 +0000" stop="20261110130000 +0000" channel="Peacock016.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110130000 +0000" stop="20261110150000 +0000" channel="Peacock016.us">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -50395,6 +50396,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261110110000 +0000" stop="20261110130000 +0000" channel="TSN034.ca">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110130000 +0000" stop="20261110150000 +0000" channel="TSN034.ca">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -104081,71 +104087,6 @@
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261109120000 +0000" stop="20261109140000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261109140000 +0000" stop="20261109160000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261109160000 +0000" stop="20261109180000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261109180000 +0000" stop="20261109200000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261109200000 +0000" stop="20261109220000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261109220000 +0000" stop="20261110000000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110000000 +0000" stop="20261110020000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110020000 +0000" stop="20261110040000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110040000 +0000" stop="20261110060000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110060000 +0000" stop="20261110080000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110080000 +0000" stop="20261110100000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110100000 +0000" stop="20261110120000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261110120000 +0000" stop="20261110140000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No streams available at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261109120000 +0000" stop="20261109140000 +0000" channel="PPVEVENT10.us">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
@@ -104792,6 +104733,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261110120000 +0000" stop="20261110140000 +0000" channel="PPVEVENT19.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109120000 +0000" stop="20261109140000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109140000 +0000" stop="20261109160000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109160000 +0000" stop="20261109180000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109180000 +0000" stop="20261109200000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109200000 +0000" stop="20261109220000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261109220000 +0000" stop="20261110000000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110000000 +0000" stop="20261110020000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110020000 +0000" stop="20261110040000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110040000 +0000" stop="20261110060000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110060000 +0000" stop="20261110080000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110080000 +0000" stop="20261110100000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110100000 +0000" stop="20261110120000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">No streams available at this time</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261110120000 +0000" stop="20261110140000 +0000" channel="PPVEVENT2.us">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
