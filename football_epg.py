@@ -100,6 +100,12 @@ UEFA_COMPETITIONS = ["UEFA Champions League", "UEFA Europa League", "UEFA Confer
 # clubs' Champions League channels, and (as with La Liga / MLS) it exists even when the team has no match in the window.
 OTHER_LEAGUES = ["La Liga", "MLS", "UEFA Nations League"]
 NATIONS_COMP = "UEFA Nations League"
+# 9 Nov 2026 (user): a Nations League match with no home nation (England on ITV, Scotland / Wales / N. Ireland on BBC) is not on
+# a regular UK / Irish TV channel - UK viewers get it pay-per-view on Prime Video (confirmed on Prime's own sports page for 12-13 Nov),
+# so its description says so.
+NATIONS_HOME_NATIONS = {"england", "scotland", "wales", "northern ireland",
+                        "republic of ireland", "ireland"}       # Republic of Ireland: RTE 2 / Virgin Media (user, 9 Nov)
+NATIONS_PRIME_NOTE = "This match may be available on Amazon Prime Video."
 NATIONS_NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. This channel updates as soon as a "
                          "match is added.")
 
@@ -644,6 +650,10 @@ def collect_matches(events_by_comp, match_minutes):
                 city = (venue.get("address") or {}).get("city")
                 desc.append(f"{venue['fullName']}{', ' + city if city else ''}.")
             desc.append("Kick-off time to be confirmed." if tbc else f"Kick-off: {ko:%H:%M}.")
+            if comp_name == NATIONS_COMP and not ({short_name(h.get("displayName")).strip().lower(),
+                                                    short_name(a.get("displayName")).strip().lower()}
+                                                   & NATIONS_HOME_NATIONS):
+                desc.append(NATIONS_PRIME_NOTE)         # not on ITV / BBC: Prime Video pay-per-view
 
             matches.append({
                 "comp": comp_name, "title": title, "sub": sub, "desc": utd(" ".join(desc)),
