@@ -112,10 +112,10 @@ def offline_title(ev):
     return name or OFFLINE_TITLE
 OFFLINE_DESC = GENERIC_DESC            # was "This channel is offline. The next event will be listed when the stream is updated."
 # Description used instead when the slot's last event has finished (an empty slot keeps OFFLINE_DESC)
-FINISHED_DESC = GENERIC_DESC           # was "This event has now finished. The next event ..." until 8 Nov 2026
+FINISHED_DESC = GENERIC_DESC           # was "<event> has now finished. The next event will be listed when the stream is updated." until 8 Nov 2026
 # 7 Nov 2026 (user): the blocks of a FINISHED event no longer repeat the event's name (\"Hong Kong: Day 6 WTA 250\" kept showing in the grid until
 # the stream changed): the TITLE says it has finished, the name moves to the description. An empty slot is unchanged (\"No event streaming now\").
-FINISHED_TITLE = GENERIC_TITLE         # was "This event has now finished" until 8 Nov 2026
+FINISHED_TITLE = "This event has now finished"   # 8 Nov 2026 briefly generic; restored 9 Nov (user): finished = this title + the generic description, an EMPTY slot = the generic title
 
 
 def finished_desc(ev):

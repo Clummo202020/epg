@@ -100,12 +100,8 @@ UEFA_COMPETITIONS = ["UEFA Champions League", "UEFA Europa League", "UEFA Confer
 # clubs' Champions League channels, and (as with La Liga / MLS) it exists even when the team has no match in the window.
 OTHER_LEAGUES = ["La Liga", "MLS", "UEFA Nations League"]
 NATIONS_COMP = "UEFA Nations League"
-# 9 Nov 2026 (user): a Nations League match with no home nation (England on ITV, Scotland / Wales / N. Ireland on BBC) is not on
-# a regular UK / Irish TV channel - UK viewers get it pay-per-view on Prime Video (confirmed on Prime's own sports page for 12-13 Nov),
-# so its description says so.
-NATIONS_HOME_NATIONS = {"england", "scotland", "wales", "northern ireland",
-                        "republic of ireland", "ireland"}       # Republic of Ireland: RTE 2 / Virgin Media (user, 9 Nov)
-NATIONS_PRIME_NOTE = "This match may be available on Amazon Prime Video."
+# 9 Nov 2026 (user): a Nations League match CONFIRMED on Prime Video (LiveOnSat lists "Prime Video UK PPV" for it - see
+# add_prime_from_liveonsat) says so in its description; nothing is said for a match that is not confirmed.
 NATIONS_NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. This channel updates as soon as a "
                          "match is added.")
 
@@ -650,10 +646,6 @@ def collect_matches(events_by_comp, match_minutes):
                 city = (venue.get("address") or {}).get("city")
                 desc.append(f"{venue['fullName']}{', ' + city if city else ''}.")
             desc.append("Kick-off time to be confirmed." if tbc else f"Kick-off: {ko:%H:%M}.")
-            if comp_name == NATIONS_COMP and not ({short_name(h.get("displayName")).strip().lower(),
-                                                    short_name(a.get("displayName")).strip().lower()}
-                                                   & NATIONS_HOME_NATIONS):
-                desc.append(NATIONS_PRIME_NOTE)         # not on ITV / BBC: Prime Video pay-per-view
 
             matches.append({
                 "comp": comp_name, "title": title, "sub": sub, "desc": utd(" ".join(desc)),
@@ -720,6 +712,26 @@ def load_main_game_listings():
 TEAM_ALIASES = {
     "manchester utd": ["man utd", "man united", "manchester united"],
     "manchester city": ["man city"],
+    "republic of ireland": ["ireland"], "ireland": ["republic of ireland"],
+    "czechia": ["czech republic"], "czech republic": ["czechia"],
+    "turkiye": ["turkey"], "turkey": ["turkiye"],
+    "bosnia herzegovina": ["bosnia & herzegovina", "bosnia"],
+    "paris saint germain": ["psg", "paris sg"],
+    "psg": ["paris saint germain", "paris saint-germain"],
+    "inter": ["inter milan", "internazionale"],
+    "inter milan": ["inter", "internazionale"],
+    "internazionale": ["inter", "inter milan"],
+    "bayern munich": ["bayern", "fc bayern munchen", "bayern munchen"],
+    "bayern munchen": ["bayern munich", "bayern"],
+    "atletico madrid": ["atletico", "atl madrid"],
+    "bodo/glimt": ["bodo glimt"], "bodo glimt": ["bodo/glimt"],
+    "sporting cp": ["sporting lisbon", "sporting"],
+    "sporting lisbon": ["sporting cp"],
+    "psv eindhoven": ["psv"], "psv": ["psv eindhoven"],
+    "rc lens": ["lens"], "lens": ["rc lens"],
+    "vfb stuttgart": ["stuttgart"], "stuttgart": ["vfb stuttgart"],
+    "roma": ["as roma"], "as roma": ["roma"],
+    "fenerbahce": ["fenerbahce"],
     "tottenham hotspur": ["spurs", "tottenham"],
     "wolves": ["wolverhampton"],
     "nottingham forest": ["nott'm forest", "notts forest", "forest"],
@@ -739,8 +751,12 @@ AMBIGUOUS_FIRST_WORDS = {"manchester", "west", "sheffield", "nottingham", "aston
                          "queens", "afc", "fc", "real", "athletic", "bristol"}
 
 
+_NORM_LETTERS = str.maketrans({"ø": "o", "Ø": "O", "æ": "ae", "Æ": "AE", "ß": "ss", "đ": "d", "Đ": "D", "ł": "l", "Ł": "L",
+                               "ı": "i", "œ": "oe", "Œ": "OE"})      # letters NFKD does not turn into ASCII (Bodø, Fenerbahçe ok)
+
+
 def _norm(text):
-    text = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode().lower()
+    text = unicodedata.normalize("NFKD", (text or "").translate(_NORM_LETTERS)).encode("ascii", "ignore").decode().lower()
     return " " + re.sub(r"[^a-z0-9'&]+", " ", text.replace(" and ", " & ")) + " "
 
 
@@ -752,6 +768,219 @@ def _aliases(name):
     if first and first not in AMBIGUOUS_FIRST_WORDS and len(first) > 3:
         names.add(first)
     return [_norm(a) for a in names if a]
+
+
+# --------------------------------------------------------------------------
+# UK broadcasters from live-footballontv.com (9 Nov 2026, user): "Some Champions League matches are on Prime Video (and HBO
+# Max)". The site lists, per competition, every match with its UK broadcasters (TNT Sports N, Amazon Prime Video, HBO Max,
+# or TBC). A match found there (same London date and kick-off time, both teams) gets "Live on TNT Sports 2 and HBO Max." added to
+# its description. Matches not found, "TBC" and a failed download add nothing. Add a competition = one line in TV_PAGES.
+# --------------------------------------------------------------------------
+TV_LISTINGS = True                  # False = leave the broadcaster lines out
+TV_PAGES = {
+    "UEFA Champions League": "https://www.live-footballontv.com/live-champions-league-football-on-tv.html",
+}
+TV_NOTE = "This match is also live on {chs}."
+TV_ONLY = ["Amazon Prime Video"]    # only these broadcasters are mentioned (user, 9 Nov: nothing for TNT Sports / HBO Max); None = all
+TV_TIME_TOLERANCE_MIN = 20
+
+
+def fetch_text(url):
+    req = urllib.request.Request(url, headers=HEADERS)
+    with urllib.request.urlopen(req, timeout=60, context=CTX) as resp:
+        return resp.read().decode("utf-8", "replace")
+
+
+def parse_tv_page(html_text):
+    """[{start (London datetime), home, away, channels [str]}] from a live-footballontv.com competition page."""
+    import html as _html
+    out, day = [], None
+    for m in re.finditer(r'<div class="fixture-date">(.*?)</div>|<div class="fixture">(.*?)</div></div></div>',
+                         html_text, re.S):
+        if m.group(1) is not None:
+            d = re.search(r"(\d{1,2})(?:st|nd|rd|th)?\s+([A-Za-z]+)\s+(\d{4})", _html.unescape(m.group(1)))
+            day = None
+            if d:
+                try:
+                    day = datetime.strptime(f"{d.group(1)} {d.group(2)} {d.group(3)}", "%d %B %Y").date()
+                except ValueError:
+                    day = None
+            continue
+        if day is None:
+            continue
+        f = m.group(2)
+        tm = re.search(r'class="fixture__time">\s*(\d{1,2}):(\d{2})', f)
+        tt = re.search(r'class="fixture__teams">(.*?)</div>', f, re.S)
+        if not tm or not tt:
+            continue
+        teams = re.split(r"\s+v\s+", _html.unescape(re.sub(r"<[^>]+>", "", tt.group(1))).strip(), maxsplit=1)
+        if len(teams) != 2:
+            continue
+        chs = []
+        for c in re.findall(r'<span class="channel-pill"[^>]*>(.*?)</span>', f, re.S):
+            c = _html.unescape(re.sub(r"<[^>]+>", "", c)).strip()
+            c = re.sub(r"\s*\bTBC\b$", "", c).strip()          # "TNT Sports TBC" -> "TNT Sports"; "TBC" -> nothing
+            if c and c not in chs:
+                chs.append(c)
+        start = datetime(day.year, day.month, day.day, int(tm.group(1)), int(tm.group(2)), tzinfo=LONDON)
+        out.append({"start": start, "home": teams[0].strip(), "away": teams[1].strip(), "channels": chs})
+    return out
+
+
+def _same_team(espn_name, site_name):
+    a, b = set(_aliases(short_name(espn_name))), set(_aliases(site_name))
+    return bool(a & b)
+
+
+def tv_find(m, listings):
+    """The parsed listing for match m (same kick-off time, both teams), or None."""
+    if len(m.get("teams") or []) != 2:
+        return None
+    h, a = (t.get("displayName") for t in m["teams"])
+    for L in listings:
+        if abs((L["start"] - m["start"]).total_seconds()) > TV_TIME_TOLERANCE_MIN * 60:
+            continue
+        if _same_team(h, L["home"]) and _same_team(a, L["away"]):
+            return L
+    return None
+
+
+def tv_note_for(m, listings):
+    """The 'Live on ...' sentence for match m from the parsed listings, or '' (not listed, or broadcaster still TBC)."""
+    L = tv_find(m, listings)
+    if not L or not L["channels"]:
+        return ""
+    chs = [c for c in L["channels"] if TV_ONLY is None or c in TV_ONLY]
+    if not chs:
+        return ""
+    names = chs[0] if len(chs) == 1 else ", ".join(chs[:-1]) + " and " + chs[-1]
+    return TV_NOTE.format(chs=names)
+
+
+def add_tv_listings(matches, pages=None, fetch=None):
+    """Append the broadcaster sentence to the description of every match found on the TV pages. Never raises."""
+    if not TV_LISTINGS:
+        return 0
+    fetch, pages, added = fetch or fetch_text, pages or TV_PAGES, 0
+    for comp, url in pages.items():
+        ms = [m for m in matches if m["comp"] == comp and not m.get("tbc")]
+        if not ms:
+            continue
+        try:
+            listings = parse_tv_page(fetch(url))
+        except Exception as e:                                   # site down / blocked / changed: no lines, no failure
+            print(f"  TV listings ({comp}): not read ({e})")
+            continue
+        n = 0
+        for m in ms:
+            note = tv_note_for(m, listings)
+            if note and note not in m["desc"]:
+                m["desc"] = f"{m['desc']} {note}"
+                n += 1
+        added += n
+        print(f"  TV listings ({comp}): {len(listings)} fixtures read, {n} of {len(ms)} matches given a line")
+        miss = [m["title"] for m in ms if tv_find(m, listings) is None and
+                any(L["start"].date() == m["start"].astimezone(LONDON).date() for L in listings)]
+        if miss:                                                  # on a listed date but no match found: name differences
+            print(f"  TV listings ({comp}): no broadcaster found for: {', '.join(miss[:8])}")
+    return added
+
+
+LOS_FILE = "liveonsat_fixtures.json"          # written by the LiveOnSat workflow, same repo folder as this script
+LOS_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/liveonsat_fixtures.json"
+WTM_PRIME_URL = "https://www.wheresthematch.com/live-football-on-amazon/"     # every football match on Amazon Prime Video (UK)
+PRIME_COMPS = {"UEFA Nations League": "UEFA Nations League",       # our competition -> competition name on the sources
+               "UEFA Champions League": "UEFA Champions League"}
+PRIME_CHANNEL = "Prime Video UK"              # LiveOnSat names it "Prime Video UK PPV"
+
+
+def load_los_data():
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), LOS_FILE)
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return json.loads(fetch_text(LOS_URL))
+
+
+def parse_wtm_prime(html_text):
+    """[(start UTC, home, away, competition)] for every Amazon Prime Video row on wheresthematch.com's Prime football page
+    (times on the page are UK time)."""
+    import html as _html
+    out = []
+    for row in re.findall(r"<tr[^>]*>(.*?)</tr>", html_text, re.S):
+        if 'class="fixture-details"' not in row or "Amazon Prime" not in row:
+            continue
+        ft = re.search(r'<span class="fixture">(.*?)</span><span class="fixture-comp">', row, re.S)
+        cp = re.search(r'<span class="fixture-comp">.*?<a [^>]*>(.*?)</a>', row, re.S)
+        dt_ = re.search(r'class="start-details"><span>[A-Za-z]+\s+(\d{1,2})(?:st|nd|rd|th)?\s+([A-Za-z]+)\s+(\d{4})</span>'
+                        r'.*?<em>(\d{1,2}):(\d{2})</em>', row, re.S)
+        if not (ft and cp and dt_):
+            continue
+        teams = re.split(r"\s+v\s+", _html.unescape(re.sub(r"<[^>]+>", "", ft.group(1))).strip(), maxsplit=1)
+        if len(teams) != 2:
+            continue
+        try:
+            d = datetime.strptime(f"{dt_.group(1)} {dt_.group(2)} {dt_.group(3)}", "%d %B %Y").date()
+        except ValueError:
+            continue
+        start = datetime(d.year, d.month, d.day, int(dt_.group(4)), int(dt_.group(5)), tzinfo=LONDON).astimezone(timezone.utc)
+        out.append((start, teams[0].strip(), teams[1].strip(), _html.unescape(re.sub(r"<[^>]+>", "", cp.group(1))).strip()))
+    return out
+
+
+def prime_from_liveonsat(data):
+    """[(start UTC, home, away, competition)] for LiveOnSat fixtures listed on Prime Video UK."""
+    out = []
+    for f in ((data or {}).get("football") or {}).get("fixtures") or []:
+        if any(PRIME_CHANNEL in c for c in f.get("ch") or []):
+            try:
+                out.append((parse_espn_time(f["start"]), f.get("a") or "", f.get("b") or "", f.get("comp") or ""))
+            except (KeyError, ValueError):
+                pass
+    return out
+
+
+def add_prime(matches, wtm_html=None, los_data=None):
+    """Append "This match is also live on Amazon Prime Video." to every PRIME_COMPS match CONFIRMED on Prime Video by either
+    source (wheresthematch.com's Prime page, LiveOnSat): same kick-off within TV_TIME_TOLERANCE_MIN minutes, both teams.
+    A match not confirmed gets nothing; a source that cannot be read is skipped. Never raises."""
+    if not TV_LISTINGS:
+        return 0
+    ms = [m for m in matches if m["comp"] in PRIME_COMPS and not m.get("tbc") and len(m.get("teams") or []) == 2]
+    if not ms:
+        return 0
+    sources = []
+    try:
+        sources.append(("wheresthematch.com", parse_wtm_prime(wtm_html if wtm_html is not None else fetch_text(WTM_PRIME_URL))))
+    except Exception as e:
+        print(f"  Prime Video (wheresthematch.com): not read ({e})")
+    try:
+        sources.append(("LiveOnSat", prime_from_liveonsat(los_data if los_data is not None else load_los_data())))
+    except Exception as e:
+        print(f"  Prime Video (LiveOnSat): not read ({e})")
+    confirmed = {}                                   # id(match) -> True
+    for name, rows in sources:
+        n = 0
+        for m in ms:
+            h, a = (t.get("displayName") for t in m["teams"])
+            for start, fh, fa, comp in rows:
+                if comp and PRIME_COMPS[m["comp"]].lower() not in comp.lower():
+                    continue
+                if abs((start - m["start"]).total_seconds()) > TV_TIME_TOLERANCE_MIN * 60:
+                    continue
+                if _same_team(h, fh) and _same_team(a, fa):
+                    confirmed[id(m)] = True
+                    n += 1
+                    break
+        print(f"  Prime Video ({name}): {len(rows)} fixtures listed, {n} of {len(ms)} matches confirmed")
+    added = 0
+    note = TV_NOTE.format(chs="Amazon Prime Video")
+    for m in ms:
+        if confirmed.get(id(m)) and note not in m["desc"]:
+            m["desc"] = f"{m['desc']} {note}"
+            added += 1
+    return added
 
 
 def find_main_game(ms, listings):
@@ -1583,6 +1812,8 @@ def main():
         OTHER_CLUBS.update(fetch_other_league_clubs())
     events = fetch_events(start, end)
     matches = collect_matches(events, args.minutes)
+    add_tv_listings(matches)
+    add_prime(matches)
     if not (args.run_ids or args.suffix is not None):
         run_no, suffix = None, ""
     else:
