@@ -16,7 +16,7 @@
   "seen": "2026-11-08T15:07:30+00:00"
  },
  "_timing": {
-  "updated": "2026-11-09T07:54:19Z",
+  "updated": "2026-11-09T08:07:19Z",
   "groups": {
    "AppleMLS": {
     "n": 0,
@@ -24,35 +24,35 @@
     "applied": true
    },
    "CASOCCERPPV": {
-    "n": 9,
-    "missed": 23,
+    "n": 3,
+    "missed": 29,
     "applied": true,
     "median": 45,
     "min": 45,
-    "max": 49
+    "max": 45
    },
    "DAZNPPV": {
-    "n": 14,
-    "missed": 114,
+    "n": 6,
+    "missed": 122,
     "applied": false,
     "median": 0,
     "min": 0,
     "max": 330
    },
    "ESPNPPV": {
-    "n": 25,
-    "missed": 117,
+    "n": 5,
+    "missed": 137,
     "applied": false,
     "median": -5,
     "min": -30,
-    "max": 60
+    "max": -5
    },
    "MAXPPV": {
-    "n": 8,
-    "missed": 3,
+    "n": 2,
+    "missed": 9,
     "applied": false,
-    "median": -15,
-    "min": -45,
+    "median": -8,
+    "min": -15,
     "max": 0
    },
    "MLB": {
@@ -90,44 +90,41 @@
     "applied": false
    },
    "Paramount": {
-    "n": 39,
-    "missed": 135,
+    "n": 29,
+    "missed": 145,
     "applied": true,
     "median": 45,
     "min": 15,
     "max": 50
    },
    "Peacock": {
-    "n": 10,
-    "missed": 56,
+    "n": 7,
+    "missed": 59,
     "applied": true,
-    "median": -20,
+    "median": -30,
     "min": -80,
     "max": 30
    },
    "SN": {
-    "n": 21,
-    "missed": 0,
+    "n": 12,
+    "missed": 9,
     "applied": false,
-    "median": -10,
+    "median": 0,
     "min": -10,
     "max": 0
    },
    "STAN": {
-    "n": 37,
-    "missed": 40,
+    "n": 21,
+    "missed": 56,
     "applied": true,
     "median": -10,
-    "min": -60,
-    "max": 0
+    "min": -55,
+    "max": -5
    },
    "TSN": {
-    "n": 4,
-    "missed": 32,
-    "applied": false,
-    "median": -12,
-    "min": -12,
-    "max": 0
+    "n": 0,
+    "missed": 36,
+    "applied": false
    },
    "UEFA": {
     "n": 0,
@@ -136,7 +133,7 @@
    }
   },
   "check": {
-   "compared": 23,
+   "compared": 7,
    "differ": 0,
    "examples": []
   }
