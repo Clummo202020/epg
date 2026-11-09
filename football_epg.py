@@ -96,7 +96,12 @@ ENGLISH_LEAGUES = ["Premier League", "Championship", "League One", "League Two"]
 UEFA_COMPETITIONS = ["UEFA Champions League", "UEFA Europa League", "UEFA Conference League"]
 
 # Foreign leagues in which every club gets a channel (--english-only skips them).
-OTHER_LEAGUES = ["La Liga", "MLS"]
+# 8 Nov 2026 (user): "UEFA Nations League" joins the list - every national team gets a <Country>.NationsLge channel, like the
+# clubs' Champions League channels, and (as with La Liga / MLS) it exists even when the team has no match in the window.
+OTHER_LEAGUES = ["La Liga", "MLS", "UEFA Nations League"]
+NATIONS_COMP = "UEFA Nations League"
+NATIONS_NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. This channel updates as soon as a "
+                         "match is added.")
 
 # Cup rounds / UEFA stages (ESPN doesn't say which round or matchday a match is in). Each entry is the
 # first UK date of a round; a match gets the latest round that started on or before its
@@ -508,7 +513,7 @@ def fetch_english_clubs():
 
 
 def fetch_other_league_clubs():
-    """{team_id: name} for the clubs of OTHER_LEAGUES (La Liga): their own-league channel exists even without a match."""
+    """{team_id: name} for the clubs of OTHER_LEAGUES (La Liga, MLS, the Nations League's national teams): their own channel exists even without a match."""
     clubs = {}
     for comp in OTHER_LEAGUES:
         slug = COMPETITIONS[comp][0]
@@ -1163,12 +1168,13 @@ def no_match_channel(chan_id, name, logo, club, comp):
     t -= timedelta(hours=t.hour % NO_MATCH_HOURS)
     end = t + timedelta(days=DUMMY_DAYS)
     fmt = {"club": club, "comp": comp, "days": DUMMY_DAYS}
+    desc = (NATIONS_NO_MATCH_DESC if comp == NATIONS_COMP else NO_MATCH_DESC).format(**fmt)   # national teams: no "cup weekend / international break" text
     shows = []
     while t < end:
         stop = t + timedelta(hours=NO_MATCH_HOURS)
         shows.append({
             "comp": comp, "title": NO_MATCH_TITLE.format(**fmt), "sub": NO_MATCH_SUB,
-            "desc": NO_MATCH_DESC.format(**fmt),
+            "desc": desc,
             "start": t.astimezone(timezone.utc), "stop": stop.astimezone(timezone.utc),
             "when": "", "teams": [], "tbc": False, "live_sub": NO_MATCH_SUB, "not_live": True,
         })
