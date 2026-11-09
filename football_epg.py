@@ -266,7 +266,7 @@ MATCH_EARLY_MINUTES = 0
 # Premier League Goal Rush channel: one programme for every slot where at least
 # GOAL_RUSH_MIN Premier League matches kick off at the same time (e.g. Sat 15:00).
 GOAL_RUSH = True                   # False = leave the channel out
-GOAL_RUSH_ID = "GoalRush2.id"
+GOAL_RUSH_ID = "GoalRush3.id"      # 9 Nov 2026 (user): new id so PlaylistLabs loads fresh blocks (was GoalRush2.id)
 GOAL_RUSH_COMP = "Premier League"
 GOAL_RUSH_MIN = 2
 GOAL_RUSH_EARLY_MINUTES = 10       # Goal Rush goes LIVE this many minutes before kick-off
@@ -1062,7 +1062,7 @@ def uefa_channel(matches, suffix):
 # are left out, and kick-offs that overlap (Fri 19:45 + 20:00) share ONE block, so an earlier match no longer
 # disappears from the guide when a later kick-off starts (Newport v Chesterfield, Fri 30 Oct).
 SKYPLUS_CHANNEL = True
-SKYPLUS_ID = "SkySportsPlus2.live"   # was SkySportsPlus.live (30 Oct: new id so PlaylistLabs loads the fixed blocks)
+SKYPLUS_ID = "SkySportsPlus3.live"   # 9 Nov 2026 (user): new id so PlaylistLabs drops the held blocks that still list Nations League (was SkySportsPlus2.live, 30 Oct SkySportsPlus.live)
 SKYPLUS_NAME = "Sky Sports+ streams"
 # 9 Nov 2026 (user): the Nations League is NOT on Sky Sports+ in the UK - the non-home-nation ties are on Prime Video UK (PPV)
 # and England / Wales / Scotland / N. Ireland on ITV / BBC (LiveOnSat + press agree) - so it is no longer listed here; the
