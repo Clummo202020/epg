@@ -296,7 +296,7 @@ UEFA_CHANNEL_TITLE = "Streams are live at match time only."
 # With no UEFA kick-offs in range (between matchdays) the channel gets plain blocks this far
 # ahead instead of nothing. Kept short: PlaylistLabs only adds after the last programme it
 # holds, so the next matchday's live blocks must be able to follow on a later run.
-UEFA_IDLE_HOURS = 24
+UEFA_IDLE_HOURS = 240       # 8 Nov 2026: to the end of the 10-day window (was 24 h, so the channel went blank a day after the last refresh)
 # Generic (all-sport) streaming services: plain 2-hour blocks with the same
 # title and description, not tied to any fixtures. (id, name, title, description)
 DUMMY_CHANNELS = [
