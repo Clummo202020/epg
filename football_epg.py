@@ -426,8 +426,8 @@ TAIL_TITLE = "No further {comp} match listed in the next {days} days"
 TAIL_SUB = "No match scheduled"
 TAIL_DESC = ("{club}: no further {comp} match is listed in the next {days} days. This channel updates as soon as a "
              "match is added.")
-# 8 Nov 2026 (user): stream / pop-up channels with nothing on (F1, Setanta, Sky Sports+, Goal Rush) use the same generic
-# listing as the events guide's finished and empty slots.
+# 8 Nov 2026 (user): F1 with nothing on uses the same generic listing as the events guide's empty slots.
+# (9 Nov, user: Setanta Sports / Sky Sports+ / Premier League+ keep their own "Live at event time only." + description.)
 # Cup / European club channels (8 Nov 2026, user: Carabao Cup, UEFA competitions "missing"): a club's FA Cup / Carabao Cup /
 # Champions / Europa / Conference League channel only exists while it has a match in the window, so between rounds the id
 # vanished and every row linked to it read "No information available". football_cup_channels.json lists every such id the
@@ -437,8 +437,11 @@ CUP_IDLE_DESC = ("{club}: no {comp} match is listed in the next {days} days. Thi
                  "added.")
 GENERIC_TITLE = "No streams available at this time"
 GENERIC_DESC = "No streams available at this time. Check back later."
-GOAL_RUSH_IDLE_TITLE = GENERIC_TITLE
-GOAL_RUSH_IDLE_DESC = GENERIC_DESC
+# 9 Nov 2026 (user: "Goal Rush says no streams available - can we add a generic filler when it isn't a Premier League matchday?")
+GOAL_RUSH_IDLE_TITLE = "Goal Rush"
+GOAL_RUSH_IDLE_DESC = ("Goal Rush. Live action from every Premier League matchday, when two or more matches kick off at the "
+                       "same time. No Premier League matchday is listed at the moment - this channel updates as soon as "
+                       "one is added.")
 FILLER_STYLE = "plain"    # "plain": "Brentford v Liverpool (Sat 17 Oct, 15:00)"
                           # "next":  "Next: Brentford v Liverpool - Sat 17 Oct, 15:00"
 
@@ -822,7 +825,10 @@ def uefa_channel(matches, suffix):
 SKYPLUS_CHANNEL = True
 SKYPLUS_ID = "SkySportsPlus2.live"   # was SkySportsPlus.live (30 Oct: new id so PlaylistLabs loads the fixed blocks)
 SKYPLUS_NAME = "Sky Sports+ streams"
-SKYPLUS_COMPS = ["Championship", "League One", "League Two", "Carabao Cup", "UEFA Nations League"]
+# 9 Nov 2026 (user): the Nations League is NOT on Sky Sports+ in the UK - the non-home-nation ties are on Prime Video UK (PPV)
+# and England / Wales / Scotland / N. Ireland on ITV / BBC (LiveOnSat + press agree) - so it is no longer listed here; the
+# per-country .NationsLge channels list every match. (SKYPLUS_NL_* below are now unused; put "UEFA Nations League" back to restore.)
+SKYPLUS_COMPS = ["Championship", "League One", "League Two", "Carabao Cup"]
 SKYPLUS_EFL = ["Championship", "League One", "League Two", "Carabao Cup"]
 STREAMS_SHORT = {"UEFA Nations League": "Nations League",    # shorter names in titles/descriptions
                  "UEFA Champions League": "Champions League"}
@@ -941,7 +947,7 @@ def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_la
             "live_title": f"🔴 LIVE - {label}: {what} ({count})",
         })
     if shows:                                  # after the last block: the idle text to the end of the window
-        shows[-1]["tail"] = (GENERIC_TITLE, "", GENERIC_DESC, "Sports")
+        shows[-1]["tail"] = ("Live at event time only.", "", idle, "Sports")   # 9 Nov (user): the channel's own description again
     return (chan_id, name, None, shows) if shows else None
 
 
@@ -1303,19 +1309,22 @@ def build_channels(matches, english, suffix, english_only):
         if sp:
             channels.append((f"{sp[0]}{suffix}",) + sp[1:])
         else:                                          # no EFL in range: plain blocks, same id
-            channels.append(dummy_channel(f"{SKYPLUS_ID}{suffix}", SKYPLUS_NAME, GENERIC_TITLE, GENERIC_DESC))
+            channels.append(dummy_channel(f"{SKYPLUS_ID}{suffix}", SKYPLUS_NAME,
+                                          "Live at event time only.", SKYPLUS_IDLE))
     if SETANTA_CHANNEL:
         st = setanta_channel(matches)
         if st:
             channels.append((f"{st[0]}{suffix}",) + st[1:])
         else:                                          # no matches in range: plain blocks, same id
-            channels.append(dummy_channel(f"{SETANTA_ID}{suffix}", SETANTA_NAME, GENERIC_TITLE, GENERIC_DESC))
+            channels.append(dummy_channel(f"{SETANTA_ID}{suffix}", SETANTA_NAME,
+                                          "Live at event time only.", SETANTA_IDLE))
     if PLPLUS_CHANNEL:
         pl = plplus_channel(matches)
         if pl:
             channels.append((f"{pl[0]}{suffix}",) + pl[1:])
         else:                                          # no matches in range: plain blocks, same id
-            channels.append(dummy_channel(f"{PLPLUS_ID}{suffix}", PLPLUS_NAME, GENERIC_TITLE, GENERIC_DESC))
+            channels.append(dummy_channel(f"{PLPLUS_ID}{suffix}", PLPLUS_NAME,
+                                          "Live at event time only.", PLPLUS_IDLE))
     if GOAL_RUSH:
         gr = goal_rush_channel(matches, suffix)
         if gr:
