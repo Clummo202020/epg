@@ -1,48 +1,43 @@
 {
- "CASOCCERPPV1.ca": {
-  "name": "Live | ACC Mens U19 Asia Cup 2026 - 9th Match - Bangladesh U19 vs Malaysia U19 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1",
-  "seen": "2026-11-09T15:37:31+00:00"
- },
  "CASOCCERPPV2.ca": {
   "name": "Live | Sri Lanka tour of Pakistan 2026 - 1st Test - Pakistan vs Sri Lanka | all | 8K EXCLUSIVE | CA: SOCCER PPV 2",
   "seen": "2026-11-09T15:37:31+00:00"
  },
  "CASOCCERPPV3.ca": {
-  "name": "Live | ACC Mens U19 Asia Cup 2026 - 10th Match - Sri Lanka U19 vs Afghanistan U19 | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
-  "seen": "2026-11-09T15:37:31+00:00"
+  "name": "Live | ACC Mens U19 Asia Cup 2026 - 12th Match - Pakistan U19 vs Nepal U19 | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
+  "seen": "2026-11-10T14:37:31+00:00"
  },
  "CASOCCERPPV4.ca": {
-  "name": "Live | Afghanistan vs Zimbabwe in UAE 2026 - 1st Test - Afghanistan vs Zimbabwe | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
-  "seen": "2026-11-08T15:07:30+00:00"
+  "name": "Live | ACC Mens U19 Asia Cup 2026 - 11th Match - India U19 vs United Arab Emirates U19 | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
+  "seen": "2026-11-10T14:37:31+00:00"
+ },
+ "CASOCCERPPV6.ca": {
+  "name": "Live | Womens Big Bash League 2026 - 17th Match - Hobart Hurricanes Women vs Adelaide Strikers Women | all | 8K EXCLUSIVE | CA: SOCCER PPV 6",
+  "seen": "2026-11-10T14:37:31+00:00"
  },
  "_timing": {
-  "updated": "2026-11-10T14:07:20Z",
+  "updated": "2026-11-10T14:37:20Z",
   "groups": {
    "AppleMLS": {
     "n": 4,
     "missed": 6,
     "applied": true,
-    "median": -5,
-    "min": -5,
+    "median": -20,
+    "min": -35,
     "max": -5
    },
    "CASOCCERPPV": {
-    "n": 1,
+    "n": 0,
     "missed": 10,
-    "applied": true,
-    "median": -79,
-    "min": -79,
-    "max": -79
+    "applied": true
    },
    "ESPNPPV": {
-    "n": 0,
-    "missed": 10,
-    "applied": false
-   },
-   "MAXPPV": {
-    "n": 0,
-    "missed": 3,
-    "applied": false
+    "n": 2,
+    "missed": 28,
+    "applied": false,
+    "median": -12,
+    "min": -15,
+    "max": -10
    },
    "MLB": {
     "n": 0,
@@ -63,7 +58,7 @@
     "max": 0
    },
    "NHL": {
-    "n": 3,
+    "n": 7,
     "missed": 1,
     "applied": false,
     "median": 0,
@@ -71,7 +66,7 @@
     "max": 0
    },
    "Paramount": {
-    "n": 17,
+    "n": 22,
     "missed": 75,
     "applied": true,
     "median": 45,
@@ -79,42 +74,42 @@
     "max": 50
    },
    "Peacock": {
-    "n": 10,
-    "missed": 134,
+    "n": 4,
+    "missed": 69,
     "applied": true,
-    "median": -30,
+    "median": -45,
     "min": -80,
-    "max": 30
-   },
-   "SN": {
-    "n": 7,
-    "missed": 3,
-    "applied": false,
-    "median": 0,
-    "min": -30,
     "max": 0
    },
+   "SN": {
+    "n": 9,
+    "missed": 2,
+    "applied": false,
+    "median": 0,
+    "min": 0,
+    "max": 60
+   },
    "STAN": {
-    "n": 58,
-    "missed": 98,
+    "n": 29,
+    "missed": 50,
     "applied": true,
     "median": -10,
     "min": -55,
-    "max": -5
+    "max": -10
    },
    "TSN": {
     "n": 0,
-    "missed": 30,
+    "missed": 42,
     "applied": false
    },
    "UEFA": {
     "n": 0,
-    "missed": 41,
+    "missed": 36,
     "applied": false
    }
   },
   "check": {
-   "compared": 6,
+   "compared": 10,
    "differ": 0,
    "examples": []
   }
