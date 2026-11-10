@@ -16,7 +16,7 @@
   "seen": "2026-11-10T14:37:31+00:00"
  },
  "_timing": {
-  "updated": "2026-11-10T20:07:20Z",
+  "updated": "2026-11-10T20:37:20Z",
   "groups": {
    "AppleMLS": {
     "n": 4,
@@ -90,17 +90,20 @@
     "max": 60
    },
    "STAN": {
-    "n": 29,
-    "missed": 50,
+    "n": 31,
+    "missed": 48,
     "applied": true,
     "median": -10,
     "min": -55,
-    "max": -10
+    "max": 0
    },
    "TSN": {
-    "n": 0,
-    "missed": 42,
-    "applied": false
+    "n": 1,
+    "missed": 41,
+    "applied": false,
+    "median": 0,
+    "min": 0,
+    "max": 0
    },
    "UEFA": {
     "n": 0,
