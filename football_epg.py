@@ -402,6 +402,8 @@ NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. Th
 CLUB_LEAGUE = {}          # {team_id: competition name}, filled by fetch_english_clubs / fetch_other_league_clubs
 OTHER_CLUBS = {}          # {team_id: name} for the clubs of OTHER_LEAGUES
 MLS_SUFFIX = re.compile(r"\s+(?:FC|SC|CF)$")     # MLS club names: drop the trailing FC / SC / CF
+F1_LOOKAHEAD_DAYS = 10   # 10 Nov 2026: how far ahead REAL F1 sessions are listed - kept at 10 (f1_channels used to take DUMMY_DAYS, so cutting
+                         # the placeholder reach to 3 days also cut the F1 session look-ahead to 3 days by mistake)
 DUMMY_DAYS = 3           # 10 Nov 2026: cut from 10 - PlaylistLabs keeps the first blocks it loads for an id (the "also live on
                          # Amazon Prime Video" line never reached the Nations League channels it had already loaded), so a 10-day
                          # placeholder reach could sit in front of a real fixture for days once that fixture enters the window.
@@ -1538,7 +1540,7 @@ def build_channels(matches, english, suffix, english_only):
         channels.append(uefa_channel(matches, suffix))
     for cid, cname, ctitle, cdesc in DUMMY_CHANNELS:
         channels.append(dummy_channel(f"{cid}{suffix}", cname, ctitle, cdesc))
-    f1 = f1_channels(DUMMY_DAYS)
+    f1 = f1_channels(F1_LOOKAHEAD_DAYS)
     for cid, cname, logo, shows in f1:
         channels.append((f"{cid}{suffix}", cname, logo, shows))
     if not f1:                                         # OpenF1 down: the old placeholder blocks, same ids
