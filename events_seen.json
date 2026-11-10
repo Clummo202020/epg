@@ -16,7 +16,7 @@
   "seen": "2026-11-08T15:07:30+00:00"
  },
  "_timing": {
-  "updated": "2026-11-10T04:37:17Z",
+  "updated": "2026-11-10T05:07:19Z",
   "groups": {
    "AppleMLS": {
     "n": 4,
@@ -69,8 +69,8 @@
     "max": 0
    },
    "NHL": {
-    "n": 4,
-    "missed": 0,
+    "n": 3,
+    "missed": 1,
     "applied": false,
     "median": 0,
     "min": 0,
