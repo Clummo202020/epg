@@ -89,6 +89,23 @@ COMPETITIONS = {
     "UEFA Nations League":    ("uefa.nations", "NationsLge"),   # used only by the Sky Sports+ streams channel
 }
 
+# 10 Nov 2026 (user: "just to spoil me", then "same token for the club in all competitions"): the 20 clubs below get a NEW id family
+# token in EVERY competition id - Arsenal.Prem.9rtt, Arsenal.ChampsLge.9rtt, Arsenal.Carabao.9rtt ... - so PlaylistLabs loads their
+# channels fresh (it keeps the first blocks it loads for an id). The list is FROZEN on purpose (promotion / relegation never changes an
+# id). Token chosen once - NEVER change it (see the handover: new-id convention). A club promoted later has no token until added here.
+PL_TOKEN = "9rtt"
+PL_TOKEN_CLUBS = {
+    "Arsenal", "Aston.Villa", "Bournemouth", "Brentford", "Brighton.Hove.Albion", "Chelsea", "Coventry.City", "Crystal.Palace",
+    "Everton", "Fulham", "Hull.City", "Ipswich.Town", "Leeds.Utd", "Liverpool", "Manchester.City", "Manchester.Utd",
+    "Newcastle.Utd", "Nottingham.Forest", "Sunderland", "Tottenham.Hotspur",
+}
+
+
+def club_id(base, ext, suffix=""):
+    """<Club>.<Competition>[.<token>][<run suffix>] - the token only for the clubs in PL_TOKEN_CLUBS."""
+    return f"{base}.{ext}" + (f".{PL_TOKEN}" if base in PL_TOKEN_CLUBS else "") + suffix
+
+
 # Leagues that define "English clubs".
 ENGLISH_LEAGUES = ["Premier League", "Championship", "League One", "League Two"]
 
@@ -1396,7 +1413,8 @@ def cup_idle_channels(have, suffix):
     end = now + timedelta(days=TAIL_DAYS)
     out = []
     for e in entries:
-        cid, name, comp = f"{e['id']}{suffix}", e["name"], e["comp"]
+        sbase, sext = e["id"].rsplit(".", 1)
+        cid, name, comp = club_id(sbase, sext, suffix), e["name"], e["comp"]
         if cid in have:
             continue
         club = name[:-len(comp)].strip() if name.endswith(comp) else name
@@ -1530,13 +1548,13 @@ def build_channels(matches, english, suffix, english_only):
     channels = []
     for (tid, comp), ms in grouped.items():
         ext = COMPETITIONS[comp][1]
-        channels.append((f"{bases[tid]}.{ext}{suffix}", f"{names[tid]} {comp}",
+        channels.append((club_id(bases[tid], ext, suffix), f"{names[tid]} {comp}",
                          logos.get(tid), sorted(ms, key=lambda m: m["start"])))
     if NO_MATCH_CHANNELS:
         for tid, comp in CLUB_LEAGUE.items():
             if (tid, comp) in grouped or tid not in names or (english_only and tid not in english):
                 continue
-            channels.append(no_match_channel(f"{bases[tid]}.{COMPETITIONS[comp][1]}{suffix}",
+            channels.append(no_match_channel(club_id(bases[tid], COMPETITIONS[comp][1], suffix),
                                              f"{names[tid]} {comp}", logos.get(tid), names[tid], comp))
     if UEFA_CHANNEL and not english_only:
         channels.append(uefa_channel(matches, suffix))
