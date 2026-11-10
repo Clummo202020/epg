@@ -298,7 +298,7 @@ UEFA_CHANNEL_TITLE = "Streams are live at match time only."
 # With no UEFA kick-offs in range (between matchdays) the channel gets plain blocks this far
 # ahead instead of nothing. Kept short: PlaylistLabs only adds after the last programme it
 # holds, so the next matchday's live blocks must be able to follow on a later run.
-UEFA_IDLE_HOURS = 240       # 8 Nov 2026: to the end of the 10-day window (was 24 h, so the channel went blank a day after the last refresh)
+UEFA_IDLE_HOURS = 72        # 10 Nov 2026: 3 days (was 240/10 days, then 24h before that - see DUMMY_DAYS)t refresh)
 # Generic (all-sport) streaming services: plain 2-hour blocks with the same
 # title and description, not tied to any fixtures. (id, name, title, description)
 DUMMY_CHANNELS = [
@@ -402,7 +402,10 @@ NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. Th
 CLUB_LEAGUE = {}          # {team_id: competition name}, filled by fetch_english_clubs / fetch_other_league_clubs
 OTHER_CLUBS = {}          # {team_id: name} for the clubs of OTHER_LEAGUES
 MLS_SUFFIX = re.compile(r"\s+(?:FC|SC|CF)$")     # MLS club names: drop the trailing FC / SC / CF
-DUMMY_DAYS = 10          # how far ahead the blocks run
+DUMMY_DAYS = 3           # 10 Nov 2026: cut from 10 - PlaylistLabs keeps the first blocks it loads for an id (the "also live on
+                         # Amazon Prime Video" line never reached the Nations League channels it had already loaded), so a 10-day
+                         # placeholder reach could sit in front of a real fixture for days once that fixture enters the window.
+                         # Real match blocks (fetched fixtures) are NOT limited by this - only "no match" / idle filler.
 
 UEFA_CHANNEL_DESC = ("Matches that fall under the UEFA umbrella.\n\n"
                      "Club competitions: Champions League, Europa League, "

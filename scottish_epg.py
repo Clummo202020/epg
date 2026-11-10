@@ -137,7 +137,8 @@ FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap
 # example during a cup weekend or an international break). Plain wording - no "Next Up" when there is none.
 NO_MATCH_CHANNELS = True
 NO_MATCH_HOURS = 6        # block length
-NO_MATCH_DAYS = 10        # how far ahead the blocks run (the default --days)
+NO_MATCH_DAYS = 3         # 10 Nov 2026: cut from 10 - matches football_epg.py (see its DUMMY_DAYS comment). Real match
+                          # blocks are NOT limited by this - only "no match" / idle filler.
 NO_MATCH_TITLE = "No {comp} match listed in the next {days} days"
 NO_MATCH_SUB = "No match scheduled"
 NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. This could be a cup weekend, an "
