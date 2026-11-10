@@ -10560,6 +10560,11 @@
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261111174500 +0000" stop="20261111194500 +0000" channel="ESPNPPV7.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261110160000 +0000" stop="20261110170000 +0000" channel="ESPNPPV8.us">
     <title lang="en">Next up: LIVE – Tue, 11/10 - LaLiga Highlight Show (5pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -11231,10 +11236,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111160000 +0000" stop="20261111174500 +0000" channel="MParamount006.us">
-    <title lang="en">Next up: LIVE – OH Leuven vs HB Køge (Wed 11 Nov, 5:45pm)</title>
+    <title lang="en">Next up: LIVE – OH Leuven vs HB Køge (5:45pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. OH Leuven vs HB Køge starts Wed 11 Nov, 5:45pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. OH Leuven vs HB Køge starts at 5:45pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261111174500 +0000" stop="20261111194500 +0000" channel="MParamount006.us">
+    <title lang="en">🔴 LIVE: OH Leuven vs HB Køge</title>
+    <sub-title lang="en">UEFA Women's Champions League</sub-title>
+    <desc lang="en">OH Leuven vs HB Køge. UEFA Women's Champions League. Starts Wed 11 Nov, 5:45pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261110160000 +0000" stop="20261110180000 +0000" channel="MParamount007.us">
     <title lang="en">Juventus vs Lyonnes (Wed 11 Nov, 8pm)</title>
@@ -35030,10 +35042,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111160000 +0000" stop="20261111174500 +0000" channel="Paramount006.us">
-    <title lang="en">Next up: LIVE – OH Leuven vs HB Køge (Wed 11 Nov, 5:45pm)</title>
+    <title lang="en">Next up: LIVE – OH Leuven vs HB Køge (5:45pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. OH Leuven vs HB Køge starts Wed 11 Nov, 5:45pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. OH Leuven vs HB Køge starts at 5:45pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261111174500 +0000" stop="20261111194500 +0000" channel="Paramount006.us">
+    <title lang="en">🔴 LIVE: OH Leuven vs HB Køge</title>
+    <sub-title lang="en">UEFA Women's Champions League</sub-title>
+    <desc lang="en">OH Leuven vs HB Køge. UEFA Women's Champions League. Starts Wed 11 Nov, 5:45pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261110160000 +0000" stop="20261110180000 +0000" channel="Paramount007.us">
     <title lang="en">Juventus vs Lyonnes (Wed 11 Nov, 8pm)</title>
