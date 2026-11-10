@@ -16,7 +16,7 @@
   "seen": "2026-11-08T15:07:30+00:00"
  },
  "_timing": {
-  "updated": "2026-11-10T08:07:20Z",
+  "updated": "2026-11-10T08:37:20Z",
   "groups": {
    "AppleMLS": {
     "n": 4,
@@ -35,20 +35,14 @@
     "max": -79
    },
    "ESPNPPV": {
-    "n": 1,
-    "missed": 9,
-    "applied": false,
-    "median": -10,
-    "min": -10,
-    "max": -10
+    "n": 0,
+    "missed": 10,
+    "applied": false
    },
    "MAXPPV": {
-    "n": 1,
-    "missed": 2,
-    "applied": false,
-    "median": -60,
-    "min": -60,
-    "max": -60
+    "n": 0,
+    "missed": 3,
+    "applied": false
    },
    "MLB": {
     "n": 0,
@@ -93,16 +87,16 @@
     "max": 30
    },
    "SN": {
-    "n": 8,
-    "missed": 2,
+    "n": 7,
+    "missed": 3,
     "applied": false,
     "median": 0,
     "min": -30,
     "max": 0
    },
    "STAN": {
-    "n": 30,
-    "missed": 47,
+    "n": 29,
+    "missed": 48,
     "applied": true,
     "median": -10,
     "min": -55,
