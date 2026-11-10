@@ -3589,7 +3589,7 @@
     <display-name lang="en">PDC Board 8</display-name>
   </channel>
   <channel id="PPVEVENT1.us">
-    <display-name lang="en">PPV EVENT 01: WWE Monday Night RAW (11.9 8:00 PM ET)</display-name>
+    <display-name lang="en">PPV EVENT 01</display-name>
     <display-name lang="en">PPV EVENT 01</display-name>
   </channel>
   <channel id="PPVEVENT10.us">
@@ -14827,6 +14827,11 @@
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261111131500 +0000" stop="20261111151500 +0000" channel="MPeacock002.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261110120000 +0000" stop="20261110140000 +0000" channel="MPeacock003.us">
     <title lang="en">Performance View: BOS vs PHI (Wed 11 Nov, 12am)</title>
     <sub-title lang="en">Next Match: Wed 11 Nov</sub-title>
@@ -15061,6 +15066,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111113000 +0000" stop="20261111133000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261111133000 +0000" stop="20261111153000 +0000" channel="MPeacock005.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -38149,6 +38159,11 @@
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261111131500 +0000" stop="20261111151500 +0000" channel="Peacock006.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261110120000 +0000" stop="20261110140000 +0000" channel="Peacock007.us">
     <title lang="en">Performance View: BOS vs PHI (Wed 11 Nov, 12am)</title>
     <sub-title lang="en">Next Match: Wed 11 Nov</sub-title>
@@ -38383,6 +38398,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111113000 +0000" stop="20261111133000 +0000" channel="Peacock009.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No streams available at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261111133000 +0000" stop="20261111153000 +0000" channel="Peacock009.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -95052,67 +95072,67 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261110120000 +0000" stop="20261110140000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261110140000 +0000" stop="20261110160000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261110160000 +0000" stop="20261110180000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261110180000 +0000" stop="20261110200000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261110200000 +0000" stop="20261110220000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261110220000 +0000" stop="20261111000000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111000000 +0000" stop="20261111020000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111020000 +0000" stop="20261111040000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111040000 +0000" stop="20261111060000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111060000 +0000" stop="20261111080000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111080000 +0000" stop="20261111100000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111100000 +0000" stop="20261111120000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261111120000 +0000" stop="20261111140000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">This event has now finished</title>
+    <title lang="en">No streams available at this time</title>
     <desc lang="en">No streams available at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
