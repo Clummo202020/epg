@@ -402,6 +402,8 @@ NO_MATCH_DESC = ("{club} have no {comp} match listed in the next {days} days. Th
 CLUB_LEAGUE = {}          # {team_id: competition name}, filled by fetch_english_clubs / fetch_other_league_clubs
 OTHER_CLUBS = {}          # {team_id: name} for the clubs of OTHER_LEAGUES
 MLS_SUFFIX = re.compile(r"\s+(?:FC|SC|CF)$")     # MLS club names: drop the trailing FC / SC / CF
+FIXTURE_WINDOW_DAYS = 10 # 10 Nov 2026: the number SHOWN in "no match listed in the next N days" text = the real fixture look-ahead (10).
+                         # The 3-day placeholder-reach change had accidentally turned the on-screen wording into "next 3 days".
 F1_LOOKAHEAD_DAYS = 10   # 10 Nov 2026: how far ahead REAL F1 sessions are listed - kept at 10 (f1_channels used to take DUMMY_DAYS, so cutting
                          # the placeholder reach to 3 days also cut the F1 session look-ahead to 3 days by mistake)
 DUMMY_DAYS = 3           # 10 Nov 2026: cut from 10 - PlaylistLabs keeps the first blocks it loads for an id (the "also live on
@@ -1039,8 +1041,8 @@ def uefa_channel(matches, suffix):
                         early_minutes=MATCH_EARLY_MINUTES)
     if chan[3]:
         if not chan[3][-1].get("filler_only"):      # after the last UEFA kick-off of the window: say so, to the end
-            chan[3][-1]["tail"] = (f"No further UEFA match listed in the next {TAIL_DAYS} days", NO_MATCH_SUB,
-                                   f"No further UEFA club competition match is listed in the next {TAIL_DAYS} days. "
+            chan[3][-1]["tail"] = (f"No further UEFA match listed in the next {FIXTURE_WINDOW_DAYS} days", NO_MATCH_SUB,
+                                   f"No further UEFA club competition match is listed in the next {FIXTURE_WINDOW_DAYS} days. "
                                    "This channel updates as soon as a match is added.", UEFA_CHANNEL_NAME)
         return chan
     # No UEFA kick-offs in range: UEFA_IDLE_HOURS of plain blocks so the channel isn't empty
@@ -1398,7 +1400,7 @@ def cup_idle_channels(have, suffix):
         if cid in have:
             continue
         club = name[:-len(comp)].strip() if name.endswith(comp) else name
-        fmt = {"club": club, "comp": comp, "days": TAIL_DAYS}
+        fmt = {"club": club, "comp": comp, "days": FIXTURE_WINDOW_DAYS}
         shows, t = [], now
         while t < end:
             b = min(t + timedelta(hours=TAIL_HOURS), end)
@@ -1417,7 +1419,7 @@ def no_match_channel(chan_id, name, logo, club, comp):
     t = now.replace(minute=0, second=0, microsecond=0)
     t -= timedelta(hours=t.hour % NO_MATCH_HOURS)
     end = t + timedelta(days=DUMMY_DAYS)
-    fmt = {"club": club, "comp": comp, "days": DUMMY_DAYS}
+    fmt = {"club": club, "comp": comp, "days": FIXTURE_WINDOW_DAYS}
     desc = (NATIONS_NO_MATCH_DESC if comp == NATIONS_COMP else NO_MATCH_DESC).format(**fmt)   # national teams: no "cup weekend / international break" text
     shows = []
     while t < end:
@@ -1728,8 +1730,8 @@ def build_xmltv(channels, filler):
             if tail is None and ms[-1].get("teams"):                  # a club channel: no further match
                 comp = ms[-1]["comp"]
                 club = cname[:-len(comp)].strip() if comp and cname.endswith(comp) else cname
-                tail = (TAIL_TITLE.format(comp=comp, days=TAIL_DAYS), TAIL_SUB,
-                        TAIL_DESC.format(club=club, comp=comp, days=TAIL_DAYS), comp)
+                tail = (TAIL_TITLE.format(comp=comp, days=FIXTURE_WINDOW_DAYS), TAIL_SUB,
+                        TAIL_DESC.format(club=club, comp=comp, days=FIXTURE_WINDOW_DAYS), comp)
             if tail:
                 t, end = max(ended_to, now), now + timedelta(days=TAIL_DAYS)
                 while t < end:

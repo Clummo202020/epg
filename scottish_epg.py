@@ -137,6 +137,7 @@ FILLER_HOURS = 2          # longest filler block in hours (0 = one block per gap
 # example during a cup weekend or an international break). Plain wording - no "Next Up" when there is none.
 NO_MATCH_CHANNELS = True
 NO_MATCH_HOURS = 6        # block length
+FIXTURE_WINDOW_DAYS = 10  # 10 Nov 2026: the number SHOWN in "no match listed in the next N days" text = the real fixture look-ahead (10)
 NO_MATCH_DAYS = 3         # 10 Nov 2026: cut from 10 - matches football_epg.py (see its DUMMY_DAYS comment). Real match
                           # blocks are NOT limited by this - only "no match" / idle filler.
 NO_MATCH_TITLE = "No {comp} match listed in the next {days} days"
@@ -404,7 +405,7 @@ def cup_idle_channels(have, suffix):
         if cid in have:
             continue
         club = name[:-len(comp)].strip() if name.endswith(comp) else name
-        fmt = {"club": club, "comp": comp, "days": TAIL_DAYS}
+        fmt = {"club": club, "comp": comp, "days": FIXTURE_WINDOW_DAYS}
         shows, t = [], now
         while t < end:
             b = min(t + timedelta(hours=TAIL_HOURS), end)
@@ -422,7 +423,7 @@ def no_match_channel(chan_id, name, logo, club, comp):
     t = now.replace(minute=0, second=0, microsecond=0)
     t -= timedelta(hours=t.hour % NO_MATCH_HOURS)
     end = t + timedelta(days=NO_MATCH_DAYS)
-    fmt = {"club": club, "comp": comp, "days": NO_MATCH_DAYS}
+    fmt = {"club": club, "comp": comp, "days": FIXTURE_WINDOW_DAYS}
     shows = []
     while t < end:
         stop = t + timedelta(hours=NO_MATCH_HOURS)
@@ -565,8 +566,8 @@ def build_xmltv(channels, filler):
             t, end = max(ended_to, now), now + timedelta(days=TAIL_DAYS)
             while t < end:                                # carry on to the end of the window
                 b = min(t + timedelta(hours=TAIL_HOURS), end)
-                add_programme(tv, chan_id, t, b, TAIL_TITLE.format(comp=comp, days=TAIL_DAYS), NO_MATCH_SUB,
-                              TAIL_DESC.format(club=club, comp=comp, days=TAIL_DAYS), comp)
+                add_programme(tv, chan_id, t, b, TAIL_TITLE.format(comp=comp, days=FIXTURE_WINDOW_DAYS), NO_MATCH_SUB,
+                              TAIL_DESC.format(club=club, comp=comp, days=FIXTURE_WINDOW_DAYS), comp)
                 count += 1
                 t = b
     return tv, count
