@@ -2200,10 +2200,6 @@
     <display-name lang="en">US (Paramount 004) | UFC 334: Press Conference (2026-11-12 19:00:00)</display-name>
     <display-name lang="en">US (Paramount 004) [Main IPTV]</display-name>
   </channel>
-  <channel id="MParamount005.us">
-    <display-name lang="en">UEFA Women's Champions League: Roma vs Servette @ Nov 10 2:45 PM :Paramount+ 05</display-name>
-    <display-name lang="en">US (Paramount 005) [Main IPTV]</display-name>
-  </channel>
   <channel id="MParamount006.us">
     <display-name lang="en">US (Paramount 006) | UFC 334: Weigh_In Desk Show (2026-11-13 09:50:00)</display-name>
     <display-name lang="en">US (Paramount 006) [Main IPTV]</display-name>
@@ -14812,6 +14808,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261112103000 +0000" stop="20261112123000 +0000" channel="MPeacock002.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261112123000 +0000" stop="20261112143000 +0000" channel="MPeacock002.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -37790,6 +37791,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261112103000 +0000" stop="20261112123000 +0000" channel="Peacock009.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261112123000 +0000" stop="20261112143000 +0000" channel="Peacock009.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -91601,71 +91607,6 @@
   </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="MLB9.uk">
     <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261111120000 +0000" stop="20261111140000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261111140000 +0000" stop="20261111160000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261111160000 +0000" stop="20261111180000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261111180000 +0000" stop="20261111200000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261111200000 +0000" stop="20261111220000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261111220000 +0000" stop="20261112000000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112000000 +0000" stop="20261112020000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112020000 +0000" stop="20261112040000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112040000 +0000" stop="20261112060000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112060000 +0000" stop="20261112080000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112080000 +0000" stop="20261112100000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112100000 +0000" stop="20261112120000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="MParamount005.us">
-    <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
