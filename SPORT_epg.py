@@ -6323,7 +6323,13 @@ def astro_idle_fill(records):
 DIVIDERS = ["UK & IRELAND", "USA", "CANADA", "INDIA", "AUSTRALIA", "JAMAICA", "MIDDLE EAST", "NETHERLANDS", "GERMANY", "FRANCE",
             "SPAIN", "SWITZERLAND", "POLAND", "ITALY", "LATVIA", "GREECE", "ALBANIA", "BULGARIA", "ROMANIA", "BOSNIA", "SERBIA",
             "CROATIA", "SLOVENIA", "TURKEY", "BRAZIL", "CYPRUS", "PORTUGAL", "BELGIUM", "FINLAND", "SWEDEN", "DENMARK", "NORWAY",
-            "CZECHIA", "ISRAEL", "TANZANIA"]
+            "CZECHIA", "ISRAEL", "TANZANIA",
+            "HONG KONG", "SINGAPORE", "INDONESIA", "MALAYSIA", "MIDDLE EAST & NORTH AFRICA"]    # last five added 11 Nov 2026 (user)
+# 11 Nov 2026 (user): the five Asian / MENA dividers that were added to the playlists after 5 Nov still had a PlaylistLabs-made id
+# (dummy-2848073). They get the NEW-ID family token (see the handover: new-id convention): DIV.HONGKONG.9dg8 ... - the display name
+# stays "### HONG KONG ###" (so searching "###" still lists them all) and the guide text is just the country, like the other 35.
+DIVIDER_TOKEN = "9dg8"
+DIVIDER_TOKEN_NAMES = {"HONG KONG", "SINGAPORE", "INDONESIA", "MALAYSIA", "MIDDLE EAST & NORTH AFRICA"}
 # 6 Nov 2026: PlaylistLabs kept showing "EPG data ... not available" for DIV.UKIRELAND and DIV.CANADA (identical to the 33 that worked, even
 # after re-linking), so those two got fresh ids; the old ones are no longer written.
 DIVIDER_ID_OVERRIDES = {"UK & IRELAND": "UKANDIRELAND", "CANADA": "CANADA1"}
@@ -6343,7 +6349,9 @@ def divider_records():
             evs.append({"start": t, "stop": t + step, "title": name, "sub": "", "desc": "", "live": False, "never_live": True,
                         "no_lead": True, "no_translate": True})
             t += step
-        out.append({"id": "DIV." + DIVIDER_ID_OVERRIDES.get(name, re.sub(r"[^A-Za-z0-9]+", "", name)), "name": f"### {name} ###", "tz": timezone.utc,
+        out.append({"id": "DIV." + DIVIDER_ID_OVERRIDES.get(name, re.sub(r"[^A-Za-z0-9]+", "", name))
+                          + (f".{DIVIDER_TOKEN}" if name in DIVIDER_TOKEN_NAMES else ""),
+                    "name": f"### {name} ###", "tz": timezone.utc,
                     "place": "", "filler": False, "back_to_back": True, "events": evs})
     return out
 
