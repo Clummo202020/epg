@@ -16,7 +16,7 @@
   "seen": "2026-11-10T14:37:31+00:00"
  },
  "_timing": {
-  "updated": "2026-11-11T09:37:17Z",
+  "updated": "2026-11-11T10:07:17Z",
   "groups": {
    "AppleMLS": {
     "n": 4,
@@ -63,16 +63,16 @@
     "max": 0
    },
    "Paramount": {
-    "n": 26,
-    "missed": 71,
+    "n": 39,
+    "missed": 85,
     "applied": true,
-    "median": 45,
+    "median": 50,
     "min": 15,
     "max": 50
    },
    "Peacock": {
-    "n": 4,
-    "missed": 69,
+    "n": 6,
+    "missed": 126,
     "applied": true,
     "median": -45,
     "min": -80,
@@ -109,7 +109,7 @@
    }
   },
   "check": {
-   "compared": 3,
+   "compared": 6,
    "differ": 0,
    "examples": []
   }
