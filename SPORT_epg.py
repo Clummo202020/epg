@@ -416,6 +416,10 @@ DSTV_GUIDE = "https://www.dstv.com/umbraco/api/TvGuide/GetProgrammes?d={day:%Y-%
 DSTV_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
                               "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
                 "Accept": "application/json, */*", "Referer": "https://www.dstv.com/"}
+# 11 Nov 2026 (user): the SuperSport / ESPN rows (ZA and AF) were DELETED from both playlists ("they rarely play"), and DStv's Nigeria
+# feed (AF) has been returning HTTP 404 for every day (the retries add minutes to a ~45 min run). Both DStv feeds are OFF: no requests,
+# no ZA. / AF. channels (CARRY_SKIP below stops the previous guide's copies being carried over). Set True to bring them back.
+SUPERSPORT = False
 SS_REGIONS = {           # prefix -> (DStv country, extra query, place, time zone, name suffix)
     "ZA": ("zaf", "", "South Africa", "Africa/Johannesburg", "SA"),
     "AF": ("nga", "&package=DStv%20Premium", "Africa", "Africa/Lagos", "Africa"),
@@ -6573,7 +6577,9 @@ CARRY_SKIP = ("AU.beINSPORTS",
               # dropped 31 Oct 2026 (user): sources removed/never matched, only old listings were being carried
               "DK.ViasatSportUltra", "SE.ATGLive", "HK.NowGolf3", "HK.PremierSports",
               # dropped 4 Nov 2026 (user: not important; the playlists lose them too) - only 1-2 old programmes were being carried
-              "HK.NBATV", "HK.Now668", "HK.NowSports647", "HK.NowSportsPlus", "IT.SkySport259")
+              "HK.NBATV", "HK.Now668", "HK.NowSports647", "HK.NowSportsPlus", "IT.SkySport259",
+              # dropped 11 Nov 2026 (user): SuperSport / ESPN Africa (DStv ZA. and AF. channels) - removed from the playlists
+              "ZA.", "AF.")
 
 
 def carry_over(tv, listed, prev_path):
@@ -7015,7 +7021,7 @@ def main():
             if got:
                 nordic[(prefix, zone, place, id(RIKSTV_CHANNELS))] = (RIKSTV_CHANNELS, got)
     ss = {}
-    if not args.no_supersport:
+    if SUPERSPORT and not args.no_supersport:
         lo, _, hi = args.ss_numbers.partition("-")
         lo, hi = int(lo), int(hi or lo)
         for prefix in [r.strip().upper() for r in args.ss_regions.split(",") if r.strip()]:
