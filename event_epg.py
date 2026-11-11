@@ -85,7 +85,7 @@ FILLER_DESC = "The next event on this stream will be listed nearer the time."
 # 8 Nov 2026 (user): everything that has ended - a finished event or an empty slot - reads the same generic listing; the
 # stream's own name in the playlist already shows the event, so the description no longer repeats it.
 GENERIC_TITLE = "No streams available at this time"
-GENERIC_DESC = "No streams available at this time. Check back later."
+GENERIC_DESC = "No new event is scheduled at this time. Check back later."   # 11 Nov 2026 (user): was "No streams available at this time. Check back later." - description ONLY, the titles are unchanged
 OFFLINE_TITLE = GENERIC_TITLE          # only used if a stream has no name at all
 # 4 Nov 2026 (user): every EMPTY slot - whatever the provider calls it ("NO EVENT STREAMING NOW - | 8K EXCLUSIVE |
 # CA: SOCCER PPV 100", "US (Peacock 099)", "AU (STAN 40) | No event streaming", "MLB 10 :", "UEFA | 08 -" ...) - gets
