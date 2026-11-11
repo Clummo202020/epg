@@ -462,7 +462,7 @@ CUP_CHANNELS_FILE = "football_cup_channels.json"
 CUP_IDLE_DESC = ("{club}: no {comp} match is listed in the next {days} days. This channel updates as soon as a match is "
                  "added.")
 GENERIC_TITLE = "No streams available at this time"
-GENERIC_DESC = "No streams available at this time. Check back later."
+GENERIC_DESC = "The next race schedule will be available nearer the time."   # 11 Nov 2026 (user): F1 idle description (GENERIC_DESC is used ONLY by the F1 channels); was "No streams available at this time. Check back later."
 # 9 Nov 2026 (user: "Goal Rush says no streams available - can we add a generic filler when it isn't a Premier League matchday?")
 GOAL_RUSH_IDLE_TITLE = "Goal Rush"
 GOAL_RUSH_IDLE_DESC = ("Goal Rush. Live action from every Premier League matchday, when two or more matches kick off at the "
