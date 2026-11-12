@@ -1629,18 +1629,21 @@ def clock12(text):
     return CLOCK_SHORT.sub(short, t)
 
 
-# 12 Nov 2026 EXPERIMENT (user: "lets have a go"): PlaylistLabs seems to keep an already-held block when its start / stop are IDENTICAL
-# and to add a block whose times differ. Test on ONE channel: every programme of the ids below is written N seconds later than normal.
-# Bulgaria.NationsLge is shifted by 60 s; Iceland.NationsLge (same match, Bulgaria v Iceland Fri 13 Nov 7:45pm) is the UNSHIFTED CONTROL.
-# Expected reading in the PlaylistLabs viewer for Fri 13 Nov: Bulgaria shows blocks like 14:01 - 16:01 with the "also live on Amazon Prime
-# Video" sentence, Iceland the old 14:00 - 16:00 text. REVERT (set to {}) after the test - see the handover, item 27.
-TIME_SHIFT_TEST = {"Bulgaria.NationsLge": 60}
+# 12 Nov 2026 EXPERIMENT (user: "lets have a go"): does shifting block times by a minute make PlaylistLabs take NEW text for a channel that
+# is holding OLD text? Findings that shaped it: channels whose match is on 13 Nov or later (Germany, Netherlands, Austria, Portugal) already show
+# the "also live on Amazon Prime Video" sentence in PlaylistLabs, while channels with a match TODAY (Italy, France) still hold the old text.
+# TEST: Italy.NationsLge is written SHIFT seconds late, but ONLY for blocks starting at / after TIME_SHIFT_FROM (so tonight's Italy v France is
+# untouched); France.NationsLge (also old text, also has Sunday 15 Nov's match) is the UNSHIFTED CONTROL. Read it in the viewer for Sat 14 Nov:
+# Italy blocks like 08:01 - 10:01 WITH the Prime sentence = the shift forces new text; Italy still 08:00 - 10:00 plain = it does not.
+# REVERT (set TIME_SHIFT_TEST = {}) after the test - see the handover, item 27.
+TIME_SHIFT_TEST = {"Italy.NationsLge": 60}
+TIME_SHIFT_FROM = datetime(2026, 11, 13, 0, 0, tzinfo=timezone.utc)
 
 
 def add_programme(tv, chan_id, start, stop, title, sub, desc, comp, live=False):
     title, sub, desc = clock12(title), clock12(sub), clock12(desc)   # 12-hour clock (6 Nov 2026)
     shift = TIME_SHIFT_TEST.get(chan_id)
-    if shift:                                 # one-channel experiment only (normally empty)
+    if shift and start >= TIME_SHIFT_FROM:    # one-channel experiment only (normally empty)
         start, stop = start + timedelta(seconds=shift), stop + timedelta(seconds=shift)
     p = ET.SubElement(tv, "programme", {
         "start": xmltv_time(start), "stop": xmltv_time(stop), "channel": chan_id})
