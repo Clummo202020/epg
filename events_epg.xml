@@ -3585,7 +3585,7 @@
     <display-name lang="en">PDC Board 8</display-name>
   </channel>
   <channel id="PPVEVENT1.us">
-    <display-name lang="en">PPV EVENT 01</display-name>
+    <display-name lang="en">PPV EVENT 01: NARA Nationals at Southern Illinois (11.12 7:00 PM ET)</display-name>
     <display-name lang="en">PPV EVENT 01</display-name>
   </channel>
   <channel id="PPVEVENT10.us">
@@ -9731,6 +9731,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261113124500 +0000" stop="20261113144500 +0000" channel="MParamount001.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="MParamount002.us">
     <title lang="en">Benfica vs Austria Wien (Thu 12 Nov, 8pm)</title>
     <sub-title lang="en">Next Match: UEFA Women's Champions League</sub-title>
@@ -9800,6 +9805,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261113110000 +0000" stop="20261113130000 +0000" channel="MParamount002.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="MParamount002.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -9879,6 +9889,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="MParamount003.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="MParamount004.us">
     <title lang="en">UFC 334: Press Conference em Português (Fri 13 Nov, 12am)</title>
     <sub-title lang="en">Next Event: UFC</sub-title>
@@ -9950,6 +9965,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261113110000 +0000" stop="20261113130000 +0000" channel="MParamount004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="MParamount004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -17664,6 +17684,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261113110000 +0000" stop="20261113130000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="MPeacock005.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -32960,6 +32985,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261113124500 +0000" stop="20261113144500 +0000" channel="NFL1.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="NFL10.uk">
     <title lang="en">Seahawks at Raiders (Sun 15 Nov, 9:05pm)</title>
     <sub-title lang="en">Next Game: NFL</sub-title>
@@ -33974,6 +34004,81 @@
     <desc lang="en">Next Game: Bills at Jets. NFL. Starts Sun 15 Nov, 6pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">NARA Nationals at Southern Illinois (Fri 13 Nov, 12am)</title>
+    <sub-title lang="en">Next Game: PPV Event</sub-title>
+    <desc lang="en">Next Game: NARA Nationals at Southern Illinois. PPV Event. Starts Fri 13 Nov, 12am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261112140000 +0000" stop="20261112160000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">NARA Nationals at Southern Illinois (Fri 13 Nov, 12am)</title>
+    <sub-title lang="en">Next Game: PPV Event</sub-title>
+    <desc lang="en">Next Game: NARA Nationals at Southern Illinois. PPV Event. Starts Fri 13 Nov, 12am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261112160000 +0000" stop="20261112180000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">NARA Nationals at Southern Illinois (Fri 13 Nov, 12am)</title>
+    <sub-title lang="en">Next Game: PPV Event</sub-title>
+    <desc lang="en">Next Game: NARA Nationals at Southern Illinois. PPV Event. Starts Fri 13 Nov, 12am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261112180000 +0000" stop="20261112200000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">NARA Nationals at Southern Illinois (Fri 13 Nov, 12am)</title>
+    <sub-title lang="en">Next Game: PPV Event</sub-title>
+    <desc lang="en">Next Game: NARA Nationals at Southern Illinois. PPV Event. Starts Fri 13 Nov, 12am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261112200000 +0000" stop="20261112220000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">NARA Nationals at Southern Illinois (Fri 13 Nov, 12am)</title>
+    <sub-title lang="en">Next Game: PPV Event</sub-title>
+    <desc lang="en">Next Game: NARA Nationals at Southern Illinois. PPV Event. Starts Fri 13 Nov, 12am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261112220000 +0000" stop="20261113000000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">Next up: LIVE – NARA Nationals at Southern Illinois (12am)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. NARA Nationals at Southern Illinois starts at 12am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113000000 +0000" stop="20261113020000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">🔴 LIVE: NARA Nationals at Southern Illinois</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">NARA Nationals at Southern Illinois. PPV Event. Starts Fri 13 Nov, 12am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261113020000 +0000" stop="20261113040000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">🔴 LIVE: NARA Nationals at Southern Illinois</title>
+    <sub-title lang="en">PPV Event</sub-title>
+    <desc lang="en">NARA Nationals at Southern Illinois. PPV Event. Starts Fri 13 Nov, 12am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261113040000 +0000" stop="20261113060000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113060000 +0000" stop="20261113080000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113080000 +0000" stop="20261113100000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113100000 +0000" stop="20261113120000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113120000 +0000" stop="20261113140000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="Paramount003.us">
     <title lang="en">Barcelona vs Arsenal (Thu 12 Nov, 5:45pm)</title>
     <sub-title lang="en">Next Match: UEFA Women's Champions League</sub-title>
@@ -34042,6 +34147,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261113104500 +0000" stop="20261113124500 +0000" channel="Paramount003.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113124500 +0000" stop="20261113144500 +0000" channel="Paramount003.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -34117,6 +34227,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261113110000 +0000" stop="20261113130000 +0000" channel="Paramount004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="Paramount004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -41601,6 +41716,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="Peacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="Peacock006.us">
     <title lang="en">Rinkside Live: Pairs (Thu 12 Nov, 7:35pm)</title>
     <sub-title lang="en">Next Event: Thu 12 Nov</sub-title>
@@ -41901,6 +42021,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261113110000 +0000" stop="20261113130000 +0000" channel="Peacock009.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="Peacock009.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -49143,6 +49268,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="SN020.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="SN021.ca">
     <title lang="en">The Raptors Show: Nov. 12 (Thu 12 Nov, 4pm)</title>
     <sub-title lang="en">Next Event: Thu 12 Nov</sub-title>
@@ -49208,6 +49338,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261113110000 +0000" stop="20261113130000 +0000" channel="SN021.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="SN021.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -57307,6 +57442,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="TSN007.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="TSN008.ca">
     <title lang="en">2026 WTA Finals: Round Robin _ Day #5 (Thu 12 Nov, 8pm)</title>
     <sub-title lang="en">Next Event: WTA</sub-title>
@@ -57541,6 +57681,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="TSN010.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="TSN011.ca">
     <title lang="en">NCAA Football: Memphis vs South Florida (Fri 13 Nov, 1am)</title>
     <sub-title lang="en">Next Match: NCAA</sub-title>
@@ -57698,6 +57843,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="TSN012.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="TSN013.ca">
     <title lang="en">ATP 250 Tennis: Stockholm _ Semifinals (Fri 13 Nov, 1pm)</title>
     <sub-title lang="en">Next Event: ATP</sub-title>
@@ -57771,10 +57921,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261113120000 +0000" stop="20261113130000 +0000" channel="TSN013.ca">
-    <title lang="en">Next up: LIVE – ATP 250 Tennis: Stockholm _ Semifinals (Fri 13 Nov, 1pm)</title>
+    <title lang="en">Next up: LIVE – ATP 250 Tennis: Stockholm _ Semifinals (1pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. ATP 250 Tennis: Stockholm _ Semifinals starts Fri 13 Nov, 1pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. ATP 250 Tennis: Stockholm _ Semifinals starts at 1pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113130000 +0000" stop="20261113150000 +0000" channel="TSN013.ca">
+    <title lang="en">🔴 LIVE: ATP 250 Tennis: Stockholm _ Semifinals</title>
+    <sub-title lang="en">ATP</sub-title>
+    <desc lang="en">ATP 250 Tennis: Stockholm _ Semifinals. Starts Fri 13 Nov, 1pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="TSN014.ca">
     <title lang="en">2026 WTA Finals: Round Robin _ Day #6 (Fri 13 Nov, 8pm)</title>
@@ -95891,71 +96048,6 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261113120000 +0000" stop="20261113140000 +0000" channel="PDCBoard8.uk">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112120000 +0000" stop="20261112140000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112140000 +0000" stop="20261112160000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112160000 +0000" stop="20261112180000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112180000 +0000" stop="20261112200000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112200000 +0000" stop="20261112220000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261112220000 +0000" stop="20261113000000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261113000000 +0000" stop="20261113020000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261113020000 +0000" stop="20261113040000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261113040000 +0000" stop="20261113060000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261113060000 +0000" stop="20261113080000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261113080000 +0000" stop="20261113100000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261113100000 +0000" stop="20261113120000 +0000" channel="PPVEVENT1.us">
-    <title lang="en">No streams available at this time</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261113120000 +0000" stop="20261113140000 +0000" channel="PPVEVENT1.us">
     <title lang="en">No streams available at this time</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
