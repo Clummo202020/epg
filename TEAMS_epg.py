@@ -270,11 +270,14 @@ def result_line(g):
 # text is UK time (Europe/London) already - see the audit in the handover.
 def _clock_part(h, m):
     """12-hour clock, lower case, no space, minutes dropped on the hour: 12:30am, 3pm, 5:45pm"""
-    return f"{(h % 12) or 12}{(':%02d' % m) if m else ''}{'am' if h < 12 else 'pm'}"
+    s = f"{(h % 12) or 12}{(':%02d' % m) if m else ''}{'am' if h < 12 else 'pm'}"
+    if not m and h in (0, 12):                    # 13 Nov 2026 (user): exactly 12am / 12pm get a word - "12am Midnight", "12pm Midday"
+        s += " Midnight" if h == 0 else " Midday"
+    return s
 
 
 CLOCK_24H = re.compile(r"(?<![\d:.])([01]?\d|2[0-3]):([0-5]\d)(?![\d:])(?!\s?[AaPp]\.?[Mm])(?!\.\d)")
-CLOCK_SHORT = re.compile(r"(?<![\w:.])(\d{1,2})(?:[:.]([0-5]\d))?\s?([AaPp])(?:\.[Mm]\.|[Mm])(?!\w)")
+CLOCK_SHORT = re.compile(r"(?<![\w:.])(\d{1,2})(?:[:.]([0-5]\d))?\s?([AaPp])(?:\.[Mm]\.|[Mm])(?!\w)(?! (?:Midnight|Midday)\b)")
 
 
 def clock12(text):
@@ -288,7 +291,10 @@ def clock12(text):
         if not 1 <= h <= 12:
             return m.group(0)
         mm = m.group(2)
-        return f"{h}{(':' + mm) if mm and mm != '00' else ''}{'am' if m.group(3).lower() == 'a' else 'pm'}"
+        s = f"{h}{(':' + mm) if mm and mm != '00' else ''}{'am' if m.group(3).lower() == 'a' else 'pm'}"
+        if h == 12 and (not mm or mm == '00'):    # 13 Nov 2026 (user): "12am Midnight" / "12pm Midday"
+            s += " Midnight" if m.group(3).lower() == 'a' else " Midday"
+        return s
     return CLOCK_SHORT.sub(short, t)
 
 
