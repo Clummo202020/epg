@@ -6562,6 +6562,57 @@ def add_empty_placeholders(tv, listed):
     return added
 
 
+# Idle-gap fillers (12 Nov 2026, user: "the filler is a good idea"): event-only channels (MySports 2-9, Sky Sport 253-255, Prima Sport PPV 1-4,
+# V Sport Live ...) and the odd hole in a normal channel's listings used to show "No information" between programmes. A gap of
+# IDLE_GAP_MIN_MINUTES or more between a channel's REAL programmes, within the next EMPTY_FILLER_HOURS (24 h - PlaylistLabs keeps what it
+# loads, so a long filler could hide a listing that appears later), now gets the SAME standard "no schedule" blocks as an empty channel (title =
+# the channel name, EMPTY_FILLER_SUB, EMPTY_FILLER_DESC). Never overlaps a real programme; channels with no programmes at all are left to
+# add_empty_placeholders; the DIV dividers are skipped. Set IDLE_GAP_FILLER = False to switch it off. Log: "Idle-gap fillers: N blocks on M channel(s)".
+IDLE_GAP_FILLER = True
+IDLE_GAP_MIN_MINUTES = 60
+IDLE_GAP_SKIP = ("DIV.",)
+
+
+def add_idle_gap_fillers(tv):
+    """[(id, blocks added)] - fills gaps between a channel's real programmes with the standard 'no schedule' blocks."""
+    now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
+    horizon = now + timedelta(hours=EMPTY_FILLER_HOURS)
+    names = {c.get("id"): (c.findtext("display-name") or c.get("id")) for c in tv.iter("channel")}
+    spans = {}
+    for p in tv.findall("programme"):
+        try:
+            s = datetime.strptime(p.get("start"), "%Y%m%d%H%M%S %z")
+            e = datetime.strptime(p.get("stop"), "%Y%m%d%H%M%S %z")
+        except (TypeError, ValueError):
+            continue
+        spans.setdefault(p.get("channel"), []).append((s, e))
+    added = []
+    for cid in sorted(spans):
+        if cid.startswith(IDLE_GAP_SKIP) or cid not in names:
+            continue
+        name, cur, gaps = names[cid], now, []
+        for s, e in sorted(spans[cid]):
+            if e <= cur:
+                continue
+            if s > cur:
+                gaps.append((cur, min(s, horizon)))
+            cur = max(cur, e)
+            if cur >= horizon:
+                break
+        if cur < horizon:
+            gaps.append((cur, horizon))
+        n = 0
+        for a, b in gaps:
+            if b - a < timedelta(minutes=IDLE_GAP_MIN_MINUTES):
+                continue
+            for x, y in filler_blocks(a, b):
+                add_programme(tv, cid, x, y, name, EMPTY_FILLER_SUB, EMPTY_FILLER_DESC.format(name=name), False)
+                n += 1
+        if n:
+            added.append((cid, n))
+    return added
+
+
 # Safeguard (28 Oct 2026): when a source fails for one run (seen 28 Oct 16:03 UTC: Cyta and the
 # Bulgarian site both returned nothing, so 30 channels vanished from the guide until the next run),
 # the channels missing from this run are kept from the previous guide - only their programmes that
@@ -7404,6 +7455,11 @@ def main():
             print(f"Placeholders for empty channels: {len(empties)}")
             for cid, name in empties:
                 print(f"  placeholder {cid} ({name})")
+        if IDLE_GAP_FILLER:
+            idle = add_idle_gap_fillers(tv)
+            if idle:
+                count += sum(n for _, n in idle)
+                print(f"Idle-gap fillers: {sum(n for _, n in idle)} blocks on {len(idle)} channel(s)")
     out_path = unique_path(args.out) if args.unique else args.out
     write_xml(tv, out_path)
     if run_no is not None:
