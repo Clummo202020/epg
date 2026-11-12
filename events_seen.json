@@ -1,44 +1,59 @@
 {
- "CASOCCERPPV10.ca": {
-  "name": "Live | Abu Dhabi T10 League 2026 - 11th Match - Royal Desert Champions vs UAE Bulls | all | 8K EXCLUSIVE | CA: SOCCER PPV 10",
-  "seen": "2026-11-12T00:37:34+00:00"
+ "ARPPV2.mena": {
+  "name": "Live | Ariana Sanchez Fallada & Andrea Ustero Prieto vs Paula Josemaria Martin & Beatriz Gonzalez Fernandez || Arabic | Premier Padel | 8K EXCLUSIVE | MENA: AR PPV 2",
+  "seen": "2026-11-12T10:08:01+00:00"
  },
- "CASOCCERPPV11.ca": {
-  "name": "Live | Azim vs. Valenzuela: Launch Press Conference | all | 8K EXCLUSIVE | CA: SOCCER PPV 11",
-  "seen": "2026-11-12T00:37:34+00:00"
+ "ARPPV4.mena": {
+  "name": "Live | Adrian Mannarino vs Daniil Medvedev || English | Erste Bank Open | 8K EXCLUSIVE | MENA: AR PPV 4",
+  "seen": "2026-11-12T10:08:01+00:00"
+ },
+ "CASOCCERPPV2.ca": {
+  "name": "Live | Guangzhou Open: Day 5 | all | 8K EXCLUSIVE | CA: SOCCER PPV 2",
+  "seen": "2026-11-12T10:08:01+00:00"
  },
  "CASOCCERPPV3.ca": {
-  "name": "Live | Day 4 | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
-  "seen": "2026-11-12T00:37:34+00:00"
+  "name": "Live | Amazon Music Live: Doja Cat | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
+  "seen": "2026-11-12T10:08:01+00:00"
  },
- "CASOCCERPPV9.ca": {
-  "name": "Live | Round 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 9",
-  "seen": "2026-11-12T00:37:34+00:00"
+ "CASOCCERPPV5.ca": {
+  "name": "Live | Beatdown 15: James vs. Stoddart | all | 8K EXCLUSIVE | CA: SOCCER PPV 5",
+  "seen": "2026-11-12T10:08:01+00:00"
+ },
+ "CASOCCERPPV7.ca": {
+  "name": "Live | Australia tour of South Africa 2026 - 3rd Test - South Africa vs Australia | all | 8K EXCLUSIVE | CA: SOCCER PPV 7",
+  "seen": "2026-11-12T10:08:01+00:00"
  },
  "_timing": {
-  "updated": "2026-11-12T09:37:20Z",
+  "updated": "2026-11-12T10:07:18Z",
   "groups": {
+   "ARPPV": {
+    "n": 0,
+    "missed": 19,
+    "applied": false
+   },
    "AppleMLS": {
-    "n": 10,
-    "missed": 30,
-    "applied": true,
-    "median": -35,
-    "min": -35,
-    "max": -5
+    "n": 0,
+    "missed": 39,
+    "applied": true
    },
    "CASOCCERPPV": {
     "n": 0,
-    "missed": 8,
+    "missed": 11,
     "applied": true
+   },
+   "DAZNPPV": {
+    "n": 0,
+    "missed": 52,
+    "applied": false
    },
    "ESPNPPV": {
     "n": 0,
-    "missed": 32,
+    "missed": 79,
     "applied": false
    },
    "MAXPPV": {
     "n": 0,
-    "missed": 2,
+    "missed": 7,
     "applied": false
    },
    "MLB": {
@@ -48,76 +63,61 @@
    },
    "NBA": {
     "n": 0,
-    "missed": 10,
+    "missed": 3,
     "applied": false
    },
    "NFL": {
-    "n": 15,
-    "missed": 0,
-    "applied": false,
-    "median": 0,
-    "min": 0,
-    "max": 0
+    "n": 0,
+    "missed": 13,
+    "applied": false
    },
    "NHL": {
-    "n": 6,
-    "missed": 1,
-    "applied": false,
-    "median": 0,
-    "min": 0,
-    "max": 0
+    "n": 0,
+    "missed": 3,
+    "applied": false
    },
    "Paramount": {
-    "n": 24,
-    "missed": 60,
+    "n": 3,
+    "missed": 94,
     "applied": true,
     "median": 50,
-    "min": 15,
+    "min": 50,
     "max": 50
    },
    "Peacock": {
-    "n": 7,
-    "missed": 52,
+    "n": 8,
+    "missed": 47,
     "applied": true,
-    "median": -10,
+    "median": -45,
     "min": -80,
-    "max": -10
+    "max": 30
    },
    "SN": {
-    "n": 11,
-    "missed": 1,
-    "applied": false,
-    "median": 0,
-    "min": 0,
-    "max": 0
+    "n": 0,
+    "missed": 15,
+    "applied": false
    },
    "STAN": {
-    "n": 40,
-    "missed": 39,
+    "n": 4,
+    "missed": 84,
     "applied": true,
     "median": -10,
-    "min": -60,
-    "max": 0
+    "min": -55,
+    "max": -10
    },
    "TSN": {
-    "n": 1,
-    "missed": 38,
-    "applied": false,
-    "median": 0,
-    "min": 0,
-    "max": 0
+    "n": 0,
+    "missed": 35,
+    "applied": false
    },
    "UEFA": {
-    "n": 3,
+    "n": 0,
     "missed": 33,
-    "applied": false,
-    "median": 0,
-    "min": 0,
-    "max": 0
+    "applied": false
    }
   },
   "check": {
-   "compared": 5,
+   "compared": 0,
    "differ": 0,
    "examples": []
   }
