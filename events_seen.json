@@ -1,10 +1,75 @@
 {
+ "CASOCCERPPV10.ca": {
+  "name": "Live | Abu Dhabi T10 League 2026 - 11th Match - Royal Desert Champions vs UAE Bulls | all | 8K EXCLUSIVE | CA: SOCCER PPV 10",
+  "seen": "2026-11-12T00:37:34+00:00"
+ },
+ "CASOCCERPPV11.ca": {
+  "name": "Live | Azim vs. Valenzuela: Launch Press Conference | all | 8K EXCLUSIVE | CA: SOCCER PPV 11",
+  "seen": "2026-11-12T00:37:34+00:00"
+ },
+ "CASOCCERPPV3.ca": {
+  "name": "Live | Day 4 | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
+  "seen": "2026-11-12T00:37:34+00:00"
+ },
+ "CASOCCERPPV9.ca": {
+  "name": "Live | Round 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 9",
+  "seen": "2026-11-12T00:37:34+00:00"
+ },
  "_timing": {
-  "updated": "2026-11-12T00:07:19Z",
+  "updated": "2026-11-12T00:37:19Z",
   "groups": {
+   "AppleMLS": {
+    "n": 4,
+    "missed": 36,
+    "applied": true,
+    "median": -20,
+    "min": -35,
+    "max": -5
+   },
+   "CASOCCERPPV": {
+    "n": 0,
+    "missed": 8,
+    "applied": true
+   },
+   "ESPNPPV": {
+    "n": 0,
+    "missed": 32,
+    "applied": false
+   },
+   "MAXPPV": {
+    "n": 0,
+    "missed": 2,
+    "applied": false
+   },
+   "MLB": {
+    "n": 0,
+    "missed": 1,
+    "applied": false
+   },
+   "NBA": {
+    "n": 0,
+    "missed": 10,
+    "applied": false
+   },
+   "NFL": {
+    "n": 15,
+    "missed": 0,
+    "applied": false,
+    "median": 0,
+    "min": 0,
+    "max": 0
+   },
+   "NHL": {
+    "n": 6,
+    "missed": 1,
+    "applied": false,
+    "median": 0,
+    "min": 0,
+    "max": 0
+   },
    "Paramount": {
     "n": 19,
-    "missed": 64,
+    "missed": 65,
     "applied": true,
     "median": 50,
     "min": 15,
@@ -18,12 +83,28 @@
     "min": -80,
     "max": -30
    },
+   "SN": {
+    "n": 11,
+    "missed": 1,
+    "applied": false,
+    "median": 0,
+    "min": 0,
+    "max": 0
+   },
    "STAN": {
     "n": 31,
     "missed": 48,
     "applied": true,
     "median": -10,
     "min": -55,
+    "max": 0
+   },
+   "TSN": {
+    "n": 1,
+    "missed": 38,
+    "applied": false,
+    "median": 0,
+    "min": 0,
     "max": 0
    },
    "UEFA": {
