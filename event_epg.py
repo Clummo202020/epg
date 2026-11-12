@@ -1744,6 +1744,187 @@ def next_label(title, comp="", sid=""):
     return "Next Event"
 
 
+# Prime Video and BBC / ITV lines on event streams (13 Nov 2026, user: "the Prime line for Champions League and Nations League events, the BBC
+# and ITV line for football and for 'A vs B' events in other sports"). The same sentence as the football guide - "This match is also live on
+# Amazon Prime Video." / "... on ITV1." - added to an "A vs B" stream's Next Event, Next up: LIVE and LIVE blocks, never to the finished blocks
+# (so it disappears after the game). Sources, all read from files in the repo (nothing is fetched on the 30-minute runs):
+#   * liveonsat_fixtures.json "tv" key (liveonsat_fixtures.py, 4 runs a day): "prime" = the Champions League / Nations League fixtures that
+#     wheresthematch.com lists on Amazon Prime Video (UK); "fta" = every fixture on the live-footballontv BBC / ITV pages with its MAIN channels
+#     (England-only: BBC One / Two / Three / Four, ITV1-4) and its players (BBC iPlayer / ITVX - named only when there is no main channel).
+#   * SPORT_epg.xml.gz: the LIVE programmes on UK.BBCOne / BBCTwo / BBCThree / BBCFour / ITV1-4 (rugby, racing ... any sport); UK listings start up
+#     to ~100 minutes before the event, so a listing counts when it starts from 100 min before to 30 min after the stream's start.
+# A stream matches when BOTH teams match (a side "Dortmund" = "Borussia Dortmund", "Man. City" = "Manchester City") and the time agrees. Single-name
+# events (a boxing card, a Grand Prix) get nothing. Never raises. TV_LINES = False switches it off. Log: "TV lines: N of M streams".
+TV_LINES = True
+TV_NOTE = "This match is also live on {chs}."
+TV_TIME_TOL = timedelta(minutes=45)
+SPORT_GUIDE_FILE = "SPORT_epg.xml.gz"
+UK_FTA_CHANNELS = {"UK.BBCOne": "BBC One", "UK.BBCTwo": "BBC Two", "UK.BBCThree": "BBC Three", "UK.BBCFour": "BBC Four",
+                   "UK.ITV1": "ITV1", "UK.ITV2": "ITV2", "UK.ITV3": "ITV3", "UK.ITV4": "ITV4"}
+SPORT_LISTING_BEFORE = timedelta(minutes=100)
+SPORT_LISTING_AFTER = timedelta(minutes=30)
+_SIDE_STOP = {"nations", "championship", "round", "uefa", "matchday", "cup", "league", "group", "stage", "friendly", "qualifier", "qualifiers",
+              "qualification", "final", "semi", "quarter", "premier", "super", "series", "test", "tour", "playoff", "playoffs", "women", "womens",
+              "spanish", "english", "portuguese", "multiview", "feed", "live", "2026", "2027"}
+_TVROWS = None
+_UKL = None
+_FE = "unset"
+
+
+def _fb():
+    """football_epg.py as a module (team aliases such as Man. City = Manchester City), or None."""
+    global _FE
+    if _FE == "unset":
+        try:
+            import football_epg
+            _FE = football_epg
+        except Exception as e:
+            print(f"  TV lines: football_epg.py not available for team aliases ({e})")
+            _FE = None
+    return _FE
+
+
+def _split_sides(title):
+    parts = re.split(r"\s+(?:vs\.?|v)\s+", (title or "").strip(), maxsplit=1, flags=re.I)
+    return (parts[0].strip(), parts[1].strip()) if len(parts) == 2 and parts[0].strip() and parts[1].strip() else None
+
+
+def _team_part(side):
+    """a side without the trailing competition / round words and brackets: 'Borussia Dortmund UEFA Champions League Matchday 5' -> 'Borussia Dortmund'."""
+    out = []
+    for w in re.split(r"[(\[]", side)[0].split():
+        if re.sub(r"[^a-z0-9/]+", "", w.lower()) in _SIDE_STOP:
+            break
+        out.append(w)
+    return " ".join(out[:4])
+
+
+def _team_ok(side, team):
+    tp = _team_part(side)
+    w, t = _words(tp), _words(team)
+    if w and t and (w <= t or t <= w):
+        return True
+    fe = _fb()
+    if fe and tp:
+        parts = tp.split()
+        for k in range(len(parts), 0, -1):
+            try:
+                if fe._same_team(" ".join(parts[:k]), team):
+                    return True
+            except Exception:
+                return False
+    return False
+
+
+def load_tv_rows():
+    """{"prime": [(start, home, away)], "fta": [(start, home, away, [main channels], [players])]} from liveonsat_fixtures.json's "tv" key."""
+    global _TVROWS
+    if _TVROWS is not None:
+        return _TVROWS
+    _TVROWS = {"prime": [], "fta": []}
+    local = os.path.join(os.path.dirname(os.path.abspath(__file__)), LIVEONSAT_FILE)
+    try:
+        if os.path.exists(local):
+            with open(local, "rb") as f:
+                raw = f.read()
+        else:
+            with urllib.request.urlopen(urllib.request.Request(LIVEONSAT_URL, headers=HEADERS), timeout=30) as r:
+                raw = r.read()
+        tv = json.loads(raw.decode("utf-8")).get("tv") or {}
+        conv = lambda s: datetime.strptime(s, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+        _TVROWS["prime"] = [(conv(r["start"]), r["home"], r["away"]) for r in tv.get("prime", [])]
+        _TVROWS["fta"] = [(conv(r["start"]), r["home"], r["away"], r.get("main") or [], r.get("players") or []) for r in tv.get("fta", [])]
+    except Exception as e:
+        print(f"  TV lines: Prime / BBC / ITV fixtures not available ({e})")
+        _TVROWS = {"prime": [], "fta": []}
+    return _TVROWS
+
+
+def load_uk_listings():
+    """[(start UTC, channel name, words)] of the LIVE programmes on the UK BBC / ITV channels in the Sport guide (next 16 days), or []."""
+    global _UKL
+    if _UKL is not None:
+        return _UKL
+    _UKL = []
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), SPORT_GUIDE_FILE)
+    try:
+        import gzip
+        import html as _html
+        if not os.path.exists(path):
+            return _UKL
+        with gzip.open(path, "rt", encoding="utf-8", errors="replace") as f:
+            text = f.read()
+        now = datetime.now(timezone.utc)
+        for m in re.finditer(r'<programme start="(\d{14}) [^"]*" stop="\d{14} [^"]*" channel="(UK\.(?:BBC(?:One|Two|Three|Four)|ITV[1-4]?))">(.*?)</programme>', text, re.S):
+            ch = UK_FTA_CHANNELS.get(m.group(2))
+            if not ch:
+                continue
+            start = datetime.strptime(m.group(1), "%Y%m%d%H%M%S").replace(tzinfo=timezone.utc)
+            if not (now - timedelta(hours=6) <= start <= now + timedelta(days=16)):
+                continue
+            tt = re.search(r"<title[^>]*>(.*?)</title>", m.group(3), re.S)
+            dd = re.search(r"<desc[^>]*>(.*?)</desc>", m.group(3), re.S)
+            title = _html.unescape(tt.group(1)) if tt else ""
+            if "LIVE" not in title:
+                continue
+            _UKL.append((start, ch, frozenset(_norm(title + " " + (_html.unescape(dd.group(1)) if dd else "")).split())))
+    except Exception as e:
+        print(f"  TV lines: Sport guide listings not read ({e})")
+        _UKL = []
+    return _UKL
+
+
+def _join_names(names):
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def tv_lines_for(ev):
+    """The Prime / BBC / ITV sentence(s) for event stream ev, or ''."""
+    sides = _split_sides(ev.get("title"))
+    if not sides or not ev.get("start"):
+        return ""
+    start = ev["start"]
+    both = lambda h, a: (_team_ok(sides[0], h) and _team_ok(sides[1], a)) or (_team_ok(sides[0], a) and _team_ok(sides[1], h))
+    rows = load_tv_rows()
+    prime = any(abs(r[0] - start) <= TV_TIME_TOL and both(r[1], r[2]) for r in rows["prime"])
+    main, players = [], []
+    for r in rows["fta"]:
+        if abs(r[0] - start) <= TV_TIME_TOL and both(r[1], r[2]):
+            main += [c for c in r[3] if c not in main]
+            players += [c for c in r[4] if c not in players]
+    w0, w1 = _words(_team_part(sides[0])), _words(_team_part(sides[1]))
+    if w0 and w1:
+        for ls, ch, lw in load_uk_listings():
+            if -SPORT_LISTING_AFTER <= start - ls <= SPORT_LISTING_BEFORE and w0 <= lw and w1 <= lw and ch not in main:
+                main.append(ch)
+    out = []
+    if prime:
+        out.append(TV_NOTE.format(chs="Amazon Prime Video"))
+    chs = main or players                              # players (BBC iPlayer / ITVX) only when there is no main channel
+    if chs:
+        out.append(TV_NOTE.format(chs=_join_names(chs)))
+    return " ".join(out)
+
+
+def add_tv_lines(events, now):
+    if not TV_LINES:
+        return 0
+    n = 0
+    for ev in events:
+        if ev.get("untimed") or not ev.get("title") or not ev.get("start") or ev["start"] < now - timedelta(hours=6):
+            continue
+        try:
+            note = tv_lines_for(ev)
+        except Exception as e:                          # never stop the guide
+            print(f"  TV lines skipped for \"{ev.get('title')}\" ({e})")
+            continue
+        if note:
+            ev["tv"] = note
+            n += 1
+    print(f"  TV lines (Prime Video / BBC / ITV): {n} of {len(events)} streams")
+    return n
+
+
 def build(events, now):
     global _HORIZON
     _HORIZON = now + timedelta(hours=HORIZON_HOURS)
@@ -1793,7 +1974,7 @@ def build(events, now):
             comp = ""                                      # already in the title / extra text
         desc = f"{ev['title']}." + (f" {comp}." if comp else "") + \
                (f" {ev['extra']}." if ev["extra"] else "") + \
-               f" Starts {when} UK time." + (f" {ev['info']}" if ev.get("info") else "")
+               f" Starts {when} UK time." + (f" {ev['info']}" if ev.get("info") else "") + (f" {ev['tv']}" if ev.get("tv") else "")
         in_range = start <= now + timedelta(days=MAX_DAYS_AHEAD)
         # Out of range: "Coming up" blocks only up to the range limit (the guide stops at
         # HORIZON_HOURS anyway); the LIVE block is added once the event comes into range.
@@ -1812,7 +1993,7 @@ def build(events, now):
                 stamp = f"{uk(kickoff):%H:%M}" if soon else when
                 add_programme(tv, sid, t, b, f"Next up: LIVE \u2013 {ev['title']} ({stamp})",
                               "Next up: LIVE",
-                              f"Next up: LIVE. {ev['title']} starts " + (f"at {stamp}" if soon else stamp) + " UK time.")
+                              f"Next up: LIVE. {ev['title']} starts " + (f"at {stamp}" if soon else stamp) + " UK time." + (f" {ev['tv']}" if ev.get("tv") else ""))
             else:
                 # 8 Nov 2026 (user): the same wording as the club guides - "Next Match" (US games "Next Game", other events "Next Event")
                 # on every block before the event; only the LAST block before LIVE says "Next up: LIVE" (above). No ⏭.
@@ -1920,6 +2101,7 @@ def main():
     except Exception as e:                           # statistics must never stop the guide
         print(f"  timing statistics skipped: {e}")
     apply_overrides(events, now)
+    add_tv_lines(events, now)
     print(f"{len(names)} streams in the playlist(s), {len(events)} with an event time")
     tv, chans, progs = build(events, now)
     save_seen(now)

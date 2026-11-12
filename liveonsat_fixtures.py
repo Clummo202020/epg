@@ -281,6 +281,46 @@ def read_pages(pages, old_fixtures, with_channels, now):
     return fixtures, info
 
 
+# Prime Video and BBC / ITV fixtures (13 Nov 2026, user): event_epg.py adds "This match is also live on Amazon Prime Video / ITV1 ..." to event
+# streams. It runs every 30 minutes, so it must not fetch the listing sites itself - this job (4 runs a day) fetches them once and stores
+# the rows under the "tv" key of liveonsat_fixtures.json: "prime" = the Champions League / Nations League fixtures on Amazon Prime Video (UK,
+# wheresthematch.com), "fta" = every fixture on the live-footballontv BBC / ITV pages with its MAIN channels and players (the England-only
+# rule of football_epg.py). Parsing and the rule come from football_epg.py (same folder). Anything that cannot be read keeps the previous rows.
+def read_tv(old, stamp):
+    out = {"fetched": stamp, "prime": list(old.get("prime", [])), "fta": list(old.get("fta", []))}
+    try:
+        import football_epg as fe
+    except Exception as e:
+        print(f"  TV fixtures: football_epg.py not available ({e}) - previous lists kept")
+        return out
+    iso = lambda d: d.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    try:
+        rows = fe.parse_wtm_prime(fe.fetch_text(fe.WTM_PRIME_URL))
+        prime = [{"start": iso(s), "home": h, "away": a, "comp": c} for s, h, a, c in rows
+                 if any(k.lower() in (c or "").lower() for k in fe.PRIME_COMPS.values())]
+        if prime:
+            out["prime"] = prime
+        print(f"  Prime Video (wheresthematch.com): {len(rows)} fixtures read, {len(prime)} Champions League / Nations League")
+    except Exception as e:
+        print(f"  Prime Video (wheresthematch.com): not read ({e}) - previous list kept")
+    fta, ok = [], True
+    for url in fe.FTA_PAGES:
+        time.sleep(4)
+        try:
+            for L in fe.parse_tv_page(fe.fetch_text(url)):
+                main = [c for c in L["channels"] if fe.FTA_MAIN_RE.match(c)]
+                players = [c for c in L["channels"] if c in fe.FTA_PLAYERS]
+                if main or players:
+                    fta.append({"start": iso(L["start"]), "home": L["home"], "away": L["away"], "main": main, "players": players})
+        except Exception as e:
+            ok = False
+            print(f"  BBC / ITV ({url.rsplit('/', 1)[-1]}): not read ({e})")
+    if ok and fta:
+        out["fta"] = fta
+    print(f"  BBC / ITV: {len(fta)} fixtures with a main channel or player" + ("" if ok else " (a page failed - previous list kept)"))
+    return out
+
+
 def main():
     now = datetime.now(timezone.utc)
     stamp = now.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -296,7 +336,8 @@ def main():
         print("  nothing found - file not written")
         return 0
     data = {"fetched": stamp, "pages": pages, "fixtures": fixtures,
-            "football": {"fetched": stamp, "pages": fpages, "fixtures": football}}
+            "football": {"fetched": stamp, "pages": fpages, "fixtures": football},
+            "tv": read_tv(old.get("tv") or {}, stamp)}
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, separators=(",", ":"))
     print(f"  wrote {OUT}: {len(fixtures)} rugby / fighting fixtures and {len(football)} football fixtures")
