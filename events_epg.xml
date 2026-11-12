@@ -35037,10 +35037,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261113000000 +0000" stop="20261113011500 +0000" channel="NFL1.uk">
-    <title lang="en">Next up: LIVE – Commanders at Giants (Fri 13 Nov, 1:15am)</title>
+    <title lang="en">Next up: LIVE – Commanders at Giants (1:15am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Commanders at Giants starts Fri 13 Nov, 1:15am UK time.</desc>
+    <desc lang="en">Next up: LIVE. Commanders at Giants starts at 1:15am UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261113011500 +0000" stop="20261113031500 +0000" channel="NFL1.uk">
+    <title lang="en">🔴 LIVE: Commanders at Giants</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">Commanders at Giants. NFL. Thursday Night Football. Starts Fri 13 Nov, 1:15am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261112000000 +0000" stop="20261112020000 +0000" channel="NFL10.uk">
     <title lang="en">Seahawks at Raiders (Sun 15 Nov, 9:05pm)</title>
