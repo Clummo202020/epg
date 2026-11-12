@@ -852,7 +852,8 @@ def parse_tv_page(html_text):
 
 
 def _same_team(espn_name, site_name):
-    a, b = set(_aliases(short_name(espn_name))), set(_aliases(site_name))
+    a = set(_aliases(short_name(espn_name)))
+    b = set(_aliases(site_name)) | set(_aliases(short_name(site_name)))     # 13 Nov 2026: the site writes "AFC Bournemouth", our short name is "Bournemouth"
     return bool(a & b)
 
 
@@ -907,6 +908,60 @@ def add_tv_listings(matches, pages=None, fetch=None):
                 any(L["start"].date() == m["start"].astimezone(LONDON).date() for L in listings)]
         if miss:                                                  # on a listed date but no match found: name differences
             print(f"  TV listings ({comp}): no broadcaster found for: {', '.join(miss[:8])}")
+    return added
+
+
+# BBC and ITV (13 Nov 2026, user): any match on BBC or ITV gets "This match is also live on <channel>." (same style as the Prime line). Source:
+# live-footballontv.com's "Live Football on BBC" / "Live Football on ITV" pages (same layout as the competition pages above, but they list
+# EVERY competition, so they are applied to ALL matches). User's rules: channel names exactly as the site writes them (BBC One, BBC Two,
+# ITV1, ITV4 ...); the MAIN broadcast channels only - BBC iPlayer / ITVX are named only when a match has NO main-channel listing; STV, STV Player,
+# "BBC Sport Website", S4C, the REGIONAL channels (BBC Scotland, BBC Alba, BBC One NI, BBC One Wales), Sky, TNT and the rest are never mentioned. A match not listed gets nothing; a page that cannot be read is skipped.
+FTA_PAGES = ["https://www.live-footballontv.com/live-football-on-bbc.html",
+             "https://www.live-footballontv.com/live-football-on-itv.html"]
+FTA_MAIN_RE = re.compile(r"^(BBC (One|Two|Three|Four)|BBC|ITV[1-4]?)$", re.I)      # only channels the users get over the air IN ENGLAND (user, 13 Nov): no BBC Scotland / Alba / One NI / One Wales, no S4C, no STV
+FTA_PLAYERS = ("BBC iPlayer", "ITVX")
+
+
+def free_to_air_note(m, listings):
+    """'This match is also live on BBC Two.' for match m from the BBC / ITV listings, or '' (not listed / nothing we mention)."""
+    if len(m.get("teams") or []) != 2:
+        return ""
+    h, a = (t.get("displayName") for t in m["teams"])
+    main, players = [], []
+    for L in listings:
+        if abs((L["start"] - m["start"]).total_seconds()) > TV_TIME_TOLERANCE_MIN * 60:
+            continue
+        if _same_team(h, L["home"]) and _same_team(a, L["away"]):
+            main += [c for c in L["channels"] if FTA_MAIN_RE.match(c) and c not in main]
+            players += [c for c in L["channels"] if c in FTA_PLAYERS and c not in players]
+    chs = main or players                                       # players only when there is no main channel
+    if not chs:
+        return ""
+    names = chs[0] if len(chs) == 1 else ", ".join(chs[:-1]) + " and " + chs[-1]
+    return TV_NOTE.format(chs=names)
+
+
+def add_free_to_air(matches, pages=None, fetch=None):
+    """Append the BBC / ITV sentence to every match listed on the BBC or ITV football pages. Never raises."""
+    if not TV_LISTINGS:
+        return 0
+    fetch, listings = fetch or fetch_text, []
+    for url in (pages or FTA_PAGES):
+        try:
+            listings += parse_tv_page(fetch(url))
+        except Exception as e:                                   # site down / blocked / changed: no lines, no failure
+            print(f"  BBC / ITV listings: {url.rsplit('/', 1)[-1]} not read ({e})")
+    if not listings:
+        return 0
+    added = 0
+    for m in matches:
+        if m.get("tbc"):
+            continue
+        note = free_to_air_note(m, listings)
+        if note and note not in m["desc"]:
+            m["desc"] = f"{m['desc']} {note}"
+            added += 1
+    print(f"  BBC / ITV listings: {len(listings)} fixtures read, {added} of {len(matches)} matches given a line")
     return added
 
 
@@ -1839,6 +1894,7 @@ def main():
     matches = collect_matches(events, args.minutes)
     add_tv_listings(matches)
     add_prime(matches)
+    add_free_to_air(matches)
     if not (args.run_ids or args.suffix is not None):
         run_no, suffix = None, ""
     else:
