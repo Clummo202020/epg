@@ -1,14 +1,22 @@
 {
+ "CASOCCERPPV21.ca": {
+  "name": "Live | World Final Championship 2026 - Day 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 21",
+  "seen": "2026-11-13T14:07:29+00:00"
+ },
  "CASOCCERPPV4.ca": {
-  "name": "Live | ACC Mens U19 Asia Cup 2026 - 2nd Semi-Final - Afghanistan U19 vs India U19 | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
-  "seen": "2026-11-12T14:07:44+00:00"
+  "name": "Live | Afghanistan vs Zimbabwe in UAE 2026 - 2nd Test - Afghanistan vs Zimbabwe | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
+  "seen": "2026-11-13T14:07:29+00:00"
  },
  "CASOCCERPPV5.ca": {
-  "name": "Live | Womens Big Bash League 2026 - 20th Match - Melbourne Renegades Women vs Sydney Sixers Women | all | 8K EXCLUSIVE | CA: SOCCER PPV 5",
-  "seen": "2026-11-12T14:07:44+00:00"
+  "name": "Live | Japan vs. Austria | all | 8K EXCLUSIVE | CA: SOCCER PPV 5",
+  "seen": "2026-11-13T14:07:29+00:00"
+ },
+ "CASOCCERPPV6.ca": {
+  "name": "Live | Abu Dhabi T10 League 2026 - 13th Match - United Tigers vs Emirates Eagles | all | 8K EXCLUSIVE | CA: SOCCER PPV 6",
+  "seen": "2026-11-13T14:07:29+00:00"
  },
  "_timing": {
-  "updated": "2026-11-13T13:37:19Z",
+  "updated": "2026-11-13T14:07:19Z",
   "groups": {
    "AppleMLS": {
     "n": 16,
@@ -19,21 +27,24 @@
     "max": 10
    },
    "CASOCCERPPV": {
-    "n": 2,
-    "missed": 8,
+    "n": 5,
+    "missed": 9,
     "applied": true,
-    "median": 60,
-    "min": 60,
-    "max": 60
+    "median": 43,
+    "min": 43,
+    "max": 43
    },
    "ESPNPPV": {
-    "n": 0,
-    "missed": 18,
-    "applied": false
+    "n": 4,
+    "missed": 44,
+    "applied": false,
+    "median": -10,
+    "min": -10,
+    "max": 0
    },
    "MAXPPV": {
     "n": 0,
-    "missed": 2,
+    "missed": 1,
     "applied": false
    },
    "MLB": {
@@ -42,7 +53,7 @@
     "applied": false
    },
    "NBA": {
-    "n": 4,
+    "n": 9,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -50,7 +61,7 @@
     "max": 0
    },
    "NFL": {
-    "n": 15,
+    "n": 14,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -59,36 +70,36 @@
    },
    "PPVEVENT": {
     "n": 0,
-    "missed": 1,
+    "missed": 4,
     "applied": false
    },
    "Paramount": {
-    "n": 43,
-    "missed": 71,
+    "n": 24,
+    "missed": 60,
     "applied": true,
     "median": 50,
-    "min": 15,
+    "min": 30,
     "max": 50
    },
    "Peacock": {
-    "n": 16,
-    "missed": 85,
+    "n": 8,
+    "missed": 42,
     "applied": true,
     "median": -20,
     "min": -80,
     "max": -10
    },
    "SN": {
-    "n": 12,
-    "missed": 3,
+    "n": 15,
+    "missed": 1,
     "applied": false,
     "median": 0,
-    "min": -30,
+    "min": -10,
     "max": 0
    },
    "STAN": {
-    "n": 86,
-    "missed": 78,
+    "n": 43,
+    "missed": 39,
     "applied": true,
     "median": -10,
     "min": -60,
@@ -96,7 +107,7 @@
    },
    "TSN": {
     "n": 1,
-    "missed": 40,
+    "missed": 41,
     "applied": false,
     "median": 0,
     "min": 0,
@@ -109,7 +120,7 @@
    }
   },
   "check": {
-   "compared": 5,
+   "compared": 10,
    "differ": 0,
    "examples": []
   }
