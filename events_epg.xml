@@ -25133,6 +25133,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114031000 +0000" stop="20261114051000 +0000" channel="MSTAN04.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113020000 +0000" stop="20261113040000 +0000" channel="MSTAN05.au">
     <title lang="en">Indian Wells: Day 6 WTA Finals (Fri 13 Nov, 8pm)</title>
     <sub-title lang="en">Next Event: WTA</sub-title>
@@ -50893,6 +50898,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114031000 +0000" stop="20261114051000 +0000" channel="STAN04.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113020000 +0000" stop="20261113040000 +0000" channel="STAN05.au">
     <title lang="en">Indian Wells: Day 6 WTA Finals (Fri 13 Nov, 8pm)</title>
     <sub-title lang="en">Next Event: WTA</sub-title>
@@ -59335,10 +59345,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114020000 +0000" stop="20261114031500 +0000" channel="TSN016.ca">
-    <title lang="en">Next up: LIVE – NCAA Football: Houston vs Colorado (Sat 14 Nov, 3:15am)</title>
+    <title lang="en">Next up: LIVE – NCAA Football: Houston vs Colorado (3:15am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NCAA Football: Houston vs Colorado starts Sat 14 Nov, 3:15am UK time.</desc>
+    <desc lang="en">Next up: LIVE. NCAA Football: Houston vs Colorado starts at 3:15am UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114031500 +0000" stop="20261114051500 +0000" channel="TSN016.ca">
+    <title lang="en">🔴 LIVE: NCAA Football: Houston vs Colorado</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Football: Houston vs Colorado. Starts Sat 14 Nov, 3:15am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261113020000 +0000" stop="20261113040000 +0000" channel="TSN017.ca">
     <title lang="en">ATP 250 Tennis: Stockholm _ Final (Sat 14 Nov, 12pm Midday)</title>
