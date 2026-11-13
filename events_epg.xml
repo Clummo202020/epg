@@ -12272,6 +12272,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="ESPNPPV23.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="ESPNPPV24.us">
     <title lang="en">Mecum Auctions: Las Vegas 2026 (Day 1) (Fri 13 Nov, 7pm)</title>
     <sub-title lang="en">Next Event: Fri 13 Nov</sub-title>
@@ -13678,6 +13683,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="ESPNPPV40.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="ESPNPPV41.us">
     <title lang="en">Idaho vs Weber State (Semifinal) (Fri 13 Nov, 8:30pm)</title>
     <sub-title lang="en">Next Match: Fri 13 Nov</sub-title>
@@ -13749,6 +13759,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114153000 +0000" stop="20261114173000 +0000" channel="ESPNPPV41.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="ESPNPPV41.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -14876,6 +14891,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="ESPNPPV55.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="ESPNPPV56.us">
     <title lang="en">#13 Yale vs #10 Clarkson (Fri 13 Nov, 10:50pm)</title>
     <sub-title lang="en">Next Match: Fri 13 Nov</sub-title>
@@ -15849,6 +15869,11 @@
     <category lang="en">Live</category>
   </programme>
   <programme start="20261114153000 +0000" stop="20261114173000 +0000" channel="MParamount006.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="MParamount006.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -16947,10 +16972,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114160000 +0000" stop="20261114172000 +0000" channel="MParamount019.us">
-    <title lang="en">Next up: LIVE – Romania vs USA Eagles (Sat 14 Nov, 5:20pm)</title>
+    <title lang="en">Next up: LIVE – Romania vs USA Eagles (5:20pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Romania vs USA Eagles starts Sat 14 Nov, 5:20pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Romania vs USA Eagles starts at 5:20pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114172000 +0000" stop="20261114192000 +0000" channel="MParamount019.us">
+    <title lang="en">🔴 LIVE: Romania vs USA Eagles</title>
+    <desc lang="en">Romania vs USA Eagles. Starts Sat 14 Nov, 5:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="MParamount020.us">
     <title lang="en">Brighton vs Liverpool (Sat 14 Nov, 5:15pm)</title>
@@ -17025,10 +17056,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114160000 +0000" stop="20261114171500 +0000" channel="MParamount020.us">
-    <title lang="en">Next up: LIVE – Brighton vs Liverpool (Sat 14 Nov, 5:15pm)</title>
+    <title lang="en">Next up: LIVE – Brighton vs Liverpool (5:15pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Brighton vs Liverpool starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Brighton vs Liverpool starts at 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114171500 +0000" stop="20261114191500 +0000" channel="MParamount020.us">
+    <title lang="en">🔴 LIVE: Brighton vs Liverpool</title>
+    <sub-title lang="en">English Womens Super League</sub-title>
+    <desc lang="en">Brighton vs Liverpool. English Womens Super League. Starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="MParamount021.us">
     <title lang="en">UFC 334: English (Sat 14 Nov, 10pm)</title>
@@ -23492,6 +23530,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="MPeacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="MPeacock005.us">
     <title lang="en">Rinkside: Women’s Practice (Fri 13 Nov, 9:45pm)</title>
     <sub-title lang="en">Next Event: Fri 13 Nov</sub-title>
@@ -23792,6 +23835,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114153000 +0000" stop="20261114173000 +0000" channel="MPeacock008.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="MPeacock008.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -24346,10 +24394,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114160000 +0000" stop="20261114171500 +0000" channel="MPeacock015.us">
-    <title lang="en">Next up: LIVE – Rinkside: Women’s Practice (Sat 14 Nov, 5:15pm)</title>
+    <title lang="en">Next up: LIVE – Rinkside: Women’s Practice (5:15pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Rinkside: Women’s Practice starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Rinkside: Women’s Practice starts at 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114171500 +0000" stop="20261114191500 +0000" channel="MPeacock015.us">
+    <title lang="en">🔴 LIVE: Rinkside: Women’s Practice</title>
+    <desc lang="en">Rinkside: Women’s Practice. Starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="MPeacock016.us">
     <title lang="en">DePaul vs Notre Dame (Sat 14 Nov, 6pm)</title>
@@ -31202,6 +31256,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114171000 +0000" stop="20261114191000 +0000" channel="MSTAN03.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="MSTAN04.au">
     <title lang="en">Indian Wells: Day 6 WTA Finals (Fri 13 Nov, 8pm)</title>
     <sub-title lang="en">Next Event: WTA</sub-title>
@@ -31695,6 +31754,11 @@
     <desc lang="en">Wales vs New Zealand Nations Championship Round 5 2026. Starts Sat 14 Nov, 2:10pm UK time. This match is also live on ITV1.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261114171000 +0000" stop="20261114191000 +0000" channel="MSTAN09.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="MSTAN10.au">
     <title lang="en">Chelsea vs Manchester City WSL 2026/27 (Sat 14 Nov, 1:30pm)</title>
@@ -32778,10 +32842,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114160000 +0000" stop="20261114171500 +0000" channel="MSTAN21.au">
-    <title lang="en">Next up: LIVE – Brighton &amp; Hove Albion vs Liverpool WSL 2026/27 (Sat 14 Nov, 5:15pm)</title>
+    <title lang="en">Next up: LIVE – Brighton &amp; Hove Albion vs Liverpool WSL 2026/27 (5:15pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Brighton &amp; Hove Albion vs Liverpool WSL 2026/27 starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Brighton &amp; Hove Albion vs Liverpool WSL 2026/27 starts at 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114171500 +0000" stop="20261114191500 +0000" channel="MSTAN21.au">
+    <title lang="en">🔴 LIVE: Brighton &amp; Hove Albion vs Liverpool WSL 2026/27</title>
+    <sub-title lang="en">English Womens Super League</sub-title>
+    <desc lang="en">Brighton &amp; Hove Albion vs Liverpool WSL 2026/27. English Womens Super League. Starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="MSTAN22.au">
     <title lang="en">Ireland vs Fiji Nations Championship Round 5 2026 (Sat 14 Nov, 8:10pm)</title>
@@ -39419,6 +39490,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="NBA7.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="NBA8.uk">
     <title lang="en">Portland Trail Blazers @ Sacramento Kings (Sat 14 Nov, 3am)</title>
     <sub-title lang="en">Next Game: NBA</sub-title>
@@ -40744,6 +40820,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="PPVEVENT3.us">
     <title lang="en">AMA EnduroCross at Idaho Falls (Sat 14 Nov, 2am)</title>
     <sub-title lang="en">Next Game: PPV Event</sub-title>
@@ -41364,6 +41445,11 @@
     <category lang="en">Live</category>
   </programme>
   <programme start="20261114153000 +0000" stop="20261114173000 +0000" channel="Paramount006.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="Paramount006.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -42462,10 +42548,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114160000 +0000" stop="20261114172000 +0000" channel="Paramount019.us">
-    <title lang="en">Next up: LIVE – Romania vs USA Eagles (Sat 14 Nov, 5:20pm)</title>
+    <title lang="en">Next up: LIVE – Romania vs USA Eagles (5:20pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Romania vs USA Eagles starts Sat 14 Nov, 5:20pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Romania vs USA Eagles starts at 5:20pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114172000 +0000" stop="20261114192000 +0000" channel="Paramount019.us">
+    <title lang="en">🔴 LIVE: Romania vs USA Eagles</title>
+    <desc lang="en">Romania vs USA Eagles. Starts Sat 14 Nov, 5:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="Paramount020.us">
     <title lang="en">Brighton vs Liverpool (Sat 14 Nov, 5:15pm)</title>
@@ -42540,10 +42632,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114160000 +0000" stop="20261114171500 +0000" channel="Paramount020.us">
-    <title lang="en">Next up: LIVE – Brighton vs Liverpool (Sat 14 Nov, 5:15pm)</title>
+    <title lang="en">Next up: LIVE – Brighton vs Liverpool (5:15pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Brighton vs Liverpool starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Brighton vs Liverpool starts at 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114171500 +0000" stop="20261114191500 +0000" channel="Paramount020.us">
+    <title lang="en">🔴 LIVE: Brighton vs Liverpool</title>
+    <sub-title lang="en">English Womens Super League</sub-title>
+    <desc lang="en">Brighton vs Liverpool. English Womens Super League. Starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="Paramount021.us">
     <title lang="en">UFC 334: English (Sat 14 Nov, 10pm)</title>
@@ -49007,6 +49106,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="Peacock005.us">
     <title lang="en">Rinkside: Women’s Practice (Fri 13 Nov, 9:45pm)</title>
     <sub-title lang="en">Next Event: Fri 13 Nov</sub-title>
@@ -49307,6 +49411,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114153000 +0000" stop="20261114173000 +0000" channel="Peacock008.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114173000 +0000" stop="20261114193000 +0000" channel="Peacock008.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -49861,10 +49970,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114160000 +0000" stop="20261114171500 +0000" channel="Peacock015.us">
-    <title lang="en">Next up: LIVE – Rinkside: Women’s Practice (Sat 14 Nov, 5:15pm)</title>
+    <title lang="en">Next up: LIVE – Rinkside: Women’s Practice (5:15pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Rinkside: Women’s Practice starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Rinkside: Women’s Practice starts at 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114171500 +0000" stop="20261114191500 +0000" channel="Peacock015.us">
+    <title lang="en">🔴 LIVE: Rinkside: Women’s Practice</title>
+    <desc lang="en">Rinkside: Women’s Practice. Starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="Peacock016.us">
     <title lang="en">DePaul vs Notre Dame (Sat 14 Nov, 6pm)</title>
@@ -57566,6 +57681,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114173500 +0000" stop="20261114193500 +0000" channel="SN015.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="SN016.ca">
     <title lang="en">Chelsea vs Manchester City (Sat 14 Nov, 1:20pm)</title>
     <sub-title lang="en">Next Match: Sat 14 Nov</sub-title>
@@ -58584,6 +58704,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261114171000 +0000" stop="20261114191000 +0000" channel="STAN03.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="STAN04.au">
     <title lang="en">Indian Wells: Day 6 WTA Finals (Fri 13 Nov, 8pm)</title>
     <sub-title lang="en">Next Event: WTA</sub-title>
@@ -59077,6 +59202,11 @@
     <desc lang="en">Wales vs New Zealand Nations Championship Round 5 2026. Starts Sat 14 Nov, 2:10pm UK time. This match is also live on ITV1.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261114171000 +0000" stop="20261114191000 +0000" channel="STAN09.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="STAN10.au">
     <title lang="en">Chelsea vs Manchester City WSL 2026/27 (Sat 14 Nov, 1:30pm)</title>
@@ -60160,10 +60290,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261114160000 +0000" stop="20261114171500 +0000" channel="STAN21.au">
-    <title lang="en">Next up: LIVE – Brighton &amp; Hove Albion vs Liverpool WSL 2026/27 (Sat 14 Nov, 5:15pm)</title>
+    <title lang="en">Next up: LIVE – Brighton &amp; Hove Albion vs Liverpool WSL 2026/27 (5:15pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Brighton &amp; Hove Albion vs Liverpool WSL 2026/27 starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Brighton &amp; Hove Albion vs Liverpool WSL 2026/27 starts at 5:15pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261114171500 +0000" stop="20261114191500 +0000" channel="STAN21.au">
+    <title lang="en">🔴 LIVE: Brighton &amp; Hove Albion vs Liverpool WSL 2026/27</title>
+    <sub-title lang="en">English Womens Super League</sub-title>
+    <desc lang="en">Brighton &amp; Hove Albion vs Liverpool WSL 2026/27. English Womens Super League. Starts Sat 14 Nov, 5:15pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261113160000 +0000" stop="20261113180000 +0000" channel="STAN22.au">
     <title lang="en">Ireland vs Fiji Nations Championship Round 5 2026 (Sat 14 Nov, 8:10pm)</title>
