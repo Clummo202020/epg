@@ -16,7 +16,7 @@
   "seen": "2026-11-13T14:07:29+00:00"
  },
  "_timing": {
-  "updated": "2026-11-13T23:37:19Z",
+  "updated": "2026-11-14T00:07:20Z",
   "groups": {
    "AppleMLS": {
     "n": 16,
@@ -111,9 +111,12 @@
     "max": 0
    },
    "UEFA": {
-    "n": 0,
-    "missed": 8,
-    "applied": false
+    "n": 2,
+    "missed": 6,
+    "applied": false,
+    "median": 0,
+    "min": 0,
+    "max": 0
    }
   },
   "check": {
