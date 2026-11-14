@@ -9925,6 +9925,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261115143000 +0000" stop="20261115163000 +0000" channel="MParamount004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261114140000 +0000" stop="20261114160000 +0000" channel="MParamount005.us">
     <title lang="en">🔴 LIVE: Hong Kong China vs Canada</title>
     <sub-title lang="en">WR Nations Cup</sub-title>
@@ -10727,6 +10732,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261115142000 +0000" stop="20261115162000 +0000" channel="MParamount015.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261114140000 +0000" stop="20261114160000 +0000" channel="MParamount016.us">
     <title lang="en">Brighton vs Liverpool (Sat 14 Nov, 5:15pm)</title>
     <sub-title lang="en">Next Match: English Womens Super League</sub-title>
@@ -10798,6 +10808,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261115141500 +0000" stop="20261115161500 +0000" channel="MParamount016.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261114140000 +0000" stop="20261114160000 +0000" channel="MParamount017.us">
     <title lang="en">Fleetwood Town vs Tranmere Rovers (Sat 14 Nov, 5:30pm)</title>
     <sub-title lang="en">Next Match: League Two</sub-title>
@@ -10865,6 +10880,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115123000 +0000" stop="20261115143000 +0000" channel="MParamount017.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115143000 +0000" stop="20261115163000 +0000" channel="MParamount017.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -17536,6 +17556,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115121500 +0000" stop="20261115141500 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115141500 +0000" stop="20261115161500 +0000" channel="MPeacock005.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -25281,6 +25306,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261115143000 +0000" stop="20261115163000 +0000" channel="MSTAN06.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261114140000 +0000" stop="20261114160000 +0000" channel="MSTAN07.au">
     <title lang="en">🔴 LIVE: Georgia vs Tonga Nations Cup Round 5 2026</title>
     <sub-title lang="en">WR Nations Cup</sub-title>
@@ -26154,6 +26184,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115121500 +0000" stop="20261115141500 +0000" channel="MSTAN17.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115141500 +0000" stop="20261115161500 +0000" channel="MSTAN17.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -33012,10 +33047,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115140000 +0000" stop="20261115143000 +0000" channel="NFL2.uk">
-    <title lang="en">Next up: LIVE – Patriots at Lions (Sun 15 Nov, 2:30pm)</title>
+    <title lang="en">Next up: LIVE – Patriots at Lions (2:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Patriots at Lions starts Sun 15 Nov, 2:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Patriots at Lions starts at 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115143000 +0000" stop="20261115163000 +0000" channel="NFL2.uk">
+    <title lang="en">🔴 LIVE: Patriots at Lions</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">Patriots at Lions. NFL. Starts Sun 15 Nov, 2:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261114140000 +0000" stop="20261114160000 +0000" channel="NFL3.uk">
     <title lang="en">Chiefs at Falcons (Sun 15 Nov, 6pm)</title>
@@ -34587,6 +34629,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261115143000 +0000" stop="20261115163000 +0000" channel="PPVEVENT21.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261114140000 +0000" stop="20261114160000 +0000" channel="PPVEVENT22.us">
     <title lang="en">Riley vs Coupe (Sat 14 Nov, 7pm)</title>
     <sub-title lang="en">Next Match: PPV Event</sub-title>
@@ -35034,6 +35081,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115123000 +0000" stop="20261115143000 +0000" channel="PPVEVENT27.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115143000 +0000" stop="20261115163000 +0000" channel="PPVEVENT27.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -35550,6 +35602,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115122500 +0000" stop="20261115142500 +0000" channel="PPVEVENT33.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115142500 +0000" stop="20261115162500 +0000" channel="PPVEVENT33.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -36298,6 +36355,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115123000 +0000" stop="20261115143000 +0000" channel="Paramount008.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115143000 +0000" stop="20261115163000 +0000" channel="Paramount008.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -37104,6 +37166,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261115142000 +0000" stop="20261115162000 +0000" channel="Paramount019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261114140000 +0000" stop="20261114160000 +0000" channel="Paramount020.us">
     <title lang="en">Brighton vs Liverpool (Sat 14 Nov, 5:15pm)</title>
     <sub-title lang="en">Next Match: English Womens Super League</sub-title>
@@ -37171,6 +37238,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115121500 +0000" stop="20261115141500 +0000" channel="Paramount020.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115141500 +0000" stop="20261115161500 +0000" channel="Paramount020.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -43608,6 +43680,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115121500 +0000" stop="20261115141500 +0000" channel="Peacock015.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115141500 +0000" stop="20261115161500 +0000" channel="Peacock015.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -50419,6 +50496,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261115142000 +0000" stop="20261115162000 +0000" channel="SN016.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261114140000 +0000" stop="20261114145000 +0000" channel="SN017.ca">
     <title lang="en">Next up: LIVE – Tottenham Hotspur vs Everton (2:50pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -51435,6 +51517,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261115143000 +0000" stop="20261115163000 +0000" channel="STAN10.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261114140000 +0000" stop="20261114160000 +0000" channel="STAN100.au">
     <title lang="en">Dubai • Day 1 (Session 1) World Rugby Sevens Series 2026/27 (Sat 28 Nov, 5:55am)</title>
     <sub-title lang="en">Next Event: Sat 28 Nov</sub-title>
@@ -52308,6 +52395,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115121500 +0000" stop="20261115141500 +0000" channel="STAN21.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115141500 +0000" stop="20261115161500 +0000" channel="STAN21.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -59210,6 +59302,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261115141500 +0000" stop="20261115161500 +0000" channel="TSN021.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261114140000 +0000" stop="20261114160000 +0000" channel="TSN022.ca">
     <title lang="en">NCAA Football: Kansas vs West Virginia (Sat 14 Nov, 10:30pm)</title>
     <sub-title lang="en">Next Match: NCAA</sub-title>
@@ -59359,6 +59456,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261115121500 +0000" stop="20261115141500 +0000" channel="TSN023.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261115141500 +0000" stop="20261115161500 +0000" channel="TSN023.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -59906,6 +60008,13 @@
     <category lang="en">Live</category>
   </programme>
   <programme start="20261115123000 +0000" stop="20261115143000 +0000" channel="TSN030.ca">
+    <title lang="en">🔴 LIVE: 2026 ATP Finals: Doubles Round Robin _ Day #1</title>
+    <sub-title lang="en">ATP</sub-title>
+    <desc lang="en">2026 ATP Finals: Doubles Round Robin _ Day #1. Starts Sun 15 Nov, 10:30am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261115143000 +0000" stop="20261115163000 +0000" channel="TSN030.ca">
     <title lang="en">🔴 LIVE: 2026 ATP Finals: Doubles Round Robin _ Day #1</title>
     <sub-title lang="en">ATP</sub-title>
     <desc lang="en">2026 ATP Finals: Doubles Round Robin _ Day #1. Starts Sun 15 Nov, 10:30am UK time.</desc>
