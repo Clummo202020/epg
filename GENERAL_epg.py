@@ -11,11 +11,17 @@ display-name. So the rows keep their ids; in PlaylistLabs just select the source
   CHANNELS      (our id = the row's tvg-id, playlist name, group, epgshare file, epgshare id)
   PLACEHOLDERS  channels no source has (CMT Music, Kiss, Magic ...): 2-hour blocks naming the channel for 24 h, like the
                 other guides' empty channels, so the row isn't blank. They are replaced by real listings once one is added.
-  Not here: the 15 rows already on our own guide ids (UK.BBCTwo, UK.Channel4/5, UK.BBCFour, UK.ITV4, IE.RTEOne/RTE2,
-  IE.VirginMedia*, US.TBS/TNT/TLC/USANetwork) and the 7 Sky Cinema channels (UK.SkyCinema* in SPORT_epg.py).
+  SKY_CINEMA    the 7 Sky Cinema channels epgshare01 lacks (UK.SkyCinemaAction ... Thriller), read from Sky's own public TV guide
+                (the same one SPORT_epg.py uses). MOVED here from SPORT_epg.py on 14 Nov 2026 (user: all Sky Cinema channels in the
+                General guide). They keep their ids (UK.SkyCinema*), so nothing changes in PlaylistLabs.
+                14 Nov 2026 (user: "make them all UK."): the 3 Sky Cinema channels epgshare DOES carry were renamed in CHANNELS too -
+                skycinemacomedy.uk -> UK.SkyCinemaComedy, skycinemahits.uk -> UK.SkyCinemaHits, skycinemaselect.uk -> UK.SkyCinemaSelect
+                (still fed by epgshare's UK1 file) - so all 10 Sky Cinema ids look alike. The 3 rows' EPG ids must be set to the new ids.
+  Not here: the 8 rows already on our own guide ids (UK.BBCTwo, UK.Channel4/5, UK.BBCFour, UK.ITV4, IE.RTEOne/RTE2,
+  IE.VirginMedia*, US.TBS/TNT/TLC/USANetwork).
 
 Safeguard: if a source file can't be downloaded in a run, the channels it feeds are kept from the previous GENERAL_epg.xml.gz
-(programmes not yet finished), like SPORT_epg.py's carry-over.
+(programmes not yet finished), like SPORT_epg.py's carry-over. The same goes for the Sky Cinema channels if Sky's guide can't be read.
 
 Usage:
     python3 GENERAL_epg.py                  # download the files, write GENERAL_epg.xml.gz
@@ -26,6 +32,7 @@ import argparse
 import gzip
 import html
 import io
+import json
 import os
 import re
 import sys
@@ -140,9 +147,9 @@ CHANNELS = [
     ('hallmark.us', 'Hallmark', 'Movies', 'US2', 'Hallmark.Channel.HD.us2'),
     ('hallmarkfamily.us', 'Hallmark Family', 'Movies', 'US2', 'Hallmark.Family.us2'),
     ('hallmarkmystery.us', 'Hallmark Mystery', 'Movies', 'US2', 'Hallmark.Mystery.HD.us2'),
-    ('skycinemacomedy.uk', 'Sky Cinema Comedy', 'Movies', 'UK1', 'Sky.Cinema.Comedy.uk'),
-    ('skycinemahits.uk', 'Sky Cinema Hits', 'Movies', 'UK1', 'Sky.Cinema.Hits.HD.uk'),
-    ('skycinemaselect.uk', 'Sky Cinema Select', 'Movies', 'UK1', 'Sky.Cinema.Select.uk'),
+    ('UK.SkyCinemaComedy', 'Sky Cinema Comedy', 'Movies', 'UK1', 'Sky.Cinema.Comedy.uk'),
+    ('UK.SkyCinemaHits', 'Sky Cinema Hits', 'Movies', 'UK1', 'Sky.Cinema.Hits.HD.uk'),
+    ('UK.SkyCinemaSelect', 'Sky Cinema Select', 'Movies', 'UK1', 'Sky.Cinema.Select.uk'),
     ('tcm.us', 'TCM', 'Movies', 'US2', 'Turner.Classic.Movies.HD.us2'),
     ('ClublandTV.uk', 'Clubland TV', 'Music', 'UK1', 'Clubland.TV.uk'),
     ('mtv.us', 'MTV', 'Music', 'US2', 'MTV.-.Music.Television.HD.us2'),
@@ -221,6 +228,22 @@ PLACEHOLDERS = [
 ]
 
 
+# Sky Cinema (moved from SPORT_epg.py, 14 Nov 2026): our id, playlist name, Sky service id (from iptv-org's sky.com list). Films: titles
+# are left exactly as Sky gives them (never "live"), category "Movies" - the same as they looked in the SPORT guide.
+SKY_HAWK = "https://awk.epgsky.com/hawk/linear/schedule/{date}/{sids}"
+SKY_HEADERS = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+               "Accept": "application/json", "X-SkyOTT-Territory": "GB"}
+SKY_CINEMA = [
+    ('UK.SkyCinemaAction', 'Sky Cinema Action', '4014'),
+    ('UK.SkyCinemaDrama', 'Sky Cinema Drama', '4016'),
+    ('UK.SkyCinemaFamily', 'Sky Cinema Family', '4018'),
+    ('UK.SkyCinemaGreats', 'Sky Cinema Greats', '4015'),
+    ('UK.SkyCinemaPremiere', 'Sky Cinema Premiere', '4021'),
+    ('UK.SkyCinemaSciFiHorror', 'Sky Cinema Sci-fi & Horror', '4017'),
+    ('UK.SkyCinemaThriller', 'Sky Cinema Thriller', '4062'),
+]
+
+
 def canon(text):
     """epgshare ids can show &amp; (or &amp;amp;) - compare them unescaped."""
     return html.unescape(html.unescape(text or ""))
@@ -289,6 +312,77 @@ def read_file(raw, wanted, now):
     except ET.ParseError as err:
         print(f"  WARNING: file could not be read completely ({err})", file=sys.stderr)
     return {k: [v[s] for s in sorted(v)] for k, v in out.items()}
+
+
+def sky_get(url):
+    """Sky's guide answers JSON, no login or key. Three tries, then None."""
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(url, headers=SKY_HEADERS)
+            with urllib.request.urlopen(req, timeout=60) as r:
+                return json.loads(r.read().decode("utf-8", "replace"))
+        except Exception as err:
+            print(f"  Sky: attempt {attempt + 1} failed ({type(err).__name__}: {err})", file=sys.stderr)
+            time.sleep(3)
+    return None
+
+
+def dedupe_sentences(text):
+    """Drop sentences that repeat an earlier one, and any "Original title: ..." part (same as SPORT_epg.py)."""
+    text = re.sub(r"\s*Original title:.*$", "", text or "", flags=re.I | re.S).strip()
+    seen, out = set(), []
+    for part in re.split(r"(?<=[.!?\u2026])\s+", text):
+        key = re.sub(r"[\W_]+", " ", part).strip().lower()
+        if key and key in seen:
+            continue
+        seen.add(key)
+        out.append(part)
+    return " ".join(out).strip()
+
+
+def short_desc(text, limit=300):
+    """A description cut to about limit characters, at the end of a sentence where possible (same as SPORT_epg.py)."""
+    text = re.sub(r"\s+", " ", str(text or "")).strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit]
+    end = max(cut.rfind(". "), cut.rfind("! "), cut.rfind("? "))
+    return cut[:end + 1] if end > limit // 3 else cut.rsplit(" ", 1)[0] + " \u2026"
+
+
+def fetch_sky_cinema(now, get=sky_get):
+    """{our id: [(start, stop, title, sub, desc, "Movies")]} for the Sky Cinema channels, from Sky's guide.
+    Same text rules as SPORT_epg.py had: sub-title = the synopsis's first sentence (10-110 characters) when more follows."""
+    first, last = now - KEEP_PAST, now + timedelta(days=DAYS_AHEAD)
+    by_sid = {sid: cid for cid, _name, sid in SKY_CINEMA}
+    sids = ",".join(by_sid)
+    got = {}
+    day = first.replace(hour=0, minute=0, second=0, microsecond=0)
+    while day <= last:                                   # Sky's dates are UTC days; it answers all 7 channels at once
+        data = get(SKY_HAWK.format(date=day.strftime("%Y%m%d"), sids=sids))
+        for sched in (data or {}).get("schedule") or [] if isinstance(data, dict) else []:
+            cid = by_sid.get(str(sched.get("sid"))) if isinstance(sched, dict) else None
+            if not cid:
+                continue
+            for ev in sched.get("events") or []:
+                try:
+                    start = datetime.fromtimestamp(int(ev["st"]), timezone.utc)
+                    stop = start + timedelta(seconds=int(ev["d"]))
+                except (KeyError, TypeError, ValueError):
+                    continue
+                title = re.sub(r"\s+", " ", str(ev.get("t") or "")).strip()
+                if not title or stop <= first or start >= last:
+                    continue
+                synopsis = dedupe_sentences(re.sub(r"\s+", " ", str(ev.get("sy") or "")).strip())
+                m = re.match(r"(.{10,110}?[.!?])(\s|$)", synopsis)
+                sub = m.group(1) if m else ""
+                rest = synopsis[len(sub):].strip() if sub else synopsis
+                if sub and not rest:                     # one sentence only: a description, not also a sub-title
+                    sub, rest = "", synopsis
+                desc = short_desc(" ".join(x for x in (sub, rest) if x and x != title))
+                got.setdefault(cid, {})[start] = (start, stop, title, sub if sub != title else "", desc, "Movies")
+        day += timedelta(days=1)
+    return {cid: [v[s] for s in sorted(v)] for cid, v in got.items()}
 
 
 def previous_guide(path, now):
@@ -370,7 +464,7 @@ def main():
     now = datetime.now(timezone.utc)
     prev_progs, prev_names = previous_guide(args.out, now)
 
-    tv = ET.Element("tv", {"generator-info-name": "GENERAL_epg.py", "source-info-name": "epgshare01.online (UK1/US2/CA2/PLEX1/DK1)"})
+    tv = ET.Element("tv", {"generator-info-name": "GENERAL_epg.py", "source-info-name": "epgshare01.online (UK1/US2/CA2/PLEX1/DK1) + Sky TV guide (Sky Cinema)"})
     chans, progs = [], {}                  # chans: (our id, name); progs: our id -> [(start, stop, title, sub, desc, cat)]
     carried = []
     files = sorted({c[3] for c in CHANNELS})
@@ -395,6 +489,16 @@ def main():
             if canon(c[4]) in got:
                 progs[c[0]] = got[canon(c[4])]
 
+    sky = fetch_sky_cinema(now)                          # the 7 Sky Cinema channels (Sky's own guide)
+    for cid, nm, _sid in SKY_CINEMA:
+        chans.append((cid, nm))
+        if sky.get(cid):
+            progs[cid] = sky[cid]
+        elif prev_progs.get(cid):                        # Sky's guide not readable: previous listings kept
+            carried.append(cid)
+    print(f"Sky Cinema: {len(SKY_CINEMA)} channels wanted, {len(sky)} with programmes, {sum(len(v) for v in sky.values())} programmes"
+          + (f" - kept from the previous guide: {', '.join(c for c in carried if c.startswith('UK.SkyCinema'))}"
+             if any(c.startswith('UK.SkyCinema') for c in carried) else ""))
     placeholders = [(c[0], c[1]) for c in PLACEHOLDERS]
     placeholders += [(cid, nm) for cid, nm in chans if not progs.get(cid) and cid not in carried]   # mapped but empty
     chans += [(cid, nm) for cid, nm in [(c[0], c[1]) for c in PLACEHOLDERS]]

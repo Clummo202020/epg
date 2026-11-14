@@ -3882,16 +3882,8 @@ SKY_CHANNELS = {   # our ID -> (name, [Sky service ids, best first], 4K?); epgsh
     "UK.RacingTV": ("Racing TV", ["5272"], False),          # Racing TV HD
     "UK.MUTV": ("MUTV", ["1003"], False),                   # MUTV HD
     "UK.LFCTV": ("LFCTV", ["3845"], False),                 # LFCTV HD
-    # Sky Cinema (31 Oct 2026, user's Continuum "Movies" group): the 7 channels epgshare01's UK file lacks. Service ids from
-    # iptv-org's sky.com list (GB#4014 ...; their xmltv ids say SkyCinemaAction.uk etc.) - CHECK the first run's guide has films.
-    # Never "live" (SKY_CINEMA below), category "Movies".
-    "UK.SkyCinemaAction": ("Sky Cinema Action", ["4014"], False),
-    "UK.SkyCinemaDrama": ("Sky Cinema Drama", ["4016"], False),
-    "UK.SkyCinemaFamily": ("Sky Cinema Family", ["4018"], False),
-    "UK.SkyCinemaGreats": ("Sky Cinema Greats", ["4015"], False),
-    "UK.SkyCinemaPremiere": ("Sky Cinema Premiere", ["4021"], False),
-    "UK.SkyCinemaSciFiHorror": ("Sky Cinema Sci-fi & Horror", ["4017"], False),
-    "UK.SkyCinemaThriller": ("Sky Cinema Thriller", ["4062"], False),
+    # Sky Cinema (UK.SkyCinema* - Action, Drama, Family, Greats, Premiere, Sci-fi & Horror, Thriller): MOVED to GENERAL_epg.py on
+    # 14 Nov 2026 (user: all Sky Cinema channels in the General guide). Same ids, so nothing changes in PlaylistLabs.
 }
 SKY_CINEMA = "UK.SkyCinema"      # films: never tagged live (titles like "Live Free or Die Hard" / "Live and Let Die" must stay as they are)
 SKY_LIVE = re.compile(r"^\s*live\b|\(\s*live\s*\)|\blive\s*$", re.I)
@@ -6630,7 +6622,10 @@ CARRY_SKIP = ("AU.beINSPORTS",
               # dropped 4 Nov 2026 (user: not important; the playlists lose them too) - only 1-2 old programmes were being carried
               "HK.NBATV", "HK.Now668", "HK.NowSports647", "HK.NowSportsPlus", "IT.SkySport259",
               # dropped 11 Nov 2026 (user): SuperSport / ESPN Africa (DStv ZA. and AF. channels) - removed from the playlists
-              "ZA.", "AF.")
+              "ZA.", "AF.",
+              # moved 14 Nov 2026 (user): the 7 Sky Cinema channels now come from GENERAL_epg.py - never carry them here, or the same ids
+              # would sit in two guides for a week
+              "UK.SkyCinema")
 
 
 def carry_over(tv, listed, prev_path):
