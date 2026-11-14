@@ -1,22 +1,46 @@
 {
+ "CASOCCERPPV1.ca": {
+  "name": "Live | ACC Mens U19 Asia Cup 2026 - Final - Pakistan U19 vs India U19 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1",
+  "seen": "2026-11-14T18:07:34+00:00"
+ },
+ "CASOCCERPPV10.ca": {
+  "name": "Live | Zuffa Boxing-13 | all | 8K EXCLUSIVE | CA: SOCCER PPV 10",
+  "seen": "2026-11-14T18:07:34+00:00"
+ },
+ "CASOCCERPPV11.ca": {
+  "name": "Live | Final | all | 8K EXCLUSIVE | CA: SOCCER PPV 11",
+  "seen": "2026-11-14T18:07:34+00:00"
+ },
+ "CASOCCERPPV2.ca": {
+  "name": "Live | Afghanistan vs Zimbabwe in UAE 2026 - 2nd Test - Afghanistan vs Zimbabwe | all | 8K EXCLUSIVE | CA: SOCCER PPV 2",
+  "seen": "2026-11-14T18:07:34+00:00"
+ },
  "CASOCCERPPV21.ca": {
-  "name": "Live | World Final Championship 2026 - Day 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 21",
-  "seen": "2026-11-14T05:37:40+00:00"
+  "name": "Live | RWS: Singhasurat vs. Knotmai | all | 8K EXCLUSIVE | CA: SOCCER PPV 21",
+  "seen": "2026-11-14T18:07:34+00:00"
  },
- "CASOCCERPPV4.ca": {
-  "name": "Live | Afghanistan vs Zimbabwe in UAE 2026 - 2nd Test - Afghanistan vs Zimbabwe | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
-  "seen": "2026-11-14T05:37:40+00:00"
+ "CASOCCERPPV24.ca": {
+  "name": "Live | Exeter City FC vs. Cheltenham Town FC | all | 8K EXCLUSIVE | CA: SOCCER PPV 24",
+  "seen": "2026-11-14T18:07:34+00:00"
  },
- "CASOCCERPPV5.ca": {
-  "name": "Live | Japan vs. Austria | all | 8K EXCLUSIVE | CA: SOCCER PPV 5",
-  "seen": "2026-11-14T05:37:40+00:00"
+ "CASOCCERPPV26.ca": {
+  "name": "Live | Saud Bin Salman Cup for Fillies & Colts | all | 8K EXCLUSIVE | CA: SOCCER PPV 26",
+  "seen": "2026-11-14T18:07:34+00:00"
  },
- "CASOCCERPPV6.ca": {
-  "name": "Live | Abu Dhabi T10 League 2026 - 13th Match - United Tigers vs Emirates Eagles | all | 8K EXCLUSIVE | CA: SOCCER PPV 6",
-  "seen": "2026-11-14T05:37:40+00:00"
+ "CASOCCERPPV7.ca": {
+  "name": "Live | World Final Championship 2026 - Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 7",
+  "seen": "2026-11-14T18:07:34+00:00"
+ },
+ "CASOCCERPPV8.ca": {
+  "name": "Live | Napoli vs. Milan | all | 8K EXCLUSIVE | CA: SOCCER PPV 8",
+  "seen": "2026-11-14T18:07:34+00:00"
+ },
+ "CASOCCERPPV9.ca": {
+  "name": "Live | Abu Dhabi T10 League 2026 - 16th Match - Royal Desert Champions vs United Tigers | all | 8K EXCLUSIVE | CA: SOCCER PPV 9",
+  "seen": "2026-11-14T18:07:34+00:00"
  },
  "_timing": {
-  "updated": "2026-11-14T17:37:17Z",
+  "updated": "2026-11-14T18:07:26Z",
   "groups": {
    "AppleMLS": {
     "n": 18,
@@ -27,19 +51,28 @@
     "max": 10
    },
    "CASOCCERPPV": {
-    "n": 0,
-    "missed": 14,
-    "applied": true
+    "n": 6,
+    "missed": 17,
+    "applied": true,
+    "median": 60,
+    "min": 43,
+    "max": 390
    },
    "ESPNPPV": {
-    "n": 0,
-    "missed": 48,
-    "applied": false
+    "n": 10,
+    "missed": 128,
+    "applied": false,
+    "median": -10,
+    "min": -30,
+    "max": -10
    },
    "MAXPPV": {
-    "n": 0,
+    "n": 2,
     "missed": 1,
-    "applied": false
+    "applied": false,
+    "median": -15,
+    "min": -30,
+    "max": 0
    },
    "MLB": {
     "n": 0,
@@ -47,7 +80,7 @@
     "applied": false
    },
    "NBA": {
-    "n": 9,
+    "n": 4,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -68,32 +101,32 @@
     "applied": false
    },
    "Paramount": {
-    "n": 55,
-    "missed": 122,
+    "n": 36,
+    "missed": 63,
     "applied": true,
     "median": 50,
     "min": 30,
     "max": 50
    },
    "Peacock": {
-    "n": 20,
-    "missed": 86,
+    "n": 10,
+    "missed": 46,
     "applied": true,
     "median": -20,
     "min": -80,
     "max": 0
    },
    "SN": {
-    "n": 15,
-    "missed": 1,
+    "n": 20,
+    "missed": 2,
     "applied": false,
     "median": 0,
     "min": -10,
     "max": 0
    },
    "STAN": {
-    "n": 88,
-    "missed": 76,
+    "n": 44,
+    "missed": 38,
     "applied": true,
     "median": -10,
     "min": -60,
@@ -101,23 +134,20 @@
    },
    "TSN": {
     "n": 1,
-    "missed": 41,
+    "missed": 40,
     "applied": false,
     "median": 0,
     "min": 0,
     "max": 0
    },
    "UEFA": {
-    "n": 2,
+    "n": 0,
     "missed": 6,
-    "applied": false,
-    "median": 0,
-    "min": 0,
-    "max": 0
+    "applied": false
    }
   },
   "check": {
-   "compared": 10,
+   "compared": 15,
    "differ": 0,
    "examples": []
   }
