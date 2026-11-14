@@ -1662,10 +1662,9 @@ def build_channels(matches, english, suffix, english_only):
 # text is UK time (Europe/London) already - see the audit in the handover.
 def _clock_part(h, m):
     """12-hour clock, lower case, no space, minutes dropped on the hour: 12:30am, 3pm, 5:45pm"""
-    s = f"{(h % 12) or 12}{(':%02d' % m) if m else ''}{'am' if h < 12 else 'pm'}"
-    if not m and h in (0, 12):                    # 13 Nov 2026 (user): exactly 12am / 12pm get a word - "12am Midnight", "12pm Midday"
-        s += " Midnight" if h == 0 else " Midday"
-    return s
+    if not m and h in (0, 12):                    # 14 Nov 2026 (user): exactly 12am / 12pm are just the word - "Midnight", "Midday" (13 Nov had "12am Midnight" / "12pm Midday")
+        return "Midnight" if h == 0 else "Midday"
+    return f"{(h % 12) or 12}{(':%02d' % m) if m else ''}{'am' if h < 12 else 'pm'}"
 
 
 CLOCK_24H = re.compile(r"(?<![\d:.])([01]?\d|2[0-3]):([0-5]\d)(?![\d:])(?!\s?[AaPp]\.?[Mm])(?!\.\d)")
@@ -1683,10 +1682,9 @@ def clock12(text):
         if not 1 <= h <= 12:
             return m.group(0)
         mm = m.group(2)
-        s = f"{h}{(':' + mm) if mm and mm != '00' else ''}{'am' if m.group(3).lower() == 'a' else 'pm'}"
-        if h == 12 and (not mm or mm == '00'):    # 13 Nov 2026 (user): "12am Midnight" / "12pm Midday"
-            s += " Midnight" if m.group(3).lower() == 'a' else " Midday"
-        return s
+        if h == 12 and (not mm or mm == '00'):    # 14 Nov 2026 (user): "12am" / "12pm" on the hour -> just "Midnight" / "Midday"
+            return "Midnight" if m.group(3).lower() == 'a' else "Midday"
+        return f"{h}{(':' + mm) if mm and mm != '00' else ''}{'am' if m.group(3).lower() == 'a' else 'pm'}"
     return CLOCK_SHORT.sub(short, t)
 
 
