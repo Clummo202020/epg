@@ -1166,7 +1166,7 @@ SKYPLUS_MAIN_CHANNELS = [            # SPORT guide ids; a match live on any of t
 SKYPLUS_IDLE = ("Sky Sports+ streams carry every EFL match not shown on the main Sky Sports channels "
                 "(Championship, League One, League Two and the Carabao Cup), plus international football, tennis, darts, "
                 "golf, NFL and more. Each event is on its own stream - scroll the Sky Sports+ channels "
-                "to find it.\n\n(There are no Saturday 3pm kick off matches broadcast in the UK. Try Paramount+)")   # 15 Nov 2026 (user): was "No Saturday 3pm football in the UK."
+                "to find it.\n\n(There are no Saturday 3pm kick off matches broadcast in the UK. Try Paramount+ or the EFL Categories)")   # 15 Nov 2026 (user): was "No Saturday 3pm football in the UK."
 
 
 def on_main_sky(m, listings):
