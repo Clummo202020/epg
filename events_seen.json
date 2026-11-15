@@ -1,46 +1,54 @@
 {
- "CASOCCERPPV1.ca": {
-  "name": "Live | ACC Mens U19 Asia Cup 2026 - Final - Pakistan U19 vs India U19 | all | 8K EXCLUSIVE | CA: SOCCER PPV 1",
-  "seen": "2026-11-14T18:07:34+00:00"
+ "CASOCCERPPV29.ca": {
+  "name": "Live | Round Robin, Day 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 29",
+  "seen": "2026-11-15T16:37:31+00:00"
  },
- "CASOCCERPPV10.ca": {
-  "name": "Live | Zuffa Boxing-13 | all | 8K EXCLUSIVE | CA: SOCCER PPV 10",
-  "seen": "2026-11-14T18:07:34+00:00"
+ "CASOCCERPPV30.ca": {
+  "name": "Live | Game4Ricky | all | 8K EXCLUSIVE | CA: SOCCER PPV 30",
+  "seen": "2026-11-15T16:37:31+00:00"
  },
- "CASOCCERPPV11.ca": {
-  "name": "Live | Final | all | 8K EXCLUSIVE | CA: SOCCER PPV 11",
-  "seen": "2026-11-14T18:07:34+00:00"
+ "CASOCCERPPV31.ca": {
+  "name": "Live | Round 5 | all | 8K EXCLUSIVE | CA: SOCCER PPV 31",
+  "seen": "2026-11-15T16:37:31+00:00"
  },
- "CASOCCERPPV2.ca": {
-  "name": "Live | Afghanistan vs Zimbabwe in UAE 2026 - 2nd Test - Afghanistan vs Zimbabwe | all | 8K EXCLUSIVE | CA: SOCCER PPV 2",
-  "seen": "2026-11-14T18:07:34+00:00"
+ "CASOCCERPPV33.ca": {
+  "name": "Live | Cyprus vs. Montenegro | all | 8K EXCLUSIVE | CA: SOCCER PPV 33",
+  "seen": "2026-11-15T16:37:31+00:00"
  },
- "CASOCCERPPV21.ca": {
-  "name": "Live | RWS: Singhasurat vs. Knotmai | all | 8K EXCLUSIVE | CA: SOCCER PPV 21",
-  "seen": "2026-11-14T18:07:34+00:00"
+ "CASOCCERPPV34.ca": {
+  "name": "Live | Latvia vs. Armenia | all | 8K EXCLUSIVE | CA: SOCCER PPV 34",
+  "seen": "2026-11-15T16:37:31+00:00"
  },
- "CASOCCERPPV24.ca": {
-  "name": "Live | Exeter City FC vs. Cheltenham Town FC | all | 8K EXCLUSIVE | CA: SOCCER PPV 24",
-  "seen": "2026-11-14T18:07:34+00:00"
+ "CASOCCERPPV35.ca": {
+  "name": "Live | Abu Dhabi T10 League 2026 - 20th Match - Emirates Eagles vs UAE Bulls | all | 8K EXCLUSIVE | CA: SOCCER PPV 35",
+  "seen": "2026-11-15T16:37:31+00:00"
  },
- "CASOCCERPPV26.ca": {
-  "name": "Live | Saud Bin Salman Cup for Fillies & Colts | all | 8K EXCLUSIVE | CA: SOCCER PPV 26",
-  "seen": "2026-11-14T18:07:34+00:00"
+ "CASOCCERPPV36.ca": {
+  "name": "Live | Inter vs. Juventus | all | 8K EXCLUSIVE | CA: SOCCER PPV 36",
+  "seen": "2026-11-15T16:37:31+00:00"
  },
- "CASOCCERPPV7.ca": {
-  "name": "Live | World Final Championship 2026 - Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 7",
-  "seen": "2026-11-14T18:07:34+00:00"
+ "CASOCCERPPV37.ca": {
+  "name": "Live | 2026 IIHF Women's World Championship | all | 8K EXCLUSIVE | CA: SOCCER PPV 37",
+  "seen": "2026-11-15T16:37:31+00:00"
  },
- "CASOCCERPPV8.ca": {
-  "name": "Live | Napoli vs. Milan | all | 8K EXCLUSIVE | CA: SOCCER PPV 8",
-  "seen": "2026-11-14T18:07:34+00:00"
+ "CASOCCERPPV4.ca": {
+  "name": "Live | Bangladesh tour of South Africa 2026 - 1st Test - South Africa vs Bangladesh | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
+  "seen": "2026-11-15T16:37:31+00:00"
+ },
+ "CASOCCERPPV5.ca": {
+  "name": "Live | Camp Flog Gnaw Carnival | all | 8K EXCLUSIVE | CA: SOCCER PPV 5",
+  "seen": "2026-11-15T16:37:31+00:00"
+ },
+ "CASOCCERPPV6.ca": {
+  "name": "Live | World Final Championship 2026 - Day 3 | all | 8K EXCLUSIVE | CA: SOCCER PPV 6",
+  "seen": "2026-11-15T16:37:31+00:00"
  },
  "CASOCCERPPV9.ca": {
-  "name": "Live | Abu Dhabi T10 League 2026 - 16th Match - Royal Desert Champions vs United Tigers | all | 8K EXCLUSIVE | CA: SOCCER PPV 9",
-  "seen": "2026-11-14T18:07:34+00:00"
+  "name": "Live | United States vs. Finland | all | 8K EXCLUSIVE | CA: SOCCER PPV 9",
+  "seen": "2026-11-15T16:37:31+00:00"
  },
  "_timing": {
-  "updated": "2026-11-15T16:07:24Z",
+  "updated": "2026-11-15T16:37:18Z",
   "groups": {
    "AppleMLS": {
     "n": 20,
@@ -51,22 +59,28 @@
     "max": 10
    },
    "CASOCCERPPV": {
-    "n": 0,
-    "missed": 23,
-    "applied": true
+    "n": 15,
+    "missed": 17,
+    "applied": true,
+    "median": 52,
+    "min": 43,
+    "max": 120
    },
    "ESPNPPV": {
-    "n": 1,
-    "missed": 137,
+    "n": 8,
+    "missed": 84,
     "applied": false,
-    "median": -30,
-    "min": -30,
-    "max": -30
+    "median": -10,
+    "min": -10,
+    "max": -10
    },
    "MAXPPV": {
-    "n": 0,
+    "n": 1,
     "missed": 3,
-    "applied": false
+    "applied": false,
+    "median": 0,
+    "min": 0,
+    "max": 0
    },
    "MLB": {
     "n": 0,
@@ -74,7 +88,7 @@
     "applied": false
    },
    "NBA": {
-    "n": 4,
+    "n": 9,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -95,43 +109,43 @@
     "applied": false
    },
    "Paramount": {
-    "n": 56,
-    "missed": 137,
+    "n": 38,
+    "missed": 57,
     "applied": true,
     "median": 50,
     "min": 0,
     "max": 50
    },
    "Peacock": {
-    "n": 21,
-    "missed": 96,
+    "n": 11,
+    "missed": 50,
     "applied": true,
     "median": -10,
     "min": -80,
     "max": 0
    },
    "SN": {
-    "n": 16,
-    "missed": 6,
+    "n": 15,
+    "missed": 0,
     "applied": false,
     "median": 0,
-    "min": -10,
+    "min": -30,
     "max": 0
    },
    "STAN": {
-    "n": 90,
-    "missed": 72,
+    "n": 45,
+    "missed": 35,
     "applied": true,
     "median": -10,
     "min": -60,
     "max": 0
    },
    "TSN": {
-    "n": 1,
-    "missed": 40,
+    "n": 5,
+    "missed": 26,
     "applied": false,
-    "median": 0,
-    "min": 0,
+    "median": -12,
+    "min": -30,
     "max": 0
    },
    "UEFA": {
@@ -144,7 +158,7 @@
    }
   },
   "check": {
-   "compared": 36,
+   "compared": 39,
    "differ": 0,
    "examples": []
   }
