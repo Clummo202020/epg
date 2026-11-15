@@ -40,7 +40,7 @@
   "seen": "2026-11-14T18:07:34+00:00"
  },
  "_timing": {
-  "updated": "2026-11-15T11:07:26Z",
+  "updated": "2026-11-15T11:37:20Z",
   "groups": {
    "AppleMLS": {
     "n": 20,
@@ -95,7 +95,7 @@
     "applied": false
    },
    "Paramount": {
-    "n": 53,
+    "n": 56,
     "missed": 137,
     "applied": true,
     "median": 50,
@@ -119,8 +119,8 @@
     "max": 0
    },
    "STAN": {
-    "n": 45,
-    "missed": 37,
+    "n": 90,
+    "missed": 72,
     "applied": true,
     "median": -10,
     "min": -60,
