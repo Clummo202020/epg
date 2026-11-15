@@ -293,7 +293,7 @@ GOAL_RUSH_ON = []
 
 # The Goal Rush "main game" is whichever slot match these channels show live,
 # read from the SPORT guide (the local file in the repo, else the GitHub copy).
-GOAL_RUSH_MAIN_FROM = ["HK.NowSportsPLTV", "SG.HubPremier1", "NZ.SkySport8NZ"]   # first match wins
+GOAL_RUSH_MAIN_FROM = ["SG.HubPremier1", "NZ.SkySport8NZ", "HK.NowSportsPLTV"]   # first match wins (15 Nov 2026, user: Hub Premier 1, Sky Sport 8 NZ, Now Sports Premier League TV; was HK, SG, NZ)
 GOAL_RUSH_GUIDE_FILE = "SPORT_epg.xml.gz"
 GOAL_RUSH_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/SPORT_epg.xml.gz"
 # PlaylistLabs never rewrites programmes it already holds, and broadcasters can
@@ -1544,20 +1544,24 @@ def goal_rush_channel(matches, suffix, now=None):
             "live_sub": GOAL_RUSH_COMP,                  # secondary title: Premier League
             "live_title": "🔴 LIVE: Goal Rush",         # title of the show itself
         }
-        if today_uk < ko.date():
-            # not matchday yet: generic "Coming up" blocks up to the reveal time, then
-            # nothing - so PlaylistLabs can still add the main-game blocks on matchday
+        main = find_main_game(ms, listings) if listings else None
+        if today_uk < ko.date() and not main:
+            # not matchday yet and no source channel lists the main game: generic "Coming up" blocks up to the
+            # reveal time, then nothing - so PlaylistLabs can still add the main-game blocks on matchday.
+            # 15 Nov 2026 (user: "Goal Rush doesn't announce the match", it is always the one on Hub Premier 1 / Sky Sport NZ 8):
+            # as soon as a GOAL_RUSH_MAIN_FROM channel lists the match, it is named at once (see below), any day before
             print(f"  Goal Rush {ko:%a %d %b %H:%M}: before matchday - generic blocks until "
                   f"{reveal.astimezone(LONDON):%a %H:%M}, main game named on the day")
             show.update({"start": reveal, "stop": reveal, "filler_only": True})
             shows.append(show)
             break                       # later slots wait too, so nothing is skipped
-        main = find_main_game(ms, listings) if listings else None
         if main:
             others = sorted(m["title"] for m in ms if m is not main)
-            print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game {main['title']}")
+            print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game {main['title']}"
+                  + (" (named early: a source channel already lists it)" if today_uk < ko.date() else ""))
             show["desc"] = (f"Goal Rush. Main game: {main['title']}, with updates and "
                             f"goal flashes from {', '.join(others)}.{on_air}")
+            show["generic_desc"] = show["desc"]          # the \"Next Up\" blocks before the show name it too
         else:
             print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game not listed - generic description")
         shows.append(show)
