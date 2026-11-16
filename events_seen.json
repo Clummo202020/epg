@@ -1,54 +1,22 @@
 {
- "CASOCCERPPV29.ca": {
-  "name": "Live | Round Robin, Day 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 29",
-  "seen": "2026-11-15T16:37:31+00:00"
+ "CASOCCERPPV11.ca": {
+  "name": "Live | Round Robin, Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 11",
+  "seen": "2026-11-16T16:07:34+00:00"
  },
- "CASOCCERPPV30.ca": {
-  "name": "Live | Game4Ricky | all | 8K EXCLUSIVE | CA: SOCCER PPV 30",
-  "seen": "2026-11-15T16:37:31+00:00"
+ "CASOCCERPPV12.ca": {
+  "name": "Live | Abu Dhabi T10 League 2026 - 22nd Match - Arabian Aces vs United Tigers | all | 8K EXCLUSIVE | CA: SOCCER PPV 12",
+  "seen": "2026-11-16T16:07:34+00:00"
  },
- "CASOCCERPPV31.ca": {
-  "name": "Live | Round 5 | all | 8K EXCLUSIVE | CA: SOCCER PPV 31",
-  "seen": "2026-11-15T16:37:31+00:00"
+ "CASOCCERPPV2.ca": {
+  "name": "Live | Camp Flog Gnaw Carnival | all | 8K EXCLUSIVE | CA: SOCCER PPV 2",
+  "seen": "2026-11-16T16:07:34+00:00"
  },
- "CASOCCERPPV33.ca": {
-  "name": "Live | Cyprus vs. Montenegro | all | 8K EXCLUSIVE | CA: SOCCER PPV 33",
-  "seen": "2026-11-15T16:37:31+00:00"
- },
- "CASOCCERPPV34.ca": {
-  "name": "Live | Latvia vs. Armenia | all | 8K EXCLUSIVE | CA: SOCCER PPV 34",
-  "seen": "2026-11-15T16:37:31+00:00"
- },
- "CASOCCERPPV35.ca": {
-  "name": "Live | Abu Dhabi T10 League 2026 - 20th Match - Emirates Eagles vs UAE Bulls | all | 8K EXCLUSIVE | CA: SOCCER PPV 35",
-  "seen": "2026-11-15T16:37:31+00:00"
- },
- "CASOCCERPPV36.ca": {
-  "name": "Live | Inter vs. Juventus | all | 8K EXCLUSIVE | CA: SOCCER PPV 36",
-  "seen": "2026-11-15T16:37:31+00:00"
- },
- "CASOCCERPPV37.ca": {
-  "name": "Live | 2026 IIHF Women's World Championship | all | 8K EXCLUSIVE | CA: SOCCER PPV 37",
-  "seen": "2026-11-15T16:37:31+00:00"
- },
- "CASOCCERPPV4.ca": {
-  "name": "Live | Bangladesh tour of South Africa 2026 - 1st Test - South Africa vs Bangladesh | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
-  "seen": "2026-11-15T16:37:31+00:00"
- },
- "CASOCCERPPV5.ca": {
-  "name": "Live | Camp Flog Gnaw Carnival | all | 8K EXCLUSIVE | CA: SOCCER PPV 5",
-  "seen": "2026-11-15T16:37:31+00:00"
- },
- "CASOCCERPPV6.ca": {
-  "name": "Live | World Final Championship 2026 - Day 3 | all | 8K EXCLUSIVE | CA: SOCCER PPV 6",
-  "seen": "2026-11-15T16:37:31+00:00"
- },
- "CASOCCERPPV9.ca": {
-  "name": "Live | United States vs. Finland | all | 8K EXCLUSIVE | CA: SOCCER PPV 9",
-  "seen": "2026-11-15T16:37:31+00:00"
+ "CASOCCERPPV3.ca": {
+  "name": "Live | Bangladesh tour of South Africa 2026 - 1st Test - South Africa vs Bangladesh | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
+  "seen": "2026-11-16T16:07:34+00:00"
  },
  "_timing": {
-  "updated": "2026-11-16T15:37:18Z",
+  "updated": "2026-11-16T16:07:19Z",
   "groups": {
    "AppleMLS": {
     "n": 20,
@@ -59,21 +27,21 @@
     "max": 10
    },
    "CASOCCERPPV": {
-    "n": 1,
-    "missed": 31,
+    "n": 3,
+    "missed": 11,
     "applied": true,
-    "median": 56,
-    "min": 56,
-    "max": 56
+    "median": 43,
+    "min": -79,
+    "max": 43
    },
    "ESPNPPV": {
     "n": 0,
-    "missed": 92,
+    "missed": 10,
     "applied": false
    },
    "MAXPPV": {
     "n": 0,
-    "missed": 4,
+    "missed": 11,
     "applied": false
    },
    "MLB": {
@@ -82,7 +50,7 @@
     "applied": false
    },
    "NBA": {
-    "n": 9,
+    "n": 8,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -90,7 +58,7 @@
     "max": 0
    },
    "NFL": {
-    "n": 13,
+    "n": 2,
     "missed": 1,
     "applied": false,
     "median": 0,
@@ -98,8 +66,8 @@
     "max": 0
    },
    "Paramount": {
-    "n": 39,
-    "missed": 56,
+    "n": 78,
+    "missed": 108,
     "applied": true,
     "median": 15,
     "min": 0,
@@ -114,8 +82,8 @@
     "max": 0
    },
    "SN": {
-    "n": 12,
-    "missed": 3,
+    "n": 7,
+    "missed": 1,
     "applied": false,
     "median": 0,
     "min": -30,
@@ -130,8 +98,8 @@
     "max": -5
    },
    "TSN": {
-    "n": 4,
-    "missed": 27,
+    "n": 7,
+    "missed": 23,
     "applied": false,
     "median": -12,
     "min": -30,
@@ -147,7 +115,7 @@
    }
   },
   "check": {
-   "compared": 46,
+   "compared": 50,
    "differ": 0,
    "examples": []
   }
