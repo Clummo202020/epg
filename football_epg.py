@@ -1642,6 +1642,7 @@ def goal_rush_channel(matches, suffix, now=None):
                             f"goal flashes from {', '.join(others)}.{on_air}")
             show["generic_desc"] = show["desc"]          # the \"Next Up\" blocks before the show name it too
             show["filler_sub"] = f"Main game: {main['title']}{mw_tag}"   # 15 Nov 2026 (user): the "Next Up" blocks' second title was "Next Up: Goal Rush Sat 21 Nov"; the LIVE block keeps "Premier League"
+            show["live_sub"] = f"Main game: {main['title']}{mw_tag}"   # 16 Nov 2026 (user): the LIVE block's second title was "Premier League (MW11)"; with no main game named it stays that
         else:
             print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game not listed - generic description")
         shows.append(show)
