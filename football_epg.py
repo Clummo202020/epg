@@ -229,6 +229,81 @@ def cup_round(comp_name, day):
     return found
 
 
+# League match weeks (ESPN doesn't say which match week a league match is in). 16 Nov 2026 (user): "Next Match: Championship (MW16)" - always in brackets - then the
+# Premier League too ("Premier League (MW11)").
+# Each entry is the first UK date of a round as listed in the 2026-27 fixture lists (Championship: vavel.com fixture list, which numbers the
+# rounds; League One / League Two: the clubs' published fixture lists - both leagues play the same 46 round dates, and 21 Nov is MW16 in each;
+# Premier League: the official fixture release of 19 June 2026 as listed on bryme.onrender.com, matching Hub Premier 1's "(MW11)" for 21 Nov).
+# A match gets a match week only if it falls inside that round's window: a Saturday date = Fri to Mon, a Friday date = Fri to Mon, a Tuesday
+# date = Tue to Thu, a Wednesday date = Tue to Thu, a Sunday date (last two Premier League rounds) = Fri to Mon, a Monday date = that Monday
+# (windows never run into the next round). So a rearranged match played outside any round
+# window gets no match week rather than a wrong one. Championship is entered to MW42 (10 Apr 2027) - ADD MW43-46 BY APRIL 2027; the Premier
+# League is complete (MW38, 30 May 2027). NEXT SEASON'S ROUNDS IN SUMMER 2027; outside the table the secondary title is just the league name, as before.
+LEAGUE_MATCHWEEKS = {
+    "Championship": [
+        ("2026-11-21", 16), ("2026-11-24", 17), ("2026-11-27", 18), ("2026-12-04", 19), ("2026-12-08", 20),
+        ("2026-12-11", 21), ("2026-12-18", 22), ("2026-12-26", 23), ("2026-12-29", 24), ("2027-01-01", 25),
+        ("2027-01-16", 26), ("2027-01-23", 27), ("2027-01-26", 28), ("2027-01-30", 29), ("2027-02-06", 30),
+        ("2027-02-13", 31), ("2027-02-16", 32), ("2027-02-20", 33), ("2027-02-27", 34), ("2027-03-02", 35),
+        ("2027-03-06", 36), ("2027-03-13", 37), ("2027-03-16", 38), ("2027-03-20", 39), ("2027-04-03", 40),
+        ("2027-04-06", 41), ("2027-04-10", 42),
+    ],
+}
+_EFL_LOWER_ROUNDS = [                    # League One and League Two share these round dates
+    ("2026-11-14", 15), ("2026-11-21", 16), ("2026-11-28", 17), ("2026-12-01", 18), ("2026-12-12", 19),
+    ("2026-12-19", 20), ("2026-12-26", 21), ("2026-12-29", 22), ("2027-01-01", 23), ("2027-01-09", 24),
+    ("2027-01-16", 25), ("2027-01-19", 26), ("2027-01-23", 27), ("2027-01-30", 28), ("2027-02-06", 29),
+    ("2027-02-09", 30), ("2027-02-13", 31), ("2027-02-20", 32), ("2027-02-27", 33), ("2027-03-06", 34),
+    ("2027-03-13", 35), ("2027-03-20", 36), ("2027-03-26", 37), ("2027-03-29", 38), ("2027-04-03", 39),
+    ("2027-04-10", 40), ("2027-04-13", 41), ("2027-04-17", 42), ("2027-04-24", 43), ("2027-04-27", 44),
+    ("2027-05-01", 45), ("2027-05-08", 46),
+]
+LEAGUE_MATCHWEEKS["Premier League"] = [
+    ("2026-11-07", 10), ("2026-11-21", 11), ("2026-11-28", 12), ("2026-12-02", 13), ("2026-12-05", 14), ("2026-12-12", 15),
+    ("2026-12-19", 16), ("2026-12-26", 17), ("2026-12-30", 18), ("2027-01-02", 19), ("2027-01-06", 20), ("2027-01-16", 21),
+    ("2027-01-23", 22), ("2027-01-30", 23), ("2027-02-06", 24), ("2027-02-10", 25), ("2027-02-20", 26), ("2027-02-27", 27),
+    ("2027-03-03", 28), ("2027-03-13", 29), ("2027-03-20", 30), ("2027-04-10", 31), ("2027-04-17", 32), ("2027-04-24", 33),
+    ("2027-05-01", 34), ("2027-05-08", 35), ("2027-05-15", 36), ("2027-05-23", 37), ("2027-05-30", 38),
+]
+LEAGUE_MATCHWEEKS["League One"] = _EFL_LOWER_ROUNDS
+LEAGUE_MATCHWEEKS["League Two"] = _EFL_LOWER_ROUNDS
+
+
+def _round_window(first, next_first):
+    """(start, end) UK dates of a round from its listed first date (see LEAGUE_MATCHWEEKS), never running into the next round."""
+    wd = first.weekday()                                  # Mon 0 ... Sun 6
+    if wd == 5:                                           # Saturday: the Friday before to the Monday after
+        start, end = first - timedelta(days=1), first + timedelta(days=2)
+    elif wd == 4:                                         # Friday: Fri to Mon
+        start, end = first, first + timedelta(days=3)
+    elif wd == 1:                                         # Tuesday: Tue to Thu
+        start, end = first, first + timedelta(days=2)
+    elif wd == 0:                                         # Monday: that day only
+        start, end = first, first
+    elif wd == 2:                                         # Wednesday (Premier League midweek): Tue to Thu
+        start, end = first - timedelta(days=1), first + timedelta(days=1)
+    elif wd == 6:                                         # Sunday (Premier League last two rounds): Fri to Mon
+        start, end = first - timedelta(days=2), first + timedelta(days=1)
+    else:
+        start, end = first, first + timedelta(days=2)
+    if next_first is not None:
+        end = min(end, next_first - timedelta(days=1))
+    return start, end
+
+
+def league_matchweek(comp_name, day):
+    """The match week (a number) of a league match (Premier League or EFL) on this UK date, or None if not known."""
+    table = LEAGUE_MATCHWEEKS.get(comp_name)
+    if not table:
+        return None
+    firsts = [(date.fromisoformat(d), n) for d, n in table]
+    for i, (first, n) in enumerate(firsts):
+        start, end = _round_window(first, firsts[i + 1][0] if i + 1 < len(firsts) else None)
+        if start <= day <= end:
+            return n
+    return None
+
+
 def uefa_round_line(comp_name, rnd):
     """Short competition + round for a UEFA match description, e.g.
     "Champions League Match Day 4, League Phase" or "Europa League Round of 16, 1st Leg".
@@ -655,10 +730,11 @@ def collect_matches(events_by_comp, match_minutes):
 
             notes = [n.get("headline") for n in comp.get("notes", []) if n.get("headline")]
             rnd = cup_round(comp_name, ko.date())       # e.g. "Carabao Cup 4th Round"
+            mw = league_matchweek(comp_name, ko.date())     # EFL leagues only, e.g. 16 -> "Championship MW16"
             if rnd:
                 sub = f"{comp_name} {rnd}"
             else:
-                sub = utd(comp_name + (f" - {notes[0]}" if notes else ""))
+                sub = utd((f"{comp_name} (MW{mw})" if mw else comp_name) + (f" - {notes[0]}" if notes else ""))
 
             tbc = comp.get("timeValid") is False             # ESPN's time is only a placeholder
             desc = [f"{title}."]    # the competition is in the secondary title
@@ -1533,15 +1609,18 @@ def goal_rush_channel(matches, suffix, now=None):
         reveal = min(reveal, live_start)
         games = ", ".join(sorted(m["title"] for m in ms))
         generic = f"Goal Rush. Live action from {len(ms)} matches: {games}.{on_air}"
+        mw = league_matchweek(GOAL_RUSH_COMP, ko.date())      # 16 Nov 2026 (user): Goal Rush shows the match week too
+        mw_comp = f"{GOAL_RUSH_COMP} (MW{mw})" if mw else GOAL_RUSH_COMP   # "Premier League (MW11)"
+        mw_tag = f" (MW{mw})" if mw else ""                              # " (MW11)"
         show = {
-            "comp": GOAL_RUSH_COMP, "title": "Goal Rush", "sub": GOAL_RUSH_COMP,
+            "comp": GOAL_RUSH_COMP, "title": "Goal Rush", "sub": mw_comp,
             "desc": generic, "generic_desc": generic, "reveal": reveal,
             "start": live_start,
             "stop": max(m["stop"] for m in ms),
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
             "filler_head": f"Next Up: Goal Rush, {ko:%A}.",   # description starts "Next Up: Goal Rush, Saturday. Live action from ..."
-            "filler_sub": f"Next Up: Goal Rush {ko:%a} {ko.day} {ko:%b}",
-            "live_sub": GOAL_RUSH_COMP,                  # secondary title: Premier League
+            "filler_sub": f"Next Up: Goal Rush {ko:%a} {ko.day} {ko:%b}{mw_tag}",
+            "live_sub": mw_comp,                         # secondary title: Premier League (MW11)
             "live_title": "🔴 LIVE: Goal Rush",         # title of the show itself
         }
         main = find_main_game(ms, listings) if listings else None
@@ -1562,7 +1641,7 @@ def goal_rush_channel(matches, suffix, now=None):
             show["desc"] = (f"Goal Rush. Main game: {main['title']}, with updates and "
                             f"goal flashes from {', '.join(others)}.{on_air}")
             show["generic_desc"] = show["desc"]          # the \"Next Up\" blocks before the show name it too
-            show["filler_sub"] = f"Main game: {main['title']}"   # 15 Nov 2026 (user): the "Next Up" blocks' second title was "Next Up: Goal Rush Sat 21 Nov"; the LIVE block keeps "Premier League"
+            show["filler_sub"] = f"Main game: {main['title']}{mw_tag}"   # 15 Nov 2026 (user): the "Next Up" blocks' second title was "Next Up: Goal Rush Sat 21 Nov"; the LIVE block keeps "Premier League"
         else:
             print(f"  Goal Rush {ko:%a %d %b %H:%M}: main game not listed - generic description")
         shows.append(show)
