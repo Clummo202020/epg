@@ -48,7 +48,7 @@
   "seen": "2026-11-15T16:37:31+00:00"
  },
  "_timing": {
-  "updated": "2026-11-16T07:37:18Z",
+  "updated": "2026-11-16T08:07:17Z",
   "groups": {
    "AppleMLS": {
     "n": 20,
@@ -59,28 +59,22 @@
     "max": 10
    },
    "CASOCCERPPV": {
-    "n": 8,
-    "missed": 24,
+    "n": 1,
+    "missed": 31,
     "applied": true,
-    "median": 52,
-    "min": 43,
-    "max": 120
+    "median": 56,
+    "min": 56,
+    "max": 56
    },
    "ESPNPPV": {
-    "n": 8,
-    "missed": 84,
-    "applied": false,
-    "median": -10,
-    "min": -10,
-    "max": -10
+    "n": 0,
+    "missed": 92,
+    "applied": false
    },
    "MAXPPV": {
-    "n": 1,
-    "missed": 3,
-    "applied": false,
-    "median": 0,
-    "min": 0,
-    "max": 0
+    "n": 0,
+    "missed": 4,
+    "applied": false
    },
    "MLB": {
     "n": 0,
@@ -109,10 +103,10 @@
     "applied": false
    },
    "Paramount": {
-    "n": 45,
-    "missed": 50,
+    "n": 39,
+    "missed": 56,
     "applied": true,
-    "median": 45,
+    "median": 15,
     "min": 0,
     "max": 50
    },
@@ -125,8 +119,8 @@
     "max": 0
    },
    "SN": {
-    "n": 15,
-    "missed": 0,
+    "n": 12,
+    "missed": 3,
     "applied": false,
     "median": 0,
     "min": -30,
@@ -138,15 +132,15 @@
     "applied": true,
     "median": -10,
     "min": -60,
-    "max": 0
+    "max": -5
    },
    "TSN": {
-    "n": 5,
-    "missed": 26,
+    "n": 4,
+    "missed": 27,
     "applied": false,
     "median": -12,
     "min": -30,
-    "max": 0
+    "max": -12
    },
    "UEFA": {
     "n": 0,
@@ -155,7 +149,7 @@
    }
   },
   "check": {
-   "compared": 29,
+   "compared": 38,
    "differ": 0,
    "examples": []
   }
