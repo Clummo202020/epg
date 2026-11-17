@@ -59,10 +59,10 @@ def parse(raw, gz):
     chans, progs = {}, defaultdict(lambda: {"n": 0, "red": 0, "ph": 0, "last": None})
     for _, el in ET.iterparse(io.BytesIO(raw), events=("end",)):
         if el.tag == "channel":
-            chans[el.get("id")] = True
+            chans[norm_id(el.get("id"))] = True
             el.clear()
         elif el.tag == "programme":
-            d = progs[el.get("channel")]
+            d = progs[norm_id(el.get("channel"))]
             d["n"] += 1
             title = (el.findtext("title") or "")
             if title.startswith(RED):
@@ -74,6 +74,16 @@ def parse(raw, gz):
                 d["last"] = stop
             el.clear()
     return chans, progs
+
+
+TOKEN_RE = re.compile(r"^(.+\.[A-Za-z0-9+]+)\.(?=[a-z0-9]*\d)[a-z0-9]{4}(Run\d+)?$")
+
+
+def norm_id(cid):
+    """Club.Comp.9rtt -> Club.Comp: the 4-character id family token (17 Nov 2026) is ignored, so groups and the old-vs-new comparison do not change
+    when a family gets a new token."""
+    m = TOKEN_RE.match(cid or "")
+    return m.group(1) if m else cid
 
 
 def group_of(cid, how):

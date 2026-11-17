@@ -88,6 +88,10 @@ COMPETITIONS = {
     "Scottish Challenge Cup": ("sco.challenge", "ChallengeCup"),
 }
 
+# 17 Nov 2026 (user: "new IDs please"): PlaylistLabs keeps the blocks it first loaded for an id, so every Scottish club channel gets a NEW id
+# family token (one for the whole Scottish family: Celtic.ScotPrem.3hzr). FROZEN - NEVER change it.
+SCOT_TOKEN = "3hzr"
+
 # Leagues that define "Scottish clubs": only these clubs get channels (their cup
 # opponents from outside the SPFL, e.g. Highland League sides, do not).
 # (The name ENGLISH_LEAGUES is kept from football_epg.py so the code stays the same.)
@@ -488,13 +492,13 @@ def build_channels(matches, english, suffix, english_only):
     channels = []
     for (tid, comp), ms in grouped.items():
         ext = COMPETITIONS[comp][1]
-        channels.append((f"{bases[tid]}.{ext}{suffix}", f"{names[tid]} {comp}",
+        channels.append((f"{bases[tid]}.{ext}.{SCOT_TOKEN}{suffix}", f"{names[tid]} {comp}",
                          logos.get(tid), sorted(ms, key=lambda m: m["start"])))
     if NO_MATCH_CHANNELS:
         for tid, comp in CLUB_LEAGUE.items():
             if (tid, comp) in grouped or tid not in names:
                 continue
-            channels.append(no_match_channel(f"{bases[tid]}.{COMPETITIONS[comp][1]}{suffix}",
+            channels.append(no_match_channel(f"{bases[tid]}.{COMPETITIONS[comp][1]}.{SCOT_TOKEN}{suffix}",
                                              f"{names[tid]} {comp}", logos.get(tid), names[tid], comp))
     channels.extend(cup_idle_channels({c[0] for c in channels}, suffix))
     channels.sort(key=lambda c: c[1])
@@ -514,7 +518,7 @@ def cup_idle_channels(have, suffix):
     end = now + timedelta(days=TAIL_DAYS)
     out = []
     for e in entries:
-        cid, name, comp = f"{e['id']}{suffix}", e["name"], e["comp"]
+        cid, name, comp = f"{e['id']}.{SCOT_TOKEN}{suffix}", e["name"], e["comp"]
         if cid in have:
             continue
         club = name[:-len(comp)].strip() if name.endswith(comp) else name

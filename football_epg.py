@@ -101,9 +101,21 @@ PL_TOKEN_CLUBS = {
 }
 
 
+# 17 Nov 2026 (user: "new IDs please" - PlaylistLabs keeps the blocks it first loaded for an id, so Championship / League One / League Two /
+# FA Cup / Carabao / Champions / Europa / Conference channels still showed the OLD wording and no 10-minute early LIVE): every club channel
+# in those competitions that did not have a token yet gets a NEW id family token, one per family (the convention of 10 Nov). The list of tokens
+# is FROZEN - NEVER change one. The 20 clubs in PL_TOKEN_CLUBS keep 9rtt in every competition. MLS, Nations League and La Liga ids are unchanged.
+ID_TOKENS = {
+    "Championship": "7kq2", "League1": "7kq2", "League2": "7kq2",        # English leagues
+    "FACup": "4mwd", "Carabao": "4mwd",                                   # English cups
+    "ChampsLge": "x8vn", "Europa": "x8vn", "ConfLeague": "x8vn",         # UEFA club competitions
+}
+
+
 def club_id(base, ext, suffix=""):
-    """<Club>.<Competition>[.<token>][<run suffix>] - the token only for the clubs in PL_TOKEN_CLUBS."""
-    return f"{base}.{ext}" + (f".{PL_TOKEN}" if base in PL_TOKEN_CLUBS else "") + suffix
+    """<Club>.<Competition>[.<token>][<run suffix>] - 9rtt for the clubs in PL_TOKEN_CLUBS, else the family token in ID_TOKENS (if any)."""
+    tok = PL_TOKEN if base in PL_TOKEN_CLUBS else ID_TOKENS.get(ext)
+    return f"{base}.{ext}" + (f".{tok}" if tok else "") + suffix
 
 
 # Leagues that define "English clubs".
