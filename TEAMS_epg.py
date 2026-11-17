@@ -310,6 +310,10 @@ def add(tv, cid, start, stop, title, sub, desc, live=False):
         ET.SubElement(p, "category", {"lang": "en"}).text = "Live"
 
 
+# 17 Nov 2026 (user): the red-ball LIVE block starts this many minutes before the puck drop / kick-off; the 'Next Up' block ends there.
+LIVE_EARLY_MINUTES = 10
+
+
 def pieces(start, stop):
     t = start
     while t < stop:
@@ -321,12 +325,13 @@ def pieces(start, stop):
 def build_team(tv, cid, league, games, now, horizon):
     word, hours = LEAGUES[league][1], LEAGUES[league][2]
     dur = timedelta(hours=hours)
+    early = timedelta(minutes=LIVE_EARLY_MINUTES)
     games = sorted(games, key=lambda g: g["ko"])
     past = [g for g in games if g["completed"] and g["ko"] <= now]
     last = result_line(past[-1]) if past else ""
     t = now.replace(minute=0, second=0, microsecond=0)
     while t < horizon:
-        active = next((g for g in games if not g["completed"] and g["ko"] <= t < g["ko"] + dur), None)
+        active = next((g for g in games if not g["completed"] and g["ko"] - early <= t < g["ko"] + dur), None)
         if active:
             end = min(active["ko"] + dur, horizon)
             title = f"🔴 LIVE: {name_of(active['away'])} at {name_of(active['home'])}"
@@ -337,7 +342,7 @@ def build_team(tv, cid, league, games, now, horizon):
             t = end
             continue
         nxt = next((g for g in games if not g["completed"] and g["ko"] > t), None)
-        end = min(nxt["ko"], horizon) if nxt else horizon
+        end = min(nxt["ko"] - early, horizon) if nxt else horizon
         if end <= t:
             end = min(t + timedelta(hours=1), horizon)
         if nxt:
@@ -352,7 +357,7 @@ def build_team(tv, cid, league, games, now, horizon):
         for i, (a, b) in enumerate(ps):
             # 8 Nov 2026 (user): "Next Game" on every block before the game; only the LAST block, right before the red-ball LIVE block, says
             # "Next Up" (blocks that stop at the guide's horizon, not at the puck drop / kick-off, are all "Next Game")
-            last_before_live = bool(nxt) and end == nxt["ko"] and i == len(ps) - 1
+            last_before_live = bool(nxt) and end == nxt["ko"] - early and i == len(ps) - 1
             add(tv, cid, a, b, title if (not nxt or last_before_live) else title.replace("Next Up:", "Next Game:", 1), sub, desc)
         t = end
 

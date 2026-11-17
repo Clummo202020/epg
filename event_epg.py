@@ -184,6 +184,9 @@ KICKOFF_EARLY_MINUTES = 0      # these streams go LIVE this many minutes before 
 # stream time in the name is only when the stream opens), and the "Next up: LIVE" block runs up to it. 0 = at the kick-off; a negative number
 # (e.g. -2) would start it that many minutes AFTER the kick-off.
 PROVIDER_EARLY_MINUTES = 0
+# The football / Scottish guides' LIVE blocks start this long before the kick-off (their MATCH_EARLY_MINUTES); load_fixtures() adds it back
+# when it has only a dateless '🔴 LIVE: A v B' block to go on.
+FOOTBALL_LIVE_EARLY_MINUTES = 10
 # "UEFA | 08 -" - a slot with nothing on it yet (shows filler)
 EMPTY_SLOT = re.compile(r"^\s*(?P<label>[A-Za-z][A-Za-z0-9+ ]*?)\s*\|\s*(?P<num>\d+)\s*-?\s*$")
 # Names like "UEFA | 01 - Como vs Manchester United 17:45 pm" carry no date, so the date is
@@ -488,13 +491,14 @@ def load_fixtures():
         else:
             # Once a match has kicked off its blocks are "🔴 LIVE: A v B" with no date and time in the title, so the fixture used to
             # vanish from this list and the events guide fell back to the stream-name time (Paramount+ Raith Rovers v Dunfermline,
-            # 6 Nov 2026: real 19:30, name 20:25, and the LIVE start flipped from run to run). The LIVE block starts AT the kick-off
-            # (football / Scottish MATCH_EARLY_MINUTES = 0), so its start is the kick-off.
+            # 6 Nov 2026: real 19:30, name 20:25, and the LIVE start flipped from run to run). The LIVE block starts
+            # FOOTBALL_LIVE_EARLY_MINUTES before the kick-off (football / Scottish MATCH_EARLY_MINUTES = 10 from 17 Nov 2026).
             m = re.match(r"^🔴 LIVE: (.+?) v (.+)$", t)
             if not m or "(" in t:
                 continue
             try:
-                ko = datetime.strptime(p.get("start") or "", "%Y%m%d%H%M%S %z").astimezone(LONDON)
+                ko = datetime.strptime(p.get("start") or "", "%Y%m%d%H%M%S %z").astimezone(LONDON) \
+                    + timedelta(minutes=FOOTBALL_LIVE_EARLY_MINUTES)
             except ValueError:
                 continue
             home, away = m[1], m[2]
