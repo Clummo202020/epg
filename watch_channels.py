@@ -144,20 +144,24 @@ def group_numbered(names):
     return out
 
 
-def shorten_sky(names):
-    """With two or more Sky Sports UK channels only the first keeps the "Sky Sports" - 'Sky Sports Main Event, Main Event 4K & Premier League'
-    (17 Nov 2026, user). "Sky Sports+" and the NZ "Sky Sport N NZ" channels are not touched."""
-    sky = [i for i, n in enumerate(names) if n.startswith("Sky Sports ")]
-    if len(sky) < 2:
+SHORTEN_PREFIX = {"sky": "Sky Sports ", "sportsnet": "Sportsnet ", "now": "Now Sports "}
+
+
+def shorten_sky(names, prefix="Sky Sports "):
+    """With two or more channels of one broadcaster sharing a prefix only the first keeps it - 'Sky Sports Main Event, Main Event 4K & Premier
+    League', 'Sportsnet One, East, West, Ontario & Pacific', 'Now Sports 4K 1, Premier League 1 & 2' (17 Nov 2026, user: shorten long lists).
+    "Sky Sports+" and the NZ "Sky Sport N NZ" channels are not touched."""
+    hit = [i for i, n in enumerate(names) if n.startswith(prefix)]
+    if len(hit) < 2:
         return names
-    return [n[len("Sky Sports "):] if i in sky[1:] else n for i, n in enumerate(names)]
+    return [n[len(prefix):] if i in hit[1:] else n for i, n in enumerate(names)]
 
 
 def _one_broadcaster(names):
     """The channels of ONE broadcaster, joined with '&': 'Hub Premier 1 & 2'; 'Sky Sports Main Event, Main Event 4K & Premier League'."""
     names = group_numbered(names)
-    if broadcaster(names[0]) == "sky":
-        names = shorten_sky(names)
+    if broadcaster(names[0]) in SHORTEN_PREFIX:
+        names = shorten_sky(names, SHORTEN_PREFIX[broadcaster(names[0])])
     if len(names) == 1:
         return names[0]
     if any(" & " in n for n in names):               # a joined pair already uses '&': plain commas between the rest

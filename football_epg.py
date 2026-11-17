@@ -738,18 +738,20 @@ def collect_matches(events_by_comp, match_minutes):
                 sub = utd((f"{comp_name} (MW{mw})" if mw else comp_name) + (f" - {notes[0]}" if notes else ""))
 
             tbc = comp.get("timeValid") is False             # ESPN's time is only a placeholder
-            desc = [f"{title}."]    # the competition is in the secondary title
+            desc = []               # the teams are in the title and the competition in the secondary title (17 Nov, user: not repeated here)
             uline = uefa_round_line(comp_name, rnd)      # UEFA only: "Champions League Match Day 4, League Phase"
             if uline:
                 desc.append(f"{uline}.")
             venue = comp.get("venue") or {}
+            venue_txt = ""
             if venue.get("fullName"):
-                city = (venue.get("address") or {}).get("city")
-                desc.append(f"{venue['fullName']}{', ' + city if city else ''}.")
+                venue_txt = venue["fullName"]              # 17 Nov (user): the stadium only, no city / town
+                desc.append(f"{venue_txt}.")
             desc.append("Kick-off time to be confirmed." if tbc else f"Kick-off: {ko:%H:%M}.")
 
             matches.append({
-                "comp": comp_name, "title": title, "sub": sub, "desc": utd(" ".join(desc)),
+                "comp": comp_name, "title": title, "sub": sub, "desc": utd(" ".join(desc)), "_core": utd(" ".join(desc)),
+                "venue": utd(venue_txt), "uline": f"{uline}." if uline else "",
                 "start": start, "stop": start + timedelta(minutes=match_minutes),
                 "when": f"{ko:%a %d %b}, {'TBC' if tbc else f'{ko:%H:%M}'}",
                 "teams": [h, a], "tbc": tbc,
@@ -1093,6 +1095,21 @@ def _last_word(name):
     return [f" {words[-1]} "] if len(words) > 1 and len(words[-1]) > 3 and words[-1] not in _GENERIC_LAST else []
 
 
+def live_desc(m):
+    """Description of the 🔴 LIVE block (17 Nov 2026, user): '<channels> LIVE from St. James' Park, Newcastle-upon-Tyne. Premier League (MW11).'.
+    The teams are in the title and the kick-off is past, so neither is repeated; the channel sentence(s) and any other note stay. Matches
+    without the pieces (Goal Rush, idle channels ...) keep their own description."""
+    core = m.get("_core")
+    if not core or m.get("tbc") or core not in m["desc"]:
+        return m["desc"]
+    extras = " ".join(m["desc"].replace(core, "").split())
+    head = f"LIVE from {m['venue']}." if m.get("venue") else "LIVE."
+    sub = m.get("sub", "")
+    parts = [extras, head, (sub if sub.endswith(".") else sub + ".") if sub else "", m.get("uline", "")]      # the channels come FIRST (user)
+    return " ".join(p for p in parts if p)
+
+
+
 def event_services_for_match(m, slots):
     """['Peacock', 'Stan Sport'] - the Paramount+ / Peacock / Stan Sport slots in the events guide that carry match m (both teams in the slot's
     title, kick-off within an hour). The SERVICE only, never the slot number (the two playlists number their slots differently)."""
@@ -1137,6 +1154,8 @@ def add_platform_summary(matches, listings=None, slots=None):
                     fams[fam].append(n)
         names = _WC.order_names(fams)
         services = event_services_for_match(m, slots) if (slots and len(names) <= 1) else []
+        if any(n in ("USA Network", "NBC") for n in names):           # Peacock then only carries the Spanish-language duplicate (user)
+            services = [x for x in services if x != "Peacock"]
         on_events += bool(services)
         if not found and len(fams) < 2 and not services:
             continue                                                     # nothing new: the old single sentence (if any) stays
@@ -1146,7 +1165,7 @@ def add_platform_summary(matches, listings=None, slots=None):
         if services:
             parts.append(("It is also available on {chs}." if names else "This match is available on {chs}.").format(chs=_WC.join_names(services)))
         desc = _ALSO_LIVE_RE.sub("", m["desc"]).rstrip()
-        m["desc"] = f"{desc} {' '.join(parts)}"
+        m["desc"] = f"{' '.join(parts)} {desc}"          # the match is already in the title: the channels come FIRST (17 Nov, user)
         changed += 1
     print(f"  Several ways to watch: {on_guide} matches on a channel in our guides, {on_events} on a Paramount+ / Peacock / Stan Sport slot, "
           f"{changed} given an 'available on' line")
@@ -1969,7 +1988,7 @@ def build_xmltv(channels, filler):
                         if "filler_head" in m:       # Goal Rush: "Next Up: Goal Rush, Saturday. Live action ..."
                             f_desc = m["filler_head"] + (d[len("Goal Rush."):] if d.startswith("Goal Rush.") else " " + d)
                         else:
-                            f_desc = f"{lab}: {d}"
+                            f_desc = d              # 17 Nov (user): no "Next Match:" / "Next Up:" in the description (title and secondary title keep it)
                     if "fixed_title" in m:        # UEFA.id: same title/description throughout
                         f_title, f_desc = m["fixed_title"], m["fixed_desc"]
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
@@ -1984,7 +2003,7 @@ def build_xmltv(channels, filler):
             live_title = m.get("live_title") or (f"🔴 LIVE: {m['title']}" if m.get("teams")
                                                  else m.get("fixed_title", m["title"]))
             add_programme(tv, chan_id, start, stop, live_title,
-                          m.get("live_sub", m["sub"]), m.get("fixed_desc", m["desc"]),   # 🔴 is in the title
+                          m.get("live_sub", m["sub"]), m.get("fixed_desc", live_desc(m)),   # 🔴 is in the title
                           m["comp"], live=not m.get("not_live"))
             count += 1
             last_stop = stop
