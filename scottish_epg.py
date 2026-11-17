@@ -345,6 +345,99 @@ def collect_matches(events_by_comp, match_minutes):
     return matches
 
 
+# CHANNELS THAT SHOW THE MATCH (17 Nov 2026, user: "include Scottish", after the same line was added to football_epg.py and TEAMS_epg.py). The channels are
+# the list in watch_channels.py (shared by all three scripts); a channel is named when its listing in our SPORT / USA / CANADA guides is on air from
+# kick-off + 20 to + 30 minutes and names BOTH teams. "This match is available on A, B and C." goes at the end of the match description (Next Match /
+# Next Up and LIVE blocks). A match only gets a channel once that channel's listing is in the guides (a few days ahead at most). If watch_channels.py is
+# missing the guide is written without it - it never fails the run because of it.
+try:
+    import watch_channels as _WC
+except Exception as _e:
+    _WC = None
+    print(f"  NOTE: watch_channels.py not available ({_e}) - no 'available on' lines")
+PLATFORM_NOTE = "This match is available on {chs}."
+SCOT_ALIASES = {                      # how listings write a club, besides our short name
+    "hearts": ["heart of midlothian"], "dundee utd": ["dundee united"], "queen's park": ["queens park"],
+    "partick thistle": ["partick"], "hamilton academical": ["hamilton"], "inverness ct": ["inverness caledonian thistle", "inverness"],
+    "greenock morton": ["morton"], "airdrieonians": ["airdrie"], "dunfermline athletic": ["dunfermline"], "kelty hearts": ["kelty"],
+    "st johnstone": ["st. johnstone"], "st mirren": ["st. mirren"], "ayr utd": ["ayr united", "ayr"], "raith rovers": ["raith"],
+    "cove rangers": ["cove"], "east kilbride": ["e kilbride"], "ross county": ["ross co"],
+}
+_NORM_LETTERS = str.maketrans({"\u00f8": "o", "\u00e6": "ae", "\u00df": "ss"})
+
+
+def _norm(text):
+    text = unicodedata.normalize("NFKD", (text or "").translate(_NORM_LETTERS)).encode("ascii", "ignore").decode().lower()
+    return " " + re.sub(r"[^a-z0-9'&]+", " ", text.replace(" and ", " & ")) + " "
+
+
+def _aliases(name):
+    n = _norm(name).strip()
+    names = {n, n.replace(" utd", " united")}
+    names.update(SCOT_ALIASES.get(n, []))
+    return [_norm(a) for a in names if a]
+
+
+def platforms_for(m, listings):
+    """[channel names] of the watch_channels.CHANNELS that have match m on air at kick-off + 20 to 30 minutes in our guides, in sentence order."""
+    ko = m["start"]
+    h, a = (short_name(t.get("displayName")) for t in m["teams"])
+    by_family = {}
+    for cid, name, family in _WC.CHANNELS:
+        for s, e, text in listings.get(cid, []):
+            if not (s <= ko + timedelta(minutes=20) and e >= ko + timedelta(minutes=30)):
+                continue
+            txt = _norm(text)
+            if any(x in txt for x in _aliases(h)) and any(x in txt for x in _aliases(a)):
+                by_family.setdefault(family, []).append(name)
+                break
+    return _WC.order_names(by_family)
+
+
+def event_services_for_match(m, slots):
+    """['Peacock', 'Stan Sport'] - the Paramount+ / Peacock / Stan Sport slots in the events guide that carry match m (both clubs in the slot's
+    title, kick-off within an hour). The SERVICE only, never the slot number (the two playlists number their slots differently)."""
+    h, a = (short_name(t.get("displayName")) for t in m["teams"])
+    ha, aa = _aliases(h), _aliases(a)
+    return _WC.event_services_for(m["start"], lambda title: (lambda t: any(x in t for x in ha) and any(x in t for x in aa))(_norm(title)), slots)
+
+
+def add_platform_summary(matches, listings=None, slots=None):
+    """'This match is available on A, B and C.' for every match that is on a channel in watch_channels.CHANNELS. A match with NO or only ONE such
+    channel is also looked up in the events guide (17 Nov 2026, user): "It is also available on Stan Sport." / "This match is available on Peacock."
+    Never raises."""
+    if _WC is None:
+        return 0
+    try:
+        if listings is None:
+            listings = _WC.load_listings()
+    except Exception as e:
+        print(f"  Channel listings not read ({e}) - no 'available on' lines")
+        return 0
+    try:
+        if slots is None:
+            slots = _WC.load_event_slots()
+    except Exception as e:
+        print(f"  Events guide not read ({e}) - no event-stream services named")
+        slots = []
+    changed = 0
+    for m in matches:
+        if "TBC" in (m.get("when") or "") or len(m.get("teams") or []) != 2:
+            continue
+        names = platforms_for(m, listings)
+        services = event_services_for_match(m, slots) if (slots and len(names) <= 1) else []
+        parts = []
+        if names:
+            parts.append(PLATFORM_NOTE.format(chs=_WC.join_names(names)))
+        if services:
+            parts.append(("It is also available on {chs}." if names else "This match is available on {chs}.").format(chs=_WC.join_names(services)))
+        if parts:
+            m["desc"] = f"{m['desc']} {' '.join(parts)}"
+            changed += 1
+    print(f"  Channels showing the match: {changed} of {len(matches)} matches given an 'available on' line")
+    return changed
+
+
 def build_channels(matches, english, suffix, english_only):
     """[(channel_id, display_name, logo, [matches])], sorted by name."""
     names, logos = dict(english), {}
@@ -652,6 +745,7 @@ def main():
         sys.exit("No Scottish clubs found - ESPN may be unreachable or changed its API.")
     events = fetch_events(start, end)
     matches = collect_matches(events, args.minutes)
+    add_platform_summary(matches)                  # 17 Nov 2026 (user): channels that show the match
     if not (args.run_ids or args.suffix is not None):
         run_no, suffix = None, ""
     else:

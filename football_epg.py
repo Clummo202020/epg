@@ -1046,25 +1046,19 @@ def add_free_to_air(matches, pages=None, fetch=None):
     return added
 
 
-# SEVERAL WAYS TO WATCH (16 Nov 2026, user: "I would like both sources in the description if a game is on multiple platforms. eg. This game is
-# available on ITV1 and Sky Sports Football. Do this for every club whenever there are multiple options to watch"). A last pass, after the
-# Prime / BBC / ITV lines. It adds the channels that show the match, read from the listings in the SPORT guide (the same on-air-at-kick-off test as
-# Goal Rush: on air from kick-off + 20 to + 30 minutes and naming both teams): Sky Sports Main Event / Premier League / Football, TNT Sports 1-10,
-# Channel 4, Channel 5, RTE One / RTE2, Virgin Media One / Two / Three / Four and Premier Sports 1 / 2 (the Irish ones). When the match is on TWO OR
-# MORE families (UK free-to-air = BBC / ITV / Channel 4 / Channel 5, RTE, Virgin Media, Sky, TNT, Premier Sports, Amazon Prime) it replaces the
-# separate "This match is also live on ..." sentences with ONE: "This match is available on ITV1 and Sky Sports Football." (families in the order
-# of PLATFORM_FAMILIES). One family only = nothing new: ITV / BBC / Prime alone keep their old "also live on" sentence, Sky / TNT / Irish alone get no
-# sentence. BBC / ITV and Prime still come from their own sources (live-footballontv.com, Prime pages / LiveOnSat) with the old rules.
-PLATFORM_CHANNELS = (
-    [("UK.Channel4", "Channel 4", "fta"), ("UK.Channel5", "Channel 5", "fta"),
-     ("IE.RTEOne", "RT\u00c9 One", "rte"), ("IE.RTE2", "RT\u00c92", "rte"),
-     ("IE.VirginMediaOne", "Virgin Media One", "virgin"), ("IE.VirginMediaTwo", "Virgin Media Two", "virgin"),
-     ("IE.VirginMediaThree", "Virgin Media Three", "virgin"), ("IE.VirginMediaFour", "Virgin Media Four", "virgin"),
-     ("UK.SkySportsMainEvent", "Sky Sports Main Event", "sky"), ("UK.SkySportsPremierLeague", "Sky Sports Premier League", "sky"),
-     ("UK.SkySportsFootball", "Sky Sports Football", "sky")]
-    + [(f"UK.TNTSports{n}", f"TNT Sports {n}", "tnt") for n in range(1, 11)]
-    + [("IE.PremierSports1", "Premier Sports 1 (Ireland)", "premier"), ("IE.PremierSports2", "Premier Sports 2 (Ireland)", "premier")])
-PLATFORM_FAMILIES = ["fta", "rte", "virgin", "sky", "tnt", "premier", "prime"]       # order they are named in the sentence
+# SEVERAL WAYS TO WATCH (16 Nov 2026, user; widened 17 Nov 2026). A last pass, after the Prime / BBC / ITV lines. It adds the channels that show the
+# match, read from the listings in our guides (the same on-air-at-kick-off test as Goal Rush: on air from kick-off + 20 to + 30 minutes and
+# naming both teams). 17 Nov 2026 (user: "add to the description alternative channels that are showing the game to cover any provided streams that
+# aren't working"): the channels are now the list in watch_channels.py (UK free-to-air, Irish, Sky Sports UK, TNT Sports UK, Premier Sports Ireland,
+# Sky Sport NZ, Hub, Now Sports, Sony Ten, USA / CBS / NBC, TSN, Sportsnet - one place, shared with TEAMS_epg.py) and the sentence is added when
+# the match is on ONE OR MORE of them: "This match is available on ITV1, Sky Sports Football and Hub Premier 2." BBC / ITV and Prime still come from
+# their own sources (live-footballontv.com, Prime pages / LiveOnSat): their "also live on" sentences are folded into the same single sentence when
+# anything else is found; with nothing else found they stay as they were. If watch_channels.py is missing the old sentences simply stay.
+try:
+    import watch_channels as _WC
+except Exception as _e:                                   # never a failed run because of this
+    _WC = None
+    print(f"  NOTE: watch_channels.py not available ({_e}) - no 'available on' lines")
 PLATFORM_NOTE = "This match is available on {chs}."
 _ALSO_LIVE_RE = re.compile(r"\s*This match is also live on ([^.]+?)\.")
 
@@ -1073,18 +1067,14 @@ def _split_names(text):
     return [x.strip() for x in re.split(r",\s*|\s+and\s+", text) if x.strip()]
 
 
-def _join_names(names):
-    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
-
-
 def platforms_for(m, listings):
-    """{family: [channel names]} of the PLATFORM_CHANNELS that have match m on air at kick-off + 20 to 30 minutes in the SPORT guide."""
+    """{family: [channel names]} of the watch_channels.CHANNELS that have match m on air at kick-off + 20 to 30 minutes in our guides."""
     ko = m["start"]
     h, a = (short_name(t.get("displayName")) for t in m["teams"])
     out = {}
-    for cid, name, family in PLATFORM_CHANNELS:
-        for ch, s, e, text in listings:
-            if ch != cid or not (s <= ko + timedelta(minutes=20) and e >= ko + timedelta(minutes=30)):
+    for cid, name, family in _WC.CHANNELS:
+        for s, e, text in listings.get(cid, []):
+            if not (s <= ko + timedelta(minutes=20) and e >= ko + timedelta(minutes=30)):
                 continue
             txt = _norm(text)
             if any(x in txt for x in _aliases(h)) and any(x in txt for x in _aliases(a)):
@@ -1093,15 +1083,43 @@ def platforms_for(m, listings):
     return out
 
 
-def add_platform_summary(matches, listings=None):
-    """One 'This match is available on A, B and C.' sentence for every match on two or more families of channels. Never raises."""
+_GENERIC_LAST = {"city", "united", "utd", "town", "county", "albion", "athletic", "rovers", "wanderers", "rangers", "hotspur", "wednesday", "villa",
+                 "forest", "palace", "real", "club", "fc", "afc", "sc", "sporting", "rovers", "thistle", "academical", "athletic", "argyle", "stanley"}
+
+
+def _last_word(name):
+    """[' dortmund '] - the last word of a club name when it is distinctive (not 'City', 'United', 'Rovers' ...): the form the event titles use."""
+    words = _norm(name).split()
+    return [f" {words[-1]} "] if len(words) > 1 and len(words[-1]) > 3 and words[-1] not in _GENERIC_LAST else []
+
+
+def event_services_for_match(m, slots):
+    """['Peacock', 'Stan Sport'] - the Paramount+ / Peacock / Stan Sport slots in the events guide that carry match m (both teams in the slot's
+    title, kick-off within an hour). The SERVICE only, never the slot number (the two playlists number their slots differently)."""
+    h, a = (short_name(t.get("displayName")) for t in m["teams"])
+    ha, aa = _aliases(h) + _last_word(h), _aliases(a) + _last_word(a)      # event titles say "Dortmund" for Borussia Dortmund
+    return _WC.event_services_for(m["start"], lambda title: (lambda t: any(x in t for x in ha) and any(x in t for x in aa))(_norm(title)), slots)
+
+
+def add_platform_summary(matches, listings=None, slots=None):
+    """One 'This match is available on A, B and C.' sentence for every match that is on a channel in watch_channels.CHANNELS. A match with NO or only ONE
+    such channel is also looked up in the events guide (17 Nov 2026, user): "... It is also available on Peacock and Stan Sport." (one other channel) or
+    "This match is available on Peacock and Stan Sport." (none). Never raises."""
+    if _WC is None:
+        return 0
     try:
         if listings is None:
-            listings = load_guide_listings([c for c, _, _ in PLATFORM_CHANNELS])
+            listings = _WC.load_listings(sport_root=_sport_guide_root())
     except Exception as e:
         print(f"  Channel listings not read ({e}) - no 'available on' lines")
         return 0
-    changed = on_guide = 0
+    try:
+        if slots is None:
+            slots = _WC.load_event_slots()
+    except Exception as e:
+        print(f"  Events guide not read ({e}) - no event-stream services named")
+        slots = []
+    changed = on_guide = on_events = 0
     for m in matches:
         if m.get("tbc") or len(m.get("teams") or []) != 2:
             continue
@@ -1117,13 +1135,21 @@ def add_platform_summary(matches, listings=None):
             for n in names:
                 if n not in fams.setdefault(fam, []):
                     fams[fam].append(n)
-        if len(fams) < 2:
-            continue
-        names = [n for fam in PLATFORM_FAMILIES for n in fams.get(fam, [])]
+        names = _WC.order_names(fams)
+        services = event_services_for_match(m, slots) if (slots and len(names) <= 1) else []
+        on_events += bool(services)
+        if not found and len(fams) < 2 and not services:
+            continue                                                     # nothing new: the old single sentence (if any) stays
+        parts = []
+        if names:
+            parts.append(PLATFORM_NOTE.format(chs=_WC.join_names(names)))
+        if services:
+            parts.append(("It is also available on {chs}." if names else "This match is available on {chs}.").format(chs=_WC.join_names(services)))
         desc = _ALSO_LIVE_RE.sub("", m["desc"]).rstrip()
-        m["desc"] = f"{desc} {PLATFORM_NOTE.format(chs=_join_names(names))}"
+        m["desc"] = f"{desc} {' '.join(parts)}"
         changed += 1
-    print(f"  Several ways to watch: {on_guide} matches on a channel in the SPORT guide, {changed} given an 'available on' line")
+    print(f"  Several ways to watch: {on_guide} matches on a channel in our guides, {on_events} on a Paramount+ / Peacock / Stan Sport slot, "
+          f"{changed} given an 'available on' line")
     return changed
 
 

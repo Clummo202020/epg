@@ -247,6 +247,74 @@ def parse_game(ev):
             "neutral": bool(comp.get("neutralSite"))}
 
 
+# CHANNELS THAT SHOW THE GAME (17 Nov 2026, user: "add to the description alternative channels that are showing the game to cover any provided
+# streams that aren't working"). The channels are the list in watch_channels.py (shared with football_epg.py); a channel is named when its listing in
+# our SPORT / USA / CANADA guides is on air from the start + 20 to + 30 minutes and names BOTH teams. The sentence "This game is available on A, B and C."
+# goes at the end of the game's description (Next Game / Next Up and LIVE blocks). A game only gets a channel once that channel's listing is in the
+# guides (a few days ahead at most), so games further away show fewer or none. If watch_channels.py is missing the guide is written without it.
+try:
+    import watch_channels as _WC
+except Exception as _e:                                    # never a failed run because of this
+    _WC = None
+    print(f"  NOTE: watch_channels.py not available ({_e}) - no 'available on' lines")
+WATCH_NOTE = "This game is available on {chs}."
+# nickname = the team name without its city; two-word nicknames, and other names the listings use
+TWO_WORD_NICKS = ("Red Sox", "White Sox", "Blue Jays", "Trail Blazers", "Maple Leafs", "Blue Jackets", "Golden Knights", "Red Wings")
+NICK_EXTRA = {"76ers": ["sixers"], "Timberwolves": ["wolves"], "Mavericks": ["mavs"], "Cavaliers": ["cavs"], "Avalanche": ["avs"],
+              "Penguins": ["pens"], "Canadiens": ["habs"], "Trail Blazers": ["blazers"], "Maple Leafs": ["leafs"]}
+
+
+def _words(text):
+    t = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode().lower()
+    return " " + re.sub(r"[^a-z0-9]+", " ", t) + " "
+
+
+def nicknames(display_name):
+    n = (display_name or "").strip()
+    nick = next((x for x in TWO_WORD_NICKS if n.endswith(x)), n.split()[-1] if n.split() else "")
+    return [_words(x).strip() for x in [nick] + NICK_EXTRA.get(nick, []) if x]
+
+
+def watch_names(g, listings):
+    """Names of the watch_channels.CHANNELS that have game g on air at kick-off + 20 to 30 minutes and name both teams, in sentence order."""
+    if not listings:
+        return []
+    ko = g["ko"]
+    a_nicks, h_nicks = nicknames(name_of(g["away"])), nicknames(name_of(g["home"]))
+    by_family = {}
+    for cid, name, family in _WC.CHANNELS:
+        for s, e, text in listings.get(cid, []):
+            if not (s <= ko + timedelta(minutes=20) and e >= ko + timedelta(minutes=30)):
+                continue
+            txt = _words(text)
+            if any(f" {x} " in txt for x in a_nicks) and any(f" {x} " in txt for x in h_nicks):
+                by_family.setdefault(family, []).append(name)
+                break
+    return _WC.order_names(by_family)
+
+
+def watch_services(g, names, slots):
+    """['Peacock', 'Stan Sport'] - event-stream services carrying game g, only when it has no or one regular channel (the service only, never a
+    slot number). Peacock is dropped when the game is on NBC / USA Network (then it is the Spanish duplicate). Never raises."""
+    if not slots or len(names) > 1:
+        return []
+    a_nicks, h_nicks = nicknames(name_of(g["away"])), nicknames(name_of(g["home"]))
+    found = _WC.event_services_for(g["ko"], lambda t: (lambda w: any(f" {x} " in w for x in a_nicks) and any(f" {x} " in w for x in h_nicks))(_words(t)), slots)
+    if any(n in ("USA Network", "NBC") for n in names):
+        found = [x for x in found if x != "Peacock"]
+    return found
+
+
+def watch_note(g):
+    names, services = g.get("watch") or [], g.get("services") or []
+    parts = []
+    if names:
+        parts.append(WATCH_NOTE.format(chs=_WC.join_names(names)))
+    if services:
+        parts.append(("It is also available on {chs}." if names else "This game is available on {chs}.").format(chs=_WC.join_names(services)))
+    return " " + " ".join(parts) if parts else ""
+
+
 def uk(dt):
     d = dt.astimezone(LONDON)
     return f"{d:%a} {d.day} {d:%b}, {d:%H:%M}"
@@ -336,7 +404,7 @@ def build_team(tv, cid, league, games, now, horizon):
             end = min(active["ko"] + dur, horizon)
             title = f"🔴 LIVE: {name_of(active['away'])} at {name_of(active['home'])}"
             # the channels a game is on are NOT listed (8 Nov 2026, user) - time and venue only
-            desc = f"{word} {uk(active['ko'])} UK time. {active['where']}.".replace("..", ".")
+            desc = f"{word} {uk(active['ko'])} UK time. {active['where']}.".replace("..", ".") + watch_note(active)
             for a, b in pieces(t, end):
                 add(tv, cid, a, b, title, f"{word} {active['ko'].astimezone(LONDON):%H:%M} UK time", desc, True)
             t = end
@@ -348,7 +416,8 @@ def build_team(tv, cid, league, games, now, horizon):
         if nxt:
             title = f"Next Up: {name_of(nxt['away'])} at {name_of(nxt['home'])} ({uk(nxt['ko'])} UK)"
             sub = uk(nxt["ko"]) + " UK time"
-            desc = f"{word} {uk(nxt['ko'])} UK time." + (f" {nxt['where']}." if nxt["where"] else "") + (f" {last}" if last else "")
+            desc = (f"{word} {uk(nxt['ko'])} UK time." + (f" {nxt['where']}." if nxt["where"] else "") + watch_note(nxt)
+                    + (f" {last}" if last else ""))
         else:
             title, sub = "No game scheduled", f"None in the next {LEAGUES[league][3]} days"
             desc = (f"No {league} game is listed for this team in the next {LEAGUES[league][3]} days." +
@@ -404,6 +473,19 @@ def main():
         c = ET.SubElement(tv, "channel", {"id": cid})
         ET.SubElement(c, "display-name", {"lang": "en"}).text = nm
     total = 0
+    listings = None
+    if _WC is not None:
+        try:
+            listings = _WC.load_listings()
+        except Exception as e:
+            print(f"  Channel listings not read ({e}) - no 'available on' lines")
+        try:
+            slots = _WC.load_event_slots()
+        except Exception as e:
+            slots = []
+            print(f"  Events guide not read ({e}) - no event-stream services named")
+    else:
+        slots = []
     for league, (path, word, hours, ahead) in LEAGUES.items():
         today = datetime.now(ET_ZONE).date()
         days = [today + timedelta(days=d) for d in range(-DAYS_BACK, ahead + 1)]
@@ -426,6 +508,9 @@ def main():
                 if not g or g["id"] in seen:
                     continue
                 seen.add(g["id"])
+                if (listings or slots) and not g["completed"]:
+                    g["watch"] = watch_names(g, listings)
+                    g["services"] = watch_services(g, g["watch"], slots)
                 for side in (g["home"], g["away"]):
                     cid = find(side["team"])
                     if cid:
@@ -435,7 +520,8 @@ def main():
         for cid, nm in mine:
             build_team(tv, cid, league, by_team.get(cid, []), now, horizon)
         n = sum(len(v) for v in by_team.values())
-        print(f"{league}: {len(seen)} games, {len(by_team)} of {len(mine)} teams have a game in range"
+        gw = len({id(g) for gs in by_team.values() for g in gs if g.get("watch")})
+        print(f"{league}: {len(seen)} games ({gw} on a channel in our guides), {len(by_team)} of {len(mine)} teams have a game in range"
               + (f" - ESPN teams not matched to a channel: {', '.join(sorted(unmatched))}" if unmatched else ""))
     total = len(tv.findall("programme"))
     write_xml(tv, args.out)

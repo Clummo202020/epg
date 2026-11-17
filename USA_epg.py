@@ -216,6 +216,7 @@ CA_CHANNELS = [
     ("CA.GolfChannel", "Golf Channel Canada", "golf-channel-canada/9900"),
     ("CA.beINSports", "beIN Sports Canada", "bein-sport-canada/13246"),
     ("CA.FightNetwork", "Fight Network", "fight-network-canada/3433"),
+    ("CA.CTVMontreal", "CTV", "ctv-montreal-cfcf-qc/50"),      # 17 Nov 2026 (NFL, Super Bowl - the English CTV feed; user found the station)
 ]
 
 # output file -> its channels
