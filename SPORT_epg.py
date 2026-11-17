@@ -5481,7 +5481,9 @@ EVENT_RE = re.compile(
     r"moto ?gp|moto[23]|indycar|nascar|superbike|wrc|football|soccer|futsal|basketball|handball|"
     r"volleyball|hockey|rugby|cricket|baseball|cycling|athletics|swimming|biathlon|skiing|ski|"
     r"table tennis|badminton|squash|wrestling|mma|tournament|grand slam|judo|karate|taekwondo|"
-    r"weightlifting|fencing|rowing|sailing|triathlon|gravel\w*|motorsport|cykel|giro|wtcr|trail)\b")
+    r"weightlifting|fencing|rowing|sailing|triathlon|gravel\w*|motorsport|cykel|giro|wtcr|trail|"
+    r"(?<!['\u2019])pool|billiards|(?:8|9|nine|eight)-?ball|abu dhabi t10|t10 (?:league|cup|cricket|blast|world)|ferrari challenge|carrera cup|supercars|btcc|dtm|formula e|"   # 17 Nov 2026 (user: "LIVE: Ultimate Pool" had no red ball)
+    r"netball|lacrosse|bowls|pickleball)\b")
 STUDIO_RE = re.compile(
     r"(?i)\b(show|news|social|reaction|weekend|ref watch|sky sports fc|sports? cent(re|er)|"
     r"desk|stateside|total football|lunchtime|preview|gameday|good morning|insiders|fantasy|"

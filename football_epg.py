@@ -882,6 +882,10 @@ TV_PAGES = {
 }
 TV_NOTE = "This match is also live on {chs}."
 TV_ONLY = ["Amazon Prime Video"]    # only these broadcasters are mentioned (user, 9 Nov: nothing for TNT Sports / HBO Max); None = all
+# 17 Nov 2026 (user): the Champions League Tuesday game is INCLUDED with a Prime membership, so it says so: "This match is also live on Amazon
+# Prime Video (included with Prime)." Anything on Prime that costs extra (pay-per-view: the Nations League, Bundesliga, Ligue 1 ...) is NOT
+# listed at all - PRIME_COMPS below is the Champions League only.
+TV_RENAME = {"Amazon Prime Video": "Amazon Prime Video (included with Prime)"}
 TV_TIME_TOLERANCE_MIN = 20
 
 
@@ -951,7 +955,7 @@ def tv_note_for(m, listings):
     L = tv_find(m, listings)
     if not L or not L["channels"]:
         return ""
-    chs = [c for c in L["channels"] if TV_ONLY is None or c in TV_ONLY]
+    chs = [TV_RENAME.get(c, c) for c in L["channels"] if TV_ONLY is None or c in TV_ONLY]
     if not chs:
         return ""
     names = chs[0] if len(chs) == 1 else ", ".join(chs[:-1]) + " and " + chs[-1]
@@ -1041,11 +1045,92 @@ def add_free_to_air(matches, pages=None, fetch=None):
     return added
 
 
+# SEVERAL WAYS TO WATCH (16 Nov 2026, user: "I would like both sources in the description if a game is on multiple platforms. eg. This game is
+# available on ITV1 and Sky Sports Football. Do this for every club whenever there are multiple options to watch"). A last pass, after the
+# Prime / BBC / ITV lines. It adds the channels that show the match, read from the listings in the SPORT guide (the same on-air-at-kick-off test as
+# Goal Rush: on air from kick-off + 20 to + 30 minutes and naming both teams): Sky Sports Main Event / Premier League / Football, TNT Sports 1-10,
+# Channel 4, Channel 5, RTE One / RTE2, Virgin Media One / Two / Three / Four and Premier Sports 1 / 2 (the Irish ones). When the match is on TWO OR
+# MORE families (UK free-to-air = BBC / ITV / Channel 4 / Channel 5, RTE, Virgin Media, Sky, TNT, Premier Sports, Amazon Prime) it replaces the
+# separate "This match is also live on ..." sentences with ONE: "This match is available on ITV1 and Sky Sports Football." (families in the order
+# of PLATFORM_FAMILIES). One family only = nothing new: ITV / BBC / Prime alone keep their old "also live on" sentence, Sky / TNT / Irish alone get no
+# sentence. BBC / ITV and Prime still come from their own sources (live-footballontv.com, Prime pages / LiveOnSat) with the old rules.
+PLATFORM_CHANNELS = (
+    [("UK.Channel4", "Channel 4", "fta"), ("UK.Channel5", "Channel 5", "fta"),
+     ("IE.RTEOne", "RT\u00c9 One", "rte"), ("IE.RTE2", "RT\u00c92", "rte"),
+     ("IE.VirginMediaOne", "Virgin Media One", "virgin"), ("IE.VirginMediaTwo", "Virgin Media Two", "virgin"),
+     ("IE.VirginMediaThree", "Virgin Media Three", "virgin"), ("IE.VirginMediaFour", "Virgin Media Four", "virgin"),
+     ("UK.SkySportsMainEvent", "Sky Sports Main Event", "sky"), ("UK.SkySportsPremierLeague", "Sky Sports Premier League", "sky"),
+     ("UK.SkySportsFootball", "Sky Sports Football", "sky")]
+    + [(f"UK.TNTSports{n}", f"TNT Sports {n}", "tnt") for n in range(1, 11)]
+    + [("IE.PremierSports1", "Premier Sports 1 (Ireland)", "premier"), ("IE.PremierSports2", "Premier Sports 2 (Ireland)", "premier")])
+PLATFORM_FAMILIES = ["fta", "rte", "virgin", "sky", "tnt", "premier", "prime"]       # order they are named in the sentence
+PLATFORM_NOTE = "This match is available on {chs}."
+_ALSO_LIVE_RE = re.compile(r"\s*This match is also live on ([^.]+?)\.")
+
+
+def _split_names(text):
+    return [x.strip() for x in re.split(r",\s*|\s+and\s+", text) if x.strip()]
+
+
+def _join_names(names):
+    return names[0] if len(names) == 1 else ", ".join(names[:-1]) + " and " + names[-1]
+
+
+def platforms_for(m, listings):
+    """{family: [channel names]} of the PLATFORM_CHANNELS that have match m on air at kick-off + 20 to 30 minutes in the SPORT guide."""
+    ko = m["start"]
+    h, a = (short_name(t.get("displayName")) for t in m["teams"])
+    out = {}
+    for cid, name, family in PLATFORM_CHANNELS:
+        for ch, s, e, text in listings:
+            if ch != cid or not (s <= ko + timedelta(minutes=20) and e >= ko + timedelta(minutes=30)):
+                continue
+            txt = _norm(text)
+            if any(x in txt for x in _aliases(h)) and any(x in txt for x in _aliases(a)):
+                out.setdefault(family, []).append(name)
+                break
+    return out
+
+
+def add_platform_summary(matches, listings=None):
+    """One 'This match is available on A, B and C.' sentence for every match on two or more families of channels. Never raises."""
+    try:
+        if listings is None:
+            listings = load_guide_listings([c for c, _, _ in PLATFORM_CHANNELS])
+    except Exception as e:
+        print(f"  Channel listings not read ({e}) - no 'available on' lines")
+        return 0
+    changed = on_guide = 0
+    for m in matches:
+        if m.get("tbc") or len(m.get("teams") or []) != 2:
+            continue
+        fams = {}
+        for g in _ALSO_LIVE_RE.findall(m["desc"]):                       # the BBC / ITV and Prime sentences already added
+            for n in _split_names(g):
+                fam = "fta" if (FTA_MAIN_RE.match(n) or n in FTA_PLAYERS) else "prime"
+                if n not in fams.setdefault(fam, []):
+                    fams[fam].append(n)
+        found = platforms_for(m, listings)
+        on_guide += bool(found)
+        for fam, names in found.items():
+            for n in names:
+                if n not in fams.setdefault(fam, []):
+                    fams[fam].append(n)
+        if len(fams) < 2:
+            continue
+        names = [n for fam in PLATFORM_FAMILIES for n in fams.get(fam, [])]
+        desc = _ALSO_LIVE_RE.sub("", m["desc"]).rstrip()
+        m["desc"] = f"{desc} {PLATFORM_NOTE.format(chs=_join_names(names))}"
+        changed += 1
+    print(f"  Several ways to watch: {on_guide} matches on a channel in the SPORT guide, {changed} given an 'available on' line")
+    return changed
+
+
 LOS_FILE = "liveonsat_fixtures.json"          # written by the LiveOnSat workflow, same repo folder as this script
 LOS_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/liveonsat_fixtures.json"
 WTM_PRIME_URL = "https://www.wheresthematch.com/live-football-on-amazon/"     # every football match on Amazon Prime Video (UK)
-PRIME_COMPS = {"UEFA Nations League": "UEFA Nations League",       # our competition -> competition name on the sources
-               "UEFA Champions League": "UEFA Champions League"}
+PRIME_COMPS = {"UEFA Champions League": "UEFA Champions League"}    # our competition -> competition name on the sources.
+# 17 Nov 2026 (user): "any matches/events that cost extra are not to be listed" - "UEFA Nations League" (pay-per-view on Prime) was here; removed
 PRIME_CHANNEL = "Prime Video UK"              # LiveOnSat names it "Prime Video UK PPV"
 
 
@@ -1097,7 +1182,7 @@ def prime_from_liveonsat(data):
 
 
 def add_prime(matches, wtm_html=None, los_data=None):
-    """Append "This match is also live on Amazon Prime Video." to every PRIME_COMPS match CONFIRMED on Prime Video by either
+    """Append "This match is also live on Amazon Prime Video (included with Prime)." to every PRIME_COMPS match CONFIRMED on Prime Video by either
     source (wheresthematch.com's Prime page, LiveOnSat): same kick-off within TV_TIME_TOLERANCE_MIN minutes, both teams.
     A match not confirmed gets nothing; a source that cannot be read is skipped. Never raises."""
     if not TV_LISTINGS:
@@ -1130,7 +1215,7 @@ def add_prime(matches, wtm_html=None, los_data=None):
                     break
         print(f"  Prime Video ({name}): {len(rows)} fixtures listed, {n} of {len(ms)} matches confirmed")
     added = 0
-    note = TV_NOTE.format(chs="Amazon Prime Video")
+    note = TV_NOTE.format(chs=TV_RENAME["Amazon Prime Video"])
     for m in ms:
         if confirmed.get(id(m)) and note not in m["desc"]:
             m["desc"] = f"{m['desc']} {note}"
@@ -1984,6 +2069,7 @@ def main():
     add_tv_listings(matches)
     add_prime(matches)
     add_free_to_air(matches)
+    add_platform_summary(matches)                  # 16 Nov 2026 (user): every platform in one sentence when there are 2+
     if not (args.run_ids or args.suffix is not None):
         run_no, suffix = None, ""
     else:
