@@ -16,7 +16,7 @@
   "seen": "2026-11-16T16:07:34+00:00"
  },
  "_timing": {
-  "updated": "2026-11-17T13:14:05Z",
+  "updated": "2026-11-17T13:15:34Z",
   "groups": {
    "AppleMLS": {
     "n": 20,
@@ -24,14 +24,14 @@
     "applied": true,
     "median": -20,
     "min": -35,
-    "max": 0
+    "max": 10
    },
    "CASOCCERPPV": {
     "n": 2,
     "missed": 12,
     "applied": true,
     "median": -182,
-    "min": -286,
+    "min": -284,
     "max": -79
    },
    "ESPNPPV": {
@@ -69,9 +69,9 @@
     "n": 142,
     "missed": 44,
     "applied": true,
-    "median": 40,
+    "median": 45,
     "min": 0,
-    "max": 50
+    "max": 60
    },
    "Peacock": {
     "n": 33,
@@ -116,27 +116,8 @@
   },
   "check": {
    "compared": 51,
-   "differ": 3,
-   "examples": [
-    {
-     "match": "Barnsley vs. Sheffield Wednesday",
-     "ours": "2026-11-20T20:10Z",
-     "liveonsat": "2026-11-20T20:00Z",
-     "source": "League One"
-    },
-    {
-     "match": "Norwich City vs. Cardiff City",
-     "ours": "2026-11-21T12:40Z",
-     "liveonsat": "2026-11-21T12:30Z",
-     "source": "Championship"
-    },
-    {
-     "match": "Millwall vs. Queens Park Rangers",
-     "ours": "2026-11-21T12:40Z",
-     "liveonsat": "2026-11-21T12:30Z",
-     "source": "Championship"
-    }
-   ]
+   "differ": 0,
+   "examples": []
   }
  }
 }
