@@ -1061,7 +1061,7 @@ try:
 except Exception as _e:                                   # never a failed run because of this
     _WC = None
     print(f"  NOTE: watch_channels.py not available ({_e}) - no 'available on' lines")
-PLATFORM_NOTE = "This match is available on {chs}."
+PLATFORM_NOTE = "This match is also available on {chs}."
 _ALSO_LIVE_RE = re.compile(r"\s*This match is also live on ([^.]+?)\.")
 
 
@@ -1102,11 +1102,11 @@ def live_desc(m):
     core = m.get("_core")
     if not core or m.get("tbc") or core not in m["desc"]:
         return m["desc"]
-    extras = " ".join(m["desc"].replace(core, "").split())
+    extras = " ".join(m["desc"].replace(core, "").split()).strip(" |")
     head = f"LIVE from {m['venue']}." if m.get("venue") else "LIVE."
     sub = m.get("sub", "")
     parts = [extras, head, (sub if sub.endswith(".") else sub + ".") if sub else "", m.get("uline", "")]      # the channels come FIRST (user)
-    return " ".join(p for p in parts if p)
+    return (parts[0] + " | " if parts[0] else "") + " ".join(p for p in parts[1:] if p)       # a "|" divides the channels from the rest (user)
 
 
 
@@ -1163,9 +1163,9 @@ def add_platform_summary(matches, listings=None, slots=None):
         if names:
             parts.append(PLATFORM_NOTE.format(chs=_WC.join_names(names)))
         if services:
-            parts.append(("It is also available on {chs}." if names else "This match is available on {chs}.").format(chs=_WC.join_names(services)))
+            parts.append(("It is on {chs} too." if names else "This match is also available on {chs}.").format(chs=_WC.join_names(services)))
         desc = _ALSO_LIVE_RE.sub("", m["desc"]).rstrip()
-        m["desc"] = f"{' '.join(parts)} {desc}"          # the match is already in the title: the channels come FIRST (17 Nov, user)
+        m["desc"] = f"{' '.join(parts)} | {desc}" if desc else " ".join(parts)          # the match is already in the title: the channels come FIRST (17 Nov, user)
         changed += 1
     print(f"  Several ways to watch: {on_guide} matches on a channel in our guides, {on_events} on a Paramount+ / Peacock / Stan Sport slot, "
           f"{changed} given an 'available on' line")
