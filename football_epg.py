@@ -885,10 +885,10 @@ TV_PAGES = {
 }
 TV_NOTE = "This match is also live on {chs}."
 TV_ONLY = ["Amazon Prime Video"]    # only these broadcasters are mentioned (user, 9 Nov: nothing for TNT Sports / HBO Max); None = all
-# 17 Nov 2026 (user): the Champions League Tuesday game is INCLUDED with a Prime membership, so it says so: "This match is also live on Amazon
-# Prime Video (included with Prime)." Anything on Prime that costs extra (pay-per-view: the Nations League, Bundesliga, Ligue 1 ...) is NOT
+# 17 Nov 2026 (user): "Amazon Prime Video" is named ONLY when the match is included with a Prime membership (the Champions League Tuesday game);
+# no "(included with Prime)" label any more. Anything on Prime that costs extra (pay-per-view: the Nations League, Bundesliga, Ligue 1 ...) is NOT
 # listed at all - PRIME_COMPS below is the Champions League only.
-TV_RENAME = {"Amazon Prime Video": "Amazon Prime Video (included with Prime)"}
+TV_RENAME = {}
 TV_TIME_TOLERANCE_MIN = 20
 
 
@@ -1228,7 +1228,7 @@ def prime_from_liveonsat(data):
 
 
 def add_prime(matches, wtm_html=None, los_data=None):
-    """Append "This match is also live on Amazon Prime Video (included with Prime)." to every PRIME_COMPS match CONFIRMED on Prime Video by either
+    """Append "This match is also live on Amazon Prime Video." to every PRIME_COMPS match CONFIRMED on Prime Video by either
     source (wheresthematch.com's Prime page, LiveOnSat): same kick-off within TV_TIME_TOLERANCE_MIN minutes, both teams.
     A match not confirmed gets nothing; a source that cannot be read is skipped. Never raises."""
     if not TV_LISTINGS:
@@ -1261,7 +1261,7 @@ def add_prime(matches, wtm_html=None, los_data=None):
                     break
         print(f"  Prime Video ({name}): {len(rows)} fixtures listed, {n} of {len(ms)} matches confirmed")
     added = 0
-    note = TV_NOTE.format(chs=TV_RENAME["Amazon Prime Video"])
+    note = TV_NOTE.format(chs=TV_RENAME.get("Amazon Prime Video", "Amazon Prime Video"))
     for m in ms:
         if confirmed.get(id(m)) and note not in m["desc"]:
             m["desc"] = f"{m['desc']} {note}"
