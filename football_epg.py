@@ -1117,6 +1117,8 @@ def live_desc(m):
     extras = " ".join(m["desc"].replace(core, "").split()).strip(" |")
     head = f"LIVE from {m['venue']}." if m.get("venue") else "LIVE."
     sub = m.get("sub", "")
+    if m.get("uline"):
+        sub = ""                                       # UEFA: the round line ("Europa League Match Day 5, League Phase.") already names the competition (18 Nov, user: trim)
     parts = [head, (sub if sub.endswith(".") else sub + ".") if sub else "", m.get("uline", "")]
     text = " ".join(p for p in parts if p)
     return text + (" | " + extras if extras else "")       # the channels come LAST after a "|" (18 Nov, user: swapped round)
