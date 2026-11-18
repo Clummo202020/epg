@@ -401,7 +401,7 @@ def platforms_for(m, listings):
 
 
 def live_desc(m):
-    """Description of the 🔴 LIVE block (17 Nov 2026, user): '<channels> LIVE from St. James' Park, Newcastle-upon-Tyne. Premier League (MW11).'.
+    """Description of the 🔴 LIVE block (17 Nov 2026, user): 'LIVE from St. James' Park. Premier League (MW11). | <channels>'.
     The teams are in the title and the kick-off is past, so neither is repeated; the channel sentence(s) and any other note stay. Matches
     without the pieces (Goal Rush, idle channels ...) keep their own description."""
     core = m.get("_core")
@@ -410,8 +410,9 @@ def live_desc(m):
     extras = " ".join(m["desc"].replace(core, "").split()).strip(" |")
     head = f"LIVE from {m['venue']}." if m.get("venue") else "LIVE."
     sub = m.get("sub", "")
-    parts = [extras, head, (sub if sub.endswith(".") else sub + ".") if sub else "", m.get("uline", "")]      # the channels come FIRST (user)
-    return (parts[0] + " | " if parts[0] else "") + " ".join(p for p in parts[1:] if p)       # a "|" divides the channels from the rest (user)
+    parts = [head, (sub if sub.endswith(".") else sub + ".") if sub else "", m.get("uline", "")]
+    text = " ".join(p for p in parts if p)
+    return text + (" | " + extras if extras else "")       # the channels come LAST after a "|" (18 Nov, user: swapped round)
 
 
 
@@ -455,7 +456,7 @@ def add_platform_summary(matches, listings=None, slots=None):
         if services:
             parts.append(("It is on {chs} too." if names else "This match is also available on {chs}.").format(chs=_WC.join_names(services)))
         if parts:
-            m["desc"] = f"{' '.join(parts)} | {m['desc']}"          # the match is already in the title: the channels come FIRST (17 Nov, user)
+            m["desc"] = f"{m['desc']} | {' '.join(parts)}"          # the match is already in the title: the stadium and kick-off come FIRST, the channels LAST after a "|" (18 Nov, user)
             changed += 1
     print(f"  Channels showing the match: {changed} of {len(matches)} matches given an 'available on' line")
     return changed

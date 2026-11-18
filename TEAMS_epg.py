@@ -312,7 +312,7 @@ def watch_note(g):
         parts.append(WATCH_NOTE.format(chs=_WC.join_names(names)))
     if services:
         parts.append(("It is on {chs} too." if names else "This game is also available on {chs}.").format(chs=_WC.join_names(services)))
-    return " ".join(parts) + " | " if parts else ""          # the game is already in the title: the channels come FIRST (17 Nov, user)
+    return " | " + " ".join(parts) if parts else ""          # the game is already in the title: the time and venue come FIRST, the channels LAST after a "|" (18 Nov, user)
 
 
 def uk(dt):
@@ -404,7 +404,7 @@ def build_team(tv, cid, league, games, now, horizon):
             end = min(active["ko"] + dur, horizon)
             title = f"🔴 LIVE: {name_of(active['away'])} at {name_of(active['home'])}"
             # the channels a game is on are NOT listed (8 Nov 2026, user) - time and venue only
-            desc = watch_note(active) + f"{word} {uk(active['ko'])} UK time. {active['where']}.".replace("..", ".")
+            desc = f"{word} {uk(active['ko'])} UK time. {active['where']}.".replace("..", ".") + watch_note(active)
             for a, b in pieces(t, end):
                 add(tv, cid, a, b, title, f"{word} {active['ko'].astimezone(LONDON):%H:%M} UK time", desc, True)
             t = end
@@ -416,8 +416,8 @@ def build_team(tv, cid, league, games, now, horizon):
         if nxt:
             title = f"Next Up: {name_of(nxt['away'])} at {name_of(nxt['home'])} ({uk(nxt['ko'])} UK)"
             sub = uk(nxt["ko"]) + " UK time"
-            desc = (watch_note(nxt) + f"{word} {uk(nxt['ko'])} UK time." + (f" {nxt['where']}." if nxt["where"] else "")
-                    + (f" {last}" if last else ""))
+            desc = (f"{word} {uk(nxt['ko'])} UK time." + (f" {nxt['where']}." if nxt["where"] else "")
+                    + watch_note(nxt) + (f" {last}" if last else ""))
         else:
             title, sub = "No game scheduled", f"None in the next {LEAGUES[league][3]} days"
             desc = (f"No {league} game is listed for this team in the next {LEAGUES[league][3]} days." +
