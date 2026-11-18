@@ -84,7 +84,8 @@ COMPETITIONS = {
     "UEFA Champions League":  ("uefa.champions", "ChampsLge"),
     "UEFA Europa League":     ("uefa.europa", "Europa"),
     "UEFA Conference League": ("uefa.europa.conf", "ConfLeague"),
-    "La Liga":                ("esp.1", "LaLiga"),
+    # "La Liga" removed 18 Nov 2026 (user dropped La Liga from the playlists): its 20 club channels and fixtures are no longer built.
+    #   To bring it back: "La Liga": ("esp.1", "LaLiga"), here and "La Liga" in OTHER_LEAGUES.
     "MLS":                    ("usa.1", "MLS"),                # MLS league matches (incl. the MLS Cup playoffs) only - no other competition
     "UEFA Nations League":    ("uefa.nations", "NationsLge"),   # used only by the Sky Sports+ streams channel
 }
@@ -127,7 +128,7 @@ UEFA_COMPETITIONS = ["UEFA Champions League", "UEFA Europa League", "UEFA Confer
 # Foreign leagues in which every club gets a channel (--english-only skips them).
 # 8 Nov 2026 (user): "UEFA Nations League" joins the list - every national team gets a <Country>.NationsLge channel, like the
 # clubs' Champions League channels, and (as with La Liga / MLS) it exists even when the team has no match in the window.
-OTHER_LEAGUES = ["La Liga", "MLS", "UEFA Nations League"]
+OTHER_LEAGUES = ["MLS", "UEFA Nations League"]       # "La Liga" removed 18 Nov 2026 (user)
 NATIONS_COMP = "UEFA Nations League"
 # 9 Nov 2026 (user): a Nations League match CONFIRMED on Prime Video (LiveOnSat lists "Prime Video UK PPV" for it - see
 # add_prime_from_liveonsat) says so in its description; nothing is said for a match that is not confirmed.
