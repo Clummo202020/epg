@@ -47,9 +47,9 @@ CHANNELS = (
     + [(f"NZ.SkySport{n}NZ", f"Sky Sport {n} NZ", "nz") for n in range(1, 10)] + [("NZ.SkySportSelectNZ", "Sky Sport Select NZ", "nz")]
     # NZ.SkySportPremierLeagueNZ is the same channel as Sky Sport 8 NZ (user, 17 Nov): named once, as Sky Sport 8 NZ
     + [(f"SG.HubPremier{n}", f"Hub Premier {n}", "sg") for n in range(1, 7)] + [(f"SG.HubSports{n}", f"Hub Sports {n}", "sg") for n in range(1, 9)]
-    + [("HK.NowSports1", "Now Sports 1", "hk"), ("HK.NowSports2", "Now Sports 2", "hk"), ("HK.NowSports4K1", "Now Sports 4K 1", "hk"),
-       ("HK.NowSports641", "Now Sports 641", "hk")]
-    + [(f"HK.NowSportsPL{n}", f"Now Sports Premier League {n}", "hk") for n in range(1, 6)]
+    # 18 Nov 2026 (user): the provider dropped Now Sports; only Now Sports 4K and Now Premier League 1-7 are kept (Now Sports 1, 2 and 641 removed)
+    + [("HK.NowSports4K1", "Now Sports 4K", "hk")]
+    + [(f"HK.NowSportsPL{n}", f"Now Premier League {n}", "hk") for n in range(1, 8)]
     + [("IN.SonySportsTen1", "Sony Sports Ten 1", "in"), ("IN.SonySportsTen2", "Sony Sports Ten 2", "in"), ("IN.SonySportsTen5", "Sony Sports Ten 5", "in"),
        ("IN.StarSportsSelect1", "Star Sports Select 1", "in"), ("IN.StarSportsSelect2", "Star Sports Select 2", "in")]       # + Sony Ten 1, Star Sports Select 1 / 2 (user, 17 Nov)
     + [("US.USANetwork", "USA Network", "us"), ("US.CBSSportsNetwork", "CBS Sports Network", "us"),
@@ -109,7 +109,7 @@ def load_listings(sport_root=None):
 
 _NUMBERED = re.compile(r"^(?P<pre>.+?)(?<!\d)(?P<sp> ?)(?P<n>\d{1,2})(?P<suf>(?: NZ| \((?:UK|Ireland)\))?)$")
 # which broadcaster a channel name belongs to (the first prefix that matches); anything else is its own broadcaster
-BROADCASTERS = (("Sky Sports", "sky"), ("Sky Sport ", "sky-nz"), ("TNT Sports", "tnt"), ("Hub ", "hub"), ("Now Sports", "now"),
+BROADCASTERS = (("Sky Sports", "sky"), ("Sky Sport ", "sky-nz"), ("TNT Sports", "tnt"), ("Hub ", "hub"), ("Now ", "now"),
                 ("Virgin Media", "virgin"), ("RT\u00c9", "rte"), ("Premier Sports", "premier"), ("Sony Sports", "sony"), ("Star Sports", "star"),
                 ("Sportsnet", "sportsnet"), ("TSN", "tsn"), ("CBS Sports", "cbs"), ("BBC", "bbc"), ("ITV", "itv"))
 
@@ -144,7 +144,7 @@ def group_numbered(names):
     return out
 
 
-SHORTEN_PREFIX = {"sky": "Sky Sports ", "sportsnet": "Sportsnet ", "now": "Now Sports "}
+SHORTEN_PREFIX = {"sky": "Sky Sports ", "sportsnet": "Sportsnet "}      # "now" removed 18 Nov 2026: "Now Sports 4K" and "Now Premier League 1 & 2" keep their full names
 
 
 def shorten_sky(names, prefix="Sky Sports "):

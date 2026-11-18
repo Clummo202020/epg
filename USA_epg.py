@@ -64,6 +64,10 @@ RED_BALL_PREFIX = "🔴 LIVE: "
 # ball; everything else - studio shows ("Football Night in America", "Big Ten Countdown"), and anything
 # TV Passport files under Sports that isn't sport ("Saturday Night Live") - is never LIVE.
 GENERAL_CHANNELS = {"US.NBC", "US.USANetwork", "US.CBS", "US.FOX", "US.ABC", "US.NBCChicago"}
+# 18 Nov 2026 (user): "Premier League Goal Rush" on Premier League TV is treated like the other Goal Rush sources - always live, with the red ball
+# ("🔴 LIVE: Premier League Goal Rush"). TV Passport doesn't flag it live.
+GOAL_RUSH_CHANNELS = {"US.PremierLeagueTV"}
+GOAL_RUSH_RE = re.compile(r"(?i)\bgoal rush\b")
 MATCHUP_RE = re.compile(r"\S\s+(at|vs?\.?|v)\s+\S", re.I)          # "Buffalo Sabres at San Jose Sharks"
 EVENT_WORDS_RE = re.compile(r"(?i)\b(draw \d+|game \d+|round \d+|(semi|quarter)-?finals?|finals?|"
                             r"grand prix|grand slam|qualifying|race \d*|championships?|cup|tournament)\b")
@@ -505,8 +509,11 @@ def write(path, channels, guide):
             live = p["live"] and sport and not (low & NOT_EVENT_CATEGORIES)
             if cid in GENERAL_CHANNELS:
                 live = live and is_event(p)
-            prefix = RED_BALL_PREFIX if ((cid in RED_BALL_CHANNELS or cid in GENERAL_CHANNELS)
-                                         and is_event(p)) else LIVE_PREFIX
+            goal_rush = cid in GOAL_RUSH_CHANNELS and bool(GOAL_RUSH_RE.search(p["title"]))
+            if goal_rush:
+                live = True
+            prefix = RED_BALL_PREFIX if (goal_rush or ((cid in RED_BALL_CHANNELS or cid in GENERAL_CHANNELS)
+                                                       and is_event(p))) else LIVE_PREFIX
             title = (prefix + p["title"]) if live else p["title"]
             cats = p["cats"] + (["Live"] if live else [])
             out = [f'  <programme start="{xmltv_time(p["start"])}" stop="{xmltv_time(p["stop"])}" '
