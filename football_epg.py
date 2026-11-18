@@ -1522,7 +1522,7 @@ def setanta_channel(matches):
 # blackout). New id PremierLeaguePlus.live.
 # SWITCHED OFF 31 Oct 2026 (the user deleted the Premier League+ rows from both playlists); SWITCHED BACK ON 18 Nov 2026 (user: new Premier League+ category, linked to PremierLeaguePlus.live).
 PLPLUS_CHANNEL = True
-PLPLUS_ID = "PremierLeaguePlus.live"
+PLPLUS_ID = "PremierLeaguePlus2.live"      # 18 Nov 2026 (user): new id so PlaylistLabs loads fresh blocks (was PremierLeaguePlus.live)
 PLPLUS_NAME = "Premier League+ streams"
 PLPLUS_COMPS = ["Premier League"]
 PLPLUS_IDLE = ("Premier League+ broadcasts Premier League matches. This is a streaming service so there is no TV Guide. "      # 18 Nov 2026 (user's wording)
