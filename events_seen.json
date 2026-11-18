@@ -1,22 +1,14 @@
 {
- "CASOCCERPPV11.ca": {
-  "name": "Live | Round Robin, Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 11",
-  "seen": "2026-11-16T16:07:34+00:00"
+ "CASOCCERPPV10.ca": {
+  "name": "Live | National | all | 8K EXCLUSIVE | CA: SOCCER PPV 10",
+  "seen": "2026-11-18T19:37:33+00:00"
  },
- "CASOCCERPPV12.ca": {
-  "name": "Live | Abu Dhabi T10 League 2026 - 22nd Match - Arabian Aces vs United Tigers | all | 8K EXCLUSIVE | CA: SOCCER PPV 12",
-  "seen": "2026-11-16T16:07:34+00:00"
- },
- "CASOCCERPPV2.ca": {
-  "name": "Live | Camp Flog Gnaw Carnival | all | 8K EXCLUSIVE | CA: SOCCER PPV 2",
-  "seen": "2026-11-16T16:07:34+00:00"
- },
- "CASOCCERPPV3.ca": {
-  "name": "Live | Bangladesh tour of South Africa 2026 - 1st Test - South Africa vs Bangladesh | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
-  "seen": "2026-11-16T16:07:34+00:00"
+ "CASOCCERPPV15.ca": {
+  "name": "Live | Knockout Semi-Final - Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 15",
+  "seen": "2026-11-18T19:37:33+00:00"
  },
  "_timing": {
-  "updated": "2026-11-18T19:07:20Z",
+  "updated": "2026-11-18T19:37:19Z",
   "groups": {
    "AppleMLS": {
     "n": 24,
@@ -27,21 +19,13 @@
     "max": 10
    },
    "CASOCCERPPV": {
-    "n": 1,
-    "missed": 13,
-    "applied": true,
-    "median": -79,
-    "min": -79,
-    "max": -79
-   },
-   "ESPNPPV": {
     "n": 0,
-    "missed": 10,
-    "applied": false
+    "missed": 8,
+    "applied": true
    },
    "MAXPPV": {
     "n": 0,
-    "missed": 11,
+    "missed": 14,
     "applied": false
    },
    "MLB": {
@@ -50,7 +34,7 @@
     "applied": false
    },
    "NBA": {
-    "n": 8,
+    "n": 12,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -58,8 +42,8 @@
     "max": 0
    },
    "NFL": {
-    "n": 2,
-    "missed": 1,
+    "n": 13,
+    "missed": 0,
     "applied": false,
     "median": 0,
     "min": 0,
@@ -74,32 +58,32 @@
     "max": 60
    },
    "Peacock": {
-    "n": 32,
-    "missed": 155,
+    "n": 21,
+    "missed": 100,
     "applied": true,
     "median": -10,
     "min": -80,
     "max": 0
    },
    "SN": {
-    "n": 7,
-    "missed": 1,
+    "n": 5,
+    "missed": 3,
     "applied": false,
     "median": 0,
-    "min": -30,
+    "min": 0,
     "max": 0
    },
    "STAN": {
-    "n": 166,
-    "missed": 70,
+    "n": 111,
+    "missed": 46,
     "applied": true,
     "median": -10,
     "min": -60,
     "max": 0
    },
    "TSN": {
-    "n": 7,
-    "missed": 23,
+    "n": 8,
+    "missed": 38,
     "applied": true,
     "median": -12,
     "min": -30,
@@ -107,7 +91,7 @@
    },
    "UEFA": {
     "n": 0,
-    "missed": 29,
+    "missed": 22,
     "applied": false
    }
   },
