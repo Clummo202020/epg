@@ -7,7 +7,7 @@ Team channel ids are NFL-ArizonaCardinals.uk, NBA-LAClippers.uk ... (31 Oct 2026
 PlaylistLabs' built-in "USA Sports Teams" ids, which won over ours and showed EST times with no red ball). Each channel shows:
     "Next Up: Arizona Cardinals at Dallas Cowboys (Sun 1 Nov, 18:00 UK)"   sub-title "Sun 1 Nov, 18:00 UK time"
     (8 Nov 2026: "Next Game: ..." on every block before the game, "Next Up: ..." only on the last block before the LIVE block)
-    description: kick-off in UK time, venue and city, TV channel(s), and the last result when the team played in the last 4 days
+    description: kick-off in UK time, venue and city, TV channel(s), (the last-result line is switched off for every league, see NO_RESULT_LEAGUES)
     "🔴 LIVE: ..." while the game is being played (estimated length per sport), then the next "Next Up" block.
 No game in range: "No game scheduled" (the MLB winter, a bye week beyond the range).
 
@@ -45,6 +45,7 @@ ESPN_SCOREBOARD = "https://site.api.espn.com/apis/site/v2/sports/{}/scoreboard?d
 LEAGUES = {"NFL": ("football/nfl", "Kick-off", 3.5, 21), "NBA": ("basketball/nba", "Tip-off", 2.75, 14),
            "NHL": ("hockey/nhl", "Puck drop", 3.0, 14), "MLB": ("baseball/mlb", "First pitch", 3.5, 14)}
 DAYS_BACK = 4
+NO_RESULT_LEAGUES = {"NFL", "NBA", "NHL", "MLB"}      # 18 Nov 2026 (user): no "Last game: ... (final)." line in the descriptions (NFL first, then NBA / NHL / MLB)
 HORIZON_HOURS = 48
 PIECE_HOURS = 6
 
@@ -233,7 +234,7 @@ def parse_game(ev):
         return None
     venue = comp.get("venue") or {}
     addr = venue.get("address") or {}
-    where = ", ".join(x for x in (venue.get("fullName"), addr.get("city"), addr.get("state")) if x)
+    where = ", ".join(x for x in (venue.get("fullName"), addr.get("city")) if x)       # 18 Nov 2026 (user): stadium and city only, no state
     tv = []
     for b in comp.get("broadcasts") or []:
         tv += [n for n in (b.get("names") or []) if n]
@@ -396,7 +397,7 @@ def build_team(tv, cid, league, games, now, horizon):
     early = timedelta(minutes=LIVE_EARLY_MINUTES)
     games = sorted(games, key=lambda g: g["ko"])
     past = [g for g in games if g["completed"] and g["ko"] <= now]
-    last = result_line(past[-1]) if past else ""
+    last = result_line(past[-1]) if past and league not in NO_RESULT_LEAGUES else ""
     t = now.replace(minute=0, second=0, microsecond=0)
     while t < horizon:
         active = next((g for g in games if not g["completed"] and g["ko"] - early <= t < g["ko"] + dur), None)
