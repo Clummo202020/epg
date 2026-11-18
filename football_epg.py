@@ -1434,7 +1434,7 @@ def skyplus_channel(matches):
                            SKYPLUS_COMPS, SKYPLUS_IDLE, efl_label=True)
 
 
-def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_label=False, ko_words=None, tail=None):
+def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_label=False, ko_words=None, tail=None, comp_in_title=True):
     """(id, name, None, shows) for a shared event-streams channel (Sky Sports+, Setanta), or None.
     One block per kick-off time; kick-offs that overlap share ONE block (so an earlier match doesn't vanish when
     a later one starts); the time before a block says what's coming up.
@@ -1460,16 +1460,16 @@ def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_la
             for c in comps_order:
                 games = sorted(m["title"] for m in at if m["comp"] == c)
                 if games:
-                    comps.append(f"{STREAMS_SHORT.get(c, c)}: " + ", ".join(games))
+                    comps.append((f"{STREAMS_SHORT.get(c, c)}: " if comp_in_title else "") + ", ".join(games))
             parts.append((k, ". ".join(comps)))
         n = len(ms)
         ko_word = (ko_words[0] if n == 1 else ko_words[1]) if ko_words else f"kick-off{'s' if n != 1 else ''}"
         closing = (" " + (tail[0] if n == 1 else tail[1])) if tail else "\n\n" + idle
         if len(kos) == 1:
-            desc = (f"{ko:%a %d %b}, {ko:%H:%M} {ko_word} on {where} - "
+            desc = ((f"{ko:%a %d %b}, {ko:%H:%M} {ko_word} on {where} - " if comp_in_title else f"{ko:%a %d %b}, {ko:%H:%M} {ko_word}: ")      # Premier League+ (18 Nov, user): no "on the Premier League+ streams - Premier League"
                     + parts[0][1] + "." + closing)
         else:
-            desc = (f"{ko:%a %d %b} on {where} - "
+            desc = ((f"{ko:%a %d %b} on {where} - " if comp_in_title else f"{ko:%a %d %b}: ")
                     + " ".join(f"{k.astimezone(LONDON):%H:%M}: {txt}." for k, txt in parts)
                     + closing)
         cs = {m["comp"] for m in ms}
@@ -1482,9 +1482,11 @@ def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_la
         shows.append({
             "comp": what, "title": what, "sub": "", "desc": desc,
             "start": start - early, "stop": stop, "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
-            "fixed_title": f"{label} - next: {what}, {ko:%a %H:%M} ({count})",
+            "fixed_title": (f"{label} - next: {what}, {ko:%a %H:%M} ({count})" if comp_in_title      # comp_in_title=False (Premier League+, 18 Nov, user): "Premier League+ - next: Sat 3pm (5 matches)"
+                            else f"{label} - next: {ko:%a %H:%M} ({count})"),
             "fixed_desc": desc, "filler_sub": "", "live_sub": "",
-            "live_title": f"🔴 LIVE - {label}: {what} ({count})",
+            "live_title": (f"🔴 LIVE - {label}: {what} ({count})" if comp_in_title      # comp_in_title=False (Premier League+, 18 Nov, user): "🔴 LIVE - Premier League+: 5 matches"
+                           else f"🔴 LIVE - {label}: {count}"),
         })
     if shows:                                  # after the last block: the idle text to the end of the window
         shows[-1]["tail"] = ("Live at event time only.", "", idle, "Sports")   # 9 Nov (user): the channel's own description again
@@ -1523,15 +1525,15 @@ PLPLUS_CHANNEL = True
 PLPLUS_ID = "PremierLeaguePlus.live"
 PLPLUS_NAME = "Premier League+ streams"
 PLPLUS_COMPS = ["Premier League"]
-PLPLUS_IDLE = ("Premier League+ streams carry the Premier League matches, each on its own stream (Premier League+ 1-10) - "
-               "scroll the Premier League+ channels to find the one you want.")
+PLPLUS_IDLE = ("Premier League+ broadcasts Premier League matches. This is a streaming service so there is no TV Guide. "      # 18 Nov 2026 (user's wording)
+               "Scroll the Premier League+ channels to find the game you want.")
 
 
 def plplus_channel(matches):
     """(id, name, None, shows) for the Premier League+ streams, or None when no matches."""
     kept = [m for m in matches if m["comp"] in PLPLUS_COMPS and not m.get("tbc")]
     return streams_channel(kept, PLPLUS_ID, PLPLUS_NAME, "Premier League+", "the Premier League+ streams",
-                           PLPLUS_COMPS, PLPLUS_IDLE)
+                           PLPLUS_COMPS, PLPLUS_IDLE, comp_in_title=False)
 
 
 # Formula 1 (30 Oct 2026): f1.uk and f1drivers.uk from OpenF1's session list (the SPORT guide already uses it)
