@@ -66,7 +66,7 @@ RED_BALL_PREFIX = "🔴 LIVE: "
 GENERAL_CHANNELS = {"US.NBC", "US.USANetwork", "US.CBS", "US.FOX", "US.ABC", "US.NBCChicago"}
 # 18 Nov 2026 (user): "Premier League Goal Rush" on Premier League TV is treated like the other Goal Rush sources - always live, with the red ball
 # ("🔴 LIVE: Premier League Goal Rush"). TV Passport doesn't flag it live.
-GOAL_RUSH_CHANNELS = {"US.PremierLeagueTV"}
+GOAL_RUSH_CHANNELS = {"US.PremierLeagueTV2"}
 GOAL_RUSH_RE = re.compile(r"(?i)\bgoal rush\b")
 MATCHUP_RE = re.compile(r"\S\s+(at|vs?\.?|v)\s+\S", re.I)          # "Buffalo Sabres at San Jose Sharks"
 EVENT_WORDS_RE = re.compile(r"(?i)\b(draw \d+|game \d+|round \d+|(semi|quarter)-?finals?|finals?|"
@@ -108,7 +108,7 @@ CHANNELS = [
     ("US.BigTenNetwork", "Big Ten Network", "big-ten-network/4499"),
     ("US.FS1", "FS1", "fox-sports-1/668"),
     ("US.FS2", "FS2", "fox-sports-2/2114"),
-    ("US.PremierLeagueTV", "Premier League TV", "premier-league-tv/37457"),   # 30 Oct 2026 (iptv-org's TV Passport list)
+    ("US.PremierLeagueTV2", "Premier League TV", "premier-league-tv/37457"),   # 30 Oct 2026 (iptv-org's TV Passport list)
     ("US.FoxSoccerPlus", "FOX Soccer Plus", "fox-soccer-plus/7538"),            # 29 Oct 2026 (HD page: fox-soccer-plus-hd/11551)
     ("US.FoxDeportes", "Fox Deportes", "fox-deportes/1827"),
     ("US.CBSSportsNetwork", "CBS Sports Network", "cbs-sports-network-usa/3115"),
