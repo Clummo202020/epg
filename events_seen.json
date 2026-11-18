@@ -16,7 +16,7 @@
   "seen": "2026-11-16T16:07:34+00:00"
  },
  "_timing": {
-  "updated": "2026-11-18T04:37:26Z",
+  "updated": "2026-11-18T05:07:19Z",
   "groups": {
    "AppleMLS": {
     "n": 24,
@@ -30,9 +30,9 @@
     "n": 2,
     "missed": 12,
     "applied": true,
-    "median": 280,
+    "median": 294,
     "min": -79,
-    "max": 638
+    "max": 668
    },
    "ESPNPPV": {
     "n": 0,
@@ -66,8 +66,8 @@
     "max": 0
    },
    "Paramount": {
-    "n": 142,
-    "missed": 44,
+    "n": 148,
+    "missed": 38,
     "applied": true,
     "median": 45,
     "min": 0,
