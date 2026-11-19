@@ -1590,12 +1590,24 @@ def read_playlist(args):
             if key != PLAYLIST_SECRETS[0]:
                 print(f"{key} not set - skipped")
             continue
-        try:
-            req = urllib.request.Request(url, headers=HEADERS)
-            with urllib.request.urlopen(req, timeout=120) as r:
-                out.append((key, r.read().decode("utf-8", errors="replace")))
-        except Exception as e:              # one playlist down: carry on with the other
-            print(f"WARNING: could not download {key} ({type(e).__name__}) - skipped")
+        # 19 Nov 2026: the server sometimes answers an HTTP error for a minute or two, so try up to 4 times
+        # (waits 15 / 45 / 90 s) before skipping; the log now says which error it was.
+        for attempt in range(1, 5):
+            try:
+                req = urllib.request.Request(url, headers=HEADERS)
+                with urllib.request.urlopen(req, timeout=120) as r:
+                    out.append((key, r.read().decode("utf-8", errors="replace")))
+                if attempt > 1:
+                    print(f"{key}: downloaded on try {attempt}")
+                break
+            except Exception as e:          # one playlist down: carry on with the other
+                why = f"HTTP {e.code}" if hasattr(e, "code") else type(e).__name__
+                if attempt == 4:
+                    print(f"WARNING: could not download {key} ({why}) after 4 tries - skipped")
+                else:
+                    wait = (15, 45, 90)[attempt - 1]
+                    print(f"{key}: {why} on try {attempt} - retrying in {wait}s")
+                    time.sleep(wait)
     if not out:
         sys.exit("No playlist: set the PLAYLIST_URL secret (and optionally PLAYLIST_URL_2), or use --m3u FILE.")
     return out
