@@ -8,7 +8,7 @@
   "seen": "2026-11-18T19:37:33+00:00"
  },
  "_timing": {
-  "updated": "2026-11-19T00:07:19Z",
+  "updated": "2026-11-19T00:37:18Z",
   "groups": {
    "AppleMLS": {
     "n": 24,
@@ -50,16 +50,16 @@
     "max": 0
    },
    "Paramount": {
-    "n": 154,
-    "missed": 36,
+    "n": 79,
+    "missed": 17,
     "applied": true,
-    "median": 45,
+    "median": 16,
     "min": 0,
     "max": 60
    },
    "Peacock": {
-    "n": 21,
-    "missed": 100,
+    "n": 9,
+    "missed": 51,
     "applied": true,
     "median": -10,
     "min": -80,
@@ -74,8 +74,8 @@
     "max": 0
    },
    "STAN": {
-    "n": 111,
-    "missed": 46,
+    "n": 56,
+    "missed": 21,
     "applied": true,
     "median": -10,
     "min": -60,
@@ -91,7 +91,7 @@
    },
    "UEFA": {
     "n": 0,
-    "missed": 22,
+    "missed": 14,
     "applied": false
    }
   },
