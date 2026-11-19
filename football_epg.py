@@ -1803,6 +1803,92 @@ def goal_rush_channel(matches, suffix, now=None):
     return (f"{GOAL_RUSH_ID}{suffix}", "Goal Rush", None, shows)
 
 
+# TNT Sports 3 Champions League Goals show (19 Nov 2026, user: "on Champions League nights TNT Sports 3 is not a dedicated match channel,
+# it is a Goals show very similar to Goal Rush ... create a guide specifically for TNT Sports 3 on Champions League nights").
+# One block per Champions League night, at the times TNT Sports 3 airs its "UCL Goals Show" (read from the SPORT guide), listing that
+# night's fixtures; "Next Up" blocks before it and the plain text after it, like Goal Rush. A new id, so PlaylistLabs loads fresh text.
+TNT3_GOALS_CHANNEL = True
+TNT3_GOALS_ID = "UK.TNTSports3UCL.x8vn"       # x8vn = the UEFA club-competitions token (see the new-id convention)
+TNT3_GOALS_NAME = "TNT Sports 3 Champions League"
+GOLAZO_GOALS_ID = "US.CBSSportsGolazoUCL.x8vn"      # 19 Nov 2026 (user): the same for CBS Sports Golazo
+GOLAZO_GOALS_NAME = "CBS Sports Golazo Champions League"
+GOLAZO_SHOW = "The Golazo Show"       # 19 Nov 2026 (user): the show's name; CBS, and the regulars (Kate Abdo with Thierry Henry, Micah Richards, Jamie Carragher)
+GOLAZO_EXTRA = " Kate Abdo hosts on CBS Sports Golazo Network, with Thierry Henry, Micah Richards and Jamie Carragher."
+GOLAZO_IDLE_DESC = ("The Golazo Show. On Champions League match nights CBS Sports Golazo Network carries The Golazo Show: live goals from every "
+                    "match, hosted by Kate Abdo with Thierry Henry, Micah Richards and Jamie Carragher. On other nights it shows the regular CBS Sports Golazo Network schedule.")
+TNT3_GOALS_SOURCE = "UK.TNTSports3"           # SPORT guide channel whose Goals show gives the times
+TNT3_GOALS_COMP = "UEFA Champions League"
+TNT3_GOALS_IDLE_TITLE = "UCL Goals Show"
+TNT3_GOALS_IDLE_DESC = ("UCL Goals Show. On Champions League match nights TNT Sports 3 carries a live goals show with the goals "
+                        "from every match as they happen. It is not a dedicated match channel. On other nights it shows other TNT Sports programmes.")
+
+
+# 19 Nov 2026 (user): in the league phase (Matchday 1-8) there are too many matches a night to name them all, so the Goals show text names
+# the English and Scottish teams' matches and the bigger, more popular clubs, then "Amongst other matches" - and once the league phase is over it
+# names every match that night.
+UCL_FEATURED_BIG = ["real madrid", "barcelona", "bayern", "paris saint", "psg", "juventus", "inter", "milan", "atletico", "dortmund",
+                    "napoli", "benfica", "porto", "sporting", "ajax"]
+UCL_FEATURED_SCOTTISH = ["celtic", "rangers", "aberdeen", "hearts", "heart of midlothian", "hibernian", "dundee", "motherwell",
+                         "kilmarnock", "st mirren", "livingston", "falkirk", "st johnstone", "ross county", "partick"]
+
+
+def _plain(text):
+    return unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode().lower()
+
+
+def ucl_featured(m, english_ids):
+    """True for a match with an English or Scottish team, or one of the bigger clubs (UCL_FEATURED_BIG)."""
+    for t in m.get("teams") or []:
+        if str(t.get("id", "")) in english_ids:
+            return True
+        name = _plain(t.get("displayName"))
+        if any(k in name for k in UCL_FEATURED_SCOTTISH + UCL_FEATURED_BIG):
+            return True
+    return False
+
+
+def tnt3_goals_channel(matches, suffix, now=None, chan_id=None, chan_name=None, show="UCL Goals Show", idle_desc=None, extra="", english_ids=()):
+    """'UCL Goals Show' channel: one programme per TNT Sports 3 Champions League Goals show, naming that night's fixtures.
+    19 Nov 2026 (user): CBS Sports Golazo is a copy ("covers exactly the same matches in a similar way") - same times and text, own id."""
+    now = now or datetime.now(timezone.utc)
+    cid = f"{chan_id or TNT3_GOALS_ID}{suffix}"
+    chan_name = chan_name or TNT3_GOALS_NAME
+    idle_desc = idle_desc or TNT3_GOALS_IDLE_DESC
+    shows = []
+    for _, start, stop, text in load_guide_listings([TNT3_GOALS_SOURCE]):
+        low = text.lower()
+        if "goals show" not in low or "champions league" not in low or stop <= now:
+            continue
+        start, stop = start.astimezone(timezone.utc), stop.astimezone(timezone.utc)
+        ko = start.astimezone(LONDON)
+        night_ms = [m for m in matches
+                    if m["comp"] == TNT3_GOALS_COMP and not m.get("tbc") and m["start"].astimezone(LONDON).date() == ko.date()
+                    and m["start"] >= start]         # 19 Nov 2026 (user): the early (5:45pm) games are over before the show starts - not mentioned
+        league_phase = (cup_round(TNT3_GOALS_COMP, ko.date()) or "").startswith("Matchday")
+        shown = [m for m in night_ms if ucl_featured(m, english_ids)] if league_phase else night_ms
+        games = sorted(m["title"].replace("M\u00fcnchen", "Munich") for m in shown)   # always "Bayern Munich", never "Bayern M\u00fcnchen" (user)
+        # 19 Nov 2026 (user): "Action from A v B, C v D ... and all other ties played tonight."
+        if games and len(shown) < len(night_ms):
+            desc = f"{show}. Action from {', '.join(games)} and all other ties played tonight.{extra}"
+        elif games:
+            desc = f"{show}. Action from {', '.join(games[:-1])} and {games[-1]}.{extra}" if len(games) > 1 else f"{show}. Action from {games[0]}.{extra}"
+        else:
+            desc = f"{show}. Action from all the Champions League ties played tonight.{extra}"
+        shows.append({
+            "comp": TNT3_GOALS_COMP, "title": show, "sub": "", "desc": desc,
+            "start": start, "stop": stop, "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
+            "fixed_title": f"{show} - {ko:%A}", "fixed_desc": desc,
+            "filler_sub": f"Next Up: {show} {ko:%A}",
+            "live_title": f"\U0001F534 LIVE: {show}", "live_sub": TNT3_GOALS_COMP,
+        })
+    shows.sort(key=lambda m: m["start"])
+    if not shows:
+        return dummy_channel(cid, chan_name, show, idle_desc)
+    shows[-1]["tail"] = (show, "", idle_desc, "Sports")
+    return (cid, chan_name, None, shows)
+
+
+
 def build_channels(matches, english, suffix, english_only):
     """[(channel_id, display_name, logo, [matches])], sorted by name."""
     names, logos = dict(english), {}
@@ -1882,6 +1968,11 @@ def build_channels(matches, english, suffix, english_only):
         gr = goal_rush_channel(matches, suffix)
         if gr:
             channels.append(gr)
+    if TNT3_GOALS_CHANNEL and not english_only:
+        channels.append(tnt3_goals_channel(matches, suffix, english_ids=set(english)))
+        channels.append(tnt3_goals_channel(matches, suffix, chan_id=GOLAZO_GOALS_ID, chan_name=GOLAZO_GOALS_NAME,
+                                        show=GOLAZO_SHOW, idle_desc=GOLAZO_IDLE_DESC, extra=GOLAZO_EXTRA,
+                                        english_ids=set(english)))
     channels.extend(cup_idle_channels({c[0] for c in channels}, suffix))
     channels.sort(key=lambda c: c[1])
     return channels

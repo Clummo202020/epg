@@ -1675,6 +1675,8 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live=False):
     loaded, so when the provider moves a slot to a new event, the old listing can only linger
     until the end of what it already holds - at most HORIZON_HOURS."""
     title, sub, desc = clock12(title), clock12(sub), clock12(desc)   # 12-hour clock (6 Nov 2026)
+    # 19 Nov 2026 (user): always "Bayern Munich", never "Bayern M\u00fcnchen" (the provider's stream names use the German spelling)
+    title, sub, desc = (re.sub(r"M(?:\u00fc|u)nchen", "Munich", x) if x else x for x in (title, sub, desc))
     t = start
     while t < stop:
         if _HORIZON is not None and t >= _HORIZON:
