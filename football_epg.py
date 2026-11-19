@@ -319,17 +319,18 @@ def league_matchweek(comp_name, day):
 
 def uefa_round_line(comp_name, rnd):
     """Short competition + round for a UEFA match description, e.g.
-    "Champions League Match Day 4, League Phase" or "Europa League Round of 16, 1st Leg".
+    "League Phase, MW5" or "Round of 16, 1st Leg".
     None for other competitions or when the round isn't known."""
     if comp_name not in UEFA_COMPETITIONS:
         return None
-    short = comp_name.replace("UEFA ", "")
+    # 19 Nov 2026 (user): "Europa League Match Day 5" is not wanted in the description - "League Phase" stays, and from the knockout
+    # stages the round ("Knockout Play-off, 1st Leg", "Round of 16, 2nd Leg", "Final" ...) stays.
     if not rnd:
-        return short
-    m = re.match(r"Matchday (\d+)$", rnd)
-    if m:                                    # league-phase matchdays
-        return f"{short} Match Day {m.group(1)}, League Phase"
-    return f"{short} {rnd}"
+        return None
+    mm = re.match(r"Matchday (\d+)$", rnd)
+    if mm:                                   # league-phase matchdays: "League Phase, MW5" (19 Nov 2026, user)
+        return f"League Phase, MW{mm.group(1)}"
+    return rnd
 
 
 # Fixtures with these statuses have no reliable kick-off and are skipped.
@@ -745,14 +746,16 @@ def collect_matches(events_by_comp, match_minutes):
             notes = [n.get("headline") for n in comp.get("notes", []) if n.get("headline")]
             rnd = cup_round(comp_name, ko.date())       # e.g. "Carabao Cup 4th Round"
             mw = league_matchweek(comp_name, ko.date())     # EFL leagues only, e.g. 16 -> "Championship MW16"
-            if rnd:
+            if comp_name in UEFA_COMPETITIONS:
+                sub = comp_name                      # 19 Nov 2026 (user): no "Matchday 5" / round in the secondary title - it is in the description
+            elif rnd:
                 sub = f"{comp_name} {rnd}"
             else:
                 sub = utd((f"{comp_name} (MW{mw})" if mw else comp_name) + (f" - {notes[0]}" if notes else ""))
 
             tbc = comp.get("timeValid") is False             # ESPN's time is only a placeholder
             desc = []               # the teams are in the title and the competition in the secondary title (17 Nov, user: not repeated here)
-            uline = uefa_round_line(comp_name, rnd)      # UEFA only: "Champions League Match Day 4, League Phase"
+            uline = uefa_round_line(comp_name, rnd)      # UEFA only: "League Phase." / "Round of 16, 1st Leg." (19 Nov 2026, user: no "Europa League Match Day 5")
             if uline:
                 desc.append(f"{uline}.")
             venue = comp.get("venue") or {}
@@ -1119,7 +1122,7 @@ def live_desc(m):
     head = f"LIVE from {m['venue']}." if m.get("venue") else "LIVE."
     sub = m.get("sub", "")
     if m.get("uline"):
-        sub = ""                                       # UEFA: the round line ("Europa League Match Day 5, League Phase.") already names the competition (18 Nov, user: trim)
+        sub = ""                                       # UEFA: the round line ("League Phase." / "Round of 16, 1st Leg.") replaces the secondary-title text here
     parts = [head, (sub if sub.endswith(".") else sub + ".") if sub else "", m.get("uline", "")]
     text = " ".join(p for p in parts if p)
     return text + (" | " + extras if extras else "")       # the channels come LAST after a "|" (18 Nov, user: swapped round)
