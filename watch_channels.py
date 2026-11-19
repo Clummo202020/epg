@@ -27,7 +27,7 @@ GUIDE_FILES = ("SPORT_epg.xml.gz", "USA_epg.xml.gz", "CANADA_epg.xml.gz")
 UA = {"User-Agent": "Mozilla/5.0 (watch_channels.py)"}
 
 # order the families are named in the sentence: UK free-to-air, Ireland, Sky, TNT, Premier Sports, Prime (added by football_epg.py), then overseas
-FAMILIES = ["fta", "rte", "virgin", "sky", "tnt", "premier", "prime", "nz", "sg", "hk", "in", "us", "ca"]
+FAMILIES = ["fta", "rte", "virgin", "sky", "tnt", "premier", "prime", "nz", "sg", "hk", "cy", "in", "us", "ca"]
 
 _SKY = [("MainEvent", "Main Event"), ("MainEvent4K", "Main Event 4K"), ("PremierLeague", "Premier League"), ("Football", "Football"),
         ("Action", "Action"), ("Mix", "Mix"), ("NFL", "NFL"), ("Golf", "Golf"), ("Cricket", "Cricket"), ("F1", "F1"), ("F14K", "F1 4K"),
@@ -50,6 +50,7 @@ CHANNELS = (
     # 18 Nov 2026 (user): the provider dropped Now Sports; only Now Sports 4K and Now Premier League 1-7 are kept (Now Sports 1, 2 and 641 removed)
     + [("HK.NowSports4K1", "Now Sports 4K", "hk")]
     + [(f"HK.NowSportsPL{n}", f"Now Premier League {n}", "hk") for n in range(1, 8)]
+    + [("CY.CytavisionSports3", "Cytavision Sport 3", "cy")]          # 19 Nov 2026 (user): Cyprus; NOT the RealTime id
     + [("IN.SonySportsTen1", "Sony Sports Ten 1", "in"), ("IN.SonySportsTen2", "Sony Sports Ten 2", "in"), ("IN.SonySportsTen5", "Sony Sports Ten 5", "in"),
        ("IN.StarSportsSelect1", "Star Sports Select 1", "in"), ("IN.StarSportsSelect2", "Star Sports Select 2", "in")]       # + Sony Ten 1, Star Sports Select 1 / 2 (user, 17 Nov)
     + [("US.USANetwork", "USA Network", "us"), ("US.CBSSportsNetwork", "CBS Sports Network", "us"),
