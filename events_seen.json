@@ -1,57 +1,10 @@
 {
- "CASOCCERPPV10.ca": {
-  "name": "Live | National | all | 8K EXCLUSIVE | CA: SOCCER PPV 10",
-  "seen": "2026-11-18T19:37:33+00:00"
- },
- "CASOCCERPPV15.ca": {
-  "name": "Live | Knockout Semi-Final - Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 15",
-  "seen": "2026-11-18T19:37:33+00:00"
- },
  "_timing": {
-  "updated": "2026-11-19T04:07:16Z",
+  "updated": "2026-11-19T04:37:17Z",
   "groups": {
-   "AppleMLS": {
-    "n": 24,
-    "missed": 16,
-    "applied": true,
-    "median": -12,
-    "min": -35,
-    "max": 10
-   },
-   "CASOCCERPPV": {
-    "n": 0,
-    "missed": 8,
-    "applied": true
-   },
-   "MAXPPV": {
-    "n": 0,
-    "missed": 14,
-    "applied": false
-   },
-   "MLB": {
-    "n": 0,
-    "missed": 1,
-    "applied": false
-   },
-   "NBA": {
-    "n": 12,
-    "missed": 0,
-    "applied": false,
-    "median": 0,
-    "min": 0,
-    "max": 0
-   },
-   "NFL": {
-    "n": 13,
-    "missed": 0,
-    "applied": false,
-    "median": 0,
-    "min": 0,
-    "max": 0
-   },
    "Paramount": {
     "n": 79,
-    "missed": 17,
+    "missed": 16,
     "applied": true,
     "median": 16,
     "min": 0,
@@ -65,14 +18,6 @@
     "min": -80,
     "max": 0
    },
-   "SN": {
-    "n": 5,
-    "missed": 3,
-    "applied": false,
-    "median": 0,
-    "min": 0,
-    "max": 0
-   },
    "STAN": {
     "n": 56,
     "missed": 21,
@@ -81,14 +26,6 @@
     "min": -60,
     "max": 0
    },
-   "TSN": {
-    "n": 8,
-    "missed": 38,
-    "applied": true,
-    "median": -12,
-    "min": -30,
-    "max": -12
-   },
    "UEFA": {
     "n": 0,
     "missed": 14,
@@ -96,7 +33,7 @@
    }
   },
   "check": {
-   "compared": 60,
+   "compared": 52,
    "differ": 0,
    "examples": []
   }
