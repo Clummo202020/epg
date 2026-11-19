@@ -3376,6 +3376,8 @@ def fetch_cyprus(days, keywords, details=True, debug=False):
         cid = c.get("id") or c.get("channelId")
         name = re.sub(r"\s+", " ", str(c.get("name") or c.get("title") or "")).strip()
         name = re.sub(r"\s*\b(HD|UHD)\b", "", name).strip() or name      # 'Cytavision Sports 1 HD' -> '... 1'
+        if "real time" in name.lower() or "realtime" in name.lower():
+            continue                      # 19 Nov 2026 (user): never the Cytavision Real Time channels - we don't have them
         if cid is not None and name and any(all(w in name.lower() for w in k) for k in kws):
             names[str(cid)] = name
     if debug:
@@ -6627,7 +6629,9 @@ CARRY_SKIP = ("AU.beINSPORTS",
               "ZA.", "AF.",
               # moved 14 Nov 2026 (user): the 7 Sky Cinema channels now come from GENERAL_epg.py - never carry them here, or the same ids
               # would sit in two guides for a week
-              "UK.SkyCinema")
+              "UK.SkyCinema",
+              # dropped 19 Nov 2026 (user): the Cytavision Real Time channels - we don't have them; never carry the old ones over
+              ) + tuple(f"CY.CytavisionSports{n}RealTime" for n in range(1, 9))
 
 
 def carry_over(tv, listed, prev_path):
