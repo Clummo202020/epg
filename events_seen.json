@@ -8,7 +8,7 @@
   "seen": "2026-11-19T05:08:03+00:00"
  },
  "_timing": {
-  "updated": "2026-11-19T13:37:18Z",
+  "updated": "2026-11-19T14:07:20Z",
   "groups": {
    "AppleMLS": {
     "n": 36,
@@ -50,7 +50,7 @@
     "max": 0
    },
    "Paramount": {
-    "n": 84,
+    "n": 89,
     "missed": 12,
     "applied": true,
     "median": 45,
@@ -96,7 +96,7 @@
    }
   },
   "check": {
-   "compared": 66,
+   "compared": 69,
    "differ": 0,
    "examples": []
   }
