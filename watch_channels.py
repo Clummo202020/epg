@@ -27,7 +27,7 @@ GUIDE_FILES = ("SPORT_epg.xml.gz", "USA_epg.xml.gz", "CANADA_epg.xml.gz")
 UA = {"User-Agent": "Mozilla/5.0 (watch_channels.py)"}
 
 # order the families are named in the sentence: UK free-to-air, Ireland, Sky, TNT, Premier Sports, Prime (added by football_epg.py), then overseas
-FAMILIES = ["fta", "rte", "virgin", "sky", "tnt", "premier", "prime", "nz", "sg", "hk", "cy", "in", "us", "ca"]
+FAMILIES = ["fta", "rte", "virgin", "sky", "tnt", "premier", "prime", "nz", "sg", "bein", "cy", "usnb", "in", "us", "ca", "hk"]      # 19 Nov 2026 (user): Now (Hong Kong) last
 
 _SKY = [("MainEvent", "Main Event"), ("MainEvent4K", "Main Event 4K"), ("PremierLeague", "Premier League"), ("Football", "Football"),
         ("Action", "Action"), ("Mix", "Mix"), ("NFL", "NFL"), ("Golf", "Golf"), ("Cricket", "Cricket"), ("F1", "F1"), ("F14K", "F1 4K"),
@@ -41,7 +41,7 @@ CHANNELS = (
      ("IE.VirginMediaThree", "Virgin Media Three", "virgin"), ("IE.VirginMediaFour", "Virgin Media Four", "virgin")]
     + [(f"UK.SkySports{cid}", f"Sky Sports {name}", "sky") for cid, name in _SKY]          # all Sky Sports UK except News and Box Office
     + [("UK.SkySportsPlus", "Sky Sports+", "sky")]
-    + [(f"UK.TNTSports{n}", f"TNT Sports {n}", "tnt") for n in range(1, 11)] + [("UK.TNTSportsUltimate", "TNT Sports Ultimate", "tnt")]
+    + [(f"UK.TNTSports{n}", f"TNT Sports {n}", "tnt") for n in range(1, 5)] + [("UK.TNTSportsUltimate", "TNT Sports Ultimate", "tnt")]      # 19 Nov 2026 (user): TNT Sports 1 to 4 and Ultimate only
     + [("UK.PremierSports1", "Premier Sports 1 (UK)", "premier"), ("UK.PremierSports2", "Premier Sports 2 (UK)", "premier"),      # UK pair added 17 Nov (user)
        ("IE.PremierSports1", "Premier Sports 1 (Ireland)", "premier"), ("IE.PremierSports2", "Premier Sports 2 (Ireland)", "premier")]
     + [(f"NZ.SkySport{n}NZ", f"Sky Sport {n} NZ", "nz") for n in range(1, 10)] + [("NZ.SkySportSelectNZ", "Sky Sport Select NZ", "nz")]
@@ -50,11 +50,13 @@ CHANNELS = (
     # 18 Nov 2026 (user): the provider dropped Now Sports; only Now Sports 4K and Now Premier League 1-7 are kept (Now Sports 1, 2 and 641 removed)
     + [("HK.NowSports4K1", "Now Sports 4K", "hk")]
     + [(f"HK.NowSportsPL{n}", f"Now Premier League {n}", "hk") for n in range(1, 8)]
+    + [(f"{c}.beINSPORTS{n}", f"beIN Sports {name} {n}", "bein")        # 19 Nov 2026 (user): beIN Sports Singapore, Hong Kong, Malaysia, Indonesia (good for the Champions League)
+       for c, name, top in (("SG", "Singapore", 5), ("HK", "Hong Kong", 6), ("MY", "Malaysia", 3), ("ID", "Indonesia", 2)) for n in range(1, top + 1)]
     + [("CY.CytavisionSports3", "Cytavision Sport 3", "cy")]          # 19 Nov 2026 (user): Cyprus; NOT the RealTime id
     + [("IN.SonySportsTen1", "Sony Sports Ten 1", "in"), ("IN.SonySportsTen2", "Sony Sports Ten 2", "in"), ("IN.SonySportsTen5", "Sony Sports Ten 5", "in"),
        ("IN.StarSportsSelect1", "Star Sports Select 1", "in"), ("IN.StarSportsSelect2", "Star Sports Select 2", "in")]       # + Sony Ten 1, Star Sports Select 1 / 2 (user, 17 Nov)
-    + [("US.USANetwork", "USA Network", "us"), ("US.CBSSportsNetwork", "CBS Sports Network", "us"),
-       ("US.CBSSportsGolazo", "CBS Sports Golazo", "us"), ("US.NBC", "NBC", "us")]
+    + [("US.NBC", "NBC", "usnb"), ("US.USANetwork", "USA Network", "usnb")]      # 19 Nov 2026 (user): NBC and USA Network listed before the India channels
+    + [("US.CBSSportsNetwork", "CBS Sports Network", "us"), ("US.CBSSportsGolazo", "CBS Sports Golazo", "us")]
     # 17 Nov (user): the main US networks and sports channels, for the Teams guide (not the Spanish-language ones, not RedZone)
     + [("US.CBS", "CBS", "us"), ("US.ABC", "ABC", "us"), ("US.FOX", "FOX", "us"), ("US.ESPN", "ESPN", "us"), ("US.ESPN2", "ESPN2", "us"),
        ("US.FS1", "FS1", "us"), ("US.TNT", "TNT", "us"), ("US.TBS", "TBS", "us"), ("US.NFLNetwork", "NFL Network", "us"),
@@ -110,7 +112,7 @@ def load_listings(sport_root=None):
 
 _NUMBERED = re.compile(r"^(?P<pre>.+?)(?<!\d)(?P<sp> ?)(?P<n>\d{1,2})(?P<suf>(?: NZ| \((?:UK|Ireland)\))?)$")
 # which broadcaster a channel name belongs to (the first prefix that matches); anything else is its own broadcaster
-BROADCASTERS = (("Sky Sports", "sky"), ("Sky Sport ", "sky-nz"), ("TNT Sports", "tnt"), ("Hub ", "hub"), ("Now ", "now"),
+BROADCASTERS = (("Sky Sports", "sky"), ("Sky Sport ", "sky-nz"), ("TNT Sports", "tnt"), ("Hub ", "hub"), ("beIN Sports Singapore", "bein-sg"), ("beIN Sports Hong Kong", "bein-hk"), ("beIN Sports Malaysia", "bein-my"), ("beIN Sports Indonesia", "bein-id"), ("Now ", "now"),
                 ("Virgin Media", "virgin"), ("RT\u00c9", "rte"), ("Premier Sports", "premier"), ("Sony Sports", "sony"), ("Star Sports", "star"),
                 ("Sportsnet", "sportsnet"), ("TSN", "tsn"), ("CBS Sports", "cbs"), ("BBC", "bbc"), ("ITV", "itv"))
 
