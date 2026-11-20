@@ -364,27 +364,51 @@ def fetch_pluto():
 
 
 # Willow (20 Nov 2026, user): Willow and Willow 2 listings straight from Willow's own schedule page (cricket.willow.tv), which loads them from two
-# feeds - datafeedAssoc.php = Willow, datafeedAssocExtra.php = Willow 2 - 8 days at a time. Each programme has a title, start / end (UK clock times
-# - checked against the page on 20 Nov: "Afghanistan vs India - 3rd T20I" 19:00 on Willow 2 shows 19:00 on the page) and a Live flag.
-# If the feed can't be read, Willow keeps its TV Passport listings and Willow 2 gets the standard "no schedule" blocks.
-# WILLOW_FEED_TZ is the value the site's own page sends (5.5); it is not applied to the times, which come back as UK times.
+# feeds - datafeedAssoc.php = Willow, datafeedAssocExtra.php = Willow 2 - 8 days at a time. Each programme has a title, start / end, a Live flag
+# and a BroadCastDay. The CLOCK the times are in depends on who asks: the user's browser (London) got times 1 hour ahead of UTC, the GitHub runner
+# (US) got times 7 hours earlier than that. So the clock is worked out on every run from the BroadCastDay field: the broadcast day always rolls
+# over at 00:00 UTC (the browser's feed shows it at 01:00 = UTC+1, checked 20 Nov against what Willow was showing: "Heat v Thunder" highlights
+# listed at 21:30-22:00 were on at 20:52 UTC). The first programme of each new BroadCastDay is where the day rolls over; its clock time is the
+# feed's offset from UTC. Not clear (fewer than 4 days / under 80% agreeing / not a multiple of 30 minutes) = the feed is NOT used: Willow keeps
+# its TV Passport listings and Willow 2 gets the standard "no schedule" blocks. WILLOW_FEED_TZ is the value the site's own page sends (5.5).
 WILLOW_FEED_BASE = "https://epgadmindev.willow.tv/php/"
 WILLOW_FEEDS = {"US.Willow": "datafeedAssoc.php?method=list", "US.Willow2.5rda": "datafeedAssocExtra.php"}
 WILLOW_FEED_TZ = "5.5"
 WILLOW_CAT = ["Sports", "Cricket"]
+WILLOW_DAY_ROLLS_AT_UTC_MIN = 0          # the broadcast day starts at 00:00 UTC
 _WILLOW_LEAD = re.compile(r"^\s*(?:Continued Event from yesterday,\s*)?(?:LIVE\s*[-\u2013:]\s*)?", re.I)
 _WILLOW_STUDIO = re.compile(r"(?i)\b(preview|review)\s*$")
 
 
 def _willow_time(text):
+    """"11/20/2026 0:0" -> naive datetime (the feed's own clock), or None."""
     m = re.fullmatch(r"\s*(\d{1,2})/(\d{1,2})/(\d{4})\s+(\d{1,2}):(\d{1,2})\s*", text or "")
     if not m:
         return None
     mo, d, y, hh, mm = (int(x) for x in m.groups())
     try:
-        return datetime(y, mo, d, hh, mm, tzinfo=UK).astimezone(timezone.utc)
+        return datetime(y, mo, d, hh, mm)
     except ValueError:
         return None
+
+
+def willow_clock_offset(entries):
+    """Minutes the feed's clock is ahead of UTC (negative = behind), from where BroadCastDay changes; None if not clear.
+    entries = [(naive start, BroadCastDay string)] in feed order."""
+    from collections import Counter
+    votes = Counter()
+    days = [(st, bd) for st, bd in entries if st and bd]
+    for (_, a), (st, b) in zip(days, days[1:]):
+        if a != b:
+            votes[st.hour * 60 + st.minute] += 1
+    total = sum(votes.values())
+    if total < 4:
+        return None
+    mins, top = votes.most_common(1)[0]
+    if top / total < 0.8:
+        return None
+    off = (mins - WILLOW_DAY_ROLLS_AT_UTC_MIN + 720) % 1440 - 720
+    return off if off % 30 == 0 else None
 
 
 def willow_text(raw_title):
@@ -419,7 +443,7 @@ def willow_text(raw_title):
 
 
 def fetch_willow(uk_today):
-    """{our id: [programmes]} for WILLOW_FEEDS ({} for a channel whose feed could not be read)."""
+    """{our id: [programmes]} for WILLOW_FEEDS (nothing for a channel whose feed could not be read or whose clock is unclear)."""
     import json
     from urllib.parse import urlencode
     out = {}
@@ -433,29 +457,36 @@ def fetch_willow(uk_today):
                                                   "Content-Type": "application/x-www-form-urlencoded", "Accept": "*/*"})
             with urllib.request.urlopen(req, timeout=40) as r:
                 data = json.loads(r.read().decode("utf-8", "replace"))
+            events = [e for day in (data.get("events") or []) for e in (day.get("todaySchedule") or [])]
+            off = willow_clock_offset([(_willow_time(e.get("BroadCastStartDate")), e.get("BroadCastDay")) for e in events])
+            if off is None:
+                raise ValueError("can't tell what clock the feed's times are in")
+            shift = timedelta(minutes=off)
+            print(f"  Willow feed {cid}: clock is {off / 60:+g}h from UTC")
             progs = []
-            for day in data.get("events") or []:
-                for e in day.get("todaySchedule") or []:
-                    start, stop = _willow_time(e.get("BroadCastStartDate")), _willow_time(e.get("BroadCastEndDate"))
-                    raw = e.get("Title") or ""
-                    if not start or not stop or stop <= start or not raw.strip():
-                        continue
-                    title, sub, desc, studio = willow_text(raw)
-                    live = str(e.get("Live")) == "1" or bool(re.match(r"\s*(?:Continued Event from yesterday,\s*)?LIVE\b", raw, re.I))
-                    cont = progs[-1] if progs else None
-                    if cont and cont["raw"] == _WILLOW_LEAD.sub("", raw).strip(" ,") and cont["stop"] >= start - timedelta(minutes=1):
-                        cont["stop"] = max(cont["stop"], stop)        # an event that runs past midnight is listed twice
-                        continue
-                    progs.append({"start": start, "stop": stop, "title": title, "sub": sub, "desc": desc, "cats": list(WILLOW_CAT),
-                                  "year": "", "rating": "", "live": live, "new": False, "studio": studio,
-                                  "raw": _WILLOW_LEAD.sub("", raw).strip(" ,")})
+            for e in events:
+                start, stop = _willow_time(e.get("BroadCastStartDate")), _willow_time(e.get("BroadCastEndDate"))
+                raw = e.get("Title") or ""
+                if not start or not stop or stop <= start or not raw.strip():
+                    continue
+                start = (start - shift).replace(tzinfo=timezone.utc)
+                stop = (stop - shift).replace(tzinfo=timezone.utc)
+                title, sub, desc, studio = willow_text(raw)
+                live = str(e.get("Live")) == "1" or bool(re.match(r"\s*(?:Continued Event from yesterday,\s*)?LIVE\b", raw, re.I))
+                key = _WILLOW_LEAD.sub("", raw).strip(" ,")
+                cont = progs[-1] if progs else None
+                if cont and cont["raw"] == key and cont["stop"] >= start - timedelta(minutes=1):
+                    cont["stop"] = max(cont["stop"], stop)            # an event that runs past midnight is listed twice
+                    continue
+                progs.append({"start": start, "stop": stop, "title": title, "sub": sub, "desc": desc, "cats": list(WILLOW_CAT),
+                              "year": "", "rating": "", "live": live, "new": False, "studio": studio, "raw": key})
             if not progs:
                 raise ValueError("no programmes in the feed")
             out[cid] = progs
             print(f"  Willow feed {cid}: {len(progs)} programmes, {sum(p['live'] for p in progs)} live"
-                  f", to {progs[-1]['stop'].astimezone(UK):%a %d %b %H:%M} UK")
+                  f", {progs[0]['start'].astimezone(UK):%a %d %b %H:%M} to {progs[-1]['stop'].astimezone(UK):%a %d %b %H:%M} UK")
         except Exception as ex:
-            print(f"  WARNING: Willow feed for {cid} not available ({ex}) - TV Passport listings / standard blocks used instead")
+            print(f"  WARNING: Willow feed for {cid} not used ({ex}) - TV Passport listings / standard blocks instead")
     return out
 
 
