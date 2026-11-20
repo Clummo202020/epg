@@ -1550,7 +1550,7 @@ COUPANG_ID = "CoupangPlay.m3zt"
 COUPANG_NAME = "Coupang Play streams"
 COUPANG_COMPS = ["Premier League"]
 COUPANG_IDLE = ("Coupang Play is a South Korean streaming service showing Premier League matches. This is a streaming "
-                "service so there is no TV Guide. Scroll the Coupang Play channels to find the game you want.")
+                "service so there is no TV Guide. Commentary is in English. Scroll the Coupang Play channels to find the game you want.")
 
 
 def coupang_channel(matches):
