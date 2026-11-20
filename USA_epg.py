@@ -68,6 +68,10 @@ GENERAL_CHANNELS = {"US.NBC", "US.USANetwork", "US.CBS", "US.FOX", "US.ABC", "US
 # ("🔴 LIVE: Premier League Goal Rush"). TV Passport doesn't flag it live.
 GOAL_RUSH_CHANNELS = {"US.PremierLeagueTV2"}
 GOAL_RUSH_RE = re.compile(r"(?i)\bgoal rush\b")
+# 20 Nov 2026 (user): Willow Cricket's live cricket gets the red ball too. Its titles are "Test Cricket", "Abu Dhabi T10 Cricket" - no "v" or
+# "cup" for is_event() to see - so on this channel every live programme is an event except the Review / Preview / Highlights style ones.
+CRICKET_EVENT_CHANNELS = {"US.Willow", "US.Willow2.5rda"}
+CRICKET_STUDIO_RE = re.compile(r"(?i)\b(review|preview|highlights?|filler|show|magazine|studio|report|round-?up|best of|classic|archive|replay)\b")
 MATCHUP_RE = re.compile(r"\S\s+(at|vs?\.?|v)\s+\S", re.I)          # "Buffalo Sabres at San Jose Sharks"
 EVENT_WORDS_RE = re.compile(r"(?i)\b(draw \d+|game \d+|round \d+|(semi|quarter)-?finals?|finals?|"
                             r"grand prix|grand slam|qualifying|race \d*|championships?|cup|tournament)\b")
@@ -243,6 +247,7 @@ PLUTO_MATCH_MINUTES = 100
 PLUTO_NOT_LIVE = re.compile(r"(?i)\b(\d+ in \d+|highlights?|replay|re-?airs?|rewind|classic|encore|"
                             r"best of|condensed|extended|recap|review|preview|show)\b")
 CHANNELS.append(("US.CBSSportsGolazo", "CBS Sports Golazo", "pluto"))
+CHANNELS.append(("US.Willow2.5rda", "Willow 2 Cricket", "pluto"))      # 20 Nov 2026: not on TV Passport - listings from Willow's own feed (fetch_willow)
 CHANNELS.append(("US.BilliardTV", "Billiard TV", "pluto"))
 CHANNELS.append(("US.GolfPass", "GolfPass", "pluto"))
 
@@ -355,6 +360,102 @@ def fetch_pluto():
                 seen.add(key)
         print(f"  Pluto TV {cid}: {len(progs)} programmes, {sum(p['live'] for p in progs)} live match(es)"
               + (f", to {progs[-1]['stop'].astimezone(UK):%a %d %b %H:%M} UK" if progs else ""))
+    return out
+
+
+# Willow (20 Nov 2026, user): Willow and Willow 2 listings straight from Willow's own schedule page (cricket.willow.tv), which loads them from two
+# feeds - datafeedAssoc.php = Willow, datafeedAssocExtra.php = Willow 2 - 8 days at a time. Each programme has a title, start / end (UK clock times
+# - checked against the page on 20 Nov: "Afghanistan vs India - 3rd T20I" 19:00 on Willow 2 shows 19:00 on the page) and a Live flag.
+# If the feed can't be read, Willow keeps its TV Passport listings and Willow 2 gets the standard "no schedule" blocks.
+# WILLOW_FEED_TZ is the value the site's own page sends (5.5); it is not applied to the times, which come back as UK times.
+WILLOW_FEED_BASE = "https://epgadmindev.willow.tv/php/"
+WILLOW_FEEDS = {"US.Willow": "datafeedAssoc.php?method=list", "US.Willow2.5rda": "datafeedAssocExtra.php"}
+WILLOW_FEED_TZ = "5.5"
+WILLOW_CAT = ["Sports", "Cricket"]
+_WILLOW_LEAD = re.compile(r"^\s*(?:Continued Event from yesterday,\s*)?(?:LIVE\s*[-\u2013:]\s*)?", re.I)
+_WILLOW_STUDIO = re.compile(r"(?i)\b(preview|review)\s*$")
+
+
+def _willow_time(text):
+    m = re.fullmatch(r"\s*(\d{1,2})/(\d{1,2})/(\d{4})\s+(\d{1,2}):(\d{1,2})\s*", text or "")
+    if not m:
+        return None
+    mo, d, y, hh, mm = (int(x) for x in m.groups())
+    try:
+        return datetime(y, mo, d, hh, mm, tzinfo=UK).astimezone(timezone.utc)
+    except ValueError:
+        return None
+
+
+def willow_text(raw_title):
+    """Feed title -> (title, sub, desc, studio). "LIVE - WBBL 2026 - Strikers vs Renegades - 28th Match, Preview" ->
+    ("Cricket. Strikers v Renegades", "WBBL 2026", "WBBL 2026: Strikers v Renegades - 28th Match, Preview.", True);
+    "New Zealand vs India - 1st Test, Day 2, Lunch Break" -> ("Cricket. 1st Test: New Zealand v India", "Day 2, Lunch Break", ...)."""
+    t = re.sub(r"\s+", " ", _WILLOW_LEAD.sub("", raw_title or "")).strip(" ,")
+    t = _WILLOW_LEAD.sub("", t).strip(" ,")            # "Continued Event from yesterday, LIVE - ..."
+    parts = [x.strip() for x in re.split(r"\s+-\s+", t) if x.strip()]
+    studio = bool(_WILLOW_STUDIO.search(t))
+    fix = next((i for i, x in enumerate(parts) if VS_RE.search(f" {x} ")), None)
+    if fix is None:                                       # "Super Over Podcast - S2, Episode 15", "Cricket Filler"
+        title = parts[0] if parts else t
+        sub = ", ".join(parts[1:]) if len(parts) > 1 else ""
+        return title, sub, (f"{title}. {sub}." if sub else ""), studio
+    a, b = (x.strip() for x in VS_RE.split(f" {parts[fix]} ", maxsplit=1))
+    fixture = f"{a} v {b}"
+    series = " - ".join(parts[:fix])
+    tail = " - ".join(parts[fix + 1:])
+    if series:
+        title, sub = f"Cricket. {fixture}", series
+        kind = re.search(r"(?i)(?:^|,)\s*(highlights|preview|review)\s*$", tail)
+        if kind:                                          # say so in the sub-title: "WBBL 2026, Highlights"
+            sub = f"{series}, {kind.group(1).capitalize()}"
+        desc = f"{series}: {fixture}" + (f" - {tail}." if tail else ".")
+    else:
+        rnd, _, rest = tail.partition(",")
+        title = f"Cricket. {rnd.strip()}: {fixture}" if rnd.strip() else f"Cricket. {fixture}"
+        sub = rest.strip()
+        desc = f"{fixture}" + (f" - {tail}." if tail else ".")
+    return title, sub, desc, studio
+
+
+def fetch_willow(uk_today):
+    """{our id: [programmes]} for WILLOW_FEEDS ({} for a channel whose feed could not be read)."""
+    import json
+    from urllib.parse import urlencode
+    out = {}
+    body = urlencode({"showdate": f"{uk_today.month}/{uk_today.day}/{uk_today.year}", "viewtype": "week",
+                      "timezone": WILLOW_FEED_TZ, "group_by_week": "1", "qty": "8"}).encode()
+    for cid, path in WILLOW_FEEDS.items():
+        try:
+            req = urllib.request.Request(WILLOW_FEED_BASE + path, data=body, method="POST",
+                                         headers={"User-Agent": HEADERS["User-Agent"], "Origin": "https://cricket.willow.tv",
+                                                  "Referer": "https://cricket.willow.tv/",
+                                                  "Content-Type": "application/x-www-form-urlencoded", "Accept": "*/*"})
+            with urllib.request.urlopen(req, timeout=40) as r:
+                data = json.loads(r.read().decode("utf-8", "replace"))
+            progs = []
+            for day in data.get("events") or []:
+                for e in day.get("todaySchedule") or []:
+                    start, stop = _willow_time(e.get("BroadCastStartDate")), _willow_time(e.get("BroadCastEndDate"))
+                    raw = e.get("Title") or ""
+                    if not start or not stop or stop <= start or not raw.strip():
+                        continue
+                    title, sub, desc, studio = willow_text(raw)
+                    live = str(e.get("Live")) == "1" or bool(re.match(r"\s*(?:Continued Event from yesterday,\s*)?LIVE\b", raw, re.I))
+                    cont = progs[-1] if progs else None
+                    if cont and cont["raw"] == _WILLOW_LEAD.sub("", raw).strip(" ,") and cont["stop"] >= start - timedelta(minutes=1):
+                        cont["stop"] = max(cont["stop"], stop)        # an event that runs past midnight is listed twice
+                        continue
+                    progs.append({"start": start, "stop": stop, "title": title, "sub": sub, "desc": desc, "cats": list(WILLOW_CAT),
+                                  "year": "", "rating": "", "live": live, "new": False, "studio": studio,
+                                  "raw": _WILLOW_LEAD.sub("", raw).strip(" ,")})
+            if not progs:
+                raise ValueError("no programmes in the feed")
+            out[cid] = progs
+            print(f"  Willow feed {cid}: {len(progs)} programmes, {sum(p['live'] for p in progs)} live"
+                  f", to {progs[-1]['stop'].astimezone(UK):%a %d %b %H:%M} UK")
+        except Exception as ex:
+            print(f"  WARNING: Willow feed for {cid} not available ({ex}) - TV Passport listings / standard blocks used instead")
     return out
 
 
@@ -509,6 +610,21 @@ def soccer_fixture(title, sub):
     return title, sub
 
 
+# 20 Nov 2026 (user, Willow): title "International League T20 Cricket" + sub "Desert Vipers vs. MI Emirates" read as one long line.
+# A "<competition> Cricket" title with a single "A vs. B" sub-title becomes title "Cricket. Desert Vipers v MI Emirates", sub "International League T20".
+CRICKET_TITLE_RE = re.compile(r"^(?P<comp>.{3,50}?)\s+Cricket$", re.I)
+
+
+def cricket_fixture(title, sub):
+    m = CRICKET_TITLE_RE.match((title or "").strip())
+    sub = (sub or "").strip()
+    sides = VS_RE.split(sub)
+    if m and len(sides) == 2 and len(sub) <= 70 and all(x.strip() for x in sides):
+        comp = re.sub(r"\bleague\b", "League", m.group("comp").strip())
+        return f"Cricket. {sides[0].strip()} v {sides[1].strip()}", comp
+    return title, sub
+
+
 CRICKET_COMP_RE = re.compile(r"(?i)\b(Abu Dhabi T10(?: League)?)\b")
 ASIA_CUP_RE = re.compile(r"(?i)\b(ACC Men['\u2019]s (?:U19 )?Asia Cup|Asia Cup)( Rising(?: Stars)?)?\s*$")
 
@@ -626,9 +742,10 @@ def write(path, channels, guide):
             goal_rush = cid in GOAL_RUSH_CHANNELS and bool(GOAL_RUSH_RE.search(p["title"]))
             if goal_rush:
                 live = True
-            prefix = RED_BALL_PREFIX if (goal_rush or ((cid in RED_BALL_CHANNELS or cid in GENERAL_CHANNELS)
-                                                       and is_event(p))) else LIVE_PREFIX
-            ptitle, psub, pdesc = soccer_fixture(p["title"], p["sub"]) + (p["desc"],)
+            cricket_event = cid in CRICKET_EVENT_CHANNELS and not p.get("studio") and not CRICKET_STUDIO_RE.search(p["title"])
+            prefix = RED_BALL_PREFIX if (goal_rush or cricket_event or ((cid in RED_BALL_CHANNELS or cid in GENERAL_CHANNELS)
+                                                                         and is_event(p))) else LIVE_PREFIX
+            ptitle, psub, pdesc = cricket_fixture(*soccer_fixture(p["title"], p["sub"])) + (p["desc"],)
             ptitle, psub, pdesc = (fix_team_names(x) for x in (ptitle, psub, pdesc))
             ptitle = add_sport(ptitle, psub, cid, pdesc)
             title = (prefix + ptitle) if live else ptitle
@@ -698,6 +815,7 @@ def main():
 
     raw.update(fetch_pluto())                       # CBS Sports Golazo (Pluto TV)
     raw.update(fetch_mjh_plain())                   # Billiard TV (Plex)
+    raw.update(fetch_willow(uk_today))              # Willow + Willow 2 (Willow's own schedule feed); a failed feed changes nothing
     guide = {cid: tidy(p, first, last) for cid, p in raw.items()}
     ends = {cid: v[-1]["stop"] for cid, v in guide.items() if v}
     if ends:

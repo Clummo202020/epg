@@ -1941,9 +1941,83 @@ def add_tv_lines(events, now):
     return n
 
 
+
+# ---------------------------------------------------------------------------
+# Tidy titles (20 Nov 2026, user: "build it" - titles short and to the point, Tivimate shows very little of them): a DISPLAY step done at the
+# start of build(), AFTER every timing / TV-line lookup that needs the original stream-name title, so nothing that matches on titles is affected.
+#   * competition tail goes from the title into the description: "Newcastle United vs Arsenal Premier League Matchweek 11 2026/2027" ->
+#     title "Newcastle United vs Arsenal", description "... Premier League Matchweek 11 2026/2027 ..."; "Spain vs Samoa Nations Cup Round 6 2026",
+#     "Jeonbuk vs Seoul K League 2026", "Sanfrecce Hiroshima vs Yokohama F. Marinos J.League 2026", "... WSL 2026/27", "... NWSL 2026"
+#   * the sport in the title where the sport is not already named (like the SPORT guide): "Rugby Union. Romania vs Canada", "Basketball. Nets vs
+#     Timberwolves", "American Football. Vikings vs 49ers", "Ice Hockey. ...", "Tennis. 2026 ATP Finals: ...", "MMA. UFC Fight Night: ...",
+#     "Football. London City Lionesses vs Crystal Palace" (WSL / NWSL only - other football stays as it is, like the SPORT guide)
+#   * stray characters: "Women`s" -> "Women's", "On_Board" -> "On-Board", "A _ B" -> "A - B", "English Womens Super League" -> "English Women's ..."
+# Fixtures stay "A vs B" (the events guide's own style). Idle / finished / placeholder wording, ids and times are NOT touched.
+# TIDY_TITLES = False switches the whole step off; an event that fails the step is left exactly as it was.
+# ---------------------------------------------------------------------------
+TIDY_TITLES = True
+TAIL_COMP = (r"(?:UEFA\s+|English\s+|WR\s+)?(?:Premier League|Champions League|Europa League|Conference League|Nations Cup|Nations Championship|"
+             r"WSL|NWSL|J\.? ?League|K[ -]?League|Serie A|La ?Liga|Bundesliga|Ligue 1|Championship|League (?:One|Two)|MLS|Carabao Cup|FA Cup|Eredivisie)")
+TAIL_RE = re.compile(r"^(?P<fix>\S.*?\s+vs\.?\s+\S.*?)\s+(?P<tail>" + TAIL_COMP + r"\b.*)$")
+CYCLO_TAIL_RE = re.compile(r"^(?P<fix>\S.*?:\s*\S.*?)\s+(?P<tail>UCI Cyclocross World Cup\b.*)$")
+BULLET_TAIL_RE = re.compile(r"^(?P<fix>\S.*?\s+vs\.?\s+\S.*?)\s+[\u2022\u00b7]\s+(?P<tail>\S.*)$")
+SPORT_SAID_RE = re.compile(r"(?i)\b(?:football|soccer|rugby|tennis|basketball|hockey|baseball|cricket|golf|boxing|mma|formula|f1|racing|"
+                           r"darts|snooker|cycling|athletics|skating|skiing|swimming|volleyball|handball|netball|motogp|nascar|indycar)\b")
+SPORT_BY_COMP = [(re.compile(r"\bNFL\b"), "American Football"), (re.compile(r"\bNBA\b"), "Basketball"),
+                 (re.compile(r"\bNHL\b"), "Ice Hockey"), (re.compile(r"\bMLB\b"), "Baseball"),
+                 (re.compile(r"\b(?:ATP|WTA|BJK|Billie Jean King|Davis Cup)\b"), "Tennis"), (re.compile(r"UCI Cyclocross|Cyclocross World Cup"), "Cycling"), (re.compile(r"\bUFC\b"), "MMA"),
+                 (re.compile(r"^WR |Nations Championship|Six Nations|Super Rugby|Premiership Rugby"), "Rugby Union"),
+                 (re.compile(r"Rugby Sevens|Sevens Series"), "Rugby Sevens"),
+                 (re.compile(r"\bWSL\b|Women'?s Super League|Womens Super League|\bNWSL\b|Women'?s Soccer League|Womens Soccer League"), "Football")]
+
+
+def tidy_title_text(text):
+    if not text:
+        return text
+    text = text.replace("`", "'")
+    text = re.sub(r"\s_\s", " - ", text)
+    text = re.sub(r"(?<=[A-Za-z])_(?=[A-Za-z])", "-", text)
+    text = re.sub(r"\bSaintGermain\b", "Saint-Germain", text)
+    return text
+
+
+def tidy_event(ev):
+    """A tidied copy of `ev` for display (see above); the original object is never changed."""
+    if not TIDY_TITLES or not ev.get("title"):
+        return ev
+    try:
+        e = dict(ev)
+        title = tidy_title_text(e["title"])
+        extra = tidy_title_text(e.get("extra") or "")
+        comp = re.sub(r"\bWomens\b", "Women's", tidy_title_text(e.get("comp") or ""))
+        tail = ""
+        m = BULLET_TAIL_RE.match(title) or TAIL_RE.match(title) or CYCLO_TAIL_RE.match(title)
+        if m and len(m.group("fix").split()) <= 9:
+            title, tail = m.group("fix").strip(), m.group("tail").strip()
+        sport = None
+        if not SPORT_SAID_RE.search(title):
+            hay = f"{comp} {title}"
+            for rx, name in SPORT_BY_COMP:
+                if rx.search(comp) or (name in ("American Football", "Basketball", "Ice Hockey", "Baseball", "Tennis", "MMA", "Cycling") and rx.search(f"{title} {tail}")):
+                    sport = name
+                    break
+            if sport is None and tail and re.search(r"\bW?SL\b|NWSL", tail):
+                sport = "Football"
+        if sport and not title.lower().startswith(sport.lower()):
+            title = f"{sport}. {title}"
+        if tail:
+            extra = f"{tail}. {extra}" if extra else tail
+            extra = extra.rstrip(".")
+        e["title"], e["extra"], e["comp"] = title, extra, comp
+        return e
+    except Exception:
+        return ev
+
+
 def build(events, now):
     global _HORIZON
     _HORIZON = now + timedelta(hours=HORIZON_HOURS)
+    events = [tidy_event(ev) for ev in events]          # display titles tidied here, after all timing / TV-line lookups (20 Nov 2026)
     tv = ET.Element("tv", {"generator-info-name": "event_epg.py"})
     by_slot, ended = {}, {}
     untimed = {}
