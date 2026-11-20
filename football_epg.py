@@ -1542,6 +1542,24 @@ def plplus_channel(matches):
                            PLPLUS_COMPS, PLPLUS_IDLE, comp_in_title=False)
 
 
+# Coupang Play (20 Nov 2026, user): South Korean streaming service showing Premier League matches (LiveOnSat lists
+# "Coupang Play OTT" on every Premier League fixture). ONE guide channel, built like Premier League+: a block at every
+# Premier League kick-off listing that slot's matches; no 3pm blackout (not a UK service). New id CoupangPlay.m3zt (token like the other .x8vn / .4mwd ids).
+COUPANG_CHANNEL = True
+COUPANG_ID = "CoupangPlay.m3zt"
+COUPANG_NAME = "Coupang Play streams"
+COUPANG_COMPS = ["Premier League"]
+COUPANG_IDLE = ("Coupang Play is a South Korean streaming service showing Premier League matches. This is a streaming "
+                "service so there is no TV Guide. Scroll the Coupang Play channels to find the game you want.")
+
+
+def coupang_channel(matches):
+    """(id, name, None, shows) for the Coupang Play streams, or None when no matches."""
+    kept = [m for m in matches if m["comp"] in COUPANG_COMPS and not m.get("tbc")]
+    return streams_channel(kept, COUPANG_ID, COUPANG_NAME, "Coupang Play", "the Coupang Play streams",
+                           COUPANG_COMPS, COUPANG_IDLE, comp_in_title=False)
+
+
 # Formula 1 (30 Oct 2026): f1.uk and f1drivers.uk from OpenF1's session list (the SPORT guide already uses it)
 # instead of plain placeholder blocks. Each session (Practice 1-3, Sprint Qualifying, Sprint, Qualifying, Race)
 # is a block, "🔴 LIVE - F1 Mexico: Race", starting when the coverage starts (race 70 min early, like the
@@ -1969,6 +1987,13 @@ def build_channels(matches, english, suffix, english_only):
         else:                                          # no matches in range: plain blocks, same id
             channels.append(dummy_channel(f"{PLPLUS_ID}{suffix}", PLPLUS_NAME,
                                           "Live at event time only.", PLPLUS_IDLE))
+    if COUPANG_CHANNEL:
+        cp = coupang_channel(matches)
+        if cp:
+            channels.append((f"{cp[0]}{suffix}",) + cp[1:])
+        else:                                          # no matches in range: plain blocks, same id
+            channels.append(dummy_channel(f"{COUPANG_ID}{suffix}", COUPANG_NAME,
+                                          "Live at event time only.", COUPANG_IDLE))
     if GOAL_RUSH:
         gr = goal_rush_channel(matches, suffix)
         if gr:
