@@ -6924,6 +6924,83 @@ def star_glue(cid, title, sub, desc):
     return new_title, new_sub, d.strip(" .") + "." if d.strip(" .") else new_sub + "."
 
 
+# 20 Nov 2026 (user: "fix them all") - tidy-ups found in the published SPORT guide:
+# German Sportdigital "Brisbane Roar - Sydney FC, A-League (5th matchday)", Spanish "Inglaterra - Nueva Zelanda" rugby text,
+# the junk "Sports." sub-title / description, Fox Footy "AFL Draft" with no description, Cricbuzz "... - Test Cricket" tails.
+ALEAGUE_DE_RE = re.compile(r"^(?P<a>.+?)\s+-\s+(?P<b>.+?),\s*A-?League(?P<w>\s+Women)?\s*\((?P<n>\d+)(?:st|nd|rd|th)\s+matchday\)$", re.I)
+
+
+def a_league_de(title, sub, desc):
+    """"🔴 LIVE: Brisbane Roar - Sydney FC, A-League (5th matchday)" -> "🔴 LIVE: Australian A-League Football. Brisbane Roar v Sydney FC", sub "Matchday 5"."""
+    if not title:
+        return title, sub
+    lead = LIVE_LEAD_RE.match(title)
+    m = ALEAGUE_DE_RE.match(title[lead.end():].strip())
+    if not m:
+        return title, sub
+    (a, wa), (b, wb) = _aleague_side(m.group("a")), _aleague_side(m.group("b"))
+    a, b = a or m.group("a").strip(), b or m.group("b").strip()
+    if m.group("w") or wa or wb:
+        a, b = (x if x.endswith(" Women") else f"{x} Women" for x in (a, b))
+    return f"{lead.group(1)}Australian A-League Football. {a} v {b}", f"Matchday {m.group('n')}"
+
+
+ES_COUNTRIES = {"inglaterra": "England", "nueva zelanda": "New Zealand", "irlanda": "Ireland", "sudáfrica": "South Africa",
+                "sudafrica": "South Africa", "francia": "France", "escocia": "Scotland", "gales": "Wales", "italia": "Italy",
+                "australia": "Australia", "argentina": "Argentina", "fiyi": "Fiji", "japón": "Japan", "japon": "Japan",
+                "georgia": "Georgia", "españa": "Spain", "portugal": "Portugal", "uruguay": "Uruguay", "chile": "Chile",
+                "samoa": "Samoa", "tonga": "Tonga", "rumanía": "Romania", "rumania": "Romania", "canadá": "Canada",
+                "canada": "Canada", "estados unidos": "USA", "países bajos": "Netherlands", "alemania": "Germany",
+                "namibia": "Namibia", "brasil": "Brazil", "kenia": "Kenya", "hong kong": "Hong Kong"}
+ES_PAIR_RE = re.compile(r'^[\"“”]?\s*(?P<a>[^-–\"“”]+?)\s+[-–]\s+(?P<b>[^-–\"“”]+?)\s*[\"“”]?(?P<dot>\.?)$')
+
+
+def es_pair(text):
+    """'"Inglaterra - Nueva Zelanda"' -> 'England v New Zealand' (only when both sides are known countries)."""
+    m = ES_PAIR_RE.match((text or "").strip())
+    if not m:
+        return text
+    a, b = (ES_COUNTRIES.get(m.group(x).strip().lower()) for x in ("a", "b"))
+    return f"{a} v {b}{m.group('dot')}" if a and b else text
+
+
+def junk_text(x):
+    return None if (x or "").strip() in ("Sports.", "Sports", "Sport.") else x
+
+
+CRICKET_LEAGUES = [(r"\bCPL\b", "Caribbean Premier League"), (r"\bIPL\b", "Indian Premier League"),
+                   (r"\bWBBL\b", "Women's Big Bash League"), (r"\bBBL\b", "Big Bash League"),
+                   (r"\bPSL\b", "Pakistan Super League"), (r"\bLPL\b", "Lanka Premier League"),
+                   (r"\bBPL\b", "Bangladesh Premier League"), (r"\bWPL\b", "Women's Premier League")]
+
+
+def cricket_leagues(title, sub):
+    """20 Nov 2026 (user: "CPL is Caribbean Premier League"): league abbreviations written out in cricket titles / sub-titles."""
+    if not title or "Cricket." not in title:
+        return title, sub
+    for pat, full in CRICKET_LEAGUES:
+        title = re.sub(pat, full, title)
+        sub = re.sub(pat, full, sub) if sub else sub
+    return title, sub
+
+
+CRIC_TAIL_RE = re.compile(r"^(?P<lead>(?:🔴\s*)?(?:LIVE[:,]\s*)?Cricket\.\s+)(?P<body>.+?)\s+-\s+(?P<comp>.+?)\s+Cricket$")
+
+
+def cricket_tail(title, sub):
+    """"Cricket. 3rd ODI: India v West Indies - One-Day International Cricket" -> the tail goes (or becomes the sub-title)."""
+    m = CRIC_TAIL_RE.match(title or "")
+    if not m:
+        m2 = re.match(r"^(?P<lead>(?:🔴\s*)?(?:LIVE[:,]\s*)?Cricket\.\s+)(?P<body>.+?\s+vs?\.?\s+.+?)\s+-\s+(?P<comp>[^-]+?)$", title or "")
+        if m2 and not re.search(r"(?i)highlights|preview|review|replay|classic", m2.group("comp")):   # "A vs. B - Abu Dhabi T10 League"
+            return f"{m2.group('lead')}{re.sub(r'\s+vs\.?\s+', ' v ', m2.group('body'))}", sub or m2.group("comp").strip()
+        return title, sub
+    body, comp = re.sub(r"\s+vs\.?\s+", " v ", m.group("body")), m.group("comp").strip()
+    if not re.match(r"(?i)^(?:test|one-day international|odi|twenty20 international|t20i?|international)$", comp) and not sub:
+        sub = comp
+    return f"{m.group('lead')}{body}", sub
+
+
 PL_SEASON_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE[:,]\s*)?)(\[4K\]\s*)?Premier League\s+(?:20)?26/27\s*-\s*(.+?)\s+(?:vs?\.?)\s+(.+?)\s*$", re.I)
 
 def pl_season(title, sub, desc, live=False):
@@ -6954,6 +7031,10 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live):
         title = drop_own_date(title, days, yr)
         sub = drop_own_date(sub, days, yr, keep_if_empty=False) or None if sub else sub
         desc = drop_own_date(desc, days, yr)
+    sub, desc = junk_text(sub), junk_text(desc)
+    if sub and sub.startswith(('"', '“')) or (desc or '').startswith(('"', '“')):
+        sub, desc = es_pair(sub), es_pair(desc)
+    title, sub = a_league_de(title, sub, desc)
     title, sub, desc = pl_season(title, sub, desc)
     title, sub, desc = sky_titles(cid, title, sub, desc)
     title, sub, desc = nz_cricket(cid, title, sub, desc)
@@ -6972,6 +7053,12 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live):
     title = a_league(title, sub, desc)
     title, sub = nwsl(title, sub, desc)
     title = add_sport(title, sub, cid, desc)
+    title, sub = cricket_tail(title, sub)
+    title, sub = cricket_leagues(title, sub)
+    if desc and sub and desc.rstrip(".") == sub and " v " in sub:         # desc only repeats the fixture (Spanish rugby): say what it is
+        desc = f"{LIVE_LEAD_RE.sub('', title).replace('. ', ' ', 1)}: {sub}."
+    if not desc and re.search(r"\bAFL Draft\b", title or ""):
+        desc = "Coverage of the AFL Draft."
     title, sub, desc = (national_names(x) for x in (title, sub, desc))               # "🔴 LIVE: Tennis. ATP Finals" (20 Nov 2026)
     title, sub, desc = fix_names(title), fix_names(sub), fix_names(desc)
     title, sub, desc = clock12(title), clock12(sub), clock12(desc)   # 12-hour clock with AM / PM everywhere (6 Nov 2026)
