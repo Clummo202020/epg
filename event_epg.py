@@ -2125,6 +2125,9 @@ def tidy_title_text(text):
     text = re.sub(r"\s_\s", " - ", text)
     text = re.sub(r"(?<=[A-Za-z])_(?=[A-Za-z])", "-", text)
     text = re.sub(r"\bSaintGermain\b", "Saint-Germain", text)
+    # Ranking numbers before a team ("Bowling Green vs #5 Marshall", "#17 South Carolina vs Arkansas") are removed from every title and
+    # description (20 Nov 2026, user). Only where a team name follows a vs / at / @ / dash / bracket or starts the text, so "Race #2" stays.
+    text = re.sub(r"(^|\s(?:vs?\.?|at|@|-)\s|[(:]\s*)#\d{1,2}\s+(?=[A-Za-z])", r"\1", text)
     return text
 
 
