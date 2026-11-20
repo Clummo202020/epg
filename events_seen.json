@@ -1,27 +1,74 @@
 {
  "CASOCCERPPV10.ca": {
-  "name": "Live | National | all | 8K EXCLUSIVE | CA: SOCCER PPV 10",
-  "seen": "2026-11-19T05:08:03+00:00"
+  "name": "Live | Romania vs. Canada | all | 8K EXCLUSIVE | CA: SOCCER PPV 10",
+  "seen": "2026-11-20T21:37:43+00:00"
  },
- "CASOCCERPPV15.ca": {
-  "name": "Live | Knockout Semi-Final - Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 15",
-  "seen": "2026-11-19T05:08:03+00:00"
+ "CASOCCERPPV11.ca": {
+  "name": "Live | Playoffs, Day 1: Brazil vs. Canada | all | 8K EXCLUSIVE | CA: SOCCER PPV 11",
+  "seen": "2026-11-20T21:37:43+00:00"
+ },
+ "CASOCCERPPV18.ca": {
+  "name": "Live | UAE President Cup | all | 8K EXCLUSIVE | CA: SOCCER PPV 18",
+  "seen": "2026-11-20T21:37:43+00:00"
+ },
+ "CASOCCERPPV19.ca": {
+  "name": "Live | Knockout Final - Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 19",
+  "seen": "2026-11-20T21:37:43+00:00"
+ },
+ "CASOCCERPPV22.ca": {
+  "name": "Live | National | all | 8K EXCLUSIVE | CA: SOCCER PPV 22",
+  "seen": "2026-11-20T21:37:43+00:00"
+ },
+ "CASOCCERPPV23.ca": {
+  "name": "Live | Doubles Round Robin, Day 6 | all | 8K EXCLUSIVE | CA: SOCCER PPV 23",
+  "seen": "2026-11-20T21:37:43+00:00"
+ },
+ "CASOCCERPPV24.ca": {
+  "name": "Live | NCAA Tournament: Harvard vs. Maryland | all | 8K EXCLUSIVE | CA: SOCCER PPV 24",
+  "seen": "2026-11-20T21:37:43+00:00"
+ },
+ "CASOCCERPPV25.ca": {
+  "name": "Live | Union Berlin vs. Leverkusen | all | 8K EXCLUSIVE | CA: SOCCER PPV 25",
+  "seen": "2026-11-20T21:37:43+00:00"
+ },
+ "CASOCCERPPV3.ca": {
+  "name": "Live | ACC Mens Asia Cup Rising Stars 2026 - 4th Match - India A vs Nepal | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
+  "seen": "2026-11-20T21:37:43+00:00"
+ },
+ "CASOCCERPPV8.ca": {
+  "name": "Live | Abu Dhabi T10 League 2026 - Final - Yas Lions vs UAE Bulls | all | 8K EXCLUSIVE | CA: SOCCER PPV 8",
+  "seen": "2026-11-20T21:37:43+00:00"
+ },
+ "CASOCCERPPV9.ca": {
+  "name": "Live | Freestyle Friday #21 | all | 8K EXCLUSIVE | CA: SOCCER PPV 9",
+  "seen": "2026-11-20T21:37:43+00:00"
  },
  "_timing": {
-  "updated": "2026-11-20T21:07:21Z",
+  "updated": "2026-11-20T21:37:26Z",
   "groups": {
    "AppleMLS": {
-    "n": 27,
-    "missed": 13,
+    "n": 32,
+    "missed": 4,
     "applied": true,
-    "median": -20,
+    "median": -12,
     "min": -35,
     "max": 10
    },
    "CASOCCERPPV": {
-    "n": 0,
-    "missed": 8,
-    "applied": true
+    "n": 5,
+    "missed": 16,
+    "applied": true,
+    "median": 52,
+    "min": 44,
+    "max": 270
+   },
+   "ESPNPPV": {
+    "n": 1,
+    "missed": 49,
+    "applied": false,
+    "median": -10,
+    "min": -10,
+    "max": -10
    },
    "MLB": {
     "n": 0,
@@ -29,7 +76,7 @@
     "applied": false
    },
    "NBA": {
-    "n": 12,
+    "n": 9,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -37,7 +84,7 @@
     "max": 0
    },
    "NFL": {
-    "n": 13,
+    "n": 12,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -50,40 +97,40 @@
     "applied": false
    },
    "Paramount": {
-    "n": 175,
-    "missed": 14,
+    "n": 85,
+    "missed": 9,
     "applied": true,
-    "median": 45,
+    "median": 50,
     "min": 0,
     "max": 60
    },
    "Peacock": {
-    "n": 29,
-    "missed": 87,
+    "n": 15,
+    "missed": 41,
     "applied": true,
     "median": -10,
     "min": -80,
     "max": 0
    },
    "SN": {
-    "n": 5,
-    "missed": 3,
+    "n": 10,
+    "missed": 4,
     "applied": false,
     "median": 0,
-    "min": 0,
+    "min": -10,
     "max": 0
    },
    "STAN": {
-    "n": 125,
-    "missed": 21,
+    "n": 67,
+    "missed": 12,
     "applied": true,
     "median": -10,
     "min": -60,
     "max": 0
    },
    "TSN": {
-    "n": 8,
-    "missed": 38,
+    "n": 9,
+    "missed": 39,
     "applied": true,
     "median": -12,
     "min": -30,
@@ -99,7 +146,7 @@
    }
   },
   "check": {
-   "compared": 91,
+   "compared": 93,
    "differ": 0,
    "examples": []
   }
