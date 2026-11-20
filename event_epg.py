@@ -285,6 +285,22 @@ PARAMOUNT_AT = re.compile(
     r"^\s*(?:(?P<comp>[^:@]+?)\s*:\s*)?(?P<title>[^@]+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
     r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*:\s*Paramount\+?\s*(?P<num>\d+)\s*$", re.I)
 PARAMOUNT_AT_TZ = "America/Chicago"
+# Fubo Sports (20 Nov 2026, user): "Bangladesh A vs Hong Kong, China @ Nov 19 6:20 AM :Fubo US  01" (group "Fubo Sports"). The time is
+# taken as US Eastern (6:20 AM = 11:20 UK, which fits the cricket and tennis named). New ids end in a random token, like the other new ones.
+FUBO_AT = re.compile(
+    r"^\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
+    r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*:\s*Fubo\s*US\s*(?P<num>\d+)\s*$", re.I)
+FUBO_AT_TZ = "America/New_York"
+FUBO_TOKEN = "r4k9"
+# Disney+ USA (20 Nov 2026, user): "Purdue vs Florida State @ Nov 19 8:00 AM :Disney+ USA  04" (ESPN content; some titles hold an "@" of their own,
+# e.g. "ABC11 Eyewitness News @ 10AM @ Nov 19 ..."). Time taken as US Eastern. The long college tennis names are split: "Court 6-NCAA Division I
+# Singles & Doubles Championships (Round of 16)" -> title "Tennis. Court 6", the championship name goes in the description.
+DISNEY_AT = re.compile(
+    r"^\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
+    r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*:\s*Disney\+?\s*USA\s*(?P<num>\d+)\s*$", re.I)
+DISNEY_AT_TZ = "America/New_York"
+DISNEY_TOKEN = "d7w3"
+DISNEY_NCAA_TENNIS = re.compile(r"^(?P<court>[^-]{2,30}?)\s*-\s*(?P<rest>NCAA\b.+)$")
 NBA_ESPN = "basketball/nba"
 NBA_EVENT_HOURS = 3
 # MLB streams, two styles:
@@ -1296,6 +1312,27 @@ def _parse_name(name):
             ev["start"], ev["early"] = rs[0], PROVIDER_EARLY_MINUTES      # Paramount+: LIVE at the kick-off (6 Nov 2026)
             ev["comp"] = rs[2] or ev["comp"]
         return ev
+    fb = FUBO_AT.match(name)                         # Title @ Nov 19 6:20 AM :Fubo US  01 (US Eastern)
+    if fb:
+        title = re.sub(r"\s+", " ", fb["title"]).strip()
+        approx = month_day_time(fb["mon"], fb["day"], fb["h"], fb["m"], fb["ap"], ZoneInfo(FUBO_AT_TZ))
+        if approx is None or not title:
+            return None
+        num = int(fb["num"])
+        return {"name": name, "slot_id": f"FuboUS{num:02d}.{FUBO_TOKEN}", "slot_name": f"Fubo Sports {num:02d}",
+                "title": title, "extra": "", "comp": "", "start": approx.astimezone(timezone.utc)}
+    dz = DISNEY_AT.match(name)                       # Title @ Nov 19 8:00 AM :Disney+ USA  04 (US Eastern)
+    if dz:
+        title = re.sub(r"\s+", " ", dz["title"]).strip()
+        approx = month_day_time(dz["mon"], dz["day"], dz["h"], dz["m"], dz["ap"], ZoneInfo(DISNEY_AT_TZ))
+        if approx is None or not title:
+            return None
+        num, extra = int(dz["num"]), ""
+        nt = DISNEY_NCAA_TENNIS.match(title)
+        if nt:
+            title, extra = f"Tennis. {nt['court'].strip()}", nt["rest"].strip()
+        return {"name": name, "slot_id": f"DisneyUSA{num:02d}.{DISNEY_TOKEN}", "slot_name": f"Disney+ USA {num:02d}",
+                "title": title, "extra": extra, "comp": "", "start": approx.astimezone(timezone.utc)}
     b = NBA_AT.match(name)                           # A vs B @ Oct 24 6:00 PM :NBA 01 (US Eastern)
     if b:
         title = re.sub(r"\s+", " ", b["title"]).strip()
