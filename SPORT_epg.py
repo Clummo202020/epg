@@ -6344,6 +6344,38 @@ def html_unescape(t):
     return html.unescape(t)
 
 
+GENERIC_CRICKET_RE = re.compile(r"(?i)\bcricket action\b|\bcricket coverage\b")
+
+
+def share_tnt_text(records):
+    """20 Nov 2026 (user: TNT Sports 2 "Cricket. New Zealand v India" live block has only "Test match cricket action from
+    New Zealand."; TNT Sports 1 has the day's summary): the same fixture on another TNT Sports channel, starting within 30
+    minutes, lends its sentence to the thin description (sub-title + description of the richer listing)."""
+    tnt = [r for r in records if r["id"].startswith("UK.TNTSports")]
+    for rec in tnt:
+        for ev in rec.get("events", []):
+            d = (ev.get("desc") or "").strip()
+            if ev.get("sub") or not d or len(d) > 90 or not GENERIC_CRICKET_RE.search(d):
+                continue
+            sides = fixture_sides(LIVE_LEAD_RE.sub("", ev.get("title") or ""))
+            if not sides:
+                continue
+            best = None
+            for other in tnt:
+                if other is rec:
+                    continue
+                for o in other.get("events", []):
+                    if abs((o["start"] - ev["start"]).total_seconds()) > 1800:
+                        continue
+                    if fixture_sides(LIVE_LEAD_RE.sub("", o.get("title") or "")) != sides:
+                        continue
+                    text = " ".join(x.strip() for x in (o.get("sub") or "", o.get("desc") or "") if x and x.strip())
+                    if len(text) > len(d) + 30 and (best is None or len(text) > len(best)) and not GENERIC_CRICKET_RE.search(o.get("desc") or "x"):
+                        best = text
+            if best:
+                ev["desc"] = best
+
+
 def learn_team_sports(records):
     TEAM_SPORT.clear()
     TEAM_TOTAL.clear()
@@ -6370,7 +6402,7 @@ COUNTRY_RE = re.compile(r"(?i)^(?:usa|uk|uae|england|scotland|wales|ireland|nort
                         r"sri lanka|nepal|iran|iraq|saudi arabia|qatar|australia|new zealand|fiji|samoa|tonga|hong kong|singapore|malaysia|thailand|"
                         r"indonesia|philippines|vietnam|kazakhstan|uzbekistan|faroe islands|luxembourg|malta|cyprus|estonia|latvia|lithuania|belarus|"
                         r"moldova|north macedonia|united states|great britain|west indies)$")
-FOOTBALL_HINT_RE = re.compile(r"(?i)concacaf|uefa|fifa|conmebol|nations league|bundesliga|la ?liga|serie [ab]|ligue [12]|premier league|eredivisie|"
+FOOTBALL_HINT_RE = re.compile(r"(?i)africa cup of nations|afcon|\bcaf\b|concacaf|uefa|fifa|conmebol|nations league|bundesliga|la ?liga|serie [ab]|ligue [12]|premier league|eredivisie|"
                               r"\bcopa\b|\bfc\b|football|soccer|world cup qual|friendl")
 
 
@@ -6968,7 +7000,7 @@ def junk_text(x):
     return None if (x or "").strip() in ("Sports.", "Sports", "Sport.") else x
 
 
-CRICKET_LEAGUES = [(r"\bCPL\b", "Caribbean Premier League"), (r"\bIPL\b", "Indian Premier League"),
+CRICKET_LEAGUES = [(r"\bNZ\b", "New Zealand"), (r"\bCPL\b", "Caribbean Premier League"), (r"\bIPL\b", "Indian Premier League"),
                    (r"\bWBBL\b", "Women's Big Bash League"), (r"\bBBL\b", "Big Bash League"),
                    (r"\bPSL\b", "Pakistan Super League"), (r"\bLPL\b", "Lanka Premier League"),
                    (r"\bBPL\b", "Bangladesh Premier League"), (r"\bWPL\b", "Women's Premier League")]
@@ -6984,6 +7016,26 @@ def cricket_leagues(title, sub):
     return title, sub
 
 
+ACRO_TAIL_RE = re.compile(r"^(?P<lead>.*?)\s+-\s+(?P<abbr>[A-Z][A-Z0-9]{1,6})\b[^-]*$")
+
+
+def acronym_tail(title):
+    """20 Nov 2026 (user: "Live Show Jumping?"): "Show Jumping. Longines Global Champions Tour Super Grand Prix 2026 - LGCT Super Grand
+    Prix" says the same thing twice -> the abbreviated repeat goes, and so does the year at the end."""
+    m = ACRO_TAIL_RE.match(title or "")
+    if not m:
+        return title
+    lead, abbr = m.group("lead"), m.group("abbr")
+    words = [w for w in re.split(r"[\s.:]+", lead) if w and w[0].isalpha()]
+    initials = "".join(w[0].upper() for w in words)
+    if len(abbr) < 3 or abbr not in initials:
+        return title
+    rest = re.sub(r"^[^\s]+\s*", "", m.group(0)[len(lead):].split(" - ", 1)[1].strip())
+    if any(w.lower() not in lead.lower() for w in re.split(r"\s+", rest) if w):      # the tail must add nothing new ("OFF 180", "Verona Super Cup Fin R2" stay)
+        return title
+    return re.sub(r"\s+20\d\d$", "", lead).strip() or title
+
+
 CRIC_TAIL_RE = re.compile(r"^(?P<lead>(?:🔴\s*)?(?:LIVE[:,]\s*)?Cricket\.\s+)(?P<body>.+?)\s+-\s+(?P<comp>.+?)\s+Cricket$")
 
 
@@ -6992,6 +7044,9 @@ def cricket_tail(title, sub):
     m = CRIC_TAIL_RE.match(title or "")
     if not m:
         m2 = re.match(r"^(?P<lead>(?:🔴\s*)?(?:LIVE[:,]\s*)?Cricket\.\s+)(?P<body>.+?\s+vs?\.?\s+.+?)\s+-\s+(?P<comp>[^-]+?)$", title or "")
+        if m2 and re.search(r"(?i)^(?:\d+(?:st|nd|rd|th)\b|(?:one-off |final )?test\b|odi\b|t20|final\b|semi|qualifier|eliminator|day \d)", m2.group("comp").strip()):
+            # TNT Sports 2 "Australia v England - 1st T20" -> same layout as TNT Sports 1: "1st T20: Australia v England"
+            return f"{m2.group('lead')}{m2.group('comp').strip()}: {re.sub(r'\s+vs\.?\s+', ' v ', m2.group('body'))}", sub
         if m2 and not re.search(r"(?i)highlights|preview|review|replay|classic", m2.group("comp")):   # "A vs. B - Abu Dhabi T10 League"
             return f"{m2.group('lead')}{re.sub(r'\s+vs\.?\s+', ' v ', m2.group('body'))}", sub or m2.group("comp").strip()
         return title, sub
@@ -6999,6 +7054,101 @@ def cricket_tail(title, sub):
     if not re.match(r"(?i)^(?:test|one-day international|odi|twenty20 international|t20i?|international)$", comp) and not sub:
         sub = comp
     return f"{m.group('lead')}{body}", sub
+
+
+FIXTURE_TITLE_RE = re.compile(r"\S.*\s(?:v|vs\.?|V)\s\S")
+
+
+def bg_text(cid, text):
+    """20 Nov 2026 (user: "Repetition - a bad translation of Repeat?"): Bulgarian guide words that came through the translation wrongly.
+    "Repetition." = repeat / rerun; "Live." marker is redundant; "Gurgle" = Gurgl (Austria); in ski jumping "big chance" = large hill
+    (Bulgarian "chance" = hill) and "The Four Chances" = the Four Hills Tournament."""
+    if not text or not cid.startswith("BG."):
+        return text
+    if text.startswith("Repetition. "):
+        text = text[len("Repetition. "):] if re.search(r"\bRepeat\b", text) else "Repeat. " + text[len("Repetition. "):]
+    text = re.sub(r"^Live\.\s+", "", text)
+    text = re.sub(r"\bGurgle\b", "Gurgl", text)
+    text = re.sub(r"\b[Tt]he [Ff]our [Cc]hances\b", "Four Hills Tournament", text)
+    text = re.sub(r"\b[Ff]our [Cc]hances\b", "Four Hills Tournament", text)
+    text = re.sub(r"\bbig chance\b", "large hill", text)
+    text = re.sub(r"\bBig Chance\b", "Large Hill", text)
+    return text
+
+
+FIX_TAIL_RE = re.compile(r"^(?P<lead>(?:🔴\s*)?(?:LIVE[:,]\s*)?(?:[^:,\-]{2,30}:\s+)?)(?P<fix>[^,:]{2,40}?\s+(?:-|v|vs\.?)\s+[^,:]{2,40}?),\s+(?P<tail>[^()]{6,})$")
+TAIL_WORD_RE = re.compile(r"(?i)league|cup|championship|liga|round|matchday|spieltag|group|division|trophy|qualif|\bfinal|semi|play-?off|tour|series|20\d\d|\d+(?:st|nd|rd|th)|competition|bundesliga|serie|ligue|eredivisie|premier")
+
+
+def fixture_tail_to_desc(title, desc):
+    """20 Nov 2026 (user: Tivimate shows only a few characters, anything like a synopsis belongs in the description):
+    "Inter - Stuttgart, UEFA Champions League 2026/2027, Real Madrid _ PSV Eindhoven" -> title "Inter - Stuttgart",
+    description "UEFA Champions League 2026/2027, Real Madrid _ PSV Eindhoven. ...". Only for a fixture followed by a competition / round tail."""
+    m = FIX_TAIL_RE.match(title or "")
+    if not m or not TAIL_WORD_RE.search(m.group("tail")):
+        return title, desc
+    if re.search(r"(?i)\b(?:race|series|draw|show|highlights?|preview|review|magazine|round|episode|ep)\b|\bE\d+\b|\b\d+x\d+\b", m.group("fix")):
+        return title, desc                                  # not a match between two sides ("F1 Academy Race 2026 E11 - F1 ACADEMY RACING SERIES")
+    tail = m.group("tail").strip().rstrip(".")
+    new_title = f"{m.group('lead')}{fixture_v(m.group('fix')) if ' - ' in m.group('fix') else m.group('fix').strip()}"
+    d = (desc or "").strip()
+    if tail.lower()[:40] in d.lower():
+        return new_title, desc
+    return new_title, f"{tail}. {d}".strip() if d else f"{tail}."
+
+
+COMP_ABBR = {"PL": "Premier League", "BL": "Bundesliga", "2. BL": "2. Bundesliga", "DFB": "DFB-Pokal"}
+COMP_ABBR_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE[:,]\s*)?)(PL|BL|2\. BL|DFB):\s+(?=\S)")
+
+
+def comp_abbr(title):
+    """20 Nov 2026 (user: "BL: Brentford FC - Everton FC - what is the BL:?"): Sky Germany's short competition codes written out."""
+    m = COMP_ABBR_RE.match(title or "")
+    if not m:
+        return title
+    full, rest = COMP_ABBR[m.group(2)], title[m.end():]
+    if rest.lower().startswith(full.lower()):                       # "BL: Bundesliga Weekly" - no need to say it twice
+        return f"{m.group(1)}{rest}"
+    return f"{m.group(1)}{full}: {rest}"
+
+
+def clean_team(t):
+    """Only a trailing " FC" goes ("Brentford FC" -> "Brentford"); "FC Bayern", "1. FC Cologne", "FC Barcelona" keep it (user, 20 Nov 2026)."""
+    return re.sub(r"\s+FC$", "", t.strip()) or t.strip()
+
+
+def fixture_v(fix):
+    """"Brentford FC - Everton FC" -> "Brentford v Everton" (20 Nov 2026, user: "v" not a dash, and no "FC")."""
+    parts = re.split(r"\s+-\s+", fix.strip())
+    if len(parts) != 2:
+        return fix
+    return f"{clean_team(parts[0])} v {clean_team(parts[1])}"
+
+
+SPORT_PREFIX_FIX_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE[:,]\s*)?(?:Football|Basketball|Handball|Volleyball|Futsal|Ice Hockey|Rugby|Premier League|Bundesliga|2\. Bundesliga|DFB-Pokal):\s+)([^:,()]{3,45}?\s+-\s+[^:,()]{3,45})$")
+
+
+def fixtures_with_v(title):
+    m = SPORT_PREFIX_FIX_RE.match(title or "")
+    return f"{m.group(1)}{fixture_v(m.group(2))}" if m else title
+
+
+def long_sub_to_desc(title, sub, desc, cid=""):
+    """20 Nov 2026 (user, TNT Sports 1 "Bristol Bears v Bath Rugby" + "Action from Group A of the PREM Rugby Cup as ... at
+    Ashton Gate."; later "Alpine Skiing World Cup" the same): a sentence-length sub-title makes the player's title far too
+    long -> the sentence goes into the description (in front of it), the sub-title goes. Any title, every channel except BG."""
+    if not (title and sub):
+        return sub, desc
+    s = sub.strip()
+    long_enough = len(s.split()) >= 8 or len(s) >= 70                     # 20 Nov 2026 (user: "yes"): competition labels / genre text too, BG included
+    if not long_enough:
+        return sub, desc
+    if re.search(r"\s(?:v|vs\.?|V)\s", s) and not FIXTURE_TITLE_RE.search(title):
+        return sub, desc                                                  # Fox cricket: the sub-title IS the fixture
+    d = (desc or "").strip()
+    if d and re.sub(r"^(?:repeat|replay)[.,]\s*", "", s, flags=re.I).rstrip(".").lower()[:60] in d.lower():     # description already says it
+        return None, d
+    return None, f"{s} {d}".strip()
 
 
 PL_SEASON_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE[:,]\s*)?)(\[4K\]\s*)?Premier League\s+(?:20)?26/27\s*-\s*(.+?)\s+(?:vs?\.?)\s+(.+?)\s*$", re.I)
@@ -7032,6 +7182,7 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live):
         sub = drop_own_date(sub, days, yr, keep_if_empty=False) or None if sub else sub
         desc = drop_own_date(desc, days, yr)
     sub, desc = junk_text(sub), junk_text(desc)
+    title, sub, desc = (bg_text(cid, x) for x in (title, sub, desc))
     if sub and sub.startswith(('"', '“')) or (desc or '').startswith(('"', '“')):
         sub, desc = es_pair(sub), es_pair(desc)
     title, sub = a_league_de(title, sub, desc)
@@ -7050,15 +7201,19 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live):
     title = drop_repeated_name(title)
     title = racing_meetings(cid, title, desc)
     title, sub = (re.sub(r"\bAFLW\b", "AFL Women's", x) if x else x for x in (title, sub))   # AFLW -> "AFL Women's" (20 Nov 2026)
+    title, desc = fixture_tail_to_desc(title, desc)
+    title = fixtures_with_v(comp_abbr(title))
     title = a_league(title, sub, desc)
     title, sub = nwsl(title, sub, desc)
     title = add_sport(title, sub, cid, desc)
     title, sub = cricket_tail(title, sub)
+    title = acronym_tail(title)
     title, sub = cricket_leagues(title, sub)
     if desc and sub and desc.rstrip(".") == sub and " v " in sub:         # desc only repeats the fixture (Spanish rugby): say what it is
         desc = f"{LIVE_LEAD_RE.sub('', title).replace('. ', ' ', 1)}: {sub}."
     if not desc and re.search(r"\bAFL Draft\b", title or ""):
         desc = "Coverage of the AFL Draft."
+    sub, desc = long_sub_to_desc(title, sub, desc, cid)
     title, sub, desc = (national_names(x) for x in (title, sub, desc))               # "🔴 LIVE: Tennis. ATP Finals" (20 Nov 2026)
     title, sub, desc = fix_names(title), fix_names(sub), fix_names(desc)
     title, sub, desc = clock12(title), clock12(sub), clock12(desc)   # 12-hour clock with AM / PM everywhere (6 Nov 2026)
@@ -7242,6 +7397,7 @@ def build_xmltv(records, suffix, minutes):
     global _CUR_TZ
     count, listed = 0, []
     collect_rugby_rounds(records)                  # rugby rounds named in other listings
+    share_tnt_text(records)                        # TNT Sports 2 cricket borrows TNT Sports 1's day summary (20 Nov 2026)
     learn_team_sports(records)                     # which team belongs to which sport (20 Nov 2026)
     for rec in records:
         cid, name = f"{rec['id']}{suffix}", rec["name"]
