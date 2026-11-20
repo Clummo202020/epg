@@ -2589,7 +2589,7 @@
     <display-name lang="en">US (Peacock 003) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock004.us">
-    <display-name lang="en">US (Peacock 004) | Pairs Short Program (2026-11-20 07:00:00)</display-name>
+    <display-name lang="en">US (Peacock 004) | Rhythm Dance (2026-11-20 12:20:00)</display-name>
     <display-name lang="en">US (Peacock 004) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock005.us">
@@ -8977,6 +8977,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MParamount001.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120163000 +0000" channel="MParamount002.us">
     <title lang="en">Next up: LIVE – Romania vs Canada (4:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -9123,6 +9128,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MParamount003.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MParamount010.us">
     <title lang="en">🔴 LIVE: UFC Doha Ceremonial Weigh_In</title>
     <sub-title lang="en">UFC</sub-title>
@@ -9188,6 +9198,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="MParamount010.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MParamount010.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -9334,6 +9349,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="MParamount012.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MParamount012.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -9743,6 +9763,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121165000 +0000" stop="20261121175000 +0000" channel="MParamount017.us">
+    <title lang="en">🔴 LIVE: Georgia vs USA Eagles</title>
+    <desc lang="en">Georgia vs USA Eagles. Starts Sat 21 Nov, 2:50pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MParamount018.us">
     <title lang="en">Next Match: Como vs Cagliari (Sat 21 Nov, 2pm)</title>
     <sub-title lang="en">Serie A</sub-title>
@@ -9822,6 +9848,11 @@
     <desc lang="en">Como vs Cagliari. Serie A. Starts Sat 21 Nov, 2pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MParamount019.us">
     <title lang="en">Next Match: Lazio vs Lecce (Sat 21 Nov, 2pm)</title>
@@ -9903,6 +9934,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MParamount019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MParamount020.us">
     <title lang="en">Next Event: UFC Fight Night: English (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">UFC</sub-title>
@@ -9976,6 +10012,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="MParamount020.us">
+    <title lang="en">🔴 LIVE: UFC Fight Night: English</title>
+    <sub-title lang="en">UFC</sub-title>
+    <desc lang="en">UFC Fight Night: English. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MParamount020.us">
     <title lang="en">🔴 LIVE: UFC Fight Night: English</title>
     <sub-title lang="en">UFC</sub-title>
     <desc lang="en">UFC Fight Night: English. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -10061,6 +10104,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MParamount021.us">
+    <title lang="en">🔴 LIVE: UFC Fight Night em Português</title>
+    <sub-title lang="en">UFC</sub-title>
+    <desc lang="en">UFC Fight Night em Português. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MParamount022.us">
     <title lang="en">Next Event: UFC Fight Night en Español (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">UFC</sub-title>
@@ -10140,6 +10190,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MParamount022.us">
+    <title lang="en">🔴 LIVE: UFC Fight Night en Español</title>
+    <sub-title lang="en">UFC</sub-title>
+    <desc lang="en">UFC Fight Night en Español. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MParamount023.us">
     <title lang="en">Next Match: Parma vs Roma (Sat 21 Nov, 5pm)</title>
     <sub-title lang="en">Serie A</sub-title>
@@ -10213,10 +10270,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121170000 +0000" channel="MParamount023.us">
-    <title lang="en">Next up: LIVE – Parma vs Roma (Sat 21 Nov, 5pm)</title>
+    <title lang="en">Next up: LIVE – Parma vs Roma (5pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Parma vs Roma starts Sat 21 Nov, 5pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Parma vs Roma starts at 5pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MParamount023.us">
+    <title lang="en">🔴 LIVE: Parma vs Roma</title>
+    <sub-title lang="en">Serie A</sub-title>
+    <desc lang="en">Parma vs Roma. Serie A. Starts Sat 21 Nov, 5pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MParamount024.us">
     <title lang="en">Next Event: UFC Fight Night: Multiview (Sat 21 Nov, 7pm)</title>
@@ -16295,74 +16359,75 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261120120000 +0000" stop="20261120140000 +0000" channel="MPeacock004.us">
-    <title lang="en">🔴 LIVE: Pairs Short Program</title>
-    <desc lang="en">Pairs Short Program. Starts Fri 20 Nov, Midday UK time.</desc>
+  <programme start="20261120160000 +0000" stop="20261120172000 +0000" channel="MPeacock004.us">
+    <title lang="en">Next up: LIVE – Rhythm Dance (5:20pm)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. Rhythm Dance starts at 5:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261120172000 +0000" stop="20261120192000 +0000" channel="MPeacock004.us">
+    <title lang="en">🔴 LIVE: Rhythm Dance</title>
+    <desc lang="en">Rhythm Dance. Starts Fri 20 Nov, 5:20pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261120140000 +0000" stop="20261120150000 +0000" channel="MPeacock004.us">
-    <title lang="en">🔴 LIVE: Pairs Short Program</title>
-    <desc lang="en">Pairs Short Program. Starts Fri 20 Nov, Midday UK time.</desc>
+  <programme start="20261120192000 +0000" stop="20261120202000 +0000" channel="MPeacock004.us">
+    <title lang="en">🔴 LIVE: Rhythm Dance</title>
+    <desc lang="en">Rhythm Dance. Starts Fri 20 Nov, 5:20pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261120150000 +0000" stop="20261120170000 +0000" channel="MPeacock004.us">
+  <programme start="20261120202000 +0000" stop="20261120222000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261120170000 +0000" stop="20261120190000 +0000" channel="MPeacock004.us">
+  <programme start="20261120222000 +0000" stop="20261121002000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261120190000 +0000" stop="20261120210000 +0000" channel="MPeacock004.us">
+  <programme start="20261121002000 +0000" stop="20261121022000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261120210000 +0000" stop="20261120230000 +0000" channel="MPeacock004.us">
+  <programme start="20261121022000 +0000" stop="20261121042000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261120230000 +0000" stop="20261121010000 +0000" channel="MPeacock004.us">
+  <programme start="20261121042000 +0000" stop="20261121062000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121010000 +0000" stop="20261121030000 +0000" channel="MPeacock004.us">
+  <programme start="20261121062000 +0000" stop="20261121082000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121030000 +0000" stop="20261121050000 +0000" channel="MPeacock004.us">
+  <programme start="20261121082000 +0000" stop="20261121102000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121050000 +0000" stop="20261121070000 +0000" channel="MPeacock004.us">
+  <programme start="20261121102000 +0000" stop="20261121122000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121070000 +0000" stop="20261121090000 +0000" channel="MPeacock004.us">
+  <programme start="20261121122000 +0000" stop="20261121142000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121090000 +0000" stop="20261121110000 +0000" channel="MPeacock004.us">
+  <programme start="20261121142000 +0000" stop="20261121162000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121110000 +0000" stop="20261121130000 +0000" channel="MPeacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121130000 +0000" stop="20261121150000 +0000" channel="MPeacock004.us">
+  <programme start="20261121162000 +0000" stop="20261121182000 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -17090,6 +17155,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MPeacock014.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MPeacock015.us">
     <title lang="en">Next Event: Women`s Slalom: Gurgl Run 2 (Sat 21 Nov, 12:30pm)</title>
     <desc lang="en">Women`s Slalom: Gurgl Run 2. Starts Sat 21 Nov, 12:30pm UK time.</desc>
@@ -17230,6 +17300,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121165000 +0000" stop="20261121175000 +0000" channel="MPeacock016.us">
+    <title lang="en">🔴 LIVE: Goal Rush: Matchweek 11</title>
+    <desc lang="en">Goal Rush: Matchweek 11. Starts Sat 21 Nov, 2:50pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MPeacock017.us">
     <title lang="en">Next Match: Bournemouth vs Nottingham Forest (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -17303,6 +17379,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="MPeacock017.us">
+    <title lang="en">🔴 LIVE: Bournemouth vs Nottingham Forest</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Bournemouth vs Nottingham Forest. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MPeacock017.us">
     <title lang="en">🔴 LIVE: Bournemouth vs Nottingham Forest</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Bournemouth vs Nottingham Forest. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -17388,6 +17471,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MPeacock018.us">
+    <title lang="en">🔴 LIVE: Coventry City vs Crystal Palace</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Coventry City vs Crystal Palace. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MPeacock019.us">
     <title lang="en">Next Match: Chelsea vs Leeds United (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -17467,6 +17557,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MPeacock019.us">
+    <title lang="en">🔴 LIVE: Chelsea vs Leeds United</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Chelsea vs Leeds United. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MPeacock020.us">
     <title lang="en">Next Match: Aston Villa vs Sunderland (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -17540,6 +17637,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="MPeacock020.us">
+    <title lang="en">🔴 LIVE: Aston Villa vs Sunderland</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Aston Villa vs Sunderland. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MPeacock020.us">
     <title lang="en">🔴 LIVE: Aston Villa vs Sunderland</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Aston Villa vs Sunderland. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -17674,10 +17778,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121170000 +0000" channel="MPeacock022.us">
-    <title lang="en">Next up: LIVE – Wisconsin vs Purdue (Sat 21 Nov, 5pm)</title>
+    <title lang="en">Next up: LIVE – Wisconsin vs Purdue (5pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Wisconsin vs Purdue starts Sat 21 Nov, 5pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Wisconsin vs Purdue starts at 5pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MPeacock022.us">
+    <title lang="en">🔴 LIVE: Wisconsin vs Purdue</title>
+    <desc lang="en">Wisconsin vs Purdue. Starts Sat 21 Nov, 5pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MPeacock023.us">
     <title lang="en">Next Event: Free Dance (Sat 21 Nov, 5:25pm)</title>
@@ -24011,6 +24121,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121165000 +0000" stop="20261121185000 +0000" channel="MSTAN15.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MSTAN16.au">
     <title lang="en">Next Match: Georgia vs USA Nations Cup Round 6 2026 (Sat 21 Nov, 1:50pm)</title>
     <desc lang="en">Georgia vs USA Nations Cup Round 6 2026. Starts Sat 21 Nov, 1:50pm UK time.</desc>
@@ -24078,6 +24193,11 @@
     <desc lang="en">Georgia vs USA Nations Cup Round 6 2026. Starts Sat 21 Nov, 1:50pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121165000 +0000" stop="20261121185000 +0000" channel="MSTAN16.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MSTAN17.au">
     <title lang="en">Next Match: Scotland vs Japan Nations Championship Round 6 2026 (Sat 21 Nov, 2:10pm)</title>
@@ -24244,6 +24364,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MSTAN18.au">
+    <title lang="en">🔴 LIVE: Goal Rush: Chelsea vs Leeds United • 22 Nov Premier League 2026/2027</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Chelsea vs Leeds United • 22 Nov Premier League 2026/2027. English Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MSTAN19.au">
     <title lang="en">Next Match: Bournemouth vs Nottingham Forest Premier League Matchweek 11 2026/2027 (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -24317,6 +24444,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="MSTAN19.au">
+    <title lang="en">🔴 LIVE: Bournemouth vs Nottingham Forest Premier League Matchweek 11 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Bournemouth vs Nottingham Forest Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MSTAN19.au">
     <title lang="en">🔴 LIVE: Bournemouth vs Nottingham Forest Premier League Matchweek 11 2026/2027</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Bournemouth vs Nottingham Forest Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -24402,6 +24536,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MSTAN20.au">
+    <title lang="en">🔴 LIVE: Coventry City vs Crystal Palace Premier League Matchweek 11 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Coventry City vs Crystal Palace Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MSTAN21.au">
     <title lang="en">Next Match: Aston Villa vs Sunderland Premier League Matchweek 11 2026/2027 (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -24475,6 +24616,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="MSTAN21.au">
+    <title lang="en">🔴 LIVE: Aston Villa vs Sunderland Premier League Matchweek 11 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Aston Villa vs Sunderland Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MSTAN21.au">
     <title lang="en">🔴 LIVE: Aston Villa vs Sunderland Premier League Matchweek 11 2026/2027</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Aston Villa vs Sunderland Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -24560,6 +24708,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MSTAN22.au">
+    <title lang="en">🔴 LIVE: Tottenham Hotspur vs Ipswich Town Premier League Matchweek 11 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Tottenham Hotspur vs Ipswich Town Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MSTAN23.au">
     <title lang="en">Next Match: Portugal vs Uruguay Nations Cup Round 6 2026 (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">WR Nations Cup</sub-title>
@@ -24639,6 +24794,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MSTAN23.au">
+    <title lang="en">🔴 LIVE: Portugal vs Uruguay Nations Cup Round 6 2026</title>
+    <sub-title lang="en">WR Nations Cup</sub-title>
+    <desc lang="en">Portugal vs Uruguay Nations Cup Round 6 2026. WR Nations Cup. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MSTAN24.au">
     <title lang="en">Next Match: Portugal vs Uruguay Nations Cup Round 6 2026 (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">WR Nations Cup</sub-title>
@@ -24712,6 +24874,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="MSTAN24.au">
+    <title lang="en">🔴 LIVE: Portugal vs Uruguay Nations Cup Round 6 2026</title>
+    <sub-title lang="en">WR Nations Cup</sub-title>
+    <desc lang="en">Portugal vs Uruguay Nations Cup Round 6 2026. WR Nations Cup. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="MSTAN24.au">
     <title lang="en">🔴 LIVE: Portugal vs Uruguay Nations Cup Round 6 2026</title>
     <sub-title lang="en">WR Nations Cup</sub-title>
     <desc lang="en">Portugal vs Uruguay Nations Cup Round 6 2026. WR Nations Cup. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -24870,10 +25039,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121164000 +0000" channel="MSTAN26.au">
-    <title lang="en">Next up: LIVE – Ireland vs South Africa Nations Championship Round 6 2026 (Sat 21 Nov, 4:40pm)</title>
+    <title lang="en">Next up: LIVE – Ireland vs South Africa Nations Championship Round 6 2026 (4:40pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Ireland vs South Africa Nations Championship Round 6 2026 starts Sat 21 Nov, 4:40pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Ireland vs South Africa Nations Championship Round 6 2026 starts at 4:40pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121164000 +0000" stop="20261121184000 +0000" channel="MSTAN26.au">
+    <title lang="en">🔴 LIVE: Ireland vs South Africa Nations Championship Round 6 2026</title>
+    <sub-title lang="en">Nations Championship</sub-title>
+    <desc lang="en">Ireland vs South Africa Nations Championship Round 6 2026. Starts Sat 21 Nov, 4:40pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MSTAN27.au">
     <title lang="en">Next Match: Ireland vs South Africa Nations Championship Round 6 2026 (Sat 21 Nov, 4:40pm)</title>
@@ -24948,10 +25124,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121164000 +0000" channel="MSTAN27.au">
-    <title lang="en">Next up: LIVE – Ireland vs South Africa Nations Championship Round 6 2026 (Sat 21 Nov, 4:40pm)</title>
+    <title lang="en">Next up: LIVE – Ireland vs South Africa Nations Championship Round 6 2026 (4:40pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Ireland vs South Africa Nations Championship Round 6 2026 starts Sat 21 Nov, 4:40pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Ireland vs South Africa Nations Championship Round 6 2026 starts at 4:40pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121164000 +0000" stop="20261121184000 +0000" channel="MSTAN27.au">
+    <title lang="en">🔴 LIVE: Ireland vs South Africa Nations Championship Round 6 2026</title>
+    <sub-title lang="en">Nations Championship</sub-title>
+    <desc lang="en">Ireland vs South Africa Nations Championship Round 6 2026. Starts Sat 21 Nov, 4:40pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="MSTAN28.au">
     <title lang="en">Next Match: Zimbabwe vs Chile Nations Cup Round 6 2026 (Sat 21 Nov, 5:15pm)</title>
@@ -31430,6 +31613,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="PPVEVENT2.us">
     <title lang="en">Next Event: Miss Snowball Derby Pageant (Sat 21 Nov, 1am)</title>
     <sub-title lang="en">PPV Event</sub-title>
@@ -31500,6 +31688,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="PPVEVENT2.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="PPVEVENT2.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -31743,6 +31936,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="PPVEVENT5.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="PPVEVENT6.us">
     <title lang="en">Next Event: Bison Kombat 11 (Fri 20 Nov, 11pm)</title>
     <sub-title lang="en">PPV Event</sub-title>
@@ -31812,6 +32010,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="PPVEVENT6.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="PPVEVENT6.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -31965,6 +32168,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="PPVEVENT8.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="PPVEVENT9.us">
     <title lang="en">Next Match: PRELIMS Jones vs Pettus (Fri 20 Nov, 10pm)</title>
     <sub-title lang="en">PPV Event</sub-title>
@@ -32102,6 +32310,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="Paramount010.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="Paramount010.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -32248,6 +32461,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="Paramount012.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="Paramount012.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -32657,6 +32875,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121165000 +0000" stop="20261121175000 +0000" channel="Paramount017.us">
+    <title lang="en">🔴 LIVE: Georgia vs USA Eagles</title>
+    <desc lang="en">Georgia vs USA Eagles. Starts Sat 21 Nov, 2:50pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Paramount018.us">
     <title lang="en">Next Match: Como vs Cagliari (Sat 21 Nov, 2pm)</title>
     <sub-title lang="en">Serie A</sub-title>
@@ -32736,6 +32960,11 @@
     <desc lang="en">Como vs Cagliari. Serie A. Starts Sat 21 Nov, 2pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Paramount019.us">
     <title lang="en">Next Match: Lazio vs Lecce (Sat 21 Nov, 2pm)</title>
@@ -32817,6 +33046,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="Paramount019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Paramount020.us">
     <title lang="en">Next Event: UFC Fight Night: English (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">UFC</sub-title>
@@ -32890,6 +33124,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="Paramount020.us">
+    <title lang="en">🔴 LIVE: UFC Fight Night: English</title>
+    <sub-title lang="en">UFC</sub-title>
+    <desc lang="en">UFC Fight Night: English. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="Paramount020.us">
     <title lang="en">🔴 LIVE: UFC Fight Night: English</title>
     <sub-title lang="en">UFC</sub-title>
     <desc lang="en">UFC Fight Night: English. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -32975,6 +33216,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="Paramount021.us">
+    <title lang="en">🔴 LIVE: UFC Fight Night em Português</title>
+    <sub-title lang="en">UFC</sub-title>
+    <desc lang="en">UFC Fight Night em Português. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Paramount022.us">
     <title lang="en">Next Event: UFC Fight Night en Español (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">UFC</sub-title>
@@ -33054,6 +33302,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="Paramount022.us">
+    <title lang="en">🔴 LIVE: UFC Fight Night en Español</title>
+    <sub-title lang="en">UFC</sub-title>
+    <desc lang="en">UFC Fight Night en Español. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Paramount023.us">
     <title lang="en">Next Match: Parma vs Roma (Sat 21 Nov, 5pm)</title>
     <sub-title lang="en">Serie A</sub-title>
@@ -33127,10 +33382,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121170000 +0000" channel="Paramount023.us">
-    <title lang="en">Next up: LIVE – Parma vs Roma (Sat 21 Nov, 5pm)</title>
+    <title lang="en">Next up: LIVE – Parma vs Roma (5pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Parma vs Roma starts Sat 21 Nov, 5pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Parma vs Roma starts at 5pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="Paramount023.us">
+    <title lang="en">🔴 LIVE: Parma vs Roma</title>
+    <sub-title lang="en">Serie A</sub-title>
+    <desc lang="en">Parma vs Roma. Serie A. Starts Sat 21 Nov, 5pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Paramount024.us">
     <title lang="en">Next Event: UFC Fight Night: Multiview (Sat 21 Nov, 7pm)</title>
@@ -39137,78 +39399,6 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261120120000 +0000" stop="20261120140000 +0000" channel="Peacock004.us">
-    <title lang="en">🔴 LIVE: Pairs Short Program</title>
-    <desc lang="en">Pairs Short Program. Starts Fri 20 Nov, Midday UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261120140000 +0000" stop="20261120150000 +0000" channel="Peacock004.us">
-    <title lang="en">🔴 LIVE: Pairs Short Program</title>
-    <desc lang="en">Pairs Short Program. Starts Fri 20 Nov, Midday UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261120150000 +0000" stop="20261120170000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261120170000 +0000" stop="20261120190000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261120190000 +0000" stop="20261120210000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261120210000 +0000" stop="20261120230000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261120230000 +0000" stop="20261121010000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121010000 +0000" stop="20261121030000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121030000 +0000" stop="20261121050000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121050000 +0000" stop="20261121070000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121070000 +0000" stop="20261121090000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121090000 +0000" stop="20261121110000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121110000 +0000" stop="20261121130000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121130000 +0000" stop="20261121150000 +0000" channel="Peacock004.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261120133000 +0000" stop="20261120153000 +0000" channel="Peacock005.us">
     <title lang="en">🔴 LIVE: Women`s Short Program</title>
     <desc lang="en">Women`s Short Program. Starts Fri 20 Nov, 1:30pm UK time.</desc>
@@ -39932,6 +40122,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="Peacock014.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Peacock015.us">
     <title lang="en">Next Event: Women`s Slalom: Gurgl Run 2 (Sat 21 Nov, 12:30pm)</title>
     <desc lang="en">Women`s Slalom: Gurgl Run 2. Starts Sat 21 Nov, 12:30pm UK time.</desc>
@@ -40072,6 +40267,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121165000 +0000" stop="20261121175000 +0000" channel="Peacock016.us">
+    <title lang="en">🔴 LIVE: Goal Rush: Matchweek 11</title>
+    <desc lang="en">Goal Rush: Matchweek 11. Starts Sat 21 Nov, 2:50pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Peacock017.us">
     <title lang="en">Next Match: Bournemouth vs Nottingham Forest (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -40145,6 +40346,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="Peacock017.us">
+    <title lang="en">🔴 LIVE: Bournemouth vs Nottingham Forest</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Bournemouth vs Nottingham Forest. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="Peacock017.us">
     <title lang="en">🔴 LIVE: Bournemouth vs Nottingham Forest</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Bournemouth vs Nottingham Forest. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -40230,6 +40438,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="Peacock018.us">
+    <title lang="en">🔴 LIVE: Coventry City vs Crystal Palace</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Coventry City vs Crystal Palace. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Peacock019.us">
     <title lang="en">Next Match: Chelsea vs Leeds United (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -40309,6 +40524,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="Peacock019.us">
+    <title lang="en">🔴 LIVE: Chelsea vs Leeds United</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Chelsea vs Leeds United. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Peacock020.us">
     <title lang="en">Next Match: Aston Villa vs Sunderland (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -40382,6 +40604,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="Peacock020.us">
+    <title lang="en">🔴 LIVE: Aston Villa vs Sunderland</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Aston Villa vs Sunderland. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="Peacock020.us">
     <title lang="en">🔴 LIVE: Aston Villa vs Sunderland</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Aston Villa vs Sunderland. Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -40516,10 +40745,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121170000 +0000" channel="Peacock022.us">
-    <title lang="en">Next up: LIVE – Wisconsin vs Purdue (Sat 21 Nov, 5pm)</title>
+    <title lang="en">Next up: LIVE – Wisconsin vs Purdue (5pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Wisconsin vs Purdue starts Sat 21 Nov, 5pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Wisconsin vs Purdue starts at 5pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="Peacock022.us">
+    <title lang="en">🔴 LIVE: Wisconsin vs Purdue</title>
+    <desc lang="en">Wisconsin vs Purdue. Starts Sat 21 Nov, 5pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Peacock023.us">
     <title lang="en">Next Event: Free Dance (Sat 21 Nov, 5:25pm)</title>
@@ -46939,6 +47174,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121165000 +0000" stop="20261121185000 +0000" channel="STAN16.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="STAN17.au">
     <title lang="en">Next Match: Scotland vs Japan Nations Championship Round 6 2026 (Sat 21 Nov, 2:10pm)</title>
     <sub-title lang="en">Nations Championship</sub-title>
@@ -47104,6 +47344,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="STAN18.au">
+    <title lang="en">🔴 LIVE: Chelsea vs Leeds United Premier League Matchweek 11 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Chelsea vs Leeds United Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="STAN19.au">
     <title lang="en">Next Match: Bournemouth vs Nottingham Forest Premier League Matchweek 11 2026/2027 (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -47177,6 +47424,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="STAN19.au">
+    <title lang="en">🔴 LIVE: Bournemouth vs Nottingham Forest Premier League Matchweek 11 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Bournemouth vs Nottingham Forest Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="STAN19.au">
     <title lang="en">🔴 LIVE: Bournemouth vs Nottingham Forest Premier League Matchweek 11 2026/2027</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Bournemouth vs Nottingham Forest Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -47262,6 +47516,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="STAN20.au">
+    <title lang="en">🔴 LIVE: Coventry City vs Crystal Palace Premier League Matchweek 11 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Coventry City vs Crystal Palace Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="STAN21.au">
     <title lang="en">Next Match: Aston Villa vs Sunderland Premier League Matchweek 11 2026/2027 (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">Premier League</sub-title>
@@ -47335,6 +47596,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="STAN21.au">
+    <title lang="en">🔴 LIVE: Aston Villa vs Sunderland Premier League Matchweek 11 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Aston Villa vs Sunderland Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="STAN21.au">
     <title lang="en">🔴 LIVE: Aston Villa vs Sunderland Premier League Matchweek 11 2026/2027</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Aston Villa vs Sunderland Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -47420,6 +47688,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="STAN22.au">
+    <title lang="en">🔴 LIVE: Tottenham Hotspur vs Ipswich Town Premier League Matchweek 11 2026/2027</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Tottenham Hotspur vs Ipswich Town Premier League Matchweek 11 2026/2027. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="STAN23.au">
     <title lang="en">Next Match: Goal Rush: Chelsea vs Leeds United • 22 Nov Premier League 2026/2027 (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">English Premier League</sub-title>
@@ -47499,6 +47774,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="STAN23.au">
+    <title lang="en">🔴 LIVE: Goal Rush: Chelsea vs Leeds United • 22 Nov Premier League 2026/2027</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Chelsea vs Leeds United • 22 Nov Premier League 2026/2027. English Premier League. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="STAN24.au">
     <title lang="en">Next Match: Portugal vs Uruguay Nations Cup Round 6 2026 (Sat 21 Nov, 3pm)</title>
     <sub-title lang="en">WR Nations Cup</sub-title>
@@ -47572,6 +47854,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="STAN24.au">
+    <title lang="en">🔴 LIVE: Portugal vs Uruguay Nations Cup Round 6 2026</title>
+    <sub-title lang="en">WR Nations Cup</sub-title>
+    <desc lang="en">Portugal vs Uruguay Nations Cup Round 6 2026. WR Nations Cup. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="STAN24.au">
     <title lang="en">🔴 LIVE: Portugal vs Uruguay Nations Cup Round 6 2026</title>
     <sub-title lang="en">WR Nations Cup</sub-title>
     <desc lang="en">Portugal vs Uruguay Nations Cup Round 6 2026. WR Nations Cup. Starts Sat 21 Nov, 3pm UK time.</desc>
@@ -47730,10 +48019,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121164000 +0000" channel="STAN26.au">
-    <title lang="en">Next up: LIVE – Italy vs Fiji Nations Championship Round 6 2026 (Sat 21 Nov, 4:40pm)</title>
+    <title lang="en">Next up: LIVE – Italy vs Fiji Nations Championship Round 6 2026 (4:40pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Italy vs Fiji Nations Championship Round 6 2026 starts Sat 21 Nov, 4:40pm UK time. This match is also live on ITV4.</desc>
+    <desc lang="en">Next up: LIVE. Italy vs Fiji Nations Championship Round 6 2026 starts at 4:40pm UK time. This match is also live on ITV4.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121164000 +0000" stop="20261121184000 +0000" channel="STAN26.au">
+    <title lang="en">🔴 LIVE: Italy vs Fiji Nations Championship Round 6 2026</title>
+    <sub-title lang="en">Nations Championship</sub-title>
+    <desc lang="en">Italy vs Fiji Nations Championship Round 6 2026. Starts Sat 21 Nov, 4:40pm UK time. This match is also live on ITV4.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="STAN27.au">
     <title lang="en">Next Match: Ireland vs South Africa Nations Championship Round 6 2026 (Sat 21 Nov, 4:40pm)</title>
@@ -47808,10 +48104,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121164000 +0000" channel="STAN27.au">
-    <title lang="en">Next up: LIVE – Ireland vs South Africa Nations Championship Round 6 2026 (Sat 21 Nov, 4:40pm)</title>
+    <title lang="en">Next up: LIVE – Ireland vs South Africa Nations Championship Round 6 2026 (4:40pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Ireland vs South Africa Nations Championship Round 6 2026 starts Sat 21 Nov, 4:40pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Ireland vs South Africa Nations Championship Round 6 2026 starts at 4:40pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121164000 +0000" stop="20261121184000 +0000" channel="STAN27.au">
+    <title lang="en">🔴 LIVE: Ireland vs South Africa Nations Championship Round 6 2026</title>
+    <sub-title lang="en">Nations Championship</sub-title>
+    <desc lang="en">Ireland vs South Africa Nations Championship Round 6 2026. Starts Sat 21 Nov, 4:40pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="STAN28.au">
     <title lang="en">Next Match: London City Lionesses vs Crystal Palace WSL 2026/27 (Sat 21 Nov, 5:15pm)</title>
@@ -53382,6 +53685,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="TSN031.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="TSN033.ca">
     <title lang="en">Next Match: NCAA Women`s Field Hockey _ SF#2 _ UConn vs Northwestern (Fri 20 Nov, 7:30pm)</title>
     <sub-title lang="en">NCAA</sub-title>
@@ -53525,6 +53833,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121144800 +0000" stop="20261121164800 +0000" channel="TSN034.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121164800 +0000" stop="20261121184800 +0000" channel="TSN034.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -53676,6 +53989,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121150000 +0000" stop="20261121170000 +0000" channel="TSN036.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="TSN036.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -54546,6 +54864,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121165000 +0000" stop="20261121185000 +0000" channel="TSN047.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="TSN048.ca">
     <title lang="en">Next Event: Formula 1 Timing Channel _ Las Vegas Grand Prix Qualifying (Sat 21 Nov, 3:50am)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -54617,6 +54940,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121145000 +0000" stop="20261121165000 +0000" channel="TSN048.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121165000 +0000" stop="20261121185000 +0000" channel="TSN048.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -54696,6 +55024,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121165000 +0000" stop="20261121185000 +0000" channel="TSN049.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="TSN050.ca">
     <title lang="en">Next Event: Formula 1 Pit Lane _ Las Vegas Grand Prix Qualifying (Sat 21 Nov, 3:50am)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -54767,6 +55100,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121145000 +0000" stop="20261121165000 +0000" channel="TSN050.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121165000 +0000" stop="20261121185000 +0000" channel="TSN050.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -54846,6 +55184,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121165000 +0000" stop="20261121185000 +0000" channel="TSN051.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="TSN052.ca">
     <title lang="en">Next Event: Formula 1 On_Board Camera: Lewis Hamilton _ Las Vegas Grand Prix Qualifying (Sat 21 Nov, 3:50am)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -54921,6 +55264,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121165000 +0000" stop="20261121185000 +0000" channel="TSN052.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="TSN053.ca">
     <title lang="en">Next Event: Formula 1 On_Board Camera: Lance Stroll _ Las Vegas Grand Prix Qualifying (Sat 21 Nov, 3:50am)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -54992,6 +55340,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121145000 +0000" stop="20261121165000 +0000" channel="TSN053.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121165000 +0000" stop="20261121185000 +0000" channel="TSN053.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -55244,6 +55597,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261121170000 +0000" stop="20261121180000 +0000" channel="TSN056.ca">
+    <title lang="en">🔴 LIVE: NCAA Cross Country Championships</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Cross Country Championships. Starts Sat 21 Nov, 3pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="TSN057.ca">
     <title lang="en">Next Match: LaLiga: Rayo Vallecano vs Valencia (Sat 21 Nov, 3:15pm)</title>
     <sub-title lang="en">Spanish La Liga (Primera)</sub-title>
@@ -55463,10 +55823,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121170000 +0000" channel="TSN059.ca">
-    <title lang="en">Next up: LIVE – NCAA Football: Syracuse vs Boston College (Sat 21 Nov, 5pm)</title>
+    <title lang="en">Next up: LIVE – NCAA Football: Syracuse vs Boston College (5pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NCAA Football: Syracuse vs Boston College starts Sat 21 Nov, 5pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. NCAA Football: Syracuse vs Boston College starts at 5pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="TSN059.ca">
+    <title lang="en">🔴 LIVE: NCAA Football: Syracuse vs Boston College</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Football: Syracuse vs Boston College. Starts Sat 21 Nov, 5pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="TSN060.ca">
     <title lang="en">Next Match: NCAA Football: Memphis vs Navy (Sat 21 Nov, 5pm)</title>
@@ -55541,10 +55908,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121170000 +0000" channel="TSN060.ca">
-    <title lang="en">Next up: LIVE – NCAA Football: Memphis vs Navy (Sat 21 Nov, 5pm)</title>
+    <title lang="en">Next up: LIVE – NCAA Football: Memphis vs Navy (5pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NCAA Football: Memphis vs Navy starts Sat 21 Nov, 5pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. NCAA Football: Memphis vs Navy starts at 5pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="TSN060.ca">
+    <title lang="en">🔴 LIVE: NCAA Football: Memphis vs Navy</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Football: Memphis vs Navy. Starts Sat 21 Nov, 5pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="TSN061.ca">
     <title lang="en">Next Match: NCAA Football: Vanderbilt vs Florida (Sat 21 Nov, 5pm)</title>
@@ -55619,10 +55993,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121170000 +0000" channel="TSN061.ca">
-    <title lang="en">Next up: LIVE – NCAA Football: Vanderbilt vs Florida (Sat 21 Nov, 5pm)</title>
+    <title lang="en">Next up: LIVE – NCAA Football: Vanderbilt vs Florida (5pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NCAA Football: Vanderbilt vs Florida starts Sat 21 Nov, 5pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. NCAA Football: Vanderbilt vs Florida starts at 5pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="TSN061.ca">
+    <title lang="en">🔴 LIVE: NCAA Football: Vanderbilt vs Florida</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Football: Vanderbilt vs Florida. Starts Sat 21 Nov, 5pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="TSN062.ca">
     <title lang="en">Next Match: LaLiga: Sevilla vs Real Betis (Sat 21 Nov, 5:30pm)</title>
@@ -96651,6 +97032,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121160000 +0000" stop="20261121180000 +0000" channel="Peacock002.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261120160000 +0000" stop="20261120180000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261120180000 +0000" stop="20261120200000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261120200000 +0000" stop="20261120220000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261120220000 +0000" stop="20261121000000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121000000 +0000" stop="20261121020000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121020000 +0000" stop="20261121040000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121040000 +0000" stop="20261121060000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121060000 +0000" stop="20261121080000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121080000 +0000" stop="20261121100000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121100000 +0000" stop="20261121120000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121120000 +0000" stop="20261121140000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121140000 +0000" stop="20261121160000 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121160000 +0000" stop="20261121180000 +0000" channel="Peacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
