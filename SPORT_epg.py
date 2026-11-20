@@ -3566,7 +3566,7 @@ def collect_match_pairs(records):
 KEEP_CAPS = set("""
 UFC NBA NFL NHL MLB MLS WNBA NCAA UEFA FIFA FA EFL EPL WWE AEW ATP WTA PGA LPGA LIV DP
 IPL ICC ODI GP MMA PFL BKFC DAZN ESPN BBC CNN BT TNT TV HD UHD PPV VAR USA UK UAE EU
-FC SC AC AS CF CD FK SK BK AEK AEL APOEL PAOK OFI ENP AEP PAEEK GR
+FC SC AC AS CF CD FK SK BK AEK AEL APOEL PAOK OFI ENP AEP PAEEK GR PL MW GB ISO LIVE
 """.split())
 SMALL_WORDS = {"a", "an", "and", "at", "by", "for", "in", "of", "on", "or", "the", "to", "v", "vs"}
 CAPS_WORD = re.compile(r"[^\W\d_]+(?:['\u2019][^\W\d_]+)*")
@@ -5051,13 +5051,26 @@ def it_poor(src, out):
     return len(src) >= 25 and len(IT_FUNC_RE.findall(src)) >= 2 and (out == src or bool(IT_LEFT_RE.search(out)))
 
 
+# French descriptions that were translated badly (language guessed as "auto"): word-for-word or half French ("an intense
+# advertisement with seize clubs in license to décrocher the title", "Après a season difficult, Jamie s'interroge sur son
+# avenir") - 20 Nov 2026 (user: Canal+ Sport Rugby Pro D2). Dropped from the cache on load and translated again as French.
+FR_FUNC_RE = re.compile(r"(?i)\b(le|la|les|des|du|une|dans|avec|apr\u00e8s|pour|sur|qui|est|son|ses|aux|cette|face|contre|chez)\b")
+FR_LEFT_RE = re.compile(r"(?i)\b(le|les|des|une|dans|avec|apr\u00e8s|pour|sur|qui|ses|aux|cette|du|accueille|journ\u00e9e|d\u00e9crocher|"
+                        r"affiches?|seize|rencontre|d\u00e9place\w*|\u00e9quipe|saison|victoire|d\u00e9faite|disput\u00e9|s['\u2019]\w+|[ld]['\u2019]\w+)\b")
+
+
+def fr_poor(src, out):
+    return (len(src) >= 25 and len(FR_FUNC_RE.findall(src)) >= 3
+            and (out == src or len(FR_LEFT_RE.findall(out)) >= 2))
+
+
 def load_cache():
     path = CACHE_FILE if os.path.exists(CACHE_FILE) else OLD_CACHE_FILE
     try:
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
         good = {k: v for k, v in data.items() if isinstance(v, str)}
-        bad = [k for k, v in good.items() if k != "__desc_used__" and (untranslated(k, v) or it_poor(k, v))]
+        bad = [k for k, v in good.items() if k != "__desc_used__" and (untranslated(k, v) or it_poor(k, v) or fr_poor(k, v))]
         for k in bad:                                  # retranslated this run (29 Oct 2026 fix)
             good.pop(k)
         if bad:
@@ -5121,6 +5134,28 @@ LEFTOVER_WORDS = [(r"\bmuži\b", "men"), (r"\bmužů\b", "men's"), (r"\bženy\b"
                   (r"\bkierros\b", "round"), (r"\bmiehet\b", "men"), (r"\bnaiset\b", "women"),
                   (r"\bherrer\b", "men"), (r"\bdamer\b", "women"), (r"\bherrar\b", "men"),
                   (r"\bmuški\b", "men's"), (r"\bženski\b", "women's"), (r"\bLIGA\b", "LEAGUE")]
+
+
+# Ziggo Sport (20 Nov 2026, user: Ziggo Sport 4 tennis needs translating): Ziggo GO's "English" guide still has Dutch in many
+# titles and sub-titles ("Finale, Mannen", "Groepsfase: Dag 6", "ATP Tennis Hoogtepunten", "Finals: Tsjechië - Canada").
+# Texts with a Dutch word are sent to the translator, plus the description form ("sub." - the description repeats the
+# sub-title). Moto "GP van Portugal: ..." lines are left for ziggo_moto(), which does its own English wording.
+NL_MARK_RE = re.compile(r"(?i)\b(hoogtepunten|finale|halve|mannen|vrouwen|dag \d+|groepsfase|kwalificatie\w*|vrije|ronde|wedstrijd|"
+                        r"tegen|gras|punten|onwerkelijke|het|van|verenigde|hongarije|tsjechië|groot-brittanni\w+|duitsland|spanje|"
+                        r"oostenrijk|italië|zuid-korea|nederland|frankrijk|zweden|argentinië|brazilië|australië|zwitserland|"
+                        r"belgië|kroatië|polen|servië|slowakije|noorwegen|denemarken)\b")
+
+
+def dutch_to_translate(events):
+    out = []
+    for e in events:
+        for key in ("title", "sub"):
+            t = (e.get(key) or "").strip()
+            if t and NL_MARK_RE.search(t) and not re.match(r"^(?:Moto2&3 )?GP van ", t):
+                out.append(t)
+                if key == "sub":
+                    out.append(t + ".")
+    return out
 
 
 def en(text):
@@ -5236,6 +5271,8 @@ def translate_descriptions(records, limit):
                 need[d] = min(need.get(d, ev["start"]), ev["start"])
                 if rec["place"] == "Italy":
                     lang.setdefault(d, "it")
+                elif rec["place"] == "France":                 # (20 Nov 2026) "auto" gave word-for-word French
+                    lang.setdefault(d, "fr")
     for d in need:
         if d in TRANSLATIONS:
             DESC_USED[d] = today
@@ -6181,7 +6218,761 @@ def fix_names(text):
     return re.sub(r"\bRpool\b", "Liverpool", text) if text else text
 
 
+# Cricket competitions whose name doesn't say "cricket" (20 Nov 2026, user: Premier Sports 2 "LIVE: Abu Dhabi T10:
+# Qualifier" needs Cricket in it) -> "Abu Dhabi T10 Cricket: Qualifier". Add other such names here.
+CRICKET_COMP_RE = re.compile(r"(?i)\b(Abu Dhabi T10(?: League)?)\b(?!\s+(?:League|Cricket))")   # "...T10: Qualifier" / "...T10 League"
+# 20 Nov 2026 (user: Sony Sports Ten 1 "ACC Men's Asia Cup" is cricket): "...-2026 ACC Men's Asia Cup Rising Stars" ->
+# "... Rising Stars Cricket"; the feed cuts some titles short ("Asia Cup Rising") - those are completed too.
+ASIA_CUP_RE = re.compile(r"(?i)\b(ACC Men['\u2019]s (?:U19 )?Asia Cup|Asia Cup)( Rising(?: Stars)?)?\s*$")
+
+
+def add_cricket(text):
+    if not text or re.search(r"(?i)cricket", text):
+        return text
+    text = CRICKET_COMP_RE.sub(lambda m: m.group(1) + " Cricket", text)
+    if "Cricket" in text:
+        return text
+    m = ASIA_CUP_RE.search(text)
+    if m and (m.group(2) or "ACC" in m.group(1).upper()):      # a bare "Asia Cup" could be another sport (Moto4 Asia Cup)
+        return text[:m.start()] + m.group(1) + (" Rising Stars" if m.group(2) else "") + " Cricket"
+    return text
+
+
+# 20 Nov 2026 (user): every listing gets its sport at the start of the title unless the title already says it -
+# "🔴 LIVE: Tennis. ATP Finals", "🔴 LIVE: Cricket. WBBL Hobart Hurricanes v Sydney Thunder", "NBA" -> "Basketball. NBA ...".
+# The sport is worked out from the title + sub-title (competition names / abbreviations), first matching rule wins.
+# NOT done for football (the clubs and leagues are obvious and nearly every listing is football) or motorsport / horse racing
+# (the series names say it). To add a sport or a competition, add it to SPORT_RULES; SPORT_SAID says which words in the
+# title already name the sport.
+SPORT_RULES = [
+    ("Tennis", r"\bATP\b|\bWTA\b|Wimbledon|Roland[- ]Garros|French Open|Australian Open|Davis Cup|Billie Jean King|(?i:\bBJK Cup)|Laver Cup|\bNitto\b|Next Gen Finals|Hopman Cup|United Cup|Stockholm Open"),
+    ("Cricket", r"\bBaggy Greens\b|\bBlack ?caps\b|\bWhite ?Ferns\b|\b(?:T-?20I?|T-?10|Twenty-?20|Test Twenty|ODIs?|IPL|WBBL|WPL|PSL|CPL|SA20|ILT20|MLC|LPL|BPL|ICC|Ashes|The Hundred|Big Bash|Sheffield Shield|Ranji Trophy|County Championship|Vitality Blast|Metro Bank One.Day Cup|Nepal Premier League|Indian Premier League|Syed Mushtaq Ali|Champions Trophy|Extraaa Innings|Cricbuzz|Lords Of England|Vijay Hazare|Test Match Special)\b|\b\d(?:st|nd|rd|th) (?:Test|ODI|T20I?)\b"),
+    ("Netball", r"\bSilver Ferns\b|\bNet Blacks\b|Super Netball|Quad Series"),
+    ("Rugby League", r"\bNRLW?\b|State of Origin|\bRLWC\d*\b|Challenge Cup Final"),
+    ("Rugby Union", r"Nations Championship|\bAll Blacks\b|\bWallabies\b|Six Nations|Rugby Championship|\bURC\b|United Rugby|Top 14|Pro D2|Super Rugby|Gallagher (?:PREM|Premiership)|\bPREM\b|\bPWR\b|Premiership Rugby|Champions Cup|Autumn Nations|Nations Series|Bunnings NPC|Currie Cup|Lions Tour"),
+    ("Golf", r"\b(?:PGA|LPGA|LIV Golf|DP World Tour|Ryder Cup|Solheim Cup|Presidents Cup|Korn Ferry|Race to Dubai|Q-School|USPGA|Asian Tour|Rolex Grand Final)\b|Open Championship|Augusta National"),
+    ("Basketball", r"\b(?:NBA|WNBA|NBL|WNBL|FIBA|EuroLeague|EuroCup|NCAAB|G League|East Asia Super League|Liga ACB)\b|March Madness"),
+    ("American Football", r"\b(?:NFL|NCAAF|CFL|CFP|CFB)\b|Super Bowl|Pro Football Talk|Football Night In America|College GameDay"),
+    ("Ice Hockey", r"\b(?:NHL|KHL|AHL|EIHL|IIHF|SHL)\b|Stanley Cup"),
+    ("Baseball", r"\b(?:MLB|NPB|KBO)\b|World Series(?! of)"),
+    ("Aussie Rules", r"\bAFLW?\b"),
+    ("Darts", r"\bPDC\b|World Matchplay"),
+    ("Snooker", r"\bWST(?::| Tour| Snooker)|Crucible|Champion of Champions|In The Frame"),
+    ("MMA", r"\b(?:UFC|PFL|KSW|Oktagon|Bellator)\b|The Ultimate Fighter|Total Combat|ONE Championship|ONE Fight Night|ONE Friday Fights|Cage Warriors"),
+    ("Boxing", r"Matchroom|Queensberry|Top Rank|\bGolden Boy\b|\bKOTV\b"),
+    ("Wrestling", r"\b(?:WWE|AEW|TNA)\b|SmackDown|WrestleMania"),
+    ("Cycling", r"\bUCI\b|Tour de France|Giro d.Italia|La Vuelta|Paris-Roubaix|Tour Down Under|Arctic Race of Norway|Colocross"),
+    ("Athletics", r"Diamond League"),
+    ("Volleyball", r"\b(?:VNL|CEV)\b|SuperLega|Volleyball Nations"),
+    ("Sailing", r"\bSailGP\b|America.s Cup|Vend[ée]e Globe"),
+    ("Show Jumping", r"\bLongines\b|Global Champions|\bGCL\b|\bLGCT\b|\bFEI\b|Jumping World Cup|Show Jumping|Grand Prix Jumping"),
+    ("Badminton", r"\bBWF\b|Thomas (?:&|and) Uber"),
+    ("Biathlon", r"\bIBU\b"),
+    ("Swimming", r"Aquatics|\bFINA\b"),
+    ("Handball", r"\bEHF\b"),
+]
+SPORT_RULES = [(n, re.compile(rx, re.I)) for n, rx in SPORT_RULES]
+SPORT_SAID = {
+    "Tennis": r"t[eé]nn?is", "Cricket": r"cricket", "Rugby League": r"rugby", "Rugby Union": r"rugby", "Golf": r"golf",
+    "Basketball": r"basket|baloncesto|pallacanestro|basquet", "American Football": r"american football|college football|football am[eé]ricain|futebol americano",
+    "Ice Hockey": r"hockey", "Baseball": r"baseball|b[eé]isbol|beisebol", "Aussie Rules": r"aussie rules|australian rules",
+    "Darts": r"darts", "Snooker": r"snooker", "MMA": r"\bmma\b|martial arts", "Boxing": r"\bbox(?:ing|e|eo|en)\b",
+    "Wrestling": r"wrestl|lucha", "Cycling": r"cycl|ciclismo|cyclisme|radsport", "Athletics": r"athletic|atletica|athl[eé]tisme",
+    "Volleyball": r"volley|voleibol", "Sailing": r"sail", "Show Jumping": r"jumping|equestri|horse riding|riding:|ridebane|ecuestre|reiten|hípica|hippique", "Badminton": r"badminton", "Biathlon": r"biathl", "Swimming": r"swim|nuoto|natation", "Netball": r"netball", "Handball": r"handball|balonmano",
+}
+SPORT_SAID = {k: re.compile(v, re.I) for k, v in SPORT_SAID.items()}
+LIVE_LEAD_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE[:,]\s*)?)")
+
+
+# Fixtures ("A v B", "A vs B") with no recognisable competition: if the description names exactly one sport, that is the sport
+# ("New Zealand vs India" + "...cricket...", "Atlanta v Boston" + "...golf...").
+FIXTURE_RE = re.compile(r"\S\s(?:v|vs\.?)\s\S")
+DESC_SPORT = {"Cricket": r"cricket|\bwickets?\b", "Tennis": r"(?<!table )tennis", "Basketball": r"basketball", "American Football": r"american football|\bNFL\b|college football",
+              "Ice Hockey": r"ice hockey|\bNHL\b", "Baseball": r"baseball|\bMLB\b", "Golf": r"\bgolf", "Rugby League": r"rugby league", "Handball": r"handball", "Volleyball": r"volleyball", "Netball": r"netball",
+              "Aussie Rules": r"\bAFL\b|aussie rules|australian rules"}
+DESC_SPORT = {k: re.compile(v, re.I) for k, v in DESC_SPORT.items()}
+
+
+# 20 Nov 2026 (user: TNT Sports 4 "Leicester v Saracens" - Leicester could be anything, but Saracens only ever means rugby):
+# the guide teaches itself which teams belong to which sport. learn_team_sports() runs once over every listing, takes the
+# fixtures whose sport is already known (competition name / description), and remembers each team name. A fixture with no
+# recognisable competition then takes the sport of either side, provided that team is only ever seen in ONE sport and its name
+# does not occur in the football guides (so "Leicester", "Barcelona", "Arsenal" never decide anything - football teams share
+# names with other sports). Names are matched on the main word(s): "Saracens Women" = "Saracens W" = "Saracens".
+TEAM_SPORT = {}                     # normalised team -> {sport: count}
+TEAM_TOTAL = {}                     # normalised team -> how many fixtures it appears in at all (any sport / unknown)
+FOOTBALL_TOKENS = set()
+SIDE_SPLIT_RE = re.compile(r"\s+(?:v|vs\.?|-|\u2013|/|@)\s+")
+
+
+def team_key(name):
+    name = re.sub(r"(?i)\b(?:women(?:'s)?|w|men(?:'s)?|m|u\d\d|o\d\d|ii|2|b|a)\b\.?", " ", name or "")
+    name = re.sub(r"[^\w ]+|\d+", " ", name.lower())
+    return " ".join(name.split())
+
+
+def fixture_sides(body):
+    body = re.sub(r"^[^:]{2,40}:\s*", "", body.strip()) if body.count(":") == 1 and re.search(r"\s(?:v|vs\.?)\s", body.split(":", 1)[1]) else body
+    body = re.sub(r"\s*[-\u2013(].*$", "", body) if re.search(r"\s(?:v|vs\.?)\s", body) else body
+    parts = SIDE_SPLIT_RE.split(body.strip(), maxsplit=1)
+    if len(parts) != 2:
+        return None
+    a, b = (team_key(x) for x in parts)
+    return (a, b) if a and b and len(a) < 40 and len(b) < 40 else None
+
+
+def load_football_tokens():
+    import os
+    here = os.path.dirname(os.path.abspath(__file__))
+    for fn in ("football_epg.xml", "scottish_epg.xml", "TEAMS_epg.xml"):
+        for base in (here, os.getcwd()):
+            path = os.path.join(base, fn)
+            if os.path.exists(path):
+                try:
+                    txt = open(path, encoding="utf-8", errors="ignore").read()
+                except OSError:
+                    continue
+                for t in re.findall(r"<title[^>]*>([^<]*)</title>", txt):
+                    sides = fixture_sides(re.sub(r"^(?:🔴\s*)?(?:LIVE:\s*)?(?:Next \w+:\s*)?", "", html_unescape(t)))
+                    for side in sides or ():
+                        FOOTBALL_TOKENS.update(w for w in side.split() if len(w) >= 3)
+                break
+
+
+def html_unescape(t):
+    import html
+    return html.unescape(t)
+
+
+def learn_team_sports(records):
+    TEAM_SPORT.clear()
+    TEAM_TOTAL.clear()
+    FOOTBALL_TOKENS.clear()
+    load_football_tokens()
+    for rec in records:
+        for ev in rec.get("events", []):
+            title, sub, desc = ev.get("title") or "", ev.get("sub") or "", ev.get("desc") or ""
+            sp = add_sport(title, sub, rec["id"], desc, learn=True)
+            sides = fixture_sides(LIVE_LEAD_RE.sub("", title))
+            for side in sides or ():
+                TEAM_TOTAL[side] = TEAM_TOTAL.get(side, 0) + 1
+            if sp:
+                for side in sides or ():
+                    TEAM_SPORT.setdefault(side, {}).setdefault(sp, 0)
+                    TEAM_SPORT[side][sp] += 1
+
+
+COUNTRY_RE = re.compile(r"(?i)^(?:usa|uk|uae|england|scotland|wales|ireland|northern ireland|france|germany|spain|italy|portugal|netherlands|belgium|"
+                        r"switzerland|austria|poland|czechia|czech republic|slovakia|hungary|romania|bulgaria|greece|turkey|ukraine|russia|sweden|norway|"
+                        r"denmark|finland|iceland|croatia|serbia|slovenia|bosnia|montenegro|albania|kosovo|georgia|armenia|israel|egypt|morocco|tunisia|"
+                        r"algeria|nigeria|ghana|senegal|south africa|kenya|canada|mexico|brazil|argentina|chile|colombia|uruguay|paraguay|peru|ecuador|"
+                        r"venezuela|bolivia|costa rica|panama|jamaica|guatemala|honduras|cuba|japan|china|korea|south korea|india|pakistan|bangladesh|"
+                        r"sri lanka|nepal|iran|iraq|saudi arabia|qatar|australia|new zealand|fiji|samoa|tonga|hong kong|singapore|malaysia|thailand|"
+                        r"indonesia|philippines|vietnam|kazakhstan|uzbekistan|faroe islands|luxembourg|malta|cyprus|estonia|latvia|lithuania|belarus|"
+                        r"moldova|north macedonia|united states|great britain|west indies)$")
+FOOTBALL_HINT_RE = re.compile(r"(?i)concacaf|uefa|fifa|conmebol|nations league|bundesliga|la ?liga|serie [ab]|ligue [12]|premier league|eredivisie|"
+                              r"\bcopa\b|\bfc\b|football|soccer|world cup qual|friendl")
+
+
+def team_sport(body):
+    if FOOTBALL_HINT_RE.search(body):
+        return None
+    sides = fixture_sides(body)
+    if not sides:
+        return None
+    found = set()
+    for side in sides:
+        seen = TEAM_SPORT.get(side)
+        if not seen or len(seen) != 1 or COUNTRY_RE.match(side):
+            continue
+        n = next(iter(seen.values()))
+        if n < 2 or n < 0.75 * TEAM_TOTAL.get(side, n):     # must be (nearly) always seen in that one sport
+            continue
+        if any(w in FOOTBALL_TOKENS for w in side.split() if len(w) >= 3):
+            continue
+        found.add(next(iter(seen)))
+    return found.pop() if len(found) == 1 else None
+
+
+# Names that are never anything but this sport, whatever the title looks like (checked against the description too).
+# 20 Nov 2026 (user, TNT Sports 4 "LIVE: Brisbane W v Melbourne C W"): A-League fixtures get "Australian A-League Football." at the
+# start, full club names, and "Women" after each side when it is the women's league (a trailing "W" / "Women", or the
+# secondary title / description says A-League Women). Highlights shows and anything that is not a "Team v Team" fixture are left.
+ALEAGUE_TEAMS = {"adelaide": "Adelaide United", "adelaide u": "Adelaide United", "adelaide utd": "Adelaide United", "adelaide united": "Adelaide United",
+                 "auckland": "Auckland FC", "auckland fc": "Auckland FC", "brisbane": "Brisbane Roar", "brisbane roar": "Brisbane Roar",
+                 "canberra": "Canberra United", "canberra utd": "Canberra United", "canberra united": "Canberra United",
+                 "cc mariners": "Central Coast Mariners", "central coast": "Central Coast Mariners", "mariners": "Central Coast Mariners",
+                 "central coast mariners": "Central Coast Mariners", "macarthur": "Macarthur FC", "macarthur fc": "Macarthur FC",
+                 "melbourne c": "Melbourne City", "melb city": "Melbourne City", "melbourne city": "Melbourne City",
+                 "melbourne v": "Melbourne Victory", "melb victory": "Melbourne Victory", "melbourne vic": "Melbourne Victory",
+                 "melb vic": "Melbourne Victory", "melbourne victory": "Melbourne Victory",
+                 "newcastle": "Newcastle Jets", "newcastle jets": "Newcastle Jets", "perth": "Perth Glory", "perth glory": "Perth Glory",
+                 "sydney fc": "Sydney FC", "sydney": "Sydney FC", "western sydney": "Western Sydney Wanderers", "wsw": "Western Sydney Wanderers",
+                 "wanderers": "Western Sydney Wanderers", "western sydney wanderers": "Western Sydney Wanderers",
+                 "wellington": "Wellington Phoenix", "phoenix": "Wellington Phoenix", "wellington phoenix": "Wellington Phoenix"}
+ALEAGUE_RE = re.compile(r"(?i)A-?League")
+ALEAGUE_WOMEN_RE = re.compile(r"(?i)A-?League Women|Women.s A-?League")
+ALEAGUE_FIXTURE_RE = re.compile(r"^(?P<a>.+?)\s+(?:v|vs\.?)\s+(?P<b>.+?)(?P<tail>\s+(?:Ext\.?\s+)?Highlights)?$")
+
+
+def _aleague_side(raw):
+    m = re.match(r"^(.*?)(?:\s+(W|Women|Women's))?$", raw.strip())
+    key = re.sub(r"[.\s]+", " ", m.group(1).lower()).strip()
+    return ALEAGUE_TEAMS.get(key), bool(m.group(2))
+
+
+def a_league(title, sub, desc):
+    if not title or not (ALEAGUE_RE.search(sub or "") or ALEAGUE_RE.search((desc or "")[:300])):
+        return title
+    lead = LIVE_LEAD_RE.match(title)
+    body = title[lead.end():]
+    if re.search(r"(?i)football|A-?League", body):
+        return title
+    m = ALEAGUE_FIXTURE_RE.match(body.strip())
+    if not m or m.group("tail"):
+        return title
+    (a, wa), (b, wb) = _aleague_side(m.group("a")), _aleague_side(m.group("b"))
+    if not a or not b:
+        return title
+    women = wa or wb or bool(ALEAGUE_WOMEN_RE.search(f"{sub or ''} {(desc or '')[:300]}"))
+    if women:
+        a, b = f"{a} Women", f"{b} Women"
+    return f"{lead.group(1)}Australian A-League Football. {a} v {b}"
+
+
+CRICKET_BARE_RE = re.compile(r"(?i)^(?:Test(?: Mini| Classic| Wrap| Day)?|ODIs?(?: Mini)?|T20Is?(?: Mini)?)(?:\s*[-:].*)?$")
+# 20 Nov 2026 (user, TNT Sports 2 "LIVE: NWSL Final: Spirit v Current"): NWSL fixtures -> "National Women's Soccer League. Washington Spirit v
+# Kansas City Current" with the round ("Final", "Semi-final") as the secondary title. Same layout as the A-League.
+NWSL_TEAMS = {"washington": "Washington Spirit", "spirit": "Washington Spirit", "washington spirit": "Washington Spirit",
+              "kansas": "Kansas City Current", "kansas city": "Kansas City Current", "current": "Kansas City Current", "kc current": "Kansas City Current",
+              "kansas city current": "Kansas City Current", "utah": "Utah Royals", "royals": "Utah Royals", "utah royals": "Utah Royals", "utah royals fc": "Utah Royals",
+              "gotham": "Gotham FC", "gotham fc": "Gotham FC", "ny/nj gotham": "Gotham FC", "angel city": "Angel City FC", "angel city fc": "Angel City FC",
+              "bay": "Bay FC", "bay fc": "Bay FC", "chicago": "Chicago Stars", "stars": "Chicago Stars", "chicago stars": "Chicago Stars",
+              "houston": "Houston Dash", "dash": "Houston Dash", "houston dash": "Houston Dash", "north carolina": "North Carolina Courage",
+              "courage": "North Carolina Courage", "nc courage": "North Carolina Courage", "orlando": "Orlando Pride", "pride": "Orlando Pride",
+              "orlando pride": "Orlando Pride", "portland": "Portland Thorns", "thorns": "Portland Thorns", "portland thorns": "Portland Thorns",
+              "louisville": "Racing Louisville", "racing louisville": "Racing Louisville", "san diego": "San Diego Wave", "wave": "San Diego Wave",
+              "san diego wave": "San Diego Wave", "seattle": "Seattle Reign", "reign": "Seattle Reign", "seattle reign": "Seattle Reign",
+              "boston": "Boston Legacy", "boston legacy": "Boston Legacy", "denver": "Denver Summit", "denver summit": "Denver Summit"}
+NWSL_RE = re.compile(r"^NWSL(?:\s+(?P<rnd>Final|Championship|Semi-?finals?|Quarter-?finals?|Playoffs?))?\s*:\s*(?P<a>.+?)\s+(?:v|vs\.?)\s+(?P<b>.+?)(?P<tail>\s+Highlights)?$", re.I)
+
+
+def nwsl(title, sub, desc):
+    if not title:
+        return title, sub
+    lead = LIVE_LEAD_RE.match(title)
+    m = NWSL_RE.match(title[lead.end():].strip())
+    if not m or m.group("tail"):
+        return title, sub
+    a, b = (NWSL_TEAMS.get(re.sub(r"[.\s]+", " ", m.group(x).lower()).strip()) for x in ("a", "b"))
+    if not a or not b:
+        return title, sub
+    rnd = m.group("rnd") or ""
+    if not rnd:
+        d = re.search(r"(?i)\b(semi-?final|quarter-?final|final)\b", (desc or "")[:200])
+        rnd = d.group(1) if d else ""
+    rnd = re.sub(r"(?i)^semi-?final.*", "Semi-final", rnd) if rnd else rnd
+    rnd = re.sub(r"(?i)^quarter-?final.*", "Quarter-final", rnd)
+    rnd = rnd.capitalize() if rnd and rnd.lower() in ("final", "playoffs", "playoff", "championship") else rnd
+    new_sub = (sub or "").strip() or rnd
+    return f"{lead.group(1)}National Women's Soccer League. {a} v {b}", new_sub
+
+
+# 20 Nov 2026 (user: Hub Premier channels): StarHub writes titles in CAPITALS ("PL STORIES", "FANTASY SHOW - FRI 20 NOV") - fix_caps now runs on
+# SG.HubPremier* too (PL / MW / GB kept as capitals) - and the Classic Match / Premier League three-letter codes ("NEW v ARS") become club names.
+PL_TLA = {"ARS": "Arsenal", "AVL": "Aston Villa", "BOU": "Bournemouth", "BRE": "Brentford", "BHA": "Brighton & Hove Albion", "BUR": "Burnley",
+          "CHE": "Chelsea", "COV": "Coventry City", "CRY": "Crystal Palace", "EVE": "Everton", "FUL": "Fulham", "HUL": "Hull City", "IPS": "Ipswich Town",
+          "LEE": "Leeds United", "LEI": "Leicester City", "LIV": "Liverpool", "MCI": "Manchester City", "MUN": "Manchester United", "NEW": "Newcastle United",
+          "NFO": "Nottingham Forest", "SOU": "Southampton", "SUN": "Sunderland", "TOT": "Tottenham Hotspur", "WHU": "West Ham United",
+          "WOL": "Wolverhampton Wanderers", "WBA": "West Bromwich Albion", "BLB": "Blackburn Rovers", "WIG": "Wigan Athletic", "MID": "Middlesbrough",
+          "NOR": "Norwich City", "STK": "Stoke City", "SWA": "Swansea City", "WAT": "Watford", "CAR": "Cardiff City", "BOL": "Bolton Wanderers",
+          "POR": "Portsmouth", "SHU": "Sheffield United", "QPR": "Queens Park Rangers", "REA": "Reading", "BIR": "Birmingham City", "DER": "Derby County"}
+PL_PRODUCTIONS = ("SG.HubPremier", "NZ.SkySport8NZ")        # channels carrying the Premier League Productions shows in capitals (20 Nov 2026)
+PL_TLA_RE = re.compile(r"\b([A-Za-z]{3}) v ([A-Za-z]{3})\b")     # fix_caps runs first: "NEW v ARS" has already become "New v Ars"
+
+
+def hub_premier_codes(cid, text):
+    if not cid.startswith(PL_PRODUCTIONS) or not text:
+        return text
+    text = re.sub(r"(?<=[a-z]) s (?=[A-Za-z])", "'s ", text)                     # source drops the apostrophe: "Matic s journey"
+    text = re.sub(r"(?<=\w) LIVE$", "", text) if cid.startswith("NZ.") else text   # "Newcastle United v Arsenal LIVE" under a 🔴 LIVE: title
+    text = re.sub(r"\((?i:[a-z]{3})\)", lambda m: f"({PL_TLA[m.group(0)[1:-1].upper()]})" if m.group(0)[1:-1].upper() in PL_TLA else m.group(0), text)   # "(LEI)"
+    return PL_TLA_RE.sub(lambda m: f"{PL_TLA[m.group(1).upper()]} v {PL_TLA[m.group(2).upper()]}" if m.group(1).upper() in PL_TLA and m.group(2).upper() in PL_TLA else m.group(0), text)
+
+
+# 20 Nov 2026 (user: "remove the current date if the title / description has it"): a date that is the programme's OWN date is noise
+# ("FANTASY SHOW - FRI 20 NOV", "NFL Blitz - Friday 20 November 2026", "Show jumping: Global Champions Tour: 20.11.2026 6:25pm.", a
+# secondary title that is just "Saturday 21 November 2026"). Only a date equal to the day the programme starts (channel's own day, UK day
+# or UTC day) is removed; other dates (a match played on another day, "2016/2017") stay. Never emptied: if removing leaves nothing, the
+# original text is kept (and a description is never blanked). "Coming up" blocks keep their dates - they are the point of those blocks.
+_MONTHS = {m: i for i, m in enumerate("jan feb mar apr may jun jul aug sep oct nov dec".split(), 1)}
+_DAY = r"(?:(?:Mon|Tue|Tues|Wed|Thu|Thur|Thurs|Fri|Sat|Sun)[a-z]*\.?,?\s+)?"
+_MON = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
+OWN_DATE_RE = re.compile(
+    rf"(?P<text>\b{_DAY}(?P<d1>\d{{1,2}})(?:st|nd|rd|th)?\s+(?P<m1>{_MON})\b\.?(?:,?\s+(?P<y1>\d{{4}}))?"       # Fri 20 Nov / Friday 20 November 2026
+    rf"|\b{_DAY}(?P<m2>{_MON})\.?\s+(?P<d2>\d{{1,2}})(?:st|nd|rd|th)?\b(?:,?\s+(?P<y2>\d{{4}}))?"                # Nov 20, 2026
+    rf"|\b(?P<d3>\d{{1,2}})[./](?P<m3>\d{{1,2}})[./](?P<y3>\d{{4}}|\d{{2}})\b"                                          # 20.11.2026 / 20/11/26
+    rf"|\b(?P<y4>\d{{4}})-(?P<m4>\d{{2}})-(?P<d4>\d{{2}})\b)"                                                          # 2026-11-20
+    rf"(?:\s+(?:at\s+)?\d{{1,2}}(?::\d{{2}})?\s*(?:am|pm)\b\.?)?", re.I)                                              # optional clock time after it
+_SEP = r"[\s\-\u2013\u2014:|,.]*"
+
+
+def _own_date_hit(m, days, year):
+    g = m.groupdict()
+    try:
+        if g["d1"]:
+            d, mo, y = int(g["d1"]), _MONTHS[g["m1"][:3].lower()], int(g["y1"] or year)
+        elif g["m2"]:
+            d, mo, y = int(g["d2"]), _MONTHS[g["m2"][:3].lower()], int(g["y2"] or year)
+        elif g["d3"]:
+            d, mo, y = int(g["d3"]), int(g["m3"]), int(g["y3"])
+            y += 2000 if y < 100 else 0
+        else:
+            d, mo, y = int(g["d4"]), int(g["m4"]), int(g["y4"])
+        return date(y, mo, d) in days
+    except (ValueError, KeyError):
+        return False
+
+
+def drop_own_date(text, days, year, keep_if_empty=True):
+    """Removes the programme's own date where it stands apart: at the start, at the end, in brackets, or between separators
+    ("Title - FRI 20 NOV", "FRI 20 NOV - Join the crew", "Show (20.11.2026)"). A date in the middle of a sentence
+    ("On Friday, November 20, 2026, five matches...") is left alone."""
+    if not text or not days:
+        return text
+    out, removed = text, False
+    seps = ".-\u2013\u2014:|,"
+    for m in list(OWN_DATE_RE.finditer(text))[::-1]:
+        if not _own_date_hit(m, days, year):
+            continue
+        before, after = out[:m.start()], out[m.end():]
+        bs, as_ = before.rstrip(), after.lstrip()
+        if re.search(r"\(\s*$", before) and re.match(r"^\s*\)", after):                 # "(DATE)"
+            new = re.sub(r"\(\s*$", "", before).rstrip() + re.sub(r"^\s*\)", "", after)
+        elif not bs:                                                                       # at the start
+            new = after.lstrip(" " + seps)
+        elif not as_.strip(" " + seps):                                                    # at the end
+            new = bs.rstrip(" " + seps)
+        elif bs[-1] in seps and (as_[0] in seps or as_[0] == "("):                         # between separators
+            new = (bs.rstrip(" -\u2013\u2014:|,") + (" " if bs[-1] in ".," else " - ") if bs.rstrip(" -\u2013\u2014:|,") else "") + as_.lstrip(" -\u2013\u2014:|,")
+            if bs[-1] in "." or as_[0] == "(":
+                new = (bs.rstrip(" -\u2013\u2014:|,") if as_[0] == "(" else bs) + " " + as_.lstrip(" -\u2013\u2014:|,.")
+        else:
+            continue                                                                       # inside a sentence: leave it
+        out, removed = new.strip(), True
+    if not removed:
+        return text
+    out = re.sub(r"\s{2,}", " ", out).strip(" -\u2013:|,")
+    if not re.search(r"\w", out):                  # nothing but the date was there
+        return text if keep_if_empty else ""
+    return out
+
+
+_CUR_TZ = None
+
+
+def own_dates(start):
+    days = {start.astimezone(timezone.utc).date(), start.astimezone(LONDON).date()}
+    if _CUR_TZ is not None:
+        days.add(start.astimezone(_CUR_TZ).date())
+    return days
+
+
+# 20 Nov 2026 (user, Sky Sport NZ "LIVE: BLACKCAPS v India"): BLACKCAPS is the New Zealand cricket team -> "New Zealand" (WHITE FERNS ->
+# "New Zealand Women"). "BLACKCAPS v India" + "BLACKCAPS v India: 1st Test D3 Highlights" -> title "Cricket. New Zealand v India Highlights",
+# sub-title "1st Test, Day 3" (D3 = Day 3, L2H = Last Two Hours, HLs = Highlights); the repeated start of the description is dropped.
+NZ_TEAM_RE = re.compile(r"(?i)\bblack ?caps\b")
+NZ_WOMEN_RE = re.compile(r"(?i)\bwhite ?ferns\b")
+NZ_CRICKET_SUB_RE = re.compile(r"^(?P<match>.+?)(?:\s+D(?P<day>\d))?(?:\s+(?P<tail>Highlights|HLs?|L2H|Wrap))?$")
+NZ_TAILS = {"highlights": " Highlights", "hl": " Highlights", "hls": " Highlights", "l2h": " Last Two Hours", "wrap": " Wrap"}
+
+
+INTL_CRICKET_RE = re.compile(r"(?i)^(?:intl|international)\s+cricket\s*:\s*")
+
+
+def nz_cricket(cid, title, sub, desc):
+    """Sky Sport NZ cricket: "BLACKCAPS v India" / "Intl Cricket: Australia v England" with the sub-title "<teams>: 2nd T20 Highlights"
+    -> title "Cricket. <teams> Highlights", sub-title "2nd T20" (Test days: "1st Test, Day 3")."""
+    if not title:
+        return title, sub, desc
+    lead = LIVE_LEAD_RE.match(title)
+    body = title[lead.end():]
+    intl = bool(INTL_CRICKET_RE.match(body))
+    if not (intl or NZ_TEAM_RE.search(title) or NZ_WOMEN_RE.search(title)):
+        return title, sub, desc
+    teams = INTL_CRICKET_RE.sub("", body).strip()
+    if sub and sub.startswith(teams + ":"):
+        rest = sub[len(teams) + 1:].strip()
+        m = NZ_CRICKET_SUB_RE.match(rest)
+        if m and re.search(r"(?i)\b(?:test|odi|t20i?)\b", m["match"]):
+            tail = NZ_TAILS.get((m["tail"] or "").lower(), "")
+            new_sub = m["match"] + (f", Day {m['day']}" if m["day"] else "")
+            if desc and desc.startswith(sub):                       # "BLACKCAPS v India: 1st Test D3. LIVE coverage..." - repeated sentence
+                desc = desc[len(sub):].lstrip(". ").strip() or desc
+            title, sub = f"{lead.group(1)}Cricket. {teams}{tail}", new_sub
+    elif intl:
+        title = f"{lead.group(1)}Cricket. {teams}"
+    fix = lambda t: NZ_WOMEN_RE.sub("New Zealand Women", NZ_TEAM_RE.sub("New Zealand", t)) if t else t
+    return fix(title), fix(sub), fix(desc)
+
+
+# 20 Nov 2026 (user): national-team nicknames written as the country - Wallabies (rugby union) -> Australia, Baggy Greens (Australia Men's
+# cricket) -> Australia Men. (Silver Ferns, All Blacks and Springboks stay as they are - user, 20 Nov 2026.) Runs AFTER the sport prefix, which
+# reads the nickname to know the sport. BLACKCAPS / WHITE FERNS are handled in nz_cricket().
+NICKNAMES = [(re.compile(r"(?i)\b(?:the\s+)?wallabies\b"), "Australia"), (re.compile(r"(?i)\b(?:the\s+)?baggy greens\b"), "Australia Men")]
+
+
+def national_names(text):
+    if not text:
+        return text
+    for rx, name in NICKNAMES:
+        text = rx.sub(name, text)
+    return text
+
+
+# 20 Nov 2026 (user, Sky Sport NZ "LIVE: Ireland v South Africa" + "NC"): the secondary title "NC" is the Nations Championship - written out, with the
+# round from the description ("Round 6 of the Nations Championship") - and the repeated "NC." at the start of the description goes.
+NC_DESC_RE = re.compile(r"^NC\.\s*")
+NC_ROUND_RE = re.compile(r"(?i)\bRound (\d{1,2}) of (?:the )?Nations Championship")
+
+
+def nz_nations(cid, title, sub, desc):
+    if not cid.startswith("NZ.") or (sub or "").strip() != "NC" or not re.search(r"(?i)Nations Championship", desc or ""):
+        return title, sub, desc
+    r = NC_ROUND_RE.search(desc)
+    return title, "Nations Championship" + (f", Round {int(r.group(1))}" if r else ""), NC_DESC_RE.sub("", desc.strip()) or desc
+
+
+# 20 Nov 2026 (user, Sky Sport NZ): the Women's Super League was named three times (sub-title, start of the description, inside the description).
+# Now: title "Football. Man City v Spurs", sub-title "Women's Super League, Round 11", description "Highlights of the match between Manchester City
+# and Tottenham Hotspur at Joie Stadium in Manchester." (club names in the title are left as Sky writes them).
+WSL_DESC_RE = re.compile(r"(?i)\bthe Women.s Super League Round (\d{1,2}) match")
+
+
+def nz_wsl(cid, title, sub, desc):
+    if not cid.startswith("NZ.") or (sub or "").strip() != "Women's Super League" or not desc:
+        return title, sub, desc
+    d = re.sub(r"^Women's Super League\.\s*", "", desc.strip())
+    r = WSL_DESC_RE.search(d)
+    if r:
+        d = WSL_DESC_RE.sub("the match", d, count=1)
+        sub = f"Women's Super League, Round {int(r.group(1))}"
+    lead = LIVE_LEAD_RE.match(title)
+    if not re.search(r"(?i)football", title):
+        title = f"{lead.group(1)}Football. {title[lead.end():]}"
+    return title, sub, d or desc
+
+
+TEAM_WORD_RE = re.compile(r"\b([A-Z][\w'-]+)\s+(?:Rugby|Cricket)(?:\s+Club)?(?=\s*$|\s+(?:v|vs\.?)\s|\s*[-(])")
+DESC_STRONG = {"Show Jumping": re.compile(r"(?i)show[- ]jumping"),
+               "Rugby Union": re.compile(r"(?i)PREM Rugby|Gallagher PREM|Premiership Women.s Rugby|Premiership Rugby|Rugby Union")}
+
+
+def add_sport(title, sub, cid="", desc="", learn=False):
+    if not title:
+        return title
+    m = LIVE_LEAD_RE.match(title)
+    body = title[m.end():]
+    hay = f"{body} {sub or ''}"
+    sport = "Cricket" if CRICKET_BARE_RE.match(body) else None
+    if sport is None and cid.startswith("NZ.") and re.match(r"(?i)^(?:the\s+)?breakdown\b", body):
+        sport = "Rugby Union"                          # Sky Sport NZ's rugby talk show (ESPN's "The Breakdown" is NFL - not touched)     # Fox: "Test", "Test - NZL v IND", "Test Mini", "Test Wrap"
+    for name, rx in ([] if sport else SPORT_RULES):
+        if rx.search(hay):
+            sport = name
+            break
+    if sport is None and desc:
+        if not re.search(r"(?i)pentathlon|triathlon|racing|^This is\b", hay):
+            sport = next((n for n, rx in DESC_STRONG.items() if rx.search(desc[:400])), None)
+    if sport is None and desc and FIXTURE_RE.search(body):
+        found = [n for n, rx in DESC_SPORT.items() if rx.search(desc[:400])]
+        if len(found) == 1:
+            sport = found[0]
+    if sport is None and not learn and TEAM_SPORT and FIXTURE_RE.search(body):
+        sport = team_sport(hay)                        # "Leicester v Saracens": Saracens only ever appear in rugby
+    if sport is None and not (CRICKET_COMP_RE.search(hay) or (ASIA_CUP_RE.search(hay) and re.search(r"(?i)ACC|Rising", hay))):
+        return None if learn else title
+    sport = sport or "Cricket"
+    if learn:
+        return sport
+    said_in = TEAM_WORD_RE.sub(r"\1", body)              # "Bath Rugby" is a club name, not the sport being said
+    if SPORT_SAID[sport].search(said_in) or said_in.lower().startswith(sport.lower()):
+        return title
+    return f"{m.group(1)}{sport}. {body}"
+
+
+# Racing TV (20 Nov 2026, user): the race meetings go in the title - "Racing Replay" + "...action from Warwick."
+# -> "Racing Replay: Warwick"; "LIVE: Racing" + "...from Catterick and Meydan." -> "LIVE: Racing: Catterick and Meydan".
+RACING_MEETING_RE = re.compile(r"(?i)\bracing action from ([^.]+?)\s*\.")
+RACING_TITLE_RE = re.compile(r"(?i)^(?:🔴\s*)?(?:live:\s*)?(?:irish )?racing(?: replay)?$|^(?:🔴\s*)?(?:live:\s*)?the \w+ club$")
+# Sky Sports Racing (20 Nov 2026, user: same as Racing TV). Per programme name, a pattern that finds the venue(s) in the
+# description. Only a clear list is used: "around the UK" / "Australia" / "the USA" and Raceday double-headers
+# (several courses with different presenters) are left as they are. More than 3 venues -> first 3 + "and more".
+SKY_RACING_PATTERNS = {
+    "australian racing":    r"racing from ([^.]+?)\s*\.",
+    "international raceday": r"racing from ([^.]+?)(?:\s*\.|\s+and a look|\s+as well)",
+    "stateside":            r"racing from ([^.]+?)\s*\.",
+    "raceday":              r"action (?:live )?from ([A-Z][\w'\u2019.-]*(?: [A-Z][\w'\u2019.-]*)*)(?= with| featuring|\.|,|$)",
+    "monday night racing":  r"\bwith ([A-Z][^.]+?)\s*\.",
+    "the box seat":         r"racing from ([^.]+?)\s*\.",
+}
+NOT_VENUES = re.compile(r"(?i)^(australia|the usa|usa|the uk|around the uk|the us|america)$")
+
+
+def _venue_list(raw):
+    parts = [p.strip() for p in re.split(r",\s*|\s+and\s+|\s+&(?:amp;)?\s+", raw) if p.strip()]
+    if not parts or any(NOT_VENUES.match(p) for p in parts):
+        return ""
+    if len(parts) > 3:
+        return ", ".join(parts[:3]) + " and more"
+    return parts[0] if len(parts) == 1 else ", ".join(parts[:-1]) + " and " + parts[-1]
+
+
+def racing_meetings(cid, title, desc):
+    if cid not in ("UK.RacingTV", "UK.SkySportsRacing") or not title or not desc:
+        return title
+    base = re.sub(r"(?i)^(?:🔴\s*)?(?:live:\s*)?", "", title.strip())
+    if ":" in base:
+        return title
+    if cid == "UK.RacingTV":
+        m = RACING_MEETING_RE.search(desc)
+        if not m or not RACING_TITLE_RE.match(title.strip()):
+            return title
+        raw = m.group(1)
+    else:
+        pat = SKY_RACING_PATTERNS.get(base.lower())
+        if not pat or (base.lower() == "raceday" and re.search(r"(?i)double-header|\bevening card\b", desc)):
+            return title
+        m = re.search(pat, desc)
+        if not m:
+            return title
+        raw = m.group(1)
+    venues = _venue_list(raw)
+    return f"{title.strip()}: {venues}" if venues else title
+
+
+# 20 Nov 2026 (user, ESPN: "LIVE: 2026 Nitto ATP Finals"): ATP listings that don't say Tennis get it, at the start
+# ("LIVE: Tennis 2026 Nitto ATP Finals", "Tennis ATP Tour: This Week"). Not on Tennis channels (it is obvious there).
+ATP_NAME_RE = re.compile(r"\bATP(?:(?i: Masters 1000| Finals| Final| Tour| \d{3,4}))?\b(?!/)")
+TENNIS_WORD_RE = re.compile(r"(?i)\bt[eé]nn?is\w*")
+
+
+def add_tennis(text, cid=""):
+    if not text or "tennis" in cid.lower() or TENNIS_WORD_RE.search(text):
+        return text
+    if not ATP_NAME_RE.search(text):
+        return text
+    m = re.match(r"^((?:🔴\s*)?(?:LIVE:\s*)?)", text)
+    return f"{m.group(1)}Tennis {text[m.end():]}"
+
+
+def drop_repeated_name(title):
+    """Star Sports Select 2 (20 Nov 2026, user): "LIVE: ONE Championship-ONE Championship" -> "LIVE: ONE Championship".
+    The feed glues "event-competition" with a hyphen; when both halves are the same, keep one."""
+    if not title:
+        return title
+    m = re.match(r"^((?:🔴\s*)?(?:LIVE:\s*)?)(.+?)\s*[-\u2013]\s*(.+)$", title.strip(), re.I)
+    if m and re.sub(r"\W+", "", m.group(2)).lower() == re.sub(r"\W+", "", m.group(3)).lower():
+        return m.group(1) + m.group(2)
+    return title
+
+
+# Fox Sports 506 MotoGP (20 Nov 2026, user): the feed swaps title and sub-title between listings and repeats
+# "DAZN ONLY - FIM ... World Championship" three times. One layout: title "<class> <session>", sub "FIM World Championship",
+# the repeated sentence dropped from the description; the session is worked out from the description wording.
+MOTO_FIM_RE = re.compile(r"(?i)\bFIM (Moto3|Moto2|MotoGP) World Championship")
+MOTO_SESSIONS = [(r"first practice", "Practice 1"), (r"second practice", "Practice 2"), (r"third practice", "Practice 3"),
+                 (r"interviews from the \w+ grid", "Grid"), (r"final look around", "Warm Up"),
+                 (r"\bsprint\b", "Sprint"), (r"\bpole\b|qualifying", "Qualifying"),
+                 (r"race start|title fight|crown is within|race for", "Race")]
+
+
+def fox_motogp(cid, title, sub, desc):
+    if cid != "AU.FoxSports506" or not title:
+        return title, sub, desc
+    m = re.match(r"^((?:🔴\s*)?(?:LIVE:\s*)?)(.*)$", title.strip(), re.I)
+    prefix, base = m.group(1), m.group(2).strip()
+    fim = MOTO_FIM_RE.search(sub or "") or MOTO_FIM_RE.search(base)
+    if fim:
+        cls = fim.group(1).replace("Motogp", "MotoGP")
+        d = (desc or "").strip()
+        d = re.sub(r"(?i)^DAZN only - FIM (?:Moto3|Moto2|MotoGP) World Championship\.\s*", "", d)
+        d = re.sub(r"^(?:MotoGP|Moto2|Moto3)\.\s+", "", d)
+        low = d.lower()
+        session = next((name for pat, name in MOTO_SESSIONS if re.search(pat, low)), "")
+        return f"{prefix}{cls} {session}".rstrip(), "FIM World Championship", d
+    if re.match(r"^MotoGP(?::| After the Flag| Mini)", base) and sub and len(sub) < 30:     # "MotoGP: Inside Ducati" + "Australia"
+        return f"{title.strip()} ({sub.strip()})", "", re.sub(rf"^{re.escape(sub.strip())}\.\s*", "", desc or "")
+    return title, sub, desc
+
+
+# Ziggo Sport MotoGP / Moto2 / Moto3 (20 Nov 2026, user: tidy like Fox 506): title "<class> <session>" in English, sub-title
+# "Portugal Grand Prix" (was Dutch "GP van Portugal: Vrije Training 1"), description without the repeated sub-title.
+ZIGGO_TITLE_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE:\s*)?)(Moto ?GP|Moto ?2|Moto ?3)( Highlights)?$", re.I)
+ZIGGO_SUB_RE = re.compile(r"^(Moto2&3 )?(?:GP van ([\w ]+?)|Grand Prix of ([\w ]+?))(?:: (.+))?$")
+ZIGGO_SESSIONS = {"vrije training 1": "Practice 1", "training": "Practice 2", "vrije training 2": "Practice 3",   # (Fox 506 numbering)
+                  "kwalificatie 1": "Qualifying 1", "kwalificatie 2": "Qualifying 2", "kwalificaties": "Qualifying",
+                  "sprint race": "Sprint", "race": "Race", "warm up": "Warm Up"}
+
+
+def ziggo_moto(cid, title, sub, desc):
+    if not cid.startswith("NL.ZiggoSport") or not title or not sub:
+        return title, sub, desc
+    mt, ms = ZIGGO_TITLE_RE.match(title.strip()), ZIGGO_SUB_RE.match(sub.strip())
+    if not mt or not ms:
+        return title, sub, desc
+    cls = re.sub(r"(?i)moto ?gp", "MotoGP", mt.group(2))
+    cls = re.sub(r"(?i)moto ?([23])", r"Moto\1", cls)
+    if ms.group(1):
+        cls = "Moto2 & Moto3"
+    raw_session = (ms.group(4) or "").strip()
+    session = ZIGGO_SESSIONS.get(raw_session.lower(), raw_session)
+    gp = f"{(ms.group(2) or ms.group(3)).strip()} Grand Prix"
+    new_title = f"{mt.group(1)}{cls}{' ' + session if session else ''}{' Highlights' if mt.group(3) else ''}"
+    rest = re.sub(rf"^{re.escape(sub.strip())}\.\s*", "", (desc or "").strip())
+    lead = f"{gp}, {session}." if session else f"{gp}."
+    return new_title, gp, f"{lead} {rest}".strip()
+
+
+def drop_repeated_subtitle(sub, desc):
+    """Sky Sports Main Event 3pm (20 Nov 2026, user: "title and description are the same"): Sky's one-line synopsis is the
+    secondary title AND the first sentence of the description ("Join the featured groups on day two of the RSM Classic ...
+    Island." twice). The description keeps only what follows it. Only a sentence-like secondary title (25+ characters) that
+    starts the description at a sentence boundary, and only when something else follows - a description that IS the
+    secondary title is left alone."""
+    sub, desc = (sub or "").strip(), (desc or "").strip()
+    if len(sub) < 8 or not desc.startswith(sub.rstrip(".")):          # 8+ characters (was 25, 20 Nov 2026: "Duke vs. Clemson")
+        return sub, desc
+    rest = desc[len(sub.rstrip(".")):]
+    if rest[:1] not in (".", " ") or not rest.strip(". "):
+        return sub, desc
+    if len(sub) < 25 and (rest[:2] != ". " or len(rest.strip(". ")) < 20):    # short ones only when a real sentence follows
+        return sub, desc
+    return sub, rest.lstrip(". ").strip()
+
+
+# 20 Nov 2026 (user, Sky Sports Cricket "1st Test Day 2: SA v BAN Hlts" - the title repeats what the description says in full):
+#   Sky:  "1st Test Day 2: SA v BAN Hlts"  ->  title "South Africa v Bangladesh Highlights", sub-title "1st Test, Day 2"
+#         "ICC Women's WC: ENG v SA 2017"  ->  title "England v South Africa", sub-title "ICC Women's World Cup 2017"
+#   Only country codes are expanded (both sides must be national teams); football clubs are NOT touched (QPR, WBA, MU v Chel stay).
+#   "Hlts" -> "Highlights" in every Sky title.
+#   India (Star / Sony) glue "A vs B-Competition" with a hyphen: "India A vs. Nepal-2026 ACC Men's Asia Cup Rising Stars" ->
+#   title "India A vs. Nepal", sub-title "ACC Men's Asia Cup Rising Stars Cricket"; "A;comp text" in the description loses the repeated "A;".
+NATIONS = {"SA": "South Africa", "ENG": "England", "BAN": "Bangladesh", "IND": "India", "AUS": "Australia", "NZ": "New Zealand",
+           "WI": "West Indies", "SL": "Sri Lanka", "PAK": "Pakistan", "AFG": "Afghanistan", "ZIM": "Zimbabwe", "IRE": "Ireland",
+           "SCO": "Scotland", "NED": "Netherlands", "NEP": "Nepal", "UAE": "UAE", "USA": "USA", "CAN": "Canada", "OMA": "Oman"}
+# Sky cricket: "WBBL Hobart.H v Sydney.T" -> "WBBL Hobart Hurricanes v Sydney Thunder" (city.initial code -> full team name)
+BBL_TEAMS = {"Adelaide.S": "Adelaide Strikers", "Brisbane.H": "Brisbane Heat", "Hobart.H": "Hobart Hurricanes",
+             "Melbourne.R": "Melbourne Renegades", "Melbourne.S": "Melbourne Stars", "Perth.S": "Perth Scorchers",
+             "Sydney.S": "Sydney Sixers", "Sydney.T": "Sydney Thunder"}
+BBL_CODE_RE = re.compile(r"\b(" + "|".join(re.escape(k) for k in BBL_TEAMS) + r")(?![\w.])")
+
+
+def bbl_teams(text):
+    return BBL_CODE_RE.sub(lambda m: BBL_TEAMS[m.group(1)], text) if text else text
+
+
+SKY_CODE_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE:\s*)?)(?:(?P<pre>[^:]{3,45}?):\s*)?(?P<a>[A-Z]{2,3}) v (?P<b>[A-Z]{2,3})(?P<post>(?:\s+(?:Hlts|Highlights|\d{4}(?:/\d{2})?|\d{4}'?))*)\s*$")
+CRICKET_PRE_FIX = [(r"\bICC (Women['\u2019]s |Men['\u2019]s )?WC\b", r"ICC \1Cricket World Cup"), (r"\bWC\b", "World Cup"), (r"\b(\d(?:st|nd|rd|th) (?:Test|ODI|T20I?))\s+(Day \d)\b", r"\1, \2")]
+
+
+def sky_titles(cid, title, sub, desc):
+    if not cid.startswith("UK.Sky") or not title:
+        return title, sub, desc
+    title, sub = bbl_teams(title), bbl_teams(sub)
+    m = SKY_CODE_RE.match(title.strip())
+    if m and m["a"] in NATIONS and m["b"] in NATIONS:
+        post = m["post"].split()
+        year = " ".join(p for p in post if re.fullmatch(r"\d{4}(?:/\d{2})?'?", p)).rstrip("'")
+        hl = any(p in ("Hlts", "Highlights") for p in post)
+        is_cr = cid == "UK.SkySportsCricket" or bool(re.search(r"(?i)cricket", desc or ""))
+        cr = "Cricket. " if is_cr else ""                    # "🔴 LIVE: Cricket. South Africa v Bangladesh" (20 Nov 2026, user)
+        new_title = f"{m.group(1)}{cr}{NATIONS[m['a']]} v {NATIONS[m['b']]}{' Highlights' if hl else ''}"
+        pre = m["pre"] or ""
+        for rx, rep in CRICKET_PRE_FIX:
+            pre = re.sub(rx, rep, pre)
+        new_sub = " ".join(x for x in (pre, year) if x)
+        old = (sub or "").strip()
+        if old and not (desc or "").strip().startswith(old.rstrip(".")):
+            desc = f"{old} {desc or ''}".strip()          # Sky's one-line synopsis is kept (in the description)
+        return new_title, (new_sub or old), desc
+    return re.sub(r"\bHlts\b", "Highlights", title), sub, desc
+
+
+STAR_GLUE_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE:\s*)?)(?:(?P<pre>[^:]{2,40}?):\s*)?(?P<match>.+?\s(?:vs?\.?)\s[^-]*?)-(?P<comp>[A-Z0-9].*)$")
+
+
+def star_glue(cid, title, sub, desc):
+    if not cid.startswith("IN.") or not title or (sub or "").strip():
+        return title, sub, desc
+    m = STAR_GLUE_RE.match(title.strip())
+    if not m:
+        return title, sub, desc
+    if re.search(r"(?:^|\s)(?:Al|El|Abu|Ben|Bin|St|Saint)$", m["match"].strip()):     # "Al-Ahli vs. Al-Nassr": that hyphen is in a team name
+        return title, sub, desc
+    comp = m["comp"].strip()
+    hl = bool(re.search(r"\s+Highlights$", comp))
+    comp = re.sub(r"\s+Highlights$", "", comp)
+    pre = (m["pre"] or "").strip()
+    year = ""
+    if re.fullmatch(r"\d{4}", pre):
+        year, pre = pre, ""
+    new_sub = ", ".join(x for x in (f"{comp} {year}".strip(), pre) if x)
+    new_title = f"{m.group(1)}{m['match'].strip()}{' Highlights' if hl else ''}"
+    d = (desc or "").strip()
+    d = re.sub(r"^[^;]{3,120};\s*", "", d) if ";" in d[:130] else d
+    return new_title, new_sub, d.strip(" .") + "." if d.strip(" .") else new_sub + "."
+
+
+PL_SEASON_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE[:,]\s*)?)(\[4K\]\s*)?Premier League\s+(?:20)?26/27\s*-\s*(.+?)\s+(?:vs?\.?)\s+(.+?)\s*$", re.I)
+
+def pl_season(title, sub, desc, live=False):
+    """Now Sports: "LIVE: Premier League 26/27 - Manchester City vs Fulham" ->
+    title "LIVE: Premier League. Manchester City v Fulham", plus a proper description (20 Nov 2026)."""
+    m = PL_SEASON_RE.match(title or "")
+    if not m or sub:
+        return title, sub, desc
+    lead, uhd, a, b = m.group(1), m.group(2), m.group(3), m.group(4)
+    lead = lead or ""
+    is_live = "LIVE" in lead.upper()
+    new_title = f"{lead}Premier League. {a} v {b}"
+    new_sub = ("Live in 4K Ultra HD" if is_live else "4K Ultra HD") if uhd else "2026/27 Season"
+    if is_live:
+        text = (f"LIVE Premier League football from the 2026/27 season: {a} v {b}."
+                )
+    else:
+        text = (f"Premier League football from the 2026/27 season: {a} v {b}.")
+    d = (desc or "").strip()
+    if d:                                                  # keep the channel's own "Coverage from: 2:50pm." note
+        d = re.sub(r"^Coverage from:\s*", "Coverage from ", d)
+        text = f"{text} {d}"
+    return new_title, new_sub, text
+
 def add_programme(tv, cid, start, stop, title, sub, desc, live):
+    if sub != "Coming up" and not re.search(r"\(\w{3} \d{1,2} \w{3},", title or ""):      # own date out of the title / sub-title / description
+        days, yr = own_dates(start), start.year
+        title = drop_own_date(title, days, yr)
+        sub = drop_own_date(sub, days, yr, keep_if_empty=False) or None if sub else sub
+        desc = drop_own_date(desc, days, yr)
+    title, sub, desc = pl_season(title, sub, desc)
+    title, sub, desc = sky_titles(cid, title, sub, desc)
+    title, sub, desc = nz_cricket(cid, title, sub, desc)
+    title, sub, desc = nz_nations(cid, title, sub, desc)
+    title, sub, desc = nz_wsl(cid, title, sub, desc)
+    title, sub, desc = (hub_premier_codes(cid, x) for x in (title, sub, desc))
+    title, sub, desc = star_glue(cid, title, sub, desc)
+    sub, desc = drop_repeated_subtitle(sub, desc)
+    if cid.startswith("FR."):                          # French spacing: "Rugby : Pro D2" -> "Rugby: Pro D2"
+        title, sub = (re.sub(r"\s+:(?=\s)", ":", x) if x else x for x in (title, sub))
+    title, sub, desc = fox_motogp(cid, title, sub, desc)
+    title, sub, desc = ziggo_moto(cid, title, sub, desc)
+    title = drop_repeated_name(title)
+    title = racing_meetings(cid, title, desc)
+    title, sub = (re.sub(r"\bAFLW\b", "AFL Women's", x) if x else x for x in (title, sub))   # AFLW -> "AFL Women's" (20 Nov 2026)
+    title = a_league(title, sub, desc)
+    title, sub = nwsl(title, sub, desc)
+    title = add_sport(title, sub, cid, desc)
+    title, sub, desc = (national_names(x) for x in (title, sub, desc))               # "🔴 LIVE: Tennis. ATP Finals" (20 Nov 2026)
     title, sub, desc = fix_names(title), fix_names(sub), fix_names(desc)
     title, sub, desc = clock12(title), clock12(sub), clock12(desc)   # 12-hour clock with AM / PM everywhere (6 Nov 2026)
     p = ET.SubElement(tv, "programme", {
@@ -6361,10 +7152,13 @@ def build_xmltv(records, suffix, minutes):
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
                            "source-info-name": "Sport 5 + Charlton (IL), Novasports (GR), Ziggo GO (NL), Digi Sport + Prima Play (RO), tv-programa.bg (BG), Arena Sport (RS), Delo (SI), Telenet (BE), Movistar Plus+ (ES), MEO (PT), Claro (BR), IPKO (AL/XK), mujtvprogram.cz (CZ/SK), Onet (PL), Sky Italia (IT), MagentaTV (DE), Tata Play (IN), blue TV (CH), SFR (FR), Allente (SE/NO/DK), Now TV (HK), Sky TV guide (UK/IE), Cyta (CY), epgshare01.online (TR/LV/HK/ID/MENA/AE/FR/IT/SG/MY/AU/BR/UK/IE/NZ/US/CA), beIN SPORTS (AU/MY/SG/HK/TH/ID), DStv (ZA/Africa)"})
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
+    global _CUR_TZ
     count, listed = 0, []
     collect_rugby_rounds(records)                  # rugby rounds named in other listings
+    learn_team_sports(records)                     # which team belongs to which sport (20 Nov 2026)
     for rec in records:
         cid, name = f"{rec['id']}{suffix}", rec["name"]
+        _CUR_TZ = rec["tz"]                        # own-date removal uses the channel's own day too
         listed.append((cid, name))
         c = ET.SubElement(tv, "channel", {"id": cid})
         ET.SubElement(c, "display-name", {"lang": "en"}).text = name
@@ -6390,7 +7184,7 @@ def build_xmltv(records, suffix, minutes):
             if ev.get("no_translate") and rec["place"] == "Italy":
                 title = it_teams_en(title)
             sub = en(ev.get("sub") or "") or None
-            if rec.get("fix_caps"):
+            if rec.get("fix_caps") or cid.startswith(PL_PRODUCTIONS):
                 title, sub = fix_caps(title), fix_caps(sub) or None
             title, sub = conj_and(title), (conj_and(sub) if sub else sub)          # "Europa E Conference" -> "Europa & Conference"
             if rec["place"] == "Italy" and not ev.get("no_translate"):
@@ -6405,7 +7199,7 @@ def build_xmltv(records, suffix, minutes):
             when = f"{uk:%a %d %b, %H:%M}"
             orig = ""          # the original (untranslated) title is no longer shown
             about = "" if ev.get("desc") in DESC_PENDING else en(ev.get("desc") or "")
-            if rec.get("fix_caps"):
+            if rec.get("fix_caps") or cid.startswith(PL_PRODUCTIONS):
                 about = fix_caps(about)
             if sub and cid.startswith(SUB_KICKOFF_REGIONS):
                 sub = nz_sub(sub)                               # "PL:" -> "Premier League:"
@@ -7228,6 +8022,7 @@ def main():
         force += [e["title"] for evs in it.values() for e in evs if not e.get("no_translate")]
         force += [t for evs in de.values() for e in evs for t in (e["title"], e["sub"])]
         force += [e["title"] for evs in swi.values() for e in evs]
+        force += [t for evs in nl.values() for t in dutch_to_translate(evs)]          # Ziggo (20 Nov 2026)
         force += [t for evs in fra.values() for e in evs for t in (e["title"], e["sub"])]
         force += [e["title"] for _, got in nordic.values() for evs in got.values() for e in evs]
         texts += [t for g in bein.values() for evs in g.values() for e in evs for t in (e["title"], e["sub"])]

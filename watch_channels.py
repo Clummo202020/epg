@@ -41,7 +41,7 @@ CHANNELS = (
      ("IE.VirginMediaThree", "Virgin Media Three", "virgin"), ("IE.VirginMediaFour", "Virgin Media Four", "virgin")]
     + [(f"UK.SkySports{cid}", f"Sky Sports {name}", "sky") for cid, name in _SKY]          # all Sky Sports UK except News and Box Office
     + [("UK.SkySportsPlus", "Sky Sports+", "sky")]
-    + [(f"UK.TNTSports{n}", f"TNT Sports {n}", "tnt") for n in range(1, 5)] + [("UK.TNTSportsUltimate", "TNT Sports Ultimate", "tnt")]      # 19 Nov 2026 (user): TNT Sports 1 to 4 and Ultimate only
+    + [(f"UK.TNTSports{n}", f"TNT Sports {n}", "tnt") for n in range(1, 6)] + [("UK.TNTSportsUltimate", "TNT Sports Ultimate", "tnt")]      # 19 Nov 2026 (user): TNT Sports 1 to 4 and Ultimate only; 20 Nov 2026: TNT Sports 5 added (now a channel)
     + [("UK.PremierSports1", "Premier Sports 1 (UK)", "premier"), ("UK.PremierSports2", "Premier Sports 2 (UK)", "premier"),      # UK pair added 17 Nov (user)
        ("IE.PremierSports1", "Premier Sports 1 (Ireland)", "premier"), ("IE.PremierSports2", "Premier Sports 2 (Ireland)", "premier")]
     + [(f"NZ.SkySport{n}NZ", f"Sky Sport {n} NZ", "nz") for n in range(1, 10)] + [("NZ.SkySportSelectNZ", "Sky Sport Select NZ", "nz")]
@@ -104,6 +104,9 @@ def load_listings(sport_root=None):
                 start = datetime.strptime(p.get("start"), "%Y%m%d%H%M%S %z")
                 stop = datetime.strptime(p.get("stop"), "%Y%m%d%H%M%S %z")
             except (TypeError, ValueError):
+                continue
+            title = (p.findtext("title") or "").lower()
+            if "goals show" in title:          # 19 Nov 2026 (user): on Champions League nights TNT Sports 3 is a Goals show (like Goal Rush), NOT a match channel
                 continue
             text = " ".join((e.text or "") for e in p if e.tag in ("title", "sub-title", "desc"))
             out.setdefault(cid, []).append((start, stop, text))

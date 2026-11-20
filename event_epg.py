@@ -2014,10 +2014,11 @@ def build(events, now):
                 # 8 Nov 2026 (user): the same wording as the club guides - "Next Match" (US games "Next Game", other events "Next Event")
                 # on every block before the event; only the LAST block before LIVE says "Next up: LIVE" (above). No ⏭.
                 lab = next_label(ev["title"], ev.get("comp"), sid)
-                add_programme(tv, sid, t, b, f"{ev['title']} ({when})",       # competition (and round)
-                              f"{lab}: {ev['comp']}" if ev.get("comp") else   # when known (28 Oct)
-                              f"{lab}: {uk(kickoff):%a} {uk(kickoff).day} {uk(kickoff):%b}",
-                              f"{lab}: {desc}")
+                # 20 Nov 2026 (user): the label is in the TITLE, before the event name (like the football guide); the secondary title is just the
+                # competition (none when unknown - the date is already in the title); no label in the description.
+                add_programme(tv, sid, t, b, f"{lab}: {ev['title']} ({when})",
+                              ev.get("comp") or None,
+                              desc)
             count += 1
             t = b
         if in_range:

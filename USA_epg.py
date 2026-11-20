@@ -494,6 +494,120 @@ def clock12(text):
     return CLOCK_SHORT.sub(short, t)
 
 
+# 20 Nov 2026 (user): a soccer fixture goes in the title, the competition in the sub-title, like the football guide:
+# title "Bundesliga Soccer" + sub "Bayern Munich vs. 1. FC Köln" -> "Bayern Munich vs FC Cologne" + "Bundesliga".
+SOCCER_TITLE_RE = re.compile(r"^(?P<comp>.{3,40}?)\s+Soccer$", re.I)
+VS_RE = re.compile(r"\s+(?:vs?\.?|v)\s+", re.I)
+
+
+def soccer_fixture(title, sub):
+    m = SOCCER_TITLE_RE.match((title or "").strip())
+    sub = (sub or "").strip()
+    fixture = VS_RE.sub(" vs ", sub)
+    if m and len(VS_RE.split(sub)) == 2 and len(sub) <= 70:      # exactly one "A vs. B" (not a sentence or two fixtures)
+        return fixture, m.group("comp").strip()
+    return title, sub
+
+
+CRICKET_COMP_RE = re.compile(r"(?i)\b(Abu Dhabi T10(?: League)?)\b")
+ASIA_CUP_RE = re.compile(r"(?i)\b(ACC Men['\u2019]s (?:U19 )?Asia Cup|Asia Cup)( Rising(?: Stars)?)?\s*$")
+
+# 20 Nov 2026 (user): every listing gets its sport at the start of the title unless the title already says it -
+# "🔴 LIVE: Tennis. ATP Finals", "🔴 LIVE: Cricket. WBBL Hobart Hurricanes v Sydney Thunder", "NBA" -> "Basketball. NBA ...".
+# The sport is worked out from the title + sub-title (competition names / abbreviations), first matching rule wins.
+# NOT done for football (the clubs and leagues are obvious and nearly every listing is football) or motorsport / horse racing
+# (the series names say it). To add a sport or a competition, add it to SPORT_RULES; SPORT_SAID says which words in the
+# title already name the sport.
+SPORT_RULES = [
+    ("Tennis", r"\bATP\b|\bWTA\b|Wimbledon|Roland[- ]Garros|French Open|Australian Open|Davis Cup|Billie Jean King|(?i:\bBJK Cup)|Laver Cup|\bNitto\b|Next Gen Finals|Hopman Cup|United Cup|Stockholm Open"),
+    ("Cricket", r"^(?:Test|ODIs?|T20Is?)(?:\s-|\s*$)|\b(?:T20I?|T10|ODIs?|IPL|WBBL|WPL|PSL|CPL|SA20|ILT20|MLC|LPL|BPL|ICC|Ashes|The Hundred|Big Bash|Sheffield Shield|Ranji Trophy|County Championship|Vitality Blast|Metro Bank One.Day Cup|Nepal Premier League|Indian Premier League|Syed Mushtaq Ali|Champions Trophy|Extraaa Innings|Cricbuzz|Lords Of England|Vijay Hazare)\b|\b\d(?:st|nd|rd|th) (?:Test|ODI|T20I?)\b"),
+    ("Rugby League", r"\bNRLW?\b|State of Origin|\bRLWC\d*\b|Challenge Cup Final"),
+    ("Rugby Union", r"Six Nations|Rugby Championship|\bURC\b|United Rugby|Top 14|Pro D2|Super Rugby|Gallagher (?:PREM|Premiership)|\bPREM\b|\bPWR\b|Premiership Rugby|Champions Cup|Autumn Nations|Nations Series|Bunnings NPC|Currie Cup|Lions Tour"),
+    ("Golf", r"\b(?:PGA|LPGA|LIV Golf|DP World Tour|Ryder Cup|Solheim Cup|Presidents Cup|Korn Ferry|Race to Dubai|Q-School|USPGA|Asian Tour|Rolex Grand Final)\b|Open Championship|Augusta National"),
+    ("Basketball", r"\b(?:NBA|WNBA|NBL|WNBL|FIBA|EuroLeague|EuroCup|NCAAB|G League|East Asia Super League|Liga ACB)\b|March Madness"),
+    ("American Football", r"\b(?:NFL|NCAAF|CFL|CFP|CFB)\b|Super Bowl|Pro Football Talk|Football Night In America|College GameDay"),
+    ("Ice Hockey", r"\b(?:NHL|KHL|AHL|EIHL|IIHF|SHL)\b|Stanley Cup"),
+    ("Baseball", r"\b(?:MLB|NPB|KBO)\b|World Series(?! of)"),
+    ("Australian Rules", r"\bAFLW?\b"),
+    ("Darts", r"\bPDC\b|World Matchplay"),
+    ("Snooker", r"\bWST(?::| Tour| Snooker)|Crucible|Champion of Champions|In The Frame"),
+    ("MMA", r"\b(?:UFC|PFL|KSW|Oktagon|Bellator)\b|The Ultimate Fighter|Total Combat|ONE Championship|ONE Fight Night|ONE Friday Fights|Cage Warriors"),
+    ("Boxing", r"Matchroom|Queensberry|Top Rank|\bGolden Boy\b|\bKOTV\b"),
+    ("Wrestling", r"\b(?:WWE|AEW|TNA)\b|SmackDown|WrestleMania"),
+    ("Cycling", r"\bUCI\b|Tour de France|Giro d.Italia|La Vuelta|Paris-Roubaix|Tour Down Under|Arctic Race of Norway|Colocross"),
+    ("Athletics", r"Diamond League"),
+    ("Volleyball", r"\b(?:VNL|CEV)\b|SuperLega|Volleyball Nations"),
+    ("Sailing", r"\bSailGP\b|America.s Cup|Vend[ée]e Globe"),
+    ("Show Jumping", r"\bLongines\b|Global Champions|\bGCL\b|\bLGCT\b|\bFEI\b|Jumping World Cup|Show Jumping|Grand Prix Jumping"),
+    ("Badminton", r"\bBWF\b|Thomas (?:&|and) Uber"),
+    ("Biathlon", r"\bIBU\b"),
+    ("Swimming", r"Aquatics|\bFINA\b"),
+    ("Handball", r"\bEHF\b"),
+]
+SPORT_RULES = [(n, re.compile(rx, re.I)) for n, rx in SPORT_RULES]
+SPORT_SAID = {
+    "Tennis": r"t[eé]nn?is", "Cricket": r"cricket", "Rugby League": r"rugby", "Rugby Union": r"rugby", "Golf": r"golf",
+    "Basketball": r"basket|baloncesto|pallacanestro|basquet", "American Football": r"american football|college football|football am[eé]ricain|futebol americano",
+    "Ice Hockey": r"hockey", "Baseball": r"baseball|b[eé]isbol|beisebol", "Australian Rules": r"aussie rules|australian rules",
+    "Darts": r"darts", "Snooker": r"snooker", "MMA": r"\bmma\b|martial arts", "Boxing": r"\bbox(?:ing|e|eo|en)\b",
+    "Wrestling": r"wrestl|lucha", "Cycling": r"cycl|ciclismo|cyclisme|radsport", "Athletics": r"athletic|atletica|athl[eé]tisme",
+    "Volleyball": r"volley|voleibol", "Sailing": r"sail", "Show Jumping": r"jumping|equestri|horse riding|riding:|ridebane|ecuestre|reiten|hípica|hippique", "Badminton": r"badminton", "Biathlon": r"biathl", "Swimming": r"swim|nuoto|natation", "Netball": r"netball", "Handball": r"handball|balonmano",
+}
+SPORT_SAID = {k: re.compile(v, re.I) for k, v in SPORT_SAID.items()}
+LIVE_LEAD_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE[:,]\s*)?)")
+
+
+# Fixtures ("A v B", "A vs B") with no recognisable competition: if the description names exactly one sport, that is the sport
+# ("New Zealand vs India" + "...cricket...", "Atlanta v Boston" + "...golf...").
+FIXTURE_RE = re.compile(r"\S\s(?:v|vs\.?)\s\S")
+DESC_SPORT = {"Cricket": r"cricket|\bwickets?\b", "Tennis": r"(?<!table )tennis", "Basketball": r"basketball", "American Football": r"american football|\bNFL\b|college football",
+              "Ice Hockey": r"ice hockey|\bNHL\b", "Baseball": r"baseball|\bMLB\b", "Golf": r"\bgolf", "Rugby League": r"rugby league", "Handball": r"handball", "Volleyball": r"volleyball", "Netball": r"netball",
+              "Australian Rules": r"\bAFL\b|aussie rules|australian rules"}
+DESC_SPORT = {k: re.compile(v, re.I) for k, v in DESC_SPORT.items()}
+
+
+# Names that are never anything but this sport, whatever the title looks like (checked against the description too).
+DESC_STRONG = {"Show Jumping": re.compile(r"(?i)show[- ]jumping"),
+               "Rugby Union": re.compile(r"(?i)PREM Rugby|Gallagher PREM|Premiership Women.s Rugby|Premiership Rugby|Rugby Union")}
+
+
+def add_sport(title, sub, cid="", desc=""):
+    if not title:
+        return title
+    m = LIVE_LEAD_RE.match(title)
+    body = title[m.end():]
+    hay = f"{body} {sub or ''}"
+    sport = None
+    for name, rx in SPORT_RULES:
+        if rx.search(hay):
+            sport = name
+            break
+    if sport is None and desc:
+        if not re.search(r"(?i)pentathlon|triathlon|racing|^This is\b", hay):
+            sport = next((n for n, rx in DESC_STRONG.items() if rx.search(desc[:400])), None)
+    if sport is None and desc and FIXTURE_RE.search(body):
+        found = [n for n, rx in DESC_SPORT.items() if rx.search(desc[:400])]
+        if len(found) == 1:
+            sport = found[0]
+    if sport is None and not (CRICKET_COMP_RE.search(hay) or (ASIA_CUP_RE.search(hay) and re.search(r"(?i)ACC|Rising", hay))):
+        return title
+    sport = sport or "Cricket"
+    if SPORT_SAID[sport].search(body) or body.lower().startswith(sport.lower()):
+        return title
+    return f"{m.group(1)}{sport}. {body}"
+
+
+
+
+def fix_team_names(text):
+    """Köln is always Cologne ("1. FC Köln" -> "FC Cologne"); Bayern is Munich, never München / Munchen."""
+    if not text:
+        return text
+    text = re.sub(r"\b1\.\s*FC K(?:ö|o|oe)ln\b", "FC Cologne", text)
+    text = re.sub(r"\bK(?:ö|oe)ln\b", "Cologne", text)
+    return re.sub(r"\bM(?:ü|u|ue)nchen\b", "Munich", text)
+
+
 def write(path, channels, guide):
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<tv generator-info-name="USA_epg.py" source-info-name="TV Passport">']
@@ -514,15 +628,18 @@ def write(path, channels, guide):
                 live = True
             prefix = RED_BALL_PREFIX if (goal_rush or ((cid in RED_BALL_CHANNELS or cid in GENERAL_CHANNELS)
                                                        and is_event(p))) else LIVE_PREFIX
-            title = (prefix + p["title"]) if live else p["title"]
+            ptitle, psub, pdesc = soccer_fixture(p["title"], p["sub"]) + (p["desc"],)
+            ptitle, psub, pdesc = (fix_team_names(x) for x in (ptitle, psub, pdesc))
+            ptitle = add_sport(ptitle, psub, cid, pdesc)
+            title = (prefix + ptitle) if live else ptitle
             cats = p["cats"] + (["Live"] if live else [])
             out = [f'  <programme start="{xmltv_time(p["start"])}" stop="{xmltv_time(p["stop"])}" '
                    f'channel={quoteattr(cid)}>',
                    f'    <title lang="{lang}">{escape(clock12(title))}</title>']
-            if p["sub"]:
-                out.append(f'    <sub-title lang="{lang}">{escape(clock12(p["sub"]))}</sub-title>')
-            if p["desc"]:
-                out.append(f'    <desc lang="{lang}">{escape(clock12(p["desc"]))}</desc>')
+            if psub:
+                out.append(f'    <sub-title lang="{lang}">{escape(clock12(psub))}</sub-title>')
+            if pdesc:
+                out.append(f'    <desc lang="{lang}">{escape(clock12(pdesc))}</desc>')
             if re.fullmatch(r"\d{4}", p["year"]):
                 out.append(f'    <date>{p["year"]}</date>')
             seen = set()

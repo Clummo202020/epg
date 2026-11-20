@@ -751,7 +751,9 @@ def collect_matches(events_by_comp, match_minutes):
             elif rnd:
                 sub = f"{comp_name} {rnd}"
             else:
-                sub = utd((f"{comp_name} (MW{mw})" if mw else comp_name) + (f" - {notes[0]}" if notes else ""))
+                # 20 Nov 2026 (user): "Premier League (Matchweek 11)" / "Championship (Matchweek 16)" - the league name stays (the group isn't always
+                # visible) and the match week is spelled out; the club channels only carry their own league
+                sub = utd((f"{comp_name} (Matchweek {mw})" if mw else comp_name) + (f" - {notes[0]}" if notes else ""))
 
             tbc = comp.get("timeValid") is False             # ESPN's time is only a placeholder
             desc = []               # the teams are in the title and the competition in the secondary title (17 Nov, user: not repeated here)
@@ -2105,8 +2107,13 @@ def build_xmltv(channels, filler):
                         f_title, f_desc = m["fixed_title"], m["fixed_desc"]
                     if COUNTDOWN:    # optional "- kick-off in 2d 23h" per block
                         f_title += f" - kick-off in {countdown(start - a)}"
-                    add_programme(tv, chan_id, a, b, f_title,
-                                  m.get("filler_sub", f"{lab}: {m['sub']}"), f_desc, m["comp"])
+                    f_sub = m.get("filler_sub")
+                    if f_sub is None:
+                        f_sub = f"{lab}: {m['sub']}"
+                        if FILLER_STYLE != "next" and "fixed_title" not in m:
+                            # 20 Nov 2026 (user): "Next Match:" / "Next Up:" in the TITLE, before the team names; the secondary title is just the competition
+                            f_title, f_sub = f"{lab}: {f_title}", m["sub"]
+                    add_programme(tv, chan_id, a, b, f_title, f_sub, f_desc, m["comp"])
                     count += 1
             if m.get("filler_only"):                  # Goal Rush before matchday: no show yet
                 last_stop = start
