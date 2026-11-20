@@ -299,7 +299,7 @@ DISNEY_AT = re.compile(
     r"^\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
     r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*:\s*Disney\+?\s*USA\s*(?P<num>\d+)\s*$", re.I)
 DISNEY_AT_TZ = "America/New_York"
-DISNEY_TOKEN = "d7w3"
+DISNEY_TOKEN = "h2m6"
 DISNEY_NCAA_TENNIS = re.compile(r"^(?P<court>[^-]{2,30}?)\s*-\s*(?P<rest>NCAA\b.+)$")
 NBA_ESPN = "basketball/nba"
 NBA_EVENT_HOURS = 3
@@ -531,18 +531,19 @@ def load_fixtures():
 _ESPN_GAMES = {}         # sport path -> games, or "failed"
 
 
-def load_espn_games(sport, label, quiet=False):
+def load_espn_games(sport, label, quiet=False, extra=""):
     """[(home names, away names, start UTC)] from ESPN's schedule for `sport` ("football/nfl",
     "baseball/mlb"), 4 days back to 10 days ahead, or None if it can't be read.
     quiet=True skips the per-day warnings (only the one "not available" line is printed)."""
-    if sport in _ESPN_GAMES:
-        got = _ESPN_GAMES[sport]
+    ckey = sport + extra
+    if ckey in _ESPN_GAMES:
+        got = _ESPN_GAMES[ckey]
         return got if got != "failed" else None
     today = datetime.now(ZoneInfo("America/New_York")).date()
     days = [today + timedelta(days=d) for d in range(-4, 11)]
 
     def grab(day):
-        url = ESPN_SCOREBOARD.format(sport, day.strftime("%Y%m%d"))
+        url = ESPN_SCOREBOARD.format(sport, day.strftime("%Y%m%d")) + extra
         for attempt in range(3):
             try:
                 req = urllib.request.Request(url, headers=HEADERS)
@@ -559,7 +560,7 @@ def load_espn_games(sport, label, quiet=False):
         results = list(pool.map(grab, days))
     if all(r is None for r in results):
         print(f"  WARNING: {label} schedule not available - times taken from the stream names")
-        _ESPN_GAMES[sport] = "failed"
+        _ESPN_GAMES[ckey] = "failed"
         return None
     games, seen = [], set()
     for ev in (e for day in results if day for e in day):
@@ -579,7 +580,7 @@ def load_espn_games(sport, label, quiet=False):
         if len(sides) == 2:
             games.append((sides[0], sides[1], ko))
     print(f"  {label} schedule: {len(games)} games")
-    _ESPN_GAMES[sport] = games
+    _ESPN_GAMES[ckey] = games
     return games
 
 
@@ -1246,6 +1247,117 @@ def normalise_vs(title):
 
 
 
+G_LEAGUE_TEAMS = ("Texas Legends", "Memphis Hustle", "Austin Spurs", "Birmingham Squadron", "Capital City Go-Go", "Cleveland Charge",
+                  "College Park Skyhawks", "Delaware Blue Coats", "Grand Rapids Gold", "Greensboro Swarm", "Indiana Mad Ants", "Iowa Wolves",
+                  "Lakeland Magic", "Long Island Nets", "Maine Celtics", "Mexico City Capitanes", "Motor City Cruise", "Noblesville Boom",
+                  "Oklahoma City Blue", "Osceola Magic", "Raptors 905", "Rio Grande Valley Vipers", "Rip City Remix", "Salt Lake City Stars",
+                  "San Diego Clippers", "Santa Cruz Warriors", "Sioux Falls Skyforce", "South Bay Lakers", "Stockton Kings", "Valley Suns",
+                  "Westchester Knicks", "Windy City Bulls", "Wisconsin Herd")   # NBA G League teams (Disney+ USA / ESPN names)
+
+# Disney+ USA / ESPN+ fixtures ("Tarleton State vs Louisiana") do not say which sport it is (20 Nov 2026, user: look them up). ESPN's schedules do:
+# the fixture is matched against each of these (both teams, within 6 h of the stream-name time) and the closest hit gives the sport and the
+# competition. Needs ESPN to be reachable (it is on the GitHub runner); if it is not, the title is left as it is.
+DISNEY_SPORTS = (
+    ("hockey/nhl", "NHL", "Ice Hockey", ""),
+    ("basketball/nba", "NBA", "Basketball", ""),
+    ("basketball/nba-development", "NBA G League", "Basketball", ""),
+    ("basketball/mens-college-basketball", "NCAA Men's Basketball", "Basketball", "&groups=50&limit=400"),
+    ("basketball/womens-college-basketball", "NCAA Women's Basketball", "Basketball", "&groups=50&limit=400"),
+    ("hockey/mens-college-hockey", "NCAA Men's Ice Hockey", "Ice Hockey", ""),
+    ("hockey/womens-college-hockey", "NCAA Women's Ice Hockey", "Ice Hockey", ""),
+    ("football/college-football", "NCAA Football", "American Football", "&groups=80&limit=400"),
+    ("volleyball/womens-college-volleyball", "NCAA Women's Volleyball", "Volleyball", ""),
+    ("volleyball/mens-college-volleyball", "NCAA Men's Volleyball", "Volleyball", ""),
+    ("soccer/usa.ncaa.m.1", "NCAA Men's Soccer", "Football", ""),
+    ("soccer/usa.ncaa.w.1", "NCAA Women's Soccer", "Football", ""),
+)
+DISNEY_SPORT_HOURS = 6
+NJCAA_RE = re.compile(r"(?i)\b(Community College|Junior College|Arizona Western|Eastern Florida State|Trinity Valley|Miami Dade|Salt Lake|Cowley|"
+                      r"Iowa Western|Monroe College|Daytona State|Seminole State|Indian Hills|Harcum|Navarro|Tyler)\b")
+
+
+_SPORT_PROBE = {}
+
+
+def _sport_reachable(path, extra):
+    """One quick request (15 s, no retries) before a whole fortnight of them: a path ESPN does not have, or ESPN being down, must not cost minutes."""
+    key = path + extra
+    if key not in _SPORT_PROBE:
+        try:
+            day = datetime.now(ZoneInfo("America/New_York")).strftime("%Y%m%d")
+            req = urllib.request.Request(ESPN_SCOREBOARD.format(path, day) + extra, headers=HEADERS)
+            with urllib.request.urlopen(req, timeout=15) as r:
+                json.loads(r.read().decode("utf-8"))
+            _SPORT_PROBE[key] = True
+        except Exception:
+            _SPORT_PROBE[key] = False
+    return _SPORT_PROBE[key]
+
+
+def espn_sport_for(a, b, approx):
+    """(sport, competition) of the fixture a v b near `approx` from ESPN's schedules, else None."""
+    best = None
+    for path, label, sport, extra in DISNEY_SPORTS:
+        if not _sport_reachable(path, extra):
+            continue
+        try:
+            games = load_espn_games(path, label, quiet=True, extra=extra) or []
+        except Exception:
+            continue
+        for x, y, ko in games:
+            d = abs(ko - approx)
+            if d <= timedelta(hours=DISNEY_SPORT_HOURS) and \
+                    ((_side_match(a, x) and _side_match(b, y)) or (_side_match(a, y) and _side_match(b, x))) and \
+                    (best is None or d < best[0]):
+                best = (d, sport, label)
+    return (best[1], best[2]) if best else None
+
+
+def disney_title(title, approx=None):
+    """(title, description extra) for a Disney+ USA stream name. Short title, the sport first where the name makes it certain, the rest
+    in the description (20 Nov 2026, user: "These descriptions need some work"). Anything not recognised is left as it is."""
+    t = re.sub(r"\s+", " ", title).strip()
+    t = re.sub(r"(?<!\w)#\d+\s+", "", t)                      # ranking numbers ("#5 Northeastern") are dropped (20 Nov 2026, user)
+    if re.search(r"(?i)\bMaine\b", t) and re.search(r"(?i)\bNortheastern\b", t):   # user, 20 Nov 2026: this one is women's ice hockey
+        return f"Women's Ice Hockey. {t}", "NCAA women's ice hockey"
+    if any(re.search(r"(?i)\b" + re.escape(g) + r"\b", t) for g in G_LEAGUE_TEAMS):   # user, 20 Nov 2026: Texas Legends vs Memphis Hustle is NBA G League
+        return f"Basketball. {t}", "NBA G League"
+    if re.match(r"(?i)^(?:the\s+)?Golics\b", t):                # user, 20 Nov 2026: The Golics is a radio chat show
+        return t, "Radio chat show"
+    nt = DISNEY_NCAA_TENNIS.match(t)
+    if nt:                                                    # Court 6-NCAA Division I Singles & Doubles Championships (Round of 16)
+        return f"Tennis. {nt['court'].strip()}", nt["rest"].strip()
+    lang = ""
+    es = re.match(r"^En Espa\u00f1ol\s*-\s*(.+)$", t, re.I)    # En Espa\u00f1ol-Paris FC vs HB K\u00f8ge: the language goes in the description
+    if es:
+        t, lang = es.group(1).strip(), "En Espa\u00f1ol"
+    cu = re.match(r"^Grand Slam of Curling:\s*(.+)$", t, re.I)
+    if cu:
+        return f"Curling. {cu.group(1).strip()}", "Grand Slam of Curling"
+    if re.search(r"(?i)\bRSM Classic\b", t):
+        return "Golf. " + re.sub(r"(?i)^the\s+", "", t), "PGA Tour"
+    if re.search(r"(?i)\bWarriors\b", t) and re.search(r"(?i)\bFireballs\b", t):     # user, 20 Nov 2026: Magic City Jai-Alai on ESPN+ (World Jai Alai League)
+        return f"Jai Alai. {t}", "World Jai Alai League"
+    sw = re.match(r"^(?P<ev>.+?)\s*\((?P<sp>Swimming|Diving)\)$", t, re.I)
+    if sw:                                                    # Georgia Fall Invitational (Swimming)
+        return f"{sw['sp'].title()}. {sw['ev'].strip()}", "NCAA swimming and diving"
+    fx = re.match(r"^(?P<a>.+?)\s+vs\.?\s+(?P<b>.+?)(?:\s*\((?P<par>[^()]+)\))?$", t, re.I)
+    if fx and approx is not None and not re.search(r"(?i)\b(Prelims?|Finals?|Invite|Invitational)\b", fx["b"]):
+        hit = espn_sport_for(fx["a"].strip(), fx["b"].strip(), approx)
+        if hit:                                               # sport and competition from ESPN; "(First Round)" / "(Jets Broadcast)" go in the description
+            return f"{hit[0]}. {fx['a'].strip()} vs {fx['b'].strip()}", hit[1] + (f". {fx['par'].strip()}" if fx["par"] else "")
+        if fx["par"] and approx.month == 11 and 8 <= approx.day <= 26 and (NJCAA_RE.search(fx["a"]) or NJCAA_RE.search(fx["b"])):
+            # user, 20 Nov 2026: Lewis & Clark Community College vs Salt Lake Community College (Semifinal) is the NJCAA national soccer tournament
+            # (men's and women's are played in the same weeks, and the name does not say which, so neither is claimed)
+            return f"Football. {fx['a'].strip()} vs {fx['b'].strip()}", f"NJCAA soccer national tournament. {fx['par'].strip()}"
+    ses = re.match(r"^(?P<ev>.+?)\s+vs\.?\s+(?P<ses>Prelims?|Finals?|Semi-?finals?|Quarter-?finals?|Session\s+\d+)$", t, re.I)
+    if ses:                                                   # "Mizzou Invite vs Finals": a session of an event, not a match
+        t = f"{ses['ev'].strip()}: {ses['ses'].strip().title()}"
+    if re.search(r"(?i)\b(Invite|Invitational)\b", t):      # the Invite / Invitational meets on ESPN+ / SECN+ in November are college swimming and diving
+        return f"Swimming. {t}", "NCAA swimming and diving"
+    return t, lang
+
+
 def parse_name(name):
     """{slot_id, slot_name, title, extra, start (UTC)} for an event name, else None."""
     name = re.sub(r"\s+", " ", name or "").strip()
@@ -1328,9 +1440,7 @@ def _parse_name(name):
         if approx is None or not title:
             return None
         num, extra = int(dz["num"]), ""
-        nt = DISNEY_NCAA_TENNIS.match(title)
-        if nt:
-            title, extra = f"Tennis. {nt['court'].strip()}", nt["rest"].strip()
+        title, extra = disney_title(title, approx.astimezone(timezone.utc))
         return {"name": name, "slot_id": f"DisneyUSA{num:02d}.{DISNEY_TOKEN}", "slot_name": f"Disney+ USA {num:02d}",
                 "title": title, "extra": extra, "comp": "", "start": approx.astimezone(timezone.utc)}
     b = NBA_AT.match(name)                           # A vs B @ Oct 24 6:00 PM :NBA 01 (US Eastern)
