@@ -375,6 +375,10 @@ WILLOW_FEED_BASE = "https://epgadmindev.willow.tv/php/"
 WILLOW_FEEDS = {"US.Willow": "datafeedAssoc.php?method=list", "US.Willow2.5rda": "datafeedAssocExtra.php"}
 WILLOW_FEED_TZ = "5.5"
 WILLOW_CAT = ["Sports", "Cricket"]
+WILLOW_TRIES = 5
+WILLOW_RETRY_WAIT = 8             # seconds, times the attempt number
+PUBLISHED_GUIDE = "https://raw.githubusercontent.com/Clummo202020/epg/main/USA_epg.xml.gz"
+WILLOW_STALE_OK = {"US.Willow2.5rda"}   # channels with no other source: if the feed fails, the last published listings (still to come) are kept
 WILLOW_DAY_ROLLS_AT_UTC_MIN = 0          # the broadcast day starts at 00:00 UTC
 _WILLOW_LEAD = re.compile(r"^\s*(?:Continued Event from yesterday,\s*)?(?:LIVE\s*[-\u2013:]\s*)?", re.I)
 _WILLOW_STUDIO = re.compile(r"(?i)\b(preview|review)\s*$")
@@ -442,6 +446,44 @@ def willow_text(raw_title):
     return title, sub, desc, studio
 
 
+def willow_from_published(cid):
+    """Listings still to come for `cid` from the guide published last run (used only when the feed failed and the channel has no
+    other source). Entries are turned back into plain programmes: "🔴 LIVE: Cricket. A v B" -> live, title "Cricket. A v B"."""
+    import xml.etree.ElementTree as XT
+    try:
+        req = urllib.request.Request(PUBLISHED_GUIDE, headers={"User-Agent": HEADERS["User-Agent"]})
+        with urllib.request.urlopen(req, timeout=60) as r:
+            root = XT.fromstring(gzip.decompress(r.read()))
+    except Exception as e:
+        print(f"  WARNING: last published guide not available for {cid} ({e})")
+        return []
+    now = datetime.now(timezone.utc)
+    progs = []
+    for el in root.iter("programme"):
+        if el.get("channel") != cid:
+            continue
+        try:
+            start = datetime.strptime(el.get("start"), "%Y%m%d%H%M%S %z").astimezone(timezone.utc)
+            stop = datetime.strptime(el.get("stop"), "%Y%m%d%H%M%S %z").astimezone(timezone.utc)
+        except (TypeError, ValueError):
+            continue
+        if stop <= now:
+            continue
+        title = (el.findtext("title") or "").strip()
+        if title.startswith(("Willow 2 Cricket", "Willow Cricket")) and "No schedule" in (el.findtext("sub-title") or ""):
+            return []                                                   # the standard blocks - not real listings
+        m = re.match(r"^(🔴\s*)?LIVE:\s*", title)
+        live = bool(m)
+        studio = bool(m) and not m.group(1)                              # live without the red ball = a Preview / Review
+        title = title[m.end():] if m else title
+        progs.append({"start": start, "stop": stop, "title": title, "sub": (el.findtext("sub-title") or "").strip(),
+                      "desc": (el.findtext("desc") or "").strip(),
+                      "cats": [c.text.strip() for c in el.findall("category") if c.text and c.text.strip() and c.text.strip() != "Live"] or list(WILLOW_CAT),
+                      "year": "", "rating": "", "live": live, "new": False, "studio": studio, "raw": ""})
+    progs.sort(key=lambda p: p["start"])
+    return progs
+
+
 def fetch_willow(uk_today):
     """{our id: [programmes]} for WILLOW_FEEDS (nothing for a channel whose feed could not be read or whose clock is unclear)."""
     import json
@@ -455,8 +497,18 @@ def fetch_willow(uk_today):
                                          headers={"User-Agent": HEADERS["User-Agent"], "Origin": "https://cricket.willow.tv",
                                                   "Referer": "https://cricket.willow.tv/",
                                                   "Content-Type": "application/x-www-form-urlencoded", "Accept": "*/*"})
-            with urllib.request.urlopen(req, timeout=40) as r:
-                data = json.loads(r.read().decode("utf-8", "replace"))
+            data, err = None, None
+            for attempt in range(WILLOW_TRIES):               # the feed's server is a "dev" one and gives the odd HTTP 500
+                try:
+                    with urllib.request.urlopen(req, timeout=40) as r:
+                        data = json.loads(r.read().decode("utf-8", "replace"))
+                    break
+                except Exception as e:
+                    err = e
+                    if attempt + 1 < WILLOW_TRIES:
+                        time.sleep(WILLOW_RETRY_WAIT * (attempt + 1))
+            if data is None:
+                raise err
             events = [e for day in (data.get("events") or []) for e in (day.get("todaySchedule") or [])]
             off = willow_clock_offset([(_willow_time(e.get("BroadCastStartDate")), e.get("BroadCastDay")) for e in events])
             if off is None:
@@ -487,6 +539,11 @@ def fetch_willow(uk_today):
                   f", {progs[0]['start'].astimezone(UK):%a %d %b %H:%M} to {progs[-1]['stop'].astimezone(UK):%a %d %b %H:%M} UK")
         except Exception as ex:
             print(f"  WARNING: Willow feed for {cid} not used ({ex}) - TV Passport listings / standard blocks instead")
+            if cid in WILLOW_STALE_OK:
+                old = willow_from_published(cid)
+                if old:
+                    out[cid] = old
+                    print(f"  Willow feed {cid}: kept the {len(old)} listings still to come from the last published guide")
     return out
 
 
