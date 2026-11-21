@@ -6307,7 +6307,7 @@ SPORT_SAID = {
     "Ice Hockey": r"hockey", "Baseball": r"baseball|b[eé]isbol|beisebol", "Aussie Rules": r"aussie rules|australian rules",
     "Darts": r"darts", "Snooker": r"snooker", "MMA": r"\bmma\b|martial arts", "Boxing": r"\bbox(?:ing|e|eo|en)\b",
     "Wrestling": r"wrestl|lucha", "Cycling": r"cycl|ciclismo|cyclisme|radsport", "Athletics": r"athletic|atletica|athl[eé]tisme",
-    "Volleyball": r"volley|voleibol", "Sailing": r"sail", "Show Jumping": r"jumping|equestri|horse riding|riding:|ridebane|ecuestre|reiten|hípica|hippique", "Badminton": r"badminton", "Biathlon": r"biathl", "Swimming": r"swim|nuoto|natation", "Netball": r"netball", "Handball": r"handball|balonmano",
+    "Volleyball": r"volley|voleibol", "Sailing": r"sail", "Show Jumping": r"show[- ]?jumping|equestri|horse riding|riding:|ridebane|ecuestre|reiten|hípica|hippique", "Badminton": r"badminton", "Biathlon": r"biathl", "Swimming": r"swim|nuoto|natation", "Netball": r"netball", "Handball": r"handball|balonmano",
 }
 SPORT_SAID = {k: re.compile(v, re.I) for k, v in SPORT_SAID.items()}
 LIVE_LEAD_RE = re.compile(r"^((?:🔴\s*)?(?:LIVE[:,]\s*)?)")
