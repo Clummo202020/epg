@@ -1527,6 +1527,32 @@ def setanta_channel(matches):
 # the Setanta one: a block at every Premier League kick-off listing that slot's matches. Nothing is filtered (no 3pm
 # blackout). New id PremierLeaguePlus.live.
 # SWITCHED OFF 31 Oct 2026 (the user deleted the Premier League+ rows from both playlists); SWITCHED BACK ON 18 Nov 2026 (user: new Premier League+ category, linked to PremierLeaguePlus.live).
+# One-off listings (21 Nov 2026, user): a single match on its own channel with its own id (random 4-character token). Shown as
+# "Next Match: A v B (Tue 24 Nov, 1pm)" until 10 minutes before kick-off, "LIVE: A v B" for the match, then the idle text. Add a row to ONE_OFFS;
+# remove it after the match (the channel then disappears from the guide).
+ONE_OFFS = [
+    {"id": "ArsenalU19DortmundU19.p5w2", "name": "Arsenal U19 v Dortmund U19", "comp": "UEFA Youth League",
+     "title": "Arsenal U19 v Dortmund U19", "kickoff": (2026, 11, 24, 13, 0), "minutes": 120, "on": "TNT Sports 2",
+     "where": "Meadow Park"},
+]
+
+
+def one_off_channel(o):
+    """(id, name, None, shows) for one ONE_OFFS row"""
+    ko = datetime(*o["kickoff"], tzinfo=LONDON)
+    early = timedelta(minutes=MATCH_EARLY_MINUTES)
+    when = f"{ko:%a %d %b}, {ko:%H:%M}"
+    when12 = f"{ko:%a %d %b}, {ko.hour % 12 or 12}{'' if ko.minute == 0 else f':{ko.minute:02d}'}{'am' if ko.hour < 12 else 'pm'}"
+    desc = f"{o['comp']}: {o['title']}" + (f" at {o['where']}" if o.get("where") else "") + f". Live on {o['on']}. Starts {when12} UK time."
+    idle = f"{o['comp']}: {o['title']} was live on {o['on']}."
+    show = {"comp": o["comp"], "title": o["title"], "sub": o["comp"], "desc": desc, "start": ko - early, "stop": ko + timedelta(minutes=o["minutes"]),
+            "when": when, "teams": [], "tbc": False,
+            "fixed_title": f"Next Match: {o['title']} ({when12})",
+            "fixed_desc": desc, "filler_sub": o["comp"], "live_sub": o["comp"], "live_title": f"🔴 LIVE: {o['title']}"}
+    show["tail"] = ("Live at event time only.", "", idle, "Sports")
+    return (o["id"], o["name"], None, [show])
+
+
 PLPLUS_CHANNEL = False      # 21 Nov 2026 (user): the Premier League+ category was removed from the playlists; set True to bring the channel back (id unchanged)
 PLPLUS_ID = "PremierLeaguePlus2.live"      # 18 Nov 2026 (user): new id so PlaylistLabs loads fresh blocks (was PremierLeaguePlus.live)
 PLPLUS_NAME = "Premier League+ streams"
@@ -1980,6 +2006,10 @@ def build_channels(matches, english, suffix, english_only):
         else:                                          # no matches in range: plain blocks, same id
             channels.append(dummy_channel(f"{SETANTA_ID}{suffix}", SETANTA_NAME,
                                           "Live at event time only.", SETANTA_IDLE))
+    for o in ONE_OFFS:
+        oc = one_off_channel(o)
+        if oc[3][0]["stop"] > datetime.now(timezone.utc) - timedelta(hours=1):          # gone an hour after the match
+            channels.append((f"{oc[0]}{suffix}",) + oc[1:])
     if PLPLUS_CHANNEL:
         pl = plplus_channel(matches)
         if pl:
