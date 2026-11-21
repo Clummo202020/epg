@@ -76,7 +76,7 @@
   "seen": "2026-11-21T05:07:42+00:00"
  },
  "_timing": {
-  "updated": "2026-11-21T11:07:18Z",
+  "updated": "2026-11-21T11:37:25Z",
   "groups": {
    "AppleMLS": {
     "n": 32,
@@ -163,8 +163,8 @@
     "max": 0
    },
    "STAN": {
-    "n": 66,
-    "missed": 13,
+    "n": 129,
+    "missed": 28,
     "applied": true,
     "median": -10,
     "min": -60,
