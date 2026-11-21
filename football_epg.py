@@ -1506,10 +1506,10 @@ def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_la
 SETANTA_CHANNEL = True
 SETANTA_ID = "SetantaSportsPPV.live"      # 9 Nov 2026 (user): new id so PlaylistLabs loads fresh blocks (was SetantaSports.live)
 SETANTA_NAME = "Setanta Sports streams"
-SETANTA_COMPS = ["Premier League", "UEFA Champions League"]
-SETANTA_IDLE = ("Setanta Sports event streams carry Premier League and UEFA Champions League football, plus Bundesliga, Bundesliga 2, "
+SETANTA_COMPS = ["Premier League"]       # 21 Nov 2026 (user): Champions League dropped - rights differ by country and the provider's country is unknown
+SETANTA_IDLE = ("Setanta Sports event streams carry Premier League football, plus Bundesliga, Bundesliga 2, "
                 "La Liga, Serie A, Ligue 1, EFL Cup, NBA, EuroLeague Basketball, NHL, Formula 1, Formula E, NASCAR, UFC, PFL, "
-                "Bellator MMA and tennis. Each event is on its own stream - scroll the Setanta channels to find it.")   # 21 Nov 2026 (user): a mention only - scheduled blocks stay Premier League / Champions League
+                "Bellator MMA and tennis. Each event is on its own stream - scroll the Setanta channels to find it.")   # 21 Nov 2026 (user): a mention only - scheduled blocks are Premier League only
 # Closing sentence of every Setanta match description (Premier League and European matchdays alike):
 # "Tue 03 Nov, 20:00 KO's on the Setanta Sports streams - Champions League: A v B, C v D. Each match is on its own stream - ..."
 SETANTA_TAIL = ("This match is on its own stream - scroll the Setanta Event channels to find it.",
