@@ -76,7 +76,7 @@
   "seen": "2026-11-21T05:07:42+00:00"
  },
  "_timing": {
-  "updated": "2026-11-21T21:07:20Z",
+  "updated": "2026-11-21T21:37:17Z",
   "groups": {
    "AppleMLS": {
     "n": 32,
@@ -94,22 +94,9 @@
     "min": 60,
     "max": 270
    },
-   "DisneyUSA": {
-    "n": 5,
-    "missed": 137,
-    "applied": false,
-    "median": -15,
-    "min": -20,
-    "max": -15
-   },
    "ESPNPPV": {
     "n": 0,
     "missed": 121,
-    "applied": false
-   },
-   "FuboUS": {
-    "n": 0,
-    "missed": 11,
     "applied": false
    },
    "MLB": {
