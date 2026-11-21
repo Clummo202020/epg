@@ -1504,7 +1504,7 @@ def streams_channel(kept, chan_id, name, label, where, comps_order, idle, efl_la
 # that slot's matches. Setanta is not a UK service, so there is no 3pm blackout and nothing is left out. Add more
 # competitions from COMPETITIONS to SETANTA_COMPS if wanted (e.g. "UEFA Europa League", "La Liga").
 SETANTA_CHANNEL = True
-SETANTA_ID = "SetantaSportsPPV.live"      # 9 Nov 2026 (user): new id so PlaylistLabs loads fresh blocks (was SetantaSports.live)
+SETANTA_ID = "SetantaSportsPPV.t6n2"      # 21 Nov 2026 (user): new id so PlaylistLabs loads fresh blocks (was SetantaSportsPPV.live, 9 Nov; SetantaSports.live before)
 SETANTA_NAME = "Setanta Sports streams"
 SETANTA_COMPS = ["Premier League"]       # 21 Nov 2026 (user): Champions League dropped - rights differ by country and the provider's country is unknown
 SETANTA_IDLE = ("Setanta Sports event streams carry Premier League football, plus Bundesliga, Bundesliga 2, "
