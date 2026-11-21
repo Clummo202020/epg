@@ -2993,7 +2993,7 @@
     <display-name lang="en">US (Peacock 010) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock011.us">
-    <display-name lang="en">US (Peacock 011) | Men`s Free Skate (2026-11-21 10:15:00)</display-name>
+    <display-name lang="en">US (Peacock 011) | Women`s Free Skate (2026-11-21 07:00:00)</display-name>
     <display-name lang="en">US (Peacock 011) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock012.us">
@@ -3025,7 +3025,7 @@
     <display-name lang="en">US (Peacock 018) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock019.us">
-    <display-name lang="en">US (Peacock 019) | Men`s Free Skate (2026-11-21 10:15:00)</display-name>
+    <display-name lang="en">US (Peacock 019) | SMU vs. Notre Dame (2026-11-21 19:00:00)</display-name>
     <display-name lang="en">US (Peacock 019) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock020.us">
@@ -9361,78 +9361,6 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121153000 +0000" stop="20261121173000 +0000" channel="MParamount018.us">
-    <title lang="en">🔴 LIVE: Wolves vs Charlton Athletic</title>
-    <desc lang="en">Wolves vs Charlton Athletic. Starts Sat 21 Nov, 3:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121173000 +0000" stop="20261121183000 +0000" channel="MParamount018.us">
-    <title lang="en">🔴 LIVE: Wolves vs Charlton Athletic</title>
-    <desc lang="en">Wolves vs Charlton Athletic. Starts Sat 21 Nov, 3:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121183000 +0000" stop="20261121203000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121203000 +0000" stop="20261121223000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121223000 +0000" stop="20261122003000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122003000 +0000" stop="20261122023000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122023000 +0000" stop="20261122043000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122043000 +0000" stop="20261122063000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122063000 +0000" stop="20261122083000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122083000 +0000" stop="20261122103000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122103000 +0000" stop="20261122123000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122123000 +0000" stop="20261122143000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122143000 +0000" stop="20261122163000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122163000 +0000" stop="20261122183000 +0000" channel="MParamount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MParamount021.us">
     <title lang="en">🔴 LIVE: Parma vs Roma</title>
     <sub-title lang="en">Serie A</sub-title>
@@ -9723,6 +9651,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122183000 +0000" stop="20261122203000 +0000" channel="MParamount024.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="MParamount024.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -15559,78 +15492,6 @@
     <desc lang="en">Bologna vs Roma. Starts Fri 4 Dec, 8:35pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121151500 +0000" stop="20261121171500 +0000" channel="MPeacock011.us">
-    <title lang="en">🔴 LIVE: Men's Free Skate</title>
-    <desc lang="en">Men's Free Skate. Starts Sat 21 Nov, 3:15pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121171500 +0000" stop="20261121181500 +0000" channel="MPeacock011.us">
-    <title lang="en">🔴 LIVE: Men's Free Skate</title>
-    <desc lang="en">Men's Free Skate. Starts Sat 21 Nov, 3:15pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121181500 +0000" stop="20261121201500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121201500 +0000" stop="20261121221500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121221500 +0000" stop="20261122001500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122001500 +0000" stop="20261122021500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122021500 +0000" stop="20261122041500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122041500 +0000" stop="20261122061500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122061500 +0000" stop="20261122081500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122081500 +0000" stop="20261122101500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122101500 +0000" stop="20261122121500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122121500 +0000" stop="20261122141500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122141500 +0000" stop="20261122161500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122161500 +0000" stop="20261122181500 +0000" channel="MPeacock011.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="MPeacock012.us">
     <title lang="en">🔴 LIVE: Wisconsin vs Purdue</title>
     <desc lang="en">Wisconsin vs Purdue. Starts Sat 21 Nov, 5pm UK time.</desc>
@@ -16134,74 +15995,70 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121151500 +0000" stop="20261121171500 +0000" channel="MPeacock019.us">
-    <title lang="en">🔴 LIVE: Men's Free Skate</title>
-    <desc lang="en">Men's Free Skate. Starts Sat 21 Nov, 3:15pm UK time.</desc>
+  <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="MPeacock019.us">
+    <title lang="en">Next Match: SMU vs Notre Dame (Sun 22 Nov, Midnight)</title>
+    <desc lang="en">SMU vs Notre Dame. Starts Sun 22 Nov, Midnight UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121220000 +0000" stop="20261122000000 +0000" channel="MPeacock019.us">
+    <title lang="en">Next up: LIVE – SMU vs Notre Dame (Midnight)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. SMU vs Notre Dame starts at Midnight UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="MPeacock019.us">
+    <title lang="en">🔴 LIVE: SMU vs Notre Dame</title>
+    <desc lang="en">SMU vs Notre Dame. Starts Sun 22 Nov, Midnight UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261121171500 +0000" stop="20261121181500 +0000" channel="MPeacock019.us">
-    <title lang="en">🔴 LIVE: Men's Free Skate</title>
-    <desc lang="en">Men's Free Skate. Starts Sat 21 Nov, 3:15pm UK time.</desc>
+  <programme start="20261122020000 +0000" stop="20261122030000 +0000" channel="MPeacock019.us">
+    <title lang="en">🔴 LIVE: SMU vs Notre Dame</title>
+    <desc lang="en">SMU vs Notre Dame. Starts Sun 22 Nov, Midnight UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261121181500 +0000" stop="20261121201500 +0000" channel="MPeacock019.us">
+  <programme start="20261122030000 +0000" stop="20261122050000 +0000" channel="MPeacock019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121201500 +0000" stop="20261121221500 +0000" channel="MPeacock019.us">
+  <programme start="20261122050000 +0000" stop="20261122070000 +0000" channel="MPeacock019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121221500 +0000" stop="20261122001500 +0000" channel="MPeacock019.us">
+  <programme start="20261122070000 +0000" stop="20261122090000 +0000" channel="MPeacock019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261122001500 +0000" stop="20261122021500 +0000" channel="MPeacock019.us">
+  <programme start="20261122090000 +0000" stop="20261122110000 +0000" channel="MPeacock019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261122021500 +0000" stop="20261122041500 +0000" channel="MPeacock019.us">
+  <programme start="20261122110000 +0000" stop="20261122130000 +0000" channel="MPeacock019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261122041500 +0000" stop="20261122061500 +0000" channel="MPeacock019.us">
+  <programme start="20261122130000 +0000" stop="20261122150000 +0000" channel="MPeacock019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261122061500 +0000" stop="20261122081500 +0000" channel="MPeacock019.us">
+  <programme start="20261122150000 +0000" stop="20261122170000 +0000" channel="MPeacock019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261122081500 +0000" stop="20261122101500 +0000" channel="MPeacock019.us">
+  <programme start="20261122170000 +0000" stop="20261122190000 +0000" channel="MPeacock019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261122101500 +0000" stop="20261122121500 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122121500 +0000" stop="20261122141500 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122141500 +0000" stop="20261122161500 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122161500 +0000" stop="20261122181500 +0000" channel="MPeacock019.us">
+  <programme start="20261122190000 +0000" stop="20261122210000 +0000" channel="MPeacock019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -16845,6 +16702,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="MPeacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="MPeacock029.us">
     <title lang="en">Next Event: High Diving World Cup: China 1 (Sun 22 Nov, 3:02am)</title>
     <desc lang="en">High Diving World Cup: China 1. Starts Sun 22 Nov, 3:02am UK time.</desc>
@@ -17059,6 +16921,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122203500 +0000" stop="20261122223500 +0000" channel="MPeacock031.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="MPeacock032.us">
     <title lang="en">Next Event: Men's Slalom: Gurgl Run 1 (Sun 22 Nov, 9:30am)</title>
     <desc lang="en">Men's Slalom: Gurgl Run 1. Starts Sun 22 Nov, 9:30am UK time.</desc>
@@ -17123,6 +16990,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122183000 +0000" stop="20261122203000 +0000" channel="MPeacock032.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="MPeacock032.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -29489,6 +29361,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122202500 +0000" stop="20261122222500 +0000" channel="PPVEVENT12.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121214500 +0000" channel="PPVEVENT13.us">
     <title lang="en">Next up: LIVE – USAC Chase Johnson Classic at Merced (9:45pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -30288,78 +30165,6 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121153000 +0000" stop="20261121173000 +0000" channel="Paramount018.us">
-    <title lang="en">🔴 LIVE: Wolves vs Charlton Athletic</title>
-    <desc lang="en">Wolves vs Charlton Athletic. Starts Sat 21 Nov, 3:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121173000 +0000" stop="20261121183000 +0000" channel="Paramount018.us">
-    <title lang="en">🔴 LIVE: Wolves vs Charlton Athletic</title>
-    <desc lang="en">Wolves vs Charlton Athletic. Starts Sat 21 Nov, 3:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121183000 +0000" stop="20261121203000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121203000 +0000" stop="20261121223000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121223000 +0000" stop="20261122003000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122003000 +0000" stop="20261122023000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122023000 +0000" stop="20261122043000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122043000 +0000" stop="20261122063000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122063000 +0000" stop="20261122083000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122083000 +0000" stop="20261122103000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122103000 +0000" stop="20261122123000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122123000 +0000" stop="20261122143000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122143000 +0000" stop="20261122163000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122163000 +0000" stop="20261122183000 +0000" channel="Paramount018.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="Paramount021.us">
     <title lang="en">🔴 LIVE: Parma vs Roma</title>
     <sub-title lang="en">Serie A</sub-title>
@@ -30650,6 +30455,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122183000 +0000" stop="20261122203000 +0000" channel="Paramount024.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="Paramount024.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -36486,78 +36296,6 @@
     <desc lang="en">Bologna vs Roma. Starts Fri 4 Dec, 8:35pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121151500 +0000" stop="20261121171500 +0000" channel="Peacock019.us">
-    <title lang="en">🔴 LIVE: Men's Free Skate</title>
-    <desc lang="en">Men's Free Skate. Starts Sat 21 Nov, 3:15pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121171500 +0000" stop="20261121181500 +0000" channel="Peacock019.us">
-    <title lang="en">🔴 LIVE: Men's Free Skate</title>
-    <desc lang="en">Men's Free Skate. Starts Sat 21 Nov, 3:15pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121181500 +0000" stop="20261121201500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121201500 +0000" stop="20261121221500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121221500 +0000" stop="20261122001500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122001500 +0000" stop="20261122021500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122021500 +0000" stop="20261122041500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122041500 +0000" stop="20261122061500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122061500 +0000" stop="20261122081500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122081500 +0000" stop="20261122101500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122101500 +0000" stop="20261122121500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122121500 +0000" stop="20261122141500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122141500 +0000" stop="20261122161500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122161500 +0000" stop="20261122181500 +0000" channel="Peacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="Peacock020.us">
     <title lang="en">🔴 LIVE: Wisconsin vs Purdue</title>
     <desc lang="en">Wisconsin vs Purdue. Starts Sat 21 Nov, 5pm UK time.</desc>
@@ -37197,6 +36935,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="Peacock029.us">
     <title lang="en">Next Event: High Diving World Cup: China 1 (Sun 22 Nov, 3:02am)</title>
     <desc lang="en">High Diving World Cup: China 1. Starts Sun 22 Nov, 3:02am UK time.</desc>
@@ -37411,6 +37154,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122203500 +0000" stop="20261122223500 +0000" channel="Peacock031.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="Peacock032.us">
     <title lang="en">Next Event: Men's Slalom: Gurgl Run 1 (Sun 22 Nov, 9:30am)</title>
     <desc lang="en">Men's Slalom: Gurgl Run 1. Starts Sun 22 Nov, 9:30am UK time.</desc>
@@ -37475,6 +37223,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122183000 +0000" stop="20261122203000 +0000" channel="Peacock032.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="Peacock032.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -42103,78 +41856,6 @@
   <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="Peacock100.us">
     <title lang="en">Next Match: Knicks vs Cavaliers (Mon 21 Dec, 11:30pm)</title>
     <desc lang="en">Knicks vs Cavaliers. Starts Mon 21 Dec, 11:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121152000 +0000" stop="20261121172000 +0000" channel="SN019.ca">
-    <title lang="en">🔴 LIVE: NEC vs PSV Eindhoven</title>
-    <desc lang="en">NEC vs PSV Eindhoven. Starts Sat 21 Nov, 3:20pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121172000 +0000" stop="20261121182000 +0000" channel="SN019.ca">
-    <title lang="en">🔴 LIVE: NEC vs PSV Eindhoven</title>
-    <desc lang="en">NEC vs PSV Eindhoven. Starts Sat 21 Nov, 3:20pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121182000 +0000" stop="20261121202000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121202000 +0000" stop="20261121222000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121222000 +0000" stop="20261122002000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122002000 +0000" stop="20261122022000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122022000 +0000" stop="20261122042000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122042000 +0000" stop="20261122062000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122062000 +0000" stop="20261122082000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122082000 +0000" stop="20261122102000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122102000 +0000" stop="20261122122000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122122000 +0000" stop="20261122142000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122142000 +0000" stop="20261122162000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122162000 +0000" stop="20261122182000 +0000" channel="SN019.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261121170500 +0000" stop="20261121190500 +0000" channel="SN020.ca">
@@ -48434,80 +48115,6 @@
     <desc lang="en">Newcastle United vs Manchester United. Premier League Matchweek 13 2026/2027. Starts Wed 2 Dec, 7pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121151500 +0000" stop="20261121171500 +0000" channel="TSN030.ca">
-    <title lang="en">🔴 LIVE: LaLiga: Rayo Vallecano vs Valencia</title>
-    <sub-title lang="en">Spanish La Liga (Primera)</sub-title>
-    <desc lang="en">LaLiga: Rayo Vallecano vs Valencia. Spanish La Liga (Primera). Starts Sat 21 Nov, 3:15pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121171500 +0000" stop="20261121181500 +0000" channel="TSN030.ca">
-    <title lang="en">🔴 LIVE: LaLiga: Rayo Vallecano vs Valencia</title>
-    <sub-title lang="en">Spanish La Liga (Primera)</sub-title>
-    <desc lang="en">LaLiga: Rayo Vallecano vs Valencia. Spanish La Liga (Primera). Starts Sat 21 Nov, 3:15pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121181500 +0000" stop="20261121201500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121201500 +0000" stop="20261121221500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261121221500 +0000" stop="20261122001500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122001500 +0000" stop="20261122021500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122021500 +0000" stop="20261122041500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122041500 +0000" stop="20261122061500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122061500 +0000" stop="20261122081500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122081500 +0000" stop="20261122101500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122101500 +0000" stop="20261122121500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122121500 +0000" stop="20261122141500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122141500 +0000" stop="20261122161500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122161500 +0000" stop="20261122181500 +0000" channel="TSN030.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261121160000 +0000" stop="20261121180000 +0000" channel="TSN031.ca">
     <title lang="en">🔴 LIVE: Tennis. 2026 BJK Cup Playoffs: Brazil vs Canada - Day #2</title>
     <desc lang="en">Tennis. 2026 BJK Cup Playoffs: Brazil vs Canada - Day #2. Starts Sat 21 Nov, 4pm UK time.</desc>
@@ -49695,6 +49302,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122201500 +0000" stop="20261122221500 +0000" channel="TSN047.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="TSN048.ca">
     <title lang="en">Next Event: Formula 1 Driver Tracker - Las Vegas Grand Prix (Sun 22 Nov, 3:30am)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -49764,6 +49376,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122183000 +0000" stop="20261122203000 +0000" channel="TSN048.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="TSN048.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -49841,6 +49458,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="TSN049.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="TSN050.ca">
     <title lang="en">Next Event: Formula 1 On-Board Camera: Lewis Hamilton - Las Vegas Grand Prix (Sun 22 Nov, 3:30am)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -49910,6 +49532,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122183000 +0000" stop="20261122203000 +0000" channel="TSN050.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="TSN050.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -49987,6 +49614,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="TSN051.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="TSN052.ca">
     <title lang="en">Next Event: Formula 1 Timing Channel - Las Vegas Grand Prix (Sun 22 Nov, 3:30am)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -50056,6 +49688,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122183000 +0000" stop="20261122203000 +0000" channel="TSN052.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="TSN052.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -50133,6 +49770,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="TSN053.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="TSN054.ca">
     <title lang="en">Next Event: Formula 1 On-Board Camera: Kimi Antonelli - Las Vegas Grand Prix (Sun 22 Nov, 3:30am)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -50202,6 +49844,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122183000 +0000" stop="20261122203000 +0000" channel="TSN054.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="TSN054.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -50447,6 +50094,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122201500 +0000" stop="20261122221500 +0000" channel="TSN057.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="TSN058.ca">
     <title lang="en">Next Match: LaLiga: Osasuna vs Malaga (Sun 22 Nov, 5:30pm)</title>
     <sub-title lang="en">Spanish La Liga (Primera)</sub-title>
@@ -50526,6 +50178,11 @@
     <desc lang="en">LaLiga: Osasuna vs Malaga. Spanish La Liga (Primera). Starts Sun 22 Nov, 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="TSN058.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="TSN059.ca">
     <title lang="en">Next Game: American Football. NFL RedZone (Sun 22 Nov, 6pm)</title>
@@ -50998,10 +50655,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122200000 +0000" stop="20261122203000 +0000" channel="TSN064.ca">
-    <title lang="en">Next up: LIVE – NCAA Women's Basketball: Utah State vs TCU (Sun 22 Nov, 8:30pm)</title>
+    <title lang="en">Next up: LIVE – NCAA Women's Basketball: Utah State vs TCU (8:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NCAA Women's Basketball: Utah State vs TCU starts Sun 22 Nov, 8:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. NCAA Women's Basketball: Utah State vs TCU starts at 8:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="TSN064.ca">
+    <title lang="en">🔴 LIVE: NCAA Women's Basketball: Utah State vs TCU</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Women's Basketball: Utah State vs TCU. Starts Sun 22 Nov, 8:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="TSN065.ca">
     <title lang="en">Next Match: NCAA Men's Hockey: Air Force vs Princeton (Sun 22 Nov, 9pm)</title>
@@ -92733,6 +92397,71 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121220000 +0000" stop="20261122000000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122020000 +0000" stop="20261122040000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="MParamount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="MParamount019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
@@ -93444,6 +93173,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="MPeacock010.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121220000 +0000" stop="20261122000000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122020000 +0000" stop="20261122040000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="MPeacock011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="MPeacock011.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -99233,6 +99027,71 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121220000 +0000" stop="20261122000000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122020000 +0000" stop="20261122040000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="Paramount018.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="Paramount019.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
@@ -100533,6 +100392,71 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121220000 +0000" stop="20261122000000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122020000 +0000" stop="20261122040000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="Peacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="SN001.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
@@ -101699,6 +101623,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="SN018.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121220000 +0000" stop="20261122000000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122020000 +0000" stop="20261122040000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="SN019.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="SN019.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -107939,6 +107928,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="TSN029.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121200000 +0000" stop="20261121220000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261121220000 +0000" stop="20261122000000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122020000 +0000" stop="20261122040000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="TSN030.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="TSN030.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
