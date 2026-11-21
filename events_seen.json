@@ -76,7 +76,7 @@
   "seen": "2026-11-21T05:07:42+00:00"
  },
  "_timing": {
-  "updated": "2026-11-21T22:07:18Z",
+  "updated": "2026-11-21T22:37:16Z",
   "groups": {
    "AppleMLS": {
     "n": 32,
@@ -131,7 +131,7 @@
     "applied": true,
     "median": 50,
     "min": 0,
-    "max": 60
+    "max": 420
    },
    "Peacock": {
     "n": 34,
@@ -172,7 +172,7 @@
    }
   },
   "check": {
-   "compared": 94,
+   "compared": 95,
    "differ": 0,
    "examples": []
   }
