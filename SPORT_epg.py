@@ -6013,6 +6013,30 @@ def nz_sub(sub):
     return sub
 
 
+SESSION_WORDS = {"aft": "Afternoon", "eve": "Evening", "morn": "Morning", "arvo": "Afternoon"}
+
+
+def nz_session(title, sub):
+    """Sky NZ (21 Nov 2026): title "Grand Slam Of Darts" + secondary "Grand Slam of Darts: D9 Aft" ->
+    title "Grand Slam of Darts", secondary "Day 9, Afternoon". The repeated competition is dropped from the
+    secondary title, "D9" becomes "Day 9" and "Aft"/"Eve"/"Morn" are written out."""
+    if not sub:
+        return title, sub
+    b = re.match(r"^Bowls New Zealand:\s*(?P<comp>.+?)\s*$", title or "")       # "Bowls New Zealand: Oceania Champs" + "Oceania Champs: Day Four"
+    if b:
+        comp = re.sub(r"\bChamps\b", "Championships", b["comp"])
+        rest = re.sub(rf"^{re.escape(b['comp'])}\s*:\s*", "", sub, flags=re.I)
+        return f"Bowls. {comp}", rest or sub
+    m = re.match(r"^(?P<comp>[^:]{2,60}):\s*(?P<rest>.+)$", sub)
+    if m and m["comp"].strip().lower() == (title or "").strip().lower():
+        title, sub = m["comp"].strip(), m["rest"].strip()      # the secondary title's capitals ("of") are the proper ones
+    new = re.sub(r"\bD(\d{1,2})\b", r"Day \1", sub)
+    new = re.sub(r"\b(Aft|Eve|Morn|Arvo)\b", lambda x: SESSION_WORDS[x.group(1).lower()], new)
+    if new != sub:
+        sub = re.sub(r"^(Day \d{1,2})\s+(?=[A-Z])", r"\1, ", new)     # "Day 9 Afternoon" -> "Day 9, Afternoon"
+    return title, sub
+
+
 def nz_teams_first(title, sub):
     """Sky NZ: title "Premier League" + secondary "Premier League: Spurs v Crystal Palace" ->
     title "Spurs v Crystal Palace", secondary "Premier League" (28 Oct 2026). Only for the
@@ -6251,9 +6275,9 @@ SPORT_RULES = [
     ("Cricket", r"\bBaggy Greens\b|\bBlack ?caps\b|\bWhite ?Ferns\b|\b(?:T-?20I?|T-?10|Twenty-?20|Test Twenty|ODIs?|IPL|WBBL|WPL|PSL|CPL|SA20|ILT20|MLC|LPL|BPL|ICC|Ashes|The Hundred|Big Bash|Sheffield Shield|Ranji Trophy|County Championship|Vitality Blast|Metro Bank One.Day Cup|Nepal Premier League|Indian Premier League|Syed Mushtaq Ali|Champions Trophy|Extraaa Innings|Cricbuzz|Lords Of England|Vijay Hazare|Test Match Special)\b|\b\d(?:st|nd|rd|th) (?:Test|ODI|T20I?)\b"),
     ("Netball", r"\bSilver Ferns\b|\bNet Blacks\b|Super Netball|Quad Series"),
     ("Rugby League", r"\bNRLW?\b|State of Origin|\bRLWC\d*\b|Challenge Cup Final"),
-    ("Rugby Union", r"Nations Championship|\bAll Blacks\b|\bWallabies\b|Six Nations|Rugby Championship|\bURC\b|United Rugby|Top 14|Pro D2|Super Rugby|Gallagher (?:PREM|Premiership)|\bPREM\b|\bPWR\b|Premiership Rugby|Champions Cup|Autumn Nations|Nations Series|Bunnings NPC|Currie Cup|Lions Tour"),
+    ("Rugby Union", r"Nations Championship|Nations Cup|\bAll Blacks\b|\bWallabies\b|Six Nations|Rugby Championship|\bURC\b|United Rugby|Top 14|Pro D2|Super Rugby|Gallagher (?:PREM|Premiership)|\bPREM\b|\bPWR\b|Premiership Rugby|Champions Cup|Autumn Nations|Nations Series|Bunnings NPC|Currie Cup|Lions Tour"),
     ("Golf", r"\b(?:PGA|LPGA|LIV Golf|DP World Tour|Ryder Cup|Solheim Cup|Presidents Cup|Korn Ferry|Race to Dubai|Q-School|USPGA|Asian Tour|Rolex Grand Final)\b|Open Championship|Augusta National"),
-    ("Basketball", r"\b(?:NBA|WNBA|NBL|WNBL|FIBA|EuroLeague|EuroCup|NCAAB|G League|East Asia Super League|Liga ACB)\b|March Madness"),
+    ("Basketball", r"\b(?:NBA|WNBA|NBL|WNBL|FIBA|EuroLeague|EuroCup|NCAAB|G League|East Asia Super League|Liga ACB)\b|March Madness|\bRapid League\b"),
     ("American Football", r"\b(?:NFL|NCAAF|CFL|CFP|CFB)\b|Super Bowl|Pro Football Talk|Football Night In America|College GameDay"),
     ("Ice Hockey", r"\b(?:NHL|KHL|AHL|EIHL|IIHF|SHL)\b|Stanley Cup"),
     ("Baseball", r"\b(?:MLB|NPB|KBO)\b|World Series(?! of)"),
@@ -6676,11 +6700,86 @@ NC_DESC_RE = re.compile(r"^NC\.\s*")
 NC_ROUND_RE = re.compile(r"(?i)\bRound (\d{1,2}) of (?:the )?Nations Championship")
 
 
-def nz_nations(cid, title, sub, desc):
-    if not cid.startswith("NZ.") or (sub or "").strip() != "NC" or not re.search(r"(?i)Nations Championship", desc or ""):
+# 21 Nov 2026 (user, Sky Sport NZ "whai v pouakai - Rapid League"): the Rapid League is New Zealand Basketball. The sport comes from SPORT_RULES; here the
+# competition is written out ("New Zealand Basketball, Rapid League") and lower-case team names are capitalised ("Whai v Pouakai").
+NZ_RAPID_RE = re.compile(r"(?i)^(?P<lead>(?:🔴\s*)?(?:LIVE[:,]\s*)?)(?P<teams>.+?)\s*[-\u2013:]\s*Rapid League\s*$")
+NZ_RAPID_SUB = "New Zealand Basketball, Rapid League"
+
+
+def _cap_teams(t):
+    return " ".join(w if w.lower() in ("v", "vs", "vs.", "at") else w.capitalize() for w in t.split())
+
+
+def nz_basketball(cid, title, sub, desc):
+    if not cid.startswith("NZ.") or not title:
         return title, sub, desc
-    r = NC_ROUND_RE.search(desc)
-    return title, "Nations Championship" + (f", Round {int(r.group(1))}" if r else ""), NC_DESC_RE.sub("", desc.strip()) or desc
+    m = NZ_RAPID_RE.match(title)
+    if m:
+        teams = m["teams"].strip()
+        title = f"{m['lead']}{_cap_teams(teams) if teams.islower() else teams}"
+        sub = NZ_RAPID_SUB
+    elif (sub or "").strip().lower() == "rapid league":
+        sub = NZ_RAPID_SUB
+        lead = LIVE_LEAD_RE.match(title)
+        body = title[lead.end():]
+        if body.islower():
+            title = lead.group(1) + _cap_teams(body)
+    return title, sub, desc
+
+
+# 21 Nov 2026 (user, Sky Sport 3 NZ "Georgia v USA - NC", Sky Sport 4 NZ "Portugal v Uruguay - NC"): "NC" is also the World Rugby Nations Cup (the second
+# division: Canada, Chile, Georgia, Hong Kong China, Portugal, Romania, Samoa, Spain, Tonga, Uruguay, USA, Zimbabwe). It is the Nations Cup when the description
+# says so, or when both teams in the title are Nations Cup teams and the description does not say Nations Championship.
+NATIONS_CUP_TEAMS = {"canada", "chile", "georgia", "hong kong china", "hong kong", "portugal", "romania", "samoa", "spain", "tonga", "uruguay", "usa",
+                     "united states", "zimbabwe"}
+NATIONS_CHAMP_TEAMS = {"england", "france", "ireland", "italy", "scotland", "wales", "argentina", "australia", "new zealand", "south africa", "fiji", "japan"}
+
+
+# 21 Nov 2026 (user): Sky NZ "NSW v Queensland D1" + "SS" = "New South Wales v Queensland", "Sheffield Shield, Day 1"
+SHIELD_TEAMS = {"nsw": "New South Wales", "qld": "Queensland", "vic": "Victoria", "wa": "Western Australia", "sa": "South Australia",
+                "tas": "Tasmania"}
+SHIELD_TITLE_RE = re.compile(r"^(?P<lead>(?:🔴\s*)?(?:LIVE[:,]\s*)?)(?P<a>.+?)\s+v\s+(?P<b>.+?)\s+D(?P<d>\d)(?:\s*-\s*SS)?$")
+
+
+def nz_shield(cid, title, sub, desc):
+    if not cid.startswith("NZ."):
+        return title, sub, desc
+    m = SHIELD_TITLE_RE.match((title or "").strip())
+    if not m or not ((sub or "").strip() == "SS" or re.search(r"-\s*SS$", title.strip())):
+        return title, sub, desc
+    a, b = (SHIELD_TEAMS.get(x.strip().lower(), x.strip()) for x in (m["a"], m["b"]))
+    d = re.sub(r"^SS\.\s*", "", (desc or "").strip()) or desc
+    return f"{m['lead']}{a} v {b}", f"Sheffield Shield, Day {m['d']}", d
+
+
+# 21 Nov 2026 (user): Sky NZ "Harlequins v Bristol Bears" + "PWR" is Premiership Women's Rugby
+PWR_ROUND_RE = re.compile(r"(?i)\bRound (\d{1,2}) of Premiership Women.s Rugby")
+
+
+def nz_pwr(cid, title, sub, desc):
+    if not cid.startswith("NZ.") or (sub or "").strip() != "PWR":
+        return title, sub, desc
+    d = re.sub(r"^PWR\.\s*", "", (desc or "").strip()) or desc
+    r = PWR_ROUND_RE.search(d or "")
+    return title, "Premiership Women's Rugby" + (f", Round {int(r.group(1))}" if r else ""), d
+
+
+def nz_nations(cid, title, sub, desc):
+    if not cid.startswith("NZ.") or (sub or "").strip() != "NC":
+        return title, sub, desc
+    d = desc or ""
+    body = LIVE_LEAD_RE.sub("", title or "", count=1)
+    sides = [x.strip().lower() for x in re.split(r"\s+v(?:s\.?)?\s+", body, maxsplit=1)] if re.search(r"\sv(?:s\.?)?\s", body) else []
+    if re.search(r"(?i)Nations Championship", d):
+        name = "Nations Championship"
+    elif re.search(r"(?i)Nations Cup", d) or (len(sides) == 2 and all(x in NATIONS_CUP_TEAMS for x in sides)):
+        name = "Nations Cup"
+    elif len(sides) == 2 and all(x in NATIONS_CHAMP_TEAMS for x in sides):
+        name = "Nations Championship"                       # both sides are Nations Championship teams
+    else:
+        return title, sub, desc
+    r = re.search(r"(?i)\bRound (\d{1,2}) of (?:the )?Nations (?:Championship|Cup)", d)
+    return title, name + (f", Round {int(r.group(1))}" if r else ""), NC_DESC_RE.sub("", d.strip()) or desc
 
 
 # 20 Nov 2026 (user, Sky Sport NZ): the Women's Super League was named three times (sub-title, start of the description, inside the description).
@@ -7198,6 +7297,9 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live):
     title, sub, desc = sky_titles(cid, title, sub, desc)
     title, sub, desc = nz_cricket(cid, title, sub, desc)
     title, sub, desc = nz_nations(cid, title, sub, desc)
+    title, sub, desc = nz_shield(cid, title, sub, desc)
+    title, sub, desc = nz_pwr(cid, title, sub, desc)
+    title, sub, desc = nz_basketball(cid, title, sub, desc)
     title, sub, desc = nz_wsl(cid, title, sub, desc)
     title, sub, desc = (hub_premier_codes(cid, x) for x in (title, sub, desc))
     title, sub, desc = star_glue(cid, title, sub, desc)
@@ -7455,6 +7557,7 @@ def build_xmltv(records, suffix, minutes):
             if sub and cid.startswith(SUB_KICKOFF_REGIONS):
                 sub = nz_sub(sub)                               # "PL:" -> "Premier League:"
                 title, sub = nz_teams_first(title, sub)         # teams in the title
+                title, sub = nz_session(title, sub)             # "X: D9 Aft" -> "Day 9, Afternoon"
             sub = carabao_name(sub, title, ev["start"])          # "Carabao Cup 4th Round"
             about = carabao_name(about, title, ev["start"])
             about = fuller_about(title, about)                    # "M4." -> "Coverage of the FIP World Cup Qatar 2026."
