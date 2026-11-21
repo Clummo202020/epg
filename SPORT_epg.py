@@ -6294,7 +6294,7 @@ SPORT_RULES = [
     ("Athletics", r"Diamond League"),
     ("Volleyball", r"\b(?:VNL|CEV)\b|SuperLega|Volleyball Nations"),
     ("Sailing", r"\bSailGP\b|America.s Cup|Vend[ée]e Globe"),
-    ("Show Jumping", r"\bLongines\b|Global Champions|\bGCL\b|\bLGCT\b|\bFEI\b|Jumping World Cup|Show Jumping|Grand Prix Jumping"),
+    ("Show Jumping", r"\bLongines\b|Global Champions|\bGCL\b|\bLGCT\b|\bFEI\b|(?<!ski )(?<!ski-)Jumping World Cup|Show Jumping|Grand Prix Jumping"),
     ("Badminton", r"\bBWF\b|Thomas (?:&|and) Uber"),
     ("Biathlon", r"\bIBU\b"),
     ("Swimming", r"Aquatics|\bFINA\b"),
@@ -6765,6 +6765,18 @@ def nz_pwr(cid, title, sub, desc):
     d = re.sub(r"^PWR\.\s*", "", (desc or "").strip()) or desc
     r = PWR_ROUND_RE.search(d or "")
     return title, "Premiership Women's Rugby" + (f", Round {int(r.group(1))}" if r else ""), d
+
+
+# 21 Nov 2026 (user): TNT Sports' placeholder "LIVE: This is TNT Sports 5" -> "LIVE: TNT Sports 5", and the web address is taken out of its description
+TNT_PLACEHOLDER_RE = re.compile(r"^(?P<lead>(?:🔴\s*)?(?:LIVE[:,]\s*)?)This is (?P<name>TNT Sports \d)\s*$", re.I)
+TNT_WEB_RE = re.compile(r"\s*For more information,? (?:please )?visit tntsports\.co\.uk\.?", re.I)
+
+
+def tnt_placeholder(cid, title, sub, desc):
+    m = TNT_PLACEHOLDER_RE.match((title or "").strip())
+    if not m:
+        return title, sub, desc
+    return f"{m['lead']}{m['name']}", sub, (TNT_WEB_RE.sub("", desc or "").strip() or desc)
 
 
 def nz_nations(cid, title, sub, desc):
@@ -7298,6 +7310,7 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live):
     title, sub = a_league_de(title, sub, desc)
     title, sub, desc = pl_season(title, sub, desc)
     title, sub, desc = sky_titles(cid, title, sub, desc)
+    title, sub, desc = tnt_placeholder(cid, title, sub, desc)
     title, sub, desc = nz_cricket(cid, title, sub, desc)
     title, sub, desc = nz_nations(cid, title, sub, desc)
     title, sub, desc = nz_shield(cid, title, sub, desc)
