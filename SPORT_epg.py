@@ -6029,11 +6029,13 @@ RUGBY_CLUB_NICKNAMES = {"bears": "Bristol Bears", "tigers": "Leicester Tigers", 
                         "quins": "Harlequins", "sarries": "Saracens", "chiefs": "Exeter Chiefs",
                         "sharks": "Sale Sharks", "falcons": "Newcastle", "red bulls": "Newcastle",
                         "cherry and whites": "Gloucester"}
-TEAM_NICKNAMES = [(r"(?i)\bblackcaps\b|\ball blacks\b", "New Zealand"),
-                  (r"(?i)\bwhite ferns\b|\bblack ferns\b", "New Zealand Women"),
-                  (r"(?i)\bwallabies\b", "Australia"), (r"(?i)\bwallaroos\b", "Australia Women"),
-                  (r"(?i)\bspringboks\b|\bproteas\b", "South Africa"),
-                  (r"(?i)\bred roses\b", "England Women")]
+# 21 Nov 2026 (user, Sky Sport 1 NZ: "...between the New Zealand and India"): a nickname used with "the" ("the Black Caps") left a rogue "the" in front of the
+# country name, so every pattern here (and NZ_TEAM_RE / NZ_WOMEN_RE below) takes the "the" with it.
+TEAM_NICKNAMES = [(r"(?i)\b(?:the\s+)?(?:black ?caps|all blacks)\b", "New Zealand"),
+                  (r"(?i)\b(?:the\s+)?(?:white ferns|black ferns)\b", "New Zealand Women"),
+                  (r"(?i)\b(?:the\s+)?wallabies\b", "Australia"), (r"(?i)\b(?:the\s+)?wallaroos\b", "Australia Women"),
+                  (r"(?i)\b(?:the\s+)?(?:springboks|proteas)\b", "South Africa"),
+                  (r"(?i)\b(?:the\s+)?red roses\b", "England Women")]
 
 # Rugby round (28 Oct 2026): ESPN gives none, so it is read from other listings in the same run -
 # Sky Sport NZ writes "... Round 5 of the Gallagher Premiership between the Bristol Bears and Leicester
@@ -6613,8 +6615,8 @@ def own_dates(start):
 # 20 Nov 2026 (user, Sky Sport NZ "LIVE: BLACKCAPS v India"): BLACKCAPS is the New Zealand cricket team -> "New Zealand" (WHITE FERNS ->
 # "New Zealand Women"). "BLACKCAPS v India" + "BLACKCAPS v India: 1st Test D3 Highlights" -> title "Cricket. New Zealand v India Highlights",
 # sub-title "1st Test, Day 3" (D3 = Day 3, L2H = Last Two Hours, HLs = Highlights); the repeated start of the description is dropped.
-NZ_TEAM_RE = re.compile(r"(?i)\bblack ?caps\b")
-NZ_WOMEN_RE = re.compile(r"(?i)\bwhite ?ferns\b")
+NZ_TEAM_RE = re.compile(r"(?i)\b(?:the\s+)?black ?caps\b")
+NZ_WOMEN_RE = re.compile(r"(?i)\b(?:the\s+)?white ?ferns\b")
 NZ_CRICKET_SUB_RE = re.compile(r"^(?P<match>.+?)(?:\s+D(?P<day>\d))?(?:\s+(?P<tail>Highlights|HLs?|L2H|Wrap))?$")
 NZ_TAILS = {"highlights": " Highlights", "hl": " Highlights", "hls": " Highlights", "l2h": " Last Two Hours", "wrap": " Wrap"}
 
@@ -6654,12 +6656,18 @@ def nz_cricket(cid, title, sub, desc):
 NICKNAMES = [(re.compile(r"(?i)\b(?:the\s+)?wallabies\b"), "Australia"), (re.compile(r"(?i)\b(?:the\s+)?baggy greens\b"), "Australia Men")]
 
 
+# 21 Nov 2026 (user, "between the New Zealand and India"): safety net - "the" directly in front of a bare country / team name that is followed by
+# and / v / vs / at / a full stop or comma or the end of the text ("the New Zealand and India", "beat the Australia.") is dropped.
+THE_COUNTRY_RE = re.compile(r"(?i)\bthe\s+((?:New Zealand|Australia|South Africa|England|Ireland|India|Pakistan|Sri Lanka|Bangladesh|West Indies)"
+                            r"(?:\s+(?:Women|Men))?(?=\s+(?:and|v|vs\.?|at)\b|\s*[.,;:!]|\s*$))")
+
+
 def national_names(text):
     if not text:
         return text
     for rx, name in NICKNAMES:
         text = rx.sub(name, text)
-    return text
+    return THE_COUNTRY_RE.sub(r"\1", text)             # a left-over "the" in front of a bare country name (21 Nov 2026, user)
 
 
 # 20 Nov 2026 (user, Sky Sport NZ "LIVE: Ireland v South Africa" + "NC"): the secondary title "NC" is the Nations Championship - written out, with the
