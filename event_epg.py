@@ -293,13 +293,13 @@ FUBO_AT = re.compile(
 FUBO_AT_TZ = "America/New_York"
 FUBO_TOKEN = "r4k9"
 # Disney+ USA (20 Nov 2026, user): "Purdue vs Florida State @ Nov 19 8:00 AM :Disney+ USA  04" (ESPN content; some titles hold an "@" of their own,
-# e.g. "ABC11 Eyewitness News @ 10AM @ Nov 19 ..."). Time taken as US Eastern. The long college tennis names are split: "Court 6-NCAA Division I
+# e.g. "ABC11 Eyewitness News @ 10AM @ Nov 19 ..."). Time taken as US Pacific (was Eastern until 21 Nov). The long college tennis names are split: "Court 6-NCAA Division I
 # Singles & Doubles Championships (Round of 16)" -> title "Tennis. Court 6", the championship name goes in the description.
 DISNEY_AT = re.compile(
     r"^\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
     r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*:\s*Disney\+?\s*USA\s*(?P<num>\d+)\s*$", re.I)
-DISNEY_AT_TZ = "America/New_York"
-DISNEY_TOKEN = "h2m6"
+DISNEY_AT_TZ = "America/Los_Angeles"      # 21 Nov 2026: guide_health measured the stream times 195 min (median, 5 matches) before the real start = US Pacific, not Eastern
+DISNEY_TOKEN = "w5c8"                    # 21 Nov 2026: new ids (times moved 3 h later); was h2m6
 DISNEY_NCAA_TENNIS = re.compile(r"^(?P<court>[^-]{2,30}?)\s*-\s*(?P<rest>NCAA\b.+)$")
 NBA_ESPN = "basketball/nba"
 NBA_EVENT_HOURS = 3
