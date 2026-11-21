@@ -6022,6 +6022,9 @@ def nz_session(title, sub):
     secondary title, "D9" becomes "Day 9" and "Aft"/"Eve"/"Morn" are written out."""
     if not sub:
         return title, sub
+    h = re.match(r"^(?P<comp>.+?)\s+Highlights$", sub.strip())            # 21 Nov 2026: "Grand Slam Of Darts" + "Grand Slam Of Darts Highlights" -> "Grand Slam of Darts" + "Highlights"
+    if h and h["comp"].strip().lower() == (title or "").strip().lower():
+        return re.sub(r"\bOf\b", "of", h["comp"].strip()), "Highlights"
     b = re.match(r"^Bowls New Zealand:\s*(?P<comp>.+?)\s*$", title or "")       # "Bowls New Zealand: Oceania Champs" + "Oceania Champs: Day Four"
     if b:
         comp = re.sub(r"\bChamps\b", "Championships", b["comp"])
