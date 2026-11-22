@@ -6279,7 +6279,7 @@ SPORT_RULES = [
     ("Netball", r"\bSilver Ferns\b|\bNet Blacks\b|Super Netball|Quad Series"),
     ("Rugby League", r"\bNRLW?\b|State of Origin|\bRLWC\d*\b|Challenge Cup Final"),
     ("Rugby Union", r"Nations Championship|Nations Cup|\bAll Blacks\b|\bWallabies\b|Six Nations|Rugby Championship|\bURC\b|United Rugby|Top 14|Pro D2|Super Rugby|Gallagher (?:PREM|Premiership)|\bPREM\b|\bPWR\b|Premiership Rugby|Champions Cup|Autumn Nations|Nations Series|Bunnings NPC|Currie Cup|Lions Tour"),
-    ("Golf", r"\b(?:PGA|LPGA|LIV Golf|DP World Tour|Ryder Cup|Solheim Cup|Presidents Cup|Korn Ferry|Race to Dubai|Q-School|USPGA|Asian Tour|Rolex Grand Final)\b|Open Championship|Augusta National"),
+    ("Golf", r"\b(?:PGA|LPGA|LIV Golf|DP World Tour|Ryder Cup|Solheim Cup|Presidents Cup|Korn Ferry|Race to Dubai|Q-School|USPGA|Asian Tour|Rolex Grand Final)\b|Open Championship|Augusta National|\bW?TGL\b"),
     ("Basketball", r"\b(?:NBA|WNBA|NBL|WNBL|FIBA|EuroLeague|EuroCup|NCAAB|G League|East Asia Super League|Liga ACB)\b|March Madness|\bRapid League\b"),
     ("American Football", r"\b(?:NFL|NCAAF|CFL|CFP|CFB)\b|Super Bowl|Pro Football Talk|Football Night In America|College GameDay"),
     ("Ice Hockey", r"\b(?:NHL|KHL|AHL|EIHL|IIHF|SHL)\b|Stanley Cup"),
@@ -6776,7 +6776,10 @@ def tnt_placeholder(cid, title, sub, desc):
     m = TNT_PLACEHOLDER_RE.match((title or "").strip())
     if not m:
         return title, sub, desc
-    return f"{m['lead']}{m['name']}", sub, (TNT_WEB_RE.sub("", desc or "").strip() or desc)
+    name = m["name"]
+    # 21 Nov 2026 (user): TNT Sports 5+ are overflow channels, only on air for the odd live event
+    return (f"{m['lead']}{name}", sub,
+            f"{name} is an overflow channel. It shows live events when TNT Sports 1 to 4 are busy, and is not on air 24/7.")
 
 
 def nz_nations(cid, title, sub, desc):
@@ -7297,7 +7300,242 @@ def pl_season(title, sub, desc, live=False):
         text = f"{text} {d}"
     return new_title, new_sub, text
 
+# TNT Sports 5 live events (21 Nov 2026, user): TNT Sports 5 is an overflow channel (only on air for the odd live event). tvguide.co.uk lists the matches on it
+# ("Tue 24 Nov / 20:00 / Broadcast · 19:55 / Slovan Bratislava vs Real Betis / UEFA Champions League / Match details"). A "LIVE: TNT Sports 5" placeholder block
+# that overlaps one of those matches is renamed to the match; with the page unreachable (or its layout changed) the placeholder stays.
+TNT5_URL = "https://www.tvguide.co.uk/sport/football/tnt-sports-5"
+TNT5_LABEL = "TNT Sports 5 (tvguide.co.uk)"
+TNT5_CID = "UK.TNTSports5"
+TNT5_MATCH_MINUTES = 130
+_TNT5 = {"matches": None, "channel": None}
+_TNT_DATE_RE = re.compile(r"^(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-z]*,?\s+(\d{1,2})\s+([A-Z][a-z]{2})[a-z]*$")
+_TNT_TIME_RE = re.compile(r"^(\d{1,2}):(\d{2})$")
+
+
+def parse_tnt5(page, today=None):
+    """[{start, bc, ko, a, b, comp}] from the tvguide.co.uk page text (line by line: date heading, kick-off, "Broadcast · HH:MM", teams, competition)"""
+    today = today or datetime.now(LONDON).date()
+    lines = [re.sub(r"\s+", " ", html.unescape(x)).strip() for x in re.split(r"<[^>]+>", re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", page or ""))]
+    lines = [x for x in lines if x]
+    out, cur = [], None
+    for i, ln in enumerate(lines):
+        d = _TNT_DATE_RE.match(ln)
+        if d and d.group(2) in ("Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()):
+            mon = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split().index(d.group(2)) + 1
+            yr = today.year + (1 if mon < today.month - 6 else 0)
+            cur = date(yr, mon, int(d.group(1)))
+            continue
+        b = re.match(r"^Broadcast\s*[·\-|]\s*(\d{1,2}):(\d{2})$", ln)
+        if not (b and cur and i >= 1 and i + 2 < len(lines)):
+            continue
+        k = _TNT_TIME_RE.match(lines[i - 1])
+        teams = re.split(r"\s+(?:vs?\.?)\s+", lines[i + 1], maxsplit=1)
+        if not (k and len(teams) == 2):
+            continue
+        mk = lambda h, m: datetime(cur.year, cur.month, cur.day, int(h), int(m), tzinfo=LONDON).astimezone(timezone.utc)
+        out.append({"ko": mk(*k.groups()), "bc": mk(*b.groups()), "a": teams[0].strip(), "b": teams[1].strip(), "comp": lines[i + 2].strip()})
+    return out
+
+
+def tnt5_matches():
+    if _TNT5["matches"] is None:
+        page = fetch(TNT5_URL, retries=2, label=TNT5_LABEL, quiet=True)
+        try:
+            _TNT5["matches"] = parse_tnt5(page) if page else []
+        except Exception as e:
+            print(f"  WARNING: {TNT5_LABEL}: {e}")
+            _TNT5["matches"] = []
+        print(f"  {TNT5_LABEL}: {len(_TNT5['matches'])} matches" if _TNT5["matches"] else f"  {TNT5_LABEL}: no matches read (placeholder wording stays)")
+    return _TNT5["matches"]
+
+
+# TNT Sports 5, ALL sports (21 Nov 2026, user): tvguide.co.uk also has the channel's own schedule page, which lists the other sports too ("Live: Ski Jumping World Cup",
+# "Live Test Cricket"). Every day is a page: /channel/tnt-sports-5 (today) and ?date=YYYY-MM-DD. Each entry is "6:00 AM / title / subtitle / description" (UK time, 12-hour);
+# "This is TNT Sports 5" is the filler. A placeholder block that overlaps a LIVE entry takes its title, sub-title and description, and the normal sport naming then runs on it.
+TNT5_CHANNEL_URL = "https://www.tvguide.co.uk/channel/tnt-sports-5"
+TNT5_CHANNEL_DAYS = 7
+_TNT5_CH = {"entries": None}
+_TNT5_CLOCK_RE = re.compile(r"^(\d{1,2}):(\d{2})\s?([AaPp][Mm])$")
+_TNT5_JUNK_RE = re.compile(r"^(?:today|tomorrow|yesterday|previous|next|watch|more|set reminder|share|live now|on now|now|tonight)$", re.I)
+
+
+def parse_tnt5_channel(page, day):
+    """[{start, end, title, sub, desc}] (UTC) for one day of the channel page: a time line, then title, then (optional) sub-title and description"""
+    lines = [re.sub(r"\s+", " ", html.unescape(x)).strip() for x in re.split(r"<[^>]+>", re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", page or ""))]
+    lines = [x for x in lines if x and not _TNT5_JUNK_RE.match(x)]
+    rows, prev = [], None
+    for ln in lines:
+        c = _TNT5_CLOCK_RE.match(ln)
+        if c:
+            h = int(c.group(1)) % 12 + (12 if c.group(3).lower() == "pm" else 0)
+            mins = h * 60 + int(c.group(2))
+            if prev is not None and mins < prev - 60:           # past midnight: the next calendar day
+                day = day + timedelta(days=1)
+            prev = mins
+            rows.append({"t": datetime(day.year, day.month, day.day, h, int(c.group(2)), tzinfo=LONDON).astimezone(timezone.utc), "x": []})
+        elif rows and len(rows[-1]["x"]) < 3:
+            rows[-1]["x"].append(ln)
+    out = []
+    for i, r in enumerate(rows):
+        x = r["x"]
+        if not x:
+            continue
+        title, rest = x[0], x[1:]
+        sub = desc = ""
+        if len(rest) >= 2:
+            sub, desc = rest[0], rest[1]
+        elif len(rest) == 1:
+            if len(rest[0]) > 70 or re.search(r"\bCoverage\b|\bhighlights\b|\btakes place\b", rest[0], re.I):
+                desc = rest[0]
+            else:
+                sub = rest[0]
+        end = rows[i + 1]["t"] if i + 1 < len(rows) else r["t"] + timedelta(hours=6)
+        out.append({"start": r["t"], "end": end, "title": title, "sub": sub, "desc": desc})
+    return out
+
+
+def tnt5_channel_entries():
+    """LIVE entries (title starts 'Live') of the next few days of the channel page. Empty when the page can't be read."""
+    if _TNT5["channel"] is None:
+        res, ok = [], 0
+        today = datetime.now(LONDON).date()
+        for n in range(TNT5_CHANNEL_DAYS):
+            d = today + timedelta(days=n)
+            page = fetch(TNT5_CHANNEL_URL if n == 0 else f"{TNT5_CHANNEL_URL}?date={d.isoformat()}", retries=2, label=f"{TNT5_LABEL} {d.isoformat()}", quiet=True)
+            try:
+                rows = parse_tnt5_channel(page, d) if page else []
+            except Exception as e:
+                print(f"  WARNING: {TNT5_LABEL} {d}: {e}")
+                rows = []
+            ok += bool(rows)
+            res += [r for r in rows if re.match(r"(?i)^live\b", r["title"])]
+        _TNT5["channel"] = res
+        print(f"  TNT Sports 5 channel page: {len(res)} live events in {ok} of {TNT5_CHANNEL_DAYS} days" if res else
+              f"  TNT Sports 5 channel page: no live events read ({ok} of {TNT5_CHANNEL_DAYS} days had entries)")
+    return _TNT5["channel"]
+
+
+def tnt5_named_also(start, title, sub, desc):
+    """A TNT Sports 5 block the source already names ("Champions League: S. Bratislava v R. Betis", sub-title "New Zealand v India"): the same
+    "This match is also available on ..." line is added to its description. Anything without exactly two sides, or already carrying the line, is left alone."""
+    try:
+        if "also available on" in (desc or "") or team_sport_of(title, sub, TNT5_CID, desc):          # team sports: the general pass (two channels)
+            return desc
+        for text in ((sub or "").strip(), (title or "").strip().rsplit(": ", 1)[-1].strip()):
+            parts = re.split(r"\s+vs?\.?\s+", text)
+            if len(parts) == 2 and all(2 < len(x.strip()) <= 40 for x in parts):
+                a, b = (x.strip() for x in parts)
+                also = tnt5_also({"a": a, "b": b, "ko": start})
+                if also:
+                    return f"{desc} | This match is also available on {also}." if desc else f"This match is also available on {also}."
+                return desc
+    except Exception as e:
+        print(f"  WARNING: TNT Sports 5 'also available on' lookup failed ({e})")
+    return desc
+
+
+def tnt5_channel_event(lead, start, stop, title, sub, desc):
+    best, bo = None, timedelta(0)
+    for e in tnt5_channel_entries():
+        ov = min(stop, e["end"]) - max(start, e["start"])
+        if ov > bo:
+            best, bo = e, ov
+    if not best or bo < timedelta(minutes=15):
+        return title, sub, desc
+    name = re.sub(r"(?i)^live\b[:,\s]*", "", best["title"]).strip() or best["title"]
+    new_sub = best["sub"]
+    new_desc = best["desc"] or best["sub"] or desc
+    t = re.match(r"^(.+?) v (.+)$", new_sub)
+    if t and not team_sport_of(f"{lead}{name}", new_sub, TNT5_CID, new_desc):        # two sides in the sub-title (football): the other channels with the same game
+        also = tnt5_also({"a": t.group(1).strip(), "b": t.group(2).strip(), "ko": best["start"]})
+        if also:
+            new_desc = f"{new_desc} | This match is also available on {also}."
+    return f"{lead}{name}", new_sub, new_desc
+
+
+def tnt5_event(cid, start, stop, title, sub, desc):
+    """a TNT Sports 5 placeholder block that overlaps a listed match -> that match"""
+    if cid != TNT5_CID:
+        return title, sub, desc
+    if not TNT_PLACEHOLDER_RE.match((title or "").strip()):
+        return title, sub, tnt5_named_also(start, title, sub, desc)          # a real event already named by the source: only the other channels are added
+    best, bo = None, timedelta(0)
+    for m in tnt5_matches():
+        a, z = m["bc"], m["ko"] + timedelta(minutes=TNT5_MATCH_MINUTES)
+        ov = min(stop, z) - max(start, a)
+        if ov > bo:
+            best, bo = m, ov
+    lead = TNT_PLACEHOLDER_RE.match(title.strip())["lead"]
+    if not best or bo < timedelta(minutes=15):
+        return tnt5_channel_event(lead, start, stop, title, sub, desc)           # not a football match listed: the channel page (all sports)
+    bc = best["bc"].astimezone(LONDON)
+    cov = f"{bc.hour % 12 or 12}{'' if bc.minute == 0 else f':{bc.minute:02d}'}{'am' if bc.hour < 12 else 'pm'}"
+    text = f"{best['comp']}: {best['a']} v {best['b']}. Coverage from: {cov}."
+    also = tnt5_also(best)
+    if also:
+        text += f" | This match is also available on {also}."          # the channels come LAST after a "|", as on the football channels
+    return f"{lead}Football. {best['a']} v {best['b']}", best["comp"], text
+
+
+# Other channels carrying the same match (21 Nov 2026, user): the same lookup football_epg.py uses for "This match is also available on ..." -
+# watch_channels.CHANNELS whose own listing in our guides is on air at kick-off + 20 to 30 minutes and names both teams, plus the Paramount+ / Peacock /
+# Stan Sport slots in the events guide. TNT Sports 5 itself is left out. Anything that goes wrong just means no extra sentence.
+_TNT5_ALSO = {"listings": None, "slots": None}
+_TNT5_GENERIC = {"real", "city", "united", "utd", "town", "county", "albion", "athletic", "rovers", "wanderers", "rangers", "hotspur", "wednesday", "villa",
+                 "forest", "palace", "club", "fc", "afc", "sc", "sporting", "inter", "olympique", "borussia", "paris", "sporting", "dynamo", "red", "star"}
+
+
+def _tnt5_norm(text):
+    text = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode().lower()
+    return " " + re.sub(r"[^a-z0-9&']+", " ", text.replace(" and ", " & ")) + " "
+
+
+def _tnt5_aliases(name):
+    n = _tnt5_norm(name)
+    words = n.split()
+    out = {n}
+    for w in (words[-1:] + words[:1]):                    # a distinctive single word ("betis", "slovan") as the event titles often shorten club names
+        if len(w) > 4 and w not in _TNT5_GENERIC:
+            out.add(f" {w} ")
+    return sorted(out)
+
+
+def tnt5_also(m):
+    try:
+        import watch_channels as wc
+    except Exception as e:
+        print(f"  NOTE: watch_channels.py not available ({e}) - no 'also available on' line for TNT Sports 5")
+        return ""
+    try:
+        if _TNT5_ALSO["listings"] is None:
+            _TNT5_ALSO["listings"] = wc.load_listings()
+            try:
+                _TNT5_ALSO["slots"] = wc.load_event_slots()
+            except Exception as e:
+                print(f"  Events guide not read ({e}) - no event-stream services named")
+                _TNT5_ALSO["slots"] = []
+        ha, aa = _tnt5_aliases(m["a"]), _tnt5_aliases(m["b"])
+        both = lambda txt: (lambda t: any(x in t for x in ha) and any(x in t for x in aa))(_tnt5_norm(txt))
+        ko, fams = m["ko"], {}
+        for cid, name, family in wc.CHANNELS:
+            if cid == TNT5_CID:
+                continue
+            for s, e, text in _TNT5_ALSO["listings"].get(cid, []):
+                if s <= ko + timedelta(minutes=20) and e >= ko + timedelta(minutes=30) and both(text):
+                    fams.setdefault(family, []).append(name)
+                    break
+        names = wc.order_names(fams)
+        services = wc.event_services_for(ko, both, _TNT5_ALSO["slots"] or [])
+        allnames = names + [x for x in services if x not in names]
+        print(f"  {TNT5_LABEL}: {m['a']} v {m['b']} also on {len(allnames)} channels / services")
+        return wc.join_names(allnames) if allnames else ""
+    except Exception as e:
+        print(f"  WARNING: TNT Sports 5 'also available on' lookup failed ({e})")
+        return ""
+
+
 def add_programme(tv, cid, start, stop, title, sub, desc, live):
+    title, sub, desc = tnt5_event(cid, start, stop, title, sub, desc)             # TNT Sports 5 overflow: the match on air
     if sub != "Coming up" and not re.search(r"\(\w{3} \d{1,2} \w{3},", title or ""):      # own date out of the title / sub-title / description
         days, yr = own_dates(start), start.year
         title = drop_own_date(title, days, yr)
@@ -7923,6 +8161,156 @@ def unique_path(path):
 # --------------------------------------------------------------------------
 # Main
 # --------------------------------------------------------------------------
+# ALTERNATIVE CHANNELS on team v team events (22 Nov 2026, user): a LIVE "A v B" block in a team sport (cricket, rugby, basketball, ice hockey ...) gets
+# "This match is also available on X and Y." - at most TWO other channels, taken from watch_channels.CHANNELS (the channels the user has) in the order
+# UK free-to-air, Sky, TNT, then overseas, ONLY channels with English commentary. Football is left to football_epg.py (all channels) and the US sports to TEAMS_epg.py
+# (two). A channel counts when its own listing is on air at kick-off + 20 to 30 minutes and names both sides (same test as football_epg.py). Never fails the run.
+ALT_LINE = "This match is also available on {chs}."
+ALT_MAX = 2
+ALT_NOT_ENGLISH = set()          # ids of channels WITHOUT English commentary, left out of the alternatives (22 Nov 2026, user: Cytavision Sport 3, Now Premier League, beIN, Hub all have English commentary)
+ALT_SPORTS = {"Cricket", "Netball", "Rugby League", "Rugby Union", "Basketball", "American Football", "Ice Hockey", "Baseball", "Aussie Rules", "Volleyball", "Handball"}
+_ALT_SKIP_RE = re.compile(r"(?i)\b(?:highlights|replays?|classic|classics|reload|preview|review|magazine|build-?up|analysis|round-?up|rewind)\b|\bthis is\b")
+_ALT_WOMEN_RE = re.compile(r"(?i)\bwomen|\bladies\b|\blpga\b|\bwsl\b|\bnwsl\b|\bwbbl\b|\bwnba\b|\bwpl\b|\bwnbl\b|\bnrlw\b|\baflw\b|\bpwr\b|\bnetball\b")
+_ALT_AGE_RE = re.compile(r"(?i)\bu-?(\d{2})\b")
+
+
+def team_sport_of(title, sub, cid, desc):
+    """The team sport ('Rugby Union' ...) a 'A v B' block belongs to, or None (football, individual sports, anything not recognised)"""
+    try:
+        body = LIVE_LEAD_RE.sub("", title or "")
+        said = re.match(r"(?i)^(" + "|".join(sorted(map(re.escape, ALT_SPORTS), key=len, reverse=True)) + r")\.\s", body)
+        if said:                                           # the title already says it: "Cricket. New Zealand v India"
+            return next(x for x in ALT_SPORTS if x.lower() == said.group(1).lower())
+        sport = add_sport(title, sub, cid, desc, learn=True)
+        if sport is None and TEAM_SPORT and FIXTURE_RE.search(body):
+            sport = team_sport(f"{body} {sub or ''}")
+    except Exception:
+        return None
+    return sport if sport in ALT_SPORTS else None
+
+
+def alt_sides(title, sub):
+    """(side A, side B) from the sub-title or the end of the title ('Rugby Union. Premiership: Harlequins v Bristol Bears'), or None"""
+    for text in ((sub or "").strip(), LIVE_LEAD_RE.sub("", (title or "").strip()).rsplit(": ", 1)[-1].strip()):
+        text = re.split(r"\s+-\s+|\s+\(|,\s", text)[0]
+        parts = re.split(r"\s+v\s+", text)
+        if len(parts) == 2 and all(2 < len(x.strip()) <= 40 for x in parts):
+            return parts[0].strip(), parts[1].strip()
+    return None
+
+
+# EVENT NAMES instead of sides (22 Nov 2026, user): golf, Formula 1 and MotoGP (one tournament / race weekend = one broadcast). The FULL name must be on both
+# listings - no shortened names ("Australian PGA Champ", "GP Katar", "Qatar GP" never count) - and the series must be the same (F1 Academy is not Formula 1, Moto3 is not MotoGP).
+# Tennis, snooker, darts, bowls, cycling ... are left out on purpose: several matches / courts / stages run at once, so the same event name would send people to the wrong one.
+_GOLF_NAME_RE = re.compile(r"((?:[A-Z][\w'&.-]*|&)(?: (?:[A-Z][\w'&.-]*|of|de|&)){0,6}? (?:Championship|Open|Classic|Invitational|Challenge|Masters|Trophy|Pro-Am|Tournament|Cup|Series))\b")
+_GOLF_GENERIC = {"the", "world", "championship", "open", "classic", "masters", "trophy", "tour", "cup", "series", "final", "finals", "grand", "tournament",
+                 "invitational", "challenge", "pro", "am", "golf", "pga", "lpga", "dp", "men", "women", "international", "national", "of", "de", "and"}
+_GP_BEFORE_RE = re.compile(r"(?i)\b([a-z][\w'-]+) grand prix\b")
+_GP_OF_RE = re.compile(r"(?i)\bgrand prix (?:of|de|d') ?([a-z][\w'-]+)")
+_MOTOR_SERIES = (("f1academy", re.compile(r"(?i)\bf1 academy\b")), ("moto3", re.compile(r"(?i)\bmoto ?3\b")), ("moto2", re.compile(r"(?i)\bmoto ?2\b")),
+                 ("motogp", re.compile(r"(?i)\bmoto ?gp\b")), ("f1", re.compile(r"(?i)\bformula 1\b|\bf1\b(?! academy)")))
+_GP_SKIP = {"formula", "f1", "the", "a", "motogp", "moto", "heineken", "airways"}
+
+
+def _ev_norm(text):
+    return " " + re.sub(r"\s+", " ", re.sub(r"[^a-z0-9&']+", " ", unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode().lower())).strip() + " "
+
+
+def event_key(title, sub):
+    """('golf', ' australian pga championship ') / ('motor', (' qatar grand prix ', 'f1')) for a block whose FULL event name is written out, else None"""
+    text = f"{LIVE_LEAD_RE.sub('', title or '')} {sub or ''}"
+    if re.search(r"(?i)\bgolf\b", text):
+        for m in _GOLF_NAME_RE.finditer(text):
+            name = _ev_norm(m.group(1))
+            words = [w for w in name.split() if w not in _GOLF_GENERIC]
+            if words and len(name.split()) >= 2:
+                return "golf", name
+        return None
+    series = tuple(sorted(n for n, rx in _MOTOR_SERIES if rx.search(text)))
+    if not series:
+        return None
+    for rx in (_GP_OF_RE, _GP_BEFORE_RE):                           # "Grand Prix of Valencia" and "Valencia Grand Prix" are the same full name
+        m = rx.search(text)
+        if m and m.group(1).lower() not in _GP_SKIP:
+            return "motor", (f" {_ev_norm(m.group(1)).strip()} grand prix ", series)
+    return None
+
+
+def event_match(key, text):
+    """the other listing carries the same FULL event name (either name may be the longer one) and, for racing, the same series"""
+    kind, val = key
+    other = event_key(text, "")
+    if kind == "golf":
+        t = _ev_norm(text)
+        return val in t or bool(other and other[0] == "golf" and other[1] in val)
+    name, series = val
+    if not other or other[0] != "motor" or other[1][1] != series:
+        return False
+    return name in other[1][0] or other[1][0] in name or name in _ev_norm(text)
+
+
+def add_alternatives(tv):
+    try:
+        import watch_channels as wc
+    except Exception as e:
+        print(f"  NOTE: watch_channels.py not available ({e}) - no alternatives on team events")
+        return 0
+    try:
+        listings = wc.load_listings(sport_root=tv)
+    except Exception as e:
+        print(f"  Channel listings not read ({e}) - no alternatives on team events")
+        return 0
+    chans = [(cid, name, fam) for cid, name, fam in wc.CHANNELS if cid not in ALT_NOT_ENGLISH and not re.search(r"4K|UHD", name)]
+    seen = changed = 0
+    for p in tv.iter("programme"):
+        try:
+            if not any((c.text or "") == "Live" for c in p.findall("category")):
+                continue
+            title, sub = p.findtext("title") or "", p.findtext("sub-title") or ""
+            d = p.find("desc")
+            desc = (d.text or "") if d is not None else ""
+            if "also available on" in desc or "also live on" in desc:
+                continue
+            sides = alt_sides(title, sub)
+            key = None
+            if not (sides and team_sport_of(title, sub, p.get("channel", ""), desc)):
+                sides, key = None, event_key(title, sub)
+                if not key:
+                    continue
+            seen += 1
+            ko = datetime.strptime(p.get("start"), "%Y%m%d%H%M%S %z")
+            ha, aa = _tnt5_aliases(sides[0]) if sides else [], _tnt5_aliases(sides[1]) if sides else []
+            women = bool(_ALT_WOMEN_RE.search(f"{title} {sub}"))
+            ages = set(_ALT_AGE_RE.findall(f"{title} {sub}"))
+            fams = {}
+            for cid, name, fam in chans:
+                if cid == p.get("channel"):
+                    continue
+                for s0, e0, text in listings.get(cid, []):
+                    if not (s0 <= ko + timedelta(minutes=20) and e0 >= ko + timedelta(minutes=30)) or _ALT_SKIP_RE.search(text):
+                        continue
+                    t = _tnt5_norm(text)
+                    same = event_match(key, text) if key else (any(x in t for x in ha) and any(x in t for x in aa))
+                    if (same and bool(_ALT_WOMEN_RE.search(text)) == women and set(_ALT_AGE_RE.findall(text)) == ages):
+                        fams.setdefault(fam, []).append(name)
+                        break
+            names = wc.order_names(fams)[:ALT_MAX]
+            if not names:
+                continue
+            line = ALT_LINE.format(chs=wc.join_names(names)).replace("This match", "This event" if key else "This match", 1)
+            if d is None:
+                d = ET.Element("desc", {"lang": "en"})
+                kids = list(p)
+                pos = 1 + sum(1 for c in kids if c.tag in ("title", "sub-title"))
+                p.insert(pos, d)
+            d.text = f"{desc} | {line}" if desc else line
+            changed += 1
+        except Exception as e:
+            print(f"  WARNING: alternatives for one block failed ({e})")
+    print(f"Alternative channels: {seen} live team / golf / racing events looked at, {changed} given an 'also available on' line")
+    return changed
+
+
 def main():
     ap = argparse.ArgumentParser(description="XMLTV guide of sports TV channels in several countries.")
     ap.add_argument("--out", default=OUTPUT_NAME, help=f"output file (default {OUTPUT_NAME})")
@@ -8626,6 +9014,8 @@ def main():
             if idle:
                 count += sum(n for _, n in idle)
                 print(f"Idle-gap fillers: {sum(n for _, n in idle)} blocks on {len(idle)} channel(s)")
+    if not suffix:
+        add_alternatives(tv)
     out_path = unique_path(args.out) if args.unique else args.out
     write_xml(tv, out_path)
     if run_no is not None:
