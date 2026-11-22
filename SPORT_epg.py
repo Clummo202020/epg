@@ -477,7 +477,6 @@ SE_CHANNELS = {          # Allente channel number -> (id part, channel name)
     # (ATG Live: not in Allente's Swedish guide - removed 30 Oct 2026)
     # (Motorvision TV: not in Allente's guides - it comes from blue TV, CH.MotorvisionTV, see CH_CHANNELS)
     **{rf"re:TV4\s*Sport\s*Live\s*{n}\b": (f"TV4SportLive{n}", f"TV4 Sport Live {n}") for n in range(1, 5)},
-    r"re:V\s*Sport\s*(1\s*Live|Live\s*1)\b": ("VSport1Live", "V Sport 1 Live"),
 }
 NO_CHANNELS = {
     "10099": ("TV2Sport1", "TV 2 Sport 1"), "10021": ("TV2Sport2", "TV 2 Sport 2"),
@@ -7339,9 +7338,11 @@ def parse_tnt5(page, today=None):
 
 def tnt5_matches():
     if _TNT5["matches"] is None:
-        page = fetch(TNT5_URL, retries=2, label=TNT5_LABEL, quiet=True)
+        page = fetch(TNT5_URL, retries=2, label=TNT5_LABEL)
         try:
             _TNT5["matches"] = parse_tnt5(page) if page else []
+            if page and not _TNT5["matches"]:            # got a page but read nothing from it: show what came back
+                print(f"  {TNT5_LABEL}: page came back ({len(page)} characters) but no matches were read; starts: {re.sub(chr(92)+'s+', ' ', re.sub(r'<[^>]+>', ' ', page))[:160]!r}")
         except Exception as e:
             print(f"  WARNING: {TNT5_LABEL}: {e}")
             _TNT5["matches"] = []
@@ -7401,9 +7402,11 @@ def tnt5_channel_entries():
         today = datetime.now(LONDON).date()
         for n in range(TNT5_CHANNEL_DAYS):
             d = today + timedelta(days=n)
-            page = fetch(TNT5_CHANNEL_URL if n == 0 else f"{TNT5_CHANNEL_URL}?date={d.isoformat()}", retries=2, label=f"{TNT5_LABEL} {d.isoformat()}", quiet=True)
+            page = fetch(TNT5_CHANNEL_URL if n == 0 else f"{TNT5_CHANNEL_URL}?date={d.isoformat()}", retries=2, label=f"{TNT5_LABEL} {d.isoformat()}", quiet=(n > 0))
             try:
                 rows = parse_tnt5_channel(page, d) if page else []
+                if n == 0 and page and not rows:
+                    print(f"  {TNT5_LABEL} channel page: came back ({len(page)} characters) but no entries were read; starts: {re.sub(chr(92)+'s+', ' ', re.sub(r'<[^>]+>', ' ', page))[:160]!r}")
             except Exception as e:
                 print(f"  WARNING: {TNT5_LABEL} {d}: {e}")
                 rows = []
