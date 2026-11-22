@@ -1731,6 +1731,135 @@ def dummy_channel(chan_id, name, title, desc):
     return (chan_id, name, None, shows)
 
 
+# 22 Nov 2026 (user): until the quarter-finals appear in the guide, the eight clubs still in the Carabao Cup say what is next (same ids).
+# Delete this block (CARABAO_NEXT_*) once the ties are listed. The other Carabao channels keep the plain "no match listed" text.
+CARABAO_THROUGH = {"Everton.Carabao", "Fleetwood.Town.Carabao", "Manchester.City.Carabao", "Bradford.City.Carabao",
+                   "Crystal.Palace.Carabao", "Sunderland.Carabao", "Liverpool.Carabao", "Bournemouth.Carabao"}
+CARABAO_NEXT_TITLE = "Next Round: Quarter Finals"
+CARABAO_NEXT_SUB = "Week commencing Monday 14th December"
+CARABAO_NEXT_DESC = ("{club}: Next Round: Quarter Finals. To be played week commencing Monday 14th December. "
+                     "The match is added here as soon as it appears in the guide.")
+
+
+# 22 Nov 2026 (user): FA Cup and UEFA clubs say what is next too, until the match is listed. Delete the entries once they are no longer needed.
+# FA Cup (22 Nov 2026, user): the filler starts at the THIRD round, not the second (second-round ties appear in the guide by themselves).
+# After the second round (4-7 Dec) the winners are read from ESPN by facup_r2_winners(); FACUP_R3_CLUBS can add any by hand (names as the guide has them, without " FA Cup").
+FACUP_R3_CLUBS = set()
+FACUP_R2_LAST_DAY = date(2026, 12, 7)          # last day of the second-round ties (Fri 4 - Mon 7 Dec)
+FACUP_R3_SUB = "Weekend of Friday 8th January 2027"
+UEFA_MATCHDAYS = {}        # 22 Nov 2026 (user): the real next match is shown instead (next_match_text); entries here would add a "Next: Matchday N" fallback
+
+
+# 22 Nov 2026 (user): a cup / UEFA club channel with no match in the window shows its NEXT match when ESPN already lists one (a longer look-ahead,
+# for these idle channels only - the normal blocks and the 10-day window are unchanged).
+NEXT_COMPS = ["FA Cup", "Carabao Cup", "UEFA Champions League", "UEFA Europa League", "UEFA Conference League"]
+NEXT_LOOKAHEAD_DAYS = 60
+NEXT_MATCHES = {}          # (competition, club name) -> {"ko": London datetime, "home", "away", "tbc"}
+
+
+def _nm_key(name):
+    import html as _h
+    return _club_key(_h.unescape(name or ""))
+
+
+def fetch_next_matches(first_day):
+    """Fill NEXT_MATCHES with each club's earliest listed match from first_day on (ESPN, one request per day and competition)."""
+    NEXT_MATCHES.clear()
+    days = [first_day + timedelta(days=i) for i in range(NEXT_LOOKAHEAD_DAYS)]
+    for comp in NEXT_COMPS:
+        slug = COMPETITIONS[comp][0]
+
+        def grab(day):
+            try:
+                return ((get_json(f"{ESPN_BASE}/{slug}/scoreboard", {"dates": f"{day:%Y%m%d}"}) or {}).get("events")) or []
+            except Exception:
+                return []
+        n = 0
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            for evs in pool.map(grab, days):
+                for ev in evs:
+                    status = ((ev.get("status") or {}).get("type") or {}).get("name", "")
+                    if status in SKIP_STATUSES or not ev.get("date"):
+                        continue
+                    cmp_ = (ev.get("competitions") or [{}])[0]
+                    sides = {c.get("homeAway"): c for c in cmp_.get("competitors", [])}
+                    if "home" not in sides or "away" not in sides:
+                        continue
+                    h, a = sides["home"].get("team") or {}, sides["away"].get("team") or {}
+                    hn, an = short_name(h.get("displayName")), short_name(a.get("displayName"))
+                    if not (hn and an):
+                        continue
+                    ko = parse_espn_time(ev["date"]).astimezone(LONDON)
+                    rec = {"ko": ko, "home": hn, "away": an, "tbc": cmp_.get("timeValid") is False}
+                    n += 1
+                    for who in (hn, an):
+                        k = (comp, _nm_key(who))
+                        if k not in NEXT_MATCHES or ko < NEXT_MATCHES[k]["ko"]:
+                            NEXT_MATCHES[k] = rec
+        print(f"  Next-match look-ahead, {comp}: {n} fixtures")
+
+
+def next_match_text(club, comp):
+    """(title, sub, desc) for the club's next listed match, or None."""
+    r = NEXT_MATCHES.get((comp, _nm_key(club)))
+    if not r:
+        return None
+    ko = r["ko"]
+    when = f"{ko:%a %d %b}" + (", time to be confirmed" if r["tbc"] else f", {ko:%H:%M}")
+    tie = f"{r['home']} v {r['away']}"
+    return (f"Next match: {tie}", when,
+            f"{club}: {comp}, {tie}, {when}. The full match listing appears on this channel nearer the time.")
+
+
+_FACUP_R2 = {"winners": None}
+
+
+def facup_r2_winners():
+    """Names of the clubs that won an FA Cup second-round tie (4-7 Dec 2026), read from ESPN's finished results; empty when they can't be read.
+    No replays: a tie is always settled on the day (penalties / extra time), ESPN marks the winner."""
+    if _FACUP_R2["winners"] is None:
+        won = set()
+        try:
+            for d in range(4, 8):
+                data = get_json(f"{ESPN_BASE}/eng.fa/scoreboard", {"dates": f"202612{d:02d}"}) or {}
+                for ev in data.get("events") or []:
+                    if not (((ev.get("status") or {}).get("type") or {}).get("completed")):
+                        continue
+                    for c in (ev.get("competitions") or [{}])[0].get("competitors", []):
+                        if c.get("winner") and (c.get("team") or {}).get("displayName"):
+                            won.add(_club_key(short_name(c["team"]["displayName"])))
+        except Exception as e:                      # NoData or a network problem: leave the plain text
+            print(f"  NOTE: FA Cup second-round results not read ({e})")
+        _FACUP_R2["winners"] = won
+        print(f"  FA Cup second round: {len(won)} winning clubs read from ESPN")
+    return _FACUP_R2["winners"]
+
+
+def _club_key(n):
+    return n.replace("Utd", "United").replace("MK Dons", "Milton Keynes Dons").replace("&amp;", "&").strip()
+
+
+def next_up(e, club, comp):
+    """(title, sub, desc) for a club channel with no match listed yet but a known next round / matchday, else None."""
+    today = datetime.now(LONDON).date()
+    if comp == "Carabao Cup" and e["id"] in CARABAO_THROUGH:
+        return CARABAO_NEXT_TITLE, CARABAO_NEXT_SUB, CARABAO_NEXT_DESC.format(club=club)
+    if comp == "FA Cup":
+        through = {_club_key(c) for c in FACUP_R3_CLUBS}
+        if FACUP_R2_LAST_DAY < today < date(2027, 1, 9):
+            through |= facup_r2_winners()
+        if _club_key(club) in through and today < date(2027, 1, 9):
+            return ("Next Round: Third Round", FACUP_R3_SUB,
+                    f"{club}: Next Round: Third Round. Ties will be played on the weekend of Friday 8th January 2027. "
+                    f"The match is added here as soon as it appears in the guide.")
+        return None
+    for label, last, dates in UEFA_MATCHDAYS.get(comp, []):
+        if today <= last:
+            return (f"Next: {label}", dates,
+                    f"{club}: Next up is {label}, to be played {dates}. The match is added here as soon as it appears in the guide.")
+    return None
+
+
 def cup_idle_channels(have, suffix):
     """Channels listed in CUP_CHANNELS_FILE that have no match in the window (not in `have`): TAIL_HOURS blocks saying so."""
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), CUP_CHANNELS_FILE)
@@ -1751,11 +1880,12 @@ def cup_idle_channels(have, suffix):
         club = name[:-len(comp)].strip() if name.endswith(comp) else name
         fmt = {"club": club, "comp": comp, "days": FIXTURE_WINDOW_DAYS}
         shows, t = [], now
+        nxt = next_match_text(club, comp) or next_up(e, club, comp)
         while t < end:
             b = min(t + timedelta(hours=TAIL_HOURS), end)
-            shows.append({"comp": comp, "title": NO_MATCH_TITLE.format(**fmt), "sub": NO_MATCH_SUB,
-                          "desc": CUP_IDLE_DESC.format(**fmt), "start": t, "stop": b, "when": "", "teams": [],
-                          "tbc": False, "live_sub": NO_MATCH_SUB, "not_live": True})
+            ttl, sub, dsc = nxt or (NO_MATCH_TITLE.format(**fmt), NO_MATCH_SUB, CUP_IDLE_DESC.format(**fmt))
+            shows.append({"comp": comp, "title": ttl, "sub": sub, "desc": dsc, "start": t, "stop": b, "when": "", "teams": [],
+                          "tbc": False, "live_sub": sub, "not_live": True})
             t = b
         out.append((cid, name, None, shows))
     print(f"  Cup channels without a match in the window: {len(out)} of {len(entries)} listed")
@@ -2287,6 +2417,10 @@ def main():
     if NO_MATCH_CHANNELS and not args.english_only:
         OTHER_CLUBS.update(fetch_other_league_clubs())
     events = fetch_events(start, end)
+    try:
+        fetch_next_matches(end + timedelta(days=1))
+    except Exception as e:                          # never let the extra look-ahead stop the run
+        print(f"  NOTE: next-match look-ahead not read ({e})")
     matches = collect_matches(events, args.minutes)
     add_tv_listings(matches)
     add_prime(matches)
