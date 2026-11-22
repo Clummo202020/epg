@@ -291,7 +291,7 @@ def watch_names(g, listings):
             if any(f" {x} " in txt for x in a_nicks) and any(f" {x} " in txt for x in h_nicks):
                 by_family.setdefault(family, []).append(name)
                 break
-    return _WC.order_names(by_family)
+    return _WC.order_names(by_family)[:2]          # 22 Nov 2026 (user): US sports name at most TWO other channels
 
 
 def watch_services(g, names, slots):
@@ -303,7 +303,7 @@ def watch_services(g, names, slots):
     found = _WC.event_services_for(g["ko"], lambda t: (lambda w: any(f" {x} " in w for x in a_nicks) and any(f" {x} " in w for x in h_nicks))(_words(t)), slots)
     if any(n in ("USA Network", "NBC") for n in names):
         found = [x for x in found if x != "Peacock"]
-    return found
+    return found[:max(0, 2 - len(names))]          # 22 Nov 2026 (user): two in all, channels and services together
 
 
 def watch_note(g):

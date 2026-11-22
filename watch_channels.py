@@ -27,7 +27,7 @@ GUIDE_FILES = ("SPORT_epg.xml.gz", "USA_epg.xml.gz", "CANADA_epg.xml.gz")
 UA = {"User-Agent": "Mozilla/5.0 (watch_channels.py)"}
 
 # order the families are named in the sentence: UK free-to-air, Ireland, Sky, TNT, Premier Sports, Prime (added by football_epg.py), then overseas
-FAMILIES = ["fta", "rte", "virgin", "sky", "tnt", "premier", "prime", "nz", "sg", "bein", "cy", "usnb", "in", "us", "ca", "hk"]      # 19 Nov 2026 (user): Now (Hong Kong) last
+FAMILIES = ["fta", "rte", "virgin", "sky", "tnt", "premier", "prime", "nz", "sg", "bein", "cy", "usnb", "in", "us", "ca", "hk", "last"]      # 19 Nov 2026 (user): Now (Hong Kong) last
 
 _SKY = [("MainEvent", "Main Event"), ("MainEvent4K", "Main Event 4K"), ("PremierLeague", "Premier League"), ("Football", "Football"),
         ("Action", "Action"), ("Mix", "Mix"), ("NFL", "NFL"), ("Golf", "Golf"), ("Cricket", "Cricket"), ("F1", "F1"), ("F14K", "F1 4K"),
@@ -61,6 +61,9 @@ CHANNELS = (
     + [("US.CBS", "CBS", "us"), ("US.ABC", "ABC", "us"), ("US.FOX", "FOX", "us"), ("US.ESPN", "ESPN", "us"), ("US.ESPN2", "ESPN2", "us"),
        ("US.FS1", "FS1", "us"), ("US.TNT", "TNT", "us"), ("US.TBS", "TBS", "us"), ("US.NFLNetwork", "NFL Network", "us"),
        ("US.NBATV", "NBA TV", "us"), ("US.MLBNetwork", "MLB Network", "us"), ("US.NHLNetwork", "NHL Network", "us")]
+    # 22 Nov 2026 (user): English commentary, named LAST in the sentence (family "last"). NOT the Hindi Star Sports / Sony Ten 3 feeds, NOT Rush Prime (general entertainment).
+    + [("IN.StarSports1", "Star Sports 1", "last"), ("IN.StarSports2", "Star Sports 2", "last"), ("IN.StarSports3", "Star Sports 3", "last"),
+       ("CARIB.RushSports1", "Rush Sports", "last"), ("CARIB.RushSports2", "Rush Sports 2", "last"), ("CARIB.RushSports3", "Rush Sports 3", "last")]
     + [("CA.CTVMontreal", "CTV", "ca")]         # CTV (NFL, Super Bowl ...): needs the CA.CTVMontreal line in USA_epg.py's CA_CHANNELS
     + [(f"CA.TSN{n}", f"TSN{n}", "ca") for n in range(1, 6)]
     + [("CA.SportsnetOne", "Sportsnet One", "ca"), ("CA.SportsnetEast", "Sportsnet East", "ca"), ("CA.SportsnetWest", "Sportsnet West", "ca"),
