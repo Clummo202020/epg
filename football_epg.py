@@ -1790,7 +1790,8 @@ def fetch_next_matches(first_day):
                     if not (hn and an):
                         continue
                     ko = parse_espn_time(ev["date"]).astimezone(LONDON)
-                    rec = {"ko": ko, "home": hn, "away": an, "tbc": cmp_.get("timeValid") is False}
+                    rec = {"ko": ko, "home": hn, "away": an, "tbc": cmp_.get("timeValid") is False,
+                           "ids": {_nm_key(hn): str(h.get("id", "")), _nm_key(an): str(a.get("id", ""))}}
                     n += 1
                     for who in (hn, an):
                         k = (comp, _nm_key(who))
@@ -1860,23 +1861,40 @@ def next_up(e, club, comp):
     return None
 
 
-def cup_idle_channels(have, suffix):
-    """Channels listed in CUP_CHANNELS_FILE that have no match in the window (not in `have`): TAIL_HOURS blocks saying so."""
+def known_tie_entries(english, bases):
+    """22 Nov 2026 (user: the FA Cup second-round ties are already known, so every club with one should have its channel now): entries like those in
+    CUP_CHANNELS_FILE for each English-league club that has a FA Cup / Carabao Cup match in the look-ahead (NEXT_MATCHES) but no channel yet."""
+    out = []
+    for (comp, key), rec in NEXT_MATCHES.items():
+        if comp not in ("FA Cup", "Carabao Cup"):
+            continue
+        tid = (rec.get("ids") or {}).get(key, "")
+        if tid and tid in english and tid in bases:
+            out.append({"id": f"{bases[tid]}.{COMPETITIONS[comp][1]}", "name": f"{english[tid]} {comp}", "comp": comp})
+    return out
+
+
+def cup_idle_channels(have, suffix, extra=()):
+    """Channels listed in CUP_CHANNELS_FILE (plus `extra` known-tie entries) that have no match in the window (not in `have`): TAIL_HOURS blocks saying so."""
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), CUP_CHANNELS_FILE)
     try:
         with open(path, encoding="utf-8") as f:
             entries = json.load(f).get("channels", [])
     except (OSError, ValueError) as e:
-        print(f"  NOTE: {CUP_CHANNELS_FILE} not read ({e}) - cup channels without a match are left out")
-        return []
+        print(f"  NOTE: {CUP_CHANNELS_FILE} not read ({e}) - only cup channels with a known tie are added")
+        entries = []
     now = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
     end = now + timedelta(days=TAIL_DAYS)
     out = []
+    have = set(have)
+    n_listed = len(entries)
+    entries = list(entries) + list(extra)
     for e in entries:
         sbase, sext = e["id"].rsplit(".", 1)
         cid, name, comp = club_id(sbase, sext, suffix), e["name"], e["comp"]
         if cid in have:
             continue
+        have.add(cid)
         club = name[:-len(comp)].strip() if name.endswith(comp) else name
         fmt = {"club": club, "comp": comp, "days": FIXTURE_WINDOW_DAYS}
         shows, t = [], now
@@ -1888,7 +1906,7 @@ def cup_idle_channels(have, suffix):
                           "tbc": False, "live_sub": sub, "not_live": True})
             t = b
         out.append((cid, name, None, shows))
-    print(f"  Cup channels without a match in the window: {len(out)} of {len(entries)} listed")
+    print(f"  Cup channels without a match in the window: {len(out)} ({n_listed} listed in {CUP_CHANNELS_FILE}, {len(extra)} from known ties)")
     return out
 
 
@@ -2165,7 +2183,7 @@ def build_channels(matches, english, suffix, english_only):
         channels.append(tnt3_goals_channel(matches, suffix, chan_id=GOLAZO_GOALS_ID, chan_name=GOLAZO_GOALS_NAME,
                                         show=GOLAZO_SHOW, idle_desc=GOLAZO_IDLE_DESC, extra=GOLAZO_EXTRA,
                                         english_ids=set(english)))
-    channels.extend(cup_idle_channels({c[0] for c in channels}, suffix))
+    channels.extend(cup_idle_channels({c[0] for c in channels}, suffix, known_tie_entries(english, bases)))
     channels.sort(key=lambda c: c[1])
     return channels
 
