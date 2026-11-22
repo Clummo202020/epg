@@ -16,7 +16,7 @@
   "seen": "2026-11-22T08:07:39+00:00"
  },
  "_timing": {
-  "updated": "2026-11-22T09:37:17Z",
+  "updated": "2026-11-22T10:07:28Z",
   "groups": {
    "AppleMLS": {
     "n": 26,
@@ -77,8 +77,8 @@
     "max": 420
    },
    "Peacock": {
-    "n": 13,
-    "missed": 50,
+    "n": 26,
+    "missed": 100,
     "applied": true,
     "median": -30,
     "min": -80,
