@@ -7312,27 +7312,36 @@ _TNT_TIME_RE = re.compile(r"^(\d{1,2}):(\d{2})$")
 
 
 def parse_tnt5(page, today=None):
-    """[{start, bc, ko, a, b, comp}] from the tvguide.co.uk page text (line by line: date heading, kick-off, "Broadcast · HH:MM", teams, competition)"""
+    """[{ko, bc, a, b, comp}] from the tvguide.co.uk football page. As the page is built (22 Nov 2026, read in Chrome): a date heading (<h3>Tue 24 Nov</h3>),
+    then per match: the kick-off, "Broadcast · 19:55", the two sides as separate elements with "vs" between, then the competition."""
     today = today or datetime.now(LONDON).date()
-    lines = [re.sub(r"\s+", " ", html.unescape(x)).strip() for x in re.split(r"<[^>]+>", re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", page or ""))]
+    page = re.sub(r"(?s)<!--.*?-->", "", re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", page or ""))
+    lines = [re.sub(r"\s+", " ", html.unescape(x)).strip() for x in re.split(r"<[^>]+>", page)]
     lines = [x for x in lines if x]
     out, cur = [], None
+    months = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
     for i, ln in enumerate(lines):
         d = _TNT_DATE_RE.match(ln)
-        if d and d.group(2) in ("Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()):
-            mon = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split().index(d.group(2)) + 1
+        if d and d.group(2) in months:
+            mon = months.index(d.group(2)) + 1
             yr = today.year + (1 if mon < today.month - 6 else 0)
             cur = date(yr, mon, int(d.group(1)))
             continue
-        b = re.match(r"^Broadcast\s*[·\-|]\s*(\d{1,2}):(\d{2})$", ln)
-        if not (b and cur and i >= 1 and i + 2 < len(lines)):
+        b = re.match(r"^Broadcast\s*[·\-|]?\s*(\d{1,2}):(\d{2})$", ln)
+        if not (b and cur and i >= 1 and i + 3 < len(lines)):
             continue
         k = _TNT_TIME_RE.match(lines[i - 1])
-        teams = re.split(r"\s+(?:vs?\.?)\s+", lines[i + 1], maxsplit=1)
-        if not (k and len(teams) == 2):
+        if re.match(r"(?i)^vs?\.?$", lines[i + 2]):                      # sides as separate lines: A / vs / B / competition
+            a_, b_, comp = lines[i + 1], lines[i + 3], (lines[i + 4] if i + 4 < len(lines) else "")
+        else:                                                           # "A vs B" on one line
+            teams = re.split(r"\s+(?:vs?\.?)\s+", lines[i + 1], maxsplit=1)
+            if len(teams) != 2:
+                continue
+            a_, b_, comp = teams[0], teams[1], lines[i + 2]
+        if not k:
             continue
         mk = lambda h, m: datetime(cur.year, cur.month, cur.day, int(h), int(m), tzinfo=LONDON).astimezone(timezone.utc)
-        out.append({"ko": mk(*k.groups()), "bc": mk(*b.groups()), "a": teams[0].strip(), "b": teams[1].strip(), "comp": lines[i + 2].strip()})
+        out.append({"ko": mk(*k.groups()), "bc": mk(*b.groups()), "a": a_.strip(), "b": b_.strip(), "comp": comp.strip()})
     return out
 
 
@@ -7361,37 +7370,32 @@ _TNT5_JUNK_RE = re.compile(r"^(?:today|tomorrow|yesterday|previous|next|watch|mo
 
 
 def parse_tnt5_channel(page, day):
-    """[{start, end, title, sub, desc}] (UTC) for one day of the channel page: a time line, then title, then (optional) sub-title and description"""
-    lines = [re.sub(r"\s+", " ", html.unescape(x)).strip() for x in re.split(r"<[^>]+>", re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", page or ""))]
-    lines = [x for x in lines if x and not _TNT5_JUNK_RE.match(x)]
-    rows, prev = [], None
-    for ln in lines:
-        c = _TNT5_CLOCK_RE.match(ln)
-        if c:
-            h = int(c.group(1)) % 12 + (12 if c.group(3).lower() == "pm" else 0)
-            mins = h * 60 + int(c.group(2))
-            if prev is not None and mins < prev - 60:           # past midnight: the next calendar day
-                day = day + timedelta(days=1)
-            prev = mins
-            rows.append({"t": datetime(day.year, day.month, day.day, h, int(c.group(2)), tzinfo=LONDON).astimezone(timezone.utc), "x": []})
-        elif rows and len(rows[-1]["x"]) < 3:
-            rows[-1]["x"].append(ln)
+    """[{start, end, title, sub, desc}] (UTC) for one day of the channel page. As the page is built (22 Nov 2026, read in Chrome): every entry is a
+    block carrying data-date="2026-11-22T10:50:00.000Z" (its start, UTC), whose text is the time (two elements: "10:50" and "AM"), an optional
+    "119 minutes remaining", the title ("Live: Ski Jumping World Cup" / "Live Test Cricket" / "This is TNT Sports 5") and a description line."""
+    page = re.sub(r"(?s)<!--.*?-->", "", re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", page or ""))
+    marks = [(m.start(), m.group(1)) for m in re.finditer(r'data-date="(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z)"', page)]
+    rows = []
+    for n, (pos, iso) in enumerate(marks):
+        chunk = page[pos: marks[n + 1][0] if n + 1 < len(marks) else pos + 6000]
+        chunk = chunk.split('"', 2)[2] if chunk.count('"') >= 2 else chunk
+        chunk = chunk[chunk.find(">") + 1:] if ">" in chunk else chunk          # the rest of the block's own opening tag
+        lines = [re.sub(r"\s+", " ", html.unescape(x)).strip() for x in re.split(r"<[^>]+>", chunk)]
+        lines = [x for x in lines if x and not re.match(r"(?i)^(?:\d{1,2}:\d{2}|[ap]m|\d+ minutes? remaining|\d+ hours? remaining)$", x) and not _TNT5_JUNK_RE.match(x)]
+        if not lines:
+            continue
+        try:
+            start = datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(timezone.utc)
+        except ValueError:
+            continue
+        title = lines[0]
+        desc = lines[1] if len(lines) > 1 and re.match(r"(?i)^live\b", title) else ""
+        sm = re.match(r"^(.{3,60}? v .{3,60}?)\.(?:\s|$)", desc)
+        rows.append({"start": start, "title": title, "sub": sm.group(1).strip() if sm else "", "desc": desc})
     out = []
     for i, r in enumerate(rows):
-        x = r["x"]
-        if not x:
-            continue
-        title, rest = x[0], x[1:]
-        sub = desc = ""
-        if len(rest) >= 2:
-            sub, desc = rest[0], rest[1]
-        elif len(rest) == 1:
-            if len(rest[0]) > 70 or re.search(r"\bCoverage\b|\bhighlights\b|\btakes place\b", rest[0], re.I):
-                desc = rest[0]
-            else:
-                sub = rest[0]
-        end = rows[i + 1]["t"] if i + 1 < len(rows) else r["t"] + timedelta(hours=6)
-        out.append({"start": r["t"], "end": end, "title": title, "sub": sub, "desc": desc})
+        end = rows[i + 1]["start"] if i + 1 < len(rows) else r["start"] + timedelta(hours=6)
+        out.append({"start": r["start"], "end": end, "title": r["title"], "sub": r["sub"], "desc": r["desc"]})
     return out
 
 
