@@ -108,14 +108,14 @@ PL_TOKEN_CLUBS = {
 # is FROZEN - NEVER change one. The 20 clubs in PL_TOKEN_CLUBS keep 9rtt in every competition. MLS, Nations League and La Liga ids are unchanged.
 ID_TOKENS = {
     "Championship": "7kq2", "League1": "7kq2", "League2": "7kq2",        # English leagues
-    "FACup": "4mwd", "Carabao": "4mwd",                                   # English cups
+    "FACup": "x2cu", "Carabao": "4mwd",                                   # English cups (22 Nov 2026: FA Cup moved 4mwd -> x2cu, see club_id)
     "ChampsLge": "x8vn", "Europa": "x8vn", "ConfLeague": "x8vn",         # UEFA club competitions
 }
 
 
 def club_id(base, ext, suffix=""):
     """<Club>.<Competition>[.<token>][<run suffix>] - 9rtt for the clubs in PL_TOKEN_CLUBS, else the family token in ID_TOKENS (if any)."""
-    tok = PL_TOKEN if base in PL_TOKEN_CLUBS else ID_TOKENS.get(ext)
+    tok = ID_TOKENS["FACup"] if ext == "FACup" else (PL_TOKEN if base in PL_TOKEN_CLUBS else ID_TOKENS.get(ext))   # 22 Nov 2026 (user): every FA Cup id (PL clubs too) gets the NEW token x2cu - PlaylistLabs lists none of the old FA Cup ids; nothing was linked to them
     return f"{base}.{ext}" + (f".{tok}" if tok else "") + suffix
 
 
@@ -1876,7 +1876,7 @@ def known_tie_entries(english, bases):
     return out
 
 
-def cup_idle_channels(have, suffix, extra=()):
+def cup_idle_channels(have, suffix, extra=(), logo_by_name=None):
     """Channels listed in CUP_CHANNELS_FILE (plus `extra` known-tie entries) that have no match in the window (not in `have`): TAIL_HOURS blocks saying so."""
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)), CUP_CHANNELS_FILE)
     try:
@@ -1907,7 +1907,7 @@ def cup_idle_channels(have, suffix, extra=()):
             shows.append({"comp": comp, "title": ttl, "sub": sub, "desc": dsc, "start": t, "stop": b, "when": "", "teams": [],
                           "tbc": False, "live_sub": sub, "not_live": True})
             t = b
-        out.append((cid, name, None, shows))
+        out.append((cid, name, (logo_by_name or {}).get(club), shows))   # 22 Nov 2026: with the club badge - every channel PlaylistLabs lists has an <icon>, these had none
     print(f"  Cup channels without a match in the window: {len(out)} ({n_listed} listed in {CUP_CHANNELS_FILE}, {len(extra)} from known ties)")
     return out
 
@@ -2185,7 +2185,11 @@ def build_channels(matches, english, suffix, english_only):
         channels.append(tnt3_goals_channel(matches, suffix, chan_id=GOLAZO_GOALS_ID, chan_name=GOLAZO_GOALS_NAME,
                                         show=GOLAZO_SHOW, idle_desc=GOLAZO_IDLE_DESC, extra=GOLAZO_EXTRA,
                                         english_ids=set(english)))
-    channels.extend(cup_idle_channels({c[0] for c in channels}, suffix, known_tie_entries(english, bases)))
+    logo_by_name = {}
+    for tid, nm in names.items():
+        if nm and str(tid).isdigit():
+            logo_by_name.setdefault(nm, logos.get(tid) or f"https://a.espncdn.com/i/teamlogos/soccer/500/{tid}.png")
+    channels.extend(cup_idle_channels({c[0] for c in channels}, suffix, known_tie_entries(english, bases), logo_by_name))
     channels.sort(key=lambda c: c[1])
     return channels
 
