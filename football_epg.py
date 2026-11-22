@@ -1572,11 +1572,13 @@ def plplus_channel(matches):
 # "Coupang Play OTT" on every Premier League fixture). ONE guide channel, built like Premier League+: a block at every
 # Premier League kick-off listing that slot's matches; no 3pm blackout (not a UK service). New id CoupangPlay.m3zt (token like the other .x8vn / .4mwd ids).
 COUPANG_CHANNEL = True
+COUPANG_LIST_MATCHES = False   # 22 Nov 2026 (user): the Coupang Play streams channel is an umbrella; the Coupang Event channels carry the actual matches (not always Premier League), so listing a match here was confusing -> plain idle text only
 COUPANG_ID = "CoupangPlay.q6vd"      # 20 Nov 2026 (user): wording changed after the first id had loaded -> new random token (was CoupangPlay.m3zt)
 COUPANG_NAME = "Coupang Play streams"
 COUPANG_COMPS = ["Premier League"]
-COUPANG_IDLE = ("Coupang Play is a South Korean streaming service showing Premier League matches. As this is a streaming "
-                "service there is no TV Guide for it. Commentary is in English. Scroll the Coupang Play channels to find the game you want.")
+COUPANG_IDLE = ("Coupang Play is a South Korean streaming service showing Premier League, Bundesliga, basketball, American football, "
+                "motorsport and golf. As this is a streaming service there is no TV Guide for it. Commentary is in English. "
+                "Scroll the Coupang Play channels to find the event you want.")
 
 
 def coupang_channel(matches):
@@ -2018,7 +2020,7 @@ def build_channels(matches, english, suffix, english_only):
             channels.append(dummy_channel(f"{PLPLUS_ID}{suffix}", PLPLUS_NAME,
                                           "Live at event time only.", PLPLUS_IDLE))
     if COUPANG_CHANNEL:
-        cp = coupang_channel(matches)
+        cp = coupang_channel(matches) if COUPANG_LIST_MATCHES else None
         if cp:
             channels.append((f"{cp[0]}{suffix}",) + cp[1:])
         else:                                          # no matches in range: plain blocks, same id
