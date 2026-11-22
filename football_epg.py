@@ -537,8 +537,8 @@ ENDED_LOOKAHEAD_HOURS = 36        # only for a last match that ends within this 
 # window (TAIL_DAYS) in TAIL_HOURS blocks with plain wording (a club: "No further ... match listed"; a stream channel:
 # its own idle text). A show dict can carry "tail": (title, sub, desc, comp); club channels get one automatically.
 TAIL_DAYS = DUMMY_DAYS
-TAIL_HOURS = 24
-CUP_IDLE_DAYS = 14      # 22 Nov 2026: cup / UEFA channels with no match in the window now carry 14 days of daily blocks (was TAIL_DAYS = 3); PlaylistLabs' picker
+TAIL_HOURS = 6      # 22 Nov 2026: was 24 - every channel PlaylistLabs does NOT list (Carabao / FA Cup, no match in the window) is made only of 24-hour blocks; all others use 2-6 hour blocks
+CUP_IDLE_DAYS = 7       # 22 Nov 2026: cup / UEFA channels with no match in the window now carry 14 days of daily blocks (was TAIL_DAYS = 3); PlaylistLabs' picker
                         # lists no Carabao / FA Cup channel - every one has only 3 programmes (League / Europa channels have 48+) - so give them a normal span
 TAIL_TITLE = "No further {comp} match listed in the next {days} days"
 TAIL_SUB = "No match scheduled"
