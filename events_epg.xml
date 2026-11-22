@@ -2297,7 +2297,7 @@
     <display-name lang="en">US (Peacock 018) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock019.us">
-    <display-name lang="en">US (Peacock 019) | SMU vs. Notre Dame (2026-11-21 19:00:00)</display-name>
+    <display-name lang="en">US (Peacock 019) | Men`s Free Skate (2026-11-21 10:15:00)</display-name>
     <display-name lang="en">US (Peacock 019) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock020.us">
@@ -2329,7 +2329,7 @@
     <display-name lang="en">US (Peacock 026) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock027.us">
-    <display-name lang="en">US (Peacock 027) | SMU vs. Notre Dame (2026-11-21 19:00:00)</display-name>
+    <display-name lang="en">US (Peacock 027) | Vikings vs. 49ers (2026-11-22 19:00:00)</display-name>
     <display-name lang="en">US (Peacock 027) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock028.us">
@@ -8296,6 +8296,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MParamount025.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MParamount026.us">
     <title lang="en">Next Match: Sassuolo vs Genoa (Sun 22 Nov, 2pm)</title>
     <sub-title lang="en">Serie A</sub-title>
@@ -8366,6 +8371,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030000 +0000" stop="20261123050000 +0000" channel="MParamount026.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MParamount026.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -8524,6 +8534,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123024500 +0000" stop="20261123044500 +0000" channel="MParamount028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123044500 +0000" stop="20261123064500 +0000" channel="MParamount028.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -13846,68 +13861,81 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="MParamount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MParamount099.us">
@@ -14038,78 +14066,6 @@
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="MParamount100.us">
     <title lang="en">Next Match: Bologna vs Roma (Fri 4 Dec, 8:35pm)</title>
     <desc lang="en">Bologna vs Roma. Starts Fri 4 Dec, 8:35pm UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="MPeacock019.us">
-    <title lang="en">🔴 LIVE: SMU vs Notre Dame</title>
-    <desc lang="en">SMU vs Notre Dame. Starts Sun 22 Nov, Midnight UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122020000 +0000" stop="20261122030000 +0000" channel="MPeacock019.us">
-    <title lang="en">🔴 LIVE: SMU vs Notre Dame</title>
-    <desc lang="en">SMU vs Notre Dame. Starts Sun 22 Nov, Midnight UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122030000 +0000" stop="20261122050000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122050000 +0000" stop="20261122070000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122070000 +0000" stop="20261122090000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122090000 +0000" stop="20261122110000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122110000 +0000" stop="20261122130000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122130000 +0000" stop="20261122150000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122150000 +0000" stop="20261122170000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122170000 +0000" stop="20261122190000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122190000 +0000" stop="20261122210000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122210000 +0000" stop="20261122230000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122230000 +0000" stop="20261123010000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123010000 +0000" stop="20261123030000 +0000" channel="MPeacock019.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122013000 +0000" stop="20261122033000 +0000" channel="MPeacock020.us">
@@ -14616,74 +14572,92 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="MPeacock027.us">
-    <title lang="en">🔴 LIVE: SMU vs Notre Dame</title>
-    <desc lang="en">SMU vs Notre Dame. Starts Sun 22 Nov, Midnight UK time.</desc>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MPeacock026.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123000000 +0000" stop="20261123012000 +0000" channel="MPeacock027.us">
+    <title lang="en">Next up: LIVE – American Football. Vikings vs 49ers (1:20am)</title>
+    <sub-title lang="en">Next up: LIVE</sub-title>
+    <desc lang="en">Next up: LIVE. American Football. Vikings vs 49ers starts at 1:20am UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123012000 +0000" stop="20261123032000 +0000" channel="MPeacock027.us">
+    <title lang="en">🔴 LIVE: American Football. Vikings vs 49ers</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261122020000 +0000" stop="20261122030000 +0000" channel="MPeacock027.us">
-    <title lang="en">🔴 LIVE: SMU vs Notre Dame</title>
-    <desc lang="en">SMU vs Notre Dame. Starts Sun 22 Nov, Midnight UK time.</desc>
+  <programme start="20261123032000 +0000" stop="20261123042000 +0000" channel="MPeacock027.us">
+    <title lang="en">🔴 LIVE: American Football. Vikings vs 49ers</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Vikings vs 49ers. NFL. Starts Mon 23 Nov, 1:20am UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261122030000 +0000" stop="20261122050000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122050000 +0000" stop="20261122070000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122070000 +0000" stop="20261122090000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122090000 +0000" stop="20261122110000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122110000 +0000" stop="20261122130000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122130000 +0000" stop="20261122150000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122150000 +0000" stop="20261122170000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122170000 +0000" stop="20261122190000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122190000 +0000" stop="20261122210000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122210000 +0000" stop="20261122230000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122230000 +0000" stop="20261123010000 +0000" channel="MPeacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123010000 +0000" stop="20261123030000 +0000" channel="MPeacock027.us">
+  <programme start="20261123042000 +0000" stop="20261123062000 +0000" channel="MPeacock027.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -15192,6 +15166,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MPeacock034.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MPeacock035.us">
     <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
     <sub-title lang="en">NFL</sub-title>
@@ -15339,6 +15318,12 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030200 +0000" stop="20261123050200 +0000" channel="MPeacock036.us">
+    <title lang="en">🔴 LIVE: High Diving World Cup: China 2</title>
+    <desc lang="en">High Diving World Cup: China 2. Starts Mon 23 Nov, 3:02am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261123050200 +0000" stop="20261123060200 +0000" channel="MPeacock036.us">
     <title lang="en">🔴 LIVE: High Diving World Cup: China 2</title>
     <desc lang="en">High Diving World Cup: China 2. Starts Mon 23 Nov, 3:02am UK time.</desc>
     <category lang="en">Sports</category>
@@ -20282,6 +20267,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MSTAN31.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MSTAN32.au">
     <title lang="en">Next Match: Football. Birmingham City vs Manchester United (Sun 22 Nov, Midday)</title>
     <sub-title lang="en">English Women's Super League</sub-title>
@@ -20351,6 +20341,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030000 +0000" stop="20261123050000 +0000" channel="MSTAN32.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MSTAN32.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -20425,6 +20420,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030000 +0000" stop="20261123050000 +0000" channel="MSTAN33.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MSTAN33.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -20940,6 +20940,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MSTAN40.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MSTAN41.au">
     <title lang="en">Next Match: Football. Birmingham City vs Manchester United (Sun 22 Nov, Midday)</title>
     <sub-title lang="en">English Women's Super League</sub-title>
@@ -21009,6 +21014,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030000 +0000" stop="20261123050000 +0000" channel="MSTAN41.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MSTAN41.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -21087,6 +21097,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MSTAN42.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MSTAN43.au">
     <title lang="en">Next Match: Football. Everton vs Brighton &amp; Hove Albion (Sun 22 Nov, 2pm)</title>
     <sub-title lang="en">English Women's Super League</sub-title>
@@ -21161,6 +21176,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MSTAN43.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MSTAN44.au">
     <title lang="en">Next Match: Football. Charlton Athletic vs Aston Villa (Sun 22 Nov, 2pm)</title>
     <sub-title lang="en">English Women's Super League</sub-title>
@@ -21231,6 +21251,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030000 +0000" stop="20261123050000 +0000" channel="MSTAN44.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="MSTAN44.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -25092,159 +25117,159 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="MSTAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="MSTAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MSTAN98.au">
@@ -25481,6 +25506,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123045500 +0000" stop="20261123065500 +0000" channel="NFL10.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="NFL11.uk">
     <title lang="en">Next Game: American Football. Jaguars at Giants (Sun 22 Nov, 9:25pm)</title>
     <sub-title lang="en">NFL</sub-title>
@@ -25555,6 +25585,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123025500 +0000" stop="20261123045500 +0000" channel="NFL11.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123045500 +0000" stop="20261123065500 +0000" channel="NFL11.uk">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -25638,6 +25673,11 @@
     <desc lang="en">American Football. Vikings at 49ers. NFL. Sunday Night Football. Starts Mon 23 Nov, 1:20am UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261123045000 +0000" stop="20261123065000 +0000" channel="NFL12.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="NFL13.uk">
     <title lang="en">Next Game: American Football. Bengals at Commanders (Tue 24 Nov, 1:15am)</title>
@@ -26332,101 +26372,6 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261121170000 +0000" stop="20261121190000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">🔴 LIVE: Stein vs Antonietti</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">Stein vs Antonietti. PPV Event. Starts Sat 21 Nov, 5pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121190000 +0000" stop="20261121210000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">🔴 LIVE: Stein vs Antonietti</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">Stein vs Antonietti. PPV Event. Starts Sat 21 Nov, 5pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121210000 +0000" stop="20261121230000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">🔴 LIVE: Stein vs Antonietti</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">Stein vs Antonietti. PPV Event. Starts Sat 21 Nov, 5pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261121230000 +0000" stop="20261122010000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">🔴 LIVE: Stein vs Antonietti</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">Stein vs Antonietti. PPV Event. Starts Sat 21 Nov, 5pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122010000 +0000" stop="20261122030000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">🔴 LIVE: Stein vs Antonietti</title>
-    <sub-title lang="en">PPV Event</sub-title>
-    <desc lang="en">Stein vs Antonietti. PPV Event. Starts Sat 21 Nov, 5pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122030000 +0000" stop="20261122050000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122050000 +0000" stop="20261122070000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122070000 +0000" stop="20261122090000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122090000 +0000" stop="20261122110000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122110000 +0000" stop="20261122130000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122130000 +0000" stop="20261122150000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122150000 +0000" stop="20261122170000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122170000 +0000" stop="20261122190000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122190000 +0000" stop="20261122210000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122210000 +0000" stop="20261122230000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122230000 +0000" stop="20261123010000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123010000 +0000" stop="20261123030000 +0000" channel="PPVEVENT10.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261122002500 +0000" stop="20261122022500 +0000" channel="PPVEVENT12.us">
     <title lang="en">🔴 LIVE: USAC Southwest Sprints at Central Arizona</title>
     <sub-title lang="en">PPV Event</sub-title>
@@ -26727,6 +26672,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="Paramount025.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="Paramount026.us">
     <title lang="en">Next Match: Sassuolo vs Genoa (Sun 22 Nov, 2pm)</title>
     <sub-title lang="en">Serie A</sub-title>
@@ -26797,6 +26747,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030000 +0000" stop="20261123050000 +0000" channel="Paramount026.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="Paramount026.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -26955,6 +26910,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123024500 +0000" stop="20261123044500 +0000" channel="Paramount028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123044500 +0000" stop="20261123064500 +0000" channel="Paramount028.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -32277,68 +32237,81 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="Paramount098.us">
-    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8:50pm)</title>
-    <desc lang="en">Como vs Cremonese. Starts Wed 2 Dec, 8:50pm UK time.</desc>
+    <title lang="en">Next Match: Como vs Cremonese (Wed 2 Dec, 8pm)</title>
+    <sub-title lang="en">Coppa Italia</sub-title>
+    <desc lang="en">Como vs Cremonese. Coppa Italia. Starts Wed 2 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="Paramount099.us">
@@ -32469,78 +32442,6 @@
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="Paramount100.us">
     <title lang="en">Next Match: Bologna vs Roma (Fri 4 Dec, 8:35pm)</title>
     <desc lang="en">Bologna vs Roma. Starts Fri 4 Dec, 8:35pm UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="Peacock027.us">
-    <title lang="en">🔴 LIVE: SMU vs Notre Dame</title>
-    <desc lang="en">SMU vs Notre Dame. Starts Sun 22 Nov, Midnight UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122020000 +0000" stop="20261122030000 +0000" channel="Peacock027.us">
-    <title lang="en">🔴 LIVE: SMU vs Notre Dame</title>
-    <desc lang="en">SMU vs Notre Dame. Starts Sun 22 Nov, Midnight UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122030000 +0000" stop="20261122050000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122050000 +0000" stop="20261122070000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122070000 +0000" stop="20261122090000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122090000 +0000" stop="20261122110000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122110000 +0000" stop="20261122130000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122130000 +0000" stop="20261122150000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122150000 +0000" stop="20261122170000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122170000 +0000" stop="20261122190000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122190000 +0000" stop="20261122210000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122210000 +0000" stop="20261122230000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122230000 +0000" stop="20261123010000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123010000 +0000" stop="20261123030000 +0000" channel="Peacock027.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122013000 +0000" stop="20261122033000 +0000" channel="Peacock028.us">
@@ -33047,6 +32948,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="Peacock034.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="Peacock035.us">
     <title lang="en">Next Game: American Football. Vikings vs 49ers (Mon 23 Nov, 1:20am)</title>
     <sub-title lang="en">NFL</sub-title>
@@ -33194,6 +33100,12 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030200 +0000" stop="20261123050200 +0000" channel="Peacock036.us">
+    <title lang="en">🔴 LIVE: High Diving World Cup: China 2</title>
+    <desc lang="en">High Diving World Cup: China 2. Starts Mon 23 Nov, 3:02am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261123050200 +0000" stop="20261123060200 +0000" channel="Peacock036.us">
     <title lang="en">🔴 LIVE: High Diving World Cup: China 2</title>
     <desc lang="en">High Diving World Cup: China 2. Starts Mon 23 Nov, 3:02am UK time.</desc>
     <category lang="en">Sports</category>
@@ -38137,6 +38049,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="STAN40.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="STAN41.au">
     <title lang="en">Next Match: Football. Birmingham City vs Manchester United (Sun 22 Nov, Midday)</title>
     <sub-title lang="en">English Women's Super League</sub-title>
@@ -38206,6 +38123,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030000 +0000" stop="20261123050000 +0000" channel="STAN41.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="STAN41.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -38284,6 +38206,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="STAN42.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="STAN43.au">
     <title lang="en">Next Match: Football. Everton vs Brighton &amp; Hove Albion (Sun 22 Nov, 2pm)</title>
     <sub-title lang="en">English Women's Super League</sub-title>
@@ -38358,6 +38285,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="STAN43.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="STAN44.au">
     <title lang="en">Next Match: Football. Charlton Athletic vs Aston Villa (Sun 22 Nov, 2pm)</title>
     <sub-title lang="en">English Women's Super League</sub-title>
@@ -38428,6 +38360,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030000 +0000" stop="20261123050000 +0000" channel="STAN44.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="STAN44.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -42289,159 +42226,159 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="STAN96.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="STAN97.au">
-    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 7:50pm)</title>
+    <title lang="en">Next Match: Coventry City vs Ipswich Town (Tue 1 Dec, 8pm)</title>
     <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 7:50pm UK time.</desc>
+    <desc lang="en">Coventry City vs Ipswich Town. Premier League Matchweek 13 2026/2027. Starts Tue 1 Dec, 8pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="STAN98.au">
@@ -42598,154 +42535,6 @@
     <title lang="en">Next Match: Newcastle United vs Manchester United (Wed 2 Dec, 7pm)</title>
     <sub-title lang="en">Premier League</sub-title>
     <desc lang="en">Newcastle United vs Manchester United. Premier League Matchweek 13 2026/2027. Starts Wed 2 Dec, 7pm UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="TSN041.ca">
-    <title lang="en">🔴 LIVE: NCAA Men's Hockey: Yale vs RPI</title>
-    <sub-title lang="en">NCAA</sub-title>
-    <desc lang="en">NCAA Men's Hockey: Yale vs RPI. Starts Sun 22 Nov, Midnight UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122020000 +0000" stop="20261122030000 +0000" channel="TSN041.ca">
-    <title lang="en">🔴 LIVE: NCAA Men's Hockey: Yale vs RPI</title>
-    <sub-title lang="en">NCAA</sub-title>
-    <desc lang="en">NCAA Men's Hockey: Yale vs RPI. Starts Sun 22 Nov, Midnight UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122030000 +0000" stop="20261122050000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122050000 +0000" stop="20261122070000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122070000 +0000" stop="20261122090000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122090000 +0000" stop="20261122110000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122110000 +0000" stop="20261122130000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122130000 +0000" stop="20261122150000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122150000 +0000" stop="20261122170000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122170000 +0000" stop="20261122190000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122190000 +0000" stop="20261122210000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122210000 +0000" stop="20261122230000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122230000 +0000" stop="20261123010000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123010000 +0000" stop="20261123030000 +0000" channel="TSN041.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122000000 +0000" stop="20261122020000 +0000" channel="TSN042.ca">
-    <title lang="en">🔴 LIVE: NCAA Football: Virginia Tech vs Miami</title>
-    <sub-title lang="en">NCAA</sub-title>
-    <desc lang="en">NCAA Football: Virginia Tech vs Miami. Starts Sun 22 Nov, Midnight UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122020000 +0000" stop="20261122030000 +0000" channel="TSN042.ca">
-    <title lang="en">🔴 LIVE: NCAA Football: Virginia Tech vs Miami</title>
-    <sub-title lang="en">NCAA</sub-title>
-    <desc lang="en">NCAA Football: Virginia Tech vs Miami. Starts Sun 22 Nov, Midnight UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122030000 +0000" stop="20261122050000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122050000 +0000" stop="20261122070000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122070000 +0000" stop="20261122090000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122090000 +0000" stop="20261122110000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122110000 +0000" stop="20261122130000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122130000 +0000" stop="20261122150000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122150000 +0000" stop="20261122170000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122170000 +0000" stop="20261122190000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122190000 +0000" stop="20261122210000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122210000 +0000" stop="20261122230000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261122230000 +0000" stop="20261123010000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123010000 +0000" stop="20261123030000 +0000" channel="TSN042.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261122001500 +0000" stop="20261122021500 +0000" channel="TSN043.ca">
@@ -43710,6 +43499,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="TSN055.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="TSN056.ca">
     <title lang="en">Next Game: American Football. NFL Fantasy Focus (Sun 22 Nov, 3pm)</title>
     <sub-title lang="en">NFL</sub-title>
@@ -44027,6 +43821,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="TSN059.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="TSN060.ca">
     <title lang="en">Next Game: American Football. NFL on TSN: Steelers vs Eagles (Sun 22 Nov, 6pm)</title>
     <sub-title lang="en">NFL</sub-title>
@@ -44103,6 +43902,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="TSN060.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="TSN061.ca">
     <title lang="en">Next Event: NCAA Women's Field Hockey - Final (Sun 22 Nov, 6pm)</title>
     <sub-title lang="en">NCAA</sub-title>
@@ -44175,6 +43979,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030000 +0000" stop="20261123050000 +0000" channel="TSN061.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="TSN061.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -44256,6 +44065,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="TSN062.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="TSN063.ca">
     <title lang="en">Next Match: NCAA Women's Hockey: Brown vs Union (Sun 22 Nov, 8pm)</title>
     <sub-title lang="en">NCAA</sub-title>
@@ -44329,6 +44143,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123030000 +0000" stop="20261123050000 +0000" channel="TSN063.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123050000 +0000" stop="20261123070000 +0000" channel="TSN063.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -76278,6 +76097,71 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="MPeacock019.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="MSTAN01.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
@@ -79459,6 +79343,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="PPVEVENT1.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="PPVEVENT10.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="PPVEVENT10.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -85569,6 +85518,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="Peacock026.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="Peacock027.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -94799,6 +94813,136 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="TSN040.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="TSN041.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122040000 +0000" stop="20261122060000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122060000 +0000" stop="20261122080000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122080000 +0000" stop="20261122100000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122100000 +0000" stop="20261122120000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122120000 +0000" stop="20261122140000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122140000 +0000" stop="20261122160000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122160000 +0000" stop="20261122180000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122180000 +0000" stop="20261122200000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122200000 +0000" stop="20261122220000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261122220000 +0000" stop="20261123000000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="TSN042.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="TSN042.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
