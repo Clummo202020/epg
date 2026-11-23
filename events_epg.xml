@@ -2241,7 +2241,7 @@
     <display-name lang="en">US (Peacock 004) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock005.us">
-    <display-name lang="en">US (Peacock 005) | Sunday Night Football Final (2026-11-22 23:30:00)</display-name>
+    <display-name lang="en">US (Peacock 005) | Chelsea v. Leeds United (2026-11-21 09:50:00)</display-name>
     <display-name lang="en">US (Peacock 005) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock006.us">
@@ -2333,7 +2333,7 @@
     <display-name lang="en">US (Peacock 027) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock028.us">
-    <display-name lang="en">US (Peacock 028) | Sunday Night Football Final (2026-11-22 23:30:00)</display-name>
+    <display-name lang="en">US (Peacock 028) | Women`s GS: Killington Run 1 (2026-11-28 09:30:00)</display-name>
     <display-name lang="en">US (Peacock 028) [Main IPTV]</display-name>
   </channel>
   <channel id="MPeacock029.us">
@@ -14073,78 +14073,6 @@
     <desc lang="en">Viking vs Feyenoord. Starts Tue 8 Dec, 6pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123043000 +0000" stop="20261123063000 +0000" channel="MPeacock005.us">
-    <title lang="en">🔴 LIVE: Sunday Night Football Final</title>
-    <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261123063000 +0000" stop="20261123073000 +0000" channel="MPeacock005.us">
-    <title lang="en">🔴 LIVE: Sunday Night Football Final</title>
-    <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261123073000 +0000" stop="20261123093000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123093000 +0000" stop="20261123113000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123113000 +0000" stop="20261123133000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123133000 +0000" stop="20261123153000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123153000 +0000" stop="20261123173000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123173000 +0000" stop="20261123193000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123193000 +0000" stop="20261123213000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123213000 +0000" stop="20261123233000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123233000 +0000" stop="20261124013000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261124013000 +0000" stop="20261124033000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261124033000 +0000" stop="20261124053000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261124053000 +0000" stop="20261124073000 +0000" channel="MPeacock005.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="MPeacock006.us">
     <title lang="en">Next Match: Performance View: BKN vs MIN (Tue 24 Nov, Midnight)</title>
     <desc lang="en">Performance View: BKN vs MIN. Starts Tue 24 Nov, Midnight UK time.</desc>
@@ -14297,6 +14225,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124073000 +0000" stop="20261124093000 +0000" channel="MPeacock007.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124093000 +0000" stop="20261124113000 +0000" channel="MPeacock007.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -15640,76 +15573,69 @@
     <desc lang="en">Men's Free Skate. Starts Sat 28 Nov, 10:30am UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123043000 +0000" stop="20261123063000 +0000" channel="MPeacock028.us">
-    <title lang="en">🔴 LIVE: Sunday Night Football Final</title>
-    <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261123063000 +0000" stop="20261123073000 +0000" channel="MPeacock028.us">
-    <title lang="en">🔴 LIVE: Sunday Night Football Final</title>
-    <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261123073000 +0000" stop="20261123093000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123093000 +0000" stop="20261123113000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261123100000 +0000" stop="20261123120000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123113000 +0000" stop="20261123133000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261123120000 +0000" stop="20261123140000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123133000 +0000" stop="20261123153000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261123140000 +0000" stop="20261123160000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123153000 +0000" stop="20261123173000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261123160000 +0000" stop="20261123180000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123173000 +0000" stop="20261123193000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261123180000 +0000" stop="20261123200000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123193000 +0000" stop="20261123213000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123213000 +0000" stop="20261123233000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123233000 +0000" stop="20261124013000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261124000000 +0000" stop="20261124020000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261124013000 +0000" stop="20261124033000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261124020000 +0000" stop="20261124040000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261124033000 +0000" stop="20261124053000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261124040000 +0000" stop="20261124060000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261124053000 +0000" stop="20261124073000 +0000" channel="MPeacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+  <programme start="20261124060000 +0000" stop="20261124080000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124080000 +0000" stop="20261124100000 +0000" channel="MPeacock028.us">
+    <title lang="en">Next Event: Women's GS: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
+    <desc lang="en">Women's GS: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="MPeacock029.us">
@@ -15864,6 +15790,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124073000 +0000" stop="20261124093000 +0000" channel="MPeacock030.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124093000 +0000" stop="20261124113000 +0000" channel="MPeacock030.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -25965,81 +25896,81 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123100000 +0000" stop="20261123120000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123120000 +0000" stop="20261123140000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123140000 +0000" stop="20261123160000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123160000 +0000" stop="20261123180000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123180000 +0000" stop="20261123200000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124000000 +0000" stop="20261124020000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124020000 +0000" stop="20261124040000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124040000 +0000" stop="20261124060000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124060000 +0000" stop="20261124080000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124080000 +0000" stop="20261124100000 +0000" channel="MSTAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="MSTAN81.au">
@@ -34135,78 +34066,6 @@
     <desc lang="en">Viking vs Feyenoord. Starts Tue 8 Dec, 6pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261123043000 +0000" stop="20261123063000 +0000" channel="Peacock028.us">
-    <title lang="en">🔴 LIVE: Sunday Night Football Final</title>
-    <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261123063000 +0000" stop="20261123073000 +0000" channel="Peacock028.us">
-    <title lang="en">🔴 LIVE: Sunday Night Football Final</title>
-    <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261123073000 +0000" stop="20261123093000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123093000 +0000" stop="20261123113000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123113000 +0000" stop="20261123133000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123133000 +0000" stop="20261123153000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123153000 +0000" stop="20261123173000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123173000 +0000" stop="20261123193000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123193000 +0000" stop="20261123213000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123213000 +0000" stop="20261123233000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123233000 +0000" stop="20261124013000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261124013000 +0000" stop="20261124033000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261124033000 +0000" stop="20261124053000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261124053000 +0000" stop="20261124073000 +0000" channel="Peacock028.us">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="Peacock029.us">
     <title lang="en">Next Match: Performance View: BKN vs MIN (Tue 24 Nov, Midnight)</title>
     <desc lang="en">Performance View: BKN vs MIN. Starts Tue 24 Nov, Midnight UK time.</desc>
@@ -34359,6 +34218,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124073000 +0000" stop="20261124093000 +0000" channel="Peacock030.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124093000 +0000" stop="20261124113000 +0000" channel="Peacock030.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -42155,81 +42019,81 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123100000 +0000" stop="20261123120000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123120000 +0000" stop="20261123140000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123140000 +0000" stop="20261123160000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123160000 +0000" stop="20261123180000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123180000 +0000" stop="20261123200000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124000000 +0000" stop="20261124020000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124020000 +0000" stop="20261124040000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124040000 +0000" stop="20261124060000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124060000 +0000" stop="20261124080000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124080000 +0000" stop="20261124100000 +0000" channel="STAN80.au">
-    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 1:55pm)</title>
-    <sub-title lang="en">Premier League</sub-title>
-    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 1:55pm UK time.</desc>
+    <title lang="en">Next Match: Goal Rush: Sunderland vs Tottenham Hotspur (Sun 29 Nov, 2:05pm)</title>
+    <sub-title lang="en">English Premier League</sub-title>
+    <desc lang="en">Goal Rush: Sunderland vs Tottenham Hotspur. English Premier League. 30 Nov Premier League 2026/2027. Starts Sun 29 Nov, 2:05pm UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="STAN81.au">
@@ -76344,6 +76208,71 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123100000 +0000" stop="20261123120000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123120000 +0000" stop="20261123140000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123140000 +0000" stop="20261123160000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123160000 +0000" stop="20261123180000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123180000 +0000" stop="20261123200000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124000000 +0000" stop="20261124020000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124020000 +0000" stop="20261124040000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124040000 +0000" stop="20261124060000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124060000 +0000" stop="20261124080000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124080000 +0000" stop="20261124100000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="MSTAN01.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
@@ -84985,6 +84914,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124080000 +0000" stop="20261124100000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123100000 +0000" stop="20261123120000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123120000 +0000" stop="20261123140000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123140000 +0000" stop="20261123160000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123160000 +0000" stop="20261123180000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123180000 +0000" stop="20261123200000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124000000 +0000" stop="20261124020000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124020000 +0000" stop="20261124040000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124040000 +0000" stop="20261124060000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124060000 +0000" stop="20261124080000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124080000 +0000" stop="20261124100000 +0000" channel="Peacock028.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
