@@ -1313,6 +1313,21 @@ def add_prime(matches, wtm_html=None, los_data=None):
     return added
 
 
+UEFA_AD_HOC_NOTE = "Also check the UEFA Competitions section for ad-hoc streams."
+UEFA_AD_HOC_COMPS = ["UEFA Champions League", "UEFA Europa League", "UEFA Conference League"]        # 23 Nov 2026 (user): Champions, Europa and Conference League matches
+
+
+def add_uefa_note(matches):
+    """Append UEFA_AD_HOC_NOTE as the LAST sentence of every Champions / Europa / Conference League match description (after the channel sentences). Never raises."""
+    n = 0
+    for m in matches:
+        if m.get("comp") in UEFA_AD_HOC_COMPS and UEFA_AD_HOC_NOTE not in m["desc"]:
+            m["desc"] = f"{m['desc'].rstrip()} {UEFA_AD_HOC_NOTE}"
+            n += 1
+    print(f"  UEFA Competitions pointer added to {n} UEFA club-competition matches")
+    return n
+
+
 def find_main_game(ms, listings):
     """The slot match a GOAL_RUSH_MAIN_FROM channel shows live at kick-off, or None."""
     ko = ms[0]["start"]
@@ -2471,6 +2486,7 @@ def main():
     add_prime(matches)
     add_free_to_air(matches)
     add_platform_summary(matches)                  # 16 Nov 2026 (user): every platform in one sentence when there are 2+
+    add_uefa_note(matches)                         # 23 Nov 2026 (user): Champions / Europa / Conference League matches end with a pointer to the UEFA Competitions section
     if not (args.run_ids or args.suffix is not None):
         run_no, suffix = None, ""
     else:
