@@ -1610,7 +1610,7 @@ def plplus_channel(matches):
 # "Coupang Play OTT" on every Premier League fixture). ONE guide channel, built like Premier League+: a block at every
 # Premier League kick-off listing that slot's matches; no 3pm blackout (not a UK service). New id CoupangPlay.m3zt (token like the other .x8vn / .4mwd ids).
 COUPANG_CHANNEL = True
-COUPANG_LIST_MATCHES = False   # 22 Nov 2026 (user): the Coupang Play streams channel is an umbrella; the Coupang Event channels carry the actual matches (not always Premier League), so listing a match here was confusing -> plain idle text only
+COUPANG_LIST_MATCHES = True    # 23 Nov 2026 (user: "Make the Coupang change"): Premier League matches listed like Setanta, with a closing sentence saying each match is on its own Coupang Event stream, AND the Coupang info text kept in every block. (22 Nov: was False - listing a match alone was confusing next to Coupang Event 1 showing a Bundesliga match)
 COUPANG_ID = "CoupangPlay.q6vd"      # 20 Nov 2026 (user): wording changed after the first id had loaded -> new random token (was CoupangPlay.m3zt)
 COUPANG_NAME = "Coupang Play streams"
 COUPANG_COMPS = ["Premier League"]
@@ -1619,11 +1619,16 @@ COUPANG_IDLE = ("Coupang Play is a South Korean streaming service showing Premie
                 "Scroll the Coupang Play channels to find the event you want.")
 
 
+COUPANG_TAIL = (                                  # 23 Nov 2026 (user): closing sentence (like Setanta's) + the Coupang info text under every match block
+    "This match is on its own stream - scroll the Coupang Event channels to find it.\n\n" + COUPANG_IDLE,
+    "Each match is on its own stream - scroll the Coupang Event channels to find it.\n\n" + COUPANG_IDLE)
+
+
 def coupang_channel(matches):
     """(id, name, None, shows) for the Coupang Play streams, or None when no matches."""
     kept = [m for m in matches if m["comp"] in COUPANG_COMPS and not m.get("tbc")]
     return streams_channel(kept, COUPANG_ID, COUPANG_NAME, "Coupang Play", "the Coupang Play streams",
-                           COUPANG_COMPS, COUPANG_IDLE, comp_in_title=False)
+                           COUPANG_COMPS, COUPANG_IDLE, comp_in_title=False, tail=COUPANG_TAIL)
 
 
 # Formula 1 (30 Oct 2026): f1.uk and f1drivers.uk from OpenF1's session list (the SPORT guide already uses it)
