@@ -14662,6 +14662,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124013000 +0000" stop="20261124033000 +0000" channel="MPeacock005.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="MPeacock006.us">
     <title lang="en">Next Match: Performance View: BKN vs MIN (Tue 24 Nov, Midnight)</title>
     <desc lang="en">Performance View: BKN vs MIN. Starts Tue 24 Nov, Midnight UK time.</desc>
@@ -16232,6 +16237,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123233000 +0000" stop="20261124013000 +0000" channel="MPeacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124013000 +0000" stop="20261124033000 +0000" channel="MPeacock028.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -28317,10 +28327,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124000000 +0000" stop="20261124011500 +0000" channel="NFL13.uk">
-    <title lang="en">Next up: LIVE – American Football. Bengals at Commanders (Tue 24 Nov, 1:15am)</title>
+    <title lang="en">Next up: LIVE – American Football. Bengals at Commanders (1:15am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. American Football. Bengals at Commanders starts Tue 24 Nov, 1:15am UK time.</desc>
+    <desc lang="en">Next up: LIVE. American Football. Bengals at Commanders starts at 1:15am UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124011500 +0000" stop="20261124031500 +0000" channel="NFL13.uk">
+    <title lang="en">🔴 LIVE: American Football. Bengals at Commanders</title>
+    <sub-title lang="en">NFL</sub-title>
+    <desc lang="en">American Football. Bengals at Commanders. NFL. Monday Night Football. Starts Tue 24 Nov, 1:15am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261122210500 +0000" stop="20261122230500 +0000" channel="NFL9.uk">
     <title lang="en">🔴 LIVE: American Football. Jets at Chargers</title>
@@ -35098,6 +35115,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123233000 +0000" stop="20261124013000 +0000" channel="Peacock028.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124013000 +0000" stop="20261124033000 +0000" channel="Peacock028.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -44574,80 +44596,6 @@
     <desc lang="en">Cape Town • Day 1 (Session 1) World Rugby Sevens Series 2026/27. Starts Sat 5 Dec, 8:25am UK time.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261122203000 +0000" stop="20261122223000 +0000" channel="TSN038.ca">
-    <title lang="en">🔴 LIVE: NCAA Women's Basketball: Utah State vs TCU</title>
-    <sub-title lang="en">NCAA</sub-title>
-    <desc lang="en">NCAA Women's Basketball: Utah State vs TCU. Starts Sun 22 Nov, 8:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122223000 +0000" stop="20261122233000 +0000" channel="TSN038.ca">
-    <title lang="en">🔴 LIVE: NCAA Women's Basketball: Utah State vs TCU</title>
-    <sub-title lang="en">NCAA</sub-title>
-    <desc lang="en">NCAA Women's Basketball: Utah State vs TCU. Starts Sun 22 Nov, 8:30pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122233000 +0000" stop="20261123013000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123013000 +0000" stop="20261123033000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123033000 +0000" stop="20261123053000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123053000 +0000" stop="20261123073000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123073000 +0000" stop="20261123093000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123093000 +0000" stop="20261123113000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123113000 +0000" stop="20261123133000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123133000 +0000" stop="20261123153000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123153000 +0000" stop="20261123173000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123173000 +0000" stop="20261123193000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123193000 +0000" stop="20261123213000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123213000 +0000" stop="20261123233000 +0000" channel="TSN038.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261122210000 +0000" stop="20261122230000 +0000" channel="TSN039.ca">
     <title lang="en">🔴 LIVE: NCAA Men's Hockey: Air Force vs Princeton</title>
     <sub-title lang="en">NCAA</sub-title>
@@ -45088,10 +45036,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124000000 +0000" stop="20261124011500 +0000" channel="TSN044.ca">
-    <title lang="en">Next up: LIVE – Monday Night Football with Peyton and Eli: Bengals vs Commanders (Tue 24 Nov, 1:15am)</title>
+    <title lang="en">Next up: LIVE – Monday Night Football with Peyton and Eli: Bengals vs Commanders (1:15am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Monday Night Football with Peyton and Eli: Bengals vs Commanders starts Tue 24 Nov, 1:15am UK time.</desc>
+    <desc lang="en">Next up: LIVE. Monday Night Football with Peyton and Eli: Bengals vs Commanders starts at 1:15am UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124011500 +0000" stop="20261124031500 +0000" channel="TSN044.ca">
+    <title lang="en">🔴 LIVE: Monday Night Football with Peyton and Eli: Bengals vs Commanders</title>
+    <desc lang="en">Monday Night Football with Peyton and Eli: Bengals vs Commanders. Starts Tue 24 Nov, 1:15am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="TSN045.ca">
     <title lang="en">Next Match: NCAA Women's Hockey: Delaware vs Princeton (Tue 24 Nov, 3:30pm)</title>
@@ -94684,6 +94638,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124000000 +0000" stop="20261124020000 +0000" channel="TSN037.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123060000 +0000" stop="20261123080000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123100000 +0000" stop="20261123120000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123120000 +0000" stop="20261123140000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123140000 +0000" stop="20261123160000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123160000 +0000" stop="20261123180000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123180000 +0000" stop="20261123200000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="TSN038.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124000000 +0000" stop="20261124020000 +0000" channel="TSN038.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
