@@ -5841,6 +5841,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="AppleMLS011.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261122233000 +0000" stop="20261123013000 +0000" channel="AppleMLS012.us">
     <title lang="en">🔴 LIVE: Chicago vs Charlotte (Spanish)</title>
     <sub-title lang="en">MLS</sub-title>
@@ -5906,6 +5911,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123223000 +0000" stop="20261124003000 +0000" channel="AppleMLS012.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="AppleMLS012.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -5980,6 +5990,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="AppleMLS013.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123000000 +0000" stop="20261123013000 +0000" channel="AppleMLS014.us">
     <title lang="en">Next up: LIVE – Vancouver vs Salt Lake (Spanish) (1:30am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -6046,6 +6061,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261123223000 +0000" stop="20261124003000 +0000" channel="AppleMLS014.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="AppleMLS014.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -14767,6 +14787,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124002000 +0000" stop="20261124022000 +0000" channel="MPeacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="MPeacock005.us">
     <title lang="en">Next Event: Sunday Night Football Final (Mon 23 Nov, 4:30am)</title>
     <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
@@ -14980,10 +15005,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124000000 +0000" stop="20261124003000 +0000" channel="MPeacock007.us">
-    <title lang="en">Next up: LIVE – Basketball. Nets vs Timberwolves (Tue 24 Nov, 12:30am)</title>
+    <title lang="en">Next up: LIVE – Basketball. Nets vs Timberwolves (12:30am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Basketball. Nets vs Timberwolves starts Tue 24 Nov, 12:30am UK time.</desc>
+    <desc lang="en">Next up: LIVE. Basketball. Nets vs Timberwolves starts at 12:30am UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="MPeacock007.us">
+    <title lang="en">🔴 LIVE: Basketball. Nets vs Timberwolves</title>
+    <sub-title lang="en">NBA</sub-title>
+    <desc lang="en">Basketball. Nets vs Timberwolves. NBA. Starts Tue 24 Nov, 12:30am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="MPeacock008.us">
     <title lang="en">Next Match: UCLA vs St. John's (Tue 24 Nov, 9:30pm)</title>
@@ -16329,6 +16361,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124002000 +0000" stop="20261124022000 +0000" channel="MPeacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="MPeacock028.us">
     <title lang="en">Next Event: Sunday Night Football Final (Mon 23 Nov, 4:30am)</title>
     <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
@@ -16542,10 +16579,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124000000 +0000" stop="20261124003000 +0000" channel="MPeacock030.us">
-    <title lang="en">Next up: LIVE – Basketball. Nets vs Timberwolves (Tue 24 Nov, 12:30am)</title>
+    <title lang="en">Next up: LIVE – Basketball. Nets vs Timberwolves (12:30am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Basketball. Nets vs Timberwolves starts Tue 24 Nov, 12:30am UK time.</desc>
+    <desc lang="en">Next up: LIVE. Basketball. Nets vs Timberwolves starts at 12:30am UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="MPeacock030.us">
+    <title lang="en">🔴 LIVE: Basketball. Nets vs Timberwolves</title>
+    <sub-title lang="en">NBA</sub-title>
+    <desc lang="en">Basketball. Nets vs Timberwolves. NBA. Starts Tue 24 Nov, 12:30am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="MPeacock031.us">
     <title lang="en">Next Match: UCLA vs St. John's (Tue 24 Nov, 9:30pm)</title>
@@ -35301,6 +35345,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124002000 +0000" stop="20261124022000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="Peacock028.us">
     <title lang="en">Next Event: Sunday Night Football Final (Mon 23 Nov, 4:30am)</title>
     <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
@@ -35514,10 +35563,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124000000 +0000" stop="20261124003000 +0000" channel="Peacock030.us">
-    <title lang="en">Next up: LIVE – Basketball. Nets vs Timberwolves (Tue 24 Nov, 12:30am)</title>
+    <title lang="en">Next up: LIVE – Basketball. Nets vs Timberwolves (12:30am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Basketball. Nets vs Timberwolves starts Tue 24 Nov, 12:30am UK time.</desc>
+    <desc lang="en">Next up: LIVE. Basketball. Nets vs Timberwolves starts at 12:30am UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="Peacock030.us">
+    <title lang="en">🔴 LIVE: Basketball. Nets vs Timberwolves</title>
+    <sub-title lang="en">NBA</sub-title>
+    <desc lang="en">Basketball. Nets vs Timberwolves. NBA. Starts Tue 24 Nov, 12:30am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261123000000 +0000" stop="20261123020000 +0000" channel="Peacock031.us">
     <title lang="en">Next Match: UCLA vs St. John's (Tue 24 Nov, 9:30pm)</title>
