@@ -14268,6 +14268,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124233000 +0000" stop="20261125013000 +0000" channel="MPeacock030.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="MPeacock031.us">
     <title lang="en">Next Match: UCLA vs St. John's (Tue 24 Nov, 9:30pm)</title>
     <desc lang="en">UCLA vs St. John's. Starts Tue 24 Nov, 9:30pm UK time.</desc>
@@ -14330,6 +14335,12 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124213000 +0000" stop="20261124233000 +0000" channel="MPeacock031.us">
+    <title lang="en">🔴 LIVE: UCLA vs St. John's</title>
+    <desc lang="en">UCLA vs St. John's. Starts Tue 24 Nov, 9:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261124233000 +0000" stop="20261125003000 +0000" channel="MPeacock031.us">
     <title lang="en">🔴 LIVE: UCLA vs St. John's</title>
     <desc lang="en">UCLA vs St. John's. Starts Tue 24 Nov, 9:30pm UK time.</desc>
     <category lang="en">Sports</category>
@@ -14468,10 +14479,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124220000 +0000" stop="20261124233000 +0000" channel="MPeacock033.us">
-    <title lang="en">Next up: LIVE – Bowling Green vs Notre Dame (Tue 24 Nov, 11:30pm)</title>
+    <title lang="en">Next up: LIVE – Bowling Green vs Notre Dame (11:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Bowling Green vs Notre Dame starts Tue 24 Nov, 11:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Bowling Green vs Notre Dame starts at 11:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124233000 +0000" stop="20261125013000 +0000" channel="MPeacock033.us">
+    <title lang="en">🔴 LIVE: Bowling Green vs Notre Dame</title>
+    <desc lang="en">Bowling Green vs Notre Dame. Starts Tue 24 Nov, 11:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="MPeacock034.us">
     <title lang="en">Next Game: Basketball. Celtics vs Wizards (Wed 25 Nov, 1am)</title>
@@ -30500,6 +30517,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124233000 +0000" stop="20261125013000 +0000" channel="Peacock030.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="Peacock031.us">
     <title lang="en">Next Match: UCLA vs St. John's (Tue 24 Nov, 9:30pm)</title>
     <desc lang="en">UCLA vs St. John's. Starts Tue 24 Nov, 9:30pm UK time.</desc>
@@ -30562,6 +30584,12 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124213000 +0000" stop="20261124233000 +0000" channel="Peacock031.us">
+    <title lang="en">🔴 LIVE: UCLA vs St. John's</title>
+    <desc lang="en">UCLA vs St. John's. Starts Tue 24 Nov, 9:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261124233000 +0000" stop="20261125003000 +0000" channel="Peacock031.us">
     <title lang="en">🔴 LIVE: UCLA vs St. John's</title>
     <desc lang="en">UCLA vs St. John's. Starts Tue 24 Nov, 9:30pm UK time.</desc>
     <category lang="en">Sports</category>
@@ -30700,10 +30728,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124220000 +0000" stop="20261124233000 +0000" channel="Peacock033.us">
-    <title lang="en">Next up: LIVE – Bowling Green vs Notre Dame (Tue 24 Nov, 11:30pm)</title>
+    <title lang="en">Next up: LIVE – Bowling Green vs Notre Dame (11:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Bowling Green vs Notre Dame starts Tue 24 Nov, 11:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Bowling Green vs Notre Dame starts at 11:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124233000 +0000" stop="20261125013000 +0000" channel="Peacock033.us">
+    <title lang="en">🔴 LIVE: Bowling Green vs Notre Dame</title>
+    <desc lang="en">Bowling Green vs Notre Dame. Starts Tue 24 Nov, 11:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="Peacock034.us">
     <title lang="en">Next Game: Basketball. Celtics vs Wizards (Wed 25 Nov, 1am)</title>
