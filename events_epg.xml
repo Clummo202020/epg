@@ -39805,6 +39805,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124221500 +0000" stop="20261125001500 +0000" channel="TSN044.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="TSN045.ca">
     <title lang="en">Next Match: NCAA Women's Hockey: Delaware vs Princeton (Tue 24 Nov, 3:30pm)</title>
     <sub-title lang="en">NCAA</sub-title>
@@ -39879,6 +39884,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124203000 +0000" stop="20261124223000 +0000" channel="TSN045.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124223000 +0000" stop="20261125003000 +0000" channel="TSN045.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -40116,10 +40126,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124220000 +0000" stop="20261124223000 +0000" channel="TSN048.ca">
-    <title lang="en">Next up: LIVE – NCAA Men's Basketball: San Diego State vs Iowa State (Tue 24 Nov, 10:30pm)</title>
+    <title lang="en">Next up: LIVE – NCAA Men's Basketball: San Diego State vs Iowa State (10:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NCAA Men's Basketball: San Diego State vs Iowa State starts Tue 24 Nov, 10:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. NCAA Men's Basketball: San Diego State vs Iowa State starts at 10:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124223000 +0000" stop="20261125003000 +0000" channel="TSN048.ca">
+    <title lang="en">🔴 LIVE: NCAA Men's Basketball: San Diego State vs Iowa State</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Men's Basketball: San Diego State vs Iowa State. Starts Tue 24 Nov, 10:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="TSN049.ca">
     <title lang="en">Next Match: NCAA Men's Basketball: Creighton vs Michigan (Tue 24 Nov, 10:30pm)</title>
@@ -40194,10 +40211,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124220000 +0000" stop="20261124223000 +0000" channel="TSN049.ca">
-    <title lang="en">Next up: LIVE – NCAA Men's Basketball: Creighton vs Michigan (Tue 24 Nov, 10:30pm)</title>
+    <title lang="en">Next up: LIVE – NCAA Men's Basketball: Creighton vs Michigan (10:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NCAA Men's Basketball: Creighton vs Michigan starts Tue 24 Nov, 10:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. NCAA Men's Basketball: Creighton vs Michigan starts at 10:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124223000 +0000" stop="20261125003000 +0000" channel="TSN049.ca">
+    <title lang="en">🔴 LIVE: NCAA Men's Basketball: Creighton vs Michigan</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Men's Basketball: Creighton vs Michigan. Starts Tue 24 Nov, 10:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="TSN050.ca">
     <title lang="en">Next Match: NCAA Men's Hockey: Bentley vs Harvard (Wed 25 Nov, Midnight)</title>
