@@ -14232,6 +14232,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124213000 +0000" stop="20261124233000 +0000" channel="MPeacock030.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="MPeacock031.us">
     <title lang="en">Next Match: UCLA vs St. John's (Tue 24 Nov, 9:30pm)</title>
     <desc lang="en">UCLA vs St. John's. Starts Tue 24 Nov, 9:30pm UK time.</desc>
@@ -14293,10 +14298,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124200000 +0000" stop="20261124213000 +0000" channel="MPeacock031.us">
-    <title lang="en">Next up: LIVE – UCLA vs St. John's (Tue 24 Nov, 9:30pm)</title>
+    <title lang="en">Next up: LIVE – UCLA vs St. John's (9:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. UCLA vs St. John's starts Tue 24 Nov, 9:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. UCLA vs St. John's starts at 9:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124213000 +0000" stop="20261124233000 +0000" channel="MPeacock031.us">
+    <title lang="en">🔴 LIVE: UCLA vs St. John's</title>
+    <desc lang="en">UCLA vs St. John's. Starts Tue 24 Nov, 9:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="MPeacock032.us">
     <title lang="en">Next Match: Sun FC vs Trinity FC (Tue 24 Nov, 11pm)</title>
@@ -30370,6 +30381,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124213000 +0000" stop="20261124233000 +0000" channel="Peacock030.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="Peacock031.us">
     <title lang="en">Next Match: UCLA vs St. John's (Tue 24 Nov, 9:30pm)</title>
     <desc lang="en">UCLA vs St. John's. Starts Tue 24 Nov, 9:30pm UK time.</desc>
@@ -30431,10 +30447,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124200000 +0000" stop="20261124213000 +0000" channel="Peacock031.us">
-    <title lang="en">Next up: LIVE – UCLA vs St. John's (Tue 24 Nov, 9:30pm)</title>
+    <title lang="en">Next up: LIVE – UCLA vs St. John's (9:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. UCLA vs St. John's starts Tue 24 Nov, 9:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. UCLA vs St. John's starts at 9:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124213000 +0000" stop="20261124233000 +0000" channel="Peacock031.us">
+    <title lang="en">🔴 LIVE: UCLA vs St. John's</title>
+    <desc lang="en">UCLA vs St. John's. Starts Tue 24 Nov, 9:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="Peacock032.us">
     <title lang="en">Next Match: Sun FC vs Trinity FC (Tue 24 Nov, 11pm)</title>
