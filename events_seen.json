@@ -16,7 +16,7 @@
   "seen": "2026-11-22T08:07:39+00:00"
  },
  "_timing": {
-  "updated": "2026-11-23T13:07:19Z",
+  "updated": "2026-11-23T13:37:20Z",
   "groups": {
    "AppleMLS": {
     "n": 24,
@@ -30,8 +30,8 @@
     "n": 23,
     "missed": 84,
     "applied": true,
-    "median": -292,
-    "min": -712,
+    "median": -262,
+    "min": -682,
     "max": 56
    },
    "ESPNPPV": {
