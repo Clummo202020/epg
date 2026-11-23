@@ -5841,6 +5841,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124023000 +0000" stop="20261124043000 +0000" channel="AppleMLS013.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123013000 +0000" stop="20261123033000 +0000" channel="AppleMLS014.us">
     <title lang="en">🔴 LIVE: Vancouver vs Salt Lake (Spanish)</title>
     <sub-title lang="en">MLS</sub-title>
@@ -5906,6 +5911,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="AppleMLS014.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124023000 +0000" stop="20261124043000 +0000" channel="AppleMLS014.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -14405,6 +14415,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124022000 +0000" stop="20261124042000 +0000" channel="MPeacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="MPeacock005.us">
     <title lang="en">Next Event: Sunday Night Football Final (Mon 23 Nov, 4:30am)</title>
     <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
@@ -14619,6 +14634,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="MPeacock007.us">
+    <title lang="en">🔴 LIVE: Basketball. Nets vs Timberwolves</title>
+    <sub-title lang="en">NBA</sub-title>
+    <desc lang="en">Basketball. Nets vs Timberwolves. NBA. Starts Tue 24 Nov, 12:30am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261124023000 +0000" stop="20261124033000 +0000" channel="MPeacock007.us">
     <title lang="en">🔴 LIVE: Basketball. Nets vs Timberwolves</title>
     <sub-title lang="en">NBA</sub-title>
     <desc lang="en">Basketball. Nets vs Timberwolves. NBA. Starts Tue 24 Nov, 12:30am UK time.</desc>
@@ -15968,6 +15990,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124022000 +0000" stop="20261124042000 +0000" channel="MPeacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="MPeacock028.us">
     <title lang="en">Next Event: Sunday Night Football Final (Mon 23 Nov, 4:30am)</title>
     <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
@@ -16182,6 +16209,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="MPeacock030.us">
+    <title lang="en">🔴 LIVE: Basketball. Nets vs Timberwolves</title>
+    <sub-title lang="en">NBA</sub-title>
+    <desc lang="en">Basketball. Nets vs Timberwolves. NBA. Starts Tue 24 Nov, 12:30am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261124023000 +0000" stop="20261124033000 +0000" channel="MPeacock030.us">
     <title lang="en">🔴 LIVE: Basketball. Nets vs Timberwolves</title>
     <sub-title lang="en">NBA</sub-title>
     <desc lang="en">Basketball. Nets vs Timberwolves. NBA. Starts Tue 24 Nov, 12:30am UK time.</desc>
@@ -28093,80 +28127,6 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261122210500 +0000" stop="20261122230500 +0000" channel="NFL9.uk">
-    <title lang="en">🔴 LIVE: American Football. Jets at Chargers</title>
-    <sub-title lang="en">NFL</sub-title>
-    <desc lang="en">American Football. Jets at Chargers. NFL. Starts Sun 22 Nov, 9:05pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261122230500 +0000" stop="20261123003500 +0000" channel="NFL9.uk">
-    <title lang="en">🔴 LIVE: American Football. Jets at Chargers</title>
-    <sub-title lang="en">NFL</sub-title>
-    <desc lang="en">American Football. Jets at Chargers. NFL. Starts Sun 22 Nov, 9:05pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261123003500 +0000" stop="20261123023500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123023500 +0000" stop="20261123043500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123043500 +0000" stop="20261123063500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123063500 +0000" stop="20261123083500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123083500 +0000" stop="20261123103500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123103500 +0000" stop="20261123123500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123123500 +0000" stop="20261123143500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123143500 +0000" stop="20261123163500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123163500 +0000" stop="20261123183500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123183500 +0000" stop="20261123203500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123203500 +0000" stop="20261123223500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261123223500 +0000" stop="20261124003500 +0000" channel="NFL9.uk">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="Paramount014.us">
     <title lang="en">Next Match: Monza vs Fiorentina (Mon 23 Nov, 7:45pm)</title>
     <sub-title lang="en">Serie A</sub-title>
@@ -34788,6 +34748,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261124022000 +0000" stop="20261124042000 +0000" channel="Peacock027.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="Peacock028.us">
     <title lang="en">Next Event: Sunday Night Football Final (Mon 23 Nov, 4:30am)</title>
     <desc lang="en">Sunday Night Football Final. Starts Mon 23 Nov, 4:30am UK time.</desc>
@@ -35002,6 +34967,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124003000 +0000" stop="20261124023000 +0000" channel="Peacock030.us">
+    <title lang="en">🔴 LIVE: Basketball. Nets vs Timberwolves</title>
+    <sub-title lang="en">NBA</sub-title>
+    <desc lang="en">Basketball. Nets vs Timberwolves. NBA. Starts Tue 24 Nov, 12:30am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261124023000 +0000" stop="20261124033000 +0000" channel="Peacock030.us">
     <title lang="en">🔴 LIVE: Basketball. Nets vs Timberwolves</title>
     <sub-title lang="en">NBA</sub-title>
     <desc lang="en">Basketball. Nets vs Timberwolves. NBA. Starts Tue 24 Nov, 12:30am UK time.</desc>
@@ -78802,6 +78774,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261124020000 +0000" stop="20261124040000 +0000" channel="NFL8.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123020000 +0000" stop="20261123040000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123040000 +0000" stop="20261123060000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123060000 +0000" stop="20261123080000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123080000 +0000" stop="20261123100000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123100000 +0000" stop="20261123120000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123120000 +0000" stop="20261123140000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123140000 +0000" stop="20261123160000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123160000 +0000" stop="20261123180000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123180000 +0000" stop="20261123200000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123200000 +0000" stop="20261123220000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261123220000 +0000" stop="20261124000000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124000000 +0000" stop="20261124020000 +0000" channel="NFL9.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261124020000 +0000" stop="20261124040000 +0000" channel="NFL9.uk">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
