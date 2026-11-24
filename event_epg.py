@@ -322,6 +322,15 @@ def foxone_title(title):
     sport = "American Football" if m["sp"].lower() == "football" else "Basketball"
     lg = re.sub(r"\s+", " ", m["lg"]).strip().title().replace("'S", "'s")
     return f"{sport}. {m['match'].strip()}", f"{lg}, {m['conf'].strip()}"
+# Viaplay Iceland (24 Nov 2026, user; Main IPTV only for now, a test like Fox One): "Feyenoord vs Porto @ Nov 24 2:55 PM :Viaplay IS 01", 12-hour clock.
+# Time zone = Iceland = UTC all year (equals UK in winter): the Championship games of Tue 24 Nov (kick-off 7:45pm UK) were named 7:35 PM, i.e. the stream
+# opens ~10 min early. Ids ViaplayIS01.s7bq ... ViaplayIS50.s7bq (number = the one at the end of the stream name).
+VIAPLAY_AT = re.compile(
+    r"^\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
+    r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*:\s*Viaplay\s*IS\s*(?P<num>\d+)\s*$", re.I)
+VIAPLAY_EMPTY = re.compile(r"^\s*:?\s*Viaplay\s*IS\s*(?P<num>\d+)\s*$", re.I)      # ":Viaplay IS  41" = nothing on the slot
+VIAPLAY_AT_TZ = "Atlantic/Reykjavik"
+VIAPLAY_TOKEN = "s7bq"
 DISNEY_NCAA_TENNIS = re.compile(r"^(?P<court>[^-]{2,30}?)\s*-\s*(?P<rest>NCAA\b.+)$")
 NBA_ESPN = "basketball/nba"
 NBA_EVENT_HOURS = 3
@@ -1474,6 +1483,30 @@ def _parse_name(name):
     if fe:
         num = int(fe["num"])
         return {"name": name, "slot_id": f"FoxOne{num:02d}.{FOXONE_TOKEN}", "slot_name": f"Fox One {num:02d}", "title": "",
+                "extra": "", "comp": "", "start": datetime.now(timezone.utc) - timedelta(days=1)}   # -> filler only
+    vp = VIAPLAY_AT.match(name)                      # Title @ Nov 24 7:35 PM :Viaplay IS 05 (Iceland time = UTC; the stream opens ~10 min before kick-off)
+    if vp:
+        title = re.sub(r"\s+", " ", vp["title"]).strip()
+        approx = month_day_time(vp["mon"], vp["day"], vp["h"], vp["m"], vp["ap"], ZoneInfo(VIAPLAY_AT_TZ))
+        if approx is None or not title:
+            return None
+        num = int(vp["num"])
+        ev = {"name": name, "slot_id": f"ViaplayIS{num:02d}.{VIAPLAY_TOKEN}", "slot_name": f"Viaplay Iceland {num:02d}",
+              "title": title, "extra": "", "comp": "", "start": approx.astimezone(timezone.utc)}
+        rs = real_start(ev["title"], ev["start"])    # stream time -> real kick-off (like Stan / Peacock / TSN)
+        note_timing(ev["slot_id"], ev["title"], ev["start"], rs[0] if rs else None, True)
+        ev["_timed"] = True
+        if rs:
+            if abs(rs[0] - ev["start"]) >= timedelta(minutes=1):
+                print(f"  Viaplay IS {num:02d} kick-off: {ev['title']}: stream "
+                      f"{ev['start']:%d %b %H:%M} UTC, {rs[2] or '?'} {rs[0]:%d %b %H:%M} UTC")
+            ev["start"], ev["early"] = rs[0], PROVIDER_EARLY_MINUTES
+            ev["comp"] = rs[2] or ev["comp"]
+        return ev
+    ve = VIAPLAY_EMPTY.match(name)
+    if ve:
+        num = int(ve["num"])
+        return {"name": name, "slot_id": f"ViaplayIS{num:02d}.{VIAPLAY_TOKEN}", "slot_name": f"Viaplay Iceland {num:02d}", "title": "",
                 "extra": "", "comp": "", "start": datetime.now(timezone.utc) - timedelta(days=1)}   # -> filler only
     dz = DISNEY_AT.match(name)                       # Title @ Nov 19 8:00 AM :Disney+ USA  04 (US Eastern)
     if dz:
