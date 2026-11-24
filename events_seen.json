@@ -1,34 +1,47 @@
 {
- "CASOCCERPPV42.ca": {
-  "name": "Live | ACC Mens Asia Cup Rising Stars 2026 - 11th Match - India A vs United Arab Emirates | all | 8K EXCLUSIVE | CA: SOCCER PPV 42",
-  "seen": "2026-11-24T10:24:05+00:00"
+ "CASOCCERPPV10.ca": {
+  "name": "Live | Bodø/Glimt vs. LASK | all | 8K EXCLUSIVE | CA: SOCCER PPV 10",
+  "seen": "2026-11-24T19:07:40+00:00"
+ },
+ "CASOCCERPPV5.ca": {
+  "name": "Live | International League T20 2026 - 5th Match - Gulf Giants vs Mi Emirates | all | 8K EXCLUSIVE | CA: SOCCER PPV 5",
+  "seen": "2026-11-24T19:07:40+00:00"
+ },
+ "CASOCCERPPV7.ca": {
+  "name": "Live | Quarterfinal: Czechia vs. Canada | all | 8K EXCLUSIVE | CA: SOCCER PPV 7",
+  "seen": "2026-11-24T19:07:40+00:00"
+ },
+ "CASOCCERPPV8.ca": {
+  "name": "Live | Delaware at Princeton | all | 8K EXCLUSIVE | CA: SOCCER PPV 8",
+  "seen": "2026-11-24T19:07:40+00:00"
+ },
+ "CASOCCERPPV9.ca": {
+  "name": "Live | Galatasaray vs. Aston Villa | all | 8K EXCLUSIVE | CA: SOCCER PPV 9",
+  "seen": "2026-11-24T19:07:40+00:00"
  },
  "_timing": {
-  "updated": "2026-11-24T18:37:19Z",
+  "updated": "2026-11-24T19:07:18Z",
   "groups": {
    "AppleMLS": {
-    "n": 18,
-    "missed": 2,
+    "n": 26,
+    "missed": 0,
     "applied": true,
     "median": -20,
-    "min": -35,
+    "min": -545,
     "max": 10
    },
    "CASOCCERPPV": {
-    "n": 8,
-    "missed": 41,
+    "n": 9,
+    "missed": 17,
     "applied": true,
     "median": 47,
-    "min": 45,
-    "max": 47
+    "min": 47,
+    "max": 75
    },
    "ESPNPPV": {
-    "n": 6,
-    "missed": 67,
-    "applied": false,
-    "median": -30,
-    "min": -30,
-    "max": 0
+    "n": 0,
+    "missed": 20,
+    "applied": false
    },
    "FoxOne": {
     "n": 0,
@@ -41,7 +54,7 @@
     "applied": false
    },
    "NBA": {
-    "n": 10,
+    "n": 3,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -62,18 +75,18 @@
     "applied": false
    },
    "Paramount": {
-    "n": 67,
-    "missed": 26,
+    "n": 76,
+    "missed": 28,
     "applied": true,
-    "median": 50,
+    "median": 16,
     "min": 0,
     "max": 60
    },
    "Peacock": {
-    "n": 12,
+    "n": 11,
     "missed": 55,
     "applied": true,
-    "median": -20,
+    "median": -10,
     "min": -80,
     "max": 60
    },
@@ -81,34 +94,37 @@
     "n": 10,
     "missed": 1,
     "applied": true,
-    "median": -15,
-    "min": -30,
+    "median": 0,
+    "min": 0,
     "max": 0
    },
    "STAN": {
-    "n": 57,
-    "missed": 18,
+    "n": 59,
+    "missed": 16,
     "applied": true,
     "median": -10,
     "min": -425,
     "max": -5
    },
    "TSN": {
-    "n": 6,
-    "missed": 36,
+    "n": 7,
+    "missed": 41,
     "applied": true,
     "median": -12,
     "min": -12,
     "max": -12
    },
    "UEFA": {
-    "n": 0,
-    "missed": 14,
-    "applied": false
+    "n": 9,
+    "missed": 6,
+    "applied": false,
+    "median": 0,
+    "min": 0,
+    "max": 0
    }
   },
   "check": {
-   "compared": 92,
+   "compared": 105,
    "differ": 0,
    "examples": []
   }
