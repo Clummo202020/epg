@@ -220,6 +220,8 @@ def football_check_section(now, lines, warns):
             d = json.load(fh)
         los = []
         for f in list(d.get("fixtures", [])) + list((d.get("football") or {}).get("fixtures", [])):
+            if re.search(r"(?i)youth|\bU-?(?:1[5-9]|2[0-3])\b|\bunder[- ]?\d", f.get("comp", "")):
+                continue                      # 24 Nov 2026: youth / age-group fixtures of the same clubs are not our senior kick-offs (false "differ" warning)
             a, b = _words(f["a"]), _words(f["b"])
             if a and b:
                 los.append((a, b, datetime.strptime(f["start"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc), f["a"], f["b"], f.get("comp", "")))

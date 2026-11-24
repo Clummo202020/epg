@@ -202,7 +202,7 @@ SCOTTISH_GUIDE_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/sc
 # 19:45/20:00 kick-off). For these, real_start() looks up the real kick-off and the competition with
 # its round, like the Soccer PPV slots. Peacock added 28 Oct 2026 (its Premier League streams open
 # ~10 min early: "Hull City v. Ipswich Town (10:50 ET)" for a 15:00 UK kick-off).
-REAL_START_GROUPS = ("paramount", "peacock", "stan", "tsn")   # "stan" added 6 Nov 2026: Stan's stream time is ~30 min before kick-off (user: "Stan 04 times are out"); "tsn" added 18 Nov 2026 (user: guide_health measured TSN streams 12 min early, median of 7 matches)
+REAL_START_GROUPS = ("paramount", "peacock", "stan", "tsn", "sn+")   # "stan" added 6 Nov 2026: Stan's stream time is ~30 min before kick-off (user: "Stan 04 times are out"); "tsn" added 18 Nov 2026 (user: guide_health measured TSN streams 12 min early, median of 7 matches); "sn+" added 24 Nov 2026 (user: guide_health measured Sportsnet+ streams 15 min early, median of 10 matches; slot text is "SN+ 003", so the prefix "sn+" cannot catch another group)
 TEAM_SHORT_NAMES = [(r"(?i)^\s*spurs\s*$", "Tottenham Hotspur"), (r"(?i)^\s*wolves\s*$", "Wolverhampton"),
                     (r"(?i)\bnott'?m\.?\s+forest\b", "Nottingham Forest"),
                     (r"(?i)^\s*forest\s*$", "Nottingham Forest"), (r"(?i)^\s*palace\s*$", "Crystal Palace"),
