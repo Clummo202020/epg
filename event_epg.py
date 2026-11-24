@@ -300,6 +300,28 @@ DISNEY_AT = re.compile(
     r"(?P<h>\d{1,2})(?::(?P<m>\d{2}))?\s*(?P<ap>[ap])\.?m\.?\s*:\s*Disney\+?\s*USA\s*(?P<num>\d+)\s*$", re.I)
 DISNEY_AT_TZ = "America/Los_Angeles"      # 21 Nov 2026: guide_health measured the stream times 195 min (median, 5 matches) before the real start = US Pacific, not Eastern
 DISNEY_TOKEN = "w5c8"                    # 21 Nov 2026: new ids (times moved 3 h later); was h2m6
+# Fox One (24 Nov 2026, user; Main IPTV only for now, a test like Fubo / Disney+): "Fox Weather First @ Nov 19 05:00 :FOX ONE  01" - 24-HOUR time,
+# no AM / PM (an am / pm is accepted too). An empty slot is just ":FOX ONE  20". Time taken as US Eastern (a guess: the weather show at 05:00 and the
+# midday racing show fit Eastern; NOT measured yet - check the guide_health stream-times table, Disney+ turned out to be Pacific). Ids FoxOne01.n6vz ... FoxOne50.n6vz.
+FOXONE_AT = re.compile(
+    r"^\s*(?P<title>.+?)\s*@\s*(?P<mon>[A-Za-z]{3})[a-z]*\.?\s+(?P<day>\d{1,2})(?:st|nd|rd|th)?,?\s+"
+    r"(?P<h>\d{1,2}):(?P<m>\d{2})\s*(?P<ap>[ap]\.?m\.?)?\s*:\s*Fox\s*One\s*(?P<num>\d+)\s*$", re.I)
+FOXONE_EMPTY = re.compile(r"^\s*:?\s*Fox\s*One\s*(?P<num>\d+)\s*$", re.I)
+FOXONE_AT_TZ = "America/New_York"
+FOXONE_TOKEN = "n6vz"
+# "FOX College Football - Big 12: Baylor at BYU" is too long for Tivimate: the match goes in the title with the sport first, the league line in the description.
+FOXONE_COLLEGE = re.compile(
+    r"^(?:FOX\s+)?(?P<lg>(?:Women'?s\s+|Men'?s\s+)?College\s+(?P<sp>Football|Basketball))\s*-\s*(?P<conf>[^:]{2,40}?)\s*:\s*(?P<match>.+)$", re.I)
+
+
+def foxone_title(title):
+    """(title, description extra) for a Fox One stream name; names that are not college sport are left as they are."""
+    m = FOXONE_COLLEGE.match(title)
+    if not m:
+        return title, ""
+    sport = "American Football" if m["sp"].lower() == "football" else "Basketball"
+    lg = re.sub(r"\s+", " ", m["lg"]).strip().title().replace("'S", "'s")
+    return f"{sport}. {m['match'].strip()}", f"{lg}, {m['conf'].strip()}"
 DISNEY_NCAA_TENNIS = re.compile(r"^(?P<court>[^-]{2,30}?)\s*-\s*(?P<rest>NCAA\b.+)$")
 NBA_ESPN = "basketball/nba"
 NBA_EVENT_HOURS = 3
@@ -1433,6 +1455,26 @@ def _parse_name(name):
         num = int(fb["num"])
         return {"name": name, "slot_id": f"FuboUS{num:02d}.{FUBO_TOKEN}", "slot_name": f"Fubo Sports {num:02d}",
                 "title": title, "extra": "", "comp": "", "start": approx.astimezone(timezone.utc)}
+    fo = FOXONE_AT.match(name)                       # Title @ Nov 19 05:00 :FOX ONE  01 (24-hour, US Eastern assumed)
+    if fo:
+        title = re.sub(r"\s+", " ", fo["title"]).strip()
+        h = int(fo["h"])
+        if fo["ap"]:                                 # an explicit am / pm wins
+            ap = fo["ap"][0].lower()
+        else:                                        # 24-hour clock: feed the 12-hour helper
+            ap, h = ("p" if h >= 12 else "a"), h % 12
+        approx = month_day_time(fo["mon"], fo["day"], h, fo["m"], ap, ZoneInfo(FOXONE_AT_TZ))
+        if approx is None or not title or int(fo["m"]) > 59 or int(fo["h"]) > 23:
+            return None
+        num = int(fo["num"])
+        title, extra = foxone_title(title)
+        return {"name": name, "slot_id": f"FoxOne{num:02d}.{FOXONE_TOKEN}", "slot_name": f"Fox One {num:02d}",
+                "title": title, "extra": extra, "comp": "", "start": approx.astimezone(timezone.utc)}
+    fe = FOXONE_EMPTY.match(name)                    # ":FOX ONE  20" - nothing on this slot
+    if fe:
+        num = int(fe["num"])
+        return {"name": name, "slot_id": f"FoxOne{num:02d}.{FOXONE_TOKEN}", "slot_name": f"Fox One {num:02d}", "title": "",
+                "extra": "", "comp": "", "start": datetime.now(timezone.utc) - timedelta(days=1)}   # -> filler only
     dz = DISNEY_AT.match(name)                       # Title @ Nov 19 8:00 AM :Disney+ USA  04 (US Eastern)
     if dz:
         title = re.sub(r"\s+", " ", dz["title"]).strip()
