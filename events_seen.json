@@ -4,7 +4,7 @@
   "seen": "2026-11-24T10:24:05+00:00"
  },
  "_timing": {
-  "updated": "2026-11-24T10:37:18Z",
+  "updated": "2026-11-24T11:07:19Z",
   "groups": {
    "AppleMLS": {
     "n": 18,
@@ -23,10 +23,10 @@
     "max": 467
    },
    "ESPNPPV": {
-    "n": 10,
-    "missed": 63,
+    "n": 6,
+    "missed": 67,
     "applied": false,
-    "median": -20,
+    "median": -30,
     "min": -30,
     "max": 0
    },
@@ -81,16 +81,16 @@
     "max": 0
    },
    "STAN": {
-    "n": 100,
-    "missed": 53,
+    "n": 96,
+    "missed": 57,
     "applied": true,
     "median": -10,
     "min": -425,
     "max": -5
    },
    "TSN": {
-    "n": 7,
-    "missed": 35,
+    "n": 6,
+    "missed": 36,
     "applied": true,
     "median": -12,
     "min": -12,
