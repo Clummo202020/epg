@@ -159,10 +159,14 @@
   // British and Irish channels are listed first, and kept APART: Premier Sports Ireland, Sky Sports Ireland, Virgin Media etc. have their own
   // schedules, so they are never shown as "UK TV". Sky Sports (plural) is the UK one - Sky Sport (singular) is Austria, Italy, Germany, NZ.
   // ("Northern Ireland" is British: BBC One Northern Ireland, UTV.)
-  const UK_CHAN = /\b(UK|Great Britain|GB Player|Sky Sports|TNT Sports|BBC|ITV|UTV|STV|S4C|BT Sport)\b/i;
+  const UK_CHAN = /\b(UK|Great Britain|GB Player|Sky Sports|TNT Sports|BBC|ITV|UTV|STV|S4C|BT Sport)\b|^Channel [45](?:\s+(?:HD|UHD|4K|\+1))*$/i;   // Channel 4 / Channel 5 added 24 Nov 2026 (only when the name stops there: "Channel 5 Israel" is not British)
   const IE_CHAN = /\b(Ireland|Irish|Virgin Media|RT[EÉ]|TG4|Eir Sport|LOI TV)\b/i;
   const isIrish = (c) => IE_CHAN.test(c.replace(/Northern Ireland/gi, ""));
   const isBritish = (c) => !isIrish(c) && UK_CHAN.test(c);
+  // American channels (24 Nov 2026): LiveOnSat names them with "USA" (Paramount+ USA, Peacock Premium USA, ESPN+ USA, Fox Soccer Plus USA, TUDN Español USA ...); a few have no suffix.
+  // "Apple TV" is worldwide, so it is not listed as American.
+  const US_CHAN = /\b(USA|Peacock|Paramount\+|ESPN\+|FS[12]|Fox Soccer|Fox Sports|TUDN|Uni(?:Más|Mas)|Telemundo|Fubo|CBS|NBC)\b|ESPN\+/i;
+  const isAmerican = (c) => !isBritish(c) && !isIrish(c) && US_CHAN.test(c);
 
   // ---- which country / league each competition belongs to, and what the user has hidden (kept on this device) ----
   const STORE_KEY = "football-on-tv:filters:v1";
@@ -255,11 +259,11 @@
         const start = new Date(f.start);
         // LiveOnSat's small flags in brackets - "($/ww)", "(geo/R)" - are not part of a channel's name ("(uk only)" is kept)
         const ch0 = [...new Set((Array.isArray(f.ch) ? f.ch : []).map((c) => c.replace(/\s*\((?=[^)]*[$\/])[$\/\w]{1,12}\)/g, "").trim()).filter(Boolean))];
-        const ch = ch0.filter(isBritish).concat(ch0.filter(isIrish), ch0.filter((c) => !isBritish(c) && !isIrish(c)));   // British, then Irish, then the rest
+        const ch = ch0.filter(isBritish).concat(ch0.filter(isIrish), ch0.filter(isAmerican), ch0.filter((c) => !isBritish(c) && !isIrish(c) && !isAmerican(c)));   // British, then Irish, then American, then the rest
         // the league / cup itself: everything before the first " - " (that part is the week, round, stage or group); Serie C's girone letters go too
         const comp = String(f.comp || "").split(/\s+-\s+/)[0].replace(/\s+Girone\s+[A-C]$/i, "").trim() || "Football";
         return { start, a: f.a, b: f.b, compFull: f.comp || "", comp, ch, uk: UK_COMP.test(f.comp || ""),
-                 ukch: ch.filter(isBritish), iech: ch.filter(isIrish), country: countryOf(comp), women: WOMEN.test(f.comp || ""), youth: YOUTH.test([f.comp, f.a, f.b].join(" ")),
+                 ukch: ch.filter(isBritish), iech: ch.filter(isIrish), usch: ch.filter(isAmerican), country: countryOf(comp), women: WOMEN.test(f.comp || ""), youth: YOUTH.test([f.comp, f.a, f.b].join(" ")),
                  hay: fold([f.a, f.b, f.comp, ch.join(" ")].join(" ")), dayKey: ukDayKey.format(start) };
       })
       .filter((f) => !isNaN(f.start) && f.start.getTime() >= cutoff)
@@ -382,7 +386,7 @@
         <div>
           <p class="title">${esc(f.a)} v ${esc(f.b)}</p>
           <p class="sub">${esc(f.compFull || f.comp)}${underway ? '<span class="now">Under way</span>' : ""}</p>
-          ${chanLine("On UK TV", f.ukch)}${chanLine("On Irish TV", f.iech)}${!f.ukch.length && !f.iech.length && f.uk
+          ${chanLine("On UK TV", f.ukch)}${chanLine("On Irish TV", f.iech)}${chanLine("On US TV", f.usch)}${!f.ukch.length && !f.iech.length && f.uk
             ? `<p class="ukline none">No ${f.country === "Ireland" ? "Irish" : "UK"} channel listed yet</p>` : ""}
           ${f.ch.length ? `<ul class="chans">${shown.map((c) => `<li>${esc(c)}</li>`).join("")}${
             rest.map((c) => `<li hidden data-rest="${idx}">${esc(c)}</li>`).join("")}</ul>

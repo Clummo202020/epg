@@ -150,9 +150,14 @@
 (() => {
   "use strict";
   // Where the guide lives: next to this page first, then the GitHub copy.
-  const SOURCES = [
-    "SPORT_epg.xml.gz",
-    "https://raw.githubusercontent.com/Clummo202020/epg/main/SPORT_epg.xml.gz",
+  const BASE = "https://raw.githubusercontent.com/Clummo202020/epg/main/";
+  // The Sport guide is required; the USA, Canada and General guides (24 Nov 2026) add the American and Canadian channels and the general UK / US channels.
+  // If one of those cannot be read the page still works and says which one is missing.
+  const GUIDES = [
+    { name: "Sport",   file: "SPORT_epg.xml.gz",   required: true },
+    { name: "USA",     file: "USA_epg.xml.gz" },
+    { name: "Canada",  file: "CANADA_epg.xml.gz" },
+    { name: "General", file: "GENERAL_epg.xml.gz" },
   ];
   const CLUSTER_MINUTES = 45;      // programmes starting within this of each other are one match
 
@@ -196,9 +201,12 @@
     const off = (m[7] === "-" ? -1 : 1) * ((+m[8]) * 60 + (+m[9])) * 60000;
     return new Date(utc - off);
   }
+  const SUFFIX_COUNTRY = { uk: "UK", us: "US", ca: "CA", ca2: "CA", ie: "IE", es: "ES", dk: "DK" };   // General-guide ids: "name.uk"
   function country(id) {
-    const prefix = String(id).split(".")[0];
-    return COUNTRIES[prefix] || ["📺", prefix];
+    const parts = String(id).split(".");
+    if (COUNTRIES[parts[0]]) return COUNTRIES[parts[0]];
+    const suffix = SUFFIX_COUNTRY[parts[parts.length - 1].toLowerCase()];
+    return suffix ? COUNTRIES[suffix] : ["📺", parts[0]];
   }
   function esc(t) {
     return String(t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -211,16 +219,15 @@
     return await new Response(stream).text();
   }
 
-  async function loadGuide() {
+  async function loadOne(g) {
     const failures = [];
-    for (const url of SOURCES) {
+    for (const url of [g.file, BASE + g.file]) {       // next to this page first, then the GitHub copy
       try {
         const res = await fetch(url, { cache: "no-cache" });
         if (!res.ok) { failures.push(`${url}: HTTP ${res.status}`); continue; }
         const text = await gunzip(await res.arrayBuffer());
         if (!text.includes("<tv")) { failures.push(`${url}: not a TV guide`); continue; }
-        guideDate = res.headers.get("Last-Modified");
-        return text;
+        return { text, date: res.headers.get("Last-Modified") };
       } catch (e) {
         failures.push(`${url}: ${e.message || e}`);
       }
@@ -228,16 +235,35 @@
     throw new Error(failures.join(" | "));
   }
 
-  function parseGuide(text) {
+  async function loadGuides() {
+    const settled = await Promise.allSettled(GUIDES.map(loadOne));
+    const loaded = [], missing = [];
+    settled.forEach((r, i) => {
+      if (r.status === "fulfilled") loaded.push({ g: GUIDES[i], ...r.value });
+      else if (GUIDES[i].required) throw r.reason;       // no Sport guide, nothing to search
+      else missing.push(GUIDES[i].name);
+    });
+    guideDate = loaded[0].date;                           // the Sport guide's date
+    if (missing.length) extrasNote = ` (The ${missing.join(" and ")} guide could not be read, so those channels are missing.)`;
+    return loaded;
+  }
+
+  const owner = {};                // channel id -> index of the guide it was read from (an id in two guides is read from the first only)
+  function parseGuide(text, gi) {
     let m;
     const chRx = /<channel id="([^"]+)">\s*<display-name[^>]*>([^<]*)<\/display-name>/g;
-    while ((m = chRx.exec(text))) channels[unescapeXml(m[1])] = unescapeXml(m[2]);
+    while ((m = chRx.exec(text))) {
+      const id = unescapeXml(m[1]);
+      if (owner[id] === undefined) { owner[id] = gi; channels[id] = unescapeXml(m[2]); }
+    }
     const prRx = /<programme ([^>]*)>([\s\S]*?)<\/programme>/g;
     const attr = (a, name) => (new RegExp(name + '="([^"]*)"').exec(a) || [])[1] || "";
     const tag = (body, name) => { const r = new RegExp("<" + name + "[^>]*>([\\s\\S]*?)</" + name + ">").exec(body); return r ? unescapeXml(r[1]).trim() : ""; };
     const now = Date.now();
     while ((m = prRx.exec(text))) {
       const ch = unescapeXml(attr(m[1], "channel"));
+      if (owner[ch] === undefined) owner[ch] = gi;
+      if (owner[ch] !== gi) continue;                       // the same channel id from a later guide
       const sub = tag(m[2], "sub-title");
       if (sub === "Coming up") continue;                    // the guide's "coming up" fillers
       const stop = xmltvDate(attr(m[1], "stop"));
@@ -255,7 +281,7 @@
     programmes.sort((a, b) => a.start - b.start);
   }
 
-  const extrasNote = "";
+  let extrasNote = "";
 
   function search(query, liveOnly, inDesc) {
     const words = fold(query).split(/[\s,]+/).filter((w) => w.length > 1);
@@ -344,8 +370,9 @@
   $("liveOnly").addEventListener("change", render);
   $("inDesc").addEventListener("change", render);
 
-  loadGuide().then((text) => {
-    parseGuide(text);
+  loadGuides().then((loaded) => {
+    loaded.forEach((x, i) => parseGuide(x.text, i));
+    programmes.sort((a, b) => a.start - b.start);
     q.disabled = false;
     q.value = new URL(location.href).searchParams.get("q") || "";
     if (guideDate) $("footer").textContent = `Guide last updated ${new Date(guideDate).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} UK time.`;
@@ -353,7 +380,7 @@
     q.focus();
   }).catch((e) => {
     statusEl.className = "status error";
-    statusEl.textContent = `The guide couldn’t be read, so there’s nothing to search yet. Check that SPORT_epg.xml.gz is in the same GitHub repository as this page. Details: ${e.message}`;
+    statusEl.textContent = `The guide couldn’t be read, so there’s nothing to search yet. Check that SPORT_epg.xml.gz (and the USA, Canada and General guides) are in the same GitHub repository as this page. Details: ${e.message}`;
   });
 })();
 </script>
