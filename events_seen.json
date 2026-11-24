@@ -4,7 +4,7 @@
   "seen": "2026-11-24T10:24:05+00:00"
  },
  "_timing": {
-  "updated": "2026-11-24T11:37:18Z",
+  "updated": "2026-11-24T11:41:51Z",
   "groups": {
    "AppleMLS": {
     "n": 18,
@@ -29,6 +29,11 @@
     "median": -30,
     "min": -30,
     "max": 0
+   },
+   "FoxOne": {
+    "n": 0,
+    "missed": 8,
+    "applied": false
    },
    "MLB": {
     "n": 0,
