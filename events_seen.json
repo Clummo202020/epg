@@ -4,7 +4,7 @@
   "seen": "2026-11-24T10:24:05+00:00"
  },
  "_timing": {
-  "updated": "2026-11-24T11:07:19Z",
+  "updated": "2026-11-24T11:37:18Z",
   "groups": {
    "AppleMLS": {
     "n": 18,
@@ -53,22 +53,22 @@
    },
    "PPVEVENT": {
     "n": 0,
-    "missed": 7,
+    "missed": 2,
     "applied": false
    },
    "Paramount": {
-    "n": 69,
-    "missed": 27,
+    "n": 67,
+    "missed": 26,
     "applied": true,
     "median": 50,
     "min": 0,
     "max": 60
    },
    "Peacock": {
-    "n": 25,
-    "missed": 105,
+    "n": 12,
+    "missed": 55,
     "applied": true,
-    "median": -30,
+    "median": -20,
     "min": -80,
     "max": 60
    },
@@ -81,8 +81,8 @@
     "max": 0
    },
    "STAN": {
-    "n": 96,
-    "missed": 57,
+    "n": 57,
+    "missed": 18,
     "applied": true,
     "median": -10,
     "min": -425,
