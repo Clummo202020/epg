@@ -16,7 +16,7 @@
   "seen": "2026-11-22T08:07:39+00:00"
  },
  "_timing": {
-  "updated": "2026-11-24T05:37:18Z",
+  "updated": "2026-11-24T06:07:28Z",
   "groups": {
    "AppleMLS": {
     "n": 22,
@@ -27,12 +27,12 @@
     "max": 10
    },
    "CASOCCERPPV": {
-    "n": 17,
-    "missed": 90,
+    "n": 16,
+    "missed": 91,
     "applied": true,
-    "median": 338,
-    "min": 52,
-    "max": 698
+    "median": 353,
+    "min": -712,
+    "max": 623
    },
    "ESPNPPV": {
     "n": 1,
