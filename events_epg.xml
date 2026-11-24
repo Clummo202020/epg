@@ -39866,6 +39866,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261125033000 +0000" stop="20261125053000 +0000" channel="TSN048.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261124020000 +0000" stop="20261124040000 +0000" channel="TSN049.ca">
     <title lang="en">Next Match: NCAA Men's Basketball: Creighton vs Michigan (Tue 24 Nov, 10:30pm)</title>
     <sub-title lang="en">NCAA</sub-title>
@@ -39947,6 +39952,11 @@
     <category lang="en">Live</category>
   </programme>
   <programme start="20261125013000 +0000" stop="20261125033000 +0000" channel="TSN049.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261125033000 +0000" stop="20261125053000 +0000" channel="TSN049.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -40108,6 +40118,11 @@
     <desc lang="en">CFP Rankings Show. Starts Wed 25 Nov, 12:30am UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261125033000 +0000" stop="20261125053000 +0000" channel="TSN051.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261124020000 +0000" stop="20261124040000 +0000" channel="TSN052.ca">
     <title lang="en">Next Match: NCAA Men's Basketball: Texas Tech vs Louisville (Wed 25 Nov, 1am)</title>
@@ -40353,10 +40368,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261125020000 +0000" stop="20261125033000 +0000" channel="TSN054.ca">
-    <title lang="en">Next up: LIVE – NCAA Men's Basketball: Oregon vs St. John's (Wed 25 Nov, 3:30am)</title>
+    <title lang="en">Next up: LIVE – NCAA Men's Basketball: Oregon vs St. John's (3:30am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NCAA Men's Basketball: Oregon vs St. John's starts Wed 25 Nov, 3:30am UK time.</desc>
+    <desc lang="en">Next up: LIVE. NCAA Men's Basketball: Oregon vs St. John's starts at 3:30am UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261125033000 +0000" stop="20261125053000 +0000" channel="TSN054.ca">
+    <title lang="en">🔴 LIVE: NCAA Men's Basketball: Oregon vs St. John's</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Men's Basketball: Oregon vs St. John's. Starts Wed 25 Nov, 3:30am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261124020000 +0000" stop="20261124040000 +0000" channel="TSN055.ca">
     <title lang="en">Next Match: NCAA Men's Basketball: Gonzaga vs Kansas State (Wed 25 Nov, 5:30am)</title>
