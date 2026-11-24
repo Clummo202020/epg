@@ -1,46 +1,34 @@
 {
- "CASOCCERPPV111.ca": {
-  "name": "Live | Oklahoma State vs. Arizona State | all | 8K EXCLUSIVE | CA: SOCCER PPV 111",
-  "seen": "2026-11-22T08:07:39+00:00"
- },
- "CASOCCERPPV124.ca": {
-  "name": "Live | Womens Big Bash League 2026 - 31st Match - Brisbane Heat Women vs Adelaide Strikers Women | all | 8K EXCLUSIVE | CA: SOCCER PPV 124",
-  "seen": "2026-11-22T08:07:39+00:00"
- },
- "CASOCCERPPV125.ca": {
-  "name": "Live | F1 Chequered Flag-Las Vegas Grand Prix | all | 8K EXCLUSIVE | CA: SOCCER PPV 125",
-  "seen": "2026-11-22T08:07:39+00:00"
- },
- "CASOCCERPPV126.ca": {
-  "name": "Live | ACC Mens Asia Cup Rising Stars 2026 - 7th Match - United Arab Emirates vs Nepal | all | 8K EXCLUSIVE | CA: SOCCER PPV 126",
-  "seen": "2026-11-22T08:07:39+00:00"
+ "CASOCCERPPV42.ca": {
+  "name": "Live | ACC Mens Asia Cup Rising Stars 2026 - 11th Match - India A vs United Arab Emirates | all | 8K EXCLUSIVE | CA: SOCCER PPV 42",
+  "seen": "2026-11-24T10:24:05+00:00"
  },
  "_timing": {
-  "updated": "2026-11-24T10:07:28Z",
+  "updated": "2026-11-24T10:23:46Z",
   "groups": {
    "AppleMLS": {
-    "n": 22,
-    "missed": 14,
+    "n": 18,
+    "missed": 2,
     "applied": true,
-    "median": -5,
-    "min": -185,
+    "median": -20,
+    "min": -35,
     "max": 10
    },
    "CASOCCERPPV": {
-    "n": 14,
-    "missed": 93,
+    "n": 8,
+    "missed": 41,
     "applied": true,
-    "median": 563,
-    "min": -472,
-    "max": 608
+    "median": 47,
+    "min": 45,
+    "max": 467
    },
    "ESPNPPV": {
-    "n": 1,
-    "missed": 126,
+    "n": 10,
+    "missed": 63,
     "applied": false,
-    "median": -30,
+    "median": -20,
     "min": -30,
-    "max": -30
+    "max": 0
    },
    "MLB": {
     "n": 0,
@@ -48,7 +36,7 @@
     "applied": false
    },
    "NBA": {
-    "n": 6,
+    "n": 10,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -56,7 +44,7 @@
     "max": 0
    },
    "NFL": {
-    "n": 12,
+    "n": 1,
     "missed": 0,
     "applied": false,
     "median": 0,
@@ -69,40 +57,40 @@
     "applied": false
    },
    "Paramount": {
-    "n": 79,
-    "missed": 22,
+    "n": 69,
+    "missed": 27,
     "applied": true,
     "median": 50,
     "min": 0,
-    "max": 420
+    "max": 60
    },
    "Peacock": {
-    "n": 13,
-    "missed": 50,
+    "n": 25,
+    "missed": 105,
     "applied": true,
     "median": -30,
     "min": -80,
     "max": 60
    },
    "SN": {
-    "n": 16,
-    "missed": 3,
+    "n": 10,
+    "missed": 1,
     "applied": false,
-    "median": 0,
-    "min": -10,
+    "median": -15,
+    "min": -30,
     "max": 0
    },
    "STAN": {
-    "n": 41,
-    "missed": 37,
+    "n": 100,
+    "missed": 53,
     "applied": true,
     "median": -10,
-    "min": -75,
+    "min": -425,
     "max": -5
    },
    "TSN": {
-    "n": 2,
-    "missed": 48,
+    "n": 7,
+    "missed": 35,
     "applied": true,
     "median": -12,
     "min": -12,
@@ -115,7 +103,7 @@
    }
   },
   "check": {
-   "compared": 87,
+   "compared": 93,
    "differ": 0,
    "examples": []
   }
