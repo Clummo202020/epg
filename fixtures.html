@@ -167,6 +167,29 @@
   // "Apple TV" is worldwide, so it is not listed as American.
   const US_CHAN = /\b(USA|Peacock|Paramount\+|ESPN\+|FS[12]|Fox Soccer|Fox Sports|TUDN|Uni(?:Más|Mas)|Telemundo|Fubo|CBS|NBC)\b|ESPN\+/i;
   const isAmerican = (c) => !isBritish(c) && !isIrish(c) && US_CHAN.test(c);
+  // Channels by country (25 Nov 2026). LiveSoccerTV's match pages give each match's channels per country (`cc`: UK, IE, US, CA, CY, NZ ...) - they come FIRST;
+  // LiveOnSat's own channels follow (same country, same name once). A channel LiveSoccerTV has no country line for stays in the full list only.
+  const CC_LINES = [["UK", "On UK TV", isBritish], ["IE", "On Irish TV", isIrish], ["US", "On US TV", isAmerican],
+    ["CA", "On Canadian TV", (c) => /\bCanada\b/i.test(c)], ["NZ", "On NZ TV", (c) => /\bNZ\b|New Zealand/i.test(c)],
+    ["AU", "On Australian TV", (c) => /\bAustralia\b/i.test(c)], ["SG", "On Singapore TV", (c) => /Singapore|StarHub|\bHub (Premier|Sports?)/i.test(c)],
+    ["HK", "On Hong Kong TV", (c) => /Hong Kong|\bHK\b|\bNOW (TV|Premier|Sports?)/i.test(c)], ["IN", "On India TV", (c) => /\bIndia\b|Sony Sports TEN/i.test(c)],
+    ["MY", "On Malaysia TV", (c) => /Malaysia|\bAstro\b/i.test(c)], ["TH", "On Thailand TV", (c) => /Thailand/i.test(c)],
+    ["ID", "On Indonesia TV", (c) => /Indonesia/i.test(c)], ["CY", "On Cyprus TV", (c) => /\bCytavision\b/i.test(c)],
+    ["ME", "On beIN MENA English", (c) => /beIN.*(MENA|English)/i.test(c)], ["CB", "On Caribbean TV", (c) => /Caribbean/i.test(c)]];
+  const chKey = (c) => c.toLowerCase().replace(/\([^)]*\)/g, "").replace(/\b(hd|uhd|4k|uk|usa|us|ireland|great britain|gb)\b/g, "").replace(/[^a-z0-9+]/g, "");
+  function byCountry(cc, ch0) {
+    const lines = [], used = new Set();
+    for (const [key, label, test] of CC_LINES) {
+      const list = [], seen = new Set();
+      for (const c of ((cc && cc[key]) || []).concat(ch0.filter((c) => !used.has(c) && test(c)))) {
+        const k = chKey(c);
+        if (k && !seen.has(k)) { seen.add(k); list.push(c); }
+      }
+      ch0.forEach((c) => { if (test(c)) used.add(c); });
+      if (list.length) lines.push({ key, label, list });
+    }
+    return lines;
+  }
 
   // ---- which country / league each competition belongs to, and what the user has hidden (kept on this device) ----
   const STORE_KEY = "football-on-tv:filters:v1";
@@ -259,11 +282,13 @@
         const start = new Date(f.start);
         // LiveOnSat's small flags in brackets - "($/ww)", "(geo/R)" - are not part of a channel's name ("(uk only)" is kept)
         const ch0 = [...new Set((Array.isArray(f.ch) ? f.ch : []).map((c) => c.replace(/\s*\((?=[^)]*[$\/])[$\/\w]{1,12}\)/g, "").trim()).filter(Boolean))];
-        const ch = ch0.filter(isBritish).concat(ch0.filter(isIrish), ch0.filter(isAmerican), ch0.filter((c) => !isBritish(c) && !isIrish(c) && !isAmerican(c)));   // British, then Irish, then American, then the rest
+        const lines = byCountry(f.cc, ch0);
+        const inLines = new Set(lines.flatMap((l) => l.list.map(chKey)));
+        const ch = [...new Map(lines.flatMap((l) => l.list).concat(ch0.filter((c) => !inLines.has(chKey(c)))).map((c) => [chKey(c), c])).values()];   // the country lines first (LiveSoccerTV's names), then the rest of LiveOnSat's
         // the league / cup itself: everything before the first " - " (that part is the week, round, stage or group); Serie C's girone letters go too
         const comp = String(f.comp || "").split(/\s+-\s+/)[0].replace(/\s+Girone\s+[A-C]$/i, "").trim() || "Football";
         return { start, a: f.a, b: f.b, compFull: f.comp || "", comp, ch, uk: UK_COMP.test(f.comp || ""),
-                 ukch: ch.filter(isBritish), iech: ch.filter(isIrish), usch: ch.filter(isAmerican), country: countryOf(comp), women: WOMEN.test(f.comp || ""), youth: YOUTH.test([f.comp, f.a, f.b].join(" ")),
+                 lines, ukch: (lines.find((l) => l.key === "UK") || { list: [] }).list, iech: (lines.find((l) => l.key === "IE") || { list: [] }).list, country: countryOf(comp), women: WOMEN.test(f.comp || ""), youth: YOUTH.test([f.comp, f.a, f.b].join(" ")),
                  hay: fold([f.a, f.b, f.comp, ch.join(" ")].join(" ")), dayKey: ukDayKey.format(start) };
       })
       .filter((f) => !isNaN(f.start) && f.start.getTime() >= cutoff)
@@ -386,7 +411,7 @@
         <div>
           <p class="title">${esc(f.a)} v ${esc(f.b)}</p>
           <p class="sub">${esc(f.compFull || f.comp)}${underway ? '<span class="now">Under way</span>' : ""}</p>
-          ${chanLine("On UK TV", f.ukch)}${chanLine("On Irish TV", f.iech)}${chanLine("On US TV", f.usch)}${!f.ukch.length && !f.iech.length && f.uk
+          ${f.lines.map((l) => chanLine(l.label, l.list)).join("")}${!f.ukch.length && !f.iech.length && f.uk
             ? `<p class="ukline none">No ${f.country === "Ireland" ? "Irish" : "UK"} channel listed yet</p>` : ""}
           ${f.ch.length ? `<ul class="chans">${shown.map((c) => `<li>${esc(c)}</li>`).join("")}${
             rest.map((c) => `<li hidden data-rest="${idx}">${esc(c)}</li>`).join("")}</ul>
@@ -413,7 +438,7 @@
       statusEl.textContent = "Couldn’t read the fixtures: " + (e.message || e);
       return;
     }
-    $("footer").textContent = "Start times and channel lists come from LiveOnSat; broadcasters can change schedules without notice. Not an EPG.";
+    $("footer").textContent = "Start times come from LiveOnSat; channel lists from LiveSoccerTV (by country) and LiveOnSat; broadcasters can change schedules without notice. Not an EPG.";
     const initial = new URL(location.href).searchParams.get("q");
     if (initial) q.value = initial;
     loadPrefs();
