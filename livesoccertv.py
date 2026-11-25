@@ -26,6 +26,11 @@ LSTV_PAUSE = 3.0
 LSTV_REFRESH_NEAR, LSTV_REFRESH_FAR = 5, 20            # hours
 LSTV_KEEP_HOURS = 36                                    # cache entries for matches older than this are dropped
 PAIR_MINUTES = 20
+COMP_PAGES = ["/competitions/england/premier-league/", "/competitions/england/championship/", "/competitions/england/league-one/",
+              "/competitions/england/league-two/", "/competitions/england/fa-cup/", "/competitions/england/football-league-cup/",
+              "/competitions/scotland/premier-league/", "/competitions/scotland/fa-cup/",
+              "/competitions/international/uefa-champions-league/", "/competitions/international/uefa-europa-league/",
+              "/competitions/international/uefa-europa-conference-league/"]
 
 # LiveSoccerTV's country names -> the short keys fixtures.html uses (display order there)
 STATUS = {}        # what the last run() did - liveonsat_fixtures.py stores it in the JSON ("lstv_status") for guide_health.py
@@ -231,6 +236,37 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
             days_ok += 1
             ok_days.add(day)
         rows.extend(got)
+    # Backup source (25 Nov 2026): a day page can come back thin (Fri 27 Nov: 24 rows against ~45 in a browser, no Forest v Chelsea). The
+    # competition pages list their next fixtures with the same row markup, so when British / UEFA fixtures are left unpaired those pages are read too.
+    if not blocked:
+        def _left():
+            out = []
+            for fx in fixtures:
+                try:
+                    k = datetime.fromisoformat(fx["start"].replace("Z", "+00:00"))
+                except (KeyError, ValueError):
+                    continue
+                if now < k <= now + timedelta(hours=(LSTV_DAYS_AHEAD + 1) * 24) and WANTED_COMP.search(fx.get("comp") or "") \
+                        and not OTHER_CONFED.search(fx.get("comp") or "") and not pair(fx, rows):
+                    out.append(fx)
+            return out
+        left = _left()
+        if left:
+            print(f"  LiveSoccerTV: {len(left)} British / UEFA fixture(s) unpaired after the day pages - reading competition pages as a backup")
+            for path in COMP_PAGES:
+                if not _left():
+                    break
+                status, text = fetcher(f"{BASE}{path}")
+                sleeper(LSTV_PAUSE)
+                if status in (403, 429, 503):
+                    print(f"  LiveSoccerTV {path}: refused (HTTP {status}) - backup stopped")
+                    break
+                got = parse_schedule(text) if status == 200 else []
+                have = {r["id"] for r in rows}
+                new = [g for g in got if g["id"] not in have]
+                rows.extend(new)
+                print(f"  LiveSoccerTV {path}: HTTP {status}, {len(text)} bytes, {len(got)} rows, {len(new)} not on the day pages, "
+                      f"{text.count('matchrow')} 'matchrow' marks")
     uniq = {r["id"]: r for r in rows}
     rows = list(uniq.values())
     horizon = now + timedelta(hours=(LSTV_DAYS_AHEAD + 1) * 24)
