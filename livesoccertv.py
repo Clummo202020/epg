@@ -41,7 +41,7 @@ CARIBBEAN = {"Jamaica", "Trinidad and Tobago", "Barbados", "Bahamas", "Antigua a
              "Turks and Caicos Islands", "Suriname"}
 # Only British and UEFA football is looked up (user, 25 Nov 2026)
 WANTED_COMP = re.compile(r"^(English|Scottish|Welsh|Irish|Northern Ireland|Northern Irish|UEFA|Europa League|Champions League|Conference League)\b|"
-                         r"^(Emirates |Isuzu |Vanarama )?(FA Cup|FA Trophy|Carabao|EFL|Premier League|Championship|League One|League Two|National League|Premiership|Scottish|"
+                         r"^(Emirates |Isuzu |Vanarama |England |Scotland |Wales )?(FA Cup|FA Trophy|Carabao|EFL|Premier League|Championship|League One|League Two|National League|Premiership|Scottish|"
                          r"Champions League|Europa League|Conference League|Youth League|Nations League)\b", re.I)
 # (anchored 25 Nov 2026: unanchored, "Ukrainian Premier League" and "South African Premiership" were looked up as British football)
 
@@ -222,6 +222,8 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
             print(f"  LiveSoccerTV: schedule {day}: HTTP {status}")
             continue
         got = parse_schedule(text)
+        print(f"  LiveSoccerTV {day}: HTTP {status}, {len(text)} bytes, {len(got)} rows, {sum(1 for g in got if g['has_tv'])} with TV, "
+              f"{sum(1 for g in got if WANTED_COMP.search(g['comp'] or ''))} British / UEFA")
         if got:
             days_ok += 1
             ok_days.add(day)
