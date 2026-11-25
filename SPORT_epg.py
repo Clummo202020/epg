@@ -574,8 +574,8 @@ IN_CHANNELS = {          # Tata Play channel number -> (id part, channel name)
     "141": ("StarSportsSelect1", "Star Sports Select 1"), "603": ("StarSportsSelect2", "Star Sports Select 2"),
     "601": ("StarSports1Hindi", "Star Sports 1 Hindi"), "980": ("StarSports2Hindi", "Star Sports 2 Hindi"),
     "1494": ("StarSportsKhel", "Star Sports Khel"),
-    "150": ("SonySportsTen1", "Sony Sports Ten 1"), "170": ("SonySportsTen2", "Sony Sports Ten 2"),
-    "171": ("SonySportsTen3Hindi", "Sony Sports Ten 3 Hindi"), "610": ("SonySportsTen5", "Sony Sports Ten 5"),
+    "150": ("SonySportsTen1", "Sony Sports 1"), "170": ("SonySportsTen2", "Sony Sports 2"),
+    "171": ("SonySportsTen3Hindi", "Sony Sports 3 Hindi"), "610": ("SonySportsTen5", "Sony Sports 5"),
     "223": ("DDSports", "DD Sports"), "693": ("Eurosport", "Eurosport India"),
 }
 MAGENTA_API = "https://api.prod.sngtv.magentatv.de/EPG/JSON/"
@@ -7426,7 +7426,7 @@ def tnt5_named_also(start, title, sub, desc):
     """A TNT Sports 5 block the source already names ("Champions League: S. Bratislava v R. Betis", sub-title "New Zealand v India"): the same
     "This match is also available on ..." line is added to its description. Anything without exactly two sides, or already carrying the line, is left alone."""
     try:
-        if "also available on" in (desc or "") or team_sport_of(title, sub, TNT5_CID, desc):          # team sports: the general pass (two channels)
+        if "available on" in (desc or "") or team_sport_of(title, sub, TNT5_CID, desc):          # team sports: the general pass (two channels)
             return desc
         for text in ((sub or "").strip(), (title or "").strip().rsplit(": ", 1)[-1].strip()):
             parts = re.split(r"\s+vs?\.?\s+", text)
@@ -7434,7 +7434,7 @@ def tnt5_named_also(start, title, sub, desc):
                 a, b = (x.strip() for x in parts)
                 also = tnt5_also({"a": a, "b": b, "ko": start})
                 if also:
-                    return f"{desc} | This match is also available on {also}." if desc else f"This match is also available on {also}."
+                    return f"{desc} | This match is available on {also}." if desc else f"This match is available on {also}."
                 return desc
     except Exception as e:
         print(f"  WARNING: TNT Sports 5 'also available on' lookup failed ({e})")
@@ -7456,7 +7456,7 @@ def tnt5_channel_event(lead, start, stop, title, sub, desc):
     if t and not team_sport_of(f"{lead}{name}", new_sub, TNT5_CID, new_desc):        # two sides in the sub-title (football): the other channels with the same game
         also = tnt5_also({"a": t.group(1).strip(), "b": t.group(2).strip(), "ko": best["start"]})
         if also:
-            new_desc = f"{new_desc} | This match is also available on {also}."
+            new_desc = f"{new_desc} | This match is available on {also}."
     return f"{lead}{name}", new_sub, new_desc
 
 
@@ -7480,7 +7480,7 @@ def tnt5_event(cid, start, stop, title, sub, desc):
     text = f"{best['comp']}: {best['a']} v {best['b']}. Coverage from: {cov}."
     also = tnt5_also(best)
     if also:
-        text += f" | This match is also available on {also}."          # the channels come LAST after a "|", as on the football channels
+        text += f" | This match is available on {also}."          # the channels come LAST after a "|", as on the football channels
     return f"{lead}Football. {best['a']} v {best['b']}", best["comp"], text
 
 
@@ -8172,7 +8172,7 @@ def unique_path(path):
 # "This match is also available on X and Y." - at most TWO other channels, taken from watch_channels.CHANNELS (the channels the user has) in the order
 # UK free-to-air, Sky, TNT, then overseas, ONLY channels with English commentary. Football is left to football_epg.py (all channels) and the US sports to TEAMS_epg.py
 # (two). A channel counts when its own listing is on air at kick-off + 20 to 30 minutes and names both sides (same test as football_epg.py). Never fails the run.
-ALT_LINE = "This match is also available on {chs}."
+ALT_LINE = "This match is available on {chs}."
 ALT_MAX = 2
 ALT_NOT_ENGLISH = set()          # ids of channels WITHOUT English commentary, left out of the alternatives (22 Nov 2026, user: Cytavision Sport 3, Now Premier League, beIN, Hub all have English commentary)
 ALT_SPORTS = {"Cricket", "Netball", "Rugby League", "Rugby Union", "Basketball", "American Football", "Ice Hockey", "Baseball", "Aussie Rules", "Volleyball", "Handball"}
@@ -8276,7 +8276,7 @@ def add_alternatives(tv):
             title, sub = p.findtext("title") or "", p.findtext("sub-title") or ""
             d = p.find("desc")
             desc = (d.text or "") if d is not None else ""
-            if "also available on" in desc or "also live on" in desc:
+            if "available on" in desc or "also live on" in desc:
                 continue
             sides = alt_sides(title, sub)
             key = None

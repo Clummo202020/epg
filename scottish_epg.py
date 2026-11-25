@@ -361,7 +361,7 @@ try:
 except Exception as _e:
     _WC = None
     print(f"  NOTE: watch_channels.py not available ({_e}) - no 'available on' lines")
-PLATFORM_NOTE = "This match is also available on {chs}."
+PLATFORM_NOTE = "This match is available on {chs}."
 SCOT_ALIASES = {                      # how listings write a club, besides our short name
     "hearts": ["heart of midlothian"], "dundee utd": ["dundee united"], "queen's park": ["queens park"],
     "partick thistle": ["partick"], "hamilton academical": ["hamilton"], "inverness ct": ["inverness caledonian thistle", "inverness"],
@@ -454,7 +454,7 @@ def add_platform_summary(matches, listings=None, slots=None):
         if names:
             parts.append(PLATFORM_NOTE.format(chs=_WC.join_names(names)))
         if services:
-            parts.append(("It is on {chs} too." if names else "This match is also available on {chs}.").format(chs=_WC.join_names(services)))
+            parts.append(("It is on {chs} too." if names else "This match is available on {chs}.").format(chs=_WC.join_names(services)))
         if parts:
             m["desc"] = f"{m['desc']} | {' '.join(parts)}"          # the match is already in the title: the stadium and kick-off come FIRST, the channels LAST after a "|" (18 Nov, user)
             changed += 1

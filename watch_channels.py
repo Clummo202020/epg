@@ -53,7 +53,7 @@ CHANNELS = (
     + [(f"{c}.beINSPORTS{n}", f"beIN Sports {name} {n}", "bein")        # 19 Nov 2026 (user): beIN Sports Singapore, Hong Kong, Malaysia, Indonesia (good for the Champions League)
        for c, name, top in (("SG", "Singapore", 5), ("HK", "Hong Kong", 6), ("MY", "Malaysia", 3), ("ID", "Indonesia", 2)) for n in range(1, top + 1)]
     + [("CY.CytavisionSports3", "Cytavision Sport 3", "cy")]          # 19 Nov 2026 (user): Cyprus; NOT the RealTime id
-    + [("IN.SonySportsTen1", "Sony Sports Ten 1", "in"), ("IN.SonySportsTen2", "Sony Sports Ten 2", "in"), ("IN.SonySportsTen5", "Sony Sports Ten 5", "in"),
+    + [("IN.SonySportsTen1", "Sony Sports 1", "in"), ("IN.SonySportsTen2", "Sony Sports 2", "in"), ("IN.SonySportsTen5", "Sony Sports 5", "in"),
        ("IN.StarSportsSelect1", "Star Sports Select 1", "in"), ("IN.StarSportsSelect2", "Star Sports Select 2", "in")]       # + Sony Ten 1, Star Sports Select 1 / 2 (user, 17 Nov)
     + [("US.NBC", "NBC", "usnb"), ("US.USANetwork", "USA Network", "usnb")]      # 19 Nov 2026 (user): NBC and USA Network listed before the India channels
     + [("US.CBSSportsNetwork", "CBS Sports Network", "us"), ("US.CBSSportsGolazo", "CBS Sports Golazo", "us")]

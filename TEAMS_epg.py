@@ -258,7 +258,7 @@ try:
 except Exception as _e:                                    # never a failed run because of this
     _WC = None
     print(f"  NOTE: watch_channels.py not available ({_e}) - no 'available on' lines")
-WATCH_NOTE = "This game is also available on {chs}."
+WATCH_NOTE = "This game is available on {chs}."
 # nickname = the team name without its city; two-word nicknames, and other names the listings use
 TWO_WORD_NICKS = ("Red Sox", "White Sox", "Blue Jays", "Trail Blazers", "Maple Leafs", "Blue Jackets", "Golden Knights", "Red Wings")
 NICK_EXTRA = {"76ers": ["sixers"], "Timberwolves": ["wolves"], "Mavericks": ["mavs"], "Cavaliers": ["cavs"], "Avalanche": ["avs"],
@@ -312,7 +312,7 @@ def watch_note(g):
     if names:
         parts.append(WATCH_NOTE.format(chs=_WC.join_names(names)))
     if services:
-        parts.append(("It is on {chs} too." if names else "This game is also available on {chs}.").format(chs=_WC.join_names(services)))
+        parts.append(("It is on {chs} too." if names else "This game is available on {chs}.").format(chs=_WC.join_names(services)))
     return " | " + " ".join(parts) if parts else ""          # the game is already in the title: the time and venue come FIRST, the channels LAST after a "|" (18 Nov, user)
 
 

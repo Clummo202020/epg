@@ -1102,7 +1102,7 @@ try:
 except Exception as _e:                                   # never a failed run because of this
     _WC = None
     print(f"  NOTE: watch_channels.py not available ({_e}) - no 'available on' lines")
-PLATFORM_NOTE = "This match is also available on {chs}."
+PLATFORM_NOTE = "This match is available on {chs}."
 _ALSO_LIVE_RE = re.compile(r"\s*This match is also live on ([^.]+?)\.")
 
 
@@ -1207,7 +1207,7 @@ def add_platform_summary(matches, listings=None, slots=None):
         if names:
             parts.append(PLATFORM_NOTE.format(chs=_WC.join_names(names)))
         if services:
-            parts.append(("It is on {chs} too." if names else "This match is also available on {chs}.").format(chs=_WC.join_names(services)))
+            parts.append(("It is on {chs} too." if names else "This match is available on {chs}.").format(chs=_WC.join_names(services)))
         desc = _ALSO_LIVE_RE.sub("", m["desc"]).rstrip()
         m["desc"] = f"{desc} | {' '.join(parts)}" if desc else " ".join(parts)          # the match is already in the title: the stadium and kick-off come FIRST, the channels LAST after a "|" (18 Nov, user)
         changed += 1
