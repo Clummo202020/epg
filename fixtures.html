@@ -170,9 +170,22 @@
   // Channels by country (25 Nov 2026). LiveSoccerTV's match pages give each match's channels per country (`cc`: UK, IE, US, CA, CY, NZ ...) - they come FIRST;
   // LiveOnSat's own channels follow (same country, same name once). A channel LiveSoccerTV has no country line for stays in the full list only.
   // Channels never shown (user, 25 Nov 2026), and the only ones allowed on the beIN MENA English / Caribbean lines.
-  const BLOCK = /\bNBCSN\b|SiriusXM FC|StarHub TV\+?|\bNow Player\b|\bM\+? Plus Live\b|JioHotstar|Astro Go|^Sky Go( UK)?$|^NOW$|^Sky Go Extra$|^Telemundo|^Stan Sport|^BBC Radio 5 Live|^fuboTV|^Sky Sport Premier League$|^Star Sports Select [12]$|^\d+ Hub Premier|\bDAZN|Coupang|MONOMAX|Premier League ?\+/i;
+  // Channels never shown (user, 25 Nov 2026). The list lives in fixtures_channels.json (next to this page) so it can be edited without touching the page code;
+  // this built-in copy is what is used when that file cannot be read (for example when this page is opened from a local file).
+  // A rule is a channel name (case does not matter): "NOW" = exactly that name; "fuboTV*" = starts with; "*DAZN*" = contains; "re:^\\d+ Hub Premier" = a regular expression.
+  const DEFAULT_HIDE = ["*NBCSN*", "*SiriusXM FC*", "*StarHub TV*", "*Now Player*", "*M Plus Live*", "*JioHotstar*", "*Astro Go*", "Sky Go UK", "Sky Go", "NOW", "SKY GO Extra", "Telemundo*", "Stan Sport*", "BBC Radio 5 Live*", "fuboTV*", "Sky Sport Premier League", "Star Sports Select 1", "Star Sports Select 2", "re:^\\d+ Hub Premier", "*DAZN*", "*Coupang*", "*MONOMAX*", "*Premier League+*"];
+  const compileRule = (r) => {
+    r = String(r || "").trim();
+    if (!r || r.startsWith("_")) return null;
+    try {
+      if (/^re:/i.test(r)) return new RegExp(r.slice(3), "i");
+      return new RegExp("^" + r.split("*").map((p) => p.replace(/[.+?^${}()|[\]\\]/g, "\\$&")).join(".*") + "$", "i");
+    } catch (e) { return null; }
+  };
+  let hideRules = DEFAULT_HIDE.map(compileRule).filter(Boolean);
+  const isBlocked = (c) => hideRules.some((r) => r.test(String(c).trim()));
   const ONLY = { ME: /beIN Sports (MENA )?English( [12])?\b/i, CB: /Rush Sports/i };
-  const okChan = (key, c) => !BLOCK.test(c) && (!ONLY[key] || ONLY[key].test(c));
+  const okChan = (key, c) => !isBlocked(c) && (!ONLY[key] || ONLY[key].test(c));
   const CC_LINES = [["UK", "On UK TV", isBritish], ["IE", "On Irish TV", isIrish], ["US", "On US TV", isAmerican],
     ["CA", "On Canadian TV", (c) => /\bCanada\b/i.test(c)], ["NZ", "On NZ TV", (c) => /\bNZ\b|New Zealand/i.test(c)],
     ["AU", "On Australian TV", (c) => /\bAustralia\b/i.test(c)], ["SG", "On Singapore TV", (c) => /Singapore|StarHub|\bHub (Premier|Sports?)/i.test(c)],
@@ -273,6 +286,18 @@
     return new Set(offsets.map((n) => ukDayKey.format(new Date(now + n * 86400000))));
   }
 
+  const HIDE_SOURCES = ["fixtures_channels.json", "https://raw.githubusercontent.com/Clummo202020/epg/main/fixtures_channels.json"];
+  async function loadHideList() {          // never fails the page: the built-in list stays when the file cannot be read
+    for (const url of HIDE_SOURCES) {
+      try {
+        const res = await fetch(url, { cache: "no-cache" });
+        if (!res.ok) continue;
+        const d = await res.json();
+        if (d && Array.isArray(d.hide)) { hideRules = d.hide.map(compileRule).filter(Boolean); return; }
+      } catch (e) { /* try the next one */ }
+    }
+  }
+
   async function load() {
     const failures = [];
     for (const url of SOURCES) {
@@ -281,6 +306,7 @@
         if (!res.ok) { failures.push(`${url}: HTTP ${res.status}`); continue; }
         const data = await res.json();
         if (!data || !data.football || !Array.isArray(data.football.fixtures)) { failures.push(`${url}: no football fixtures in it (yet)`); continue; }
+        await loadHideList();
         return data.football;
       } catch (e) {
         failures.push(`${url}: ${e.message || e}`);
@@ -300,7 +326,7 @@
         const isUefa = /^(UEFA|Europa League|Champions League|Conference League)/i.test(String(f.comp || ""));
         const lines = byCountry(f.cc, ch0, isUefa, isUefa || /^English Premier League\b/i.test(String(f.comp || "")));
         const inLines = new Set(lines.flatMap((l) => l.list.map(chKey)));
-        const others = [...new Map(ch0.filter((c) => !inLines.has(chKey(c)) && !BLOCK.test(c) && !/MENA|Caribbean/i.test(c)).map((c) => [chKey(c), c])).values()];   // channels that are on no country line: listed at the end
+        const others = [...new Map(ch0.filter((c) => !inLines.has(chKey(c)) && !isBlocked(c) && !/MENA|Caribbean/i.test(c)).map((c) => [chKey(c), c])).values()];   // channels that are on no country line: listed at the end
         const ch = lines.flatMap((l) => l.list).concat(others);   // everything (used for the search box)   // the country lines first (LiveSoccerTV's names), then the rest of LiveOnSat's
         // the league / cup itself: everything before the first " - " (that part is the week, round, stage or group); Serie C's girone letters go too
         const comp = String(f.comp || "").split(/\s+-\s+/)[0].replace(/\s+Girone\s+[A-C]$/i, "").trim() || "Football";

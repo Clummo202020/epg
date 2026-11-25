@@ -28,6 +28,8 @@ LSTV_KEEP_HOURS = 36                                    # cache entries for matc
 PAIR_MINUTES = 20
 
 # LiveSoccerTV's country names -> the short keys fixtures.html uses (display order there)
+STATUS = {}        # what the last run() did - liveonsat_fixtures.py stores it in the JSON ("lstv_status") for guide_health.py
+
 COUNTRIES = {"Great Britain": "UK", "United Kingdom": "UK", "Ireland Republic": "IE", "Ireland": "IE", "USA": "US", "United States": "US", "Canada": "CA",
              "New Zealand": "NZ", "Australia": "AU", "Singapore": "SG", "Hong Kong": "HK", "India": "IN", "Malaysia": "MY", "Thailand": "TH",
              "Indonesia": "ID", "Cyprus": "CY"}
@@ -41,6 +43,10 @@ CARIBBEAN = {"Jamaica", "Trinidad and Tobago", "Barbados", "Bahamas", "Antigua a
 WANTED_COMP = re.compile(r"^(English|Scottish|Welsh|Irish|Northern Ireland|Northern Irish|UEFA|Europa League|Champions League|Conference League)\b|"
                          r"\b(FA Cup|FA Trophy|Carabao|EFL|Premier League|Championship|League One|League Two|National League|Premiership|Scottish|"
                          r"Champions League|Europa League|Conference League|Youth League|Nations League)\b", re.I)
+
+
+# "AFC Champions League Elite" / "CAF Champions League" are not UEFA football (25 Nov 2026: they were being looked up as if they were)
+OTHER_CONFED = re.compile(r"(?i)^(AFC|CAF|CONCACAF|CONMEBOL|OFC|Asian|African)\b|\b(AFC|CAF|CONCACAF|CONMEBOL) (Champions|Cup|Challenge)")
 
 
 def fetch(url):
@@ -202,6 +208,7 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
              if isinstance(v, dict) and v.get("ko") and datetime.fromisoformat(v["ko"]) > now - timedelta(hours=LSTV_KEEP_HOURS)}
     rows, days_ok = [], 0
     blocked = False
+    ok_days, unpaired = set(), []
     for n in range(0, LSTV_DAYS_AHEAD + 1):
         day = (now + timedelta(days=n)).strftime("%Y-%m-%d")
         status, text = fetcher(f"{BASE}/schedules/{day}/")
@@ -216,6 +223,7 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
         got = parse_schedule(text)
         if got:
             days_ok += 1
+            ok_days.add(day)
         rows.extend(got)
     uniq = {r["id"]: r for r in rows}
     rows = list(uniq.values())
@@ -228,10 +236,12 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
             continue
         if ko > horizon or ko < now - timedelta(hours=3):
             continue
-        if not WANTED_COMP.search(fx.get("comp") or ""):
+        if not WANTED_COMP.search(fx.get("comp") or "") or OTHER_CONFED.search(fx.get("comp") or ""):
             continue
         r = pair(fx, rows) if rows else None
         if not r:
+            if ko.strftime("%Y-%m-%d") in ok_days:      # only for days whose LiveSoccerTV schedule page was read
+                unpaired.append(f"{ko:%a %d %b %H:%M} {fx.get('a')} v {fx.get('b')} ({(fx.get('comp') or '')[:35]})")
             continue
         paired += 1
         fx["_lstv"] = r
@@ -245,7 +255,7 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
     # channels are known; never when a LiveOnSat fixture at that time has a team alike (a pairing that failed would otherwise show a match twice)
     extras = []
     for r in rows:
-        if r["id"] in used or not r["has_tv"] or not WANTED_COMP.search(r["comp"] or ""):
+        if r["id"] in used or not r["has_tv"] or not WANTED_COMP.search(r["comp"] or "") or OTHER_CONFED.search(r["comp"] or ""):
             continue
         ko = datetime.fromtimestamp(r["epoch"], timezone.utc)
         if ko > horizon or ko < now - timedelta(hours=3):
@@ -308,4 +318,11 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
     print(f"  LiveSoccerTV: {added} fixture(s) LiveOnSat does not list added")
     print(f"  LiveSoccerTV: {len(rows)} schedule rows ({days_ok} day page(s)), {paired} fixtures paired, {read} match page(s) read, "
           f"{with_cc} fixtures carry channels")
+    if unpaired:                      # UK / UEFA fixtures with no LiveSoccerTV row (25 Nov 2026, user): a name the matcher did not recognise shows up here
+        print(f"  LiveSoccerTV: {len(unpaired)} UK / UEFA fixture(s) found no LiveSoccerTV row:")
+        for u in unpaired[:25]:
+            print(f"    - {u}")
+    STATUS.clear()
+    STATUS.update({"ran": now.strftime("%Y-%m-%dT%H:%M:%SZ"), "rows": len(rows), "days_ok": days_ok, "paired": paired, "read": read,
+                   "with_cc": with_cc, "blocked": blocked, "failed_pages": fails, "unpaired": unpaired[:40], "unpaired_n": len(unpaired)})
     return cache

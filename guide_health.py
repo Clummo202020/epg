@@ -41,6 +41,11 @@ MATCH_DRIVEN = {"football_epg.xml", "scottish_epg.xml"}    # a club's blocks end
 MIN_CHANNELS_LOST = 3                                  # a group must lose at least this many channels (and 20%) to be reported
 PLACEHOLDER = re.compile(r"no schedule available|no information|channel is offline|end of transmission|coming up|will be listed", re.I)
 RED = "\U0001F534"
+# Channels whose listings run out early (25 Nov 2026, user: the Golazo schedule in PlaylistLabs stopped at 19:45 because Pluto lists only ~16 h):
+# a channel whose last programme ends less than RUN_OUT_HOURS after the guide was committed is reported (not in the events guide, where slots
+# come and go); WATCH_REACH names channels that must reach further than that many hours.
+RUN_OUT_HOURS = 6
+WATCH_REACH = {"US.CBSSportsGolazo": 24}
 
 
 def sh(*args):
@@ -152,6 +157,46 @@ def liveonsat_section(now, lines, warns, fails):
         warns.append(f"LiveOnSat football has only {len(fb.get('fixtures', []))} fixtures (normally 500+)")
     lines.append("pages: " + ", ".join(f"{n} {i.get('count', 'kept ' + str(i.get('kept', 0)))}" for n, i in pages.items() if not n.startswith("football ")) +
                  f"; football days {sum(1 for n in pages if n.startswith('football '))}")
+    lstv_section(now, d, lines, warns)
+
+
+def lstv_section(now, d, lines, warns):
+    """LiveSoccerTV step of liveonsat_fixtures.py (25 Nov 2026, user: failures must not go unnoticed): what the last run did, when it last worked,
+    and the UK / UEFA fixtures it could not pair with a LiveSoccerTV row."""
+    st = d.get("lstv_status")
+    lines.append("\n## LiveSoccerTV channels (fixtures.html)")
+    if not st:
+        lines.append("no status yet (the LiveOnSat workflow has not run with livesoccertv.py).")
+        return
+    def ago(iso):
+        try:
+            return (now - datetime.strptime(iso, "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)).total_seconds() / 3600
+        except Exception:
+            return None
+    ok_age = ago(st.get("ok_at") or "")
+    if st.get("error"):
+        lines.append(f"last run FAILED: {st['error']}")
+    else:
+        lines.append(f"last run {st.get('ran', '?')}: {st.get('rows', 0)} schedule rows ({st.get('days_ok', 0)} day page(s)), {st.get('paired', 0)} fixtures paired, "
+                     f"{st.get('read', 0)} match page(s) read, {st.get('with_cc', 0)} fixtures carry channels"
+                     + (", REFUSED by the site" if st.get("blocked") else "") + ".")
+    lines.append("last time it worked: " + (f"{st['ok_at']} ({ok_age:.0f} h ago)" if ok_age is not None else "never recorded"))
+    if st.get("error"):
+        warns.append(f"LiveSoccerTV step failed: {st['error']} - fixtures.html shows LiveOnSat's channels only")
+    elif st.get("blocked"):
+        warns.append("LiveSoccerTV refused the runner (HTTP 403 / 429 / 503) - fixtures.html shows LiveOnSat's channels only")
+    elif st.get("rows", 0) == 0:
+        warns.append("LiveSoccerTV: 0 schedule rows read - the site or its markup may have changed")
+    elif st.get("paired", 0) >= 10 and st.get("with_cc", 0) == 0:
+        warns.append(f"LiveSoccerTV: {st['paired']} fixtures paired but none got channels - the match page may have changed")
+    if ok_age is not None and ok_age > 24:
+        warns.append(f"LiveSoccerTV last worked {ok_age:.0f} h ago")
+    n = st.get("unpaired_n", 0)
+    if n:
+        lines.append(f"{n} UK / UEFA fixture(s) found no LiveSoccerTV row (a team name the matcher does not know, or LiveSoccerTV does not list the game):")
+        lines.extend(f"- {u}" for u in (st.get("unpaired") or [])[:15])
+        if n >= 8 and n > st.get("paired", 0):
+            warns.append(f"LiveSoccerTV: {n} UK / UEFA fixtures could not be paired (see the list in the report; add an alias in livesoccertv.py `_ALIAS`)")
 
 
 def timing_section(lines, warns):
@@ -343,6 +388,21 @@ def main():
                     b_ = bpr.get(cid)
                     if (b_ and b_["n"] >= 6 and p_["n"] >= 6 and b_["ph"] < 0.5 * b_["n"] and p_["ph"] >= 0.9 * p_["n"]):
                         warns.append(f"{path}: {cid} now shows only placeholder blocks (its source lost it)")
+        # channels whose listings run out early
+        if path not in CHURN_GUIDES:
+            short = []
+            for cid, p_ in progs.items():
+                r_ = reach_hours(p_["last"], ctime or now)
+                need = WATCH_REACH.get(cid, RUN_OUT_HOURS)
+                if r_ is not None and r_ < need:
+                    short.append((r_, cid, need))
+            if short:
+                short.sort()
+                warns.append(f"{path}: {len(short)} channel(s) whose listings run out early: " +
+                             ", ".join(f"{c} ({r:.0f} h of {'>=' + str(n) if c in WATCH_REACH else 'at least ' + str(n)} h)" for r, c, n in short[:8]))
+        for cid, need in WATCH_REACH.items():          # a watched channel that is missing altogether
+            if cid not in progs and cid in chans:
+                warns.append(f"{path}: {cid} has no programmes")
         # (almost) always-red channels
         for cid, p in progs.items():
             if p["n"] >= 20 and p["red"] >= 0.9 * p["n"]:

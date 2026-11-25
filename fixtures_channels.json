@@ -1,0 +1,28 @@
+{
+ "_help": "Channels the football page (fixtures.html) never shows. One rule per line in \"hide\" (case does not matter): NOW = exactly that name; fuboTV* = starts with; *DAZN* = contains; re:^\\d+ Hub Premier = a regular expression. Add a name, save, upload this file: no other file needs changing.",
+ "hide": [
+  "*NBCSN*",
+  "*SiriusXM FC*",
+  "*StarHub TV*",
+  "*Now Player*",
+  "*M Plus Live*",
+  "*JioHotstar*",
+  "*Astro Go*",
+  "Sky Go UK",
+  "Sky Go",
+  "NOW",
+  "SKY GO Extra",
+  "Telemundo*",
+  "Stan Sport*",
+  "BBC Radio 5 Live*",
+  "fuboTV*",
+  "Sky Sport Premier League",
+  "Star Sports Select 1",
+  "Star Sports Select 2",
+  "re:^\\d+ Hub Premier",
+  "*DAZN*",
+  "*Coupang*",
+  "*MONOMAX*",
+  "*Premier League+*"
+ ]
+}

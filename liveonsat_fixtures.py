@@ -334,18 +334,23 @@ def main():
     football, fpages = read_pages(football_pages(now), [f for f in (old.get("football") or {}).get("fixtures", []) if f.get("src") != "lstv"], True, now)
     # LiveSoccerTV (25 Nov 2026): channels by country for each fixture, shown first on fixtures.html. Nothing here can stop the file being written.
     lstv_cache = old.get("lstv_cache") or {}
+    lstv_status = dict(old.get("lstv_status") or {})
     try:
         import livesoccertv
         lstv_cache = livesoccertv.run(football, lstv_cache, now)
         football.sort(key=lambda f: f["start"])
+        lstv_status = dict(livesoccertv.STATUS)
+        worked = lstv_status.get("rows", 0) > 0 and not lstv_status.get("blocked") and (lstv_status.get("read", 0) > 0 or lstv_status.get("with_cc", 0) > 0)
+        lstv_status["ok_at"] = stamp if worked else (old.get("lstv_status") or {}).get("ok_at")
     except Exception as e:
         print(f"  LiveSoccerTV step failed ({type(e).__name__}: {e}) - LiveOnSat's channels only")
+        lstv_status = {"ran": stamp, "error": f"{type(e).__name__}: {e}", "ok_at": (old.get("lstv_status") or {}).get("ok_at")}
     if not fixtures and not football and not old:
         print("  nothing found - file not written")
         return 0
     data = {"fetched": stamp, "pages": pages, "fixtures": fixtures,
             "football": {"fetched": stamp, "pages": fpages, "fixtures": football},
-            "lstv_cache": lstv_cache,
+            "lstv_cache": lstv_cache, "lstv_status": lstv_status,
             "tv": read_tv(old.get("tv") or {}, stamp)}
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, separators=(",", ":"))

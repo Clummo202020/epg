@@ -887,9 +887,11 @@ def real_start(title, approx, quiet=False):
     # A women's match (\"Aston Villa v Manchester United WSL 2026/27\") must not be matched to the same two clubs' MEN's fixture later that
     # day (7 Nov 2026: Stan 42 got the 16:30 Premier League kick-off instead of the 12:00 WSL one) - our guides and ESPN only hold the men's
     # games, so for these only LiveOnSat is asked.
+    # Same for an age-group match ("Sporting U-19 v Manchester United U-19": 25 Nov 2026 it got the senior side's 20:00 instead of 13:00).
+    young = bool(_YOUTH_RE.search(title))
     women = bool(WOMENS_TITLE.search(title))
-    res = None if women else _real_start_ours(title, sides, approx, quiet)
-    los = liveonsat_start(sides, res[0] if res else approx, bool(_YOUTH_RE.search(title)))
+    res = None if (women or young) else _real_start_ours(title, sides, approx, quiet)
+    los = liveonsat_start(sides, res[0] if res else approx, young)
     if res:
         if los:
             _note_check(title, res[0], los[0], res[2] or "our guide")
