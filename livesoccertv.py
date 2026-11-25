@@ -6,7 +6,7 @@ fixture, `cc` = {"UK": [...], "IE": [...], "US": [...], ...} from LiveSoccerTV's
 plain HTML, not tied to the visitor's country). fixtures.html shows those channels FIRST and LiveOnSat's after them.
 
 How (a small hobby site: one request every LSTV_PAUSE seconds, at most LSTV_MAX_PAGES match pages per run, browser-like User-Agent):
-  1. /schedules/<date>/ for today .. +LSTV_DAYS_AHEAD: every row has an id, the kick-off as a UTC epoch (the `dv` attribute - the page's own
+  1. /schedules/<date>/ for today .. +LSTV_DAYS_AHEAD (6, as far as LiveOnSat's football pages go): every row has an id, the kick-off as a UTC epoch (the `dv` attribute - the page's own
      times are in the visitor's zone, the epoch is not), "A vs B" and the match link.
   2. each LiveOnSat fixture is paired with a row: kick-off within 20 minutes AND team names alike (see `pair`).
   3. the match page of each paired fixture is read (soonest first) and kept in `lstv_cache` (id -> {"t": fetch time, "cc": {...}}); a page is
@@ -20,7 +20,7 @@ from datetime import datetime, timedelta, timezone
 BASE = "https://www.livesoccertv.com"
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
       "Accept": "text/html,application/xhtml+xml", "Accept-Language": "en-GB,en;q=0.9"}
-LSTV_DAYS_AHEAD = 2
+LSTV_DAYS_AHEAD = 6
 LSTV_MAX_PAGES = 90
 LSTV_PAUSE = 3.0
 LSTV_REFRESH_NEAR, LSTV_REFRESH_FAR = 5, 20            # hours
@@ -113,6 +113,8 @@ def wanted(table):
             add(key, chans)
         if name in MENA:
             add("ME", [c for c in chans if re.search(r"(?i)bein sports english", c)])
+        if name not in CARIBBEAN:       # any channel named "Caribbean" (ESPN Caribbean, Disney+ Premium Caribbean ...) from any row
+            add("CB", [c for c in chans if re.search(r"(?i)caribbean", c)])
         if name in CARIBBEAN:
             add("CB", [c for c in chans if not re.search(r"(?i)norte|espa[nñ]ol", c)])        # the Spanish-language ESPN feeds are left out
     return {k: v for k, v in cc.items() if v}
