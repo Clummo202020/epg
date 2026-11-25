@@ -2179,7 +2179,7 @@ def add_tv_lines(events, now):
 # ---------------------------------------------------------------------------
 TIDY_TITLES = True
 TAIL_COMP = (r"(?:UEFA\s+|English\s+|WR\s+)?(?:Premier League|Champions League|Europa League|Conference League|Nations Cup|Nations Championship|"
-             r"WSL|NWSL|J\.? ?League|K[ -]?League|Serie A|La ?Liga|Bundesliga|Ligue 1|Championship|League (?:One|Two)|MLS|Carabao Cup|FA Cup|Eredivisie)")
+             r"WSL|NWSL|J\.? ?League|K[ -]?League|Serie A|La ?Liga|Bundesliga|Ligue 1|Championship|League (?:One|Two)|MLS|Carabao Cup|FA Cup|Eredivisie|Premiership Rugby)")
 TAIL_RE = re.compile(r"^(?P<fix>\S.*?\s+vs\.?\s+\S.*?)\s+(?P<tail>" + TAIL_COMP + r"\b.*)$")
 CYCLO_TAIL_RE = re.compile(r"^(?P<fix>\S.*?:\s*\S.*?)\s+(?P<tail>UCI Cyclocross World Cup\b.*)$")
 BULLET_TAIL_RE = re.compile(r"^(?P<fix>\S.*?\s+vs\.?\s+\S.*?)\s+[\u2022\u00b7]\s+(?P<tail>\S.*)$")
@@ -2191,6 +2191,112 @@ SPORT_BY_COMP = [(re.compile(r"\bNFL\b"), "American Football"), (re.compile(r"\b
                  (re.compile(r"^WR |Nations Championship|Six Nations|Super Rugby|Premiership Rugby"), "Rugby Union"),
                  (re.compile(r"Rugby Sevens|Sevens Series"), "Rugby Sevens"),
                  (re.compile(r"\bWSL\b|Women'?s Super League|Womens Super League|\bNWSL\b|Women'?s Soccer League|Womens Soccer League"), "Football")]
+
+
+# ---------------------------------------------------------------------------
+# Plain names for the display (25 Nov 2026, user: Peacock names are unclear - "Women's GS: Killington Run", "SS World Cup", "Performance View:
+# BOS vs WAS", "Sun FC vs Sporting JAX", "Texans vs Steelers"). Done in tidy_event, i.e. only for what is shown, after every timing / TV lookup.
+#   * winter-sport shorthand written out (GS = Giant Slalom, W / M = Women's / Men's, SS = Speed Skating, ST = Short Track, Champ, Rd.)
+#   * American pro teams get their full names when BOTH sides are teams of the same league (NFL, NBA): "Houston Texans vs Pittsburgh Steelers"
+#   * "Performance View" streams use 3-letter codes: written out as team names (Premier League, NBA, NFL)
+#   * the USL Super League clubs get their full names ("Tampa Bay Sun FC vs Sporting Jacksonville")
+# ---------------------------------------------------------------------------
+NFL_TEAMS = {"49ers": "San Francisco 49ers", "Bears": "Chicago Bears", "Bengals": "Cincinnati Bengals", "Bills": "Buffalo Bills", "Broncos": "Denver Broncos",
+             "Browns": "Cleveland Browns", "Buccaneers": "Tampa Bay Buccaneers", "Cardinals": "Arizona Cardinals", "Chargers": "Los Angeles Chargers",
+             "Chiefs": "Kansas City Chiefs", "Colts": "Indianapolis Colts", "Commanders": "Washington Commanders", "Cowboys": "Dallas Cowboys",
+             "Dolphins": "Miami Dolphins", "Eagles": "Philadelphia Eagles", "Falcons": "Atlanta Falcons", "Giants": "New York Giants",
+             "Jaguars": "Jacksonville Jaguars", "Jets": "New York Jets", "Lions": "Detroit Lions", "Packers": "Green Bay Packers",
+             "Panthers": "Carolina Panthers", "Patriots": "New England Patriots", "Raiders": "Las Vegas Raiders", "Rams": "Los Angeles Rams",
+             "Ravens": "Baltimore Ravens", "Saints": "New Orleans Saints", "Seahawks": "Seattle Seahawks", "Steelers": "Pittsburgh Steelers",
+             "Texans": "Houston Texans", "Titans": "Tennessee Titans", "Vikings": "Minnesota Vikings"}
+NBA_TEAMS = {"76ers": "Philadelphia 76ers", "Bucks": "Milwaukee Bucks", "Bulls": "Chicago Bulls", "Cavaliers": "Cleveland Cavaliers",
+             "Celtics": "Boston Celtics", "Clippers": "Los Angeles Clippers", "Grizzlies": "Memphis Grizzlies", "Hawks": "Atlanta Hawks",
+             "Heat": "Miami Heat", "Hornets": "Charlotte Hornets", "Jazz": "Utah Jazz", "Kings": "Sacramento Kings", "Knicks": "New York Knicks",
+             "Lakers": "Los Angeles Lakers", "Magic": "Orlando Magic", "Mavericks": "Dallas Mavericks", "Nets": "Brooklyn Nets",
+             "Nuggets": "Denver Nuggets", "Pacers": "Indiana Pacers", "Pelicans": "New Orleans Pelicans", "Pistons": "Detroit Pistons",
+             "Raptors": "Toronto Raptors", "Rockets": "Houston Rockets", "Spurs": "San Antonio Spurs", "Suns": "Phoenix Suns",
+             "Thunder": "Oklahoma City Thunder", "Timberwolves": "Minnesota Timberwolves", "Trail Blazers": "Portland Trail Blazers",
+             "Warriors": "Golden State Warriors", "Wizards": "Washington Wizards"}
+# "Performance View: BOS vs WAS" - the three-letter codes (Premier League first, then NBA, then NFL; both codes must belong to the same league)
+EPL_CODES = {"ARS": "Arsenal", "AVL": "Aston Villa", "BHA": "Brighton", "BOU": "Bournemouth", "BRE": "Brentford", "BUR": "Burnley", "CHE": "Chelsea",
+             "COV": "Coventry City", "CRY": "Crystal Palace", "EVE": "Everton", "FUL": "Fulham", "HUL": "Hull City", "IPS": "Ipswich Town",
+             "LEE": "Leeds United", "LIV": "Liverpool", "MCI": "Man City", "MU": "Man United", "MUN": "Man United", "NEW": "Newcastle",
+             "NFO": "Nottingham Forest", "NOT": "Nottingham Forest", "SUN": "Sunderland", "TOT": "Spurs", "WHU": "West Ham", "WOL": "Wolves"}
+NBA_CODES = {"ATL": "Hawks", "BOS": "Celtics", "BKN": "Nets", "CHA": "Hornets", "CHI": "Bulls", "CLE": "Cavaliers", "DAL": "Mavericks", "DEN": "Nuggets",
+             "DET": "Pistons", "GSW": "Warriors", "HOU": "Rockets", "IND": "Pacers", "LAC": "Clippers", "LAL": "Lakers", "MEM": "Grizzlies",
+             "MIA": "Heat", "MIL": "Bucks", "MIN": "Timberwolves", "NOP": "Pelicans", "NYK": "Knicks", "OKC": "Thunder", "ORL": "Magic",
+             "PHI": "76ers", "PHX": "Suns", "POR": "Trail Blazers", "SAC": "Kings", "SAS": "Spurs", "TOR": "Raptors", "UTA": "Jazz", "WAS": "Wizards"}
+NFL_CODES = {"ARI": "Cardinals", "ATL": "Falcons", "BAL": "Ravens", "BUF": "Bills", "CAR": "Panthers", "CHI": "Bears", "CIN": "Bengals", "CLE": "Browns",
+             "DAL": "Cowboys", "DEN": "Broncos", "DET": "Lions", "GB": "Packers", "HOU": "Texans", "IND": "Colts", "JAX": "Jaguars", "KC": "Chiefs",
+             "LAC": "Chargers", "LAR": "Rams", "LV": "Raiders", "MIA": "Dolphins", "MIN": "Vikings", "NE": "Patriots", "NO": "Saints", "NYG": "Giants",
+             "NYJ": "Jets", "PHI": "Eagles", "PIT": "Steelers", "SEA": "Seahawks", "SF": "49ers", "TB": "Buccaneers", "TEN": "Titans",
+             "WAS": "Commanders", "WSH": "Commanders"}
+USL_TEAMS = {"Sun FC": "Tampa Bay Sun FC", "Trinity FC": "Dallas Trinity FC", "Ascent FC": "Carolina Ascent FC", "Sporting JAX": "Sporting Jacksonville",
+             "FTL United": "Fort Lauderdale United", "Power FC": "DC Power FC", "Zephyr FC": "Spokane Zephyr FC", "Brooklyn FC": "Brooklyn FC",
+             "Lexington SC": "Lexington SC"}
+
+
+def _pair_re(keys):
+    alt = "|".join(re.escape(k) for k in sorted(keys, key=len, reverse=True))
+    return re.compile(r"(?<![\w'])(" + alt + r")\s+vs\.?\s+(" + alt + r")(?![\w'])")
+
+
+_NFL_PAIR, _NBA_PAIR, _USL_PAIR = _pair_re(NFL_TEAMS), _pair_re(NBA_TEAMS), _pair_re(USL_TEAMS)
+_PV_PAIR = re.compile(r"\b([A-Z]{2,3})\s+vs\.?\s+([A-Z]{2,3})\b")
+
+
+def _pv_names(a, b):
+    for table, full in ((EPL_CODES, {}), (NBA_CODES, NBA_TEAMS), (NFL_CODES, NFL_TEAMS)):
+        if a in table and b in table:
+            return tuple(full.get(table[x], table[x]) for x in (a, b)) + ((" vs " if table is EPL_CODES else " @ "),)
+    return None
+
+
+WINTER_WORDS = r"(?:Slalom|GS|Giant Slalom|Downhill|Super[- ]?G|Alpine Combined|Combined|SG)"
+EVENT_WORDS = [
+    (re.compile(r"\bW(?= " + WINTER_WORDS + r"\b)"), "Women's"),
+    (re.compile(r"\bM(?= " + WINTER_WORDS + r"\b)"), "Men's"),
+    (re.compile(r"\bGS\b(?=\s*(?::|Run|$))"), "Giant Slalom"),
+    (re.compile(r"\bSS World Cup\b"), "Speed Skating World Cup"),
+    (re.compile(r"\bST World Tour\b"), "Short Track Skating World Tour"),
+    (re.compile(r"\bChamp\b\.?(?=\s*(?::|-|$))"), "Championship"),
+    (re.compile(r"\bRd\.?\s*(?=\d)"), "Round "),
+    (re.compile(r"\bMan\.\s+(?=United\b|City\b|Utd\b)"), "Manchester "),
+    (re.compile(r"\bPSG\b"), "Paris Saint-Germain"),
+    (re.compile(r"\bPREM Rugby\b"), "Premiership Rugby"),
+]
+
+
+_OTHER_LEAGUE = re.compile(r"(?i)\b(?:NHL|MLB|baseball|hockey|MLS|NCAA)\b")
+
+
+def plain_names(text, ctx=""):
+    """Peacock / Paramount+ shorthand written out (see above); text without any of it comes back unchanged. `ctx` (competition text) keeps
+    Panthers v Jets / Giants v Cardinals in the NHL / MLB from being given NFL names."""
+    if not text:
+        return text
+    try:
+        out = text
+        if "Performance View" in out:
+            out = _PV_PAIR.sub(lambda m: (lambda n: f"{n[0]}{n[2]}{n[1]}" if n else m.group(0))(_pv_names(m.group(1), m.group(2))), out)
+        if not _OTHER_LEAGUE.search(f"{ctx} {out}"):
+            # NFL / NBA: the stream names list the AWAY team first (checked against ESPN: Chiefs at Bills, Raiders at Browns, Celtics at Wizards,
+            # Mavericks at Nuggets), so "A vs B" is written "A @ B" like the NBA / NFL channels (25 Nov 2026, user)
+            out = _NFL_PAIR.sub(lambda m: f"{NFL_TEAMS[m.group(1)]} @ {NFL_TEAMS[m.group(2)]}", out)
+            out = _NBA_PAIR.sub(lambda m: f"{NBA_TEAMS[m.group(1)]} @ {NBA_TEAMS[m.group(2)]}", out)
+        out = _USL_PAIR.sub(lambda m: f"{USL_TEAMS[m.group(1)]} vs {USL_TEAMS[m.group(2)]}", out)
+        for rx, rep in EVENT_WORDS:
+            out = rx.sub(rep, out)
+        return out
+    except Exception:
+        return text
+
+
+_NFL_AT = _pair_re(NFL_TEAMS.values()); _NBA_AT = _pair_re(NBA_TEAMS.values())
+_NFL_AT = re.compile(_NFL_AT.pattern.replace(r"\s+vs\.?\s+", " @ ")); _NBA_AT = re.compile(_NBA_AT.pattern.replace(r"\s+vs\.?\s+", " @ "))
+FIGURE_SKATING = re.compile(r"(?i)^(?:(?:Women'?s|Men'?s|Pairs|Ladies)\s+)?(?:Short Program|Free Skate|Free Skating)\b|^(?:Rhythm|Free|Short) Dance\b|^Exhibition Gala\b|^Ice Dance\b")
+SKIING = re.compile(r"(?i)\b(?:Slalom|Giant Slalom|Downhill|Super-G|Alpine Combined)\b")
+LEAGUE_OF_SPORT = {"American Football": "NFL", "Basketball": "NBA", "Ice Hockey": "NHL", "Baseball": "MLB"}
 
 
 def tidy_title_text(text):
@@ -2213,8 +2319,10 @@ def tidy_event(ev):
     try:
         e = dict(ev)
         title = tidy_title_text(e["title"])
-        extra = tidy_title_text(e.get("extra") or "")
+        usl = bool(_USL_PAIR.search(title))              # USL Super League (women's football) - the clubs are written out below
         comp = re.sub(r"\bWomens\b", "Women's", tidy_title_text(e.get("comp") or ""))
+        title = plain_names(title, comp)
+        extra = plain_names(tidy_title_text(e.get("extra") or ""), comp)
         tail = ""
         m = BULLET_TAIL_RE.match(title) or TAIL_RE.match(title) or CYCLO_TAIL_RE.match(title)
         if m and len(m.group("fix").split()) <= 9:
@@ -2228,6 +2336,22 @@ def tidy_event(ev):
                     break
             if sport is None and tail and re.search(r"\bW?SL\b|NWSL", tail):
                 sport = "Football"
+        if sport is None and FIGURE_SKATING.match(title):   # "Rhythm Dance", "Pairs Short Program", "Men's Free Skate" ... name no sport (user, 25 Nov 2026)
+            sport = "Figure Skating"
+        if sport is None and SKIING.search(title):          # slalom / downhill / super-G name no sport (user, 25 Nov 2026: prefix "Skiing")
+            sport = "Skiing"
+        lg = None                                         # NFL / NBA games (both teams known): the league is the prefix, not the sport (user, 25 Nov 2026)
+        if not title.startswith("Performance View"):
+            lg = "NFL" if _NFL_AT.search(title) else "NBA" if _NBA_AT.search(title) else None
+        if lg:
+            title = re.sub(r"^(?:American Football|Basketball)\.\s+", "", title)
+            sport = lg
+        elif sport in LEAGUE_OF_SPORT and re.search(r"\b" + LEAGUE_OF_SPORT[sport] + r"\b", f"{comp} {title} {tail}"):
+            sport = LEAGUE_OF_SPORT[sport]
+        if usl:
+            sport = sport or "Football"
+            if not re.search(r"USL", f"{tail} {extra} {comp}"):
+                tail = f"USL Super League. {tail}".rstrip(". ") if tail else "USL Super League"
         if sport and not title.lower().startswith(sport.lower()):
             title = f"{sport}. {title}"
         if tail:

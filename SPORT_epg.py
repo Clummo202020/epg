@@ -4844,6 +4844,7 @@ def merge_astro_my(my_eps, astro):
 # A channel with fewer than BEIN_MENA_MIN_EVENTS programmes keeps epgshare's listing (AFC, 4K HDR, NBA, the plain
 # "beIN SPORTS" channel have none from beIN); --no-bein-mena turns it off.
 BEIN_MENA_MIN_EVENTS = 5
+BEIN_MIN_LIVE = timedelta(minutes=40)       # beIN's own "live" flag is also set on 30-minute replay slots (Nice vs PSG on English 1, 25 Nov 2026)
 BEIN_GENERIC_CATEGORY = {"entertainment", "sports general", "football", "sports news", "other", ""}
 # beIN flags every hour of the XTRA overflow channels as live, but those hours are one filler ("beIN SPORTS XTRA For Live And
 # Exclusive Coverage of Premium Sporting Events - November 2026"): never mark a channel-name filler live (2 Nov 2026).
@@ -4913,10 +4914,11 @@ def fetch_bein_mena(days, debug=False):
             if not title or stop <= start:
                 continue
             filler = bool(BEIN_FILLER.match(title))
+            short = (stop - start) < BEIN_MIN_LIVE        # 25 Nov 2026 (user): a 30-minute "live" listing is a replay / highlights slot, not a live match
             evs[start] = {"start": start, "stop": stop, "title": title, "sub": sub,
-                          "live": bool(it.get("live")) and not filler,
+                          "live": bool(it.get("live")) and not filler and not short,
                           "desc": pick_desc(it, "description", "synopsis")}
-            if filler:           # its description says "Live And Exclusive", which would otherwise still turn it red (2 Nov 2026)
+            if filler or short:           # its description says "Live And Exclusive", which would otherwise still turn it red (2 Nov 2026)
                 evs[start]["never_live"] = True
         listing = [evs[k] for k in sorted(evs)]
         if debug:
@@ -5063,12 +5065,31 @@ def fr_poor(src, out):
             and (out == src or len(FR_LEFT_RE.findall(out)) >= 2))
 
 
+def fix_padel(src, out):
+    """Google / MyMemory turn the sport name into a word of the English sentence: "Premier Padel" -> "Prime Minister has fallen",
+    "Padel: Kuwait Major - Premier Padel" -> "Dropped: Kuwait Major - Premier Dropped", "Padel" -> "Fell" (25 Nov 2026, user: beIN English
+    1 / 2 "Prime Minister has fallen"). Put the name back whenever the source has it and the result lost it."""
+    try:
+        if not isinstance(out, str) or not re.search(r"(?i)padel", src or "") or re.search(r"(?i)padel", out):
+            return out
+        word = "Padel" if "Padel" in src else "padel"
+        o = re.sub(r"(?i)\b(?:Prime Minister|Premier)\s+(?:has\s+fallen|fallen|fell|dropped|falls?)\b", "Premier Padel", out)
+        o = re.sub(r"(?i)\bPrime Minister Padel\b", "Premier Padel", o)
+        if re.match(r"(?i)\s*padel\b", src):            # the source starts with the sport name: so must the result
+            o = re.sub(r"^(\s*)(?:Has fallen|Fallen|Dropped|Fell)\b", r"\1" + word, o)
+        if not re.search(r"(?i)padel", o):
+            o = re.sub(r"\b(?:Has fallen|Fallen|Dropped|Fell|fallen|dropped|fell)\b", word, o)
+        return o
+    except re.error:
+        return out
+
+
 def load_cache():
     path = CACHE_FILE if os.path.exists(CACHE_FILE) else OLD_CACHE_FILE
     try:
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
-        good = {k: v for k, v in data.items() if isinstance(v, str)}
+        good = {k: (fix_padel(k, v) if k != "__desc_used__" else v) for k, v in data.items() if isinstance(v, str)}
         bad = [k for k, v in good.items() if k != "__desc_used__" and (untranslated(k, v) or it_poor(k, v) or fr_poor(k, v))]
         for k in bad:                                  # retranslated this run (29 Oct 2026 fix)
             good.pop(k)
@@ -5119,7 +5140,7 @@ def translate_all(texts, force=()):
             break
         out = google_translate(t, short=True)
         if out:
-            TRANSLATIONS[t] = out
+            TRANSLATIONS[t] = fix_padel(t, out)
             done += 1
     if todo:
         why = f" - {translator_report()}" if done < len(todo) and TRANSLATOR_WHY else ""
