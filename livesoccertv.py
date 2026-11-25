@@ -239,6 +239,11 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
         if not WANTED_COMP.search(fx.get("comp") or "") or OTHER_CONFED.search(fx.get("comp") or ""):
             continue
         r = pair(fx, rows) if rows else None
+        if not r and ko <= now:
+            # under way / just finished: LiveSoccerTV's schedule rows for live games may look different, and the match is no use to the page
+            # as a miss (25 Nov 2026: 88 "unpaired", all of today's kicked-off games). Keep what was found before; do not report it.
+            fx["_keep_cc"] = True
+            continue
         if not r:
             if ko.strftime("%Y-%m-%d") in ok_days:      # only for days whose LiveSoccerTV schedule page was read
                 unpaired.append(f"{ko:%a %d %b %H:%M} {fx.get('a')} v {fx.get('b')} ({(fx.get('comp') or '')[:35]})")
@@ -303,10 +308,11 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
     for fx in fixtures:
         r = fx.pop("_lstv", None)
         c = cache.get(r["id"]) if r else None
+        keep = fx.pop("_keep_cc", None) and not r
         if c and c.get("cc"):
             fx["cc"] = c["cc"]
             with_cc += 1
-        elif "cc" in fx and not r:
+        elif "cc" in fx and not r and not keep:
             fx.pop("cc", None)                    # no longer paired - do not keep stale channels
     added = 0
     for r in extras:
