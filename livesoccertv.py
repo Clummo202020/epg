@@ -16,6 +16,8 @@ LiveOnSat's channels as before.
 """
 import difflib, html as htmllib, re, time, unicodedata, urllib.request, urllib.error
 from datetime import datetime, timedelta, timezone
+from urllib.parse import quote, quote_plus
+from zoneinfo import ZoneInfo
 
 BASE = "https://www.livesoccertv.com"
 UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
@@ -26,6 +28,15 @@ LSTV_PAUSE = 3.0
 LSTV_REFRESH_NEAR, LSTV_REFRESH_FAR = 5, 20            # hours
 LSTV_KEEP_HOURS = 36                                    # cache entries for matches older than this are dropped
 PAIR_MINUTES = 20
+COMP_NEXT_PAGES = 2                    # extra pages of ten fixtures per competition page (the "Next" button)
+PAGE_IDS = {"/competitions/england/footbal-league-one/": 140}      # seen in the browser; the others are read from the page
+
+
+def _page_id(path, text):
+    m = re.search(r"(?i)page_?id\W{1,6}(\d{1,6})", text)
+    return int(m.group(1)) if m else PAGE_IDS.get(path)
+
+
 COMP_PAGES = ["/competitions/england/premier-league/", "/competitions/england/championship/", "/competitions/england/footbal-league-one/",
               "/competitions/england/league-two/", "/competitions/england/fa-cup/", "/competitions/england/football-league-cup/",
               "/competitions/scotland/premier-league/", "/competitions/scotland/fa-cup/",
@@ -267,6 +278,32 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
                 rows.extend(new)
                 print(f"  LiveSoccerTV {path}: HTTP {status}, {len(text)} bytes, {len(got)} rows, {len(new)} not on the day pages, "
                       f"{text.count('matchrow')} 'matchrow' marks")
+                # The red "Next >>" button asks xschedule.php for the following fixtures (user, 25 Nov 2026: the page shows only the first
+                # ten). Same request, one page at a time, while British / UEFA fixtures are still unpaired.
+                pid = _page_id(path, text) if got else None
+                last = got
+                for pg in range(2, COMP_NEXT_PAGES + 2):
+                    if not pid or not last or not _left():
+                        break
+                    lr = max(last, key=lambda g: g["epoch"])
+                    start = datetime.fromtimestamp(lr["epoch"], timezone.utc).astimezone(ZoneInfo("America/New_York")).strftime("%Y-%m-%d %H:%M:%S")
+                    url = (f"{BASE}/xschedule.php?direction=next&pagetype=competition&pageid={pid}&start={quote(start, safe=':')}"
+                           f"&game={quote_plus(lr['a'] + ' vs ' + lr['b'])}&xml=1&tab=_live&page={pg}&pageurl={quote(BASE + path, safe='/')}")
+                    st2, tx2 = fetcher(url)
+                    sleeper(LSTV_PAUSE)
+                    if st2 in (403, 429, 503):
+                        break
+                    if "matchrow" not in tx2 and "&lt;tr" in tx2:
+                        tx2 = htmllib.unescape(tx2)
+                    last = parse_schedule(tx2) if st2 == 200 else []
+                    have = {r["id"] for r in rows}
+                    new2 = [g for g in last if g["id"] not in have]
+                    rows.extend(new2)
+                    print(f"  LiveSoccerTV {path} next page {pg}: HTTP {st2}, {len(tx2)} bytes, {len(last)} rows, {len(new2)} new"
+                          + ("" if last else f" - start of the reply: {tx2[:160]!r}"))
+                if got and not pid:
+                    j = text.find("pageid")
+                    print(f"  LiveSoccerTV {path}: no page id found for the Next button" + (f" - around 'pageid': {text[max(0, j - 60):j + 100]!r}" if j >= 0 else ""))
     uniq = {r["id"]: r for r in rows}
     rows = list(uniq.values())
     horizon = now + timedelta(hours=(LSTV_DAYS_AHEAD + 1) * 24)
