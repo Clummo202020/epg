@@ -260,7 +260,7 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
         if c is None or age >= limit:
             todo.append((ko, r))
     todo.sort(key=lambda x: x[0])
-    read = 0
+    read, fails = 0, 0
     seen = set()
     for ko, r in todo:
         if blocked or read >= LSTV_MAX_PAGES:
@@ -268,7 +268,7 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
         if r["id"] in seen:
             continue
         seen.add(r["id"])
-        status, text = fetcher(BASE + r["href"] + "/")
+        status, text = fetcher(BASE + r["href"])
         sleeper(LSTV_PAUSE)
         if status in (403, 429, 503):
             blocked = True
@@ -276,6 +276,14 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
             break
         table = parse_match(text) if status == 200 else None
         if table is None:
+            fails += 1
+            if fails <= 3:       # what came back, so a failure can be understood from the log
+                print(f"  LiveSoccerTV: match page {r['href']}: HTTP {status}, {len(text)} bytes, 'International Coverage' "
+                      f"{'present' if 'International Coverage' in text else 'absent'}, 'dynamic-match' {'present' if 'dynamic-match' in text else 'absent'}; "
+                      f"start: {re.sub(chr(10), ' ', text[:200])!r}")
+            if fails >= 5 and read == 0:
+                print("  LiveSoccerTV: five match pages in a row gave no channel table - step stopped")
+                break
             continue
         read += 1
         cache[r["id"]] = {"t": now.strftime("%Y-%m-%dT%H:%M:%S+00:00"), "ko": ko.strftime("%Y-%m-%dT%H:%M:%S+00:00"), "cc": wanted(table)}
