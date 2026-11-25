@@ -26,7 +26,7 @@ LSTV_PAUSE = 3.0
 LSTV_REFRESH_NEAR, LSTV_REFRESH_FAR = 5, 20            # hours
 LSTV_KEEP_HOURS = 36                                    # cache entries for matches older than this are dropped
 PAIR_MINUTES = 20
-COMP_PAGES = ["/competitions/england/premier-league/", "/competitions/england/championship/", "/competitions/england/league-one/",
+COMP_PAGES = ["/competitions/england/premier-league/", "/competitions/england/championship/", "/competitions/england/footbal-league-one/",
               "/competitions/england/league-two/", "/competitions/england/fa-cup/", "/competitions/england/football-league-cup/",
               "/competitions/scotland/premier-league/", "/competitions/scotland/fa-cup/",
               "/competitions/international/uefa-champions-league/", "/competitions/international/uefa-europa-league/",
