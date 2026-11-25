@@ -177,9 +177,11 @@
     ["ID", "On Indonesia TV", (c) => /Indonesia/i.test(c)], ["CY", "On Cyprus TV", (c) => /\bCytavision\b/i.test(c)],
     ["ME", "On beIN MENA English", (c) => /beIN.*(MENA|English)/i.test(c)], ["CB", "On Caribbean TV", (c) => /Caribbean/i.test(c)]];
   const chKey = (c) => c.toLowerCase().replace(/\([^)]*\)/g, "").replace(/\b(hd|uhd|4k|uk|usa|us|ireland|great britain|gb)\b/g, "").replace(/[^a-z0-9+]/g, "");
-  function byCountry(cc, ch0) {
+  function byCountry(cc, ch0, uefa, dazn) {
     const lines = [], used = new Set();
     for (const [key, label, test] of CC_LINES) {
+      if (key === "CA" && dazn) continue;                          // Canada line: not for Premier League / UEFA games (always on DAZN)
+      if ((key === "TH" || key === "ID") && !uefa) continue;     // Thailand and Indonesia lines: UEFA competitions only (user, 25 Nov 2026)
       const list = [], seen = new Set();
       for (const c of ((cc && cc[key]) || []).concat(ch0.filter((c) => !used.has(c) && test(c)))) {
         const k = chKey(c);
@@ -187,6 +189,15 @@
       }
       ch0.forEach((c) => { if (test(c)) used.add(c); });
       if (list.length) lines.push({ key, label, list });
+    }
+    // The Irish line drops channels that are already on the UK line under the very same name (LiveSoccerTV's Ireland row repeats Sky Go UK, NOW ...).
+    // Names that differ - Premier Sports 1 Ireland v Premier Sports 1 UK - are different schedules and stay.
+    const exact = (c) => c.toLowerCase().replace(/\([^)]*\)/g, "").replace(/\b(hd|uhd|4k)\b/g, "").replace(/[^a-z0-9+]/g, "");
+    const uk = lines.find((l) => l.key === "UK"), ie = lines.find((l) => l.key === "IE");
+    if (uk && ie) {
+      const have = new Set(uk.list.map(exact));
+      ie.list = ie.list.filter((c) => !have.has(exact(c)));
+      if (!ie.list.length) lines.splice(lines.indexOf(ie), 1);
     }
     return lines;
   }
@@ -282,7 +293,8 @@
         const start = new Date(f.start);
         // LiveOnSat's small flags in brackets - "($/ww)", "(geo/R)" - are not part of a channel's name ("(uk only)" is kept)
         const ch0 = [...new Set((Array.isArray(f.ch) ? f.ch : []).map((c) => c.replace(/\s*\((?=[^)]*[$\/])[$\/\w]{1,12}\)/g, "").trim()).filter(Boolean))];
-        const lines = byCountry(f.cc, ch0);
+        const isUefa = /^(UEFA|Europa League|Champions League|Conference League)/i.test(String(f.comp || ""));
+        const lines = byCountry(f.cc, ch0, isUefa, isUefa || /^English Premier League\b/i.test(String(f.comp || "")));
         const inLines = new Set(lines.flatMap((l) => l.list.map(chKey)));
         const ch = [...new Map(lines.flatMap((l) => l.list).concat(ch0.filter((c) => !inLines.has(chKey(c)))).map((c) => [chKey(c), c])).values()];   // the country lines first (LiveSoccerTV's names), then the rest of LiveOnSat's
         // the league / cup itself: everything before the first " - " (that part is the week, round, stage or group); Serie C's girone letters go too
