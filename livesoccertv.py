@@ -41,8 +41,9 @@ CARIBBEAN = {"Jamaica", "Trinidad and Tobago", "Barbados", "Bahamas", "Antigua a
              "Turks and Caicos Islands", "Suriname"}
 # Only British and UEFA football is looked up (user, 25 Nov 2026)
 WANTED_COMP = re.compile(r"^(English|Scottish|Welsh|Irish|Northern Ireland|Northern Irish|UEFA|Europa League|Champions League|Conference League)\b|"
-                         r"\b(FA Cup|FA Trophy|Carabao|EFL|Premier League|Championship|League One|League Two|National League|Premiership|Scottish|"
+                         r"^(Emirates |Isuzu |Vanarama )?(FA Cup|FA Trophy|Carabao|EFL|Premier League|Championship|League One|League Two|National League|Premiership|Scottish|"
                          r"Champions League|Europa League|Conference League|Youth League|Nations League)\b", re.I)
+# (anchored 25 Nov 2026: unanchored, "Ukrainian Premier League" and "South African Premiership" were looked up as British football)
 
 
 # "AFC Champions League Elite" / "CAF Champions League" are not UEFA football (25 Nov 2026: they were being looked up as if they were)
