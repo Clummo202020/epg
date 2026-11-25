@@ -795,6 +795,9 @@ def _words(text):
     return frozenset(w for w in _norm(text).split() if len(w) >= 3 and w not in _LOS_STOP)
 
 
+_YOUTH_RE = re.compile(r"(?i)\bU-?(?:1[5-9]|2[0-3])\b|\bunder[- ]?\d{2}\b|\bYouth\b")
+
+
 def load_liveonsat():
     """[(home words, away words, start UTC, competition)] from liveonsat_fixtures.json - the rugby / fighting list AND the football list
     (7 Nov 2026) - or [] (never raises)."""
@@ -819,14 +822,16 @@ def load_liveonsat():
             comp = re.sub(r"\s+-\s+.*$", "", f.get("comp") or "").strip()
             a, b = _words(f["a"]), _words(f["b"])
             if a and b:
-                _LOS.append((a, b, start, comp))
+                # 25 Nov 2026: an age-group fixture ("Sporting U-19 v Man Utd U-19") is not the senior match of the same two clubs - the flag keeps them apart
+                young = bool(_YOUTH_RE.search(f"{f['a']} {f['b']} {f.get('comp') or ''}"))
+                _LOS.append((a, b, start, comp, young))
     except Exception as e:
         print(f"  LiveOnSat fixtures not available ({e}) - stream times are used as they are")
         _LOS = []
     return _LOS
 
 
-def liveonsat_start(sides, approx):
+def liveonsat_start(sides, approx, youth=False):
     """(start UTC, competition) of the LiveOnSat fixture whose two teams are the two `sides` (the second side may carry trailing
     competition words) within REAL_START_HOURS of `approx`, else None. A side matches a team when its words are all in the team's name
     or the team's words are all in the side (\"Dallas\" = \"FC Dallas\", \"Minnesota\" = \"Minnesota United\")."""
@@ -834,8 +839,8 @@ def liveonsat_start(sides, approx):
         w = _words(side)
         return bool(w) and (w <= team or team <= w)
     best = None
-    for a, b, ko, comp in load_liveonsat():
-        if abs(ko - approx) > timedelta(hours=REAL_START_HOURS):
+    for a, b, ko, comp, young in load_liveonsat():
+        if young != youth or abs(ko - approx) > timedelta(hours=REAL_START_HOURS):
             continue
         if (match(sides[0], a) and match(sides[1], b)) or (match(sides[0], b) and match(sides[1], a)):
             if best is None or abs(ko - approx) < abs(best[0] - approx):
@@ -884,7 +889,7 @@ def real_start(title, approx, quiet=False):
     # games, so for these only LiveOnSat is asked.
     women = bool(WOMENS_TITLE.search(title))
     res = None if women else _real_start_ours(title, sides, approx, quiet)
-    los = liveonsat_start(sides, res[0] if res else approx)
+    los = liveonsat_start(sides, res[0] if res else approx, bool(_YOUTH_RE.search(title)))
     if res:
         if los:
             _note_check(title, res[0], los[0], res[2] or "our guide")
