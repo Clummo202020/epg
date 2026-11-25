@@ -64,7 +64,7 @@ def fetch(url):
 
 
 # ---------------------------------------------------------------------------------------------------------------- parsing
-ROW = re.compile(r'<tr id="(\d+)" class="matchrow"(.*?)</tr>', re.S)
+ROW = re.compile(r'<tr id="(\d+)" class="matchrow[^"]*"(.*?)</tr>', re.S)      # also "matchrow livematch" (a game under way) - 25 Nov 2026
 
 
 def parse_schedule(text):
@@ -222,8 +222,11 @@ def run(fixtures, cache, now=None, fetcher=fetch, sleeper=time.sleep):
             print(f"  LiveSoccerTV: schedule {day}: HTTP {status}")
             continue
         got = parse_schedule(text)
+        eps = sorted(g["epoch"] for g in got)
         print(f"  LiveSoccerTV {day}: HTTP {status}, {len(text)} bytes, {len(got)} rows, {sum(1 for g in got if g['has_tv'])} with TV, "
-              f"{sum(1 for g in got if WANTED_COMP.search(g['comp'] or ''))} British / UEFA")
+              f"{sum(1 for g in got if g['comp'])} with a competition name"
+              + (f", kick-offs {datetime.fromtimestamp(eps[0], timezone.utc):%d %b %H:%M} - {datetime.fromtimestamp(eps[-1], timezone.utc):%d %b %H:%M} UTC" if eps else "")
+              + f", {text.count('matchrow')} 'matchrow' marks in the page")
         if got:
             days_ok += 1
             ok_days.add(day)
