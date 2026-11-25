@@ -415,7 +415,7 @@ def build_team(tv, cid, league, games, now, horizon):
         if end <= t:
             end = min(t + timedelta(hours=1), horizon)
         if nxt:
-            title = f"Next Up: {name_of(nxt['away'])} at {name_of(nxt['home'])} ({uk(nxt['ko'])} UK)"
+            title = f"Up Next: {name_of(nxt['away'])} at {name_of(nxt['home'])} ({uk(nxt['ko'])} UK)"
             sub = uk(nxt["ko"]) + " UK time"
             desc = (f"{word} {uk(nxt['ko'])} UK time." + (f" {nxt['where']}." if nxt["where"] else "")
                     + watch_note(nxt) + (f" {last}" if last else ""))
@@ -428,7 +428,7 @@ def build_team(tv, cid, league, games, now, horizon):
             # 8 Nov 2026 (user): "Next Game" on every block before the game; only the LAST block, right before the red-ball LIVE block, says
             # "Next Up" (blocks that stop at the guide's horizon, not at the puck drop / kick-off, are all "Next Game")
             last_before_live = bool(nxt) and end == nxt["ko"] - early and i == len(ps) - 1
-            add(tv, cid, a, b, title if (not nxt or last_before_live) else title.replace("Next Up:", "Next Game:", 1), sub, desc)
+            add(tv, cid, a, b, title if (not nxt or last_before_live) else title.replace("Up Next:", "Next Game:", 1), sub, desc)
         t = end
 
 

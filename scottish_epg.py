@@ -657,7 +657,7 @@ def build_xmltv(channels, filler):
                 pieces = list(filler_blocks(last_stop or now, start))
                 for idx, (a, b) in enumerate(pieces):
                     # 8 Nov 2026 (user): "Next Match" before the match, "Next Up" only on the LAST block before the LIVE block
-                    lab = "Next Up" if idx == len(pieces) - 1 else "Next Match"
+                    lab = "Up Next" if idx == len(pieces) - 1 else "Next Match"
                     if FILLER_STYLE == "next":
                         f_title = f"Next: {m['title']} - {m['when']}"
                         f_desc = f"Coming up: {m['desc']}"

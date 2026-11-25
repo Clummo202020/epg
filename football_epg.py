@@ -2009,8 +2009,8 @@ def goal_rush_channel(matches, suffix, now=None):
             "start": live_start,
             "stop": max(m["stop"] for m in ms),
             "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
-            "filler_head": f"Next Up: Goal Rush, {ko:%A}.",   # description starts "Next Up: Goal Rush, Saturday. Live action from ..."
-            "filler_sub": f"Next Up: Goal Rush {ko:%a} {ko.day} {ko:%b}{mw_tag}",
+            "filler_head": f"Up Next: Goal Rush, {ko:%A}.",   # description starts "Next Up: Goal Rush, Saturday. Live action from ..."
+            "filler_sub": f"Up Next: Goal Rush {ko:%a} {ko.day} {ko:%b}{mw_tag}",
             "live_sub": mw_comp,                         # secondary title: Premier League (MW11)
             "live_title": "🔴 LIVE: Goal Rush",         # title of the show itself
         }
@@ -2120,7 +2120,7 @@ def tnt3_goals_channel(matches, suffix, now=None, chan_id=None, chan_name=None, 
             "comp": TNT3_GOALS_COMP, "title": show, "sub": "", "desc": desc,
             "start": start, "stop": stop, "when": f"{ko:%a %d %b}, {ko:%H:%M}", "teams": [], "tbc": False,
             "fixed_title": f"{show} - {ko:%A}", "fixed_desc": desc,
-            "filler_sub": f"Next Up: {show} {ko:%A}",
+            "filler_sub": f"Up Next: {show} {ko:%A}",
             "live_title": f"\U0001F534 LIVE: {show}", "live_sub": TNT3_GOALS_COMP,
         })
     shows.sort(key=lambda m: m["start"])
@@ -2344,7 +2344,7 @@ def build_xmltv(channels, filler):
                 for idx, (a, b) in enumerate(pieces):
                     # 8 Nov 2026 (user): every block before the match says "Next Match" - only the LAST block, right before the red-ball
                     # LIVE block, says "Next Up" (Goal Rush and the fixed UEFA texts keep their own wording)
-                    lab = "Next Up" if idx == len(pieces) - 1 else "Next Match"
+                    lab = "Up Next" if idx == len(pieces) - 1 else "Next Match"
                     d = m["generic_desc"] if rv and a < rv else m["desc"]
                     if FILLER_STYLE == "next":
                         f_title = f"Next: {m['title']} - {m['when']}"
