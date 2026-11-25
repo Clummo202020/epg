@@ -15,7 +15,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v5
 
@@ -23,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Read LiveOnSat's rugby / fighting pages
+      - name: Read LiveOnSat's fixtures and LiveSoccerTV's channels
         run: python3 -u liveonsat_fixtures.py
 
       - name: Commit if anything changed
