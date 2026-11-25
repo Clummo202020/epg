@@ -358,9 +358,95 @@ def fetch_pluto():
                              and not PLUTO_NOT_LIVE.search(f'{p["title"]} {p["sub"]} {p["desc"]}'))
             if key:
                 seen.add(key)
+        if cid == "US.CBSSportsGolazo":
+            golazo_enrich(progs)
         print(f"  Pluto TV {cid}: {len(progs)} programmes, {sum(p['live'] for p in progs)} live match(es)"
               + (f", to {progs[-1]['stop'].astimezone(UK):%a %d %b %H:%M} UK" if progs else ""))
     return out
+
+
+# CBS Sports Golazo live matches (25 Nov 2026, user: "a bit sparse on info" - Pluto only gives "From Fortuna Arena in Prague."): the stage
+# ("League Phase, Matchday 5") and where else to watch ("This match is available on TNT Sports 5, ... and Sony Sports 1.") are taken from
+# our own football guide's block for the same match. Matched by kick-off (within 30 minutes) and the teams' names; nothing found = the
+# Pluto text stays as it is.
+FOOTBALL_GUIDE = "https://raw.githubusercontent.com/Clummo202020/epg/main/football_epg.xml"
+_NAME_STOP = {"club", "city", "united", "utd", "town", "real", "inter", "athletic", "sporting"}
+
+
+def _name_words(text):
+    import unicodedata
+    t = unicodedata.normalize("NFKD", text or "")
+    t = "".join(c for c in t if not unicodedata.combining(c)).lower()
+    return {w for w in re.findall(r"[a-z0-9]{4,}", t) if w not in {"club", "football"}}
+
+
+def _sides(match):
+    parts = re.split(r"\s+(?:vs?\.?|v|at)\s+", match, maxsplit=1, flags=re.I)
+    return parts if len(parts) == 2 else None
+
+
+def golazo_enrich(progs):
+    """Adds stage + other channels to the description of each live Golazo match, from football_epg.xml. Never raises."""
+    live = [p for p in progs if p.get("live")]
+    if not live:
+        return
+    try:
+        import xml.etree.ElementTree as XT
+        root = XT.fromstring(fetch(FOOTBALL_GUIDE).encode("utf-8"))
+    except Exception as e:
+        print(f"  Golazo: football guide not available ({e}) - Pluto descriptions kept")
+        return
+    cands = []
+    for el in root.iter("programme"):
+        title = (el.findtext("title") or "")
+        if "LIVE:" not in title:
+            continue
+        sd = _sides(re.sub(r"^.*?LIVE:\s*", "", title))
+        if not sd:
+            continue
+        try:
+            st = datetime.strptime(el.get("start"), "%Y%m%d%H%M%S %z").astimezone(timezone.utc)
+        except (TypeError, ValueError):
+            continue
+        cands.append((st, _name_words(sd[0]), _name_words(sd[1]), (el.findtext("desc") or "")))
+    done = 0
+    for p in live:
+        m = p["title"] if MATCHUP_RE.search(p["title"]) else p["sub"]
+        sd = _sides(m or "")
+        if not sd:
+            continue
+        a, b = _name_words(sd[0]), _name_words(sd[1])
+        best = None
+        for st, ca, cb, desc in cands:
+            if abs(st - p["start"]) > timedelta(minutes=30) or "available on" not in desc:
+                continue
+            straight, crossed = bool(a & ca) + bool(b & cb), bool(a & cb) + bool(b & ca)
+            score = max(straight, crossed)
+            if score >= 1 and (best is None or score > best[0]):
+                best = (score, desc)
+        if not best:
+            continue
+        desc = best[1]
+        head = desc.split(" | ")[0]
+        stage = re.sub(r"^\s*LIVE from [^.]*\.\s*", "", head).strip()
+        stage = re.sub(r"\bMW\s?(\d+)", r"Matchday \1", stage)
+        tail = desc.split(" | ", 1)[-1]
+        chans = []
+        # "This match is available on A, B and C."  and / or  "It is on D and E too." (the football guide's two sentence forms)
+        for mm in re.finditer(r"(?:available on|It is on) (.+?)(?: too)?\.(?=\s|$)", tail, re.S):
+            for c in re.split(r",\s*|\s+and\s+", mm.group(1)):
+                c = c.strip()
+                if c and "golazo" not in c.lower() and c not in chans:
+                    chans.append(c)
+        bits = [stage if stage and stage.endswith(".") else (stage + "." if stage else ""), p["desc"].strip()]
+        if chans:
+            joined = chans[0] if len(chans) == 1 else ", ".join(chans[:-1]) + " and " + chans[-1]
+            bits.append(f"This match is available on {joined}.")
+        new = " ".join(x for x in bits if x)
+        if new and new != p["desc"]:
+            p["desc"] = new
+            done += 1
+    print(f"  Golazo: {done} of {len(live)} live match(es) enriched from the football guide")
 
 
 # Willow (20 Nov 2026, user): Willow and Willow 2 listings straight from Willow's own schedule page (cricket.willow.tv), which loads them from two
