@@ -331,12 +331,21 @@ def main():
     except (OSError, ValueError):
         pass
     fixtures, pages = read_pages(PAGES, old.get("fixtures", []), False, now)
-    football, fpages = read_pages(football_pages(now), (old.get("football") or {}).get("fixtures", []), True, now)
+    football, fpages = read_pages(football_pages(now), [f for f in (old.get("football") or {}).get("fixtures", []) if f.get("src") != "lstv"], True, now)
+    # LiveSoccerTV (25 Nov 2026): channels by country for each fixture, shown first on fixtures.html. Nothing here can stop the file being written.
+    lstv_cache = old.get("lstv_cache") or {}
+    try:
+        import livesoccertv
+        lstv_cache = livesoccertv.run(football, lstv_cache, now)
+        football.sort(key=lambda f: f["start"])
+    except Exception as e:
+        print(f"  LiveSoccerTV step failed ({type(e).__name__}: {e}) - LiveOnSat's channels only")
     if not fixtures and not football and not old:
         print("  nothing found - file not written")
         return 0
     data = {"fetched": stamp, "pages": pages, "fixtures": fixtures,
             "football": {"fetched": stamp, "pages": fpages, "fixtures": football},
+            "lstv_cache": lstv_cache,
             "tv": read_tv(old.get("tv") or {}, stamp)}
     with open(OUT, "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, separators=(",", ":"))
