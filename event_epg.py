@@ -2282,8 +2282,17 @@ def plain_names(text, ctx=""):
         if not _OTHER_LEAGUE.search(f"{ctx} {out}"):
             # NFL / NBA: the stream names list the AWAY team first (checked against ESPN: Chiefs at Bills, Raiders at Browns, Celtics at Wizards,
             # Mavericks at Nuggets), so "A vs B" is written "A @ B" like the NBA / NFL channels (25 Nov 2026, user)
-            out = _NFL_PAIR.sub(lambda m: f"{NFL_TEAMS[m.group(1)]} @ {NFL_TEAMS[m.group(2)]}", out)
-            out = _NBA_PAIR.sub(lambda m: f"{NBA_TEAMS[m.group(1)]} @ {NBA_TEAMS[m.group(2)]}", out)
+            def _away(m, table):
+                # a studio show ("Field Pass with The Pat McAfee Show: Panthers vs Buccaneers") may list the teams in any order: those keep "vs"
+                before = m.string[:m.start()]
+                if ":" in before and not re.search(r"(?:NBA|NFL) on TSN:\s*$", before):
+                    return f"{table[m.group(1)]} vs {table[m.group(2)]}"
+                return f"{table[m.group(1)]} @ {table[m.group(2)]}"
+            out = _NFL_PAIR.sub(lambda m: _away(m, NFL_TEAMS), out)
+            out = _NBA_PAIR.sub(lambda m: _away(m, NBA_TEAMS), out)
+        for rx, rep in TYPO_FIXES:
+            out = rx.sub(rep, out)
+        out = city_teams(out)
         out = _USL_PAIR.sub(lambda m: f"{USL_TEAMS[m.group(1)]} vs {USL_TEAMS[m.group(2)]}", out)
         for rx, rep in EVENT_WORDS:
             out = rx.sub(rep, out)
@@ -2297,6 +2306,88 @@ _NFL_AT = re.compile(_NFL_AT.pattern.replace(r"\s+vs\.?\s+", " @ ")); _NBA_AT = 
 FIGURE_SKATING = re.compile(r"(?i)^(?:(?:Women'?s|Men'?s|Pairs|Ladies)\s+)?(?:Short Program|Free Skate|Free Skating)\b|^(?:Rhythm|Free|Short) Dance\b|^Exhibition Gala\b|^Ice Dance\b")
 SKIING = re.compile(r"(?i)\b(?:Slalom|Giant Slalom|Downhill|Super-G|Alpine Combined)\b")
 LEAGUE_OF_SPORT = {"American Football": "NFL", "Basketball": "NBA", "Ice Hockey": "NHL", "Baseball": "MLB"}
+
+
+# Sportsnet names its NBA / NHL games by city only ("Basketball. Chicago @ Charlotte", "Ice Hockey. Calgary @ Pittsburgh", "French Language Broadcast:
+# Ottawa @ Florida") - written out as teams (25 Nov 2026). The league comes from the "Basketball." / "Ice Hockey." the name already carries; with
+# neither, only a pair of cities that fits exactly one league is changed.
+NHL_CITY = {"Anaheim": "Anaheim Ducks", "Boston": "Boston Bruins", "Buffalo": "Buffalo Sabres", "Calgary": "Calgary Flames",
+            "Carolina": "Carolina Hurricanes", "Chicago": "Chicago Blackhawks", "Colorado": "Colorado Avalanche", "Columbus": "Columbus Blue Jackets",
+            "Dallas": "Dallas Stars", "Detroit": "Detroit Red Wings", "Edmonton": "Edmonton Oilers", "Florida": "Florida Panthers",
+            "Los Angeles": "Los Angeles Kings", "Minnesota": "Minnesota Wild", "Montreal": "Montreal Canadiens", "Nashville": "Nashville Predators",
+            "New Jersey": "New Jersey Devils", "New York Islanders": "New York Islanders", "New York Rangers": "New York Rangers",
+            "NY Islanders": "New York Islanders", "NY Rangers": "New York Rangers", "Ottawa": "Ottawa Senators", "Philadelphia": "Philadelphia Flyers",
+            "Pittsburgh": "Pittsburgh Penguins", "San Jose": "San Jose Sharks", "Seattle": "Seattle Kraken", "St. Louis": "St. Louis Blues",
+            "Tampa Bay": "Tampa Bay Lightning", "Toronto": "Toronto Maple Leafs", "Utah": "Utah Mammoth", "Vancouver": "Vancouver Canucks",
+            "Vegas": "Vegas Golden Knights", "Washington": "Washington Capitals", "Winnipeg": "Winnipeg Jets"}
+NBA_CITY = {"Atlanta": "Hawks", "Boston": "Celtics", "Brooklyn": "Nets", "Charlotte": "Hornets", "Chicago": "Bulls", "Cleveland": "Cavaliers",
+            "Dallas": "Mavericks", "Denver": "Nuggets", "Detroit": "Pistons", "Golden State": "Warriors", "Houston": "Rockets", "Indiana": "Pacers",
+            "LA Clippers": "Clippers", "LA Lakers": "Lakers", "Los Angeles Clippers": "Clippers", "Los Angeles Lakers": "Lakers", "Memphis": "Grizzlies",
+            "Miami": "Heat", "Milwaukee": "Bucks", "Minnesota": "Timberwolves", "New Orleans": "Pelicans", "New York": "Knicks",
+            "Oklahoma City": "Thunder", "Orlando": "Magic", "Philadelphia": "76ers", "Phoenix": "Suns", "Portland": "Trail Blazers",
+            "Sacramento": "Kings", "San Antonio": "Spurs", "Toronto": "Raptors", "Utah": "Jazz", "Washington": "Wizards"}
+NBA_CITY_FULL = {k: NBA_TEAMS[v] for k, v in NBA_CITY.items()}
+
+
+def _at_re(keys):
+    alt = "|".join(re.escape(k) for k in sorted(keys, key=len, reverse=True))
+    return re.compile(r"(?<![\w'])(" + alt + r")\s+@\s+(" + alt + r")(?![\w'])")
+
+
+_NHL_CITY_AT, _NBA_CITY_AT = _at_re(NHL_CITY), _at_re(NBA_CITY_FULL)
+
+
+def city_teams(title):
+    """"Basketball. Chicago @ Charlotte" -> "Basketball. Chicago Bulls @ Charlotte Hornets" (NHL the same); other text comes back unchanged."""
+    try:
+        nhl, nba = _NHL_CITY_AT.search(title), _NBA_CITY_AT.search(title)
+        if title.startswith("Basketball."):
+            use = "nba" if nba else None
+        elif title.startswith("Ice Hockey."):
+            use = "nhl" if nhl else None
+        else:
+            use = "nhl" if nhl and not nba else "nba" if nba and not nhl else None
+        if use == "nhl":
+            return _NHL_CITY_AT.sub(lambda m: f"{NHL_CITY[m.group(1)]} @ {NHL_CITY[m.group(2)]}", title, count=1)
+        if use == "nba":
+            return _NBA_CITY_AT.sub(lambda m: f"{NBA_CITY_FULL[m.group(1)]} @ {NBA_CITY_FULL[m.group(2)]}", title, count=1)
+    except Exception:
+        pass
+    return title
+
+
+NHL_FULL = set(NHL_CITY.values())
+_NHL_AT = _at_re(NHL_FULL)
+SEVENS_BULLET = re.compile(r"^(?P<city>[^•]+?)\s+•\s+(?P<day>Day \d+(?: \(Session \d+\))?)\s+(?P<tail>World Rugby Sevens Series\b.*)$")
+ILT20 = re.compile(r"^(?P<tail>International League T20 \d{4})\s+-\s+(?P<n>\d+\w+ Match)\s+-\s+(?P<teams>.+?\s+vs\s+.+)$")
+TYPO_FIXES = [(re.compile(r"\bCetla\b"), "Celta"), (re.compile(r"\bRP Leipzig\b"), "RB Leipzig"), (re.compile(r"\bAraratArmenia\b"), "Ararat-Armenia"),
+              (re.compile(r"\bSaintGilloise\b"), "Saint-Gilloise"), (re.compile(r"\bMi Emirates\b"), "MI Emirates")]
+
+
+PL_BULLET = re.compile(r"^(?P<show>PL Live|Premier League Live|Goal Rush)\s+\u2022\s+(?P<date>\d{1,2}\s+[A-Za-z]{3})\s+(?P<tail>Premier League\b.*)$")
+LOOKUP_SLOTS = re.compile(r"^(?:Peacock|ESPNPPV|CASOCCERPPV)\d")        # games that do not name their sport: ESPN is asked (25 Nov 2026, user)
+PLAIN_FIXTURE = re.compile(r"^(?P<a>[^:.@\u2022]{2,40}?)\s+vs\.?\s+(?P<b>[^:.@\u2022(]{2,40}?)$")
+RACING_RE = re.compile(r"(?i)\b(?:USAC|Sprint Car|Speedway|Raceway|Midget|NASCAR|IndyCar|Supercross|Motocross)\b")
+
+
+MLS_CLUBS = {"Atlanta": "Atlanta United", "Austin": "Austin FC", "Charlotte": "Charlotte FC", "Chicago": "Chicago Fire", "Cincinnati": "FC Cincinnati",
+             "Colorado": "Colorado Rapids", "Columbus": "Columbus Crew", "Dallas": "FC Dallas", "DC United": "D.C. United", "D.C. United": "D.C. United",
+             "Houston": "Houston Dynamo", "Kansas City": "Sporting Kansas City", "LA Galaxy": "LA Galaxy", "LAFC": "LAFC", "Miami": "Inter Miami",
+             "Minnesota": "Minnesota United", "Montreal": "CF Montr\u00e9al", "Montr\u00e9al": "CF Montr\u00e9al", "Nashville": "Nashville SC",
+             "New England": "New England Revolution", "NYCFC": "New York City FC", "New York City": "New York City FC", "New York": "New York Red Bulls",
+             "Orlando": "Orlando City", "Philadelphia": "Philadelphia Union", "Portland": "Portland Timbers", "Salt Lake": "Real Salt Lake",
+             "San Diego": "San Diego FC", "San Jose": "San Jose Earthquakes", "Seattle": "Seattle Sounders", "St. Louis": "St. Louis City SC",
+             "Toronto": "Toronto FC", "Vancouver": "Vancouver Whitecaps"}
+_MLS_PAIR = re.compile(r"^(?P<a>[^()]+?)\s+vs\.?\s+(?P<b>[^()]+?)(?P<tail>\s*\(.*\))?$")
+
+
+def mls_names(title):
+    """Apple MLS streams name the clubs by city ("Salt Lake vs Vancouver"): written out as the clubs, no "MLS." prefix - the streams are in the MLS
+    category (user, 25 Nov 2026). Anything that is not "club vs club" is left alone."""
+    m = _MLS_PAIR.match(title.strip())
+    if not m or m.group("a").strip() not in MLS_CLUBS or m.group("b").strip() not in MLS_CLUBS:
+        return title
+    return f"{MLS_CLUBS[m.group('a').strip()]} vs {MLS_CLUBS[m.group('b').strip()]}{m.group('tail') or ''}"
 
 
 def tidy_title_text(text):
@@ -2319,12 +2410,24 @@ def tidy_event(ev):
     try:
         e = dict(ev)
         title = tidy_title_text(e["title"])
+        if str(e.get("slot_id") or "").startswith("AppleMLS"):
+            title = mls_names(title)
         usl = bool(_USL_PAIR.search(title))              # USL Super League (women's football) - the clubs are written out below
         comp = re.sub(r"\bWomens\b", "Women's", tidy_title_text(e.get("comp") or ""))
         title = plain_names(title, comp)
         extra = plain_names(tidy_title_text(e.get("extra") or ""), comp)
         tail = ""
-        m = BULLET_TAIL_RE.match(title) or TAIL_RE.match(title) or CYCLO_TAIL_RE.match(title)
+        pl = PL_BULLET.match(title)                        # "PL Live • 29 Nov Premier League 2026/2027" -> "Premier League Live • 29 Nov"
+        if pl:
+            show = "Premier League Live" if pl.group("show") in ("PL Live", "Premier League Live") else pl.group("show")
+            title, tail = f"{show} \u2022 {pl.group('date')}", pl.group("tail").strip()
+        sv = SEVENS_BULLET.match(title)                    # "Cape Town • Day 1 (Session 1) World Rugby Sevens Series 2026/27"
+        il = ILT20.match(title)                            # "International League T20 2026 - 5th Match - Gulf Giants vs Mi Emirates"
+        if sv:
+            title, tail = f"Rugby Sevens. {sv.group('city').strip()}: {sv.group('day')}", sv.group("tail").strip()
+        elif il:
+            title, tail = f"Cricket. {il.group('teams').strip()}", f"{il.group('tail')}, {il.group('n')}"
+        m = None if (pl or sv or il) else (BULLET_TAIL_RE.match(title) or TAIL_RE.match(title) or CYCLO_TAIL_RE.match(title))
         if m and len(m.group("fix").split()) <= 9:
             title, tail = m.group("fix").strip(), m.group("tail").strip()
         sport = None
@@ -2340,11 +2443,25 @@ def tidy_event(ev):
             sport = "Figure Skating"
         if sport is None and SKIING.search(title):          # slalom / downhill / super-G name no sport (user, 25 Nov 2026: prefix "Skiing")
             sport = "Skiing"
+        if sport is None and RACING_RE.search(title) and not SPORT_SAID_RE.search(title):
+            sport = "Racing"                               # "USAC Jason Leffler Memorial at Bakersfield" (user, 25 Nov 2026)
+        looked = None
+        if sport is None and LOOKUP_SLOTS.match(str(e.get("slot_id") or "")) and e.get("start") and not usl and not title.startswith("Performance View"):
+            fm = PLAIN_FIXTURE.match(title)
+            if fm and not (_NFL_AT.search(title.replace(" vs ", " @ ")) or _NBA_AT.search(title.replace(" vs ", " @ "))):
+                try:
+                    looked = espn_sport_for(fm.group("a").strip(), fm.group("b").strip(), e["start"])   # ESPN schedules (college sport etc.)
+                except Exception:
+                    looked = None
+                if looked:
+                    sport = looked[0]
+                    if looked[1] and looked[1].lower() not in f"{tail} {extra} {comp}".lower():
+                        tail = f"{looked[1]}. {tail}".rstrip(". ") if tail else looked[1]
         lg = None                                         # NFL / NBA games (both teams known): the league is the prefix, not the sport (user, 25 Nov 2026)
         if not title.startswith("Performance View"):
-            lg = "NFL" if _NFL_AT.search(title) else "NBA" if _NBA_AT.search(title) else None
+            lg = "NFL" if _NFL_AT.search(title) else "NBA" if _NBA_AT.search(title) else "NHL" if _NHL_AT.search(title) else None
         if lg:
-            title = re.sub(r"^(?:American Football|Basketball)\.\s+", "", title)
+            title = re.sub(r"^(?:American Football|Basketball|Ice Hockey)\.\s+", "", title)
             sport = lg
         elif sport in LEAGUE_OF_SPORT and re.search(r"\b" + LEAGUE_OF_SPORT[sport] + r"\b", f"{comp} {title} {tail}"):
             sport = LEAGUE_OF_SPORT[sport]
