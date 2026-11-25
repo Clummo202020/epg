@@ -169,13 +169,17 @@
   const isAmerican = (c) => !isBritish(c) && !isIrish(c) && US_CHAN.test(c);
   // Channels by country (25 Nov 2026). LiveSoccerTV's match pages give each match's channels per country (`cc`: UK, IE, US, CA, CY, NZ ...) - they come FIRST;
   // LiveOnSat's own channels follow (same country, same name once). A channel LiveSoccerTV has no country line for stays in the full list only.
+  // Channels never shown (user, 25 Nov 2026), and the only ones allowed on the beIN MENA English / Caribbean lines.
+  const BLOCK = /\bNBCSN\b|SiriusXM FC|StarHub TV\+?|\bNow Player\b|\bM\+? Plus Live\b|JioHotstar|Astro Go|^Sky Go( UK)?$|^NOW$|^Sky Go Extra$|^Telemundo|^Stan Sport|^BBC Radio 5 Live|^fuboTV|^Sky Sport Premier League$|^Star Sports Select [12]$|^\d+ Hub Premier|\bDAZN|Coupang|MONOMAX|Premier League ?\+/i;
+  const ONLY = { ME: /beIN Sports (MENA )?English( [12])?\b/i, CB: /Rush Sports/i };
+  const okChan = (key, c) => !BLOCK.test(c) && (!ONLY[key] || ONLY[key].test(c));
   const CC_LINES = [["UK", "On UK TV", isBritish], ["IE", "On Irish TV", isIrish], ["US", "On US TV", isAmerican],
     ["CA", "On Canadian TV", (c) => /\bCanada\b/i.test(c)], ["NZ", "On NZ TV", (c) => /\bNZ\b|New Zealand/i.test(c)],
     ["AU", "On Australian TV", (c) => /\bAustralia\b/i.test(c)], ["SG", "On Singapore TV", (c) => /Singapore|StarHub|\bHub (Premier|Sports?)/i.test(c)],
     ["HK", "On Hong Kong TV", (c) => /Hong Kong|\bHK\b|\bNOW (TV|Premier|Sports?)/i.test(c)], ["IN", "On India TV", (c) => /\bIndia\b|Sony Sports TEN/i.test(c)],
     ["MY", "On Malaysia TV", (c) => /Malaysia|\bAstro\b/i.test(c)], ["TH", "On Thailand TV", (c) => /Thailand/i.test(c)],
     ["ID", "On Indonesia TV", (c) => /Indonesia/i.test(c)], ["CY", "On Cyprus TV", (c) => /\bCytavision\b/i.test(c)],
-    ["ME", "On beIN MENA English", (c) => /beIN.*(MENA|English)/i.test(c)], ["CB", "On Caribbean TV", (c) => /Caribbean/i.test(c)]];
+    ["ME", "On beIN MENA English", (c) => ONLY.ME.test(c)], ["CB", "On Caribbean TV", (c) => ONLY.CB.test(c)]];
   const chKey = (c) => c.toLowerCase().replace(/\([^)]*\)/g, "").replace(/\b(hd|uhd|4k|uk|usa|us|ireland|great britain|gb)\b/g, "").replace(/[^a-z0-9+]/g, "");
   function byCountry(cc, ch0, uefa, dazn) {
     const lines = [], used = new Set();
@@ -183,7 +187,7 @@
       if (key === "CA" && dazn) continue;                          // Canada line: not for Premier League / UEFA games (always on DAZN)
       if ((key === "TH" || key === "ID") && !uefa) continue;     // Thailand and Indonesia lines: UEFA competitions only (user, 25 Nov 2026)
       const list = [], seen = new Set();
-      for (const c of ((cc && cc[key]) || []).concat(ch0.filter((c) => !used.has(c) && test(c)))) {
+      for (const c of ((cc && cc[key]) || []).concat(ch0.filter((c) => !used.has(c) && test(c))).filter((c) => okChan(key, c))) {
         const k = chKey(c);
         if (k && !seen.has(k)) { seen.add(k); list.push(c); }
       }
@@ -296,10 +300,11 @@
         const isUefa = /^(UEFA|Europa League|Champions League|Conference League)/i.test(String(f.comp || ""));
         const lines = byCountry(f.cc, ch0, isUefa, isUefa || /^English Premier League\b/i.test(String(f.comp || "")));
         const inLines = new Set(lines.flatMap((l) => l.list.map(chKey)));
-        const ch = [...new Map(lines.flatMap((l) => l.list).concat(ch0.filter((c) => !inLines.has(chKey(c)))).map((c) => [chKey(c), c])).values()];   // the country lines first (LiveSoccerTV's names), then the rest of LiveOnSat's
+        const others = [...new Map(ch0.filter((c) => !inLines.has(chKey(c)) && !BLOCK.test(c) && !/MENA|Caribbean/i.test(c)).map((c) => [chKey(c), c])).values()];   // channels that are on no country line: listed at the end
+        const ch = lines.flatMap((l) => l.list).concat(others);   // everything (used for the search box)   // the country lines first (LiveSoccerTV's names), then the rest of LiveOnSat's
         // the league / cup itself: everything before the first " - " (that part is the week, round, stage or group); Serie C's girone letters go too
         const comp = String(f.comp || "").split(/\s+-\s+/)[0].replace(/\s+Girone\s+[A-C]$/i, "").trim() || "Football";
-        return { start, a: f.a, b: f.b, compFull: f.comp || "", comp, ch, uk: UK_COMP.test(f.comp || ""),
+        return { start, a: f.a, b: f.b, compFull: f.comp || "", comp, ch, others, uk: UK_COMP.test(f.comp || ""),
                  lines, ukch: (lines.find((l) => l.key === "UK") || { list: [] }).list, iech: (lines.find((l) => l.key === "IE") || { list: [] }).list, country: countryOf(comp), women: WOMEN.test(f.comp || ""), youth: YOUTH.test([f.comp, f.a, f.b].join(" ")),
                  hay: fold([f.a, f.b, f.comp, ch.join(" ")].join(" ")), dayKey: ukDayKey.format(start) };
       })
@@ -417,7 +422,7 @@
     list.forEach((f, idx) => {
       if (f.dayKey !== lastDay) { html += `<h2 class="day">${esc(dayLabel(f.dayKey, f.start))}</h2>`; lastDay = f.dayKey; }
       const underway = f.start.getTime() <= now && now < f.start.getTime() + UNDER_WAY_MINUTES * 60000;
-      const shown = f.ch.slice(0, SHOW_CHANNELS), rest = f.ch.slice(SHOW_CHANNELS);
+      const shown = f.others.slice(0, SHOW_CHANNELS), rest = f.others.slice(SHOW_CHANNELS);
       html += `<article class="match">
         <div class="kickoff">${esc(clock(f.start))}</div>
         <div>
@@ -425,10 +430,10 @@
           <p class="sub">${esc(f.compFull || f.comp)}${underway ? '<span class="now">Under way</span>' : ""}</p>
           ${f.lines.map((l) => chanLine(l.label, l.list)).join("")}${!f.ukch.length && !f.iech.length && f.uk
             ? `<p class="ukline none">No ${f.country === "Ireland" ? "Irish" : "UK"} channel listed yet</p>` : ""}
-          ${f.ch.length ? `<ul class="chans">${shown.map((c) => `<li>${esc(c)}</li>`).join("")}${
+          ${f.others.length ? `<ul class="chans">${shown.map((c) => `<li>${esc(c)}</li>`).join("")}${
             rest.map((c) => `<li hidden data-rest="${idx}">${esc(c)}</li>`).join("")}</ul>
-          ${rest.length ? `<button type="button" class="more" data-more="${idx}">Show all ${f.ch.length} channels</button>` : ""}` :
-            `<p class="sub">No channels listed yet.</p>`}
+          ${rest.length ? `<button type="button" class="more" data-more="${idx}">Show all ${f.others.length} other channels</button>` : ""}` :
+            f.ch.length ? "" : `<p class="sub">No channels listed yet.</p>`}
         </div>
       </article>`;
     });
