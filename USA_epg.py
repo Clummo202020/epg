@@ -243,6 +243,12 @@ MJH_PLAIN = {"US.BilliardTV": ("https://raw.githubusercontent.com/matthuisman/i.
              # GolfPass (30 Oct 2026): NBC's golf channel, free on Plex/Pluto/Samsung/Roku - Plex US has most listings
              "US.GolfPass": ("https://raw.githubusercontent.com/matthuisman/i.mjh.nz/master/Plex/us.xml.gz",
                              "5fc706038aba71002d8b7c8e")}
+# Roku's guide (25 Nov 2026, user: "a better source than Pluto TV"): the same channel on Roku lists about 3 days (61 programmes against Pluto's
+# ~16 hours / 16 programmes), same descriptions. Used when it reaches further than Pluto; Pluto stays as the fallback. Roku titles read
+# "UEFA Champions League: Slavia Praha vs Villarreal CF" - split into title "Slavia Praha vs Villarreal CF" + sub-title "UEFA Champions League".
+ROKU_GUIDE = "https://raw.githubusercontent.com/matthuisman/i.mjh.nz/master/Roku/all.xml.gz"
+ROKU_CHANNELS = {"US.CBSSportsGolazo": "b18a1af4fa8b5c58acd43dbc2cf5cc9f"}
+_ROKU_COMP_MATCH = re.compile(r"^(?P<comp>[^:]{3,60}):\s+(?P<match>\S.*?\s(?:vs?\.?|v)\s\S.*)$", re.I)
 PLUTO_MATCH_MINUTES = 100
 PLUTO_NOT_LIVE = re.compile(r"(?i)\b(\d+ in \d+|highlights?|replay|re-?airs?|rewind|classic|encore|"
                             r"best of|condensed|extended|recap|review|preview|show)\b")
@@ -346,6 +352,38 @@ def fetch_pluto():
                          "desc": (el.findtext("desc") or "").strip(),
                          "cats": [c.text.strip() for c in el.findall("category") if c.text and c.text.strip()],
                          "year": "", "rating": "", "live": False, "new": False})
+    try:                                             # Roku: longer look-ahead for the same channel (kept only when it reaches further)
+        req = urllib.request.Request(ROKU_GUIDE, headers={"User-Agent": HEADERS["User-Agent"]})
+        with urllib.request.urlopen(req, timeout=90) as r:
+            rroot = XT.fromstring(gzip.decompress(r.read()))
+        rours = {v: k for k, v in ROKU_CHANNELS.items()}
+        rprogs = {cid: [] for cid in ROKU_CHANNELS}
+        for el in rroot.iter("programme"):
+            cid = rours.get(el.get("channel"))
+            if not cid:
+                continue
+            try:
+                start, stop = when(el.get("start")), when(el.get("stop"))
+            except (TypeError, ValueError):
+                continue
+            title, sub = (el.findtext("title") or "").strip(), (el.findtext("sub-title") or "").strip()
+            m = _ROKU_COMP_MATCH.match(title)
+            if m and not sub:
+                title, sub = m.group("match").strip(), m.group("comp").strip()
+            rprogs[cid].append({"start": start, "stop": stop, "title": title, "sub": sub, "desc": (el.findtext("desc") or "").strip(),
+                                "cats": [c.text.strip() for c in el.findall("category") if c.text and c.text.strip()],
+                                "year": "", "rating": "", "live": False, "new": False})
+        for cid, rp in rprogs.items():
+            if rp and (not out[cid] or max(p["stop"] for p in rp) > max(p["stop"] for p in out[cid])):
+                filler = {p["title"]: p["desc"] for p in out[cid] if p["desc"]}      # Roku leaves some descriptions empty ("Champions League Matchday")
+                for p in rp:
+                    if not p["desc"] and p["title"] in filler:
+                        p["desc"] = filler[p["title"]]
+                print(f"  Roku {cid}: {len(rp)} programmes to {max(p['stop'] for p in rp).astimezone(UK):%a %d %b %H:%M} UK "
+                      f"(Pluto had {len(out[cid])}) - Roku listings used")
+                out[cid] = rp
+    except Exception as e:
+        print(f"  Roku guide not available ({e}) - Pluto listings used")
     for cid, progs in out.items():
         progs.sort(key=lambda p: p["start"])
         seen = set()
@@ -370,14 +408,16 @@ def fetch_pluto():
 # our own football guide's block for the same match. Matched by kick-off (within 30 minutes) and the teams' names; nothing found = the
 # Pluto text stays as it is.
 FOOTBALL_GUIDE = "https://raw.githubusercontent.com/Clummo202020/epg/main/football_epg.xml"
-_NAME_STOP = {"club", "city", "united", "utd", "town", "real", "inter", "athletic", "sporting"}
+_NAME_STOP = {"club", "city", "united", "utd", "town", "real", "athletic", "sporting", "west", "east", "north", "south", "albion", "rovers",
+              "wanderers", "county", "forest", "athletico", "atletico", "inter", "dynamo", "football", "women", "womens", "hotspur", "wednesday"}
+_STAGE_RE = re.compile(r"(?i)matchweek|\bMW\s?\d|round|phase|group|final|\bleg\b|matchday|play-?offs?|week \d")
 
 
 def _name_words(text):
     import unicodedata
     t = unicodedata.normalize("NFKD", text or "")
     t = "".join(c for c in t if not unicodedata.combining(c)).lower()
-    return {w for w in re.findall(r"[a-z0-9]{4,}", t) if w not in {"club", "football"}}
+    return {w for w in re.findall(r"[a-z0-9]{4,}", t) if w not in _NAME_STOP}
 
 
 def _sides(match):
@@ -418,7 +458,7 @@ def golazo_enrich(progs):
         a, b = _name_words(sd[0]), _name_words(sd[1])
         best = None
         for st, ca, cb, desc in cands:
-            if abs(st - p["start"]) > timedelta(minutes=30) or "available on" not in desc:
+            if abs(st - p["start"]) > timedelta(minutes=20) or "available on" not in desc:
                 continue
             straight, crossed = bool(a & ca) + bool(b & cb), bool(a & cb) + bool(b & ca)
             score = max(straight, crossed)
@@ -428,7 +468,9 @@ def golazo_enrich(progs):
             continue
         desc = best[1]
         head = desc.split(" | ")[0]
-        stage = re.sub(r"^\s*LIVE from [^.]*\.\s*", "", head).strip()
+        # the stage is the LAST sentence of the head ("LIVE from St. Mary's Stadium. Championship (Matchweek 18)." - a venue may hold full stops)
+        last = re.split(r"(?<=\.)\s+", head.strip())[-1] if head.strip() else ""
+        stage = last if _STAGE_RE.search(last) and not last.lower().startswith("live from") else ""
         stage = re.sub(r"\bMW\s?(\d+)", r"Matchday \1", stage)
         tail = desc.split(" | ", 1)[-1]
         chans = []
