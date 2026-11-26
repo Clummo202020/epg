@@ -1,25 +1,25 @@
 {
- "CASOCCERPPV14.ca": {
-  "name": "Live | International League T20 2026 - 6th Match - Dubai Capitals vs Desert Vipers | all | 8K EXCLUSIVE | CA: SOCCER PPV 14",
-  "seen": "2026-11-25T18:37:43+00:00"
- },
- "CASOCCERPPV17.ca": {
-  "name": "Live | PSG U19 vs. Roma U19 | all | 8K EXCLUSIVE | CA: SOCCER PPV 17",
-  "seen": "2026-11-25T18:37:43+00:00"
- },
- "CASOCCERPPV18.ca": {
-  "name": "Live | Quarterfinals, Day 2 | all | 8K EXCLUSIVE | CA: SOCCER PPV 18",
-  "seen": "2026-11-25T18:37:43+00:00"
+ "CASOCCERPPV3.ca": {
+  "name": "Live | Quarterfinals, Day 3 | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
+  "seen": "2026-11-26T16:07:47+00:00"
  },
  "CASOCCERPPV4.ca": {
-  "name": "Live | Bangladesh tour of South Africa 2026 - 2nd Test - South Africa vs Bangladesh | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
-  "seen": "2026-11-25T18:37:43+00:00"
+  "name": "Live | ACC Mens Asia Cup Rising Stars 2026 - 1st Semi-Final - Sri Lanka A vs India A | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
+  "seen": "2026-11-26T16:07:47+00:00"
+ },
+ "CASOCCERPPV5.ca": {
+  "name": "Live | Czechia vs. China | all | 8K EXCLUSIVE | CA: SOCCER PPV 5",
+  "seen": "2026-11-26T16:07:47+00:00"
+ },
+ "CASOCCERPPV6.ca": {
+  "name": "Live | Senators vs. Panthers | all | 8K EXCLUSIVE | CA: SOCCER PPV 6",
+  "seen": "2026-11-26T16:07:47+00:00"
  },
  "_timing": {
-  "updated": "2026-11-26T15:44:35Z",
+  "updated": "2026-11-26T16:07:18Z",
   "groups": {
    "AppleMLS": {
-    "n": 30,
+    "n": 32,
     "missed": 0,
     "applied": true,
     "median": -5,
@@ -27,16 +27,16 @@
     "max": -5
    },
    "CASOCCERPPV": {
-    "n": 2,
-    "missed": 16,
+    "n": 11,
+    "missed": 10,
     "applied": true,
-    "median": -308,
-    "min": -675,
-    "max": 60
+    "median": 47,
+    "min": -4,
+    "max": 47
    },
    "ESPNPPV": {
     "n": 0,
-    "missed": 49,
+    "missed": 4,
     "applied": false
    },
    "FoxOne": {
@@ -59,7 +59,7 @@
    },
    "NFL": {
     "n": 14,
-    "missed": 2,
+    "missed": 1,
     "applied": false,
     "median": 0,
     "min": 0,
@@ -71,8 +71,8 @@
     "applied": false
    },
    "Paramount": {
-    "n": 56,
-    "missed": 46,
+    "n": 123,
+    "missed": 79,
     "applied": true,
     "median": 50,
     "min": 15,
@@ -87,8 +87,8 @@
     "max": 0
    },
    "SN": {
-    "n": 16,
-    "missed": 2,
+    "n": 12,
+    "missed": 1,
     "applied": true,
     "median": 0,
     "min": 0,
@@ -103,21 +103,24 @@
     "max": -5
    },
    "TSN": {
-    "n": 7,
-    "missed": 38,
+    "n": 9,
+    "missed": 39,
     "applied": true,
     "median": -12,
     "min": -12,
-    "max": -12
+    "max": -5
    },
    "UEFA": {
-    "n": 0,
-    "missed": 15,
-    "applied": false
+    "n": 17,
+    "missed": 16,
+    "applied": false,
+    "median": 0,
+    "min": 0,
+    "max": 0
    }
   },
   "check": {
-   "compared": 82,
+   "compared": 107,
    "differ": 0,
    "examples": []
   }
