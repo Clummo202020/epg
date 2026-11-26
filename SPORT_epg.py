@@ -4329,7 +4329,7 @@ EPGSHARE.update({
                   "DAZN4": ("DAZN 4", ["DAZN4.it"]),
               }},
 })
-EPGSHARE_LIVE = (r"^\s*\(L\)|\(\s*[ZΖ]\s*\)|\b(live|ao vivo|canlı|canli|tiešraide|tiesraide|langsung|siaran langsung|"
+EPGSHARE_LIVE = (r"^\s*\(L\)|\(L\)\s*$|\(\s*[ZΖ]\s*\)|\b(live|ao vivo|canlı|canli|tiešraide|tiesraide|langsung|siaran langsung|"
                  r"直播|現場直播|مباشر)\b|\(c\)\s*$|\bL\s*$")
 
 
@@ -5812,12 +5812,16 @@ def cricket_matches():
                 series.add(str(lg["id"]))
     for sid in sorted(series)[:40]:
         evs += _espn_events(get_json_url(CRICKET_SCOREBOARD.format(series=sid), ESPN_HDR, quiet=True))
-    out = []
+    out, full = [], []
     for e in evs:
         when = _parse_iso(e.get("date"))
         names = _competitor_names(e)
         if when and len(names) >= 2:
             out.append((when, names, e.get("shortName") or e.get("name") or ""))
+            comps = e.get("competitors") or [c for cc in e.get("competitions") or [] for c in cc.get("competitors") or []]
+            shown = [str((c.get("team") if isinstance(c.get("team"), dict) else c).get("displayName") or "") for c in comps]
+            full.append(" v ".join(shown[:2]) if len(shown) >= 2 and all(shown[:2]) else "")
+    _START_CACHE["cricket_full"] = full                          # "New Zealand v India", same order as the matches
     print(f"  Cricket (ESPN): {len(out)} matches from {len(series)} series" if out
           else "  NOTE: cricket start times not available (ESPN)")
     _START_CACHE["cricket"] = out
@@ -5825,7 +5829,7 @@ def cricket_matches():
 
 
 def cricket_start(title, start):
-    m = re.search(r"([A-Za-z][A-Za-z .']{1,30}?)\s+v\s+([A-Za-z][A-Za-z .']{1,30})$", title)
+    m = re.search(r"([A-Za-z][A-Za-z .']{1,30}?)\s+v\s+([A-Za-z][A-Za-z .']{1,30}?)\s*(?::[^:]*)?$", title)
     if not m:
         return ""
     a, b = m.group(1).strip(), m.group(2).strip()
@@ -5838,7 +5842,7 @@ def cricket_start(title, start):
             first = when + timedelta(days=int(day.group(1)) - 1)
         else:                                     # one-day match: its start
             first = when
-        if start - timedelta(hours=1) <= first <= start + timedelta(hours=4):
+        if start - timedelta(hours=3) <= first <= start + timedelta(hours=4):
             uk = first.astimezone(LONDON)
             _log_start(f"Cricket start: {title} -> {uk:%a %d %b %H:%M} UK ({label})")
             return f"First ball: {uk:%H:%M}."
@@ -7698,6 +7702,727 @@ def astro_matchday(records):
         print(f"  Astro {rec['id']}: {a} vs {b} -> {uk:%a %d %b %H:%M} UK")
 
 
+# beIN Sports Indonesia (26 Nov 2026, user): epgshare01's ID1 file titles the European football like
+#   "UEL 2026/27: CRY Vs RSO (L)"  - three-letter team codes, no description, and a trailing "(L)" = live.
+# code_titles() turns the codes into the two teams (names and kick-off from LiveOnSat's football list,
+# liveonsat_fixtures.json - the same file event_epg.py reads), so the programme becomes
+#   "Crystal Palace vs Real Sociedad"  /  sub-title "UEFA Europa League"  /  desc "UEFA Europa League, League Phase: Round 5."
+# and, with the "(L)", is live (the red ball comes from the normal live handling). Rules:
+#   * the competition word must agree (UEL = Europa League, UECL = Conference League, UCL = Champions League);
+#   * live programme: the fixture kicks off within 20 min before to 25 min after the programme start; a programme
+#     without "(L)" (a repeat) may be a match from up to 72 h earlier;
+#   * a code fits a team when its letters appear in order in the team's name, starting at a word's first letter
+#     (CRY = Crystal Palace, RSO = Real Sociedad, BHA = Brighton & Hove Albion, UCR = Universitatea Craiova);
+#   * both codes must fit one fixture - or, if no fixture fits both, exactly one fixture fits one code ("SUN Vs ME").
+#     Anything else is left as beIN wrote it (only the "(L)" is removed).
+CODE_TITLE_RE = re.compile(r"^(?P<comp>UECL|UEL|UCL)\s+\d{4}/\d{2}\s*:\s*(?P<a>[A-Za-z0-9]{2,5})\s+V[sS]\.?\s+"
+                           r"(?P<b>[A-Za-z0-9]{2,5})(?P<live>\s*\(L\))?\s*$")
+CODE_COMP = {"UCL": "champions league", "UEL": "europa league", "UECL": "conference league"}
+LIVEONSAT_FIXTURES = "liveonsat_fixtures.json"
+LIVEONSAT_FIXTURES_URL = "https://raw.githubusercontent.com/Clummo202020/epg/main/liveonsat_fixtures.json"
+_CODE_FIXTURES = None
+CODE_ALIASES = {"ASM": "monaco", "BJK": "besiktas", "ACS": "sparta praha"}   # codes that are not letters of the name
+CODE_NAME_TIDY = {"Brighton H.A.": "Brighton & Hove Albion"}                  # LiveOnSat's short forms
+
+
+def load_code_fixtures():
+    """[(kick-off UTC, competition, home, away)] of the football fixtures in liveonsat_fixtures.json"""
+    global _CODE_FIXTURES
+    if _CODE_FIXTURES is not None:
+        return _CODE_FIXTURES
+    _CODE_FIXTURES = []
+    try:
+        if os.path.exists(LIVEONSAT_FIXTURES):
+            with open(LIVEONSAT_FIXTURES, encoding="utf-8") as f:
+                data = json.load(f)
+        else:
+            req = urllib.request.Request(LIVEONSAT_FIXTURES_URL, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=60) as r:
+                data = json.loads(r.read().decode("utf-8", "replace"))
+        for fx in ((data.get("football") or {}).get("fixtures") or []):
+            try:
+                ko = datetime.strptime(fx["start"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=timezone.utc)
+            except (KeyError, ValueError):
+                continue
+            _CODE_FIXTURES.append((ko, fx.get("comp") or "", fx.get("a") or "", fx.get("b") or ""))
+    except Exception as err:                       # never lose the guide over this
+        print(f"  NOTE: LiveOnSat fixtures not available for beIN Indonesia's team codes ({err})")
+    return _CODE_FIXTURES
+
+
+def _code_fits(code, team):
+    letters = re.sub(r"[^a-z0-9 ]+", "", "".join(c for c in unicodedata.normalize("NFKD", team.lower())
+                                                 if not unicodedata.combining(c)).replace("&", " "))
+    flat = letters.replace(" ", "")
+    code = code.lower()
+    if code.upper() in CODE_ALIASES:
+        return CODE_ALIASES[code.upper()] in team.lower()
+    pos = 0
+    for word in letters.split():                   # try every word's first letter as the start
+        i = flat.find(word, pos)
+        pos = i + len(word)
+        if i < 0 or word[0] != code[0]:
+            continue
+        j = i
+        for ch in code:
+            j = flat.find(ch, j)
+            if j < 0:
+                break
+            j += 1
+        else:
+            return True
+    return False
+
+
+def code_fixture(comp_code, a, b, start, live):
+    """(home, away, competition, kick-off) for a code title, or None"""
+    word = CODE_COMP[comp_code]
+    lo, hi = (timedelta(minutes=20), timedelta(minutes=25)) if live else (timedelta(hours=72), timedelta(minutes=25))
+    near = [f for f in load_code_fixtures() if word in f[1].lower() and "women" not in f[1].lower()
+            and start - lo <= f[0] <= start + hi]
+    both = [f for f in near if _code_fits(a, f[2]) and _code_fits(b, f[3])]
+    if len(both) == 1:
+        return both[0][2], both[0][3], both[0][1], both[0][0]
+    if both:
+        return None                                # two fixtures fit: not guessing
+    one = [f for f in near if _code_fits(a, f[2]) or _code_fits(b, f[3])]
+    if live and len(one) == 1:
+        return one[0][2], one[0][3], one[0][1], one[0][0]
+    return None
+
+
+def code_titles(records):
+    done = left = 0
+    for rec in records:
+        if not rec.get("id", "").startswith("ID."):
+            continue
+        for ev in rec["events"]:
+            title = re.sub(r"\s*\(L\)\s*$", "", ev.get("title") or "").strip() or ev.get("title")
+            m = CODE_TITLE_RE.match(ev.get("title") or "")
+            if not m:
+                ev["title"] = title
+                continue
+            fx = code_fixture(m["comp"].upper(), m["a"], m["b"], ev["start"], bool(m["live"]))
+            if not fx:
+                ev["title"] = title
+                left += 1
+                continue
+            home, away, comp_full, ko = fx
+            home, away = CODE_NAME_TIDY.get(home, home), CODE_NAME_TIDY.get(away, away)
+            short, _, detail = comp_full.partition(" - ")
+            ev["title"] = f"{home} vs {away}"
+            ev["sub"], ev["no_lead"] = short.strip(), True
+            line = f"{short.strip()}{', ' + detail.strip() if detail.strip() else ''}."
+            uk = ko.astimezone(LONDON)
+            ev["desc"] = (f"{line} Kick-off: {uk:%H:%M}." if ko >= ev["start"] - timedelta(minutes=30) else
+                          f"{line} Match played {uk:%a} {uk.day} {uk:%b}, {uk:%H:%M} UK time.")
+            done += 1
+    if done or left:
+        print(f"  beIN Indonesia team codes: {done} turned into team names, {left} left as beIN wrote them")
+
+
+# beIN Sports Malaysia (26 Nov 2026, user): beIN's own guide titles a football broadcast "Crystal Palace vs Real Sociedad - MD5"
+# with no description, no competition, and no live flag (so no red ball); LaLiga etc. carry only a stock sentence. bein_fixture_titles()
+# looks each "A vs B" up in LiveOnSat's football list (liveonsat_fixtures.json, loaded by load_code_fixtures) by team names:
+#   * the match kicks off within 30 min after to 25 min before the programme start: LIVE (red ball), competition as the
+#     secondary title, "<competition>, <round>. Kick-off: 20:00." first in the description (beIN's own sentence stays after it);
+#   * the match was played up to 72 h before: a repeat - same title / secondary title, "Match played Thu 26 Nov, 20:00 UK time.",
+#     never live;
+#   * no fixture, or more than one: left exactly as beIN wrote it.
+# The trailing " - MD5" is dropped from the title. Youth / women's / reserve fixtures are never matched.
+BEIN_VS_RE = re.compile(r"^(?P<a>.+?)(?:\s+vs?\.?\s+|\s+-\s+)(?P<b>.+?)(?:\s*-\s*(?:MD|Matchday|Match Day)\s*\d+)?\s*$", re.I)
+BEIN_SKIP_FIXTURE_RE = re.compile(r"(?i)\bU-?\d{2}\b|\bwomen\b|\bII\b|\bW\b|reserves|youth")
+
+
+def bein_fixture_titles(records):
+    fixtures = [f for f in load_code_fixtures() if not BEIN_SKIP_FIXTURE_RE.search(f"{f[1]} {f[2]} {f[3]}")]
+    live_n = rep_n = 0
+    for rec in records:
+        if not rec.get("bein_guide"):
+            continue
+        for ev in rec["events"]:
+            title = ev.get("title") or ""
+            m = BEIN_VS_RE.match(title)
+            if not m or re.search(r"\d{2}/\d{2}|\(\d{4}", title) or len(title) > 70:
+                continue
+            wa, wb = _team_words(m["a"]), _team_words(m["b"])
+            start = ev["start"]
+            hit = [f for f in fixtures if start - timedelta(hours=72) <= f[0] <= start + timedelta(minutes=30)
+                   and ((wa & _team_words(f[2]) and wb & _team_words(f[3]))
+                        or (wa & _team_words(f[3]) and wb & _team_words(f[2])))]
+            if not hit:
+                continue
+            live_hit = [f for f in hit if start - timedelta(minutes=25) <= f[0] <= start + timedelta(minutes=30)]
+            hit = live_hit or hit
+            if len(hit) > 1:                         # two fixtures fit: take the nearest to the start, unless it is a tie
+                hit.sort(key=lambda f: abs((f[0] - start).total_seconds()))
+                if len(hit) > 1 and abs((hit[0][0] - start).total_seconds()) == abs((hit[1][0] - start).total_seconds()):
+                    continue
+            ko, comp_full = hit[0][0], hit[0][1]
+            short, _, detail = comp_full.partition(" - ")
+            line = f"{short.strip()}{', ' + detail.strip() if detail.strip() else ''}."
+            uk = ko.astimezone(LONDON)
+            is_live = bool(live_hit)
+            extra = (ev.get("desc") or "").strip()
+            ev["title"] = f"{m['a'].strip()} vs {m['b'].strip()}"
+            if not ev.get("sub"):
+                ev["sub"] = short.strip()
+            ev["no_lead"] = True
+            ev["desc"] = " ".join(x for x in (line, f"Kick-off: {uk:%H:%M}." if is_live else
+                                              f"Match played {uk:%a} {uk.day} {uk:%b}, {uk:%H:%M} UK time.", extra) if x)
+            if is_live:
+                ev["live"] = True
+                live_n += 1
+            else:
+                ev["live"], ev["never_live"] = False, True
+                rep_n += 1
+    if live_n or rep_n:
+        print(f"  beIN guide matches from LiveOnSat's list: {live_n} live, {rep_n} repeats")
+
+
+# Rush Sports 1-3 (26 Nov 2026, user): the UEFA matches come as "UEFA Europa League Soccer" + "From Karaiskakis Stadium in Piraeus, Attica,
+# Greece." - the stadium and city but no teams, and Rush Sports 1 (unlike 2 and 3) without the LIVE flag. The stadium names the HOME
+# side, so: (1) the home team is found from the stadium (RUSH_VENUES) or the city appearing in a home team's name, (2) it must be the
+# home side of exactly one LiveOnSat fixture in that competition at the right time (live: kick-off from 25 min before to 30 min after
+# the programme starts; repeat: up to 72 h earlier). Then the title is "Home vs Away", the secondary title the competition, the red ball
+# is set for the live showing (repeats are never live) and the description says where and when. A stadium that is not in the table
+# and a city that does not match leave the programme exactly as it was. Domestic football whose description already names the sides
+# ("Werder Bremen host Borussia Moenchengladbach in the Bundesliga at Weserstadion") gets "Home vs Away" as the title too.
+RUSH_VENUES = {
+    "emirates": "Arsenal", "anfield": "Liverpool", "etihad": "Manchester City", "old trafford": "Manchester United",
+    "stamford bridge": "Chelsea", "tottenham hotspur": "Tottenham", "villa park": "Aston Villa", "st james": "Newcastle",
+    "selhurst": "Crystal Palace", "amex": "Brighton", "falmer": "Brighton", "stadium of light": "Sunderland",
+    "city ground": "Nottingham Forest", "london stadium": "West Ham", "molineux": "Wolverhampton",
+    "bernabeu": "Real Madrid", "camp nou": "Barcelona", "spotify camp": "Barcelona", "montjuic": "Barcelona",
+    "metropolitano": "Atletico Madrid", "san mames": "Athletic Club", "anoeta": "Real Sociedad", "balaidos": "Celta Vigo",
+    "sanchez pizjuan": "Sevilla", "mestalla": "Valencia", "villamarin": "Real Betis", "la ceramica": "Villarreal",
+    "ciudad de valencia": "Levante", "riazor": "Deportivo", "iberia": "Iberia 1999",
+    "allianz arena": "Bayern Munich", "signal iduna": "Borussia Dortmund", "red bull arena in leipzig": "RB Leipzig",
+    "bayarena": "Bayer Leverkusen", "deutsche bank park": "Eintracht Frankfurt", "mhp arena": "Stuttgart",
+    "prezero": "Hoffenheim", "snp arena": "Hoffenheim", "europa-park": "Freiburg", "volksparkstadion": "Hamburg",
+    "weserstadion": "Werder Bremen", "borussia-park": "Borussia Monchengladbach", "rheinenergie": "Koln",
+    "wals-siezenheim": "Salzburg", "red bull arena in salzburg": "Salzburg", "merkur arena": "Sturm Graz",
+    "wankdorf": "Young Boys", "st. jakob": "Basel", "st jakob": "Basel", "stockhorn": "Thun",
+    "san siro": "Inter", "giuseppe meazza": "Inter", "allianz stadium": "Juventus", "olimpico": "Roma",
+    "maradona": "Napoli", "gewiss": "Atalanta", "dall'ara": "Bologna", "artemio franchi": "Fiorentina",
+    "parc des princes": "Paris Saint-Germain", "velodrome": "Marseille", "parc olympique lyonnais": "Lyon",
+    "groupama stadium": "Lyon", "pierre-mauroy": "Lille", "louis ii": "Monaco", "allianz riviera": "Nice",
+    "roazhon": "Rennes", "beaujoire": "Nantes",
+    "alvalade": "Sporting", "da luz": "Benfica", "dragao": "Porto", "municipal de braga": "Braga", "pedreira": "Braga",
+    "johan cruijff": "Ajax", "amsterdam arena": "Ajax", "philips stadion": "PSV", "de kuip": "Feyenoord",
+    "afas": "AZ Alkmaar", "goffertstadion": "NEC Nijmegen", "jan breydel": "Club Brugge", "lotto park": "Anderlecht",
+    "constant vanden stock": "Anderlecht", "joseph marien": "Union St Gilloise", "ghelamco": "AA Gent",
+    "planet group arena": "AA Gent",
+    "celtic park": "Celtic", "ibrox": "Rangers", "tynecastle": "Hearts", "aspmyra": "Bodo/Glimt", "brann stadion": "Brann",
+    "parken": "Copenhagen", "right to dream": "Midtjylland", "mch arena": "Midtjylland", "ceres park": "AGF Aarhus",
+    "strandvallen": "Mjallby", "farum": "Nordsjaelland",
+    "karaiskakis": "Olympiacos", "apostolos nikolaidis": "Panathinaikos", "toumba": "PAOK", "opap arena": "AEK Athens",
+    "maksimir": "Dinamo Zagreb", "poljud": "Hajduk Split", "rajko mitic": "Red Star Belgrade", "marakana": "Red Star Belgrade",
+    "doosan": "Viktoria Plzen", "fortuna arena": "Slavia Prague", "epet arena": "Sparta Prague", "generali arena": "Sparta Prague",
+    "ali sami yen": "Galatasaray", "rams park": "Galatasaray", "sukru saracoglu": "Fenerbahce", "vodafone park": "Besiktas",
+    "tupras": "Besiktas", "papp laszlo": "Ferencvaros", "groupama arena": "Ferencvaros", "vasil levski": "CSKA Sofia",
+    "balgarska armia": "CSKA Sofia", "georgi asparuhov": "Levski Sofia", "huvepharma": "Ludogorets",
+    "turner stadium": "Hapoel Be'er Sheva", "sammy ofer": "Maccabi Haifa", "bloomfield": "Maccabi Tel Aviv",
+    "gsp stadium": "Omonia Nicosia", "tsirio": "Apollon Limassol", "stelios kyriakides": "Pafos",
+    "vazgen sargsyan": "Ararat-Armenia", "central stadium": "Kairat Almaty", "stozice": "Celje", "arena z'dezele": "Celje",
+    "air albania": "Egnatia", "estadi nacional": "Inter Escaldes", "victoria stadium": "Lincoln Red Imps",
+    "enea stadion": "Lech Poznan", "inea stadion": "Lech Poznan", "pilsudski": "Legia Warsaw",
+    "vonovia ruhrstadion": "Bochum", "olympiastadion in berlin": "Hertha", "bremer brucke": "Osnabruck",
+    "rosaleda": "Malaga", "martinez valero": "Elche", "olimpiyskiy": "Dynamo Kyiv", "kauno": "Kauno Zalgiris", "darius": "Kauno Zalgiris",
+}
+RUSH_UEFA_RE = re.compile(r"(?i)\buefa\s+(champions|europa|conference)\s+league\b(?!\s+(?:women|youth))")
+RUSH_FROM_RE = re.compile(r"^\s*(?:From|Vom)\s+(?:the\s+)?(?P<venue>.+?)\s+in\s+(?P<city>[^.]+?)\s*\.", re.I)
+RUSH_HOST_RE = re.compile(r"^\s*(?:The\s+)?(?P<a>[^,]{2,60}?)\s*(?:\([\d-]+\)\s*)?(?:hosts?|face|faces|welcomes?|visits?|takes?\s+on)\s+(?:the\s+)?(?P<b>[^,]{2,60}?)\s*"
+                          r"(?:\([\d-]+\)\s*)?in\s+(?:the\s+)?[A-Z][\w .'-]+?\s+(?:at|action|match|clash|regular)\b", re.U)
+RUSH_TEAM_SPORT_RE = re.compile(r"(?i)\b(soccer|football|basketball|hockey|baseball)$")
+
+
+def _plain(v):
+    v = unicodedata.normalize("NFKD", (v or "").lower())
+    return "".join(c for c in v if not unicodedata.combining(c))
+
+
+def rush_fixture_titles(records):
+    fixtures = [f for f in load_code_fixtures() if not BEIN_SKIP_FIXTURE_RE.search(f"{f[1]} {f[2]} {f[3]}")]
+    live_n = rep_n = host_n = 0
+    for rec in records:
+        if not str(rec.get("id", "")).startswith("CARIB.RushSports"):
+            continue
+        for ev in rec["events"]:
+            title, desc = ev.get("title") or "", (ev.get("desc") or "")
+            title_clean = re.sub(r"(?i)^\s*live\s*[:\-]\s*", "", title)
+            u, fm = RUSH_UEFA_RE.search(title_clean), RUSH_FROM_RE.match(desc)
+            if " vs " in title:
+                continue
+            league_game = bool(re.search(r"(?i)\b(soccer|football)$", title_clean)) and not re.search(
+                r"(?i)youth|women|nations league|american|nfl|college|ncaa|canadian|gaelic|aussie", title_clean)
+            if fm and (u or league_game):
+                venue, city = fm["venue"].strip(), fm["city"].strip()
+                key = {"champions": "champions league", "europa": "europa league",
+                       "conference": "conference league"}[u.group(1).lower()] if u else ""
+                start = ev["start"]
+                pool = [f for f in fixtures if (not key or key in _plain(f[1])) and start - timedelta(hours=72) <= f[0] <= start + timedelta(minutes=30)]
+                v, c = _plain(venue), _plain(city)
+                homes = {team for stad, team in RUSH_VENUES.items() if stad in v or stad in f"{v} in {c}"}
+                hit = [f for f in pool if any(_team_words(t) & _team_words(f[2]) for t in homes)] if homes else []
+                if not hit:                                    # the city is part of the home side's name (Zagreb, Plzen ...)
+                    cw = {w for w in re.split(r"[^a-z]+", c.split(",")[0]) if len(w) >= 4}
+                    hit = [f for f in pool if cw & set(re.split(r"[^a-z]+", _plain(f[2])))]
+                live_hit = [f for f in hit if start - timedelta(minutes=25) <= f[0] <= start + timedelta(minutes=30)]
+                hit = live_hit or hit
+                if len(hit) > 1:
+                    hit.sort(key=lambda f: abs((f[0] - start).total_seconds()))
+                    if abs((hit[0][0] - start).total_seconds()) == abs((hit[1][0] - start).total_seconds()):
+                        continue
+                if not hit:
+                    continue
+                ko, comp_full, a, b = hit[0][0], hit[0][1], hit[0][2], hit[0][3]
+                a, b = CODE_NAME_TIDY.get(a, a), CODE_NAME_TIDY.get(b, b)
+                short, _, detail = comp_full.partition(" - ")
+                parts = [x.strip() for x in city.split(",") if x.strip()]
+                place = f"{parts[0]}, {parts[-1]}" if len(parts) > 1 else city
+                uk = ko.astimezone(LONDON)
+                is_live = bool(live_hit)
+                ev["title"], ev["sub"], ev["no_lead"] = f"{a} vs {b}", short.strip(), True
+                ev["desc"] = " ".join((
+                    f"{short.strip()}{', ' + detail.strip() if detail.strip() else ''}.", f"At {venue}, {place}.",
+                    f"Kick-off: {uk:%H:%M}." if is_live else f"Match played {uk:%a} {uk.day} {uk:%b}, {uk:%H:%M} UK time."))
+                if is_live:
+                    ev["live"] = True
+                    live_n += 1
+                elif ko < start - timedelta(minutes=30):             # a showing that starts after the match began: a repeat
+                    ev["live"], ev["never_live"] = False, True
+                    rep_n += 1
+                continue
+            m = RUSH_HOST_RE.match(re.sub(r"\s+", " ", desc))
+            if m and RUSH_TEAM_SPORT_RE.search(title_clean):
+                ev["title"] = f"{m['a'].strip()} vs {m['b'].strip()}"
+                ev["sub"] = ev.get("sub") or re.sub(r"(?i)\s+(soccer|football|basketball|hockey|baseball)$", "", title_clean).strip() or title_clean
+                ev["no_lead"] = True
+                host_n += 1
+    if live_n or rep_n or host_n:
+        print(f"  Rush Sports: {live_n} live UEFA matches and {rep_n} repeats named from LiveOnSat's list, {host_n} domestic titles from the description")
+
+
+# Rush Sports cricket (26 Nov 2026, user: the "Test Cricket" block at 10pm on Rush Sports 1 is untitled and not LIVE): the guide only says
+# "Test Cricket" / "2nd Test, Day 1." (repeats: "Repeat CRICKET -New Zealand v India 2026 2nd Test Mach Day 3."). The repeat text names the
+# teams; for the rest ESPN's cricket list (cricket_matches) is asked which match has its Day N first ball within 3 h before / 1 h after the
+# programme - exactly one must, or nothing changes. Then: title "New Zealand v India", secondary title "2nd Test, Day 1", the red ball
+# for the live showing (repeats, "catch all action" and highlights never), and the pipeline adds "First ball: HH:MM." by itself.
+RUSH_TEST_RE = re.compile(r"(?i)(\d)(?:st|nd|rd|th)\s+test\b.*?\bday\s*(\d)")
+RUSH_REPEAT_RE = re.compile(r"(?i)repeat\s+cricket\s*-?\s*(?P<a>[A-Za-z][A-Za-z .']+?)\s+v\s+(?P<b>[A-Za-z][A-Za-z .']+?)\s+(?:20\d\d\s+)?"
+                            r"(\d)(?:st|nd|rd|th)\s+test\b.*?\bday\s*(\d)")
+_ORD = {"1": "1st", "2": "2nd", "3": "3rd"}
+
+
+def rush_cricket_titles(records):
+    done = 0
+    for rec in records:
+        if not str(rec.get("id", "")).startswith("CARIB.RushSports"):
+            continue
+        for ev in rec["events"]:
+            title, desc = ev.get("title") or "", ev.get("desc") or ""
+            if not re.search(r"(?i)\bcricket\b", title) or " v " in title:
+                continue
+            rep = RUSH_REPEAT_RE.search(desc)
+            if rep:
+                n, day = rep.group(3), rep.group(4)
+                ev["title"] = f"{rep['a'].strip()} v {rep['b'].strip()}"
+                ev["sub"] = f"{_ORD.get(n, n + 'th')} Test, Day {day}"
+                ev["desc"], ev["live"], ev["never_live"], ev["no_lead"] = f"Replay of Day {day}.", False, True, True
+                done += 1
+                continue
+            t = RUSH_TEST_RE.search(desc)
+            if not t:
+                continue
+            n, day = t.group(1), int(t.group(2))
+            replay = bool(re.search(r"(?i)catch\s*all|highlights|repeat|replay", desc))
+            matches, full = cricket_matches(), _START_CACHE.get("cricket_full") or []
+            start = ev["start"]
+            hit = [i for i, (when, names, label) in enumerate(matches)
+                   if i < len(full) and full[i] and start - timedelta(hours=26) <= when + timedelta(days=day - 1) <= start + timedelta(hours=1)]
+            live_hit = [i for i in hit if start - timedelta(hours=3) <= matches[i][0] + timedelta(days=day - 1) <= start + timedelta(hours=1)]
+            hit = live_hit or hit
+            if len(hit) != 1:
+                continue
+            ev["title"], ev["sub"], ev["no_lead"] = full[hit[0]], f"{_ORD.get(n, n + 'th')} Test, Day {day}", True
+            if live_hit and not replay:
+                ev["live"] = True
+                ev["desc"] = f"Live Test cricket, {ev['sub']}."
+            else:
+                ev["live"], ev["never_live"] = False, True
+                ev["desc"] = f"Replay of Day {day}."
+            done += 1
+    if done:
+        print(f"  Rush Sports: {done} Test cricket programmes titled")
+
+
+# STARZPLAY Sports 1-3 football (26 Nov 2026, user): epgshare's Starzplay listing stops after the day it is made: from the next day
+# the three channels are one-hour "StarzPLAY Sports 1" filler blocks, so Friday's Bundesliga and Serie A games were not listed at all.
+# FotMob's Starzplay page (fotmob.com/tv-guide/me/starzplay) carries the Middle East TV guide in the page itself (__NEXT_DATA__,
+# "tvguide-groups:me": day -> leagues -> matches with utcTime, home, away and the channel names) - the matches with "STARZPLAY" among
+# the channels. FotMob names no Starzplay channel, so a game goes on Sports 1, and on Sports 2 when Sports 1 already has one at the
+# same time, then on Sports 3 (which has AEW / racing: only where it is empty filler). A game replaces only filler blocks (a real
+# programme is never overwritten); where epgshare already lists the same teams at that time the game is left as epgshare has it. If FotMob can't
+# be read the listing stays exactly as epgshare gives it.
+STARZ_URL = "https://www.fotmob.com/tv-guide/me/starzplay"
+STARZ_CHANNELS = ("AE.StarzplaySports1", "AE.StarzplaySports2", "AE.StarzplaySports3")
+STARZ_FILLER_RE = re.compile(r"(?i)^\s*starz\s*play\s+sports\s*\d?\s*$")
+STARZ_GAME_MINUTES = 120
+
+
+def fetch_starz_football():
+    page = fetch(STARZ_URL, headers={"User-Agent": HEADERS["User-Agent"], "Accept": "text/html"}, retries=2,
+                 label="FotMob Starzplay guide")
+    if not page:
+        return []
+    m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', page, re.S)
+    if not m:
+        return []
+    try:
+        data = json.loads(m.group(1))["props"]["pageProps"]["fallback"]
+    except (ValueError, KeyError, TypeError):
+        return []
+    out = []
+    for days in (v for v in data.values() if isinstance(v, dict)):
+        for leagues in days.values():
+            for lg in leagues or []:
+                for mt in lg.get("matches") or []:
+                    if not any(re.search(r"(?i)starz", c.get("name") or "") for c in mt.get("channels") or []):
+                        continue
+                    try:
+                        ko = datetime.fromisoformat(mt["utcTime"].replace("Z", "+00:00"))
+                        a, b = mt["home"]["name"], mt["away"]["name"]
+                    except (KeyError, ValueError):
+                        continue
+                    out.append({"ko": ko, "a": a, "b": b, "league": lg.get("leagueName") or "", "round": str(lg.get("leagueStage") or "")})
+    return sorted(out, key=lambda x: x["ko"])
+
+
+def starz_football(records):
+    games = fetch_starz_football()
+    if not games:
+        print("  Starzplay football (FotMob): not available this run - epgshare's listing kept")
+        return
+    recs = {r["id"]: r for r in records if r.get("id") in STARZ_CHANNELS}
+    if not recs:
+        return
+    placed = skipped = 0
+    for g in games:
+        s, e = g["ko"], g["ko"] + timedelta(minutes=STARZ_GAME_MINUTES)
+        words = (_team_words(g["a"]), _team_words(g["b"]))
+        if any(any(abs((ev["start"] - s).total_seconds()) < 3 * 3600 and words[0] & _team_words(ev.get("title") or "")
+                   and words[1] & _team_words(ev.get("title") or "") for ev in r["events"]) for r in recs.values()):
+            continue                                       # epgshare already lists this game
+        for cid in STARZ_CHANNELS:
+            r = recs.get(cid)
+            if not r:
+                continue
+            over = [ev for ev in r["events"] if ev["start"] < e and ev.get("stop", ev["start"]) > s]
+            if any(not STARZ_FILLER_RE.match(ev.get("title") or "") for ev in over):
+                continue                                   # a real programme is there: next channel
+            new = []
+            for ev in r["events"]:
+                if ev not in over:
+                    new.append(ev)
+                    continue
+                if ev["start"] < s:
+                    new.append(dict(ev, stop=s))
+                if ev.get("stop", ev["start"]) > e:
+                    new.append(dict(ev, start=e))
+            comp = CODE_NAME_TIDY.get(g["league"], g["league"])
+            rnd = f"Round {g['round']}" if g["round"].isdigit() else ""
+            uk = s.astimezone(LONDON)
+            new.append({"start": s, "stop": e, "title": f"{g['a']} vs {g['b']}", "sub": comp, "live": True, "no_lead": True,
+                        "desc": " ".join(x for x in (f"{comp}{', ' + rnd if rnd else ''}.", f"Kick-off: {uk:%H:%M}.") if x)})
+            r["events"] = sorted(new, key=lambda ev: ev["start"])
+            placed += 1
+            break
+        else:
+            skipped += 1
+    print(f"  Starzplay football (FotMob): {len(games)} games, {placed} added to the guide, {skipped} left out (no free channel)")
+
+
+# Croatian channels (26 Nov 2026, user: Arena Sport Croatia shouts): MAXtv gives "CONFERENCE LEAGUE: HAJDUK - ST. TRUIDEN, football"
+# and "NFL: DALLAS - PHILADELPHIA, American football". Anything mostly in capitals becomes: the sides as "Hajduk vs St. Truiden",
+# the secondary title "Football - Conference League" (the layout the Bosnian Arena channels use), the sport word's Croatian turned
+# into English (nogomet = football, boks = boxing ...), and ordinary capitals ("Red Bull: BTS With a Legend") for the rest. Short
+# acronyms stay in capitals (NFL, NHL, ABA, UFC, BIH ...). Titles already in normal case are left alone.
+HR_SPORTS = {"football": "Football", "nogomet": "Football", "soccer": "Football", "basketball": "Basketball", "kosarka": "Basketball",
+             "handball": "Handball", "rukomet": "Handball", "boks": "Boxing", "boxing": "Boxing", "american football": "American football",
+             "ice hockey": "Ice hockey", "hokej": "Ice hockey", "water polo": "Water polo", "vaterpolo": "Water polo",
+             "athletics": "Athletics", "atletika": "Athletics", "tennis": "Tennis", "tenis": "Tennis", "volleyball": "Volleyball",
+             "odbojka": "Volleyball", "motorsport": "Motorsport", "cycling": "Cycling", "biciklizam": "Cycling", "mma": "MMA",
+             "rugby": "Rugby", "golf": "Golf", "baseball": "Baseball", "skiing": "Skiing", "skijanje": "Skiing"}
+HR_FORMATS = {"emisija": "Show", "show": "Show", "series": "Series", "serija": "Series", "dokumentarni film": "Documentary",
+              "documentary": "Documentary", "film": "Film", "studio": "Studio", "magazin": "Magazine", "magazine": "Magazine",
+              "highlights": "Highlights", "sazetak": "Highlights"}
+HR_COMPS = {"EUROPE LEAGUE": "Europa League", "EUROPA LEAGUE": "Europa League", "EUROPEALIGA": "Europa League",
+            "CONFERENCE LEAGUE": "Conference League", "CHAMPIONS LEAGUE": "Champions League", "LEAGUE PRVAKA M": "Champions League", "CHAMPIONS LEAGUE M": "Champions League",
+            "LEAGUE PRVAKA": "Champions League", "ITALIAN LEAGUE": "Serie A", "FRENCH LEAGUE": "Ligue 1", "SPANISH LEAGUE": "LaLiga",
+            "GERMAN LEAGUE": "Bundesliga", "ENGLISH LEAGUE": "Premier League", "QUALIFICATIONS FOR WC": "World Cup Qualifiers",
+            "ROMANIAN LEAGUE": "Romanian League", "ABA LEAGUE": "ABA League"}
+HR_ACRONYMS = {"NFL", "NHL", "NBA", "MLB", "ABA", "UFC", "MMA", "BIH", "WC", "UK", "USA", "HNL", "WBA", "IBF", "WBO", "AEK", "PSV",
+               "PSG", "AZ", "FC", "SC", "AC", "AS", "BSK", "NEC", "KK", "HNK", "NK", "GNK", "RB", "VFB", "TSG", "BTS", "UEFA", "FIFA",
+               "FIBA", "EHF", "LIVE", "II", "III", "IV", "XC", "UCL", "UEL", "AFC", "CSKA", "SK", "FK", "OFK", "HSK", "WTA", "ATP", "PGA"}
+HR_SMALL = {"of", "and", "the", "a", "in", "on", "at", "to", "for", "with", "vs", "de", "la", "del", "da", "do"}
+HR_TEAMS = {"Naples": "Napoli", "Leverkuse": "Leverkusen", "Manchester U": "Manchester United", "Union Sg": "Union SG",
+            "Bih": "BiH", "BIH": "BiH"}
+
+
+def _hr_case(text):
+    out = []
+    for i, w in enumerate(re.split(r"(\s+)", text.strip())):
+        if not w.strip():
+            out.append(w)
+            continue
+        core = re.sub(r"[^\w]", "", w)
+        if core.upper() in HR_ACRONYMS or (core.isdigit()):
+            out.append(w)
+        elif w.lower() in HR_SMALL and i:
+            out.append(w.lower())
+        else:                                              # "ST." -> "St.", "AND/OR" kept simple, "WBA/IBF/WBO" per part
+            out.append("/".join("-".join(p[:1].upper() + p[1:].lower() if p.upper() not in HR_ACRONYMS else p
+                                         for p in seg.split("-")) for seg in w.split("/")))
+    return " ".join("".join(out).split())
+
+
+def hr_titles(records):
+    done = 0
+    for rec in records:
+        if not str(rec.get("id", "")).startswith("HR."):
+            continue
+        for ev in rec["events"]:
+            title = (ev.get("title") or "").strip()
+            letters = [c for c in title if c.isalpha()]
+            if len(letters) < 6 or sum(c.isupper() for c in letters) < 0.6 * len(letters):
+                continue
+            body, sport = title, ""
+            parts = [x.strip() for x in title.split(",")]
+            while len(parts) > 1:                                        # trailing ", football" / ", show, series"
+                last = _plain(parts[-1])
+                if last in HR_SPORTS and not sport:
+                    sport = HR_SPORTS[last]
+                elif last in HR_FORMATS and not sport.endswith(HR_FORMATS[last]):
+                    sport = HR_FORMATS[last] if not sport or HR_FORMATS[last] == "Series" else sport
+                else:
+                    break
+                parts.pop()
+            body = ", ".join(parts)
+            comp, sep, rest = body.partition(": ")
+            if not sep:
+                comp, rest = "", body
+            elif " - " not in rest and not re.search(r"(?i)\bstudio\b", sport):
+                pass
+            if comp and HR_SPORTS.get(_plain(comp)) and "-" not in rest:      # "FOOTBALL: CONFERENCE LEAGUE, studio"
+                comp, rest, sport = "", f"{HR_COMPS.get(rest.strip().upper(), _hr_case(rest))} {sport}".strip() if sport else _hr_case(rest), HR_SPORTS[_plain(comp)]
+            comp_en = HR_COMPS.get(comp.strip().upper(), _hr_case(comp)) if comp else ""
+            sides = [x.strip() for x in rest.split(" - ")]
+            if len(sides) == 2 and all(sides):
+                a, b = (HR_TEAMS.get(_hr_case(x), _hr_case(x)) for x in sides)
+                ev["title"] = f"{a} vs {b}"
+                ev["sub"] = " - ".join(x for x in (sport, comp_en) if x) or ev.get("sub") or ""
+            else:
+                ev["title"] = f"{comp_en}: {_hr_case(rest)}" if comp_en else _hr_case(rest)
+                if sport and not ev.get("sub"):
+                    ev["sub"] = sport
+            done += 1
+    if done:
+        print(f"  Croatia: {done} upper-case titles tidied")
+
+
+# Premier Sports UK, direct (26 Nov 2026, user): Sky's UK feed for Premier Sports 2 (and 1) lists "This is Premier Sports 2 UK Sky"
+# where the Irish feed has the live games, leaving 5:40pm - 10:15pm blank on the night. premiersports.com/gb/tv-guide lists every
+# programme for 14 days in the page itself (no login, no script call): one <div class="all-channels-container" id="thu_nov_26"> per
+# day holding rows (<div class="channel">), each row a spacer <div style="width: 612px;"> then <div class="program-box" style="width:
+# 204px" data-program='{"league_title":"NHL","timings":"2:40 - 5:40","title":"Chicago at Seattle"}'>, with <span>LIVE</span> inside a live
+# one. 3.4 px = 1 minute (204 px = an hour). The rows have no names: row 1 = Premier Sports 1, row 2 = Premier Sports 2 (confirmed
+# on 26 Nov against Sky's listing); the times are 12-hour with no am/pm, so am/pm comes from the pixel position; times are UK time.
+# premier_merge() makes this page the primary source for UK.PremierSports1/2 and Sky the backup (26 Nov 2026, user), but only when
+# this page's rows agree with Sky's own listing (at least half of Sky's programmes start at the same minute as one of the page's).
+PREMIER_URL = "https://www.premiersports.com/gb/tv-guide"
+PREMIER_ROWS = {0: "UK.PremierSports1", 1: "UK.PremierSports2"}
+PREMIER_PX_PER_MIN = 3.4
+PREMIER_FILLER_RE = re.compile(r"(?i)^\s*this is premier sports [12]\b.*$")
+PREMIER_DAY_RE = re.compile(r'<div class="all-channels-container[^"]*"\s+id="([a-z]{3})_([a-z]{3})_(\d{1,2})">(.*?)'
+                            r'(?=<div class="all-channels-container|\Z)', re.S)
+PREMIER_ITEM_RE = re.compile(r'<div class="inline-block text-black"\s+style="width:\s*([\d.]+)px;?"\s*>\s*</div>'
+                             r'|<div class="[^"]*program-box[^"]*"[^>]*?width:\s*([\d.]+)px[^>]*?data-program="([^"]*)"[^>]*>(.*?)</div>',
+                             re.S)
+_MONTHS = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
+
+
+def premier_name(league, team):
+    """site competition + match -> "League: A v B" (Sky's short names written out, SHOUTING lower-cased)"""
+    league, team = re.sub(r"\s+", " ", league or "").strip(), re.sub(r"\s+", " ", team or "").strip()
+    fix = lambda v: (" ".join(w if len(w) <= 4 or not w.isalpha() or w == "LALIGA" else w.capitalize() for w in v.split())
+                     if v.isupper() and " " in v else v)       # "UCL MATCH HIGHLIGHTS" -> "UCL Match Highlights"; LALIGA stays
+    league = SKY_COMP_NAMES.get(league.upper(), fix(league))
+    team = fix(team)
+    if not team or league.lower() == team.lower():
+        return team or league
+    return f"{league}: {team}" if league else team
+
+
+def parse_premier_sports(page, today):
+    """{our channel id: [{start, stop, title, sub, live, desc}]} from the TV guide page (UK time)"""
+    out = {cid: [] for cid in PREMIER_ROWS.values()}
+    for _, mon, day, body in PREMIER_DAY_RE.findall(page):
+        month = _MONTHS.get(mon)
+        if not month:
+            continue
+        year = today.year + (1 if month < today.month - 6 else -1 if month > today.month + 6 else 0)
+        try:
+            d = datetime(year, month, int(day), tzinfo=LONDON)
+        except ValueError:
+            continue
+        rows = re.split(r'<div class="channel"[^>]*>', body)[1:]
+        for idx, cid in PREMIER_ROWS.items():
+            if idx >= len(rows):
+                continue
+            x = 0.0
+            for sp, width, raw, inner in PREMIER_ITEM_RE.findall(rows[idx]):
+                if sp:
+                    x += float(sp)
+                    continue
+                w = float(width)
+                try:
+                    info = json.loads(html.unescape(raw))
+                    t = re.match(r"\s*(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})", info.get("timings") or "")
+                    h1, m1, h2, m2 = (int(v) for v in t.groups())
+                except (ValueError, AttributeError, TypeError):
+                    x += w
+                    continue
+                where = x / PREMIER_PX_PER_MIN                     # minutes after midnight, from the pixels
+                m12 = (h1 % 12) * 60 + m1                           # 12-hour clock minutes
+                start_min = min((m12, m12 + 720), key=lambda m: abs(m - where))
+                dur = (((h2 % 12) * 60 + m2) - m12) % 720 or 720
+                x += w
+                league = re.sub(r"\s+", " ", info.get("league_title") or "").strip()
+                title = re.sub(r"\s+", " ", info.get("title") or "").strip()
+                if not title:
+                    continue
+                name = premier_name(league, title)
+                start = (d + timedelta(minutes=start_min)).astimezone(timezone.utc)
+                out[cid].append({"start": start, "stop": start + timedelta(minutes=dur), "title": name, "sub": "",
+                                 "live": bool(re.search(r">\s*LIVE\s*<", inner)), "desc": ""})
+    for cid in out:
+        out[cid].sort(key=lambda e: e["start"])
+    return out
+
+
+def premier_merge(sky, theirs_by_id, label):
+    """Premier Sports' own listing is the primary source for its channels; Sky's is the backup.
+    Per channel: if the site's rows agree with Sky's (at least half of Sky's programmes start within 2 minutes of one of the site's)
+    every Sky programme inside the site's time span is replaced by the site's, keeping Sky's description where the start matches
+    (the UK page has none; the Irish page has its own, used when Sky has nothing). Sky's programmes before/after the site's span stay.
+    A channel that fails the check, or has no rows, keeps Sky's listing untouched."""
+    for cid, theirs in theirs_by_id.items():
+        evs = sky.get(cid)
+        if not evs or len(theirs) < 5:
+            continue
+        theirs = sorted(theirs, key=lambda e: e["start"])
+        lo, hi = theirs[0]["start"], theirs[-1]["stop"]
+        real = [e for e in evs if lo <= e["start"] < hi and not PREMIER_FILLER_RE.match(e.get("title") or "")]
+        near = lambda a, b: abs((a - b).total_seconds()) <= 120
+        agree = sum(1 for e in real if any(near(e["start"], t["start"]) for t in theirs))
+        if len(real) < 5 or agree < len(real) / 2:
+            print(f"  Premier Sports {label}: {cid} does not match Sky's listing ({agree} of {len(real)} start times agree)"
+                  " - Sky's listing kept")
+            continue
+        out = []
+        for e in evs:
+            if e["start"] < lo:
+                out.append(dict(e, stop=min(e["stop"], lo)))
+            elif e["start"] >= hi:
+                out.append(e)
+        for t in theirs:
+            m = [e for e in evs if near(e["start"], t["start"]) and not PREMIER_FILLER_RE.match(e.get("title") or "")]
+            sky_desc = (m[0].get("desc") or "") if m else ""
+            ev = {k: v for k, v in t.items() if not k.startswith("_")}
+            ev["desc"] = sky_desc if len(sky_desc) >= len(ev.get("desc") or "") else ev.get("desc", "")
+            if m and not ev.get("sub"):
+                ev["sub"] = m[0].get("sub") or ""
+            out.append(ev)
+        sky[cid] = sorted(out, key=lambda e: e["start"])
+        print(f"  Premier Sports {label}: {cid} {len(theirs)} programmes from the site ({agree} of {len(real)} agree with Sky)")
+
+
+def premier_fill(sky, days, debug=False):
+    page = fetch(PREMIER_URL, headers={"User-Agent": HEADERS["User-Agent"], "Accept": "text/html"},
+                 retries=2, label="Premier Sports TV guide")
+    if not page or "all-channels-container" not in page:
+        print("  Premier Sports TV guide: not available this run - Sky's listing kept")
+        return
+    premier_merge(sky, parse_premier_sports(page, days[0]), "UK guide")
+
+
+# Premier Sports Ireland (26 Nov 2026, user: "the same for Ireland?"): premiersportsireland.com lists PS One / PS Two for 12 days in
+# the page (one <div class="schedule_list_wrap"> per day, each programme a schedule_list_item with the time "5:40 pm", a
+# schedule_ttl (competition), a schedule_team (match, "LIVE: A v B" when live) and a schedule_cnt description). Sky's Irish feed already
+# is the primary source for the Irish channels too (26 Nov 2026, user): it also cures Sky's cut-off titles ("UEFA Europa Conference...")
+# and run-together names ("Torreensev Celtic"). Sky stays as the backup, see premier_merge().
+PREMIER_IE_URL = "https://premiersportsireland.com/"
+PREMIER_IE_ALT = {"PS One": "IE.PremierSports1", "PS Two": "IE.PremierSports2"}
+
+
+def parse_premier_ireland(page, today):
+    """{our id: [{start, title, league, team, live}]} - UK/Irish clock times (the same offset)"""
+    out = {cid: [] for cid in PREMIER_IE_ALT.values()}
+    seen = {cid: 0 for cid in out}
+    for wrap in re.split(r'<div class="schedule_list_wrap"[^>]*>', page)[1:]:
+        items = re.split(r'<div class="schedule_list_item\b[^"]*"[^>]*>', wrap)[1:]
+        cid = None
+        for it in items:
+            m = re.search(r'alt="(PS (?:One|Two))"', it)
+            if m:
+                cid = PREMIER_IE_ALT[m.group(1)]
+                break
+        if not cid:
+            continue
+        base = today + timedelta(days=seen[cid])
+        seen[cid] += 1
+        dm = re.search(r"current_date:\s*(\d{4})-(\d{2})-(\d{2})", wrap)
+        if dm:
+            base = datetime(int(dm.group(1)), int(dm.group(2)), int(dm.group(3)), tzinfo=LONDON)
+        day = datetime(base.year, base.month, base.day, tzinfo=LONDON)
+        prev = -1
+        for it in items:
+            tm = re.search(r'<div class="schedule_time"><span>\s*(\d{1,2}):(\d{2})\s*([ap]m)', it, re.I)
+            if not tm:
+                continue
+            h, mi = int(tm.group(1)) % 12 + (12 if tm.group(3).lower() == "pm" else 0), int(tm.group(2))
+            if h * 60 + mi < prev:
+                day += timedelta(days=1)                                  # past midnight
+            prev = h * 60 + mi
+            g = lambda cls: re.sub(r"\s+", " ", html.unescape(re.sub(
+                r"<[^>]+>", " ", (re.search(r'class="%s[^"]*"[^>]*>(.*?)</(?:h3|span|div)>' % cls, it, re.S) or [0, ""])[1]))).strip()
+            league, team = g("schedule_ttl"), g("schedule_team")
+            live = bool(re.match(r"(?i)live\s*:", team))
+            team = re.sub(r"(?i)^live\s*:\s*", "", team)
+            if league.isupper() and len(league) > 4:
+                league = league.title()
+            desc = g("schedule_cnt")
+            out[cid].append({"start": (day + timedelta(hours=h, minutes=mi)).astimezone(timezone.utc),
+                             "title": premier_name(league, team), "sub": "", "live": live, "desc": desc})
+    for evs in out.values():
+        evs.sort(key=lambda e: e["start"])
+        for a, b in zip(evs, evs[1:]):
+            a["stop"] = b["start"]
+        if evs:
+            evs.pop()                      # the last row has no end time: Sky's own entry stays for it
+    return out
+
+
+def premier_ireland_fix(sky):
+    page = fetch(PREMIER_IE_URL, headers={"User-Agent": HEADERS["User-Agent"], "Accept": "text/html"},
+                 retries=2, label="Premier Sports Ireland guide")
+    if not page or "schedule_list_item" not in page:
+        print("  Premier Sports Ireland guide: not available this run - Sky's listing kept")
+        return
+    premier_merge(sky, parse_premier_ireland(page, datetime.now(LONDON)), "Ireland guide")
+
+
 # Astro Premier League 3 / 4 / 5 idle listing (5 Nov 2026, user request): these pop-up channels only have programmes on match days
 # (Astro lists nothing in between and sends no filler), so the empty time reads \"no information\" in the player. astro_idle_fill()
 # fills every gap with 2-hour blocks titled with the channel name, secondary title ASTRO_IDLE_SUB and description
@@ -7965,8 +8690,11 @@ PART_TIME_CHANNELS = ("SG.beINSPORTS4", "SG.beINSPORTS5", "HK.beINSPORTS3", "HK.
                       # StarHub's own "End of Transmission" blocks (3 Nov 2026: user asked for Hub Premier 2 and Hub Sports 8;
                       # the same blocks are on Hub Premier 2-6 and Hub Sports 3-8, so all of them)
                       "SG.HubPremier2", "SG.HubPremier3", "SG.HubPremier4", "SG.HubPremier5", "SG.HubPremier6",
-                      "SG.HubSports3", "SG.HubSports4", "SG.HubSports5", "SG.HubSports6", "SG.HubSports7", "SG.HubSports8")
-PART_TIME_FILLER_RE = re.compile(r"(?i)^\s*(end of transmission|stay tuned for the next broadcast|no information(?: available)?)\W*$")
+                      "SG.HubSports3", "SG.HubSports4", "SG.HubSports5", "SG.HubSports6", "SG.HubSports7", "SG.HubSports8",
+                      # Croatia (26 Nov 2026, user): MAXtv's "Program announcement" blocks on Sport Klub 7-12 and Arena Sport 5, 6, 9, 10
+                      *(f"HR.SportKlub{n}" for n in range(7, 13)), "HR.ArenaSport5", "HR.ArenaSport6", "HR.ArenaSport9", "HR.ArenaSport10")
+PART_TIME_FILLER_RE = re.compile(r"(?i)^\s*(end of transmission|stay tuned for the next broadcast|no information(?: available)?"
+                                 r"|program(?:me)? announcement)\W*$")
 
 
 def add_empty_placeholders(tv, listed):
@@ -8695,6 +9423,9 @@ def main():
         print(f"UK/Ireland: reading Sky's TV guide {uk_days[0]} to {uk_days[-1]} ...")
         sky = fetch_sky(uk_days, args.debug)
         print(f"  {sum(len(v) for v in sky.values())} programmes on {len(sky)} channel(s)")
+        if sky:
+            premier_fill(sky, uk_days, args.debug)            # Sky's "This is Premier Sports 2 UK Sky" blocks (26 Nov 2026)
+            premier_ireland_fix(sky)                          # cut-off / run-together titles on the Irish feed
     eps = {}
     if not args.no_epgshare:
         for group in [g.strip().lower() for g in args.epgshare.split(",") if g.strip()]:
@@ -8876,14 +9607,16 @@ def main():
             records.append({"id": f"{cfg['prefix']}.{part}", "name": cfg["channels"][part][0],
                             "tz": ZoneInfo(cfg["tz"]), "place": cfg["place"],
                             "filler": False, "back_to_back": True, "events": evs,
-                            "backup": bool(cfg.get("backup"))})
+                            "backup": bool(cfg.get("backup")),
+                            # Turkey's beIN channels: matches get the competition, kick-off and LIVE flag from LiveOnSat's list
+                            "bein_guide": cfg["prefix"] == "TR" and part.startswith("beINSPORTS")})
     for cc, got in bein.items():
         place, zone = BEIN_COUNTRIES[cc][0], ZoneInfo(BEIN_COUNTRIES[cc][1])
         for name, evs in got.items():
             chname = f"{name} {cc.upper()}"
             part = re.sub(r"[^A-Za-z0-9]+", "", name) or "Channel"
             records.append({"id": f"{cc.upper()}.{part}", "name": chname, "tz": zone, "place": place,
-                            "filler": False, "back_to_back": True, "events": evs})
+                            "filler": False, "back_to_back": True, "events": evs, "bein_guide": True})
     for (prefix, zone, place, _), (table, got) in nordic.items():
         for cid, evs in got.items():
             part, chname = table.get(cid, (f"Channel{re.sub(r'[^A-Za-z0-9]+', '', cid)}",
@@ -9011,6 +9744,12 @@ def main():
                                 if ev.get("desc") and ev["desc"] not in TRANSLATIONS
                                 and rec["place"] not in ENGLISH_PLACES)
     astro_matchday(records)                         # Astro pop-up PL channels (28 Oct 2026)
+    hr_titles(records)                              # Croatian upper-case titles (26 Nov 2026)
+    starz_football(records)                         # STARZPLAY Sports 1/2 football from FotMob (26 Nov 2026)
+    rush_cricket_titles(records)                    # Rush Sports Test cricket (26 Nov 2026)
+    rush_fixture_titles(records)                    # Rush Sports UEFA matches: teams, red ball, description (26 Nov 2026)
+    bein_fixture_titles(records)                    # beIN Malaysia "A vs B - MD5" -> live / competition / description (26 Nov 2026)
+    code_titles(records)                            # beIN Indonesia "UEL 2026/27: CRY Vs RSO (L)" (26 Nov 2026)
     astro_idle_fill(records)                        # PL 3 / 4 / 5: 'No live match scheduled' between matches (5 Nov 2026)
     records.extend(divider_records())               # country dividers '### FRANCE ###' -> DIV.FRANCE (5 Nov 2026)
     collect_match_pairs(records)                    # strong fixtures -> short replays of the same match get 'vs' too (5 Nov 2026)
