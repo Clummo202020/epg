@@ -16,7 +16,7 @@
   "seen": "2026-11-26T16:07:47+00:00"
  },
  "_timing": {
-  "updated": "2026-11-26T20:37:19Z",
+  "updated": "2026-11-26T21:07:18Z",
   "groups": {
    "AppleMLS": {
     "n": 32,
@@ -27,10 +27,10 @@
     "max": -5
    },
    "CASOCCERPPV": {
-    "n": 6,
-    "missed": 15,
+    "n": 4,
+    "missed": 17,
     "applied": true,
-    "median": 46,
+    "median": 36,
     "min": -4,
     "max": 47
    },
@@ -120,7 +120,7 @@
    }
   },
   "check": {
-   "compared": 119,
+   "compared": 117,
    "differ": 0,
    "examples": []
   }
