@@ -28172,6 +28172,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261127133000 +0000" stop="20261127153000 +0000" channel="NFL2.uk">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261126120000 +0000" stop="20261126140000 +0000" channel="NFL3.uk">
     <title lang="en">Next Game: NFL. Eagles at Cowboys (Thu 26 Nov, 9:30pm)</title>
     <sub-title lang="en">NFL</sub-title>
@@ -41945,6 +41950,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261127133000 +0000" stop="20261127153000 +0000" channel="TSN005.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261126120000 +0000" stop="20261126140000 +0000" channel="TSN006.ca">
     <title lang="en">Next Match: FIBA Men's WC Qualifier: Uruguay vs Canada (Thu 26 Nov, 10pm)</title>
     <desc lang="en">FIBA Men's WC Qualifier: Uruguay vs Canada. Starts Thu 26 Nov, 10pm UK time.</desc>
@@ -42182,6 +42192,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261127133000 +0000" stop="20261127153000 +0000" channel="TSN008.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261126120000 +0000" stop="20261126140000 +0000" channel="TSN009.ca">
     <title lang="en">Next Event: Formula 1 Pit Lane - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -42255,10 +42270,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127120000 +0000" stop="20261127132000 +0000" channel="TSN009.ca">
-    <title lang="en">Next up: LIVE – Formula 1 Pit Lane - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
+    <title lang="en">Next up: LIVE – Formula 1 Pit Lane - Qatar Grand Prix Practice #1 (1:20pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Formula 1 Pit Lane - Qatar Grand Prix Practice #1 starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Formula 1 Pit Lane - Qatar Grand Prix Practice #1 starts at 1:20pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261127132000 +0000" stop="20261127152000 +0000" channel="TSN009.ca">
+    <title lang="en">🔴 LIVE: Formula 1 Pit Lane - Qatar Grand Prix Practice #1</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 Pit Lane - Qatar Grand Prix Practice #1. Starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261126120000 +0000" stop="20261126140000 +0000" channel="TSN010.ca">
     <title lang="en">Next Event: Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
@@ -42333,10 +42355,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127120000 +0000" stop="20261127132000 +0000" channel="TSN010.ca">
-    <title lang="en">Next up: LIVE – Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
+    <title lang="en">Next up: LIVE – Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #1 (1:20pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #1 starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #1 starts at 1:20pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261127132000 +0000" stop="20261127152000 +0000" channel="TSN010.ca">
+    <title lang="en">🔴 LIVE: Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #1</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #1. Starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261126120000 +0000" stop="20261126140000 +0000" channel="TSN011.ca">
     <title lang="en">Next Event: Formula 1 Driver Tracker - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
@@ -42411,10 +42440,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127120000 +0000" stop="20261127132000 +0000" channel="TSN011.ca">
-    <title lang="en">Next up: LIVE – Formula 1 Driver Tracker - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
+    <title lang="en">Next up: LIVE – Formula 1 Driver Tracker - Qatar Grand Prix Practice #1 (1:20pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Formula 1 Driver Tracker - Qatar Grand Prix Practice #1 starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Formula 1 Driver Tracker - Qatar Grand Prix Practice #1 starts at 1:20pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261127132000 +0000" stop="20261127152000 +0000" channel="TSN011.ca">
+    <title lang="en">🔴 LIVE: Formula 1 Driver Tracker - Qatar Grand Prix Practice #1</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 Driver Tracker - Qatar Grand Prix Practice #1. Starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261126120000 +0000" stop="20261126140000 +0000" channel="TSN012.ca">
     <title lang="en">Next Event: Formula 1 On-Board Camera: Lance Stroll - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
@@ -42489,10 +42525,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127120000 +0000" stop="20261127132000 +0000" channel="TSN012.ca">
-    <title lang="en">Next up: LIVE – Formula 1 On-Board Camera: Lance Stroll - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
+    <title lang="en">Next up: LIVE – Formula 1 On-Board Camera: Lance Stroll - Qatar Grand Prix Practice #1 (1:20pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Formula 1 On-Board Camera: Lance Stroll - Qatar Grand Prix Practice #1 starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Formula 1 On-Board Camera: Lance Stroll - Qatar Grand Prix Practice #1 starts at 1:20pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261127132000 +0000" stop="20261127152000 +0000" channel="TSN012.ca">
+    <title lang="en">🔴 LIVE: Formula 1 On-Board Camera: Lance Stroll - Qatar Grand Prix Practice #1</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 On-Board Camera: Lance Stroll - Qatar Grand Prix Practice #1. Starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261126120000 +0000" stop="20261126140000 +0000" channel="TSN013.ca">
     <title lang="en">Next Event: Formula 1 On-Board Camera: Max Verstappen - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
@@ -42567,10 +42610,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127120000 +0000" stop="20261127132000 +0000" channel="TSN013.ca">
-    <title lang="en">Next up: LIVE – Formula 1 On-Board Camera: Max Verstappen - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
+    <title lang="en">Next up: LIVE – Formula 1 On-Board Camera: Max Verstappen - Qatar Grand Prix Practice #1 (1:20pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Formula 1 On-Board Camera: Max Verstappen - Qatar Grand Prix Practice #1 starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Formula 1 On-Board Camera: Max Verstappen - Qatar Grand Prix Practice #1 starts at 1:20pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261127132000 +0000" stop="20261127152000 +0000" channel="TSN013.ca">
+    <title lang="en">🔴 LIVE: Formula 1 On-Board Camera: Max Verstappen - Qatar Grand Prix Practice #1</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 On-Board Camera: Max Verstappen - Qatar Grand Prix Practice #1. Starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261126120000 +0000" stop="20261126140000 +0000" channel="TSN014.ca">
     <title lang="en">Next Event: Formula 1 On-Board Camera: Lando Norris - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
@@ -42645,10 +42695,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127120000 +0000" stop="20261127132000 +0000" channel="TSN014.ca">
-    <title lang="en">Next up: LIVE – Formula 1 On-Board Camera: Lando Norris - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
+    <title lang="en">Next up: LIVE – Formula 1 On-Board Camera: Lando Norris - Qatar Grand Prix Practice #1 (1:20pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Formula 1 On-Board Camera: Lando Norris - Qatar Grand Prix Practice #1 starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Formula 1 On-Board Camera: Lando Norris - Qatar Grand Prix Practice #1 starts at 1:20pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261127132000 +0000" stop="20261127152000 +0000" channel="TSN014.ca">
+    <title lang="en">🔴 LIVE: Formula 1 On-Board Camera: Lando Norris - Qatar Grand Prix Practice #1</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 On-Board Camera: Lando Norris - Qatar Grand Prix Practice #1. Starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261126120000 +0000" stop="20261126140000 +0000" channel="TSN015.ca">
     <title lang="en">Next Event: Formula 1 Timing Channel - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
@@ -42723,10 +42780,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127120000 +0000" stop="20261127132000 +0000" channel="TSN015.ca">
-    <title lang="en">Next up: LIVE – Formula 1 Timing Channel - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
+    <title lang="en">Next up: LIVE – Formula 1 Timing Channel - Qatar Grand Prix Practice #1 (1:20pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Formula 1 Timing Channel - Qatar Grand Prix Practice #1 starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Formula 1 Timing Channel - Qatar Grand Prix Practice #1 starts at 1:20pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261127132000 +0000" stop="20261127152000 +0000" channel="TSN015.ca">
+    <title lang="en">🔴 LIVE: Formula 1 Timing Channel - Qatar Grand Prix Practice #1</title>
+    <sub-title lang="en">Formula 1</sub-title>
+    <desc lang="en">Formula 1 Timing Channel - Qatar Grand Prix Practice #1. Starts Fri 27 Nov, 1:20pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261126120000 +0000" stop="20261126140000 +0000" channel="TSN016.ca">
     <title lang="en">Next Event: Formula 2 Qualifying: Lusail (Fri 27 Nov, 2:55pm)</title>
