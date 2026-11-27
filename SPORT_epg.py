@@ -8520,7 +8520,10 @@ def divider_records():
     return out
 
 
-PL_SHOWS_RE = re.compile(r"(?i)^(?P<lead>(?:🔴\s*)?(?:live:\s*)?)PL(?=\s*:|\s+(?:stories|storie|moments?|retro|rewind|review|preview|goals|netbusters|online|studio|highlights|"
+TNT_GP_RE = re.compile(r"(?i)^\s*(?:GP|Grand Prix) of\b")
+
+
+PL_SHOWS_RE = re.compile(r"(?i)^(?P<lead>(?:🔴\s*)?(?:live:\s*)?)PL(?=\s*:|\s+(?:stories|storie|moments?|retro|rewind|greatest|legends|icons|classics?|fanzone|extra\s+time|100|filler|review|preview|goals|netbusters|online|studio|highlights|"
                          r"show|match(?:day)?|\d{2,4}\s*/\s*\d{2,4}|today|weekly|round[- ]?up)\b)")
 
 
@@ -8584,8 +8587,12 @@ def build_xmltv(records, suffix, minutes):
                 title = x_versus(title)                          # "A x B - Serie A" -> "A vs B - Serie A"
             title = match_versus(title, bool(ev.get("live")), (stop - start).total_seconds() / 60)   # every channel (5 Nov 2026)
             title, sub = (re.sub(r"(?<=\S):{2,}\s*", ": ", x) if x else x for x in (title, sub))   # "Stories:: Pedro Porro" -> "Stories: Pedro Porro" (27 Nov 2026)
-            title, sub = (re.sub(r"(?i)\bS/Lge\b", "Super League", x) if x else x for x in (title, sub))   # Sky's "S/Lge Highlights" (27 Nov 2026)
-            title, sub = pl_full(title), pl_full(sub) if sub else sub        # "PL Stories" -> "Premier League Stories" (27 Nov 2026)
+            title, sub = (re.sub(r"\bNott['\u2019]m\b", "Nottingham", re.sub(r"\bM['\u2019]boro\b", "Middlesbrough", re.sub(r"\bFNF\b", "Friday Night Football", re.sub(r"(?i)\bS/Lge\b", "Super League", x)))) if x else x for x in (title, sub))   # Sky's "S/Lge Highlights", "FNF: A v B" (27 Nov 2026)
+            title, sub = pl_full(title), pl_full(sub) if sub else sub
+            if TNT_GP_RE.match(title or "") and "motogp" in ((ev.get("desc") or "") + " " + (sub or "")).lower():
+                title = "MotoGP: " + title                        # TNT's "GP of Valencia - Inside Line" (27 Nov 2026, user)
+            if cid.startswith(("UK.", "IE.", "AU.")) and re.match(r"Mosconi Cup\b", title or ""):
+                title = "Pool: " + title                          # "Mosconi Cup-Day 1" -> "Pool: Mosconi Cup-Day 1" (27 Nov 2026, user)        # "PL Stories" -> "Premier League Stories" (27 Nov 2026)
             loc = ev["start"].astimezone(rec["tz"])
             uk = ev["start"].astimezone(LONDON)
             when = f"{uk:%a %d %b, %H:%M}"
@@ -8624,6 +8631,11 @@ def build_xmltv(records, suffix, minutes):
             if cid.startswith("CY.") and CY_REAL_MADRID_TV.match(title or ""):   # Cytavision Sports 8's loop (27 Nov 2026, user)
                 title, sub = "Real Madrid TV", "Club channel programming"
                 about = ("Programming from Real Madrid TV, Real Madrid's club channel: typically match replays, classic games, features and "
+                         "interviews with players and staff. Shown as scheduled programming rather than live coverage.")
+                ev["no_lead"], ev["never_live"], ev["live"] = True, True, False
+            if cid.startswith("CY.") and CY_MILAN_TV.match(title or ""):       # Cytavision Sports 2's loop (27 Nov 2026, user)
+                title, sub = "Milan TV", "Club channel programming"
+                about = ("Programming from Milan TV, AC Milan's club channel: typically match replays, classic games, features and "
                          "interviews with players and staff. Shown as scheduled programming rather than live coverage.")
                 ev["no_lead"], ev["never_live"], ev["live"] = True, True, False
             club_tv = CY_CLUB_TV.match(title or "") if cid.startswith("CY.") else None
@@ -8748,6 +8760,7 @@ EMPTY_FILLER_DESC = ("No programmes are listed for this channel at the moment. T
 CY_MOTORVISION = re.compile(r"(?i)^\s*motor\s?vision(?:\s+tv)?\s*$")        # Cytavision Sports 6
 CY_HORSE_TV = re.compile(r"(?i)^\s*horse\s?tv\s*$")                           # Cytavision Sports 7
 CY_REAL_MADRID_TV = re.compile(r"(?i)^\s*real\s+madrid\s+tv\s*$")                # Cytavision Sports 8
+CY_MILAN_TV = re.compile(r"(?i)^\s*(?:ac\s+)?milan\s+tv\s*$")                       # Cytavision Sports 2
 CY_CLUB_TV = re.compile(r"(?i)^\s*(?P<club>man(?:chester)?\.? ?utd|liverpool)\s+tv\s*$")
 CY_CLUB_TV_NAMES = {
     "man utd": ("MUTV", "Manchester United",
