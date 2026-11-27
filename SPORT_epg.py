@@ -4721,7 +4721,8 @@ ASTRO_MY_MATCH_SECONDS = 120
 def astro_my_clean(title):
     """(title without the \"(L) \" flag, live)"""
     t = re.sub(r"\s+", " ", str(title or "")).strip()
-    live = bool(re.match(r"^\(L\)\s*", t))
+    live = bool(re.match(r"^\(L\)\s*", t)) or bool(re.match(r"(?i)^live:\s*\S", t))   # Astro also writes a plain "LIVE: " (27 Nov 2026)
+    t = re.sub(r"(?i)^live:\s*(?=\S)", "", t)
     return (re.sub(r"^\(L\)\s*", "", t).strip() or t), live
 
 
@@ -5287,9 +5288,12 @@ def translate_descriptions(records, limit):
         english = rec["place"] in ENGLISH_PLACES
         for ev in rec["events"]:
             d = ev.get("desc")
-            if d and not (english and not FOREIGN.search(d)):
+            malay = bool(d) and rec["place"] == "Malaysia" and len(MALAY_RE.findall(d)) >= 2     # Astro's Malay descriptions (27 Nov 2026)
+            if d and (malay or not (english and not FOREIGN.search(d))):
                 need[d] = min(need.get(d, ev["start"]), ev["start"])
-                if rec["place"] == "Italy":
+                if malay:
+                    lang.setdefault(d, "ms")
+                elif rec["place"] == "Italy":
                     lang.setdefault(d, "it")
                 elif rec["place"] == "France":                 # (20 Nov 2026) "auto" gave word-for-word French
                     lang.setdefault(d, "fr")
@@ -6299,16 +6303,20 @@ def add_cricket(text):
 # (the series names say it). To add a sport or a competition, add it to SPORT_RULES; SPORT_SAID says which words in the
 # title already name the sport.
 SPORT_RULES = [
+    ("Esports", r"\bFree Fire\b|\bFFWS\b"),
+    ("Badminton", r"\bBWF\b"),                                             # before Tennis: "BWF French Open" (27 Nov 2026)
+    ("Equestrian", r"Eventing"),                                           # before Rugby Union: "FEI Eventing Nations Cup" (27 Nov 2026)
+    ("Table Tennis", r"\bITTF\b|\bWTT\b|table tennis"),                    # 27 Nov 2026, user (Astro "ITTF Mixed Team WC")                       # must come before Baseball ("World Series") - 27 Nov 2026
     ("Tennis", r"\bATP\b|\bWTA\b|Wimbledon|Roland[- ]Garros|French Open|Australian Open|Davis Cup|Billie Jean King|(?i:\bBJK Cup)|Laver Cup|\bNitto\b|Next Gen Finals|Hopman Cup|United Cup|Stockholm Open"),
     ("Cricket", r"\bBaggy Greens\b|\bBlack ?caps\b|\bWhite ?Ferns\b|\b(?:T-?20I?|T-?10|Twenty-?20|Test Twenty|ODIs?|IPL|WBBL|WPL|PSL|CPL|SA20|ILT20|MLC|LPL|BPL|ICC|Ashes|The Hundred|Big Bash|Sheffield Shield|Ranji Trophy|County Championship|Vitality Blast|Metro Bank One.Day Cup|Nepal Premier League|Indian Premier League|Syed Mushtaq Ali|Champions Trophy|Extraaa Innings|Cricbuzz|Lords Of England|Vijay Hazare|Test Match Special)\b|\b\d(?:st|nd|rd|th) (?:Test|ODI|T20I?)\b"),
     ("Netball", r"\bSilver Ferns\b|\bNet Blacks\b|Super Netball|Quad Series"),
     ("Rugby League", r"\bNRLW?\b|State of Origin|\bRLWC\d*\b|Challenge Cup Final"),
     ("Rugby Union", r"Nations Championship|Nations Cup|\bAll Blacks\b|\bWallabies\b|Six Nations|Rugby Championship|\bURC\b|United Rugby|Top 14|Pro D2|Super Rugby|Gallagher (?:PREM|Premiership)|\bPREM\b|\bPWR\b|Premiership Rugby|Champions Cup|Autumn Nations|Nations Series|Bunnings NPC|Currie Cup|Lions Tour"),
     ("Golf", r"\b(?:PGA|LPGA|LIV Golf|DP World Tour|Ryder Cup|Solheim Cup|Presidents Cup|Korn Ferry|Race to Dubai|Q-School|USPGA|Asian Tour|Rolex Grand Final)\b|Open Championship|Augusta National|\bW?TGL\b"),
-    ("Basketball", r"\b(?:NBA|WNBA|NBL|WNBL|FIBA|EuroLeague|EuroCup|NCAAB|G League|East Asia Super League|Liga ACB)\b|March Madness|\bRapid League\b"),
+    ("Basketball", r"\b(?:NBA|WNBA|NBL|WNBL|FIBA|EASL|EuroLeague|EuroCup|NCAAB|G League|East Asia Super League|Liga ACB)\b|March Madness|\bRapid League\b"),
     ("American Football", r"\b(?:NFL|NCAAF|CFL|CFP|CFB)\b|Super Bowl|Pro Football Talk|Football Night In America|College GameDay"),
     ("Ice Hockey", r"\b(?:NHL|KHL|AHL|EIHL|IIHF|SHL)\b|Stanley Cup"),
-    ("Baseball", r"\b(?:MLB|NPB|KBO)\b|World Series(?! of)"),
+    ("Baseball", r"\b(?:MLB|NPB|KBO)\b|(?<!GT )(?<!Free Fire )World Series(?! of)"),
     ("Aussie Rules", r"\bAFLW?\b"),
     ("Darts", r"\bPDC\b|World Matchplay"),
     ("Snooker", r"\bWST(?::| Tour| Snooker)|Crucible|Champion of Champions|In The Frame"),
@@ -6327,7 +6335,7 @@ SPORT_RULES = [
 ]
 SPORT_RULES = [(n, re.compile(rx, re.I)) for n, rx in SPORT_RULES]
 SPORT_SAID = {
-    "Tennis": r"t[eé]nn?is", "Cricket": r"cricket", "Rugby League": r"rugby", "Rugby Union": r"rugby", "Golf": r"golf",
+    "Esports": r"e-?sports?", "Equestrian": r"equestrian|eventing", "Table Tennis": r"table tennis|ping.?pong|tennis de table|tischtennis|tenis de mesa", "Tennis": r"t[eé]nn?is", "Cricket": r"cricket", "Rugby League": r"rugby", "Rugby Union": r"rugby", "Golf": r"golf",
     "Basketball": r"basket|baloncesto|pallacanestro|basquet", "American Football": r"american football|college football|football am[eé]ricain|futebol americano",
     "Ice Hockey": r"hockey", "Baseball": r"baseball|b[eé]isbol|beisebol", "Aussie Rules": r"aussie rules|australian rules",
     "Darts": r"darts", "Snooker": r"snooker", "MMA": r"\bmma\b|martial arts", "Boxing": r"\bbox(?:ing|e|eo|en)\b",
@@ -7840,6 +7848,254 @@ BEIN_VS_RE = re.compile(r"^(?P<a>.+?)(?:\s+vs?\.?\s+|\s+-\s+)(?P<b>.+?)(?:\s*-\s
 BEIN_SKIP_FIXTURE_RE = re.compile(r"(?i)\bU-?\d{2}\b|\bwomen\b|\bII\b|\bW\b|reserves|youth")
 
 
+# Astro Malaysia day-numbered tournament titles (27 Nov 2026, user): "Hari Pertama: FFWS 2026", "Hari ke-2 Motor: ARRC 2026 Rnd 5",
+# "Sorotan Hari ke-2: Asian BMX 2026" -> "Free Fire World Series 2026: Global Finals - Day 1", "Motor: Asia Road Racing Championship
+# 2026 Rnd 5 - Day 2", "Highlights Day 2: Asian BMX 2026". The "(D)" flag is left alone. Free Fire gets an esports description.
+ASTRO_DAY_RE = re.compile(r"(?i)^(?P<flag>\(\w\)\s*)?(?P<hl>Sorotan\s+)?Hari\s+(?:(?P<first>Pertama)|ke-(?P<n>\d+))(?P<kind>\s+[A-Za-z]+)?:\s*(?P<rest>.+)$")
+ASTRO_ACRONYMS = ((r"\bFFWS 2026\b", "Free Fire World Series 2026: Global Finals"), (r"\bARRC\b", "Asia Road Racing Championship"),
+                  (r"\bMSBK\b", "Malaysian Superbike Championship"))
+ASTRO_FREEFIRE_DESC = ("Esports: day {n} of the Free Fire World Series 2026 Global Finals. Free Fire is a mobile battle-royale video "
+                       "game, and this is its world championship, played by the top teams from around the world.")
+
+
+# Astro writes Premier League matches three ways: "Premier League: Man Utd vs Brentford", "(D) PL: Leeds vs Coventry City" and
+# "Premier League 2026/27: Match Week 12: Leeds United vs Coventry City". All now read "Premier League: Manchester Utd vs Brentford":
+# no season, no "(D)", clubs in full but "Utd" for United (27 Nov 2026, user). "(D)" is dropped from every Astro title.
+ASTRO_PL_TITLE_RE = re.compile(r"^(?:Premier League \d{4}/\d{2,4}: Match ?Week \d+|Premier League(?: \d{2,4}/\d{2,4})?|PL): (?P<a>.+?) vs (?P<b>.+)$")
+ASTRO_HL_RE = re.compile(r"(?i)^Match H(?:L|ls) \d{2,4}/\d{2,4}: (?:WK|MW)(?P<w>\d+): (?P<a>[A-Z]{3}) (?:vs|v) (?P<b>[A-Z]{3})$")
+ASTRO_PL_CODES = {"ARS": "Arsenal", "AVL": "Aston Villa", "BHA": "Brighton and Hove Albion", "BOU": "AFC Bournemouth", "BRE": "Brentford",
+                  "CHE": "Chelsea", "COV": "Coventry City", "CRY": "Crystal Palace", "EVE": "Everton", "FUL": "Fulham", "HUL": "Hull City",
+                  "IPS": "Ipswich Town", "LEE": "Leeds Utd", "LIV": "Liverpool", "MCI": "Manchester City", "MUN": "Manchester Utd",
+                  "NEW": "Newcastle Utd", "NFO": "Nottingham Forest", "SUN": "Sunderland", "TOT": "Tottenham Hotspur"}   # 27 Nov 2026, user
+ASTRO_LEAGUE_RE = re.compile(r"^(?P<k>Dutch|AFC Elite|ACLE|ACL Two)(?: \d{2,4}/\d{2,4})?: ")
+ASTRO_LEAGUES = {"Dutch": "Eredivisie", "AFC Elite": "AFC Champions League Elite", "ACLE": "AFC Champions League Elite",
+                 "ACL Two": "AFC Champions League Two"}      # Astro's short league tags, written out (27 Nov 2026, user)
+ASTRO_PL_NAMES = {"Nottingham": "Nottingham Forest", "Man Utd": "Manchester Utd", "Manchester United": "Manchester Utd", "Man City": "Manchester City",
+                  "Nottm Forest": "Nottingham Forest", "Nott'm Forest": "Nottingham Forest", "Leeds": "Leeds Utd", "Leeds United": "Leeds Utd",
+                  "Hull": "Hull City", "Brighton": "Brighton and Hove Albion", "Newcastle": "Newcastle Utd", "Newcastle United": "Newcastle Utd",
+                  "Tottenham": "Tottenham Hotspur", "Spurs": "Tottenham Hotspur", "Ipswich": "Ipswich Town", "West Ham": "West Ham Utd",
+                  "West Ham United": "West Ham Utd", "Wolves": "Wolverhampton Wanderers", "Coventry": "Coventry City", "Palace": "Crystal Palace",
+                  "Bournemouth": "AFC Bournemouth"}
+
+
+def astro_day_titles(records):
+    for rec in records:
+        if not rec.get("id", "").startswith("MY.Astro"):
+            continue
+        for ev in rec["events"]:
+            ev["title"] = re.sub(r"^\(D\)\s*", "", ev.get("title") or "").strip()
+            m = ASTRO_PL_TITLE_RE.match(ev["title"])
+            if m:
+                ev["title"] = "Premier League: {} vs {}".format(*(ASTRO_PL_NAMES.get(t.strip(), t.strip()) for t in (m["a"], m["b"])))
+            ev["title"] = re.sub(r"\bGTWC\b", "GT World Challenge", ev["title"])   # 27 Nov 2026
+            ev["title"] = re.sub(r"\bITTF Mixed Team WC\b", "ITTF Mixed Team World Cup", ev["title"])   # 27 Nov 2026
+            m = re.match(r"(?i)^Classic Match: ([A-Z]{3}) (?:v|vs) ([A-Z]{3})$", ev["title"])
+            if m and m[1].upper() in ASTRO_PL_CODES and m[2].upper() in ASTRO_PL_CODES:
+                ev["title"] = f"Classic Match: {ASTRO_PL_CODES[m[1].upper()]} vs {ASTRO_PL_CODES[m[2].upper()]}"
+            m = ASTRO_HL_RE.match(ev["title"])
+            if m and m["a"].upper() in ASTRO_PL_CODES and m["b"].upper() in ASTRO_PL_CODES:
+                ev["title"] = f"Premier League Match Highlights: {ASTRO_PL_CODES[m['a'].upper()]} vs {ASTRO_PL_CODES[m['b'].upper()]}"
+                ev["sub"] = ev.get("sub") or f"Match Week {m['w']}"
+            m = ASTRO_LEAGUE_RE.match(ev["title"])
+            if m:
+                ev["title"] = ASTRO_LEAGUES[m["k"]] + ": " + ev["title"][m.end():]
+            ev["title"] = re.sub(r"^EASL\b", "East Asia Super League", ev["title"])   # "EASL: A vs B" (27 Nov 2026)
+            m = ASTRO_DAY_RE.match((ev.get("title") or "").strip())
+            if not m:
+                continue
+            day = 1 if m.group("first") else int(m.group("n"))
+            rest = m.group("rest").strip()
+            for rx, full in ASTRO_ACRONYMS:
+                rest = re.sub(rx, full, rest)
+            kind = (m.group("kind") or "").strip()
+            if m.group("hl"):
+                title = f"Highlights Day {day}: {rest}"
+            else:
+                title = (f"{kind}: " if kind else "") + f"{rest} - Day {day}"
+            ev["title"] = (m.group("flag") or "") + title
+            if "Free Fire" in rest:
+                ev["desc"] = ASTRO_FREEFIRE_DESC.format(n=day)
+
+
+# Astro Premier League replays (27 Nov 2026, user): a match that is not live, whose description names the Match Week, gets
+# "Full match replay." on the end of the description. Highlights shows are shorter than 80 minutes and have no "vs" title.
+ASTRO_REPLAY_RE = re.compile(r"(?i)Premier League.*Match ?Week \d+:")
+
+
+def astro_replays(records):
+    for rec in records:
+        if not rec.get("id", "").startswith("MY.Astro"):
+            continue
+        for ev in rec["events"]:
+            d = (ev.get("desc") or "").strip()
+            if (ev.get("live") or ev.get("never_live") or not d or not ASTRO_REPLAY_RE.search(d)
+                    or re.match(r"(?i)live\b", d) or "replay" in d.lower()
+                    or not re.search(r"(?i)\b(?:vs|v)\b", ev.get("title") or "")
+                    or (ev["stop"] - ev["start"]).total_seconds() < 80 * 60):
+                continue
+            ev["desc"] = d + (" " if d.endswith((".", "!", "?")) else ". ") + "Full match replay."
+
+
+# Astro Malaysia writes many titles and descriptions in Malay (27 Nov 2026, user). Descriptions that are Malay go to the translator
+# as Malay (translate_descriptions); titles use this fixed word list, because the sport and competition names must not be "translated".
+MALAY_RE = re.compile(r"(?i)\b(?:dari|dan|yang|untuk|dengan|perlawanan|sorotan|aksi|menarik|serta|keputusan|sukan|berita|tempatan|antarabangsa|"
+                      r"rancangan|terkini|langsung|lwn|terbuka|bersama|jurulatih|pemain|pusingan|litar|dunia|musim|kejohanan|detik|terperinci|"
+                      r"melibatkan|analisis|sudut|berbeza|akhir)\b")
+ASTRO_MS_WORDS = (
+    (r"(?i)\bHoki Piala TNB\b", "Hockey TNB Cup"), (r"\bNSL Klinik\b", "Netball Super League Clinic"),
+    (r"\bSMK Seri Tasik\b", "Seri Tasik Secondary School"),
+    (r"(?i)\bCelcomdigi STL\b", "CelcomDigi Sepak Takraw League"), (r"(?i)\bSTL\b", "Sepak Takraw League"),
+    (r"\bSASC\b", "Sultan Azlan Shah Cup"), (r"\bGP KL\b", "Grand Prix Kuala Lumpur"), (r"\bGP PEN\b", "Grand Prix Penang"),
+    (r"\bGP MEL\b", "Grand Prix Melaka"), (r"\bGP PRK\b", "Grand Prix Perak"), (r"(?i)\bKriket Italia\b", "Italy"),
+    (r"(?i)\bSukan Asia\b", "Asian Games"), (r"(?i)\bSeparuh Akhir\b", "Semi-final"), (r"(?i)\bSuku Akhir\b", "Quarter-final"),
+    (r"(?i)\bSorotan\b", "Highlights"), (r"(?i)\blwn\b", "vs"), (r"(?i)\bHoki\b", "Hockey"), (r"(?i)\bPiala\b", "Cup"),
+    (r"(?i)\bAkhir\b", "Final"), (r"(?i)\bTerbuka\b", "Open"), (r"(?i)\bPerancis\b", "France"), (r"(?i)\bJepun\b", "Japan"),
+    (r"(?i)\bJerman\b", "Germany"), (r"(?i)\bSkuasy\b", "Squash"), (r"(?i)\bLatihan Pasukan\b", "Team Training"),
+    (r"(?i)\bPerlawanan\b", "Match"), (r"(?i)\bKejohanan\b", "Championship"), (r"(?i)\bPusingan\b", "Round"))
+
+
+def _ordinal(n):
+    return f"{n}{'th' if 10 <= n % 100 <= 20 else {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')}"
+
+
+def astro_malay(text):
+    if not text:
+        return text
+    text = re.sub(r"(?i)\bTempat ke-(\d+)/(\d+)", lambda m: f"{_ordinal(int(m[1]))}/{_ordinal(int(m[2]))} Place", text)
+    for rx, en in ASTRO_MS_WORDS:
+        text = re.sub(rx, en, text)
+    return text
+
+
+ASTRO_ABBR = (
+    (r"\bGeneration XG\b", "Generation xG"), (r"\bUIM ABP\b", "UIM-ABP"), (r"\bCirucit\b", "Circuit"), (r"\bC'ship\b", "Championship"),
+    (r"\bof of\b", "of"), (r"(?<=\S):\s*$", ""),
+    (r"\bUIM ABP Aquabike WC\b", "UIM ABP Aquabike World Championship"), (r"\bWC\b", "World Cup"), (r"\bHLS?\b|\bHls\b", "Highlights"),
+    (r"\bRd16\b", "Round of 16"), (r"\bR(?:d|nd|D)\s?(\d+)\b", r"Round \1"), (r"\bQF\b", "Quarter-final"), (r"\bSF\b", "Semi-final"),
+    (r"\bMD (\d+)\b", r"Matchday \1"), (r"\bTDF-", "Tour de France "), (r"\bWST\b", "World Snooker Tour"), (r"\bWSL\b", "World Surf League"),
+    (r"\bNAL\b", "North American League"), (r"\bWEL\b", "Western European League"), (r"\bW2RC\b", "World Rally-Raid Championship"),
+    (r"\bMLMC\b", "Michelin Le Mans Cup"), (r"\bFIA FR\b", "FIA Formula Regional"), (r"\bBAC:", "Badminton Asia Junior Championship:"),
+    (r"\bPLTV:", "Premier League TV:"), (r"\bGA Eagles\b", "Go Ahead Eagles"), (r"\b1\. FCK\b", "1. FC Kaiserslautern"),
+    (r"\bPBR Teams\b", "Professional Bull Riders Teams"), (r"\bNV-?\s*$", "Nevada"), (r"\bPL\b", "Premier League"), (r"\(M\)", "(Men)"), (r"\(W\)", "(Women)"))
+
+
+def astro_abbr(text):
+    if not text:
+        return text
+    text = re.sub(r"\bEp0*(\d+)\b", r"Episode \1", text)
+    eps = re.findall(r"Episode \d+", text)
+    if len(eps) == 2 and eps[0] == eps[1]:
+        text = re.sub(r"\s*" + re.escape(eps[1]) + r"$", "", text)        # "Ep04: Name Ep04" -> one episode number
+    for rx, en in ASTRO_ABBR:
+        text = re.sub(rx, en, text)
+    return text
+
+
+def astro_malay_titles(records):
+    for rec in records:
+        if rec.get("id", "").startswith("MY.Astro"):
+            for ev in rec["events"]:
+                if MALAY_RE.search(ev.get("title") or "") or re.search(r"(?i)liga perdana", ev.get("desc") or ""):
+                    ev["malay"] = True                      # Malay source text: the broadcast is in Malay
+                ev["title"], ev["sub"] = astro_abbr(astro_malay(ev.get("title"))), astro_abbr(astro_malay(ev.get("sub")))
+
+
+# Astro descriptions (27 Nov 2026, user): listings with no description, or a few words, get a line built only from what the listing
+# itself says (competition, teams, live / replay / highlights, day and session) - no invented facts. A programme that has a full
+# description on another listing of the same show (same title apart from numbers) borrows that one. "Coverage from: 3pm" is kept.
+ASTRO_DESC_SKIP_RE = re.compile(r"(?i)^(?:astro (?:premier league|football|sports uhd|arena)(?: \d)?$|no programmes|.*\(coming up\)|.*coming up)")
+ASTRO_KNOWN_SHOWS = {"berbulu dengan burn": "Berbulu Dengan Burn (often shortened to BDB) is a Malaysian football talk show."}   # from the user, 27 Nov 2026
+ASTRO_SHOW_RES = (                                                                                                       # also from the user
+    (r"(?i)^Shuto X\b", "Shuto X is a Malaysian sports entertainment and game show."),
+    (r"(?i)1-to-11", "1-to-11 is a Premier League TV show in which former players and guests pick and discuss their ultimate 1-to-11 "
+                     "dream line-up from teammates or opponents they played with or against, sharing stories from on and off the pitch."),
+    (r"(?i)^The Catch-up Show\b", "The Catch-up Show is your chance to relive the best bits from across the Premier League week."),
+    (r"(?i)^Hockey TNB Cup .*Semi-final", "Semi-finals in the TNB hockey cup."),
+    (r"(?i)^Classic Match\b", "Astro airs archived Premier League Classic Match broadcasts."))
+ASTRO_SERIES_DESC = ((r"(?i)\bBig Interview\b", r"^Extended sit-downs"), (r"(?i)\bStories\b", r"^PL Stories showcases"),
+                     (r"(?i)\bRewind\b", r"evergreen archive strand"), (r"(?i)\bNetbusters\b", r"^A fast-paced music"),
+                     (r"(?i)Review:? ?MW|PL Review|Premier League Review", r"^A comprehensive recap of each match week"))
+ASTRO_VS_RE = re.compile(r"^(?P<comp>[^:]{3,70}): (?P<a>.+?) vs (?P<b>.+)$")
+ASTRO_DAYSESS_RE = re.compile(r"^(?:(?:Table Tennis\. )?ITTF Mixed Team World Cup)(?: 2026)? Day (?P<d>\d+): Session (?P<s>\d+)$")
+
+
+def _astro_stem(title):   # (kept for reference; donors now use the exact title)
+    t = re.sub(r"(?i)^(?:live:\s*)", "", title or "")
+    t = re.sub(r"(?i)\b(?:episode|ep|week|wk|mw|md|rd|round|day|session)\s*0*\d+\b", "", t)
+    return re.sub(r"[\d\W_]+", " ", t).strip().lower()
+
+
+def astro_descriptions(records):
+    recs = [r for r in records if r.get("id", "").startswith("MY.Astro")]
+    donors = {}
+    for rec in recs:
+        for ev in rec["events"]:
+            d = (ev.get("desc") or "").strip()
+            if len(d) >= 40 and not re.match(r"(?i)(live\b|coverage from|\(langsung\))", d) and d not in DESC_PENDING and " vs " not in (ev.get("title") or ""):
+                donors.setdefault((ev.get("title") or "").strip().lower(), d)      # exact same title only (same episode, same round)
+    series = {}
+    for rx_t, rx_d in ASTRO_SERIES_DESC:
+        for rec in recs:
+            for ev in rec["events"]:
+                dd = (ev.get("desc") or "").strip()
+                if re.search(rx_d, dd) and dd not in DESC_PENDING:
+                    series.setdefault(rx_t, dd)
+    made = 0
+    for rec in recs:
+        for ev in rec["events"]:
+            title = (ev.get("title") or "").strip()
+            d = (ev.get("desc") or "").strip()
+            if ev.get("never_live") or ASTRO_DESC_SKIP_RE.match(title) or len(d) >= 40 and not re.match(r"(?i)(live\b|coverage from)", d):
+                continue
+            keep = ""
+            if re.match(r"(?i)(live\.?\s*)?(coverage from.*)?$", d) or re.match(r"(?i)coverage from", d):
+                m = re.search(r"(?i)coverage from:?[^.]*\.?", d)
+                keep = m.group(0).strip() if m else ""
+            elif len(d) >= 40:
+                continue
+            mins = (ev["stop"] - ev["start"]).total_seconds() / 60
+            new = None
+            core = re.sub(r"(?i)^(?:🔴\s*)?(?:live:\s*)?", "", title)
+            m = ASTRO_VS_RE.match(core)
+            ds = ASTRO_DAYSESS_RE.match(core)
+            hl = re.search(r"(?i)highlights?", core)
+            known = ASTRO_KNOWN_SHOWS.get(title.lower()) or next((txt for rx, txt in ASTRO_SHOW_RES if re.search(rx, core)), None)
+            if not known and ev.get("malay") and re.match(r"^(?:Highlights )?Premier League 2026/27$", core):
+                known = "Highlights of a Premier League match that is broadcast in Malay."      # only when the source is in Malay
+            if known and m and core.startswith("Classic Match"):
+                known = f"Archived Premier League Classic Match: {m['a'].strip()} vs {m['b'].strip()}."
+            if known:
+                new = known
+            elif ds:
+                new = f"ITTF Mixed Team World Cup 2026, Day {ds['d']}: Session {ds['s']}, from Chengdu, China. Table tennis."
+            elif m and hl:
+                comp = re.sub(r"(?i)\s*(?:match\s+)?highlights?", "", re.sub(r"^(?:[A-Za-z ]{3,22}\. )", "", m["comp"])).strip()
+                new = f"{comp} match highlights: {m['a'].strip()} vs {m['b'].strip()}."
+            elif m and not hl:
+                comp = re.sub(r"^(?:[A-Za-z ]{3,22}\. )", "", m["comp"]).strip()
+                match = f"{m['a'].strip()} vs {m['b'].strip()}"
+                if ev.get("live"):
+                    new = f"Live {comp}: {match}."
+                elif mins >= 80:
+                    new = f"{comp}: {match}. Full match replay."
+                else:
+                    new = f"{comp}: {match}."
+            elif hl and mins <= 70:
+                sp = re.match(r"^([A-Za-z ]{3,22})\. (.+)$", core)
+                sport, rest = (sp[1], sp[2]) if sp else ("", core)
+                rest = re.sub(r"\s{2,}", " ", re.sub(r"(?i)\bhighlights?\b\s*(?:of\s*)?", "", rest)).strip(" :-")
+                new = (f"{sport} highlights from {rest}." if sport else f"Highlights from {rest}.")
+            else:
+                new = donors.get(title.lower())
+                if not new:
+                    new = next((series[rx_t] for rx_t, _ in ASTRO_SERIES_DESC if rx_t in series and re.search(rx_t, title)), None)
+            if not new:
+                continue
+            ev["desc"] = (new + (" " + keep if keep else "")).strip()
+            made += 1
+    print(f"  Astro: {made} short or missing description(s) filled")
+
+
 def bein_fixture_titles(records):
     fixtures = [f for f in load_code_fixtures() if not BEIN_SKIP_FIXTURE_RE.search(f"{f[1]} {f[2]} {f[3]}")]
     live_n = rep_n = 0
@@ -8520,6 +8776,24 @@ def divider_records():
     return out
 
 
+# Spacing around punctuation in titles and sub-titles (27 Nov 2026, user): "Cup:Day 1" -> "Cup: Day 1", "A,B" -> "A, B",
+# "Final(Replay)" -> "Final (Replay)", "( x )" -> "(x)", "Team ,x" -> "Team, x", double spaces collapsed. Colons between digits (10:30, 2:1),
+# commas between digits (1,000), single-letter brackets "(s)" and hyphens inside a word ("Jet-Ski") are left alone.
+def tidy_punct(x):
+    if not x:
+        return x
+    x = re.sub(r"(?<=[^\W\d_]{2}):(?=[^\W\d_])", ": ", x)      # Cup:Day -> Cup: Day (not "J:COM")
+    x = re.sub(r"\s+(?=[,;])", "", x)                          # "A , B" -> "A, B"
+    x = re.sub(r"(?<=[^\W\d_]),(?=[^\W\d_])", ", ", x)        # A,B -> A, B
+    x = re.sub(r"(?<=[^\W_])\((?=[^\W\d_]{2})", " (", x)       # Final(Replay) -> Final (Replay)
+    x = re.sub(r"\)(?=[^\W\d_])", ") ", x)                     # (Replay)Final -> (Replay) Final
+    x = re.sub(r"\(\s+", "(", x)
+    x = re.sub(r"\s+\)", ")", x)
+    x = re.sub(r"(?<=[^\W_])\s-(?=[^\W\d_-])", " - ", x)       # Final -Day -> Final - Day
+    x = re.sub(r"(?<=[^\W\d_]{4})-\s(?=[^\W_])", " - ", x)    # Final- Day -> Final - Day (not "Tri- Series")
+    return re.sub(r"[ \t]{2,}", " ", x).strip()
+
+
 TNT_GP_RE = re.compile(r"(?i)^\s*(?:GP|Grand Prix) of\b")
 
 
@@ -8589,6 +8863,7 @@ def build_xmltv(records, suffix, minutes):
             title, sub = (re.sub(r"(?<=\S):{2,}\s*", ": ", x) if x else x for x in (title, sub))   # "Stories:: Pedro Porro" -> "Stories: Pedro Porro" (27 Nov 2026)
             title, sub = (re.sub(r"\bNott['\u2019]m\b", "Nottingham", re.sub(r"\bM['\u2019]boro\b", "Middlesbrough", re.sub(r"\bFNF\b", "Friday Night Football", re.sub(r"(?i)\bS/Lge\b", "Super League", x)))) if x else x for x in (title, sub))   # Sky's "S/Lge Highlights", "FNF: A v B" (27 Nov 2026)
             title, sub = pl_full(title), pl_full(sub) if sub else sub
+            title, sub = tidy_punct(title), tidy_punct(sub)      # spaces around punctuation (27 Nov 2026)
             if TNT_GP_RE.match(title or "") and "motogp" in ((ev.get("desc") or "") + " " + (sub or "")).lower():
                 title = "MotoGP: " + title                        # TNT's "GP of Valencia - Inside Line" (27 Nov 2026, user)
             if cid.startswith(("UK.", "IE.", "AU.")) and re.match(r"Mosconi Cup\b", title or ""):
@@ -9838,8 +10113,12 @@ def main():
     starz_football(records)                         # STARZPLAY Sports 1/2 football from FotMob (26 Nov 2026)
     rush_cricket_titles(records)                    # Rush Sports Test cricket (26 Nov 2026)
     rush_fixture_titles(records)                    # Rush Sports UEFA matches: teams, red ball, description (26 Nov 2026)
+    astro_day_titles(records)                       # Astro MY Hari Pertama / FFWS titles -> English day titles (27 Nov 2026)
     bein_fixture_titles(records)                    # beIN Malaysia "A vs B - MD5" -> live / competition / description (26 Nov 2026)
     code_titles(records)                            # beIN Indonesia "UEL 2026/27: CRY Vs RSO (L)" (26 Nov 2026)
+    astro_malay_titles(records)                     # Astro MY titles in Malay -> English (27 Nov 2026)
+    astro_replays(records)                          # Astro PL matches that are not live: 'Full match replay.' (27 Nov 2026)
+    astro_descriptions(records)                     # Astro sparse descriptions (27 Nov 2026)
     astro_idle_fill(records)                        # PL 3 / 4 / 5: 'No live match scheduled' between matches (5 Nov 2026)
     records.extend(divider_records())               # country dividers '### FRANCE ###' -> DIV.FRANCE (5 Nov 2026)
     collect_match_pairs(records)                    # strong fixtures -> short replays of the same match get 'vs' too (5 Nov 2026)
