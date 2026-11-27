@@ -8326,6 +8326,8 @@ def premier_merge(sky, theirs_by_id, label):
     for cid, theirs in theirs_by_id.items():
         evs = sky.get(cid)
         if not evs or len(theirs) < 5:
+            print(f"  Premier Sports {label}: {cid} {len(theirs)} programme(s) read from the site, Sky has {len(evs or [])} - "
+                  + ("Sky's listing kept" if evs else "nothing to merge into"))       # (27 Nov 2026: the 03:23 run printed nothing at all)
             continue
         theirs = sorted(theirs, key=lambda e: e["start"])
         lo, hi = theirs[0]["start"], theirs[-1]["stop"]
@@ -8360,7 +8362,10 @@ def premier_fill(sky, days, debug=False):
     if not page or "all-channels-container" not in page:
         print("  Premier Sports TV guide: not available this run - Sky's listing kept")
         return
-    premier_merge(sky, parse_premier_sports(page, days[0]), "UK guide")
+    rows = parse_premier_sports(page, days[0])
+    print(f"  Premier Sports UK guide: page read ({len(page)} characters), programmes found: "
+          + (", ".join(f"{c} {len(v)}" for c, v in rows.items()) or "none"))
+    premier_merge(sky, rows, "UK guide")
 
 
 # Premier Sports Ireland (26 Nov 2026, user: "the same for Ireland?"): premiersportsireland.com lists PS One / PS Two for 12 days in
@@ -8426,7 +8431,10 @@ def premier_ireland_fix(sky):
     if not page or "schedule_list_item" not in page:
         print("  Premier Sports Ireland guide: not available this run - Sky's listing kept")
         return
-    premier_merge(sky, parse_premier_ireland(page, datetime.now(LONDON)), "Ireland guide")
+    rows = parse_premier_ireland(page, datetime.now(LONDON))
+    print(f"  Premier Sports Ireland guide: page read ({len(page)} characters), programmes found: "
+          + (", ".join(f"{c} {len(v)}" for c, v in rows.items()) or "none"))
+    premier_merge(sky, rows, "Ireland guide")
 
 
 # Astro Premier League 3 / 4 / 5 idle listing (5 Nov 2026, user request): these pop-up channels only have programmes on match days
