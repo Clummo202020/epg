@@ -5303,6 +5303,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128171000 +0000" stop="20261128191000 +0000" channel="AppleMLS001.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="AppleMLS002.us">
     <title lang="en">Next Match: Columbus Crew vs Inter Miami (Sat 28 Nov, 1am)</title>
     <sub-title lang="en">MLS</sub-title>
@@ -5775,10 +5780,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128160000 +0000" stop="20261128173000 +0000" channel="AppleMLS007.us">
-    <title lang="en">Next up: LIVE – Charlotte FC vs Chicago Fire (Sat 28 Nov, 5:30pm)</title>
+    <title lang="en">Next up: LIVE – Charlotte FC vs Chicago Fire (5:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Charlotte FC vs Chicago Fire starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Charlotte FC vs Chicago Fire starts at 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="AppleMLS007.us">
+    <title lang="en">🔴 LIVE: Charlotte FC vs Chicago Fire</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">Charlotte FC vs Chicago Fire. MLS. Starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="AppleMLS008.us">
     <title lang="en">Next Match: Charlotte FC vs Chicago Fire (Spanish) (Sat 28 Nov, 5:30pm)</title>
@@ -5853,10 +5865,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128160000 +0000" stop="20261128173000 +0000" channel="AppleMLS008.us">
-    <title lang="en">Next up: LIVE – Charlotte FC vs Chicago Fire (Spanish) (Sat 28 Nov, 5:30pm)</title>
+    <title lang="en">Next up: LIVE – Charlotte FC vs Chicago Fire (Spanish) (5:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Charlotte FC vs Chicago Fire (Spanish) starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Charlotte FC vs Chicago Fire (Spanish) starts at 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="AppleMLS008.us">
+    <title lang="en">🔴 LIVE: Charlotte FC vs Chicago Fire (Spanish)</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">Charlotte FC vs Chicago Fire (Spanish). MLS. Starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="AppleMLS009.us">
     <title lang="en">Next Match: Houston Dynamo vs San Jose Earthquakes (Sat 28 Nov, 7:30pm)</title>
@@ -8797,6 +8816,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="CASOCCERPPV22.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="CASOCCERPPV23.ca">
     <title lang="en">Next Match: India tour of New Zealand 2026 - 2nd Test - New Zealand vs India (Fri 27 Nov, 11pm)</title>
     <desc lang="en">India tour of New Zealand 2026 - 2nd Test - New Zealand vs India. Starts Fri 27 Nov, 11pm UK time.</desc>
@@ -10848,6 +10872,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="ESPNPPV16.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="ESPNPPV17.us">
     <title lang="en">Next Match: Basketball. Northern Illinois vs Manhattan (Fri 27 Nov, 6:30pm)</title>
     <desc lang="en">Basketball. Northern Illinois vs Manhattan. NCAA Women's Basketball. Starts Fri 27 Nov, 6:30pm UK time.</desc>
@@ -10921,6 +10950,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="ESPNPPV17.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="ESPNPPV18.us">
     <title lang="en">Next Match: Basketball. South Dakota vs North Florida (Fri 27 Nov, 6:30pm)</title>
     <desc lang="en">Basketball. South Dakota vs North Florida. NCAA Women's Basketball. Starts Fri 27 Nov, 6:30pm UK time.</desc>
@@ -10990,6 +11024,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128153000 +0000" stop="20261128173000 +0000" channel="ESPNPPV18.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="ESPNPPV18.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -13840,6 +13879,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="ESPNPPV53.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="ESPNPPV54.us">
     <title lang="en">Next Match: NHL. Los Angeles Kings vs Anaheim Ducks (Fri 27 Nov, 8:30pm)</title>
     <desc lang="en">NHL. Los Angeles Kings vs Anaheim Ducks. NHL. Starts Fri 27 Nov, 8:30pm UK time.</desc>
@@ -13909,6 +13953,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128153000 +0000" stop="20261128173000 +0000" channel="ESPNPPV54.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="ESPNPPV54.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -13986,6 +14035,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="ESPNPPV55.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="ESPNPPV56.us">
     <title lang="en">Next Match: NHL. Vegas Golden Knights vs San Jose Sharks (Fri 27 Nov, 8:30pm)</title>
     <desc lang="en">NHL. Vegas Golden Knights vs San Jose Sharks. NHL. Starts Fri 27 Nov, 8:30pm UK time.</desc>
@@ -14055,6 +14109,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128153000 +0000" stop="20261128173000 +0000" channel="ESPNPPV56.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="ESPNPPV56.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -15081,6 +15140,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="ESPNPPV69.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127173000 +0000" channel="ESPNPPV7.us">
     <title lang="en">Next up: LIVE – NHL. Utah Mammoth vs Nashville Predators (5:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -15223,6 +15287,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128153000 +0000" stop="20261128173000 +0000" channel="ESPNPPV70.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="ESPNPPV70.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -22760,6 +22829,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="MPeacock008.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="MPeacock009.us">
     <title lang="en">Next Event: Skiing. Women's Giant Slalom: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
     <desc lang="en">Skiing. Women's Giant Slalom: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
@@ -22832,6 +22906,11 @@
     <desc lang="en">Skiing. Women's Giant Slalom: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="MPeacock009.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="MPeacock010.us">
     <title lang="en">Next Match: Performance View: Man United vs Brentford (Sat 28 Nov, 2:50pm)</title>
@@ -23053,10 +23132,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128160000 +0000" stop="20261128173000 +0000" channel="MPeacock012.us">
-    <title lang="en">Next up: LIVE – Skiing. Women's Giant Slalom: Killington Run 2 (Sat 28 Nov, 5:30pm)</title>
+    <title lang="en">Next up: LIVE – Skiing. Women's Giant Slalom: Killington Run 2 (5:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Skiing. Women's Giant Slalom: Killington Run 2 starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Skiing. Women's Giant Slalom: Killington Run 2 starts at 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="MPeacock012.us">
+    <title lang="en">🔴 LIVE: Skiing. Women's Giant Slalom: Killington Run 2</title>
+    <desc lang="en">Skiing. Women's Giant Slalom: Killington Run 2. Starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="MPeacock013.us">
     <title lang="en">Next Event: Skiing. Men's Super-G: Copper (Sat 28 Nov, 6:45pm)</title>
@@ -29194,6 +29279,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173500 +0000" stop="20261128193500 +0000" channel="MSTAN03.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="MSTAN04.au">
     <title lang="en">Next Match: Rugby Union. Ireland vs Australia (Fri 27 Nov, 8:10pm)</title>
     <sub-title lang="en">Nations Championship</sub-title>
@@ -29267,6 +29357,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128151000 +0000" stop="20261128171000 +0000" channel="MSTAN04.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128171000 +0000" stop="20261128191000 +0000" channel="MSTAN04.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -30379,10 +30474,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128160000 +0000" stop="20261128173000 +0000" channel="MSTAN17.au">
-    <title lang="en">Next up: LIVE – Ipswich Town vs Aston Villa (Sat 28 Nov, 5:30pm)</title>
+    <title lang="en">Next up: LIVE – Ipswich Town vs Aston Villa (5:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Ipswich Town vs Aston Villa starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Ipswich Town vs Aston Villa starts at 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="MSTAN17.au">
+    <title lang="en">🔴 LIVE: Ipswich Town vs Aston Villa</title>
+    <sub-title lang="en">Premier League</sub-title>
+    <desc lang="en">Ipswich Town vs Aston Villa. Premier League Matchweek 12 2026/2027. Starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="MSTAN18.au">
     <title lang="en">Next Event: PL Saturday Wrap: Matchweek 12 Nov 29 (Sat 28 Nov, 8pm)</title>
@@ -37486,6 +37588,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128153000 +0000" stop="20261128173000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="PPVEVENT3.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -45109,6 +45216,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="Peacock008.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="Peacock009.us">
     <title lang="en">Next Event: Skiing. Women's Giant Slalom: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
     <desc lang="en">Skiing. Women's Giant Slalom: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
@@ -45181,6 +45293,11 @@
     <desc lang="en">Skiing. Women's Giant Slalom: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="Peacock009.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="Peacock010.us">
     <title lang="en">Next Match: Performance View: Man United vs Brentford (Sat 28 Nov, 2:50pm)</title>
@@ -45402,10 +45519,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128160000 +0000" stop="20261128173000 +0000" channel="Peacock012.us">
-    <title lang="en">Next up: LIVE – Skiing. Women's Giant Slalom: Killington Run 2 (Sat 28 Nov, 5:30pm)</title>
+    <title lang="en">Next up: LIVE – Skiing. Women's Giant Slalom: Killington Run 2 (5:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Skiing. Women's Giant Slalom: Killington Run 2 starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Skiing. Women's Giant Slalom: Killington Run 2 starts at 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="Peacock012.us">
+    <title lang="en">🔴 LIVE: Skiing. Women's Giant Slalom: Killington Run 2</title>
+    <desc lang="en">Skiing. Women's Giant Slalom: Killington Run 2. Starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="Peacock013.us">
     <title lang="en">Next Event: Skiing. Men's Super-G: Copper (Sat 28 Nov, 6:45pm)</title>
@@ -52599,6 +52722,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="SN018.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="SN019.ca">
     <title lang="en">Next Event: The FAN Pregame: Nov. 27 (Fri 27 Nov, 11pm)</title>
     <desc lang="en">The FAN Pregame: Nov. 27. Starts Fri 27 Nov, 11pm UK time.</desc>
@@ -52751,6 +52879,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="SN020.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="SN021.ca">
     <title lang="en">Next Game: NHL. Winnipeg Jets @ New York Islanders (Sat 28 Nov, 12:30am)</title>
     <sub-title lang="en">NHL</sub-title>
@@ -52826,6 +52959,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128153000 +0000" stop="20261128173000 +0000" channel="SN021.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="SN021.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -54868,6 +55006,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="TSN024.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="TSN025.ca">
     <title lang="en">Next Match: NCAA Men's Hockey: Ohio State vs Union (Sat 28 Nov, Midnight)</title>
     <sub-title lang="en">NCAA</sub-title>
@@ -55022,6 +55165,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128153000 +0000" stop="20261128173000 +0000" channel="TSN026.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="TSN026.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -55419,6 +55567,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261128172000 +0000" stop="20261128192000 +0000" channel="TSN031.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="TSN033.ca">
     <title lang="en">Next Event: Formula 1 Driver Tracker - Qatar Grand Prix Practice #3 (Sat 28 Nov, 2:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -55504,6 +55657,11 @@
     <desc lang="en">Formula 1 Driver Tracker - Qatar Grand Prix Practice #3. Starts Sat 28 Nov, 2:20pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261128172000 +0000" stop="20261128192000 +0000" channel="TSN033.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="TSN034.ca">
     <title lang="en">Next Event: Formula 1 Pit Lane - Qatar Grand Prix Practice #3 (Sat 28 Nov, 2:20pm)</title>
@@ -55591,6 +55749,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261128172000 +0000" stop="20261128192000 +0000" channel="TSN034.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="TSN035.ca">
     <title lang="en">Next Event: Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #3 (Sat 28 Nov, 2:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -55676,6 +55839,11 @@
     <desc lang="en">Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #3. Starts Sat 28 Nov, 2:20pm UK time.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
+  </programme>
+  <programme start="20261128172000 +0000" stop="20261128192000 +0000" channel="TSN035.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
   </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="TSN036.ca">
     <title lang="en">Next Event: Formula 1 Timing Channel - Qatar Grand Prix Practice #3 (Sat 28 Nov, 2:20pm)</title>
@@ -55763,6 +55931,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261128172000 +0000" stop="20261128192000 +0000" channel="TSN036.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="TSN037.ca">
     <title lang="en">Next Event: Formula 1 On-Board Camera: Lando Norris - Qatar Grand Prix Practice #3 (Sat 28 Nov, 2:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -55849,6 +56022,11 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261128172000 +0000" stop="20261128192000 +0000" channel="TSN037.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="TSN038.ca">
     <title lang="en">Next Match: LaLiga: Malaga vs Athletic Club (Sat 28 Nov, 3:15pm)</title>
     <sub-title lang="en">Spanish La Liga (Primera)</sub-title>
@@ -55922,6 +56100,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128151500 +0000" stop="20261128171500 +0000" channel="TSN038.ca">
+    <title lang="en">🔴 LIVE: LaLiga: Malaga vs Athletic Club</title>
+    <sub-title lang="en">Spanish La Liga (Primera)</sub-title>
+    <desc lang="en">LaLiga: Malaga vs Athletic Club. Spanish La Liga (Primera). Starts Sat 28 Nov, 3:15pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261128171500 +0000" stop="20261128181500 +0000" channel="TSN038.ca">
     <title lang="en">🔴 LIVE: LaLiga: Malaga vs Athletic Club</title>
     <sub-title lang="en">Spanish La Liga (Primera)</sub-title>
     <desc lang="en">LaLiga: Malaga vs Athletic Club. Spanish La Liga (Primera). Starts Sat 28 Nov, 3:15pm UK time.</desc>
@@ -56243,10 +56428,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128160000 +0000" stop="20261128173000 +0000" channel="TSN042.ca">
-    <title lang="en">Next up: LIVE – LaLiga: Elche vs Atletico Madrid (Sat 28 Nov, 5:30pm)</title>
+    <title lang="en">Next up: LIVE – LaLiga: Elche vs Atletico Madrid (5:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. LaLiga: Elche vs Atletico Madrid starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. LaLiga: Elche vs Atletico Madrid starts at 5:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128173000 +0000" stop="20261128193000 +0000" channel="TSN042.ca">
+    <title lang="en">🔴 LIVE: LaLiga: Elche vs Atletico Madrid</title>
+    <sub-title lang="en">Spanish La Liga (Primera)</sub-title>
+    <desc lang="en">LaLiga: Elche vs Atletico Madrid. Spanish La Liga (Primera). Starts Sat 28 Nov, 5:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127160000 +0000" stop="20261127180000 +0000" channel="TSN043.ca">
     <title lang="en">Next Match: NCAA Football: LSU vs Arkansas (Sat 28 Nov, 5:45pm)</title>
