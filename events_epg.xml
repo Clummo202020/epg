@@ -5301,6 +5301,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128211000 +0000" stop="20261128231000 +0000" channel="AppleMLS001.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="AppleMLS002.us">
     <title lang="en">Next Match: Columbus Crew vs Inter Miami (Sat 28 Nov, 1am)</title>
     <sub-title lang="en">MLS</sub-title>
@@ -5939,6 +5944,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128223000 +0000" channel="AppleMLS009.us">
+    <title lang="en">🔴 LIVE: Houston Dynamo vs San Jose Earthquakes</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">Houston Dynamo vs San Jose Earthquakes. MLS. Starts Sat 28 Nov, 7:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="AppleMLS010.us">
     <title lang="en">Next Match: Houston Dynamo vs San Jose Earthquakes (Spanish) (Sat 28 Nov, 7:30pm)</title>
     <sub-title lang="en">MLS</sub-title>
@@ -6018,6 +6030,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128223000 +0000" channel="AppleMLS010.us">
+    <title lang="en">🔴 LIVE: Houston Dynamo vs San Jose Earthquakes (Spanish)</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">Houston Dynamo vs San Jose Earthquakes (Spanish). MLS. Starts Sat 28 Nov, 7:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="AppleMLS011.us">
     <title lang="en">Next Match: Philadelphia Union vs New England Revolution (Sat 28 Nov, 9:30pm)</title>
     <sub-title lang="en">MLS</sub-title>
@@ -6091,10 +6110,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128200000 +0000" stop="20261128213000 +0000" channel="AppleMLS011.us">
-    <title lang="en">Next up: LIVE – Philadelphia Union vs New England Revolution (Sat 28 Nov, 9:30pm)</title>
+    <title lang="en">Next up: LIVE – Philadelphia Union vs New England Revolution (9:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Philadelphia Union vs New England Revolution starts Sat 28 Nov, 9:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Philadelphia Union vs New England Revolution starts at 9:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="AppleMLS011.us">
+    <title lang="en">🔴 LIVE: Philadelphia Union vs New England Revolution</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">Philadelphia Union vs New England Revolution. MLS. Starts Sat 28 Nov, 9:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="AppleMLS012.us">
     <title lang="en">Next Match: Philadelphia Union vs New England Revolution (Spanish) (Sat 28 Nov, 9:30pm)</title>
@@ -6169,10 +6195,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128200000 +0000" stop="20261128213000 +0000" channel="AppleMLS012.us">
-    <title lang="en">Next up: LIVE – Philadelphia Union vs New England Revolution (Spanish) (Sat 28 Nov, 9:30pm)</title>
+    <title lang="en">Next up: LIVE – Philadelphia Union vs New England Revolution (Spanish) (9:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Philadelphia Union vs New England Revolution (Spanish) starts Sat 28 Nov, 9:30pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Philadelphia Union vs New England Revolution (Spanish) starts at 9:30pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="AppleMLS012.us">
+    <title lang="en">🔴 LIVE: Philadelphia Union vs New England Revolution (Spanish)</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">Philadelphia Union vs New England Revolution (Spanish). MLS. Starts Sat 28 Nov, 9:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="AppleMLS013.us">
     <title lang="en">Next Match: FC Cincinnati vs Nashville SC (Sat 28 Nov, 11:30pm)</title>
@@ -8111,81 +8144,6 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261127200000 +0000" stop="20261127210000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">Next up: LIVE – NHL. Avalanche vs Wild (9pm)</title>
-    <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NHL. Avalanche vs Wild starts at 9pm UK time.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261127210000 +0000" stop="20261127230000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">🔴 LIVE: NHL. Avalanche vs Wild</title>
-    <sub-title lang="en">NHL</sub-title>
-    <desc lang="en">NHL. Avalanche vs Wild. Starts Fri 27 Nov, 9pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261127230000 +0000" stop="20261128000000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">🔴 LIVE: NHL. Avalanche vs Wild</title>
-    <sub-title lang="en">NHL</sub-title>
-    <desc lang="en">NHL. Avalanche vs Wild. Starts Fri 27 Nov, 9pm UK time.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Live</category>
-  </programme>
-  <programme start="20261128000000 +0000" stop="20261128020000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261128020000 +0000" stop="20261128040000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261128080000 +0000" stop="20261128100000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261128100000 +0000" stop="20261128120000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261128120000 +0000" stop="20261128140000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261128140000 +0000" stop="20261128160000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261128160000 +0000" stop="20261128180000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261128180000 +0000" stop="20261128200000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261128200000 +0000" stop="20261128220000 +0000" channel="CASOCCERPPV20.ca">
-    <title lang="en">This event has now finished</title>
-    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
-    <category lang="en">Sports</category>
-  </programme>
   <programme start="20261127200000 +0000" stop="20261127210000 +0000" channel="CASOCCERPPV21.ca">
     <title lang="en">Next up: LIVE – NHL. Golden Knights vs Sharks (9pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -8333,6 +8291,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128193000 +0000" stop="20261128213000 +0000" channel="CASOCCERPPV22.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="CASOCCERPPV22.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -11951,6 +11914,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="ESPNPPV53.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127203000 +0000" channel="ESPNPPV54.us">
     <title lang="en">Next up: LIVE – NHL. Los Angeles Kings vs Anaheim Ducks (8:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -12020,6 +11988,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128193000 +0000" stop="20261128213000 +0000" channel="ESPNPPV54.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="ESPNPPV54.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -12097,6 +12070,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="ESPNPPV55.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127203000 +0000" channel="ESPNPPV56.us">
     <title lang="en">Next up: LIVE – NHL. Vegas Golden Knights vs San Jose Sharks (8:30pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -12166,6 +12144,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128193000 +0000" stop="20261128213000 +0000" channel="ESPNPPV56.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="ESPNPPV56.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -13191,6 +13174,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="ESPNPPV69.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127173000 +0000" stop="20261127193000 +0000" channel="ESPNPPV7.us">
     <title lang="en">🔴 LIVE: NHL. Utah Mammoth vs Nashville Predators</title>
     <desc lang="en">NHL. Utah Mammoth vs Nashville Predators. NHL. Starts Fri 27 Nov, 5:30pm UK time.</desc>
@@ -13332,6 +13320,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128193000 +0000" stop="20261128213000 +0000" channel="ESPNPPV70.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="ESPNPPV70.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -20863,6 +20856,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="MPeacock008.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="MPeacock009.us">
     <title lang="en">Next Event: Skiing. Women's Giant Slalom: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
     <desc lang="en">Skiing. Women's Giant Slalom: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
@@ -20932,6 +20930,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128193000 +0000" stop="20261128213000 +0000" channel="MPeacock009.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="MPeacock009.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -27386,6 +27389,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128191000 +0000" stop="20261128211000 +0000" channel="MSTAN04.au">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128211000 +0000" stop="20261128231000 +0000" channel="MSTAN04.au">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -35604,6 +35612,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="PPVEVENT3.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127143000 +0000" stop="20261127163000 +0000" channel="PPVEVENT4.us">
     <title lang="en">🔴 LIVE: BWP1 Mitchell vs Junio</title>
     <sub-title lang="en">PPV Event</sub-title>
@@ -43243,6 +43256,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="Peacock008.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="Peacock009.us">
     <title lang="en">Next Event: Skiing. Women's Giant Slalom: Killington Run 1 (Sat 28 Nov, 2:30pm)</title>
     <desc lang="en">Skiing. Women's Giant Slalom: Killington Run 1. Starts Sat 28 Nov, 2:30pm UK time.</desc>
@@ -43312,6 +43330,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128193000 +0000" stop="20261128213000 +0000" channel="Peacock009.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="Peacock009.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -50587,6 +50610,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="SN018.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="SN019.ca">
     <title lang="en">Next Event: The FAN Pregame: Nov. 27 (Fri 27 Nov, 11pm)</title>
     <desc lang="en">The FAN Pregame: Nov. 27. Starts Fri 27 Nov, 11pm UK time.</desc>
@@ -50737,6 +50765,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="SN020.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="SN021.ca">
     <title lang="en">Next Game: NHL. Winnipeg Jets @ New York Islanders (Sat 28 Nov, 12:30am)</title>
     <sub-title lang="en">NHL</sub-title>
@@ -50810,6 +50843,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128193000 +0000" stop="20261128213000 +0000" channel="SN021.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="SN021.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -52223,6 +52261,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="TSN024.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="TSN025.ca">
     <title lang="en">Next Match: NCAA Men's Hockey: Ohio State vs Union (Sat 28 Nov, Midnight)</title>
     <sub-title lang="en">NCAA</sub-title>
@@ -52373,6 +52416,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128193000 +0000" stop="20261128213000 +0000" channel="TSN026.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128213000 +0000" stop="20261128233000 +0000" channel="TSN026.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -52764,6 +52812,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128212000 +0000" stop="20261128232000 +0000" channel="TSN031.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="TSN033.ca">
     <title lang="en">Next Event: Formula 1 Driver Tracker - Qatar Grand Prix Practice #3 (Sat 28 Nov, 2:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -52844,6 +52897,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128192000 +0000" stop="20261128212000 +0000" channel="TSN033.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128212000 +0000" stop="20261128232000 +0000" channel="TSN033.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -52932,6 +52990,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128212000 +0000" stop="20261128232000 +0000" channel="TSN034.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="TSN035.ca">
     <title lang="en">Next Event: Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #3 (Sat 28 Nov, 2:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -53012,6 +53075,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128192000 +0000" stop="20261128212000 +0000" channel="TSN035.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128212000 +0000" stop="20261128232000 +0000" channel="TSN035.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -53100,6 +53168,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128212000 +0000" stop="20261128232000 +0000" channel="TSN036.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="TSN037.ca">
     <title lang="en">Next Event: Formula 1 On-Board Camera: Lando Norris - Qatar Grand Prix Practice #3 (Sat 28 Nov, 2:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -53180,6 +53253,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128192000 +0000" stop="20261128212000 +0000" channel="TSN037.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128212000 +0000" stop="20261128232000 +0000" channel="TSN037.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -53337,6 +53415,11 @@
     <category lang="en">Live</category>
   </programme>
   <programme start="20261128191000 +0000" stop="20261128211000 +0000" channel="TSN039.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128211000 +0000" stop="20261128231000 +0000" channel="TSN039.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -54507,10 +54590,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128200000 +0000" stop="20261128211500 +0000" channel="TSN053.ca">
-    <title lang="en">Next up: LIVE – NCAA Football: Oklahoma vs Missouri (Sat 28 Nov, 9:15pm)</title>
+    <title lang="en">Next up: LIVE – NCAA Football: Oklahoma vs Missouri (9:15pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. NCAA Football: Oklahoma vs Missouri starts Sat 28 Nov, 9:15pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. NCAA Football: Oklahoma vs Missouri starts at 9:15pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128211500 +0000" stop="20261128231500 +0000" channel="TSN053.ca">
+    <title lang="en">🔴 LIVE: NCAA Football: Oklahoma vs Missouri</title>
+    <sub-title lang="en">NCAA</sub-title>
+    <desc lang="en">NCAA Football: Oklahoma vs Missouri. Starts Sat 28 Nov, 9:15pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="TSN054.ca">
     <title lang="en">Next Match: NCAA Men's Hockey: Denver vs Boston University (Sat 28 Nov, 11pm)</title>
@@ -68645,6 +68735,71 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128200000 +0000" stop="20261128220000 +0000" channel="CASOCCERPPV2.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261127200000 +0000" stop="20261127220000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261127220000 +0000" stop="20261128000000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128000000 +0000" stop="20261128020000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128020000 +0000" stop="20261128040000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128080000 +0000" stop="20261128100000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128100000 +0000" stop="20261128120000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128120000 +0000" stop="20261128140000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128140000 +0000" stop="20261128160000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128160000 +0000" stop="20261128180000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128180000 +0000" stop="20261128200000 +0000" channel="CASOCCERPPV20.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128200000 +0000" stop="20261128220000 +0000" channel="CASOCCERPPV20.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
