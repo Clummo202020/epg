@@ -5556,6 +5556,7 @@ STUDIO_RE = re.compile(
     r"emission|time for\b.{0,25}\bballs?|"
     r"college football live|saturday league kick[- ]?off|"            # ESPN2 / Fox League studio shows (29 Oct 2026)
     r"scoreboard|run home|full time live|"                            # ESPN2 / Fox League / Fox Sports News (29 Oct, late)
+    r"stories|moments|netbusters|goals of the (week|month)|"         # Premier League shows (27 Nov 2026: "EPL Stories" had a red ball)
     r"summar(y|ies))\b")
 UK_EVENT_RE, UK_STUDIO_RE = EVENT_RE, STUDIO_RE                   # (older names)
 
@@ -6796,6 +6797,9 @@ TNT_PLACEHOLDER_RE = re.compile(r"^(?P<lead>(?:🔴\s*)?(?:LIVE[:,]\s*)?)This is
 TNT_WEB_RE = re.compile(r"\s*For more information,? (?:please )?visit tntsports\.co\.uk\.?", re.I)
 
 
+TNT_IDLE_TITLE_RE = re.compile(r"(?i)^(?:🔴\s*)?(?:live[:,]\s*)?(?:this is\s+)?TNT Sports 5\s*$")
+
+
 def tnt_placeholder(cid, title, sub, desc):
     m = TNT_PLACEHOLDER_RE.match((title or "").strip())
     if not m:
@@ -7581,6 +7585,8 @@ def add_programme(tv, cid, start, stop, title, sub, desc, live):
     title, sub, desc = pl_season(title, sub, desc)
     title, sub, desc = sky_titles(cid, title, sub, desc)
     title, sub, desc = tnt_placeholder(cid, title, sub, desc)
+    if cid == TNT5_CID and TNT_IDLE_TITLE_RE.match((title or "").strip()):       # (27 Nov 2026, user) nothing on: no "LIVE:", no Live tag
+        title, live = EMPTY_FILLER_SUB, False
     title, sub, desc = nz_cricket(cid, title, sub, desc)
     title, sub, desc = nz_nations(cid, title, sub, desc)
     title, sub, desc = nz_shield(cid, title, sub, desc)
@@ -8506,6 +8512,21 @@ def divider_records():
     return out
 
 
+PL_SHOWS_RE = re.compile(r"(?i)^(?P<lead>(?:🔴\s*)?(?:live:\s*)?)PL(?=\s*:|\s+(?:stories|storie|moments?|retro|rewind|review|preview|goals|netbusters|online|studio|highlights|"
+                         r"show|match(?:day)?|\d{2,4}\s*/\s*\d{2,4}|today|weekly|round[- ]?up)\b)")
+
+
+def pl_full(text):
+    """'PL Stories' / 'PL MOMENTS - X' / 'PL 26/27: A vs B' -> 'Premier League ...' (only Premier League show names, never other 'PL')."""
+    if not text:
+        return text
+    out = PL_SHOWS_RE.sub(lambda m: m["lead"] + "Premier League", text, count=1)
+    out = re.sub(r"^(Premier League \w+):(?=\S)", r"\1: ", out)           # "PL Retro:Liverpool v Blackburn 95" -> "Premier League Retro: Liverpool ..."
+    letters = [c for c in text if c.isalpha()]
+    shouting = len(letters) > 3 and sum(c.isupper() for c in letters) / len(letters) >= 0.6      # only an all-capitals title is re-cased ("QPR" stays)
+    return (fix_caps(out) if shouting else out) if out != text else text           # (a capitals title "PL STORIES - FRANK LAMPARD" -> "Premier League Stories - Frank Lampard")
+
+
 def build_xmltv(records, suffix, minutes):
     """records: [{id, name, tz, place, filler, back_to_back, events:[{start,title,sub,live}]}]"""
     tv = ET.Element("tv", {"generator-info-name": "SPORT_epg.py",
@@ -8554,6 +8575,9 @@ def build_xmltv(records, suffix, minutes):
             elif cid.startswith(X_VS_REGIONS):
                 title = x_versus(title)                          # "A x B - Serie A" -> "A vs B - Serie A"
             title = match_versus(title, bool(ev.get("live")), (stop - start).total_seconds() / 60)   # every channel (5 Nov 2026)
+            title, sub = (re.sub(r"(?<=\S):{2,}\s*", ": ", x) if x else x for x in (title, sub))   # "Stories:: Pedro Porro" -> "Stories: Pedro Porro" (27 Nov 2026)
+            title, sub = (re.sub(r"(?i)\bS/Lge\b", "Super League", x) if x else x for x in (title, sub))   # Sky's "S/Lge Highlights" (27 Nov 2026)
+            title, sub = pl_full(title), pl_full(sub) if sub else sub        # "PL Stories" -> "Premier League Stories" (27 Nov 2026)
             loc = ev["start"].astimezone(rec["tz"])
             uk = ev["start"].astimezone(LONDON)
             when = f"{uk:%a %d %b, %H:%M}"
@@ -8572,10 +8596,33 @@ def build_xmltv(records, suffix, minutes):
                 alt = fuller_about(title, sub)                 # as the secondary title: "MD 9" + "Highlights from the Ligue 1 2026/27."
                 if alt != sub:
                     about = alt
-            if cid in PART_TIME_CHANNELS and PART_TIME_FILLER_RE.match(title or ""):    # the standard "no schedule" wording
-                title, sub = name, EMPTY_FILLER_SUB
+            if (cid in PART_TIME_CHANNELS or cid.startswith("CY.")) and PART_TIME_FILLER_RE.match(title or ""):    # the standard "no schedule" wording
+                title, sub = EMPTY_FILLER_SUB, ""
                 about = EMPTY_FILLER_DESC.format(name=name)
+                if re.fullmatch(r"HK\.NowSportsPL[1-9]", cid):          # Premier League match channels (27 Nov 2026, user)
+                    about = ("No Premier League matches are listed for this channel at the moment. Matches will appear here when "
+                             "Now Sports publishes the schedule (the channel only runs when a match is on).")
                 ev["no_lead"], ev["never_live"] = True, True
+            if cid.startswith("CY.") and CY_MOTORVISION.match(title or ""):   # (27 Nov 2026, user) Cytavision Sports 6's loop
+                title, sub = "Motorvision TV", "Motorsport and motoring programming"
+                about = ("Programming from Motorvision TV, the motorsport and motoring channel: racing series, car and motorcycle "
+                         "features, stunt and extreme-sports shows and documentaries. Shown as scheduled programming rather than live coverage.")
+                ev["no_lead"], ev["never_live"], ev["live"] = True, True, False
+            if cid.startswith("CY.") and CY_HORSE_TV.match(title or ""):      # Cytavision Sports 7's loop (27 Nov 2026, user)
+                title, sub = "Horse TV", "Horse racing and equestrian programming"
+                about = ("Programming from Horse TV, the horse racing and equestrian channel: race replays, form and tipping shows, "
+                         "interviews, training and horse-world features. Shown as scheduled programming rather than live coverage.")
+                ev["no_lead"], ev["never_live"], ev["live"] = True, True, False
+            if cid.startswith("CY.") and CY_REAL_MADRID_TV.match(title or ""):   # Cytavision Sports 8's loop (27 Nov 2026, user)
+                title, sub = "Real Madrid TV", "Club channel programming"
+                about = ("Programming from Real Madrid TV, Real Madrid's club channel: typically match replays, classic games, features and "
+                         "interviews with players and staff. Shown as scheduled programming rather than live coverage.")
+                ev["no_lead"], ev["never_live"], ev["live"] = True, True, False
+            club_tv = CY_CLUB_TV.match(title or "") if cid.startswith("CY.") else None
+            if club_tv:                                      # Cytavision's club channels (27 Nov 2026, user)
+                short, club, about = CY_CLUB_TV_NAMES[club_tv["club"].lower()]
+                title, sub = short, "Club channel programming"
+                ev["no_lead"], ev["never_live"], ev["live"] = True, True, False
             fixture = None
             if cid.startswith(KICKOFF_LIVE) and stop - start >= timedelta(minutes=90):
                 fixture = find_fixture(title, ev["start"], timedelta(minutes=5), timedelta(minutes=45))
@@ -8676,9 +8723,11 @@ EXTRA_EMPTY_CHANNELS = {"TR.beINSPORTS5": "beIN SPORTS 5",       # Digiturk refu
                         # (Premier League 3 / 4 / 5 have their own idle wording - astro_idle_fill)
                         "MY.AstroCricket": "Astro Cricket"}
 EMPTY_FILLER_HOURS = 24
-EMPTY_FILLER_SUB = "No schedule available at this time."
-OLD_EMPTY_FILLER_SUBS = ("No schedule available",)       # the wording used until 3 Nov 2026 (so old placeholders in the previous guide are still recognised)
-EMPTY_FILLER_DESC = ("{name}: no programmes are listed for this channel at the moment. The schedule will appear "
+# 27 Nov 2026 (user): the empty-channel block no longer carries the channel name: the TITLE is now this wording, no secondary title,
+# and the description has no name either. (Until then: title = channel name, secondary title "No schedule available at this time.")
+EMPTY_FILLER_SUB = "No programmes are scheduled at this time"
+OLD_EMPTY_FILLER_SUBS = ("No schedule available", "No schedule available at this time.", "No programmes are scheduled at this time.")       # the wording used until 3 Nov 2026 (so old placeholders in the previous guide are still recognised)
+EMPTY_FILLER_DESC = ("No programmes are listed for this channel at the moment. The schedule will appear "
                      "here when the broadcaster publishes it (some channels only run during events).")
 
 
@@ -8686,7 +8735,27 @@ EMPTY_FILLER_DESC = ("{name}: no programmes are listed for this channel at the m
 # beIN SPORTS 4 / 5 Singapore, "Stay tuned for the next broadcast" on beIN SPORTS 4 / 5 Hong Kong, "No information" on beIN SPORTS 3
 # Hong Kong). Those blocks are rewritten to the standard wording above (the channel name as the title, "No schedule available at this time.",
 # "...: no programmes are listed for this channel at the moment ...") - never live.
-PART_TIME_CHANNELS = ("SG.beINSPORTS4", "SG.beINSPORTS5", "HK.beINSPORTS3", "HK.beINSPORTS4", "HK.beINSPORTS5",
+# Cytavision Sports 4 / 5 carry "Liverpool TV" / "Man Utd TV" on a repeating loop, each with the same short line (the first with a 2023
+# date as its secondary title): archive-style club-channel programming, not the live channels - so MUTV / LFCTV, never live, fuller wording.
+CY_MOTORVISION = re.compile(r"(?i)^\s*motor\s?vision(?:\s+tv)?\s*$")        # Cytavision Sports 6
+CY_HORSE_TV = re.compile(r"(?i)^\s*horse\s?tv\s*$")                           # Cytavision Sports 7
+CY_REAL_MADRID_TV = re.compile(r"(?i)^\s*real\s+madrid\s+tv\s*$")                # Cytavision Sports 8
+CY_CLUB_TV = re.compile(r"(?i)^\s*(?P<club>man(?:chester)?\.? ?utd|liverpool)\s+tv\s*$")
+CY_CLUB_TV_NAMES = {
+    "man utd": ("MUTV", "Manchester United",
+                "Programming from MUTV, Manchester United's club channel: typically archive match replays, classic games, features and "
+                "interviews with players and staff. Shown as scheduled programming rather than live coverage."),
+    "manchester utd": ("MUTV", "Manchester United", ""), "man. utd": ("MUTV", "Manchester United", ""),
+    "liverpool": ("LFCTV", "Liverpool",
+                  "Programming from LFCTV, Liverpool's club channel: typically archive match replays, classic games, features and "
+                  "interviews with players and staff. Shown as scheduled programming rather than live coverage."),
+}
+CY_CLUB_TV_NAMES["manchester utd"] = CY_CLUB_TV_NAMES["man. utd"] = CY_CLUB_TV_NAMES["man utd"]
+CY_CLUB_TV_NAMES["manutd"] = CY_CLUB_TV_NAMES["man utd"]
+PART_TIME_CHANNELS = (
+                      # Hong Kong, Now Sports Premier League 1-9 / TV (27 Nov 2026, user): "Stay tuned for the next broadcast" between matches
+                      *(f"HK.NowSportsPL{n}" for n in range(1, 10)), "HK.NowSportsPLTV",
+                      "SG.beINSPORTS4", "SG.beINSPORTS5", "HK.beINSPORTS3", "HK.beINSPORTS4", "HK.beINSPORTS5",
                       # StarHub's own "End of Transmission" blocks (3 Nov 2026: user asked for Hub Premier 2 and Hub Sports 8;
                       # the same blocks are on Hub Premier 2-6 and Hub Sports 3-8, so all of them)
                       "SG.HubPremier2", "SG.HubPremier3", "SG.HubPremier4", "SG.HubPremier5", "SG.HubPremier6",
@@ -8694,7 +8763,7 @@ PART_TIME_CHANNELS = ("SG.beINSPORTS4", "SG.beINSPORTS5", "HK.beINSPORTS3", "HK.
                       # Croatia (26 Nov 2026, user): MAXtv's "Program announcement" blocks on Sport Klub 7-12 and Arena Sport 5, 6, 9, 10
                       *(f"HR.SportKlub{n}" for n in range(7, 13)), "HR.ArenaSport5", "HR.ArenaSport6", "HR.ArenaSport9", "HR.ArenaSport10")
 PART_TIME_FILLER_RE = re.compile(r"(?i)^\s*(end of transmission|stay tuned for the next broadcast|no information(?: available)?"
-                                 r"|program(?:me)? announcement)\W*$")
+                                 r"|program(?:me)? announcement|soon near you again)\W*$")      # "Soon Near You Again" = Cytavision's off-air card (27 Nov 2026)
 
 
 def add_empty_placeholders(tv, listed):
@@ -8711,7 +8780,7 @@ def add_empty_placeholders(tv, listed):
         ET.SubElement(c, "display-name", {"lang": "en"}).text = name
         listed.append((cid, name))
         for a, b in filler_blocks(now, now + timedelta(hours=EMPTY_FILLER_HOURS)):
-            add_programme(tv, cid, a, b, name, EMPTY_FILLER_SUB, EMPTY_FILLER_DESC.format(name=name), False)
+            add_programme(tv, cid, a, b, EMPTY_FILLER_SUB, "", EMPTY_FILLER_DESC.format(name=name), False)
         added.append((cid, name))
     return added
 
@@ -8760,7 +8829,7 @@ def add_idle_gap_fillers(tv):
             if b - a < timedelta(minutes=IDLE_GAP_MIN_MINUTES):
                 continue
             for x, y in filler_blocks(a, b):
-                add_programme(tv, cid, x, y, name, EMPTY_FILLER_SUB, EMPTY_FILLER_DESC.format(name=name), False)
+                add_programme(tv, cid, x, y, EMPTY_FILLER_SUB, "", EMPTY_FILLER_DESC.format(name=name), False)
                 n += 1
         if n:
             added.append((cid, n))
@@ -8811,7 +8880,7 @@ def carry_over(tv, listed, prev_path):
         cid = p.get("channel")
         if cid in have or (cid or "").startswith(CARRY_SKIP):
             continue
-        if p.findtext("sub-title") in (EMPTY_FILLER_SUB,) + OLD_EMPTY_FILLER_SUBS:      # last run's "No schedule available at this time." placeholder (old wording too) - regenerate, don't carry
+        if p.findtext("title") == EMPTY_FILLER_SUB or p.findtext("sub-title") in (EMPTY_FILLER_SUB + ".",) + OLD_EMPTY_FILLER_SUBS:      # last run's "No schedule available at this time." placeholder (old wording too) - regenerate, don't carry
             continue
         try:
             stop = datetime.strptime(p.get("stop"), "%Y%m%d%H%M%S %z")
