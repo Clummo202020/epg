@@ -5691,6 +5691,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128184000 +0000" stop="20261128204000 +0000" channel="AppleMLS006.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127180000 +0000" stop="20261127200000 +0000" channel="AppleMLS007.us">
     <title lang="en">Next Match: Charlotte FC vs Chicago Fire (Sat 28 Nov, 5:30pm)</title>
     <sub-title lang="en">MLS</sub-title>
@@ -11994,6 +11999,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128185000 +0000" stop="20261128205000 +0000" channel="ESPNPPV33.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127180000 +0000" stop="20261127195500 +0000" channel="ESPNPPV34.us">
     <title lang="en">Next up: LIVE – En Español-Levante Ud vs Racing de Santander (7:55pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -15073,6 +15083,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128164500 +0000" stop="20261128184500 +0000" channel="MParamount001.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128184500 +0000" stop="20261128204500 +0000" channel="MParamount001.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -22720,10 +22735,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128180000 +0000" stop="20261128184500 +0000" channel="MPeacock013.us">
-    <title lang="en">Next up: LIVE – Skiing. Men's Super-G: Copper (Sat 28 Nov, 6:45pm)</title>
+    <title lang="en">Next up: LIVE – Skiing. Men's Super-G: Copper (6:45pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Skiing. Men's Super-G: Copper starts Sat 28 Nov, 6:45pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Skiing. Men's Super-G: Copper starts at 6:45pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128184500 +0000" stop="20261128204500 +0000" channel="MPeacock013.us">
+    <title lang="en">🔴 LIVE: Skiing. Men's Super-G: Copper</title>
+    <desc lang="en">Skiing. Men's Super-G: Copper. Starts Sat 28 Nov, 6:45pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127180000 +0000" stop="20261127200000 +0000" channel="MPeacock014.us">
     <title lang="en">Next Event: 2026 Bayou Classic (Sat 28 Nov, 7pm)</title>
@@ -29544,6 +29565,12 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261128184000 +0000" stop="20261128204000 +0000" channel="MSTAN12.au">
+    <title lang="en">🔴 LIVE: Rugby Sevens. Dubai: Day 1 (Session 2)</title>
+    <desc lang="en">Rugby Sevens. Dubai: Day 1 (Session 2). World Rugby Sevens Series 2026/27. Starts Sat 28 Nov, 12:40pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261127180000 +0000" stop="20261127200000 +0000" channel="MSTAN13.au">
     <title lang="en">Next Match: Rugby Union. Wales vs Japan (Sat 28 Nov, 1:10pm)</title>
     <sub-title lang="en">Nations Championship</sub-title>
@@ -29871,6 +29898,13 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128164000 +0000" stop="20261128184000 +0000" channel="MSTAN16.au">
+    <title lang="en">🔴 LIVE: Rugby Union. England vs New Zealand</title>
+    <sub-title lang="en">Nations Championship</sub-title>
+    <desc lang="en">Rugby Union. England vs New Zealand. Nations Championship Final 2026. Starts Sat 28 Nov, 4:40pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
+  <programme start="20261128184000 +0000" stop="20261128194000 +0000" channel="MSTAN16.au">
     <title lang="en">🔴 LIVE: Rugby Union. England vs New Zealand</title>
     <sub-title lang="en">Nations Championship</sub-title>
     <desc lang="en">Rugby Union. England vs New Zealand. Nations Championship Final 2026. Starts Sat 28 Nov, 4:40pm UK time.</desc>
@@ -37362,6 +37396,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128164500 +0000" stop="20261128184500 +0000" channel="Paramount001.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128184500 +0000" stop="20261128204500 +0000" channel="Paramount001.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -45009,10 +45048,16 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128180000 +0000" stop="20261128184500 +0000" channel="Peacock013.us">
-    <title lang="en">Next up: LIVE – Skiing. Men's Super-G: Copper (Sat 28 Nov, 6:45pm)</title>
+    <title lang="en">Next up: LIVE – Skiing. Men's Super-G: Copper (6:45pm)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. Skiing. Men's Super-G: Copper starts Sat 28 Nov, 6:45pm UK time.</desc>
+    <desc lang="en">Next up: LIVE. Skiing. Men's Super-G: Copper starts at 6:45pm UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128184500 +0000" stop="20261128204500 +0000" channel="Peacock013.us">
+    <title lang="en">🔴 LIVE: Skiing. Men's Super-G: Copper</title>
+    <desc lang="en">Skiing. Men's Super-G: Copper. Starts Sat 28 Nov, 6:45pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127180000 +0000" stop="20261127200000 +0000" channel="Peacock014.us">
     <title lang="en">Next Event: 2026 Bayou Classic (Sat 28 Nov, 7pm)</title>
