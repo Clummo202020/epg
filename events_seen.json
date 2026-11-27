@@ -1,22 +1,50 @@
 {
- "CASOCCERPPV3.ca": {
-  "name": "Live | Quarterfinals, Day 3 | all | 8K EXCLUSIVE | CA: SOCCER PPV 3",
-  "seen": "2026-11-26T16:07:47+00:00"
+ "CASOCCERPPV25.ca": {
+  "name": "Live | HSBC Rugby SVNS 3 Dubai: Day 1 - Pool Play | all | 8K EXCLUSIVE | CA: SOCCER PPV 25",
+  "seen": "2026-11-27T16:37:38+00:00"
+ },
+ "CASOCCERPPV26.ca": {
+  "name": "Live | The Crown Prince Cup | all | 8K EXCLUSIVE | CA: SOCCER PPV 26",
+  "seen": "2026-11-27T16:37:38+00:00"
+ },
+ "CASOCCERPPV27.ca": {
+  "name": "Live | Formula 1 Driver Tracker-Qatar Grand Prix, Practice 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 27",
+  "seen": "2026-11-27T16:37:38+00:00"
+ },
+ "CASOCCERPPV28.ca": {
+  "name": "Live | Formula 1 Bonus Pit Lane-Qatar Grand Prix, Practice 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 28",
+  "seen": "2026-11-27T16:37:38+00:00"
+ },
+ "CASOCCERPPV29.ca": {
+  "name": "Live | Formula 1 Bonus On-Board Camera-Lando Norris: Qatar Grand Prix, Practice 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 29",
+  "seen": "2026-11-27T16:37:38+00:00"
+ },
+ "CASOCCERPPV30.ca": {
+  "name": "Live | Formula 1 Bonus On-Board Camera-Max Verstappen: Qatar Grand Prix, Practice 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 30",
+  "seen": "2026-11-27T16:37:38+00:00"
+ },
+ "CASOCCERPPV31.ca": {
+  "name": "Live | Formula 1 Bonus On-Board Camera-Lance Stroll: Qatar Grand Prix, Practice 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 31",
+  "seen": "2026-11-27T16:37:38+00:00"
+ },
+ "CASOCCERPPV32.ca": {
+  "name": "Live | Formula 1 Timing Channel-Qatar Grand Prix, Practice 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 32",
+  "seen": "2026-11-27T16:37:38+00:00"
+ },
+ "CASOCCERPPV33.ca": {
+  "name": "Live | Formula 1 Mixed On-Board Camera-Qatar Grand Prix, Practice 1 | all | 8K EXCLUSIVE | CA: SOCCER PPV 33",
+  "seen": "2026-11-27T16:37:38+00:00"
  },
  "CASOCCERPPV4.ca": {
-  "name": "Live | ACC Mens Asia Cup Rising Stars 2026 - 1st Semi-Final - Sri Lanka A vs India A | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
-  "seen": "2026-11-26T16:07:47+00:00"
- },
- "CASOCCERPPV5.ca": {
-  "name": "Live | Czechia vs. China | all | 8K EXCLUSIVE | CA: SOCCER PPV 5",
-  "seen": "2026-11-26T16:07:47+00:00"
+  "name": "Live | ACC Mens Asia Cup Rising Stars 2026 - 2nd Semi-Final - Pakistan A vs Bangladesh A | all | 8K EXCLUSIVE | CA: SOCCER PPV 4",
+  "seen": "2026-11-27T16:37:38+00:00"
  },
  "CASOCCERPPV6.ca": {
-  "name": "Live | Senators vs. Panthers | all | 8K EXCLUSIVE | CA: SOCCER PPV 6",
-  "seen": "2026-11-26T16:07:47+00:00"
+  "name": "Live | China vs. Great Britain | all | 8K EXCLUSIVE | CA: SOCCER PPV 6",
+  "seen": "2026-11-27T16:37:38+00:00"
  },
  "_timing": {
-  "updated": "2026-11-27T16:07:18Z",
+  "updated": "2026-11-27T16:37:19Z",
   "groups": {
    "AppleMLS": {
     "n": 32,
@@ -27,17 +55,20 @@
     "max": -5
    },
    "CASOCCERPPV": {
-    "n": 3,
-    "missed": 18,
+    "n": 11,
+    "missed": 13,
     "applied": true,
-    "median": -4,
-    "min": -622,
-    "max": 26
+    "median": 60,
+    "min": -34,
+    "max": 60
    },
    "ESPNPPV": {
-    "n": 0,
-    "missed": 4,
-    "applied": false
+    "n": 14,
+    "missed": 54,
+    "applied": false,
+    "median": -30,
+    "min": -30,
+    "max": 60
    },
    "FoxOne": {
     "n": 0,
@@ -58,7 +89,7 @@
     "max": 0
    },
    "NFL": {
-    "n": 14,
+    "n": 11,
     "missed": 1,
     "applied": false,
     "median": 0,
@@ -71,23 +102,23 @@
     "applied": false
    },
    "Paramount": {
-    "n": 45,
-    "missed": 160,
+    "n": 22,
+    "missed": 92,
     "applied": true,
     "median": 50,
     "min": 15,
     "max": 50
    },
    "Peacock": {
-    "n": 25,
-    "missed": 103,
+    "n": 16,
+    "missed": 46,
     "applied": true,
     "median": -10,
     "min": -80,
     "max": 0
    },
    "SN": {
-    "n": 12,
+    "n": 16,
     "missed": 1,
     "applied": true,
     "median": 0,
@@ -104,7 +135,7 @@
    },
    "TSN": {
     "n": 9,
-    "missed": 39,
+    "missed": 42,
     "applied": true,
     "median": -12,
     "min": -12,
@@ -117,7 +148,7 @@
    }
   },
   "check": {
-   "compared": 51,
+   "compared": 50,
    "differ": 0,
    "examples": []
   }
