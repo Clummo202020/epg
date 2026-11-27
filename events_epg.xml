@@ -5497,10 +5497,17 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261128000000 +0000" stop="20261128001000 +0000" channel="AppleMLS001.us">
-    <title lang="en">Next up: LIVE – MLS Countdown (Sat 28 Nov, 12:10am)</title>
+    <title lang="en">Next up: LIVE – MLS Countdown (12:10am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
-    <desc lang="en">Next up: LIVE. MLS Countdown starts Sat 28 Nov, 12:10am UK time.</desc>
+    <desc lang="en">Next up: LIVE. MLS Countdown starts at 12:10am UK time.</desc>
     <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128001000 +0000" stop="20261128021000 +0000" channel="AppleMLS001.us">
+    <title lang="en">🔴 LIVE: MLS Countdown</title>
+    <sub-title lang="en">MLS</sub-title>
+    <desc lang="en">MLS Countdown. Starts Sat 28 Nov, 12:10am UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
   </programme>
   <programme start="20261127000000 +0000" stop="20261127020000 +0000" channel="AppleMLS002.us">
     <title lang="en">Next Match: Columbus Crew vs Inter Miami (Sat 28 Nov, 1am)</title>
@@ -14563,6 +14570,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127221500 +0000" stop="20261128001500 +0000" channel="MPeacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128001500 +0000" stop="20261128021500 +0000" channel="MPeacock004.us">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -34004,6 +34016,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128001500 +0000" stop="20261128021500 +0000" channel="Peacock004.us">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127000000 +0000" stop="20261127020000 +0000" channel="Peacock005.us">
     <title lang="en">Next Event: Figure Skating. Men's Short Program (Fri 27 Nov, 10am)</title>
     <desc lang="en">Figure Skating. Men's Short Program. Starts Fri 27 Nov, 10am UK time.</desc>
@@ -41972,6 +41989,13 @@
     <category lang="en">Sports</category>
     <category lang="en">Live</category>
   </programme>
+  <programme start="20261128003000 +0000" stop="20261128013000 +0000" channel="SN025.ca">
+    <title lang="en">🔴 LIVE: NHL. New York Rangers @ Chicago Blackhawks</title>
+    <sub-title lang="en">NHL</sub-title>
+    <desc lang="en">NHL. New York Rangers @ Chicago Blackhawks. Starts Fri 27 Nov, 10:30pm UK time.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Live</category>
+  </programme>
   <programme start="20261127000000 +0000" stop="20261127020000 +0000" channel="TSN005.ca">
     <title lang="en">Next up: LIVE – NCAA Men's Basketball: Louisville vs St. John's (2am)</title>
     <sub-title lang="en">Next up: LIVE</sub-title>
@@ -42266,6 +42290,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128002000 +0000" stop="20261128022000 +0000" channel="TSN008.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127000000 +0000" stop="20261127020000 +0000" channel="TSN009.ca">
     <title lang="en">Next Event: Formula 1 Mixed On-Board Camera - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -42338,6 +42367,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127222000 +0000" stop="20261128002000 +0000" channel="TSN009.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128002000 +0000" stop="20261128022000 +0000" channel="TSN009.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -42418,6 +42452,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128002000 +0000" stop="20261128022000 +0000" channel="TSN010.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127000000 +0000" stop="20261127020000 +0000" channel="TSN011.ca">
     <title lang="en">Next Event: Formula 1 On-Board Camera: Lance Stroll - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -42490,6 +42529,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127222000 +0000" stop="20261128002000 +0000" channel="TSN011.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128002000 +0000" stop="20261128022000 +0000" channel="TSN011.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
@@ -42570,6 +42614,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128002000 +0000" stop="20261128022000 +0000" channel="TSN012.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127000000 +0000" stop="20261127020000 +0000" channel="TSN013.ca">
     <title lang="en">Next Event: Formula 1 On-Board Camera: Lando Norris - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -42646,6 +42695,11 @@
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
   </programme>
+  <programme start="20261128002000 +0000" stop="20261128022000 +0000" channel="TSN013.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
   <programme start="20261127000000 +0000" stop="20261127020000 +0000" channel="TSN014.ca">
     <title lang="en">Next Event: Formula 1 Timing Channel - Qatar Grand Prix Practice #1 (Fri 27 Nov, 1:20pm)</title>
     <sub-title lang="en">Formula 1</sub-title>
@@ -42718,6 +42772,11 @@
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261127222000 +0000" stop="20261128002000 +0000" channel="TSN014.ca">
+    <title lang="en">This event has now finished</title>
+    <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261128002000 +0000" stop="20261128022000 +0000" channel="TSN014.ca">
     <title lang="en">This event has now finished</title>
     <desc lang="en">No new event is scheduled at this time. Check back later.</desc>
     <category lang="en">Sports</category>
