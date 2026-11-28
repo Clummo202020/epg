@@ -44,11 +44,11 @@
   "seen": "2026-11-27T16:37:38+00:00"
  },
  "_timing": {
-  "updated": "2026-11-28T04:37:18Z",
+  "updated": "2026-11-28T05:07:25Z",
   "groups": {
    "AppleMLS": {
-    "n": 30,
-    "missed": 2,
+    "n": 28,
+    "missed": 4,
     "applied": true,
     "median": -5,
     "min": -545,
