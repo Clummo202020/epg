@@ -44,14 +44,14 @@
   "seen": "2026-11-27T16:37:38+00:00"
  },
  "_timing": {
-  "updated": "2026-11-28T06:37:17Z",
+  "updated": "2026-11-28T07:07:17Z",
   "groups": {
    "AppleMLS": {
-    "n": 28,
-    "missed": 4,
+    "n": 26,
+    "missed": 6,
     "applied": true,
     "median": -5,
-    "min": -545,
+    "min": -35,
     "max": -5
    },
    "CASOCCERPPV": {
