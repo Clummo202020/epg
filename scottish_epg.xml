@@ -336,7 +336,7 @@
     <display-name lang="en">Stranraer Scottish League Two</display-name>
     <icon src="https://a.espncdn.com/i/teamlogos/soccer/500/407.png" />
   </channel>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Aberdeen.ScotLgeCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Aberdeen.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Aberdeen: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -344,7 +344,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Aberdeen.ScotLgeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Aberdeen.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Aberdeen: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -352,21 +352,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Aberdeen.ScotLgeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Aberdeen.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Aberdeen: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Aberdeen.ScotPrem.3hzr">
-    <title lang="en">Aberdeen v Dundee (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Pittodrie Stadium. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Aberdeen.ScotPrem.3hzr">
     <title lang="en">Aberdeen v Dundee (Sat 28 Nov, 3pm)</title>
@@ -1107,7 +1099,7 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Alloa.Athletic.ChallengeCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Alloa.Athletic.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Alloa Athletic: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -1115,7 +1107,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Alloa.Athletic.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Alloa.Athletic.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Alloa Athletic: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -1123,21 +1115,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Alloa.Athletic.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Alloa.Athletic.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Alloa Athletic: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Alloa.Athletic.ScotCup.3hzr">
-    <title lang="en">Threave Rovers v Alloa Athletic (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Meadow Park, Castle Douglas. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Alloa.Athletic.ScotCup.3hzr">
     <title lang="en">Threave Rovers v Alloa Athletic (Sat 28 Nov, 3pm)</title>
@@ -1252,7 +1236,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Alloa.Athletic.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Alloa.Athletic.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Alloa Athletic: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -1260,13 +1244,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Alloa.Athletic.ScotLge1.3hzr">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Alloa.Athletic.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Alloa Athletic have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Alloa Athletic: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Alloa.Athletic.ScotLge1.3hzr">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
@@ -1356,7 +1340,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Annan.Athletic.ChallengeCup.3hzr">
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Alloa.Athletic.ScotLge1.3hzr">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Alloa Athletic have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League One</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Annan.Athletic.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Annan Athletic: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -1364,7 +1356,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Annan.Athletic.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Annan.Athletic.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Annan Athletic: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -1372,21 +1364,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Annan.Athletic.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Annan.Athletic.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Annan Athletic: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Annan.Athletic.ScotCup.3hzr">
-    <title lang="en">Annan Athletic v Greenock Morton (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Galabank. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Annan.Athletic.ScotCup.3hzr">
     <title lang="en">Annan Athletic v Greenock Morton (Sat 28 Nov, 3pm)</title>
@@ -1501,7 +1485,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Annan.Athletic.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Annan.Athletic.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Annan Athletic: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -1509,13 +1493,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Annan.Athletic.ScotLge2.3hzr">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Annan.Athletic.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Annan Athletic have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Annan Athletic: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Annan.Athletic.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -1605,7 +1589,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Arbroath.ChallengeCup.3hzr">
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Annan.Athletic.ScotLge2.3hzr">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Annan Athletic have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League Two</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Arbroath.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Arbroath: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -1613,7 +1605,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Arbroath.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Arbroath.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Arbroath: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -1621,21 +1613,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Arbroath.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Arbroath.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Arbroath: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Arbroath.ScotChamp.3hzr">
-    <title lang="en">Dunfermline Athletic v Arbroath (Tue 01 Dec, 7:45pm)</title>
-    <sub-title lang="en">Next Match: Scottish Championship</sub-title>
-    <desc lang="en">KDM Group East End Park. Kick-off: 7:45pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Arbroath.ScotChamp.3hzr">
     <title lang="en">Dunfermline Athletic v Arbroath (Tue 01 Dec, 7:45pm)</title>
@@ -2367,14 +2351,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Arbroath.ScotCup.3hzr">
-    <title lang="en">Cumnock v Arbroath (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Townhead Park. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Arbroath.ScotCup.3hzr">
     <title lang="en">Cumnock v Arbroath (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Cup</sub-title>
@@ -2488,7 +2464,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Arbroath.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Arbroath.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Arbroath: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -2496,7 +2472,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Ayr.Utd.ChallengeCup.3hzr">
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Arbroath.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Arbroath: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Ayr.Utd.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Ayr Utd: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -2504,7 +2488,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Ayr.Utd.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Ayr.Utd.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Ayr Utd: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -2512,21 +2496,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Ayr.Utd.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Ayr.Utd.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Ayr Utd: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Ayr.Utd.ScotChamp.3hzr">
-    <title lang="en">Greenock Morton v Ayr Utd (Tue 01 Dec, 7:45pm)</title>
-    <sub-title lang="en">Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Cappielow Park. Kick-off: 7:45pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Ayr.Utd.ScotChamp.3hzr">
     <title lang="en">Greenock Morton v Ayr Utd (Tue 01 Dec, 7:45pm)</title>
@@ -3257,14 +3233,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Celtic.ScotPrem.3hzr">
-    <title lang="en">Hearts v Celtic (Sun 29 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Tynecastle Park. Kick-off: 3pm. | This match is available on Sky Sports Football and CBS Sports Golazo.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Celtic.ScotPrem.3hzr">
     <title lang="en">Hearts v Celtic (Sun 29 Nov, 3pm)</title>
@@ -4005,14 +3973,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Clyde.ScotCup.3hzr">
-    <title lang="en">East Kilbride v Clyde (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">K-Park Training Academy. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Clyde.ScotCup.3hzr">
     <title lang="en">East Kilbride v Clyde (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Cup</sub-title>
@@ -4126,7 +4086,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Clyde.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Clyde.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Clyde: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -4134,13 +4094,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Clyde.ScotLge2.3hzr">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Clyde.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Clyde have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Clyde: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Clyde.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -4230,7 +4190,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Cove.Rangers.ChallengeCup.3hzr">
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Clyde.ScotLge2.3hzr">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Clyde have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League Two</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Cove.Rangers.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Cove Rangers: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -4238,7 +4206,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Cove.Rangers.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Cove.Rangers.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Cove Rangers: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -4246,21 +4214,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Cove.Rangers.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Cove.Rangers.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Cove Rangers: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Cove.Rangers.ScotCup.3hzr">
-    <title lang="en">Inverness CT v Cove Rangers (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Caledonian Stadium. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Cove.Rangers.ScotCup.3hzr">
     <title lang="en">Inverness CT v Cove Rangers (Sat 28 Nov, 3pm)</title>
@@ -4375,7 +4335,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Cove.Rangers.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Cove.Rangers.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Cove Rangers: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -4383,13 +4343,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Cove.Rangers.ScotLge1.3hzr">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Cove.Rangers.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Cove Rangers have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Cove Rangers: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Cove.Rangers.ScotLge1.3hzr">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
@@ -4479,13 +4439,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Dumbarton.ScotCup.3hzr">
-    <title lang="en">Dumbarton v Johnstone Burgh FC (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Dumbarton Football Stadium. Kick-off: 3pm.</desc>
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Cove.Rangers.ScotLge1.3hzr">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Cove Rangers have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
+    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Dumbarton.ScotCup.3hzr">
     <title lang="en">Dumbarton v Johnstone Burgh FC (Sat 28 Nov, 3pm)</title>
@@ -4600,7 +4560,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Dumbarton.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Dumbarton.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Dumbarton: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -4608,13 +4568,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Dumbarton.ScotLge2.3hzr">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Dumbarton.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Dumbarton have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Dumbarton: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Dumbarton.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -4704,13 +4664,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Dundee.ScotPrem.3hzr">
-    <title lang="en">Aberdeen v Dundee (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Pittodrie Stadium. Kick-off: 3pm.</desc>
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Dumbarton.ScotLge2.3hzr">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Dumbarton have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Dundee.ScotPrem.3hzr">
     <title lang="en">Aberdeen v Dundee (Sat 28 Nov, 3pm)</title>
@@ -5451,14 +5411,6 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Dundee.Utd.ScotPrem.3hzr">
-    <title lang="en">Dundee Utd v St Johnstone (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Tannadice Park. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Dundee.Utd.ScotPrem.3hzr">
     <title lang="en">Dundee Utd v St Johnstone (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
@@ -6198,7 +6150,7 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Dunfermline.Athletic.ChallengeCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Dunfermline.Athletic.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Dunfermline Athletic: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -6206,7 +6158,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Dunfermline.Athletic.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Dunfermline.Athletic.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Dunfermline Athletic: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -6214,21 +6166,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Dunfermline.Athletic.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Dunfermline.Athletic.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Dunfermline Athletic: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Dunfermline.Athletic.ScotChamp.3hzr">
-    <title lang="en">Dunfermline Athletic v Arbroath (Tue 01 Dec, 7:45pm)</title>
-    <sub-title lang="en">Next Match: Scottish Championship</sub-title>
-    <desc lang="en">KDM Group East End Park. Kick-off: 7:45pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Dunfermline.Athletic.ScotChamp.3hzr">
     <title lang="en">Dunfermline Athletic v Arbroath (Tue 01 Dec, 7:45pm)</title>
@@ -6960,14 +6904,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Dunfermline.Athletic.ScotCup.3hzr">
-    <title lang="en">Queen of the South v Dunfermline Athletic (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Palmerston Park. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Dunfermline.Athletic.ScotCup.3hzr">
     <title lang="en">Queen of the South v Dunfermline Athletic (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Cup</sub-title>
@@ -7081,7 +7017,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Dunfermline.Athletic.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Dunfermline.Athletic.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Dunfermline Athletic: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7089,10 +7025,10 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="East.Fife.ScotCup.3hzr">
-    <title lang="en">Stenhousemuir v East Fife (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Ochilview Park. Kick-off: 3pm.</desc>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Dunfermline.Athletic.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Dunfermline Athletic: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
@@ -7210,7 +7146,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="East.Fife.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="East.Fife.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">East Fife: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7218,13 +7154,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="East.Fife.ScotLge1.3hzr">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="East.Fife.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">East Fife have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">East Fife: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="East.Fife.ScotLge1.3hzr">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
@@ -7314,7 +7250,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="East.Kilbride.ChallengeCup.3hzr">
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="East.Fife.ScotLge1.3hzr">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">East Fife have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League One</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="East.Kilbride.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">East Kilbride: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7322,7 +7266,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="East.Kilbride.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="East.Kilbride.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">East Kilbride: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7330,21 +7274,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="East.Kilbride.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="East.Kilbride.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">East Kilbride: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="East.Kilbride.ScotCup.3hzr">
-    <title lang="en">East Kilbride v Clyde (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">K-Park Training Academy. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="East.Kilbride.ScotCup.3hzr">
     <title lang="en">East Kilbride v Clyde (Sat 28 Nov, 3pm)</title>
@@ -7459,7 +7395,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="East.Kilbride.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="East.Kilbride.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">East Kilbride: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7467,13 +7403,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="East.Kilbride.ScotLge2.3hzr">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="East.Kilbride.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">East Kilbride have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">East Kilbride: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="East.Kilbride.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -7563,7 +7499,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Edinburgh.City.ChallengeCup.3hzr">
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="East.Kilbride.ScotLge2.3hzr">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">East Kilbride have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League Two</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Edinburgh.City.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Edinburgh City: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7571,7 +7515,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Edinburgh.City.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Edinburgh.City.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Edinburgh City: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7579,21 +7523,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Edinburgh.City.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Edinburgh.City.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Edinburgh City: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Edinburgh.City.ScotCup.3hzr">
-    <title lang="en">Peterhead v Edinburgh City (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Balmoor Stadium. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Edinburgh.City.ScotCup.3hzr">
     <title lang="en">Peterhead v Edinburgh City (Sat 28 Nov, 3pm)</title>
@@ -7708,7 +7644,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Edinburgh.City.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Edinburgh.City.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Edinburgh City: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7716,13 +7652,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Edinburgh.City.ScotLge2.3hzr">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Edinburgh.City.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Edinburgh City have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Edinburgh City: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Edinburgh.City.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -7812,7 +7748,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Elgin.City.ChallengeCup.3hzr">
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Edinburgh.City.ScotLge2.3hzr">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Edinburgh City have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League Two</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Elgin.City.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Elgin City: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7820,7 +7764,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Elgin.City.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Elgin.City.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Elgin City: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7828,21 +7772,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Elgin.City.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Elgin.City.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Elgin City: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Elgin.City.ScotCup.3hzr">
-    <title lang="en">Elgin City v Partick Thistle (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Borough Briggs. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Elgin.City.ScotCup.3hzr">
     <title lang="en">Elgin City v Partick Thistle (Sat 28 Nov, 3pm)</title>
@@ -7957,7 +7893,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Elgin.City.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Elgin.City.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Elgin City: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -7965,13 +7901,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Elgin.City.ScotLge2.3hzr">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Elgin.City.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Elgin City have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Elgin City: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Elgin.City.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -8061,13 +7997,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Falkirk.ScotPrem.3hzr">
-    <title lang="en">Rangers v Falkirk (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Ibrox Stadium. Kick-off: 3pm.</desc>
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Elgin.City.ScotLge2.3hzr">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Elgin City have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Falkirk.ScotPrem.3hzr">
     <title lang="en">Rangers v Falkirk (Sat 28 Nov, 3pm)</title>
@@ -8808,7 +8744,7 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Forfar.Athletic.ScotCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Forfar.Athletic.ScotCup.3hzr">
     <title lang="en">No Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Forfar Athletic: no Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -8816,7 +8752,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Forfar.Athletic.ScotCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Forfar.Athletic.ScotCup.3hzr">
     <title lang="en">No Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Forfar Athletic: no Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -8824,21 +8760,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Forfar.Athletic.ScotCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Forfar.Athletic.ScotCup.3hzr">
     <title lang="en">No Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Forfar Athletic: no Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Forfar.Athletic.ScotLge2.3hzr">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Forfar Athletic have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Forfar.Athletic.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -8928,7 +8856,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Greenock.Morton.ChallengeCup.3hzr">
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Forfar.Athletic.ScotLge2.3hzr">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Forfar Athletic have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League Two</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Greenock.Morton.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Greenock Morton: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -8936,7 +8872,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Greenock.Morton.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Greenock.Morton.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Greenock Morton: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -8944,21 +8880,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Greenock.Morton.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Greenock.Morton.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Greenock Morton: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Greenock.Morton.ScotChamp.3hzr">
-    <title lang="en">Greenock Morton v Ayr Utd (Tue 01 Dec, 7:45pm)</title>
-    <sub-title lang="en">Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Cappielow Park. Kick-off: 7:45pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Greenock.Morton.ScotChamp.3hzr">
     <title lang="en">Greenock Morton v Ayr Utd (Tue 01 Dec, 7:45pm)</title>
@@ -9690,14 +9618,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Greenock.Morton.ScotCup.3hzr">
-    <title lang="en">Annan Athletic v Greenock Morton (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Galabank. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Greenock.Morton.ScotCup.3hzr">
     <title lang="en">Annan Athletic v Greenock Morton (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Cup</sub-title>
@@ -9811,7 +9731,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Greenock.Morton.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Greenock.Morton.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Greenock Morton: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -9819,37 +9739,37 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Hamilton.Academical.ChallengeCup.3hzr">
-    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Greenock.Morton.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Hamilton Academical: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Hamilton.Academical.ChallengeCup.3hzr">
-    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Hamilton Academical: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Hamilton.Academical.ChallengeCup.3hzr">
-    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Hamilton Academical: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Hamilton.Academical.ScotCup.3hzr">
-    <title lang="en">Montrose v Hamilton Academical (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Links Park. Kick-off: 3pm.</desc>
+    <desc lang="en">Greenock Morton: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Hamilton.Academical.ChallengeCup.3hzr">
+    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Hamilton Academical: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Hamilton.Academical.ChallengeCup.3hzr">
+    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Hamilton Academical: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Hamilton.Academical.ChallengeCup.3hzr">
+    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Hamilton Academical: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Hamilton.Academical.ScotCup.3hzr">
     <title lang="en">Montrose v Hamilton Academical (Sat 28 Nov, 3pm)</title>
@@ -9964,7 +9884,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Hamilton.Academical.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Hamilton.Academical.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Hamilton Academical: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -9972,13 +9892,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Hamilton.Academical.ScotLge1.3hzr">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Hamilton.Academical.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Hamilton Academical have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Hamilton Academical: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Hamilton.Academical.ScotLge1.3hzr">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
@@ -10068,7 +9988,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Hearts.ScotLgeCup.3hzr">
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Hamilton.Academical.ScotLge1.3hzr">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Hamilton Academical have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League One</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Hearts.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Hearts: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -10076,7 +10004,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Hearts.ScotLgeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Hearts.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Hearts: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -10084,21 +10012,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Hearts.ScotLgeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Hearts.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Hearts: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Hearts.ScotPrem.3hzr">
-    <title lang="en">Hearts v Celtic (Sun 29 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Tynecastle Park. Kick-off: 3pm. | This match is available on Sky Sports Football and CBS Sports Golazo.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Hearts.ScotPrem.3hzr">
     <title lang="en">Hearts v Celtic (Sun 29 Nov, 3pm)</title>
@@ -10847,7 +10767,7 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Hibernian.ScotLgeCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Hibernian.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Hibernian: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -10855,7 +10775,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Hibernian.ScotLgeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Hibernian.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Hibernian: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -10863,21 +10783,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Hibernian.ScotLgeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Hibernian.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Hibernian: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Hibernian.ScotPrem.3hzr">
-    <title lang="en">Motherwell v Hibernian (Sat 28 Nov, 5:45pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Fir Park. Kick-off: 5:45pm. | This match is available on Premier Sports 1.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Hibernian.ScotPrem.3hzr">
     <title lang="en">Motherwell v Hibernian (Sat 28 Nov, 5:45pm)</title>
@@ -11826,7 +11738,7 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Inverness.CT.ChallengeCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Inverness.CT.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Inverness CT: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -11834,7 +11746,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Inverness.CT.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Inverness.CT.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Inverness CT: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -11842,21 +11754,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Inverness.CT.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Inverness.CT.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Inverness CT: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Inverness.CT.ScotChamp.3hzr">
-    <title lang="en">Greenock Morton v Inverness CT (Sat 05 Dec, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Cappielow Park. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Inverness.CT.ScotChamp.3hzr">
     <title lang="en">Greenock Morton v Inverness CT (Sat 05 Dec, 3pm)</title>
@@ -12579,14 +12483,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Inverness.CT.ScotCup.3hzr">
-    <title lang="en">Inverness CT v Cove Rangers (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Caledonian Stadium. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Inverness.CT.ScotCup.3hzr">
     <title lang="en">Inverness CT v Cove Rangers (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Cup</sub-title>
@@ -12700,7 +12596,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Inverness.CT.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Inverness.CT.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Inverness CT: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -12708,7 +12604,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Kelty.Hearts.ChallengeCup.3hzr">
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Inverness.CT.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Inverness CT: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Kelty.Hearts.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Kelty Hearts: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -12716,7 +12620,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Kelty.Hearts.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Kelty.Hearts.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Kelty Hearts: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -12724,7 +12628,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Kelty.Hearts.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Kelty.Hearts.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Kelty Hearts: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -12732,7 +12636,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Kelty.Hearts.ScotCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Kelty.Hearts.ScotCup.3hzr">
     <title lang="en">No Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Kelty Hearts: no Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -12740,7 +12644,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Kelty.Hearts.ScotCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Kelty.Hearts.ScotCup.3hzr">
     <title lang="en">No Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Kelty Hearts: no Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -12748,21 +12652,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Kelty.Hearts.ScotCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Kelty.Hearts.ScotCup.3hzr">
     <title lang="en">No Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Kelty Hearts: no Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Kelty.Hearts.ScotLge1.3hzr">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Kelty Hearts have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Kelty.Hearts.ScotLge1.3hzr">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
@@ -12852,13 +12748,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Kilmarnock.ScotPrem.3hzr">
-    <title lang="en">St Mirren v Kilmarnock (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">The SMISA Stadium. Kick-off: 3pm.</desc>
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Kelty.Hearts.ScotLge1.3hzr">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Kelty Hearts have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Kilmarnock.ScotPrem.3hzr">
     <title lang="en">St Mirren v Kilmarnock (Sat 28 Nov, 3pm)</title>
@@ -13599,7 +13495,7 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Livingston.ChallengeCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Livingston.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Livingston: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -13607,7 +13503,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Livingston.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Livingston.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Livingston: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -13615,21 +13511,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Livingston.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Livingston.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Livingston: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Livingston.ScotChamp.3hzr">
-    <title lang="en">Livingston v Raith Rovers (Fri 04 Dec, 7:30pm)</title>
-    <sub-title lang="en">Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Tony Macaroni Arena. Kick-off: 7:30pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Livingston.ScotChamp.3hzr">
     <title lang="en">Livingston v Raith Rovers (Fri 04 Dec, 7:30pm)</title>
@@ -14272,14 +14160,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Livingston.ScotCup.3hzr">
-    <title lang="en">Clydebank v Livingston (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Holm Park. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Livingston.ScotCup.3hzr">
     <title lang="en">Clydebank v Livingston (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Cup</sub-title>
@@ -14393,7 +14273,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Livingston.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Livingston.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Livingston: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -14401,37 +14281,37 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Montrose.ChallengeCup.3hzr">
-    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Livingston.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Montrose: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Montrose.ChallengeCup.3hzr">
-    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Montrose: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Montrose.ChallengeCup.3hzr">
-    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Montrose: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Montrose.ScotCup.3hzr">
-    <title lang="en">Montrose v Hamilton Academical (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Links Park. Kick-off: 3pm.</desc>
+    <desc lang="en">Livingston: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Montrose.ChallengeCup.3hzr">
+    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Montrose: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Montrose.ChallengeCup.3hzr">
+    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Montrose: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Montrose.ChallengeCup.3hzr">
+    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Montrose: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Montrose.ScotCup.3hzr">
     <title lang="en">Montrose v Hamilton Academical (Sat 28 Nov, 3pm)</title>
@@ -14546,7 +14426,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Montrose.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Montrose.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Montrose: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -14554,13 +14434,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Montrose.ScotLge1.3hzr">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Montrose.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Montrose have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Montrose: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Montrose.ScotLge1.3hzr">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
@@ -14650,13 +14530,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Motherwell.ScotPrem.3hzr">
-    <title lang="en">Motherwell v Hibernian (Sat 28 Nov, 5:45pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Fir Park. Kick-off: 5:45pm. | This match is available on Premier Sports 1.</desc>
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Montrose.ScotLge1.3hzr">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Montrose have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League One</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Motherwell.ScotPrem.3hzr">
     <title lang="en">Motherwell v Hibernian (Sat 28 Nov, 5:45pm)</title>
@@ -15397,7 +15277,7 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Partick.Thistle.ChallengeCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Partick.Thistle.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Partick Thistle: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -15405,7 +15285,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Partick.Thistle.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Partick.Thistle.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Partick Thistle: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -15413,21 +15293,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Partick.Thistle.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Partick.Thistle.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Partick Thistle: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Partick.Thistle.ScotChamp.3hzr">
-    <title lang="en">Partick Thistle v Dunfermline Athletic (Sat 05 Dec, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Firhill Stadium. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Partick.Thistle.ScotChamp.3hzr">
     <title lang="en">Partick Thistle v Dunfermline Athletic (Sat 05 Dec, 3pm)</title>
@@ -16150,14 +16022,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Partick.Thistle.ScotCup.3hzr">
-    <title lang="en">Elgin City v Partick Thistle (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Borough Briggs. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Partick.Thistle.ScotCup.3hzr">
     <title lang="en">Elgin City v Partick Thistle (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Cup</sub-title>
@@ -16271,7 +16135,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Partick.Thistle.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Partick.Thistle.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Partick Thistle: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -16279,37 +16143,37 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Peterhead.ChallengeCup.3hzr">
-    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Partick.Thistle.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Peterhead: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Peterhead.ChallengeCup.3hzr">
-    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Peterhead: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Peterhead.ChallengeCup.3hzr">
-    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Peterhead: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Peterhead.ScotCup.3hzr">
-    <title lang="en">Peterhead v Edinburgh City (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Balmoor Stadium. Kick-off: 3pm.</desc>
+    <desc lang="en">Partick Thistle: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Peterhead.ChallengeCup.3hzr">
+    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Peterhead: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Peterhead.ChallengeCup.3hzr">
+    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Peterhead: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
+  </programme>
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Peterhead.ChallengeCup.3hzr">
+    <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Peterhead: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Challenge Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Peterhead.ScotCup.3hzr">
     <title lang="en">Peterhead v Edinburgh City (Sat 28 Nov, 3pm)</title>
@@ -16424,7 +16288,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Peterhead.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Peterhead.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Peterhead: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -16432,13 +16296,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Peterhead.ScotLge1.3hzr">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Peterhead.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Peterhead have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Peterhead: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Peterhead.ScotLge1.3hzr">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
@@ -16528,7 +16392,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Queen.of.the.South.ChallengeCup.3hzr">
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Peterhead.ScotLge1.3hzr">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Peterhead have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League One</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Queen.of.the.South.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Queen of the South: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -16536,7 +16408,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Queen.of.the.South.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Queen.of.the.South.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Queen of the South: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -16544,21 +16416,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Queen.of.the.South.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Queen.of.the.South.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Queen of the South: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Queen.of.the.South.ScotCup.3hzr">
-    <title lang="en">Queen of the South v Dunfermline Athletic (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Palmerston Park. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Queen.of.the.South.ScotCup.3hzr">
     <title lang="en">Queen of the South v Dunfermline Athletic (Sat 28 Nov, 3pm)</title>
@@ -16673,7 +16537,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Queen.of.the.South.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Queen.of.the.South.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Queen of the South: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -16681,13 +16545,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Queen.of.the.South.ScotLge1.3hzr">
-    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Queen.of.the.South.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Queen of the South have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Queen of the South: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League One</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Queen.of.the.South.ScotLge1.3hzr">
     <title lang="en">No Scottish League One match listed in the next 10 days</title>
@@ -16777,7 +16641,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League One</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Queen.s.Park.ChallengeCup.3hzr">
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Queen.of.the.South.ScotLge1.3hzr">
+    <title lang="en">No Scottish League One match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Queen of the South have no Scottish League One match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League One</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Queen.s.Park.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Queen's Park: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -16785,7 +16657,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Queen.s.Park.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Queen.s.Park.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Queen's Park: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -16793,21 +16665,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Queen.s.Park.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Queen.s.Park.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Queen's Park: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Queen.s.Park.ScotChamp.3hzr">
-    <title lang="en">Queen's Park v Arbroath (Sat 05 Dec, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Championship</sub-title>
-    <desc lang="en">The City Stadium. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Queen.s.Park.ScotChamp.3hzr">
     <title lang="en">Queen's Park v Arbroath (Sat 05 Dec, 3pm)</title>
@@ -17530,14 +17394,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Queen.s.Park.ScotCup.3hzr">
-    <title lang="en">Queen's Park v Spartans FC (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">The City Stadium. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Queen.s.Park.ScotCup.3hzr">
     <title lang="en">Queen's Park v Spartans FC (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Cup</sub-title>
@@ -17651,7 +17507,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Queen.s.Park.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Queen.s.Park.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Queen's Park: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -17659,7 +17515,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Raith.Rovers.ChallengeCup.3hzr">
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Queen.s.Park.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Queen's Park: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Raith.Rovers.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Raith Rovers: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -17667,7 +17531,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Raith.Rovers.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Raith.Rovers.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Raith Rovers: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -17675,21 +17539,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Raith.Rovers.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Raith.Rovers.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Raith Rovers: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Raith.Rovers.ScotChamp.3hzr">
-    <title lang="en">Livingston v Raith Rovers (Fri 04 Dec, 7:30pm)</title>
-    <sub-title lang="en">Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Tony Macaroni Arena. Kick-off: 7:30pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Raith.Rovers.ScotChamp.3hzr">
     <title lang="en">Livingston v Raith Rovers (Fri 04 Dec, 7:30pm)</title>
@@ -18332,14 +18188,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Raith.Rovers.ScotCup.3hzr">
-    <title lang="en">Troon v Raith Rovers (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Portland Park. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Raith.Rovers.ScotCup.3hzr">
     <title lang="en">Troon v Raith Rovers (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Cup</sub-title>
@@ -18453,7 +18301,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Raith.Rovers.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Raith.Rovers.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Raith Rovers: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -18461,7 +18309,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Rangers.ScotLgeCup.3hzr">
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Raith.Rovers.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Raith Rovers: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Rangers.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Rangers: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -18469,7 +18325,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Rangers.ScotLgeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Rangers.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Rangers: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -18477,21 +18333,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Rangers.ScotLgeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Rangers.ScotLgeCup.3hzr">
     <title lang="en">No Scottish League Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Rangers: no Scottish League Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish League Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Rangers.ScotPrem.3hzr">
-    <title lang="en">Rangers v Falkirk (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Ibrox Stadium. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Rangers.ScotPrem.3hzr">
     <title lang="en">Rangers v Falkirk (Sat 28 Nov, 3pm)</title>
@@ -19440,7 +19288,7 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Spartans.FC.ChallengeCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Spartans.FC.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Spartans FC: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -19448,7 +19296,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Spartans.FC.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Spartans.FC.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Spartans FC: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -19456,21 +19304,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Spartans.FC.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Spartans.FC.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Spartans FC: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Spartans.FC.ScotCup.3hzr">
-    <title lang="en">Queen's Park v Spartans FC (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">The City Stadium. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Spartans.FC.ScotCup.3hzr">
     <title lang="en">Queen's Park v Spartans FC (Sat 28 Nov, 3pm)</title>
@@ -19585,7 +19425,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Spartans.FC.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Spartans.FC.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Spartans FC: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -19593,13 +19433,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Spartans.FC.ScotLge2.3hzr">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Spartans.FC.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Spartans FC have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Spartans FC: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Spartans.FC.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -19689,13 +19529,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="St.Johnstone.ScotPrem.3hzr">
-    <title lang="en">Dundee Utd v St Johnstone (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">Tannadice Park. Kick-off: 3pm.</desc>
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Spartans.FC.ScotLge2.3hzr">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Spartans FC have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
+    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="St.Johnstone.ScotPrem.3hzr">
     <title lang="en">Dundee Utd v St Johnstone (Sat 28 Nov, 3pm)</title>
@@ -20435,14 +20275,6 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="St.Mirren.ScotPrem.3hzr">
-    <title lang="en">St Mirren v Kilmarnock (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Premiership</sub-title>
-    <desc lang="en">The SMISA Stadium. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Premiership</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="St.Mirren.ScotPrem.3hzr">
     <title lang="en">St Mirren v Kilmarnock (Sat 28 Nov, 3pm)</title>
@@ -21191,7 +21023,7 @@
     <category lang="en">Scottish Premiership</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Stenhousemuir.ChallengeCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Stenhousemuir.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stenhousemuir: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -21199,7 +21031,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Stenhousemuir.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Stenhousemuir.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stenhousemuir: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -21207,21 +21039,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Stenhousemuir.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Stenhousemuir.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stenhousemuir: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
-  </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Stenhousemuir.ScotChamp.3hzr">
-    <title lang="en">Stenhousemuir v Ayr Utd (Sat 05 Dec, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Championship</sub-title>
-    <desc lang="en">Ochilview Park. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Championship</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Stenhousemuir.ScotChamp.3hzr">
     <title lang="en">Stenhousemuir v Ayr Utd (Sat 05 Dec, 3pm)</title>
@@ -21944,14 +21768,6 @@
     <category lang="en">Scottish Championship</category>
     <category lang="en">Live</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Stenhousemuir.ScotCup.3hzr">
-    <title lang="en">Stenhousemuir v East Fife (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Ochilview Park. Kick-off: 3pm.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
-  </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Stenhousemuir.ScotCup.3hzr">
     <title lang="en">Stenhousemuir v East Fife (Sat 28 Nov, 3pm)</title>
     <sub-title lang="en">Next Match: Scottish Cup</sub-title>
@@ -22065,7 +21881,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Stenhousemuir.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Stenhousemuir.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stenhousemuir: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -22073,7 +21889,15 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Stirling.Albion.ChallengeCup.3hzr">
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Stenhousemuir.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Stenhousemuir: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish Cup</category>
+  </programme>
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Stirling.Albion.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stirling Albion: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -22081,7 +21905,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Stirling.Albion.ChallengeCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Stirling.Albion.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stirling Albion: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -22089,7 +21913,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Stirling.Albion.ChallengeCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Stirling.Albion.ChallengeCup.3hzr">
     <title lang="en">No Scottish Challenge Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stirling Albion: no Scottish Challenge Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -22097,7 +21921,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Challenge Cup</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261129040000 +0000" channel="Stirling.Albion.ScotCup.3hzr">
+  <programme start="20261128060000 +0000" stop="20261129060000 +0000" channel="Stirling.Albion.ScotCup.3hzr">
     <title lang="en">No Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stirling Albion: no Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -22105,7 +21929,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261129040000 +0000" stop="20261130040000 +0000" channel="Stirling.Albion.ScotCup.3hzr">
+  <programme start="20261129060000 +0000" stop="20261130060000 +0000" channel="Stirling.Albion.ScotCup.3hzr">
     <title lang="en">No Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stirling Albion: no Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -22113,21 +21937,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130040000 +0000" stop="20261201040000 +0000" channel="Stirling.Albion.ScotCup.3hzr">
+  <programme start="20261130060000 +0000" stop="20261201060000 +0000" channel="Stirling.Albion.ScotCup.3hzr">
     <title lang="en">No Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stirling Albion: no Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
-  </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Stirling.Albion.ScotLge2.3hzr">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
-    <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Stirling Albion have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
-    <category lang="en">Sports</category>
-    <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Stirling.Albion.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -22217,13 +22033,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish League Two</category>
   </programme>
-  <programme start="20261128040000 +0000" stop="20261128060000 +0000" channel="Stranraer.ScotCup.3hzr">
-    <title lang="en">Stranraer v Clachnacuddin (Sat 28 Nov, 3pm)</title>
-    <sub-title lang="en">Next Match: Scottish Cup</sub-title>
-    <desc lang="en">Stair Park. Kick-off: 3pm.</desc>
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Stirling.Albion.ScotLge2.3hzr">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Stirling Albion have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish Cup</category>
+    <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128080000 +0000" channel="Stranraer.ScotCup.3hzr">
     <title lang="en">Stranraer v Clachnacuddin (Sat 28 Nov, 3pm)</title>
@@ -22338,7 +22154,7 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261130050000 +0000" stop="20261201040000 +0000" channel="Stranraer.ScotCup.3hzr">
+  <programme start="20261130050000 +0000" stop="20261201050000 +0000" channel="Stranraer.ScotCup.3hzr">
     <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stranraer: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
@@ -22346,13 +22162,13 @@
     <category lang="en">Football</category>
     <category lang="en">Scottish Cup</category>
   </programme>
-  <programme start="20261128000000 +0000" stop="20261128060000 +0000" channel="Stranraer.ScotLge2.3hzr">
-    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+  <programme start="20261201050000 +0000" stop="20261201060000 +0000" channel="Stranraer.ScotCup.3hzr">
+    <title lang="en">No further Scottish Cup match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
-    <desc lang="en">Stranraer have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <desc lang="en">Stranraer: no further Scottish Cup match is listed in the next 10 days. This channel updates as soon as a match is added.</desc>
     <category lang="en">Sports</category>
     <category lang="en">Football</category>
-    <category lang="en">Scottish League Two</category>
+    <category lang="en">Scottish Cup</category>
   </programme>
   <programme start="20261128060000 +0000" stop="20261128120000 +0000" channel="Stranraer.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
@@ -22435,6 +22251,14 @@
     <category lang="en">Scottish League Two</category>
   </programme>
   <programme start="20261130180000 +0000" stop="20261201000000 +0000" channel="Stranraer.ScotLge2.3hzr">
+    <title lang="en">No Scottish League Two match listed in the next 10 days</title>
+    <sub-title lang="en">No match scheduled</sub-title>
+    <desc lang="en">Stranraer have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
+    <category lang="en">Sports</category>
+    <category lang="en">Football</category>
+    <category lang="en">Scottish League Two</category>
+  </programme>
+  <programme start="20261201000000 +0000" stop="20261201060000 +0000" channel="Stranraer.ScotLge2.3hzr">
     <title lang="en">No Scottish League Two match listed in the next 10 days</title>
     <sub-title lang="en">No match scheduled</sub-title>
     <desc lang="en">Stranraer have no Scottish League Two match listed in the next 10 days. This could be a cup weekend, an international break or a fixture that has not been announced yet. This channel updates as soon as a match is added.</desc>
